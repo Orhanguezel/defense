@@ -2,7 +2,7 @@ const API_BASE = (process.env.SMOKE_API_BASE_URL || 'http://127.0.0.1:8090/api')
 const API_ORIGIN = API_BASE.endsWith('/api') ? API_BASE.slice(0, -4) : API_BASE;
 const ADMIN_EMAIL = process.env.SMOKE_ADMIN_EMAIL || process.env.SEED_ADMIN_EMAIL || 'orhanguzell@gmail.com';
 const ADMIN_PASSWORD = process.env.SMOKE_ADMIN_PASSWORD || process.env.SEED_ADMIN_PASSWORD || 'admin123';
-const KOMPOZIT_CATEGORY_ID = 'cccc0001-4001-4001-8001-cccccccc0001';
+const SD_CATEGORY_ID = 'cccc0001-4001-4001-8001-cccccccc0001';
 
 const created = {
   pageId: null,
@@ -115,10 +115,10 @@ async function main() {
         method: 'POST',
         headers: commonHeaders,
         body: JSON.stringify({
-          module_key: 'kompozit_blog',
+          module_key: 'sultandefense_blog',
           locale: 'tr',
-          title: `Smoke Kompozit Page ${ts}`,
-          slug: `smoke-kompozit-page-${ts}`,
+          title: `Smoke Sultandefense Page ${ts}`,
+          slug: `smoke-sultandefense-page-${ts}`,
           content: '<p>Smoke content</p>',
           summary: 'Smoke summary',
           is_published: true,
@@ -137,14 +137,14 @@ async function main() {
         headers: commonHeaders,
         body: JSON.stringify({
           locale: 'tr',
-          title: 'Smoke Kompozit Page Updated',
+          title: 'Smoke Sultandefense Page Updated',
           summary: 'Updated summary',
         }),
       },
       200,
       'custom page update',
     );
-    if (updatedPage?.title !== 'Smoke Kompozit Page Updated') {
+    if (updatedPage?.title !== 'Smoke Sultandefense Page Updated') {
       throw new Error('custom page update failed: title mismatch');
     }
     log('Custom page update OK');
@@ -167,23 +167,23 @@ async function main() {
         method: 'POST',
         headers: commonHeaders,
         body: JSON.stringify({
-          item_type: 'kompozit',
+          item_type: 'sultandefense',
           locale: 'tr',
-          title: `Smoke Kompozit Product ${ts}`,
-          slug: `smoke-kompozit-product-${ts}`,
+          title: `Smoke Sultandefense Product ${ts}`,
+          slug: `smoke-sultandefense-product-${ts}`,
           description: 'Smoke product',
           price: 0,
-          category_id: KOMPOZIT_CATEGORY_ID,
+          category_id: SD_CATEGORY_ID,
           is_active: true,
           meta_title: 'Smoke Meta',
           meta_description: 'Smoke Meta Desc',
         }),
       },
       201,
-      'kompozit product create',
+      'sultandefense product create',
     );
     created.productId = product.id;
-    log(`Kompozit product create OK: ${created.productId}`);
+    log(`Sultandefense product create OK: ${created.productId}`);
 
     const updatedProduct = await expectStatus(
       `/admin/products/${created.productId}`,
@@ -192,7 +192,7 @@ async function main() {
         headers: commonHeaders,
         body: JSON.stringify({
           locale: 'tr',
-          title: 'Smoke Kompozit Product Updated',
+          title: 'Smoke Sultandefense Product Updated',
           specifications: {
             lif: 'hafif',
             surec: 'prototype',
@@ -200,24 +200,24 @@ async function main() {
         }),
       },
       200,
-      'kompozit product update',
+      'sultandefense product update',
     );
-    if (updatedProduct?.title !== 'Smoke Kompozit Product Updated') {
-      throw new Error('kompozit product update failed: title mismatch');
+    if (updatedProduct?.title !== 'Smoke Sultandefense Product Updated') {
+      throw new Error('sultandefense product update failed: title mismatch');
     }
 
     const fetchedProduct = await expectStatus(
-      `/admin/products/${created.productId}?locale=tr&item_type=kompozit`,
+      `/admin/products/${created.productId}?locale=tr&item_type=sultandefense`,
       {
         headers: { Authorization: `Bearer ${token}` },
       },
       200,
-      'kompozit product get',
+      'sultandefense product get',
     );
-    if (fetchedProduct?.item_type !== 'kompozit') {
-      throw new Error('kompozit product get failed: item_type mismatch');
+    if (fetchedProduct?.item_type !== 'sultandefense') {
+      throw new Error('sultandefense product get failed: item_type mismatch');
     }
-    log('Kompozit product get/update OK');
+    log('Sultandefense product get/update OK');
 
     await expectStatus(
       `/admin/products/${created.productId}`,
@@ -226,9 +226,9 @@ async function main() {
         headers: { Authorization: `Bearer ${token}` },
       },
       204,
-      'kompozit product delete',
+      'sultandefense product delete',
     );
-    log('Kompozit product delete OK');
+    log('Sultandefense product delete OK');
     created.productId = null;
 
     const gallery = await expectStatus(
@@ -237,11 +237,11 @@ async function main() {
         method: 'POST',
         headers: commonHeaders,
         body: JSON.stringify({
-          module_key: 'kompozit',
+          module_key: 'sultandefense',
           source_type: 'standalone',
           locale: 'tr',
           title: `Smoke Gallery ${ts}`,
-          slug: `smoke-kompozit-gallery-${ts}`,
+          slug: `smoke-sultandefense-gallery-${ts}`,
           description: 'Smoke gallery',
           is_active: true,
           is_featured: false,
@@ -249,10 +249,10 @@ async function main() {
         }),
       },
       201,
-      'kompozit gallery create',
+      'sultandefense gallery create',
     );
     created.galleryId = gallery.id;
-    log(`Kompozit gallery create OK: ${created.galleryId}`);
+    log(`Sultandefense gallery create OK: ${created.galleryId}`);
 
     const updatedGallery = await expectStatus(
       `/admin/galleries/${created.galleryId}`,
@@ -266,10 +266,10 @@ async function main() {
         }),
       },
       200,
-      'kompozit gallery update',
+      'sultandefense gallery update',
     );
     if (updatedGallery?.title !== 'Smoke Gallery Updated') {
-      throw new Error('kompozit gallery update failed: title mismatch');
+      throw new Error('sultandefense gallery update failed: title mismatch');
     }
 
     const image = await expectStatus(
@@ -340,12 +340,12 @@ async function main() {
         headers: { Authorization: `Bearer ${token}` },
       },
       204,
-      'kompozit gallery delete',
+      'sultandefense gallery delete',
     );
     created.galleryId = null;
-    log('Kompozit gallery delete OK');
+    log('Sultandefense gallery delete OK');
 
-    log('Kompozit admin smoke passed');
+    log('Sultandefense admin smoke passed');
   } catch (error) {
     await cleanup(token);
     throw error;
