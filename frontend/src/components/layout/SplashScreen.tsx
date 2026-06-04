@@ -337,7 +337,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
       <div className="splash-logo-wrap">
         <div className="splash-halo" />
         <Image
-          src="/logo-dark.svg"
+          src="/sd-logo.svg"
           alt={finalName}
           width={110}
           height={110}

@@ -209,7 +209,7 @@ export function Header({
 
             <Link href={localizedPath(locale, '/')} className="flex flex-col items-center" style={{ gap: 8 }}>
               <Image
-                src="/logo-dark.svg"
+                src="/sd-logo.svg"
                 alt={companyName}
                 width={80}
                 height={80}
@@ -331,7 +331,7 @@ export function Header({
           <style>{`@media(min-width:1024px){.hdr-mobile-row{display:none !important}}`}</style>
           <div className="hdr-mobile-row flex h-14 items-center justify-between px-4">
             <Link href={localizedPath(locale, '/')} className="flex items-center gap-2">
-              <Image src="/logo-dark.svg" alt={companyName} width={32} height={32}
+              <Image src="/sd-logo.svg" alt={companyName} width={32} height={32}
                 style={{ height: 32, width: 'auto' }} priority />
             </Link>
             <div className="flex items-center gap-2">
@@ -405,7 +405,7 @@ export function Header({
           style={{ display: 'none', gridTemplateColumns: 'auto auto 1fr auto', gap: 16 }}
         >
           <Link href={localizedPath(locale, '/')} className="flex items-center gap-2">
-            <Image src="/logo-dark.svg" alt={companyName} width={26} height={26} style={{ height: 26, width: 'auto' }} />
+            <Image src="/sd-logo.svg" alt={companyName} width={26} height={26} style={{ height: 26, width: 'auto' }} />
           </Link>
 
           <div className="flex items-center gap-2" style={{ border: '1px solid var(--color-border)', background: 'var(--color-bg-secondary)', borderRadius: 2, padding: '6px 12px', minWidth: 200, maxWidth: 320 }}>
@@ -458,7 +458,7 @@ export function Header({
         <style>{`@media(min-width:1024px){.hdr-compact-mobile{display:none !important}}`}</style>
         <div className="hdr-compact-mobile flex h-12 items-center justify-between px-4">
           <Link href={localizedPath(locale, '/')} className="flex items-center gap-2">
-            <Image src="/logo-dark.svg" alt={companyName} width={24} height={24} style={{ height: 24, width: 'auto' }} />
+            <Image src="/sd-logo.svg" alt={companyName} width={24} height={24} style={{ height: 24, width: 'auto' }} />
           </Link>
           <div className="flex items-center gap-2">
             <ThemeToggle />
@@ -625,7 +625,7 @@ export function Header({
                 </Link>
               </div>
               <div className="flex items-center gap-3">
-                <Image src="/logo-dark.svg" alt={companyName} width={20} height={20} style={{ height: 20, width: 'auto', opacity: 0.5 }} />
+                <Image src="/sd-logo.svg" alt={companyName} width={20} height={20} style={{ height: 20, width: 'auto', opacity: 0.5 }} />
                 <span style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>
                   © {new Date().getFullYear()} {companyName}. {fT('rights')}
                 </span>

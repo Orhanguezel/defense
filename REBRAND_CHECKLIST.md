@@ -24,8 +24,15 @@
 - Seed SQL **dosya adlari** → `*_sultandefense_*` (27 dosya); `vista-mail.ts` yenilendi; media görselleri
 - Gorsel QA: admin login + frontend home (altin/antrasit dogrulandi); kritik CSS bug fix
 
-**⏳ Kalan (asagidaki fazlar):** ensotek izleri (83 dosya!), vista/insaat icerik (~46), secret rotation,
-seed **icerik** doldurma (defans), locale icerikleri (19 dil), nginx conf, Faz 6 deploy, final dogrulama.
+**🎉 REBRAND + DEPLOY ESASEN TAMAMLANDI (2026-06-05).** App `src`/`public` marka grep = **0**;
+site **https://sultandefense.com** + **admin.sultandefense.com** CANLI; seed dolu, logo/görseller tamam.
+
+**⏳ GERÇEKTE KALAN (post-launch, çoğu harici hesap gerektirir):**
+1. **3. parti secret'lar** (boş/kapalı): Cloudinary (görsel yükleme), Google OAuth (login), SMTP (iletişim maili),
+   reCAPTCHA, Groq (AI chat) → kullanıcı hesap/anahtar verince aktive edilir. `docs/SECRET_ROTATION.md`.
+2. **Lighthouse + SEO** denetimi (canlı — henüz çalışmadı).
+3. **Hero video** (placeholder, eksik) — montaj üret / video gönder / kapat (karar bekliyor).
+4. (Opsiyonel) Cloudflare **Full strict** için Origin CA cert; Analytics GA/GTM ID'leri (şu an boş).
 
 ---
 

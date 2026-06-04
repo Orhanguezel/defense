@@ -63,7 +63,7 @@ export function Footer({
           <div className="space-y-4">
             <div className="flex flex-col items-start gap-2">
               <Image
-                src="/logo-dark.svg"
+                src="/sd-logo.svg"
                 alt={companyProfile?.company_name || 'Sultan Defense'}
                 width={28}
                 height={28}

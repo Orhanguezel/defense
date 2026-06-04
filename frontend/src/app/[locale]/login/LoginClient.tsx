@@ -127,7 +127,7 @@ export function LoginClient({ locale }: { locale: string }) {
         <div style={{ textAlign: 'center', marginBottom: 24 }}>
           <Link href={localizedPath(locale, '/')} style={{ display: 'inline-block' }}>
             <Image
-              src="/logo-dark.svg"
+              src="/sd-logo.svg"
               alt="Sultan Defense"
               width={56}
               height={56}
