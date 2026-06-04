@@ -1,8 +1,8 @@
 {
   "nav": {
     "home": "Ana Sayfa",
-    "projects": "Urunler",
-    "services": "Tedarik Sureci",
+    "projects": "Ürünler",
+    "services": "Tedarik Süreci",
     "about": "Hakkımızda",
     "gallery": "Galeri",
     "blog": "Haberler",
@@ -12,10 +12,10 @@
     "register": "Kayıt Ol",
     "residential": "Balistik Koruma",
     "commercial": "Muhabere ve Elektronik",
-    "mixed": "Saha Lojistigi",
+    "mixed": "Saha Lojistiği",
     "restoration": "Deniz Sistemleri",
-    "project_management": "Ihracat Uyumu",
-    "interior_design": "Guvenli Lojistik",
+    "project_management": "İhracat Uyumu",
+    "interior_design": "Güvenli Lojistik",
     "corporate": "Kurumsal",
     "vision": "Vizyonumuz",
     "team": "Ekibimiz",
@@ -27,7 +27,7 @@
     "quality_acceptance": "Kalite Kabul"
   },
   "footer": {
-    "description": "Savunma urunleri icin B2B tedarik, ihracat uyumu ve guvenli lojistik koordinasyonu.",
+    "description": "Savunma ürünleri için B2B tedarik, ihracat uyumu ve güvenli lojistik koordinasyonu.",
     "rights": "Tüm hakları saklıdır",
     "privacy": "Gizlilik Politikası",
     "terms": "Kullanım Koşulları",
@@ -59,7 +59,7 @@
       "daysAgo": "{days} gün önce"
     },
     "requestOffer": "Teklif İste",
-    "offerCtaTitle": "Projeniz İçin Ücretsiz Keşif ve Teklif Hazırlayalım",
+    "offerCtaTitle": "Talebiniz İçin Ücretsiz Keşif ve Teklif Hazırlayalım",
     "offerCtaDescription": "Savunma tedariki, ihracat kapsamı, hedef ülke ve teslimat beklentilerinizi birlikte netleştirip size özel teklif hazırlayalım.",
     "freeOfObligation": "Ücretsiz ve bağlayıcı değildir",
     "send": "Gönder",
@@ -72,84 +72,84 @@
     "required": "Zorunlu alan",
     "success": "Başarılı",
     "noResults": "Sonuç bulunamadı",
-    "relatedProducts": "İlgili Projeler",
+    "relatedProducts": "İlgili Ürünler",
     "relatedGallery": "İlgili Galeriler",
     "relatedArticles": "İlgili Yazılar"
   },
   "home": {
     "hero": {
-      "title": "A’dan Z’ye Kuresel Savunma Tedarik Cozumleri",
-      "subtitle": "Turkiye’nin savunma sanayi uretim gucune acilan guvenilir kapiniz. Taktik ekipman, askeri elektronik ve lojistik cozumlerin uçtan uca tedarikini yonetiyoruz.",
+      "title": "A’dan Z’ye Küresel Savunma Tedarik Çözümleri",
+      "subtitle": "Türkiye’nin savunma sanayi üretim gücüne açılan güvenilir kapınız. Taktik ekipman, askeri elektronik ve lojistik çözümlerin uçtan uca tedarikini yönetiyoruz.",
       "cta": "Katalogu Inceleyin",
-      "ctaSecondary": "Tedarik Teklifi Alin",
+      "ctaSecondary": "Tedarik Teklifi Alın",
       "badge": "Sultan Defense",
       "newProjectBadge": "Yeni Kabiliyet",
-      "workflowLabel": "Tedarik Sureci",
-      "workflowTitle": "Operasyonel ihtiyaciniza gore planlanan tedarik akisi",
+      "workflowLabel": "Tedarik Süreci",
+      "workflowTitle": "Operasyonel ihtiyaciniza göre planlanan tedarik akisi",
       "workflowBadgeTitle": "Uyumlu",
-      "workflowBadgeSubtitle": "Ihracata hazir ve yasal olarak net",
+      "workflowBadgeSubtitle": "İhracata hazır ve yasal olarak net",
       "metrics": {
         "prototypeTitle": "Kaynak Bulma",
-        "prototypeDesc": "Ihtiyac analizi, uretici belirleme ve teklif koordinasyonu",
+        "prototypeDesc": "İhtiyaç analizi, üretici belirleme ve teklif koordinasyonu",
         "productionTitle": "Uyum",
-        "productionDesc": "EUC yonetimi, ihracat izinleri ve kalite guvencesi",
+        "productionDesc": "EUC yönetimi, ihracat izinleri ve kalite güvencesi",
         "engineeringTitle": "Teslimat",
-        "engineeringDesc": "Uzman lojistik, guvenli sevkiyat ve zamaninda teslim"
+        "engineeringDesc": "Uzman lojistik, güvenli sevkiyat ve zamanında teslim"
       },
       "steps": {
-        "oneTitle": "1. Operasyonel ihtiyac analizi",
-        "oneDesc": "Teknik gereksinimleri, hedef standartlari ve uyum ihtiyaclarini birlikte netlestiririz.",
-        "twoTitle": "2. Uretici koordinasyonu ve kaynak bulma",
-        "twoDesc": "Talebinizi lisansli Turk savunma ureticileriyle eslestirir ve teklif surecini yonetiriz.",
-        "threeTitle": "3. Ihracat uyumu ve teslimat",
-        "threeDesc": "EUC, ihracat izinleri ve guvenli sevkiyat planlamasini koordine ederiz."
+        "oneTitle": "1. Operasyonel ihtiyaç analizi",
+        "oneDesc": "Teknik gereksinimleri, hedef standartları ve uyum ihtiyaçlarını birlikte netlestiririz.",
+        "twoTitle": "2. Üretici koordinasyonu ve kaynak bulma",
+        "twoDesc": "Talebinizi lisanslı Türk savunma üreticileriyle eşleştirir ve teklif sürecini yönetiriz.",
+        "threeTitle": "3. İhracat uyumu ve teslimat",
+        "threeDesc": "EUC, ihracat izinleri ve güvenli sevkiyat planlamasını koordine ederiz."
       },
       "stats": {
         "stepsValue": "30+",
         "stepsLabel": "Yillik savunma deneyimi",
         "b2bValue": "10+",
-        "b2bLabel": "Tedarik edilen urun kategorisi"
+        "b2bLabel": "Tedarik edilen ürün kategorisi"
       }
     },
     "projects": {
-      "title": "One Cikan Urunler",
-      "subtitle": "Savunma ekipmani katalogumuzdan taktik ekipman, elektronik ve askeri lojistik cozumleri"
+      "title": "Öne Çıkan Ürünler",
+      "subtitle": "Savunma ekipmanı kataloğumuzdan taktik ekipman, elektronik ve askeri lojistik çözümleri"
     },
     "latestProjects": {
-      "title": "Son Eklenen Urunler",
+      "title": "Son Eklenen Ürünler",
       "subtitle": "Kataloga yeni eklenen savunma ekipmanlarini kesfedin"
     },
     "services": {
       "title": "Tedarik Kabiliyetlerimiz",
-      "subtitle": "Balistik korumadan egitim simulatorlerine kadar A’dan Z’ye savunma tedarik cozumleri"
+      "subtitle": "Balistik korumadan egitim simülatörlerine kadar A’dan Z’ye savunma tedarik çözümleri"
     },
     "whyUs": {
       "title": "Neden Sultan Defense?",
-      "subtitle": "Saha tecrubeli ekipman, siki uyum sureci ve hizli lojistik ile operasyonel guven sagliyoruz",
+      "subtitle": "Saha tecrübeli ekipman, sıkı uyum süreci ve hızlı lojistik ile operasyonel güven sağlıyoruz",
       "quality": "NATO standardinda kalite",
       "qualityDesc": "Her tedarikte NATO, AQAP, MIL-STD ve NIJ standartlarina uyum odagi",
       "experience": "Koklu deneyim",
-      "experienceDesc": "1996’dan beri savunma tedarikinde kuresel alicilara hizmet veren ekip",
-      "custom": "Ihtiyaca ozel cozum",
-      "customDesc": "Operasyonel ve teknik gereksiniminize gore hazirlanan tedarik paketleri",
-      "delivery": "Hizli ve guvenli teslimat",
-      "deliveryDesc": "Hava, kara veya deniz yoluyla uyumlu ve zamaninda askeri sevkiyat"
+      "experienceDesc": "1996’dan beri savunma tedarikinde küresel alıcılara hizmet veren ekip",
+      "custom": "İhtiyaca özel çözüm",
+      "customDesc": "Operasyonel ve teknik gereksiniminize göre hazirlanan tedarik paketleri",
+      "delivery": "Hızlı ve güvenli teslimat",
+      "deliveryDesc": "Hava, kara veya deniz yoluyla uyumlu ve zamanında askeri sevkiyat"
     },
     "brands": {
-      "title": "Uretici Agimiz",
-      "subtitle": "Tedarik icin calistigimiz secili Turk savunma ureticileri"
+      "title": "Üretici Ağımız",
+      "subtitle": "Tedarik için çalıştığımız seçili Türk savunma üreticileri"
     },
     "gallery": {
       "title": "Galeri",
-      "subtitle": "Savunma ekipmani katalogumuz ve uretici agimizdan secili gorseller"
+      "subtitle": "Savunma ekipmanı kataloğumuz ve üretici ağımızdan seçili görseller"
     },
     "blog": {
       "title": "Haberler ve İçerikler",
-      "subtitle": "Savunma sanayi haberleri, tedarik guncellemeleri ve Sultan Defense notlari",
-      "featuredLabel": "One Cikan Icerik",
-      "spotlightTitle": "Turk Savunma Ihracatinda Buyume: NATO Standartlari ve Kuresel Talep",
-      "spotlightBodyPrimary": "Turk savunma sanayi, yerli uretim kapasitesi ve uluslararasi standartlara uygun urun aileleriyle kuresel pazarda guclu bir tedarik kaynagi haline gelmistir.",
-      "spotlightBodySecondary": "Sultan Defense, Turk savunma ureticileri ile kuresel alicilar arasinda kopru kurar; uyum, dokumantasyon ve lojistik sureclerini net ve izlenebilir sekilde yonetir.",
+      "subtitle": "Savunma sanayi haberleri, tedarik güncellemeleri ve Sultan Defense notları",
+      "featuredLabel": "Öne Çıkan İçerik",
+      "spotlightTitle": "Türk Savunma İhracatında Büyüme: NATO Standartları ve Küresel Talep",
+      "spotlightBodyPrimary": "Türk savunma sanayi, yerli üretim kapasitesi ve uluslararası standartlara uygun ürün aileleriyle küresel pazarda güçlü bir tedarik kaynağı haline gelmiştir.",
+      "spotlightBodySecondary": "Sultan Defense, Türk savunma üreticileri ile küresel alıcılar arasında köprü kurar; uyum, dokümantasyon ve lojistik süreçlerini net ve izlenebilir şekilde yönetir.",
       "insightLabel": "Bu yazıda ne var?",
       "insightText": "Savunma sanayi trendleri, uyum cerceveleri ve tedarik iyi uygulamalari",
       "archiveLabel": "Diğer İçerikler",
@@ -157,7 +157,7 @@
     },
     "newsletter": {
       "title": "Bültenimize Abone Olun",
-      "subtitle": "Yeni projeler ve sektörel gelişmelerden haberdar olun.",
+      "subtitle": "Yeni ürünler ve sektörel gelişmelerden haberdar olun.",
       "placeholder": "E-posta adresiniz",
       "subscribe": "Abone Ol",
       "success": "Başarıyla abone oldunuz!",
@@ -165,30 +165,30 @@
     },
     "contact": {
       "title": "Bizimle İletişime Geçin",
-      "subtitle": "Proje fikrinizi, teklif talebinizi veya sorularınızı bize iletin"
+      "subtitle": "Ürün fikrinizi, teklif talebinizi veya sorularınızı bize iletin"
     }
   },
   "projects": {
-    "title": "Projelerimiz",
+    "title": "Ürünlerimiz",
     "description": "Balistik koruma, taktik ekipman, elektronik sistemler ve askeri araç çözümleri için seçilmiş ürün kategorilerimizi inceleyin.",
     "categories": "Kategoriler",
-    "allCategories": "Tüm Projeler",
+    "allCategories": "Tüm Ürünler",
     "results": "sonuç",
     "images": "Fotoğraflar",
-    "emptyStateNote": "Şu anda yayında olan bir proje bulunamadı, geçmiş projelerimizden örnekler listeleniyor.",
-    "search": "Proje Ara...",
-    "noProjects": "Bu kategoride henüz proje bulunmuyor.",
-    "specs": "Proje Detayları",
-    "requestOffer": "Bu Proje Hakkında Bilgi Alın",
+    "emptyStateNote": "Şu anda yayında olan bir ürün bulunamadı, geçmiş ürünlerimizden örnekler listeleniyor.",
+    "search": "Ürün Ara...",
+    "noProjects": "Bu kategoride henüz ürün bulunmuyor.",
+    "specs": "Ürün Detayları",
+    "requestOffer": "Bu Ürün Hakkında Bilgi Alın",
     "manufacturers": "Üreticiler",
-    "saveProject": "Projeyi Kaydet",
-    "viewProject": "Projeyi Görüntüle",
-    "allProjects": "Tüm Projeler",
-    "loveTitle": "Beğeneceğiniz Projeler",
-    "getQuoteTitle": "Projeniz İçin Teklif Alın",
+    "saveProject": "Ürünü Kaydet",
+    "viewProject": "Ürünü Görüntüle",
+    "allProjects": "Tüm Ürünler",
+    "loveTitle": "Beğeneceğiniz Ürünler",
+    "getQuoteTitle": "Talebiniz İçin Teklif Alın",
     "getQuoteDesc": "Ücretsiz keşif ve teklif için hemen iletişime geçin.",
     "filters": {
-      "type": "Proje Tipi",
+      "type": "Ürün Tipi",
       "location": "Lokasyon",
       "city": "Şehir",
       "year": "Yıl",
@@ -204,7 +204,7 @@
       "mixed": "Karma Kullanım",
       "completed": "Tamamlandı",
       "ongoing": "Devam Ediyor",
-      "manufacturer": "Uretici"
+      "manufacturer": "Üretici"
     },
     "detail": {
       "location": "Lokasyon",
@@ -215,7 +215,7 @@
       "client": "İşveren",
       "floors": "Kat Sayısı",
       "units": "Daire/Birim Sayısı",
-      "manufacturer": "Uretici"
+      "manufacturer": "Üretici"
     },
     "comments": {
       "title": "Yorumlar",
@@ -242,32 +242,32 @@
   },
   "services": {
     "title": "Tedarik Hizmetlerimiz",
-    "description": "Stratejik kaynak bulma, ihracat uyumu, kalite kabul ve guvenli kuresel teslimat dahil A’dan Z’ye savunma tedariki.",
-    "viewAll": "Tum Hizmetler",
+    "description": "Stratejik kaynak bulma, ihracat uyumu, kalite kabul ve güvenli küresel teslimat dahil A’dan Z’ye savunma tedariki.",
+    "viewAll": "Tüm Hizmetler",
     "noServices": "Henüz hizmet bulunmuyor.",
     "learnMore": "DETAYLAR",
     "emptyStateNote": "Canlı içerik gelene kadar aşağıda örnek faaliyet açıklamaları gösterilmektedir.",
-    "requestService": "Bu Hizmet Icin Teklif Alin",
+    "requestService": "Bu Hizmet İçin Teklif Alın",
     "items": {
       "residential": "Stratejik Kaynak Bulma",
-      "commercial": "Ihracat Uyumu ve EUC",
-      "restoration": "Kalite Guvencesi",
-      "projectManagement": "Kuresel Lojistik",
+      "commercial": "İhracat Uyumu ve EUC",
+      "restoration": "Kalite Güvencesi",
+      "projectManagement": "Küresel Lojistik",
       "defenseAdvisory": "Savunma Danismanligi",
-      "customProcurement": "Ozel Tedarik"
+      "customProcurement": "Özel Tedarik"
     }
   },
   "gallery": {
     "title": "Galeri",
-    "description": "Sultan Defense tedarik agindan savunma ekipmani, uretici tesisleri ve taktik urun gorselleri.",
+    "description": "Sultan Defense tedarik agindan savunma ekipmanı, üretici tesisleri ve taktik ürün gorselleri.",
     "viewAll": "Tüm Görseller",
     "noGalleries": "Henüz galeri bulunmuyor.",
     "photos": "fotoğraf",
-    "emptyStateNote": "Canlı proje görselleri gelene kadar aşağıda örnek galeri başlıkları gösterilmektedir."
+    "emptyStateNote": "Canlı ürün görselleri gelene kadar aşağıda örnek galeri başlıkları gösterilmektedir."
   },
   "blog": {
     "title": "Haberler",
-    "description": "Savunma sanayi, tedarik surecleri ve Sultan Defense’ten guncel gelismeler.",
+    "description": "Savunma sanayi, tedarik süreçleri ve Sultan Defense’ten güncel gelişmeler.",
     "viewPost": "Haberi Oku",
     "allPosts": "Tüm Haberler",
     "all": "Tümü",
@@ -287,7 +287,7 @@
       "formTitle": "Bu içerik hakkında ne düşünüyorsunuz?",
       "formDescription": "Görüşünüzü, deneyiminizi veya eklemek istediğiniz notu paylaşabilirsiniz.",
       "namePlaceholder": "Ad Soyad",
-      "emailPlaceholder": "ornek@email.com",
+      "emailPlaceholder": "örnek@email.com",
       "commentPlaceholder": "Yorumunuzu yazın...",
       "moderationNote": "Gönderilen yorumlar yayınlanmadan önce kontrol edilir.",
       "submit": "Yorumu Gönder",
@@ -304,11 +304,11 @@
   },
   "contact": {
     "title": "İletişim",
-    "description": "Proje fikriniz, teklif talebiniz veya sorularınız için ekibimizle iletişime geçin; birlikte en uygun çözümü bulalım.",
+    "description": "Ürün fikriniz, teklif talebiniz veya sorularınız için ekibimizle iletişime geçin; birlikte en uygun çözümü bulalım.",
     "form": {
       "title": "Mesaj Gönderin",
       "namePlaceholder": "Adınız Soyadınız",
-      "emailPlaceholder": "ornek@email.com",
+      "emailPlaceholder": "örnek@email.com",
       "phonePlaceholder": "+90 5XX XXX XX XX",
       "companyPlaceholder": "Firma Adı (opsiyonel)",
       "subjectPlaceholder": "Konu",
@@ -327,30 +327,30 @@
     "response": {
       "title": "İletişim Sürecimiz",
       "items": {
-        "one": "Talebinizi inceliyor; proje kapsamı, lokasyon, kullanım amacı ve bütçe beklentilerini netleştiriyoruz.",
-        "two": "Gerekirse proje detayları, teknik şartname veya ek bilgi talep ediyoruz.",
-        "three": "Size özel teklif, fizibilite değerlendirmesi ve proje planını en kısa sürede sunuyoruz."
+        "one": "Talebinizi inceliyor; ürün kapsamı, lokasyon, kullanım amacı ve bütçe beklentilerini netleştiriyoruz.",
+        "two": "Gerekirse ürün detayları, teknik şartname veya ek bilgi talep ediyoruz.",
+        "three": "Size özel teklif, fizibilite değerlendirmesi ve ürün planını en kısa sürede sunuyoruz."
       }
     }
   },
   "offer": {
     "title": "Teklif Talebi",
-    "description": "Proje tipi, lokasyon, alan, bütçe ve termin beklentilerinize göre size özel keşif ve teklif hazırlayalım.",
+    "description": "Ürün tipi, lokasyon, alan, bütçe ve termin beklentilerinize göre size özel keşif ve teklif hazırlayalım.",
     "benefits": {
       "title": "Teklifte Neleri Netleştiriyoruz?",
       "items": {
-        "one": "Ihtiyac: urun ailesi, adet, standartlar ve hedef ulke",
-        "two": "Kapsam: kaynak bulma, ihracat uyumu, kalite kabul ve guvenli teslimat",
-        "three": "Butce araligi, termin, EUC durumu ve teknik dokuman ihtiyaci"
+        "one": "İhtiyaç: ürün ailesi, adet, standartlar ve hedef ulke",
+        "two": "Kapsam: kaynak bulma, ihracat uyumu, kalite kabul ve güvenli teslimat",
+        "three": "Butce araligi, termin, EUC durumu ve teknik doküman ihtiyacı"
       }
     },
     "form": {
       "productInterest": "İlgilenilen Hizmet",
       "quantity": "Alan (m²)",
       "deadline": "Hedef Termin",
-      "details": "Proje Detayları",
-      "detailsPlaceholder": "Projeniz hakkında bize bilgi verin (lokasyon, kullanım amacı, bütçe aralığı vb.)",
-      "attachFile": "Dosya Ekle (ön proje, vaziyet planı, teknik şartname vb.)",
+      "details": "Ürün Detayları",
+      "detailsPlaceholder": "Talebiniz hakkında bize bilgi verin (lokasyon, kullanım amacı, bütçe aralığı vb.)",
+      "attachFile": "Dosya Ekle (ön ürün, vaziyet planı, teknik şartname vb.)",
       "submit": "Teklif İste",
       "success": "Teklif talebiniz alındı. Ekibimiz en kısa sürede sizinle iletişime geçecek.",
       "error": "Talep gönderilemedi. Lütfen tekrar deneyin."
@@ -358,30 +358,30 @@
   },
   "about": {
     "title": "Hakkımızda",
-    "description": "Sultan Defense, savunma ve askeri ekipman tedarikinde kuresel B2B alicilar icin guvenilir ihracat partneridir.",
-    "intro": "1996’dan beri Sultan Defense Ltd., Co.; taktik, lojistik ve teknolojik cozumleri lisansli Turk savunma ureticileriyle eslestirerek tedarik surecini yonetir.",
+    "description": "Sultan Defense, savunma ve askeri ekipman tedarikinde küresel B2B alıcılar için güvenilir ihracat partneridir.",
+    "intro": "1996’dan beri Sultan Defense Ltd., Co.; taktik, lojistik ve teknolojik çözümleri lisanslı Türk savunma üreticileriyle eslestirerek tedarik sürecini yönetir.",
     "sections": {
       "expertiseTitle": "Uzmanlik Alanlarimiz",
       "expertiseItems": {
-        "one": "Balistik koruma, taktik tekstil ve saha lojistigi",
+        "one": "Balistik koruma, taktik tekstil ve saha lojistiği",
         "two": "Muhabere, komuta elektronigi, sensor ve deniz sistemleri",
-        "three": "EUC, ihracat uyumu, kalite kabul ve guvenli teslimat"
+        "three": "EUC, ihracat uyumu, kalite kabul ve güvenli teslimat"
       },
-      "processTitle": "Calisma Modelimiz",
+      "processTitle": "Çalışma Modelimiz",
       "processItems": {
-        "one": "Operasyonel ihtiyaci ve teknik standardi netlestirme",
-        "two": "Dogrulanmis uretici kanallariyla teklif ve belge akisini yonetme",
-        "three": "Kalite kontrol, ihracat uyumu ve lojistigi takip etme"
+        "one": "Operasyonel ihtiyacı ve teknik standardi netlestirme",
+        "two": "Dogrulanmis üretici kanallariyla teklif ve belge akisini yonetme",
+        "three": "Kalite kontrol, ihracat uyumu ve lojistiği takip etme"
       },
       "sectorsTitle": "Odaklandigimiz Bolgeler",
       "sectorsItems": {
-        "one": "Orta Dogu’daki kamu ve guvenlik kurumlari",
-        "two": "Afrika kitasindaki savunma ve lojistik alicilari",
-        "three": "Turk Cumhuriyetleri icin tedarik koordinasyonu"
+        "one": "Orta Doğu’daki kamu ve güvenlik kurumlari",
+        "two": "Afrika kitasindaki savunma ve lojistik alıcıları",
+        "three": "Türk Cumhuriyetleri için tedarik koordinasyonu"
       },
       "stats": {
         "experience": "Yıllık Deneyim",
-        "projects": "Tamamlanan Proje",
+        "projects": "Tamamlanan Ürün",
         "team": "Uzman Kadro"
       }
     }
@@ -389,7 +389,7 @@
   "auth": {
     "loginTitle": "Sultan Defense Hesabiniza Giris Yapin",
     "loginSubtitle": "Taleplerinizi takip edin, tedarik durumunu goruntuleyin ve katalog iceriklerine erisin.",
-    "registerTitle": "Sultan Defense Hesabinizi Olusturun",
+    "registerTitle": "Sultan Defense Hesabinizi Oluşturun",
     "registerSubtitle": "Taleplerinizi takip edin, tedarik durumunu goruntuleyin ve katalog iceriklerine erisin.",
     "continueWithGoogle": "Google ile devam et",
     "orUseEmail": "veya e-posta adresinizi kullanın",
@@ -442,15 +442,15 @@
   "legal": {
     "title": "Yasal",
     "privacy": "Gizlilik Politikası",
-    "privacyDesc": "Sultan Defense ile paylasilan iletisim, teklif ve teknik tedarik verilerinin nasil ele alindigina dair ozet bilgi.",
-    "privacyContent": "<p>Sultan Defense, iletisim ve teklif formlari uzerinden iletilen verileri yalnizca talepleri degerlendirmek, teklif hazirlamak ve tedarik iletisimini surdurmek amaciyla kullanir.</p><p>Gereksiz kisisel veri talep etmeyiz; teknik dokumanlara erisimi ilgili operasyon ekipleriyle sinirli tutariz.</p><p>Veri guncelleme veya silme talepleri icin iletisim sayfasindaki kanallar uzerinden bize ulasabilirsiniz.</p>",
+    "privacyDesc": "Sultan Defense ile paylasilan iletişim, teklif ve teknik tedarik verilerinin nasil ele alindigina dair ozet bilgi.",
+    "privacyContent": "<p>Sultan Defense, iletişim ve teklif formlari uzerinden iletilen verileri yalnızca talepleri değerlendirmek, teklif hazirlamak ve tedarik iletişimini sürdürmek amacıyla kullanir.</p><p>Gereksiz kişisel veri talep etmeyiz; teknik dokümanlara erişimi ilgili operasyon ekipleriyle sınırlı tutarız.</p><p>Veri güncelleme veya silme talepleri için iletişim sayfasindaki kanallar uzerinden bize ulaşabilirsiniz.</p>",
     "terms": "Kullanım Koşulları",
-    "termsDesc": "Sultan Defense web sitesi, teknik katalog icerikleri ve teklif iletisim kanallarinin kullanimina dair genel kosullar.",
-    "termsContent": "<p>Bu sitede yer alan bilgiler genel teknik ve tedarik yönlendirmesi amacıyla sunulur. Nihai ürün kapsamı, malzeme seçimi ve üretim koşulları proje değerlendirme sürecinde netleştirilir.</p><p>Sitedeki görseller, teknik notlar ve açıklamalar tek başına bağlayıcı nihai teklif niteliğinde değildir.</p><p>Teklif, termin ve teslim kapsamındaki taahhütler ancak ihracat ve tedarik sürecinde karşılıklı teyit sonrasında geçerli olur.</p>"
+    "termsDesc": "Sultan Defense web sitesi, teknik katalog icerikleri ve teklif iletişim kanallarinin kullanimina dair genel kosullar.",
+    "termsContent": "<p>Bu sitede yer alan bilgiler genel teknik ve tedarik yönlendirmesi amacıyla sunulur. Nihai ürün kapsamı, malzeme seçimi ve üretim koşulları ürün değerlendirme sürecinde netleştirilir.</p><p>Sitedeki görseller, teknik notlar ve açıklamalar tek başına bağlayıcı nihai teklif niteliğinde değildir.</p><p>Teklif, termin ve teslim kapsamındaki taahhütler ancak ihracat ve tedarik sürecinde karşılıklı teyit sonrasında geçerli olur.</p>"
   },
   "seo": {
     "defaultTitle": "Sultan Defense | A’dan Z’ye Savunma Tedariki ve Taktik Ekipman",
-    "defaultDescription": "Sultan Defense, Orta Dogu, Afrika ve Turk Cumhuriyetleri icin taktik ekipman ve savunma teknolojileri tedarik eden kuresel B2B ihracat partneridir.",
-    "keywords": "savunma tedariki, askeri ekipman, taktik ekipman, balistik koruma, Turk savunma sanayi, ihracat partneri, sultan defense"
+    "defaultDescription": "Sultan Defense, Orta Doğu, Afrika ve Türk Cumhuriyetleri için taktik ekipman ve savunma teknolojileri tedarik eden küresel B2B ihracat partneridir.",
+    "keywords": "savunma tedariki, askeri ekipman, taktik ekipman, balistik koruma, Türk savunma sanayi, ihracat partneri, sultan defense"
   }
 }
