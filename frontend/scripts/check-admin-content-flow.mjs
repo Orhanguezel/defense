@@ -16,7 +16,7 @@ const API_BASE = (process.env.SMOKE_API_BASE_URL || process.env.NEXT_PUBLIC_API_
 const API_ORIGIN = API_BASE.endsWith('/api') ? API_BASE.slice(0, -4) : API_BASE;
 const ADMIN_EMAIL = process.env.SMOKE_ADMIN_EMAIL || process.env.SEED_ADMIN_EMAIL || 'orhanguzell@gmail.com';
 const ADMIN_PASSWORD = process.env.SMOKE_ADMIN_PASSWORD || process.env.SEED_ADMIN_PASSWORD || 'admin123';
-const VISTAINSAAT_CATEGORY_ID = 'cccc0001-4001-4001-8001-cccccccc0001';
+const SD_CATEGORY_ID = 'cccc0001-4001-4001-8001-cccccccc0001';
 
 const created = {
   pageId: null,
@@ -260,7 +260,7 @@ async function createAdminContent() {
           image_url: `${API_ORIGIN}/media/gallery-placeholder.svg`,
           alt: `Admin flow product alt ${ts}`,
           price: 0,
-          category_id: VISTAINSAAT_CATEGORY_ID,
+          category_id: SD_CATEGORY_ID,
           tags: ['admin-flow', 'sultandefense'],
           meta_title: `${productTitle} Meta`,
           meta_description: `Admin flow product meta description ${ts}`,
