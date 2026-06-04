@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(ssh srv1731955 *)",
+      "Bash(git ls-remote *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(grep -vE '^\\\\s*#|^\\\\s*$' __TRACKED_VAR__/backend/.env)"
+    ]
+  }
+}
