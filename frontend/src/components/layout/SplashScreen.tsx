@@ -7,11 +7,11 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
   const [phase, setPhase] = useState<'loading' | 'reveal' | 'exit' | 'done'>('loading');
 
   const finalName = companyName || 'Sultan Defense';
-  const finalTagline = tagline || 'İnşaat & Mimarlık';
+  const finalTagline = tagline || 'Savunma Sanayii';
 
   const startSequence = useCallback(() => {
     // Remove SSR overlay immediately — client splash takes over
-    const ssrOverlay = document.getElementById('vista-splash-ssr');
+    const ssrOverlay = document.getElementById('sultandefense-splash-ssr');
     if (ssrOverlay) ssrOverlay.style.display = 'none';
 
     // Phase 1: Loading (already active on mount)
@@ -21,15 +21,15 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
     // Phase 3: Exit
     const t3 = setTimeout(() => {
       setPhase('done');
-      sessionStorage.setItem('vista_splash_seen', '1');
+      sessionStorage.setItem('sultandefense_splash_seen', '1');
     }, 3800);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
 
   useEffect(() => {
     // Already seen — remove SSR overlay and skip
-    if (sessionStorage.getItem('vista_splash_seen')) {
-      const ssrOverlay = document.getElementById('vista-splash-ssr');
+    if (sessionStorage.getItem('sultandefense_splash_seen')) {
+      const ssrOverlay = document.getElementById('sultandefense-splash-ssr');
       if (ssrOverlay) ssrOverlay.style.display = 'none';
       setPhase('done');
       return;
@@ -362,7 +362,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
 
       {/* Bottom badge */}
       <div className="splash-badge">
-        <span>Est. 2009 — Türkiye</span>
+        <span>Est. 1996 — Türkiye</span>
       </div>
     </div>
   );

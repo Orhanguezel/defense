@@ -188,7 +188,7 @@ export default async function LocaleLayout({
       >
         {/* SSR Splash Screen: inline overlay that hides content until client takes over */}
         <div
-          id="vista-splash-ssr"
+          id="sultandefense-splash-ssr"
           style={{
             position: 'fixed',
             inset: 0,
@@ -204,7 +204,7 @@ export default async function LocaleLayout({
         />
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{if(sessionStorage.getItem('vista_splash_seen')){var el=document.getElementById('vista-splash-ssr');if(el)el.style.display='none'}}catch(e){}})()`
+            __html: `(function(){try{if(sessionStorage.getItem('sultandefense_splash_seen')){var el=document.getElementById('sultandefense-splash-ssr');if(el)el.style.display='none'}}catch(e){}})()`
           }}
         />
         <NextIntlClientProvider locale={locale} messages={messages}>
