@@ -247,7 +247,7 @@ Benim önerim: **Önce Analytics MVP**, paralelde **Logs DB History**. Çünkü 
 
 Devam edebilmem için senden tek bilgiye ihtiyacım var (cevaplamadan da ilerleyebilirim ama en doğrusu bu):
 
-* Backend’de ORM olarak **Drizzle** mı kullanıyorsun (Ensotek backend’de)? ve tabloları nerede tanımlıyorsun (`src/db/schema` gibi)?
+* Backend’de ORM olarak **Drizzle** mı kullanıyorsun (Sultan Defense backend’de)? ve tabloları nerede tanımlıyorsun (`src/db/schema` gibi)?
 
 Eğer “evet drizzle” dersen bir sonraki mesajda doğrudan:
 

@@ -33,7 +33,7 @@ function isAllowed(pathname: string | null): boolean {
   return ALLOWED_PREFIXES.some((prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`));
 }
 
-export function KompozitAdminRouteGate({ children }: { children: React.ReactNode }) {
+export function AdminRouteGate({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
   if (isAllowed(pathname)) {

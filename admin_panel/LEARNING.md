@@ -121,7 +121,7 @@ Bu dosya, Bootstrap 5 tabanlı modüllerin Shadcn UI + Tailwind CSS 4 sistemine 
 | Primary buton | `bg-primary text-primary-foreground` | ✅ |
 | Destructive | `bg-destructive text-destructive-foreground` | ✅ |
 
-### Ensotek Marka Renkleri
+### Sultan Defense Marka Renkleri
 
 ```tsx
 // Marka renkleri için özel tokenlar
@@ -498,4 +498,4 @@ className="w-45 lg:w-50"
 
 **Son Güncelleme:** 2026-02-16
 **Güncelleyen:** Claude Sonnet 4.5
-**Proje:** Ensotek Admin Panel v2.2.0
+**Proje:** Sultan Defense Admin Panel v2.2.0

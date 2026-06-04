@@ -2,7 +2,7 @@ Aşağıdaki metin, projeye **“talimat / emir”** olarak koyabileceğin şeki
 
 ---
 
-# ENSOTEK – DİL (LOCALE) YÖNETİMİ ZORUNLU TALİMATI
+# SULTAN DEFENSE – DİL (LOCALE) YÖNETİMİ ZORUNLU TALİMATI
 
 ## Amaç
 
@@ -77,7 +77,7 @@ Bu talimat, proje genelinde bağlayıcıdır. Dil yönetimi **DB tabanlı ve din
 
 ---
 
-İstersen bir sonraki adımda, Ensotek’te bu kuralı uçtan uca enforce edecek şekilde:
+İstersen bir sonraki adımda, Sultan Defense’te bu kuralı uçtan uca enforce edecek şekilde:
 
 * backend’de `app_locales` okuma + cache (opsiyonel),
 * frontend’de `useListSiteSettings... keys:["app_locales"]` ile “tek kaynak” hook’u,

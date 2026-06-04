@@ -185,12 +185,12 @@ function ListPanel({
 
 /* ----------------------------- main component ----------------------------- */
 
-const VISTA_BRAND = 'sultandefense';
-const VISTA_PREFIX = 'sultandefense__';
+const BRAND_KEY = 'sultandefense';
+const BRAND_PREFIX = 'sultandefense__';
 
 export default function AdminSiteSettingsClient() {
-  const brand = VISTA_BRAND;
-  const brandPrefix = VISTA_PREFIX;
+  const brand = BRAND_KEY;
+  const brandPrefix = BRAND_PREFIX;
   const isScopedBrand = true;
   const appLocalesKey = `${brandPrefix || ''}app_locales`;
   const localeSettingsQ = useListSiteSettingsAdminQuery({

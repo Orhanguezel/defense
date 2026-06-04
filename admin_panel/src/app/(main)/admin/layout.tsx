@@ -19,7 +19,7 @@ import { ThemeSwitcher } from './_components/sidebar/theme-switcher';
 
 import AdminAuthGate from './_components/admin-auth-gate';
 import { AdminSettingsProvider } from './_components/admin-settings-provider';
-import { KompozitAdminRouteGate } from './_components/kompozit-admin-route-gate';
+import { AdminRouteGate } from './_components/admin-route-gate';
 
 export default function Layout({ children }: Readonly<{ children: ReactNode }>) {
   return (
@@ -77,7 +77,7 @@ export default function Layout({ children }: Readonly<{ children: ReactNode }>) 
 
             <div className="flex flex-1 flex-col overflow-hidden">
               <div className="flex-1 min-w-0 overflow-auto p-4 md:p-6">
-                <KompozitAdminRouteGate>{children}</KompozitAdminRouteGate>
+                <AdminRouteGate>{children}</AdminRouteGate>
               </div>
               <AdminFooter />
             </div>
