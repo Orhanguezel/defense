@@ -1,6 +1,6 @@
 -- =============================================================
--- FILE: 305_vistainsaat_pages.seed.sql
--- Sultan Defense — Kurumsal + Yasal custom page içerikleri
+-- FILE: 305_sultandefense_pages.seed.sql
+-- Sultan Defense corporate and legal custom pages
 -- module_key = 'sultandefense_about' | 'sultandefense_legal'
 -- =============================================================
 
@@ -11,24 +11,9 @@ SET FOREIGN_KEY_CHECKS = 0;
 START TRANSACTION;
 
 INSERT INTO `custom_pages`
-(
-  `id`,
-  `module_key`,
-  `is_published`,
-  `featured`,
-  `display_order`,
-  `order_num`,
-  `featured_image`,
-  `featured_image_asset_id`,
-  `image_url`,
-  `storage_asset_id`,
-  `images`,
-  `storage_image_ids`,
-  `category_id`,
-  `sub_category_id`
-)
+(`id`, `module_key`, `is_published`, `featured`, `display_order`, `order_num`, `featured_image`, `featured_image_asset_id`, `image_url`, `storage_asset_id`, `images`, `storage_image_ids`, `category_id`, `sub_category_id`)
 VALUES
-  ('bc010001-5001-4001-9001-cccccccc0001', 'sultandefense_about', 1, 0, 10, 10, '/uploads/projects/vista-insaat-proje-01.jpeg', NULL, '/uploads/projects/vista-insaat-proje-01.jpeg', NULL, '[]', '[]', NULL, NULL),
+  ('bc010001-5001-4001-9001-cccccccc0001', 'sultandefense_about', 1, 0, 10, 10, '/media/sultandefense/about-sultan-defense.jpg', NULL, '/media/sultandefense/about-sultan-defense.jpg', NULL, '[]', '[]', NULL, NULL),
   ('bc010002-5002-4002-9002-cccccccc0002', 'sultandefense_legal', 1, 0, 20, 20, NULL, NULL, NULL, NULL, '[]', '[]', NULL, NULL),
   ('bc010003-5003-4003-9003-cccccccc0003', 'sultandefense_legal', 1, 0, 30, 30, NULL, NULL, NULL, NULL, '[]', '[]', NULL, NULL),
   ('bc010004-5004-4004-9004-cccccccc0004', 'sultandefense_legal', 1, 0, 40, 40, NULL, NULL, NULL, NULL, '[]', '[]', NULL, NULL),
@@ -43,78 +28,67 @@ ON DUPLICATE KEY UPDATE
   `image_url` = VALUES(`image_url`);
 
 INSERT INTO `custom_pages_i18n`
-(
-  `id`,
-  `page_id`,
-  `locale`,
-  `title`,
-  `slug`,
-  `content`,
-  `summary`,
-  `meta_title`,
-  `meta_description`,
-  `tags`
-)
+(`id`, `page_id`, `locale`, `title`, `slug`, `content`, `summary`, `meta_title`, `meta_description`, `tags`)
 VALUES
   (
     'bc020001-6001-4001-a001-cccccccc0001',
     'bc010001-5001-4001-9001-cccccccc0001',
     'tr',
-    'Hakkımızda',
+    'Hakkimizda',
     'about',
-    JSON_OBJECT('html', '<p>Sultan Defense, konut, ticari ve karma kullanımlı yapı projelerinde tasarımdan teslimata kadar kapsamlı inşaat ve mimarlık hizmetleri sunan güvenilir bir çözüm ortağıdır. 15 yılı aşkın sektör deneyimiyle, her projeyi kalite, estetik ve zamanında teslim ilkeleriyle yönetiyoruz.</p><h2>Nasıl Çalışıyoruz?</h2><p>Her projeyi; arazi koşulları, yapısal gereksinimler, bütçe ve termin beklentileri ekseninde değerlendiriyoruz. Fizibilite çalışmasından mimari tasarıma, ruhsat süreçlerinden sahada uygulamaya kadar tüm aşamaları tek çatı altında yönetiyoruz. Şeffaf iletişim ve düzenli ilerleme raporlaması, iş süreçlerimizin temelini oluşturur.</p><h2>Uzmanlık Alanlarımız</h2><ul><li>Konut projeleri: villa, apartman, rezidans ve toplu konut inşaatı</li><li>Ticari projeler: ofis binaları, alışveriş merkezleri ve otel yapıları</li><li>Restorasyon ve güçlendirme: tarihi yapı restorasyonu, depreme karşı bina güçlendirme</li><li>Proje yönetimi: fizibiliteden teslimata profesyonel süreç yönetimi</li><li>Mimari tasarım: 3D modelleme, BIM teknolojisi ve sürdürülebilir tasarım</li><li>İç mimari ve dekorasyon: konut ve ticari mekanlar için özel tasarım çözümleri</li></ul><h2>Değerlerimiz</h2><p>Kalite standartlarına tam uyum, malzeme seçiminden işçiliğe her aşamada titizlik, depreme dayanıklı yapı teknolojileri ve enerji verimli çözümler temel değerlerimizdir. Müşteri memnuniyeti odaklı yaklaşımımızla, her projeyi özenle planlıyor ve uyguluyoruz.</p><h2>Ekibimiz</h2><p>Deneyimli mimar, inşaat mühendisi ve proje yöneticilerinden oluşan kadromuz, her projeye özgün çözümler üretir. Sahada güçlü uygulama ekibimiz ve güvenilir tedarikçi ağımızla projelerinizi zamanında ve eksiksiz teslim ediyoruz.</p><p>Sultan Defense olarak, teknik bilgiyi uygulama disipliniyle birleştiren, müşterileriyle aynı dili konuşan ve sonuç odaklı bir inşaat partneri olmayı hedefliyoruz.</p>'),
-    'Sultan Defense, konut ve ticari projelerde tasarımdan teslimata güvenilir inşaat ve mimarlık hizmetleri sunar.',
-    'Hakkımızda | Sultan Defense',
-    'Sultan Defense hakkında: 15+ yıllık deneyimle konut, ticari ve karma kullanım projelerinde güvenilir inşaat ve mimarlık hizmetleri.',
-    'vista inşaat, hakkımızda, inşaat firması, mimarlık, konut projeleri, ticari inşaat'
+    JSON_OBJECT('html', '<p>1996 yilinda kurulan Sultan Defense Ltd., Co. savunma ve askeri ekipman sektorunde uzmanlasmis kuresel tedarik ve ihracat partneridir. Silahli kuvvetler, kolluk kuvvetleri ve guvenlik kurumlari icin taktik, lojistik ve teknolojik cozumlerin uc uca tedarik surecini yonetir.</p><h2>Neden Sultan Defense?</h2><ul><li>Turkiye savunma sanayisinin lisansli ve nitelikli uretici agina erisim</li><li>Orta Dogu, Afrika ve Turk Cumhuriyetleri odakli lojistik deneyimi</li><li>NATO, AQAP, MIL-STD, NIJ, NSN ve ISO 9001 gibi standartlara uygun urun portfoyu</li><li>EUC, ihracat izni ve mevzuat takibi dahil uyum odakli tedarik sureci</li></ul><p>Sultan Defense uretici degildir; operasyonel ihtiyaci analiz eder, uygun ureticiyle eslestirir, kalite ve sevkiyat surecini koordine eder.</p>'),
+    'Sultan Defense, 1996 yilindan bu yana savunma ekipmani tedariki ve ihracat sureclerinde uzmanlasmis B2B partnerdir.',
+    'Hakkimizda | Sultan Defense',
+    'Sultan Defense hakkinda: 1996dan beri savunma tedariki, taktik ekipman ve ihracat uyumu alaninda kuresel partner.',
+    'sultan defense, savunma tedariki, askeri ekipman, ihracat, turkiye savunma sanayi'
   ),
   (
     'bc020002-6002-4002-a002-cccccccc0002',
     'bc010002-5002-4002-9002-cccccccc0002',
     'tr',
-    'Gizlilik Politikası',
+    'Gizlilik Politikasi',
     'privacy',
-    JSON_OBJECT('html', '<p>Sultan Defense olarak web sitesi üzerinden iletilen kişisel verilerin gizliliğini önemsiyoruz. İletişim ve teklif formlarında paylaşılan bilgiler yalnızca talep yönetimi, geri dönüş sağlama ve müşteri ilişkileri süreçleri için kullanılır.</p><h2>Toplanan Veriler</h2><ul><li>Ad soyad ve firma bilgisi</li><li>E-posta adresi ve telefon numarası</li><li>Talep içeriği, teknik dosya ve ek açıklamalar</li><li>Temel ziyaret ve performans kayıtları</li></ul><h2>Verilerin Kullanımı</h2><p>Toplanan veriler izinsiz üçüncü taraflarla pazarlama amacıyla paylaşılmaz. Yasal yükümlülükler veya açık rıza halleri dışında veri aktarımı yapılmaz.</p><h2>Haklar</h2><p>İlgili kişiler, veri işlenip işlenmediğini öğrenme, düzeltme, silme ve itiraz etme haklarına sahiptir. Taleplerinizi iletişim kanallarımız üzerinden iletebilirsiniz.</p>'),
-    'Sultan Defense kişisel veri işleme ve gizlilik esasları.',
-    'Gizlilik Politikası | Sultan Defense',
-    'Sultan Defense web sitesi gizlilik politikası ve kişisel veri işleme esasları.',
-    'gizlilik politikası, kişisel veri, vista inşaat'
+    JSON_OBJECT('html', '<p>Sultan Defense Ltd., Co. olarak kisisel verilerinizi KVKK ve GDPR ilkelerine uygun sekilde isleriz. Web sitesi, e-posta veya teklif formlari uzerinden paylasilan bilgiler yalnizca kurumsal iletisim, tedarik degerlendirmesi ve teklif surecleri icin kullanilir.</p><h2>Tedarik Modeli ve Veri Paylasimi</h2><p>Sultan Defense dogrudan uretici degil, savunma tedarik partneridir. Dogrulanmis talepler kapsaminda teknik gereksinimleriniz ve ilgili kurumsal bilgileriniz, talebin yerine getirilmesi icin lisansli uretici partnerlerle paylasilabilir.</p><h2>Haklariniz</h2><p>Verilerinize erisim, duzeltme, silme veya isleme itiraz taleplerinizi export@sultandefense.com adresinden iletebilirsiniz.</p>'),
+    'Sultan Defense KVKK/GDPR gizlilik ve B2B tedarik veri isleme esaslari.',
+    'Gizlilik Politikasi | Sultan Defense',
+    'Sultan Defense gizlilik politikasi, KVKK/GDPR uyumu ve tedarik surecinde veri paylasimi.',
+    'gizlilik politikasi, kvkk, gdpr, savunma tedariki'
   ),
   (
     'bc020003-6003-4003-a003-cccccccc0003',
     'bc010003-5003-4003-9003-cccccccc0003',
     'tr',
-    'Kullanım Koşulları',
+    'Kullanim Kosullari',
     'terms',
-    JSON_OBJECT('html', '<p>Bu web sitesini kullanan her ziyaretçi aşağıdaki kullanım koşullarını kabul etmiş sayılır. Sitede yer alan içerik, görsel ve teknik açıklamalar bilgilendirme amacı taşır; nihai teknik şartname yerine geçmez.</p><h2>İçerik Kullanımı</h2><p>Metin, görsel ve marka öğeleri izinsiz olarak kopyalanamaz, çoğaltılamaz veya ticari amaçla kullanılamaz.</p><h2>Sorumluluk Sınırı</h2><p>Web sitesindeki içerik güncel tutulmaya çalışılır; ancak projeye özel teknik doğrulama yapılmadan yalnızca site içeriğine dayanılarak karar verilmemelidir.</p><h2>Bağlantılar</h2><p>Harici bağlantılar bilgi amaçlıdır. Üçüncü taraf içeriklerinden doğacak sorumluluk ilgili yayıncılara aittir.</p>'),
-    'Sultan Defense web sitesi kullanım koşulları ve sorumluluk sınırları.',
-    'Kullanım Koşulları | Sultan Defense',
-    'Sultan Defense web sitesi kullanım koşulları, içerik hakları ve sorumluluk sınırları.',
-    'kullanım koşulları, vista inşaat, web sitesi şartları'
+    JSON_OBJECT('html', '<p>Bu web sitesini kullanarak Sultan Defense kullanim kosullarini kabul etmis sayilirsiniz. Sitedeki urun gorselleri ve teknik aciklamalar bilgilendirme amaclidir; resmi teklif, teknik sartname veya ihracat izni yerine gecmez.</p><h2>Onemli Uyari</h2><p>Sultan Defense global tedarik, ihracat ve satin alma koordinasyonu saglar; listelenen urunlerin dogrudan ureticisi degildir. Tum urunler ihracat kontrolu, son kullanici belgesi ve ilgili mevzuat degerlendirmesine tabidir.</p><h2>Gorsel ve Fikri Haklar</h2><p>Gorseller ilgili uretici, marka sahibi veya lisansli kaynaklara ait olabilir ve kategori kabiliyetini gostermek amaciyla kullanilir.</p>'),
+    'Sultan Defense web sitesi kullanim kosullari ve savunma tedarik sorumluluk sinirlari.',
+    'Kullanim Kosullari | Sultan Defense',
+    'Sultan Defense kullanim kosullari, tedarik modeli, ihracat kontrolu ve gorsel kullanim aciklamalari.',
+    'kullanim kosullari, ihracat kontrolu, euc, savunma'
   ),
   (
     'bc020004-6004-4004-a004-cccccccc0004',
     'bc010004-5004-4004-9004-cccccccc0004',
     'tr',
-    'KVKK Aydınlatma Metni',
+    'KVKK Aydinlatma Metni',
     'kvkk-aydinlatma-metni',
-    JSON_OBJECT('html', '<p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında veri sorumlusu sıfatıyla, Sultan Defense tarafından işlenen kişisel verilere ilişkin aydınlatma bu metin ile yapılmaktadır.</p><h2>İşleme Amaçları</h2><ul><li>Teklif ve iletişim taleplerinin yönetimi</li><li>Satış ve satış sonrası süreçlerin yürütülmesi</li><li>Hizmet kalitesinin geliştirilmesi</li><li>Yasal yükümlülüklerin yerine getirilmesi</li></ul><h2>Toplama Yöntemi</h2><p>Kişisel veriler web formları, e-posta, telefon ve fiziksel evrak üzerinden toplanabilir.</p><h2>Başvuru</h2><p>KVKK kapsamındaki taleplerinizi kayıtlı iletişim kanalları üzerinden yazılı olarak iletebilirsiniz.</p>'),
-    'KVKK kapsamında kişisel veri işleme ve başvuru esasları.',
-    'KVKK Aydınlatma Metni | Sultan Defense',
-    'Sultan Defense KVKK aydınlatma metni, veri işleme amaçları ve başvuru esasları.',
-    'kvkk, aydınlatma metni, kişisel veri'
+    JSON_OBJECT('html', '<p>6698 sayili Kisisel Verilerin Korunmasi Kanunu kapsaminda veri sorumlusu Sultan Defense Ltd., Co.dir. Kisisel veriler teklif ve iletisim taleplerinin yonetimi, uretici partnerlerle teknik uygunluk calismasi, ihracat uyum surecleri ve yasal yukumlulukler amaciyla islenebilir.</p><h2>Toplama Yontemleri</h2><p>Veriler web formlari, e-posta, telefon, kurumsal evrak ve resmi yazismalar uzerinden toplanabilir.</p><h2>Basvuru</h2><p>KVKK kapsamindaki talepleriniz icin export@sultandefense.com adresinden bizimle iletisime gecebilirsiniz.</p>'),
+    'Sultan Defense KVKK aydinlatma metni ve veri isleme esaslari.',
+    'KVKK Aydinlatma Metni | Sultan Defense',
+    'Sultan Defense KVKK aydinlatma metni, veri isleme amaclari ve basvuru kanallari.',
+    'kvkk, aydinlatma metni, kisisel veri'
   ),
   (
     'bc020005-6005-4005-a005-cccccccc0005',
     'bc010005-5005-4005-9005-cccccccc0005',
     'tr',
-    'Çerez Politikası',
+    'Cerez Politikasi',
     'cookies',
-    JSON_OBJECT('html', '<p>Bu web sitesinde kullanıcı deneyimini iyileştirmek, temel performans ölçümleri almak ve teknik sorunları tespit etmek amacıyla çerezler kullanılabilir.</p><h2>Çerez Türleri</h2><ul><li>Zorunlu çerezler</li><li>Tercih çerezleri</li><li>Analitik ve performans çerezleri</li></ul><h2>Yönetim</h2><p>Tarayıcı ayarlarınız üzerinden çerez tercihlerinizi değiştirebilir veya mevcut çerezleri silebilirsiniz. Bazı çerezlerin devre dışı bırakılması site fonksiyonlarını etkileyebilir.</p>'),
-    'Sultan Defense web sitesi çerez kullanımı ve tercih yönetimi bilgileri.',
-    'Çerez Politikası | Sultan Defense',
-    'Sultan Defense web sitesi çerez politikası, çerez türleri ve tercih yönetimi bilgileri.',
-    'çerez politikası, cookies, web sitesi tercihleri'
+    JSON_OBJECT('html', '<p>Sultan Defense web sitesi, temel site fonksiyonlari, dil tercihleri, performans olcumu ve teknik sorunlarin tespiti icin cerezler kullanabilir.</p><h2>Cerez Turleri</h2><ul><li>Zorunlu cerezler</li><li>Tercih cerezleri</li><li>Analitik ve performans cerezleri</li></ul><p>Tarayici ayarlarinizdan cerezleri yonetebilir veya silebilirsiniz.</p>'),
+    'Sultan Defense web sitesi cerez kullanim ve tercih yonetimi bilgileri.',
+    'Cerez Politikasi | Sultan Defense',
+    'Sultan Defense cerez politikasi, cerez turleri ve tarayici tercih yonetimi.',
+    'cerez politikasi, cookies, analitik'
   ),
   (
     'bc020006-6006-4006-a006-cccccccc0006',
@@ -122,11 +96,11 @@ VALUES
     'en',
     'About Us',
     'about',
-    JSON_OBJECT('html', '<p>Vista Construction is a trusted partner offering comprehensive construction and architecture services from design to handover for residential, commercial and mixed-use building projects. With over 15 years of industry experience, we manage every project with quality, aesthetics and on-time delivery principles.</p><h2>How We Work</h2><p>We evaluate each project through site conditions, structural requirements, budget and timeline expectations. We manage all phases under one roof — from feasibility studies to architectural design, from permit processes to on-site execution. Transparent communication and regular progress reporting form the foundation of our workflows.</p><h2>Our Areas of Expertise</h2><ul><li>Residential projects: villas, apartment buildings, residences and mass housing construction</li><li>Commercial projects: office buildings, shopping centers and hotel construction</li><li>Restoration and reinforcement: historical building restoration, earthquake-resistant structural strengthening</li><li>Project management: professional process management from feasibility to handover</li><li>Architectural design: 3D modeling, BIM technology and sustainable design</li><li>Interior design and decoration: custom design solutions for residential and commercial spaces</li></ul><h2>Our Values</h2><p>Full compliance with quality standards, meticulous attention from material selection to workmanship, earthquake-resistant building technologies and energy-efficient solutions are our core values. With our customer-centric approach, we carefully plan and execute every project.</p><h2>Our Team</h2><p>Our team of experienced architects, civil engineers and project managers produces unique solutions for each project. With our strong on-site execution team and reliable supplier network, we deliver your projects on time and in full.</p><p>At Vista Construction, we aim to be a results-oriented construction partner that combines technical knowledge with execution discipline and speaks the same language as our clients.</p>'),
-    'Vista Construction delivers reliable, quality and on-time construction services for residential and commercial projects from design to handover.',
-    'About Us | Vista Construction',
-    'About Vista Construction: reliable construction and architecture services for residential, commercial and mixed-use projects with 15+ years of experience.',
-    'vista construction, about us, construction company, architecture, residential projects, commercial construction'
+    JSON_OBJECT('html', '<p>Established in 1996, Sultan Defense Ltd., Co. is a specialized global supplier and procurement partner in the defense and military sector. We manage end-to-end sourcing of tactical, logistical, and technological solutions for armed forces, law enforcement, and security agencies worldwide.</p><h2>Why Sultan Defense?</h2><ul><li>Access to Turkey''s licensed and qualified defense manufacturer network</li><li>Deep logistics experience across the Middle East, Africa, and Turkic Republics</li><li>Portfolio aligned with NATO, AQAP, MIL-STD, NIJ, NSN, and ISO 9001 where applicable</li><li>Compliance-led procurement including EUC, export permits, and regulatory coordination</li></ul><p>Sultan Defense is not a direct manufacturer. We analyze operational requirements, match them with suitable manufacturers, and coordinate quality, compliance, and shipment workflows.</p>'),
+    'Sultan Defense is a B2B defense procurement and export partner operating since 1996.',
+    'About Us | Sultan Defense',
+    'About Sultan Defense: global defense procurement, tactical equipment sourcing, and export compliance partner since 1996.',
+    'sultan defense, defense procurement, military equipment, export partner, turkish defense industry'
   ),
   (
     'bc020007-6007-4007-a007-cccccccc0007',
@@ -134,23 +108,23 @@ VALUES
     'en',
     'Privacy Policy',
     'privacy',
-    JSON_OBJECT('html', '<p>At Vista Construction, we value the privacy of personal data submitted through this website. Information shared in contact and quotation forms is used only for request handling, response management, and customer communication.</p><h2>Collected Data</h2><ul><li>Name, surname, and company details</li><li>Email address and phone number</li><li>Request content, technical files, and attachments</li><li>Basic visit and performance records</li></ul><h2>Use of Data</h2><p>Collected data is not shared with third parties for marketing purposes without consent. Data transfer occurs only where legally required or explicitly authorized.</p><h2>Rights</h2><p>Data subjects may request access, correction, deletion, or objection regarding their personal data via our communication channels.</p>'),
-    'Vista Construction personal data processing and privacy principles.',
-    'Privacy Policy | Vista Construction',
-    'Read the Vista Construction website privacy policy and personal data processing principles.',
-    'privacy policy, personal data, vista construction'
+    JSON_OBJECT('html', '<p>Sultan Defense Ltd., Co. processes personal data in line with KVKK and GDPR principles. Information submitted through this website, email, or quotation forms is used only for corporate communication, procurement evaluation, and quotation workflows.</p><h2>Supplier Model and Data Sharing</h2><p>Sultan Defense is a defense procurement partner, not a direct manufacturer. For verified inquiries, technical requirements and relevant corporate information may be shared with licensed manufacturing partners to fulfill the request.</p><h2>Your Rights</h2><p>You may request access, correction, deletion, or objection regarding your data via export@sultandefense.com.</p>'),
+    'Sultan Defense privacy principles for KVKK/GDPR and B2B procurement data.',
+    'Privacy Policy | Sultan Defense',
+    'Sultan Defense privacy policy covering KVKK/GDPR compliance and procurement data sharing.',
+    'privacy policy, kvkk, gdpr, defense procurement'
   ),
   (
     'bc020008-6008-4008-a008-cccccccc0008',
     'bc010003-5003-4003-9003-cccccccc0003',
     'en',
-    'Terms of Use',
+    'Terms & Conditions',
     'terms',
-    JSON_OBJECT('html', '<p>By using this website, visitors are deemed to accept the following terms of use. All content, visuals, and technical statements are provided for information purposes and do not replace a project-specific specification.</p><h2>Content Usage</h2><p>Text, visuals, and brand assets may not be copied, reproduced, or commercially used without prior permission.</p><h2>Limitation of Liability</h2><p>Website content is maintained carefully; however, no project decision should be made solely on website information without technical validation.</p><h2>External Links</h2><p>External links are provided for convenience. Responsibility for third-party content belongs to the respective publishers.</p>'),
-    'Vista Construction website terms of use and limitation of liability.',
-    'Terms of Use | Vista Construction',
-    'Vista Construction website terms of use, content rights, and limitation of liability.',
-    'terms of use, website terms, vista construction'
+    JSON_OBJECT('html', '<p>By accessing this website, you agree to these terms and conditions. Product images and technical statements are informational and do not constitute an official quotation, technical specification, or export license.</p><h2>Crucial Notice</h2><p>Sultan Defense operates as a global supplier, export partner, and procurement coordinator. We are not the direct manufacturer of the products listed. All products are subject to export controls, End-User Certificate requirements, and applicable legal review.</p><h2>Media and Intellectual Property</h2><p>Images may belong to their respective manufacturers, brand owners, or licensed sources and are used to represent procurement capabilities.</p>'),
+    'Sultan Defense website terms and defense procurement responsibility limits.',
+    'Terms & Conditions | Sultan Defense',
+    'Sultan Defense terms covering procurement model, export controls, EUC requirements, and media use.',
+    'terms, export control, euc, defense procurement'
   ),
   (
     'bc020009-6009-4009-a009-cccccccc0009',
@@ -158,10 +132,10 @@ VALUES
     'en',
     'PDPL Information Notice',
     'pdpl-information-notice',
-    JSON_OBJECT('html', '<p>In accordance with the Turkish Personal Data Protection Law No. 6698, Vista Construction provides this information notice as the data controller regarding the processing of personal data.</p><h2>Processing Purposes</h2><ul><li>Managing quotation and contact requests</li><li>Running sales and after-sales processes</li><li>Improving service quality</li><li>Fulfilling legal obligations</li></ul><h2>Collection Methods</h2><p>Personal data may be collected through web forms, email, phone, and physical documents.</p><h2>Applications</h2><p>You may submit your requests regarding personal data through our registered communication channels.</p>'),
-    'Information notice for personal data processing under Turkish PDPL.',
-    'PDPL Information Notice | Vista Construction',
-    'Vista Construction PDPL information notice, processing purposes, and application principles.',
+    JSON_OBJECT('html', '<p>Under Turkish Personal Data Protection Law No. 6698, the data controller is Sultan Defense Ltd., Co. Personal data may be processed for managing quotation and contact requests, technical evaluation with manufacturing partners, export compliance workflows, and legal obligations.</p><h2>Collection Methods</h2><p>Data may be collected through web forms, email, phone, corporate documents, and official correspondence.</p><h2>Application</h2><p>You may contact export@sultandefense.com for requests under the PDPL.</p>'),
+    'Sultan Defense PDPL information notice and data processing principles.',
+    'PDPL Information Notice | Sultan Defense',
+    'Sultan Defense PDPL information notice, processing purposes, and application channels.',
     'pdpl, kvkk, personal data notice'
   ),
   (
@@ -170,11 +144,11 @@ VALUES
     'en',
     'Cookie Policy',
     'cookies',
-    JSON_OBJECT('html', '<p>This website may use cookies to improve user experience, collect essential performance metrics, and identify technical issues.</p><h2>Cookie Types</h2><ul><li>Strictly necessary cookies</li><li>Preference cookies</li><li>Analytics and performance cookies</li></ul><h2>Management</h2><p>You may change your cookie preferences or delete stored cookies through your browser settings. Disabling some cookies may affect certain site functions.</p>'),
-    'Vista Construction website cookie usage and preference management information.',
-    'Cookie Policy | Vista Construction',
-    'Vista Construction website cookie policy, cookie types, and preference management information.',
-    'cookie policy, cookies, website preferences'
+    JSON_OBJECT('html', '<p>Sultan Defense may use cookies for essential website functions, language preferences, performance measurement, and technical issue detection.</p><h2>Cookie Types</h2><ul><li>Strictly necessary cookies</li><li>Preference cookies</li><li>Analytics and performance cookies</li></ul><p>You can manage or delete cookies through your browser settings.</p>'),
+    'Sultan Defense website cookie usage and preference management information.',
+    'Cookie Policy | Sultan Defense',
+    'Sultan Defense cookie policy covering cookie types and browser preference management.',
+    'cookie policy, cookies, analytics'
   )
 ON DUPLICATE KEY UPDATE
   `title` = VALUES(`title`),

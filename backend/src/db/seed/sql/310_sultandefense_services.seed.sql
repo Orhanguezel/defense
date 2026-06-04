@@ -1,129 +1,75 @@
 -- =============================================================
--- SEED: Sultan Defense Services (6 hizmet, TR + EN i18n)
+-- FILE: 310_sultandefense_services.seed.sql
+-- Sultan Defense services / procurement process (TR + EN)
 -- =============================================================
 
--- 1) Konut İnşaatı
+SET NAMES utf8mb4;
+SET time_zone = '+00:00';
+SET FOREIGN_KEY_CHECKS = 0;
+
+TRUNCATE TABLE `services_i18n`;
+TRUNCATE TABLE `services`;
+
 INSERT INTO services (id, module_key, is_active, is_featured, display_order, image_url, storage_asset_id)
-VALUES ('sv010001-0001-4001-9001-000000000001', 'sultandefense', 1, 1, 1, '/uploads/services/konut-insaat-hizmeti.jpg', 'sa-svc-0001-0001-0001-000000000001');
-
-INSERT INTO services_i18n (service_id, locale, title, slug, description, content, alt, tags, meta_title, meta_description)
 VALUES
-('sv010001-0001-4001-9001-000000000001', 'tr', 'Konut İnşaatı', 'konut-insaati',
- 'Modern yaşam standartlarına uygun, estetik ve dayanıklı konut projeleri inşa ediyoruz.',
- '<p>Sultan Defense olarak, müstakil konutlardan toplu konut projelerine kadar geniş bir yelpazede hizmet sunuyoruz. Her projemizde depreme dayanıklı yapı teknolojileri, enerji verimli malzemeler ve çağdaş mimari anlayışı bir arada kullanıyoruz. Müşterilerimizin yaşam kalitesini en üst düzeye çıkarmak için detaylara özen gösteriyoruz.</p>',
- 'Sultan Defense konut inşaatı hizmetleri',
- '["konut", "inşaat", "rezidans", "villa"]',
- 'Konut İnşaatı | Sultan Defense',
- 'Sultan Defense ile modern, depreme dayanıklı ve enerji verimli konut projeleri. Müstakil konut, villa ve toplu konut inşaatı hizmetleri.'),
-('sv010001-0001-4001-9001-000000000001', 'en', 'Residential Construction', 'residential-construction',
- 'We build aesthetic and durable residential projects that meet modern living standards.',
- '<p>At Vista Construction, we offer a wide range of services from detached houses to mass housing projects. In every project, we combine earthquake-resistant building technologies, energy-efficient materials, and contemporary architectural understanding. We pay attention to details to maximize our customers'' quality of life.</p>',
- 'Vista Construction residential construction services',
- '["residential", "construction", "villa", "housing"]',
- 'Residential Construction | Vista Construction',
- 'Modern, earthquake-resistant and energy-efficient residential projects with Vista Construction. Detached house, villa and mass housing construction services.');
+  ('sv010001-0001-4001-9001-000000000001', 'sultandefense', 1, 1, 1, '/media/sultandefense/strategic-sourcing.jpg', NULL),
+  ('sv010001-0001-4001-9001-000000000002', 'sultandefense', 1, 1, 2, '/media/sultandefense/export-compliance.jpg', NULL),
+  ('sv010001-0001-4001-9001-000000000003', 'sultandefense', 1, 1, 3, '/media/sultandefense/quality-assurance.jpg', NULL),
+  ('sv010001-0001-4001-9001-000000000004', 'sultandefense', 1, 1, 4, '/media/sultandefense/secure-logistics.jpg', NULL);
 
--- 2) Ticari İnşaat
-INSERT INTO services (id, module_key, is_active, is_featured, display_order, image_url, storage_asset_id)
-VALUES ('sv010001-0001-4001-9001-000000000002', 'sultandefense', 1, 1, 2, '/uploads/services/ticari-insaat-hizmeti.jpg', 'sa-svc-0002-0002-0002-000000000002');
-
-INSERT INTO services_i18n (service_id, locale, title, slug, description, content, alt, tags, meta_title, meta_description)
+INSERT INTO services_i18n
+(service_id, locale, title, slug, description, content, alt, tags, meta_title, meta_description)
 VALUES
-('sv010001-0001-4001-9001-000000000002', 'tr', 'Ticari İnşaat', 'ticari-insaat',
- 'Ofis binaları, alışveriş merkezleri ve endüstriyel tesisler için profesyonel ticari inşaat çözümleri.',
- '<p>Ticari yapılar, iş dünyasının ihtiyaçlarına cevap verecek şekilde tasarlanmalı ve inşa edilmelidir. Sultan Defense, ofis binaları, alışveriş merkezleri, otel projeleri ve endüstriyel tesislerin yapımında uzmanlaşmıştır. Projelerimizde fonksiyonellik, estetik ve sürdürülebilirlik ilkelerini ön planda tutuyoruz.</p>',
- 'Sultan Defense ticari inşaat hizmetleri',
- '["ticari", "ofis", "alışveriş merkezi", "endüstriyel"]',
- 'Ticari İnşaat | Sultan Defense',
- 'Ofis binaları, AVM ve endüstriyel tesis inşaatı. Sultan Defense ile profesyonel ticari inşaat çözümleri.'),
-('sv010001-0001-4001-9001-000000000002', 'en', 'Commercial Construction', 'commercial-construction',
- 'Professional commercial construction solutions for office buildings, shopping centers and industrial facilities.',
- '<p>Commercial buildings must be designed and constructed to meet the needs of the business world. Vista Construction specializes in the construction of office buildings, shopping centers, hotel projects, and industrial facilities. In our projects, we prioritize functionality, aesthetics, and sustainability principles.</p>',
- 'Vista Construction commercial construction services',
- '["commercial", "office", "shopping center", "industrial"]',
- 'Commercial Construction | Vista Construction',
- 'Office buildings, shopping centers and industrial facility construction. Professional commercial construction solutions with Vista Construction.');
+  ('sv010001-0001-4001-9001-000000000001', 'tr', 'Stratejik Kaynak Bulma ve Uretici Koordinasyonu', 'stratejik-kaynak-bulma',
+   'Operasyonel ihtiyaciniza uygun lisansli Turk savunma ureticilerini belirler ve teknik eslestirmeyi yonetiriz.',
+   '<p>Sultan Defense uretici degildir; dogru ureticiye hizli ve guvenilir erisim saglayan tedarik partneridir. Ihtiyacinizi analiz eder, teknik sartlarinizi uygun uretici portfoyuyle eslestirir ve fiyat-performans dengesini koruyarak resmi teklif surecini koordine ederiz.</p>',
+   'Stratejik savunma tedariki', '["savunma tedariki","uretici koordinasyonu","teknik eslestirme"]',
+   'Stratejik Kaynak Bulma | Sultan Defense',
+   'Savunma ekipmani icin lisansli uretici eslestirme ve stratejik kaynak bulma hizmeti.'),
+  ('sv010001-0001-4001-9001-000000000001', 'en', 'Strategic Sourcing & Manufacturer Liaison', 'strategic-sourcing',
+   'We identify licensed Turkish defense manufacturers that match your operational needs and technical specifications.',
+   '<p>Sultan Defense is not a direct manufacturer; we are the procurement partner that provides fast and reliable access to the right manufacturers. We analyze requirements, match technical specifications with qualified production capabilities, and coordinate the official quotation process with a strong price-performance focus.</p>',
+   'Strategic defense sourcing', '["defense procurement","manufacturer liaison","technical matching"]',
+   'Strategic Sourcing | Sultan Defense',
+   'Licensed manufacturer matching and strategic sourcing for defense equipment procurement.'),
 
--- 3) Restorasyon ve Güçlendirme
-INSERT INTO services (id, module_key, is_active, is_featured, display_order, image_url, storage_asset_id)
-VALUES ('sv010001-0001-4001-9001-000000000003', 'sultandefense', 1, 0, 3, '/uploads/services/restorasyon-hizmeti.jpg', 'sa-svc-0003-0003-0003-000000000003');
+  ('sv010001-0001-4001-9001-000000000002', 'tr', 'Ihracat Uyumu ve EUC Yonetimi', 'ihracat-uyumu-euc',
+   'Son kullanici belgesi, ihracat izni ve ilgili mevzuat adimlarini uyum odakli sekilde koordine ederiz.',
+   '<p>Uluslararasi savunma ticareti siki mevzuat ve belge takibi gerektirir. Sultan Defense, End-User Certificate (EUC), Turk makamlarina yonelik ihracat izinleri ve uluslararasi sevkiyat gereklilikleri icin sureci seffaf ve izlenebilir sekilde yonetir.</p>',
+   'Ihracat uyumu ve EUC yonetimi', '["euc","ihracat izni","uyum","savunma ihracati"]',
+   'Ihracat Uyumu ve EUC Yonetimi | Sultan Defense',
+   'Savunma tedarikinde EUC, ihracat izni ve mevzuat uyumu koordinasyonu.'),
+  ('sv010001-0001-4001-9001-000000000002', 'en', 'Export Compliance & EUC Management', 'export-compliance-euc',
+   'We coordinate End-User Certificates, export permits, and regulatory workflows with a compliance-first approach.',
+   '<p>International military trade requires strict documentation and legal review. Sultan Defense manages End-User Certificate (EUC) workflows, Turkish export permit coordination, and shipment compliance requirements with transparency and traceability.</p>',
+   'Export compliance and EUC management', '["euc","export permit","compliance","defense export"]',
+   'Export Compliance & EUC Management | Sultan Defense',
+   'EUC, export permit, and regulatory compliance coordination for defense procurement.'),
 
-INSERT INTO services_i18n (service_id, locale, title, slug, description, content, alt, tags, meta_title, meta_description)
-VALUES
-('sv010001-0001-4001-9001-000000000003', 'tr', 'Restorasyon ve Güçlendirme', 'restorasyon-guclendirme',
- 'Tarihi yapıların restorasyonu ve mevcut binaların depreme karşı güçlendirilmesi hizmetleri.',
- '<p>Kültürel mirasımızın korunması ve mevcut yapıların güvenli hale getirilmesi büyük önem taşımaktadır. Sultan Defense, tarihi eserlerin orijinal dokusunu koruyarak restore edilmesi ve mevcut binaların modern deprem yönetmeliklerine uygun şekilde güçlendirilmesi konularında deneyimli bir ekiple hizmet vermektedir. Karbon fiber, çelik mantolama ve betonarme güçlendirme tekniklerini uyguluyoruz.</p>',
- 'Sultan Defense restorasyon ve güçlendirme hizmetleri',
- '["restorasyon", "güçlendirme", "deprem", "tarihi yapı"]',
- 'Restorasyon ve Güçlendirme | Sultan Defense',
- 'Tarihi yapı restorasyonu ve depreme karşı bina güçlendirme hizmetleri. Sultan Defense ile güvenli ve korunan yapılar.'),
-('sv010001-0001-4001-9001-000000000003', 'en', 'Restoration & Reinforcement', 'restoration-reinforcement',
- 'Historical building restoration and earthquake reinforcement services for existing structures.',
- '<p>Preserving our cultural heritage and making existing structures safe is of great importance. Vista Construction provides services with an experienced team in restoring historical artifacts while preserving their original texture and reinforcing existing buildings in accordance with modern earthquake regulations. We apply carbon fiber, steel jacketing, and reinforced concrete strengthening techniques.</p>',
- 'Vista Construction restoration and reinforcement services',
- '["restoration", "reinforcement", "earthquake", "historical"]',
- 'Restoration & Reinforcement | Vista Construction',
- 'Historical building restoration and earthquake reinforcement services. Safe and preserved structures with Vista Construction.');
+  ('sv010001-0001-4001-9001-000000000003', 'tr', 'Kalite Guvencesi ve Fabrika Kabul', 'kalite-guvencesi-fabrika-kabul',
+   'Sevkiyat oncesi kalite kontrol, uygunluk takibi ve fabrika kabul sureclerini uretici partnerlerle takip ederiz.',
+   '<p>Her tedarik kaleminin operasyonel ihtiyaca uygunlugu kritiktir. Sultan Defense, uretici partnerlerle kalite kontrol (QC), fabrika kabul testleri (FAT), paketleme ve dokumantasyon kontrollerini koordine eder. Uygun urunlerde NATO, AQAP, MIL-STD, NIJ ve ISO 9001 gereksinimleri dikkate alinir.</p>',
+   'Kalite guvencesi ve fabrika kabul', '["kalite kontrol","fat","aqap","mil-std","iso 9001"]',
+   'Kalite Guvencesi ve Fabrika Kabul | Sultan Defense',
+   'Savunma tedarikinde kalite kontrol, FAT ve standart uygunluk takibi.'),
+  ('sv010001-0001-4001-9001-000000000003', 'en', 'Quality Assurance & Factory Acceptance', 'quality-assurance-factory-acceptance',
+   'We coordinate quality control, compliance checks, and factory acceptance workflows before shipment.',
+   '<p>Operational suitability is critical for every procurement item. Sultan Defense coordinates quality control (QC), Factory Acceptance Tests (FAT), packaging, and documentation checks with manufacturing partners. NATO, AQAP, MIL-STD, NIJ, and ISO 9001 requirements are considered where applicable.</p>',
+   'Quality assurance and factory acceptance', '["quality control","fat","aqap","mil-std","iso 9001"]',
+   'Quality Assurance & Factory Acceptance | Sultan Defense',
+   'Quality control, FAT, and standards compliance coordination for defense procurement.'),
 
--- 4) Proje Yönetimi
-INSERT INTO services (id, module_key, is_active, is_featured, display_order, image_url, storage_asset_id)
-VALUES ('sv010001-0001-4001-9001-000000000004', 'sultandefense', 1, 1, 4, '/uploads/services/proje-yonetimi-hizmeti.jpg', 'sa-svc-0004-0004-0004-000000000004');
+  ('sv010001-0001-4001-9001-000000000004', 'tr', 'Kuresel Lojistik ve Guvenli Teslimat', 'kuresel-lojistik-guvenli-teslimat',
+   'Hava, kara veya deniz yolu ile askeri kargo icin guvenli, izlenebilir ve bolgeye uygun sevkiyat planlariz.',
+   '<p>Orta Dogu, Afrika ve Turk Cumhuriyetleri basta olmak uzere zorlu rotalarda savunma ekipmani sevkiyati deneyim gerektirir. Sultan Defense, uygun tasima modu, belge seti, paketleme, sigorta ve teslimat koordinasyonunu tek surecte birlestirir.</p>',
+   'Kuresel lojistik ve guvenli teslimat', '["askeri lojistik","guvenli sevkiyat","hava kargo","deniz kargo"]',
+   'Kuresel Lojistik ve Guvenli Teslimat | Sultan Defense',
+   'Savunma ekipmani icin guvenli hava, kara ve deniz lojistigi koordinasyonu.'),
+  ('sv010001-0001-4001-9001-000000000004', 'en', 'Global Logistics & Secure Delivery', 'global-logistics-secure-delivery',
+   'We plan secure, traceable, region-aware delivery for military cargo by air, land, or sea.',
+   '<p>Defense equipment shipments across the Middle East, Africa, and Turkic Republics require route experience and documentation discipline. Sultan Defense combines transport mode selection, document sets, packaging, insurance, and delivery coordination in one workflow.</p>',
+   'Global logistics and secure delivery', '["military logistics","secure shipment","air freight","sea freight"]',
+   'Global Logistics & Secure Delivery | Sultan Defense',
+   'Secure air, land, and sea logistics coordination for defense equipment procurement.');
 
-INSERT INTO services_i18n (service_id, locale, title, slug, description, content, alt, tags, meta_title, meta_description)
-VALUES
-('sv010001-0001-4001-9001-000000000004', 'tr', 'Proje Yönetimi', 'proje-yonetimi',
- 'İnşaat projelerinizin başından sonuna kadar profesyonel proje yönetimi ve danışmanlık hizmetleri.',
- '<p>Başarılı bir inşaat projesi, etkili bir proje yönetimi gerektirir. Sultan Defense, fizibilite çalışmalarından yapı denetimine, bütçe planlamasından takvim yönetimine kadar tüm süreçlerde profesyonel proje yönetimi hizmeti sunmaktadır. Deneyimli mühendis ve yönetici kadromuzla projelerinizi zamanında ve bütçe dahilinde tamamlıyoruz.</p>',
- 'Sultan Defense proje yönetimi hizmetleri',
- '["proje yönetimi", "danışmanlık", "yapı denetimi", "planlama"]',
- 'Proje Yönetimi | Sultan Defense',
- 'İnşaat proje yönetimi ve danışmanlık hizmetleri. Sultan Defense ile projelerinizi zamanında ve bütçe dahilinde tamamlayın.'),
-('sv010001-0001-4001-9001-000000000004', 'en', 'Project Management', 'project-management',
- 'Professional project management and consulting services from start to finish for your construction projects.',
- '<p>A successful construction project requires effective project management. Vista Construction offers professional project management services in all processes from feasibility studies to building inspection, from budget planning to schedule management. With our experienced team of engineers and managers, we complete your projects on time and within budget.</p>',
- 'Vista Construction project management services',
- '["project management", "consulting", "building inspection", "planning"]',
- 'Project Management | Vista Construction',
- 'Construction project management and consulting services. Complete your projects on time and within budget with Vista Construction.');
-
--- 5) Mimari Tasarım (restorasyon resmini kullan — sonra değiştirilir)
-INSERT INTO services (id, module_key, is_active, is_featured, display_order, image_url, storage_asset_id)
-VALUES ('sv010001-0001-4001-9001-000000000005', 'sultandefense', 1, 0, 5, '/uploads/services/restorasyon-hizmeti.jpg', 'sa-svc-0003-0003-0003-000000000003');
-
-INSERT INTO services_i18n (service_id, locale, title, slug, description, content, alt, tags, meta_title, meta_description)
-VALUES
-('sv010001-0001-4001-9001-000000000005', 'tr', 'Mimari Tasarım', 'mimari-tasarim',
- 'Estetik, fonksiyonel ve sürdürülebilir mimari tasarım çözümleri sunuyoruz.',
- '<p>Sultan Defense mimari tasarım ekibi, her projeye özgün ve yenilikçi çözümler üretmektedir. Konut, ticari ve karma kullanımlı projelerde çağdaş mimari yaklaşımları uygulayarak, hem estetik hem de fonksiyonel mekanlar tasarlıyoruz. 3D modelleme, BIM teknolojisi ve sürdürülebilir tasarım ilkeleri projelerimizin temelini oluşturmaktadır.</p>',
- 'Sultan Defense mimari tasarım hizmetleri',
- '["mimari", "tasarım", "3D modelleme", "BIM"]',
- 'Mimari Tasarım | Sultan Defense',
- 'Estetik ve fonksiyonel mimari tasarım hizmetleri. Sultan Defense ile hayalinizdeki yapıları tasarlayın.'),
-('sv010001-0001-4001-9001-000000000005', 'en', 'Architectural Design', 'architectural-design',
- 'We offer aesthetic, functional, and sustainable architectural design solutions.',
- '<p>Vista Construction''s architectural design team produces unique and innovative solutions for each project. By applying contemporary architectural approaches in residential, commercial, and mixed-use projects, we design spaces that are both aesthetic and functional. 3D modeling, BIM technology, and sustainable design principles form the foundation of our projects.</p>',
- 'Vista Construction architectural design services',
- '["architecture", "design", "3D modeling", "BIM"]',
- 'Architectural Design | Vista Construction',
- 'Aesthetic and functional architectural design services. Design your dream structures with Vista Construction.');
-
--- 6) İç Mimari ve Dekorasyon (konut resmini kullan — sonra değiştirilir)
-INSERT INTO services (id, module_key, is_active, is_featured, display_order, image_url, storage_asset_id)
-VALUES ('sv010001-0001-4001-9001-000000000006', 'sultandefense', 1, 0, 6, '/uploads/services/konut-insaat-hizmeti.jpg', 'sa-svc-0001-0001-0001-000000000001');
-
-INSERT INTO services_i18n (service_id, locale, title, slug, description, content, alt, tags, meta_title, meta_description)
-VALUES
-('sv010001-0001-4001-9001-000000000006', 'tr', 'İç Mimari ve Dekorasyon', 'ic-mimari-dekorasyon',
- 'Yaşam ve çalışma alanlarınız için özel iç mimari tasarım ve dekorasyon hizmetleri.',
- '<p>İç mekan tasarımı, bir yapının ruhunu belirleyen en önemli unsurdur. Sultan Defense iç mimari ekibi, konut ve ticari mekanlarınız için kişiye özel tasarım çözümleri sunmaktadır. Malzeme seçiminden aydınlatma planlamasına, mobilya tasarımından renk paletine kadar tüm detayları titizlikle planlıyor ve uyguluyoruz.</p>',
- 'Sultan Defense iç mimari ve dekorasyon hizmetleri',
- '["iç mimari", "dekorasyon", "tasarım", "mobilya"]',
- 'İç Mimari ve Dekorasyon | Sultan Defense',
- 'Konut ve ticari mekanlar için iç mimari tasarım ve dekorasyon hizmetleri. Sultan Defense ile yaşam alanlarınızı dönüştürün.'),
-('sv010001-0001-4001-9001-000000000006', 'en', 'Interior Design & Decoration', 'interior-design-decoration',
- 'Custom interior design and decoration services for your living and working spaces.',
- '<p>Interior design is the most important element that determines the soul of a building. Vista Construction''s interior design team offers personalized design solutions for your residential and commercial spaces. We meticulously plan and implement all details from material selection to lighting planning, from furniture design to color palette.</p>',
- 'Vista Construction interior design and decoration services',
- '["interior design", "decoration", "design", "furniture"]',
- 'Interior Design & Decoration | Vista Construction',
- 'Interior design and decoration services for residential and commercial spaces. Transform your living spaces with Vista Construction.');
+SET FOREIGN_KEY_CHECKS = 1;
