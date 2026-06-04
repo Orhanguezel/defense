@@ -7,6 +7,9 @@
 **Tarama ozeti (2026-06-04):** `vistainsaat` → 125 dosya · `vista` → 188 · `insaat`/`İnşaat` → ~127
 Dagilim: 35 `.ts`, 30 `.sql` (seed), 29 `.tsx`, 7 `.json`, 6 `.mjs`, 3 `.cjs`, 3 `.production`, 2 `.py`, ...
 
+> 📄 **Site içerik kaynagi (resmi metin):** [`docs/content/`](docs/content/) — tum sayfa metinleri,
+> meta title/description, 10 ürün kategorisi, sirket bilgileri. Seed/locale/page doldururken bunu kullan.
+
 Her madde tamamlaninca `[ ]` → `[x]`. Onceliklendirilmis; **Faz 0 bloke edicidir.**
 
 ---
