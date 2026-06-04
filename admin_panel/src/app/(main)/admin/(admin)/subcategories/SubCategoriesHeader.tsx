@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoriesHeader.tsx
-// Ensotek – SubCategory Header + Filtreler
+// Sultan Defense – SubCategory Header + Filtreler
 // =============================================================
 
 import React from 'react';

@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/shared/footer_sections.types.ts
-// Ensotek – Footer Sections DTO & Payload Types
+// Sultan Defense – Footer Sections DTO & Payload Types
 // =============================================================
 
 import { BoolLike, asStr, toNum } from '@/integrations/shared';

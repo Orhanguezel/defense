@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/products/_components/product-specs-tab.tsx
 // Ürün Teknik Özellikler Tab — Shadcn/UI + RTK Query
-// Ensotek Admin Panel Standartı
+// Sultan Defense Admin Panel Standartı
 // =============================================================
 
 'use client';

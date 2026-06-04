@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/requestLogger.plugin.ts
-// Ensotek – Request Logger Plugin (Fastify onResponse)
+// Sultan Defense – Request Logger Plugin (Fastify onResponse)
 // =============================================================
 
 import type { FastifyPluginAsync } from 'fastify';

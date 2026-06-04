@@ -1,6 +1,6 @@
 // ===================================================================
 // FILE: src/integrations/endpoints/admin/telegram_inbound.endpoints.ts
-// Telegram inbound + auto-reply admin endpoints (Ensotek)
+// Telegram inbound + auto-reply admin endpoints (Sultan Defense)
 // ===================================================================
 
 import { baseApi } from '@/integrations/baseApi';

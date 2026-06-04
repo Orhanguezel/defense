@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/categories/page.tsx
-// Ensotek — Admin Categories Page
+// Sultan Defense — Admin Categories Page
 // =============================================================
 
 import CategoriesPage from './categories';

@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/siteSettings/admin.controller.ts
-// Ensotek – SiteSettings Admin Controller
+// Sultan Defense – SiteSettings Admin Controller
 // + Strict key policy via settingPolicy (coerceLocaleByKey + normalizeValueByKey)
 // + Correct locale fallback read (returns actual row locale)
 // =============================================================

@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/shared/gallery.types.ts
-// Ensotek – Gallery (Galeri) tipleri
+// Sultan Defense – Gallery (Galeri) tipleri
 // Backend: src/modules/gallery/*
 // =============================================================
 

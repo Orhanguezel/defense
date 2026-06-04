@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/metrics.repository.ts
-// Ensotek – Audit Metrics Repository (daily aggregation)
+// Sultan Defense – Audit Metrics Repository (daily aggregation)
 //   - getAuditMetricsDaily
 // =============================================================
 

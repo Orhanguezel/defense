@@ -10,7 +10,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Separator } from '@/components/ui/separator';
 
 const FRONTEND_URL = process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://www.sultandefense.com';
-const REVALIDATE_SECRET = process.env.NEXT_PUBLIC_REVALIDATE_SECRET || 'vista-revalidate-2026';
+const REVALIDATE_SECRET = process.env.NEXT_PUBLIC_REVALIDATE_SECRET || 'sultandefense-revalidate-2026';
 
 async function revalidate(opts: { all?: boolean; path?: string }) {
   const res = await fetch(`${FRONTEND_URL}/api/revalidate`, {

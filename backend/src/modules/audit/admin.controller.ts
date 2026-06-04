@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/admin.controller.ts
-// Ensotek – Audit Admin Controller
+// Sultan Defense – Audit Admin Controller
 // FIX:
 //  - list endpoints always return { items, total }
 //  - daily endpoint always returns { days: [...] }

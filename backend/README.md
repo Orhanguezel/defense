@@ -1,8 +1,8 @@
-# Vista İnşaat Backend
+# Sultan Defense Backend
 
 Fastify + Drizzle ORM + MySQL tabanlı backend API.
 
-Port: `8086`
+Port: `8090`
 
 ## Çalıştırma
 
@@ -15,5 +15,5 @@ bun run dev
 
 ```bash
 bun run build
-bun run db:seed
+bun run db:seed:sultandefense:fresh
 ```

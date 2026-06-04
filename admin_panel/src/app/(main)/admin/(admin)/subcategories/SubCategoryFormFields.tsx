@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoryFormFields.tsx
-// Ensotek – Alt Kategori Form Alanları
+// Sultan Defense – Alt Kategori Form Alanları
 // =============================================================
 
 import React from 'react';

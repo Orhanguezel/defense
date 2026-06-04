@@ -104,10 +104,10 @@ export function normalizeSeo(input: unknown): SeoObject {
   const parsed = seoSchema.safeParse(input);
   const raw = parsed.success ? parsed.data : ({} as SeoObject);
 
-  const titleDefault = cleanStr(raw.title_default) ?? 'Ensotek';
-  const titleTemplate = cleanStr(raw.title_template) ?? '%s | Ensotek';
+  const titleDefault = cleanStr(raw.title_default) ?? 'Sultan Defense';
+  const titleTemplate = cleanStr(raw.title_template) ?? '%s | Sultan Defense';
   const description = cleanStr(raw.description) ?? '';
-  const siteName = cleanStr(raw.site_name) ?? 'Ensotek';
+  const siteName = cleanStr(raw.site_name) ?? 'Sultan Defense';
 
   const og = raw.open_graph ?? {};
   const ogType = (og.type ?? 'website') as 'website' | 'article' | 'product';

@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoryFormPage.tsx
-// Ensotek – Alt Kategori Form Sayfası (Create/Edit + i18n + JSON + Icon)
+// Sultan Defense – Alt Kategori Form Sayfası (Create/Edit + i18n + JSON + Icon)
 // FIXES:
 // - Categories list is locale-dependent (query arg: locale) so it refetches on locale change
 // - Form init updates when initialData changes (not only first mount)

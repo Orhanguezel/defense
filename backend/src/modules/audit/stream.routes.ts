@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/stream.routes.ts
-// Ensotek – Audit Stream Routes (SSE)
+// Sultan Defense – Audit Stream Routes (SSE)
 //   - Mounted under /api/admin
 //   - Final URL:
 //       GET /api/admin/audit/stream

@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/storage/cloudinary.ts
-// Ensotek – Storage Provider (LOCAL + Cloudinary)
+// Sultan Defense – Storage Provider (LOCAL + Cloudinary)
 // -------------------------------------------------------------
 // Amaç: STORAGE_DRIVER (local | cloudinary) + Cloudinary key'leri
 //  - Öncelik: site_settings (runtime) → ENV (fallback)

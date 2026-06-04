@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/category.types.ts
-// Ensotek – Kategori tipleri (DB/DTO + payloadlar)
+// Sultan Defense – Kategori tipleri (DB/DTO + payloadlar)
 // =============================================================
 
 /**

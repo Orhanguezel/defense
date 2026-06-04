@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/endpoints/admin/gallery_admin.endpoints.ts
-// Ensotek – Gallery (admin API) – LOCALE AWARE
+// Sultan Defense – Gallery (admin API) – LOCALE AWARE
 // =============================================================
 
 import { baseApi } from '@/integrations/baseApi';

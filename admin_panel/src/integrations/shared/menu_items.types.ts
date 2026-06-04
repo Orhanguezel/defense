@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/shared/menu_items.types.ts
-// Ensotek – Menu Items shared types (Admin + Public)
+// Sultan Defense – Menu Items shared types (Admin + Public)
 // =============================================================
 import { BoolLike } from '@/integrations/shared';
 

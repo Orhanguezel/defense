@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/analytics.controller.ts
-// Ensotek – Audit Analytics Controller
+// Sultan Defense – Audit Analytics Controller
 //   - 10 route handlers for analytics endpoints
 // =============================================================
 

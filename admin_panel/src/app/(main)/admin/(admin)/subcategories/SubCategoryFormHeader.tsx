@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoryFormHeader.tsx
-// Ensotek – Alt Kategori Form Header (Category pattern)
+// Sultan Defense – Alt Kategori Form Header (Category pattern)
 // =============================================================
 
 import React from 'react';

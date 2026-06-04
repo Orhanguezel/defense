@@ -1094,11 +1094,11 @@ export default function ProductDetailClient({ id, itemType }: Props) {
             <Card>
               <CardHeader>
                 <CardTitle className="text-sm">
-                  {isProject ? 'Proje Özellikleri' : 'Teknik Özellikler'}
+                  {isProject ? 'Katalog Teknik Bilgileri' : 'Teknik Özellikler'}
                 </CardTitle>
                 <CardDescription>
                   {isProject
-                    ? 'Lokasyon, yıl, alan, tip, durum, mimarlar gibi proje bilgilerini ekleyin. Yeni özellik eklemek için "Özellik Ekle" butonunu kullanın.'
+                    ? 'Standartlar, üreticiler, bölgeler, malzemeler ve sertifikalar gibi katalog bilgilerini ekleyin. Yeni özellik eklemek için "Özellik Ekle" butonunu kullanın.'
                     : 'Ürüne ait teknik detayları ekleyin.'}
                 </CardDescription>
               </CardHeader>

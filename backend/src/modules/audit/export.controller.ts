@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/export.controller.ts
-// Ensotek – Audit Export Controller (CSV / JSON)
+// Sultan Defense – Audit Export Controller (CSV / JSON)
 //   - exportRequestLogsAdmin
 //   - exportAuthEventsAdmin
 // =============================================================

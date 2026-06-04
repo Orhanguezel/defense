@@ -59,7 +59,7 @@ export type ProjectMerged = {
   featured_image: string | null;
   featured_image_asset_id: string | null;
 
-  // Ensotek industrial fields
+  // Sultan Defense industrial fields
   category: string | null;
   product_type: string | null;
   location: string | null;

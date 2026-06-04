@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/repository.ts
-// Ensotek – Audit Repository (Drizzle queries)
+// Sultan Defense – Audit Repository (Drizzle queries)
 //   - listAuditRequestLogs (with user enrichment)
 //   - listAuditAuthEvents (with user enrichment)
 //   - getAuditMetricsDaily

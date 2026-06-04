@@ -1,22 +1,22 @@
-# Vista İnşaat Frontend
+# Sultan Defense Frontend
 
-**Vista İnşaat — Kurumsal Web Sitesi**
+**Sultan Defense — Defense Procurement Catalog Site**
 
-Next.js tabanlı kurumsal tanıtım ve teklif toplama platformu.
+Next.js tabanlı savunma tedarik katalog ve teklif toplama platformu.
 
-Domain hedefi: `https://www.vistainsaat.com`
+Domain hedefi: `https://www.sultandefense.com`
 
 ---
 
 ## Workspace Yapısı
 
 ```
-vistainsaat/
+sultandefense.com/
   frontend/           <- bu repo
     src/
       app/[locale]/   <- App Router, tüm rotalar locale altında
-        projeler/     <- proje portföyü (liste + detay)
-        hizmetler/    <- hizmetler (liste + detay)
+        projeler/     <- ürün kategorileri (liste + detay)
+        hizmetler/    <- tedarik hizmetleri (liste + detay)
         galeri/       <- galeri (liste + detay)
         haberler/     <- haberler/blog (liste + detay)
         hakkimizda/   <- hakkımızda
@@ -78,11 +78,11 @@ npm run audit:lighthouse    # Lighthouse CI SEO assertion
 
 Token-first tema yapısı kullanılır.
 
-- Template: `vista-construction`
-- Intent: `premium-editorial-neutral-gold`
+- Template: `sultandefense-imperial-armor`
+- Intent: `imperial-armor-anthracite-gold-bordeaux`
 - Kaynak: `src/styles/globals.css`, `src/theme/templates.ts`
-- Renk paleti: altın/şampanya (#b8a98a), beyaz (#ffffff), antrasit (#1e1c1a)
-- Tipografi: Syne (başlık) + DM Sans (body)
+- Renk paleti: antrasit, titanyum, mat Osmanlı altını ve bordo
+- Tipografi ve tokenlar: `src/styles/globals.css`, `src/theme/templates.ts`
 
 ---
 

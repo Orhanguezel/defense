@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/schema.ts
-// Ensotek – Audit Schema (Drizzle ORM)
+// Sultan Defense – Audit Schema (Drizzle ORM)
 // FIX: LONGTEXT via customType + proper index() usage
 // =============================================================
 

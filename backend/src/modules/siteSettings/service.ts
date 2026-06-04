@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/siteSettings/service.ts
-// Ensotek – SiteSettings Service (FINAL)
+// Sultan Defense – SiteSettings Service (FINAL)
 // Key points:
 //  - Always include '*' in fallback chain (global settings).
 //  - Normalize locales (trim + lower + de-DE -> de candidates).
@@ -48,8 +48,8 @@ const STORAGE_KEYS = [
 const GOOGLE_KEYS = ['google_client_id', 'google_client_secret'] as const;
 
 /**
- * ✅ TELEGRAM KEYS (Ensotek)
- * Base settings + event flags + templates for Ensotek business flows
+ * ✅ TELEGRAM KEYS (Sultan Defense)
+ * Base settings + event flags + templates for Sultan Defense business flows
  */
 const TELEGRAM_KEYS = [
   // Base settings
@@ -63,7 +63,7 @@ const TELEGRAM_KEYS = [
   'telegram_autoreply_mode',
   'telegram_autoreply_template',
 
-  // Event flags - Ensotek specific
+  // Event flags - Sultan Defense specific
   'telegram_event_new_catalog_request_enabled',
   'telegram_event_new_offer_request_enabled',
   'telegram_event_new_contact_enabled',
@@ -71,7 +71,7 @@ const TELEGRAM_KEYS = [
   'telegram_event_ticket_replied_enabled',
   'telegram_event_new_newsletter_subscription_enabled',
 
-  // Event templates - Ensotek specific
+  // Event templates - Sultan Defense specific
   'telegram_template_new_catalog_request',
   'telegram_template_new_offer_request',
   'telegram_template_new_contact',
@@ -103,7 +103,7 @@ export const SITE_MEDIA_KEYS = [
 const GLOBAL_LOCALE = '*' as const;
 
 /**
- * Ensotek için pratik preferred fallback.
+ * Sultan Defense için pratik preferred fallback.
  * İstersen ileride 'de' yaparsın ama default akış için 'de' mantıklı.
  */
 export const PREFERRED_FALLBACK_LOCALE = 'de' as const;
@@ -713,7 +713,7 @@ export async function getCookieConsentConfig(locale?: string | null): Promise<Co
 }
 
 // ---------------------------------------------------------------------------
-// TELEGRAM (Ensotek)
+// TELEGRAM (Sultan Defense)
 // ---------------------------------------------------------------------------
 
 export type TelegramSettings = {

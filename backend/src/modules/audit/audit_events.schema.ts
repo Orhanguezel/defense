@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/audit_events.schema.ts
-// Ensotek – Audit Events Schema (domain/system events)
+// Sultan Defense – Audit Events Schema (domain/system events)
 // FIX: LONGTEXT via customType + proper index()
 // =============================================================
 

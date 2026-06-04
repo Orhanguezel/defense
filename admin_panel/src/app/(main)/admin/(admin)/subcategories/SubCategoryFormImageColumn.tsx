@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoryFormImageColumn.tsx
-// Ensotek – Alt Kategori Görsel/Icon Kolonu
+// Sultan Defense – Alt Kategori Görsel/Icon Kolonu
 // - FIX: Upload sonrası anlık preview render (local state sync + key remount)
 // =============================================================
 

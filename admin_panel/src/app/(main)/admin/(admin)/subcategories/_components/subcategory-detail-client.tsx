@@ -3,7 +3,7 @@
 // Subcategory Detail/Edit Form — Shadcn/UI + RTK Query
 // - Form Tab: tüm alanlar + görsel sidebar
 // - JSON Tab: tüm formData + görsel sidebar
-// Ensotek Admin Panel Standartı
+// Sultan Defense Admin Panel Standartı
 // =============================================================
 
 'use client';

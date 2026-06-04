@@ -1,9 +1,9 @@
-# Vista İnşaat Admin Panel
+# Sultan Defense Admin Panel
 
 Next.js 16 tabanlı içerik yönetim paneli.
 
-Port: `3004`
-API hedefi: Vista İnşaat Backend (`8086`)
+Port: `3041`
+API hedefi: Sultan Defense Backend (`8090`)
 
 ## Çalıştırma
 

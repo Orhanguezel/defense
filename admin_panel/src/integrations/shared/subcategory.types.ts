@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/subcategory.types.ts
-// Ensotek – SubCategory tipleri + normalizasyon helpers
+// Sultan Defense – SubCategory tipleri + normalizasyon helpers
 // =============================================================
 
 export type SubCategoryId = string;

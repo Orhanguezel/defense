@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/endpoints/admin/menu_items_admin.endpoints.ts
-// Ensotek – Admin Menu Items RTK endpoints
+// Sultan Defense – Admin Menu Items RTK endpoints
 // =============================================================
 
 import { baseApi } from '@/integrations/baseApi';

@@ -640,7 +640,7 @@
       },
       "moduleLabels": {
         "blog": "Blog",
-        "sultandefense_blog": "Nachrichten & Ankündigungen",
+        "sultan_news": "Nachrichten & Ankündigungen",
         "sultandefense_about": "Unternehmensseiten",
         "sultandefense_legal": "Rechtliche Dokumente",
         "news": "Nachrichten / Ankündigungen",
@@ -815,8 +815,8 @@
         "marketing": "Marketing",
         "communication": "Kommunikation & CRM",
         "system": "System & Einstellungen",
-        "vista_insaat": "Sultan Defense",
-        "vista_content": "Inhaltsverwaltung"
+        "sultan_catalog": "Sultan Defense",
+        "sultan_content": "Inhaltsverwaltung"
       }
     },
     "dashboard": {
@@ -854,15 +854,15 @@
         "offers": "Angebote",
         "references": "Referenzen",
         "support": "Support-Tickets",
-        "vista_projects": "Projekte",
-        "vista_categories": "Kategorien",
-        "vista_gallery": "Galerie",
-        "vista_offers": "Angebote",
-        "vista_blog": "Blog",
-        "vista_blog_comments": "Blog-Kommentare",
-        "vista_corporate": "Unternehmensseiten",
-        "vista_legal": "Rechtsseiten",
-        "vista_settings": "Site-Einstellungen",
+        "sultan_products": "Projekte",
+        "sultan_categories": "Kategorien",
+        "sultan_gallery": "Galerie",
+        "sultan_offers": "Angebote",
+        "sultan_news": "Blog",
+        "sultan_news_comments": "Blog-Kommentare",
+        "sultan_corporate": "Unternehmensseiten",
+        "sultan_legal": "Rechtsseiten",
+        "sultan_settings": "Site-Einstellungen",
         "gallery": "Galerie",
         "cache": "Cache-Verwaltung"
       },

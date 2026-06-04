@@ -99,20 +99,20 @@ export type AdminNavItemKey =
   | 'chat'
   | 'references'
 
-  | 'vista_projects'
-  | 'vista_categories'
-  | 'vista_gallery'
-  | 'vista_offers'
-  | 'vista_blog'
-  | 'vista_blog_comments'
-  | 'vista_corporate'
-  | 'vista_legal'
-  | 'vista_settings'
+  | 'sultan_products'
+  | 'sultan_categories'
+  | 'sultan_gallery'
+  | 'sultan_offers'
+  | 'sultan_news'
+  | 'sultan_news_comments'
+  | 'sultan_corporate'
+  | 'sultan_legal'
+  | 'sultan_settings'
   | 'newsletter'
   | 'email_templates'
   | 'cache';
 
-export type AdminNavGroupKey = 'general' | 'content' | 'vista_insaat' | 'vista_content' | 'marketing' | 'communication' | 'system';
+export type AdminNavGroupKey = 'general' | 'content' | 'sultan_catalog' | 'sultan_content' | 'marketing' | 'communication' | 'system';
 
 export type AdminNavConfigItem = {
   key: AdminNavItemKey;
@@ -134,25 +134,25 @@ export const adminNavConfig: AdminNavConfigGroup[] = [
   },
   {
     id: 2,
-    key: 'vista_insaat',
+    key: 'sultan_catalog',
     items: [
-      { key: 'vista_projects', url: '/admin/products?type=sultandefense', icon: Layers },
-      { key: 'vista_categories', url: '/admin/categories?module=sultandefense', icon: Folders },
-      { key: 'vista_gallery', url: '/admin/gallery', icon: Images },
+      { key: 'sultan_products', url: '/admin/products?type=sultandefense', icon: Layers },
+      { key: 'sultan_categories', url: '/admin/categories?module=sultandefense', icon: Folders },
+      { key: 'sultan_gallery', url: '/admin/gallery', icon: Images },
       { key: 'services', url: '/admin/services', icon: Briefcase },
       { key: 'references', url: '/admin/references', icon: Award },
-      { key: 'vista_offers', url: '/admin/offer?module=sultandefense', icon: DollarSign },
+      { key: 'sultan_offers', url: '/admin/offer?module=sultandefense', icon: DollarSign },
       { key: 'contacts', url: '/admin/contacts', icon: Contact2 },
     ],
   },
   {
     id: 4,
-    key: 'vista_content',
+    key: 'sultan_content',
     items: [
-      { key: 'vista_blog', url: '/admin/custompage?module=sultandefense_blog', icon: Newspaper },
-      { key: 'vista_blog_comments', url: '/admin/comments', icon: MessageSquare },
-      { key: 'vista_corporate', url: '/admin/custompage?module=sultandefense_about', icon: FileText },
-      { key: 'vista_legal', url: '/admin/custompage?module=sultandefense_legal', icon: FileSearch },
+      { key: 'sultan_news', url: '/admin/custompage?module=sultandefense_blog', icon: Newspaper },
+      { key: 'sultan_news_comments', url: '/admin/comments', icon: MessageSquare },
+      { key: 'sultan_corporate', url: '/admin/custompage?module=sultandefense_about', icon: FileText },
+      { key: 'sultan_legal', url: '/admin/custompage?module=sultandefense_legal', icon: FileSearch },
     ],
   },
   {
@@ -165,7 +165,7 @@ export const adminNavConfig: AdminNavConfigGroup[] = [
       { key: 'storage', url: '/admin/storage', icon: HardDrive },
       { key: 'audit', url: '/admin/audit', icon: FileSearch },
       { key: 'cache', url: '/admin/cache', icon: RefreshCcw },
-      { key: 'vista_settings', url: '/admin/site-settings', icon: Settings },
+      { key: 'sultan_settings', url: '/admin/site-settings', icon: Settings },
     ],
   },
   {
@@ -214,15 +214,15 @@ const FALLBACK_TITLES: Record<AdminNavItemKey, string> = {
   chat: 'Chat & AI',
   references: 'References',
 
-  vista_projects: 'Projeler',
-  vista_categories: 'Kategoriler',
-  vista_gallery: 'Galeri',
-  vista_offers: 'Teklifler',
-  vista_blog: 'Haberler',
-  vista_blog_comments: 'Haber Yorumları',
-  vista_corporate: 'Kurumsal Sayfalar',
-  vista_legal: 'Yasal Sayfalar',
-  vista_settings: 'Site Ayarları',
+  sultan_products: 'Ürünler',
+  sultan_categories: 'Kategoriler',
+  sultan_gallery: 'Galeri',
+  sultan_offers: 'Teklifler',
+  sultan_news: 'Haberler',
+  sultan_news_comments: 'Haber Yorumları',
+  sultan_corporate: 'Kurumsal Sayfalar',
+  sultan_legal: 'Yasal Sayfalar',
+  sultan_settings: 'Site Ayarları',
   newsletter: 'Bülten Aboneleri',
   cache: 'Cache Yönetimi',
 };

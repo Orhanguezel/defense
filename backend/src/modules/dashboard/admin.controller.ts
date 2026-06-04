@@ -1,6 +1,6 @@
 // ===================================================================
 // FILE: src/modules/dashboard/admin.controller.ts
-// Ensotek – Admin Dashboard Summary Controller
+// Sultan Defense – Admin Dashboard Summary Controller
 // ===================================================================
 
 import type { RouteHandler } from "fastify";

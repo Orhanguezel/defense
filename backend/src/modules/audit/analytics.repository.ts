@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/analytics.repository.ts
-// Ensotek – Audit Analytics Repository
+// Sultan Defense – Audit Analytics Repository
 //   - getTopEndpoints
 //   - getSlowestEndpoints
 //   - getTopUsers

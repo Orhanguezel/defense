@@ -213,7 +213,7 @@ function SimpleSeoForm({
             value={v.keywords}
             onChange={(e) => set({ keywords: e.target.value })}
             disabled={disabled}
-            placeholder="inşaat, mimarlık, proje yönetimi, anahtar teslim"
+            placeholder="savunma tedarik, taktik ekipman, balistik koruma, ihracat uyumu"
           />
           <p className="text-xs text-muted-foreground">Virgülle ayırın</p>
         </div>

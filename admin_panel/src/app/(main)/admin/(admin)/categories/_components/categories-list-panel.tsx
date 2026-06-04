@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/categories/components/CategoriesListPanel.tsx
 // Categories List Panel — Header + Filters + Table/Cards
-// Ensotek
+// Sultan Defense
 // =============================================================
 
 'use client';

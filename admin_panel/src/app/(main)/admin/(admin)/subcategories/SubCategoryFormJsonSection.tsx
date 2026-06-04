@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoryFormJsonSection.tsx
-// Ensotek – Alt Kategori JSON Editör Bölümü
+// Sultan Defense – Alt Kategori JSON Editör Bölümü
 // =============================================================
 
 import React, { useEffect, useState } from "react";

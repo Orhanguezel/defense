@@ -48,17 +48,16 @@ import type { AdminProductDto, ProductItemType } from '@/integrations/shared/pro
 
 const isTruthy = (v: unknown) => v === 1 || v === true || v === '1' || v === 'true';
 
-/* ── Spec-based filter dimensions (same as frontend ProjectsView) ── */
+/* ── Spec-based filter dimensions (same as frontend product catalog) ── */
 const SPEC_FILTER_KEYS = [
   { key: 'tip', label: { tr: 'Tip', en: 'Type', de: 'Typ' } },
-  { key: 'lokasyon', label: { tr: 'Lokasyon', en: 'Location', de: 'Standort' } },
+  { key: 'standartlar', label: { tr: 'Standartlar', en: 'Standards', de: 'Standards' } },
   { key: 'durum', label: { tr: 'Durum', en: 'Status', de: 'Status' } },
   { key: 'yıl', label: { tr: 'Yıl', en: 'Year', de: 'Jahr' } },
-  { key: 'mimarlar', label: { tr: 'Mimarlar', en: 'Architects', de: 'Architekten' } },
-  { key: 'alan', label: { tr: 'Alan', en: 'Area', de: 'Fläche' } },
-  { key: 'kat', label: { tr: 'Kat', en: 'Floors', de: 'Stockwerke' } },
-  { key: 'malzeme', label: { tr: 'Malzeme', en: 'Materials', de: 'Materialien' } },
-  { key: 'isveren', label: { tr: 'İşveren', en: 'Client', de: 'Auftraggeber' } },
+  { key: 'üreticiler', label: { tr: 'Üreticiler', en: 'Manufacturers', de: 'Hersteller' } },
+  { key: 'bölgeler', label: { tr: 'Bölgeler', en: 'Regions', de: 'Regionen' } },
+  { key: 'malzemeler', label: { tr: 'Malzemeler', en: 'Materials', de: 'Materialien' } },
+  { key: 'sertifikalar', label: { tr: 'Sertifikalar', en: 'Certifications', de: 'Zertifizierungen' } },
 ] as const;
 
 function extractSpecValues(items: AdminProductDto[], specKey: string): string[] {

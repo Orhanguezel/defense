@@ -643,7 +643,7 @@
       },
       "moduleLabels": {
         "blog": "Blog",
-        "sultandefense_blog": "Haberler & Duyurular",
+        "sultan_news": "Haberler & Duyurular",
         "sultandefense_about": "Kurumsal Sayfalar",
         "sultandefense_legal": "Yasal Belgeler",
         "news": "Haber / Duyuru",
@@ -818,8 +818,8 @@
         "marketing": "Pazarlama",
         "communication": "İletişim & CRM",
         "system": "Sistem & Ayarlar",
-        "vista_insaat": "Sultan Defense",
-        "vista_content": "İçerik Yönetimi"
+        "sultan_catalog": "Sultan Defense",
+        "sultan_content": "İçerik Yönetimi"
       }
     },
     "dashboard": {
@@ -857,16 +857,15 @@
         "offers": "Teklifler",
         "references": "Referanslar",
         "support": "Destek Talepleri",
-        "vista_projects": "Projeler",
-        "vista_categories": "Kategoriler",
-        "vista_gallery": "Galeri",
-        "vista_offers": "Teklifler",
-        "sultandefense_blog": "Haberler & Duyurular",
-        "vista_blog_comments": "Blog Yorumları",
-        "vista_corporate": "Kurumsal Sayfalar",
-        "vista_legal": "Yasal Sayfalar",
-        "vista_settings": "Site Ayarları",
-        "vista_blog": "Haberler / Blog",
+        "sultan_products": "Projeler",
+        "sultan_categories": "Kategoriler",
+        "sultan_gallery": "Galeri",
+        "sultan_offers": "Teklifler",
+        "sultan_news": "Haberler / Blog",
+        "sultan_news_comments": "Blog Yorumları",
+        "sultan_corporate": "Kurumsal Sayfalar",
+        "sultan_legal": "Yasal Sayfalar",
+        "sultan_settings": "Site Ayarları",
         "gallery": "Galeri",
         "cache": "Cache Yönetimi"
       },
@@ -1246,9 +1245,9 @@
         "projectType": "Proje Tipi",
         "estimatedArea": "Tahmini Alan (m²)",
         "preferredDeadline": "Teslim Tarihi",
-        "constructionType": "İnşaat Tipi",
-        "constructionStartDate": "İnşaat Başlangıç Tarihi",
-        "constructionEndDate": "İnşaat Bitiş Tarihi"
+        "procurementScope": "Tedarik Kapsamı",
+        "expectedDeliveryStart": "Planlanan Teslim Başlangıcı",
+        "expectedDeliveryEnd": "Planlanan Teslim Bitişi"
       },
       "actions": {
         "refresh": "Yenile",

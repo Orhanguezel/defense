@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/siteSettings/settingPolicy.ts
-// Ensotek – Key policy + value normalization/validation
+// Sultan Defense – Key policy + value normalization/validation
 // SEO strict validation uses seo.validation.ts (single source)
 // =============================================================
 
@@ -15,7 +15,7 @@ import { STRICT_SEO_KEYS, validateSeoSettingValue, assertSeoLocaleRule } from '.
  *    - site_meta_default: locale '*' yasak (per-locale zorunlu)
  * - default: mevcut davranış (locale yoksa all-locales)
  *
- * Not: Ensotek analytics yaklaşımı:
+ * Not: Sultan Defense analytics yaklaşımı:
  *  - gtm_container_id: global
  *  - ga4_measurement_id: global (GTM yoksa fallback)
  *  - cookie_consent: global config

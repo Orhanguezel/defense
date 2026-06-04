@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/siteSettings/seo.validation.ts
-// Ensotek – SEO strict Zod schemas (backend)
+// Sultan Defense – SEO strict Zod schemas (backend)
 // SINGLE SOURCE: open_graph.images[]
 // Back-compat: if open_graph.image exists, normalize to images[0]
 // =============================================================

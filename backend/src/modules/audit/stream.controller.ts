@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/stream.controller.ts
-// Ensotek – Audit Realtime Stream Controller (SSE)
+// Sultan Defense – Audit Realtime Stream Controller (SSE)
 //   - handleAuditStreamSse()
 //   - bus subscribe + persist + broadcast
 // =============================================================

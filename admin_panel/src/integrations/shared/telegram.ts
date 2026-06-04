@@ -1,9 +1,9 @@
 // ===================================================================
 // FILE: src/integrations/shared/telegram.ts
-// Telegram Admin API types (Ensotek)
+// Telegram Admin API types (Sultan Defense)
 // ===================================================================
 
-/** Telegram event types for Ensotek */
+/** Telegram event types for Sultan Defense */
 export type TelegramEventType =
   | 'new_contact'
   | 'new_catalog_request'

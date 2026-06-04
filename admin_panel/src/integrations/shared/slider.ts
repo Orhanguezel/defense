@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/slider.types.ts
-// Ensotek – Slider tipleri + normalizer'lar
+// Sultan Defense – Slider tipleri + normalizer'lar
 // Parent + i18n (slider + slider_i18n) backend ile uyumlu
 // =============================================================
 

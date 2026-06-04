@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/subcategories/_components/subcategories-list-panel.tsx
 // Subcategories List Panel — Shadcn/UI + RTK Query
-// Ensotek Admin Panel Standartı
+// Sultan Defense Admin Panel Standartı
 // =============================================================
 
 'use client';

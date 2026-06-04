@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/audit.types.ts
-// Ensotek – Audit Types (Frontend DTO + Query Params)
+// Sultan Defense – Audit Types (Frontend DTO + Query Params)
 // =============================================================
 
 import type { BoolLike } from '@/integrations/shared/common';

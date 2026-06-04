@@ -3,8 +3,8 @@
 ## Pre-Submit
 
 1. Production domain property dogrulanmis olmali.
-2. `https://www.vistainsaat.com/robots.txt` acik olmali.
-3. `https://www.vistainsaat.com/sitemap.xml` 200 donmeli.
+2. `https://www.sultandefense.com/robots.txt` acik olmali.
+3. `https://www.sultandefense.com/sitemap.xml` 200 donmeli.
 4. Canonical ve hreflang kontrolleri tamamlanmis olmali.
 5. En az bir product, blog ve gallery detail URL'i manuel test edilmis olmali.
 

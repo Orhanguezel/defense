@@ -11,7 +11,7 @@ module.exports = {
         'http://127.0.0.1:3122/tr/galeri',
         'http://127.0.0.1:3122/tr/iletisim',
       ],
-      startServerCommand: 'node scripts/prepare-standalone.mjs && PORT=3122 HOSTNAME=127.0.0.1 node .next/standalone/vistainsaat/server.js',
+      startServerCommand: 'node scripts/prepare-standalone.mjs && PORT=3122 HOSTNAME=127.0.0.1 node .next/standalone/sultandefense/server.js',
       startServerReadyPattern: 'Ready in',
       numberOfRuns: 2,
       settings: {

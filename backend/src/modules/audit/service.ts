@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/service.ts
-// Ensotek – Audit Service
+// Sultan Defense – Audit Service
 //   - shouldSkipAuditLog()
 //   - writeRequestAuditLog()
 //   - sanitizeRequestBody()

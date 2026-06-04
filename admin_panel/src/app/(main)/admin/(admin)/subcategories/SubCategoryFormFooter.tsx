@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/components/admin/subcategories/SubCategoryFormFooter.tsx
-// Ensotek – Alt Kategori Form Footer (Butonlar)
+// Sultan Defense – Alt Kategori Form Footer (Butonlar)
 // =============================================================
 
 import React from 'react';

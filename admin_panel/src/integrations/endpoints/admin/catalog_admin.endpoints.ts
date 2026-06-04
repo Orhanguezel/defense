@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/rtk/endpoints/admin/catalog_admin.endpoints.ts
-// Ensotek – Admin Catalog Requests (RTK Query)
+// Sultan Defense – Admin Catalog Requests (RTK Query)
 // =============================================================
 
 import { baseApi } from '@/integrations/baseApi';

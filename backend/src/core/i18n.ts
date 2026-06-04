@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/core/i18n.ts
-// Ensotek – Dynamic i18n core (LOCALES runtime from site_settings)
+// Sultan Defense – Dynamic i18n core (LOCALES runtime from site_settings)
 //  - app_locales locale='*' priority
 //  - supports object[] [{code,label,is_active,is_default}, ...]
 //  - supports string[] and CSV and JSON string

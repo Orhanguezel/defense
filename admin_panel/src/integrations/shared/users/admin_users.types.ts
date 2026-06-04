@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/integrations/types/admin_users.types.ts
-// Ensotek – Admin Users tipleri
+// Sultan Defense – Admin Users tipleri
 // =============================================================
 
 import type { UserRoleName } from '@/integrations/shared';

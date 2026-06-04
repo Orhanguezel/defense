@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/audit/admin.routes.ts
-// Ensotek – Audit Admin Routes (Viewer + Analytics + Export)
+// Sultan Defense – Audit Admin Routes (Viewer + Analytics + Export)
 //   - Mounted under /api/admin
 //   - Final URLs:
 //       GET /api/admin/audit/request-logs
