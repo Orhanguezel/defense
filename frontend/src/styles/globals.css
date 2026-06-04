@@ -5,8 +5,8 @@
    KATMAN 1: Primitive Tokenlar
    Template: sultandefense-imperial-armor
    Intent:   imperial-armor (antrasit + mat altin + bordo)
-   NOT: primitive olcek isimleri (--cyan-*/--navy-*) legacy; degerler İmparatorluk Zırhı.
-        --cyan-* = MAT ALTIN olcegi, --navy-* = ANTRASIT/TITANYUM notr olcek.
+   NOT: primitive olcek isimleri (cyan / navy) legacy; degerler İmparatorluk Zırhı.
+        cyan olcek = MAT ALTIN, navy olcek = ANTRASIT / TITANYUM notr.
    ───────────────────────────────────────────── */
 
 :root,
