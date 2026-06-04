@@ -85,11 +85,13 @@ seed **icerik** doldurma (defans), locale icerikleri (19 dil), nginx conf, Faz 6
 - [ ] `src/features/projects/products.service.ts` + ürün/proje bilesenleri, SEO meta/JSON-LD (Organization)
 - [ ] `carbon-fiber.jpg` (frontend kokunde) + diger kompozit/insaat artiklari sil
 
-## Faz 6 — Deploy / Altyapi **(Claude)**
-- [x] nginx prod config → [`deploy/nginx/sultandefense.conf`](deploy/nginx/sultandefense.conf)
-      (frontend 3040 + backend 8090 + admin.sultandefense.com 3041, origin cert, `nginx -t` ok)
-- [ ] Sunucu `187.77.79.59`: configi /etc/nginx/sites-enabled'a al, MySQL+seed, PM2 x3, `pm2 save`
-- [ ] Cloudflare alt domain (`admin.`) DNS + SSL (Full strict icin Origin CA cert)
+## Faz 6 — Deploy / Altyapi **(Claude)** ✅ CANLI (2026-06-05)
+- [x] nginx prod config `deploy/nginx/sultandefense.conf` (3040/8090/admin 3041, origin cert)
+- [x] Sunucu `187.77.79.59`: Node20/Bun/PM2/MariaDB kuruldu, DB+seed (58 tablo), PM2 x3 + `pm2 save`/startup
+- [x] nginx cutover (coming-soon → app config), **https://sultandefense.com CANLI**, admin.sultandefense.com 200
+- [x] Cloudflare `admin.` DNS + SSL Full (origin self-signed cert)
+- [ ] Full **strict** icin Origin CA cert (opsiyonel sertlestirme)
+- [ ] Gercek secret'lar (Cloudinary/Google/SMTP/reCAPTCHA) — su an bos/kapali (mail/upload/AI devre disi)
 
 ## Faz 7 — Temizlik / Final **(Claude)** ✅ esasen TAMAMLANDI
 - [x] Kok ic `sultandefense.com/` ürün gorsel klasoru → `docs/product-images/` (SAVRONIK dahil)
