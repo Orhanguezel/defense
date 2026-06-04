@@ -301,8 +301,8 @@ VALUES
   '*',
   CAST(
     JSON_OBJECT(
-      'url','/logo/sultandefense-logo-light.svg',
-      'dark_url','/logo/sultandefense-logo-dark.svg',
+      'url','/logo/sultandefense-logo-dark.png',
+      'dark_url','/logo/sultandefense-logo-dark.png',
       'width',160,
       'height',60,
       'alt','Sultan Defense Logo'
@@ -317,7 +317,7 @@ VALUES
   '*',
   CAST(
     JSON_OBJECT(
-      'url','/logo/sultandefense-logo-dark.svg',
+      'url','/logo/sultandefense-logo-dark.png',
       'width',160,
       'height',60,
       'alt','Sultan Defense Logo (Dark)'
@@ -332,7 +332,7 @@ VALUES
   '*',
   CAST(
     JSON_OBJECT(
-      'url','/logo/sultandefense-logo-light.svg',
+      'url','/logo/sultandefense-logo-dark.png',
       'width',160,
       'height',60,
       'alt','Sultan Defense Logo (Light)'

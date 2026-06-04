@@ -62,10 +62,10 @@ VALUES (
   'sultandefense__logo',
   '*',
   JSON_OBJECT(
-    'logo_url', '/logo/sultandefense-logo-light.svg',
+    'logo_url', '/logo/sultandefense-logo-dark.png',
     'logo_alt', 'Sultan Defense',
     'favicon_url', '/favicon.ico',
-    'logo_dark_url', '/logo/sultandefense-logo-dark.svg'
+    'logo_dark_url', '/logo/sultandefense-logo-dark.png'
   ),
   NOW(3), NOW(3)
 )
@@ -77,9 +77,9 @@ VALUES (
   'sultandefense__site_logo',
   '*',
   JSON_OBJECT(
-    'logo_url', '/logo/sultandefense-logo-light.svg',
+    'logo_url', '/logo/sultandefense-logo-dark.png',
     'logo_alt', 'Sultan Defense',
-    'logo_dark_url', '/logo/sultandefense-logo-dark.svg',
+    'logo_dark_url', '/logo/sultandefense-logo-dark.png',
     'favicon_url', '/favicon.ico',
     'apple_touch_icon_url', '/apple-icon.png'
   ),
