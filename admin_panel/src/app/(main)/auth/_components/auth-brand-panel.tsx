@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useGetSiteSettingByKeyQuery } from '@/integrations/hooks';
 
-const LOGO_FALLBACK = '/logo/sultandefense-logo-light.svg';
+const LOGO_FALLBACK = '/logo/sultandefense-logo-dark.png';
 
 type Props = {
   heading: string;
@@ -40,9 +40,9 @@ export function AuthBrandPanel({ heading, subtext }: Props) {
         className="absolute inset-0"
         style={{
           background: [
-            'linear-gradient(135deg, rgba(13,27,42,0.92) 0%, rgba(27,38,59,0.78) 50%, rgba(13,27,42,0.88) 100%)',
-            'radial-gradient(ellipse at 20% 80%, rgba(43,212,217,0.18) 0%, transparent 60%)',
-            'radial-gradient(ellipse at 80% 10%, rgba(43,212,217,0.10) 0%, transparent 55%)',
+            'linear-gradient(135deg, rgba(26,26,29,0.92) 0%, rgba(45,49,52,0.78) 50%, rgba(26,26,29,0.88) 100%)',
+            'radial-gradient(ellipse at 20% 80%, rgba(197,168,128,0.18) 0%, transparent 60%)',
+            'radial-gradient(ellipse at 80% 10%, rgba(197,168,128,0.10) 0%, transparent 55%)',
           ].join(', '),
         }}
       />
@@ -52,8 +52,8 @@ export function AuthBrandPanel({ heading, subtext }: Props) {
         className="absolute inset-0 opacity-[0.04]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(43,212,217,1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(43,212,217,1) 1px, transparent 1px)
+            linear-gradient(rgba(197,168,128,1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(197,168,128,1) 1px, transparent 1px)
           `,
           backgroundSize: '40px 40px',
         }}
@@ -65,11 +65,11 @@ export function AuthBrandPanel({ heading, subtext }: Props) {
         <div className="flex items-center gap-2">
           <div
             className="w-2 h-2 rounded-full animate-pulse"
-            style={{ backgroundColor: '#2BD4D9' }}
+            style={{ backgroundColor: '#C5A880' }}
           />
           <span
             className="text-xs font-mono font-semibold tracking-[0.2em] uppercase"
-            style={{ color: 'rgba(43,212,217,0.7)' }}
+            style={{ color: 'rgba(197,168,128,0.7)' }}
           >
             Secure Admin Portal
           </span>
@@ -82,9 +82,9 @@ export function AuthBrandPanel({ heading, subtext }: Props) {
             className="p-8 rounded-2xl flex flex-col items-center gap-5 w-full max-w-xs"
             style={{
               background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(43,212,217,0.2)',
+              border: '1px solid rgba(197,168,128,0.2)',
               backdropFilter: 'blur(16px)',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(43,212,217,0.08) inset',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(197,168,128,0.08) inset',
             }}
           >
             {/* Logo */}
@@ -101,7 +101,7 @@ export function AuthBrandPanel({ heading, subtext }: Props) {
             {/* Brand name */}
             <p
               className="text-xs font-mono font-semibold tracking-[0.25em] uppercase"
-              style={{ color: 'rgba(43,212,217,0.6)' }}
+              style={{ color: 'rgba(197,168,128,0.6)' }}
             >
               {appName}
             </p>
@@ -109,7 +109,7 @@ export function AuthBrandPanel({ heading, subtext }: Props) {
             {/* Divider */}
             <div
               className="w-12 h-px"
-              style={{ background: 'linear-gradient(90deg, transparent, rgba(43,212,217,0.5), transparent)' }}
+              style={{ background: 'linear-gradient(90deg, transparent, rgba(197,168,128,0.5), transparent)' }}
             />
 
             {/* Heading */}
@@ -134,7 +134,7 @@ export function AuthBrandPanel({ heading, subtext }: Props) {
         <div className="space-y-3">
           <div
             className="h-px w-full"
-            style={{ background: 'linear-gradient(90deg, transparent, rgba(43,212,217,0.3), transparent)' }}
+            style={{ background: 'linear-gradient(90deg, transparent, rgba(197,168,128,0.3), transparent)' }}
           />
           <p
             className="text-xs font-mono text-center"

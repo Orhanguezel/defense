@@ -3,38 +3,46 @@
 
 /* ─────────────────────────────────────────────
    KATMAN 1: Primitive Tokenlar
-   Template: sultandefense-tactical
-   Intent:   premium-tactical-cyan
+   Template: sultandefense-imperial-armor
+   Intent:   imperial-armor (antrasit + mat altin + bordo)
+   NOT: primitive olcek isimleri (--cyan-*/--navy-*) legacy; degerler İmparatorluk Zırhı.
+        --cyan-* = MAT ALTIN olcegi, --navy-* = ANTRASIT/TITANYUM notr olcek.
    ───────────────────────────────────────────── */
 
 :root,
-html[data-theme-template='sultandefense-tactical'] {
-  /* Tactical Cyan */
-  --cyan-50: #ecfdf5;
-  --cyan-100: #d1fae5;
-  --cyan-200: #a7f3d0;
-  --cyan-300: #6ee7b7;
-  --cyan-400: #4FE3E8; /* Bright Hover */
-  --cyan-500: #2BD4D9; /* Tactical Cyan */
-  --cyan-600: #0E7C82; /* Deep Cyan for Light Mode */
-  --cyan-700: #0b5d61;
-  --cyan-800: #084346;
-  --cyan-900: #052a2c;
-  --cyan-950: #021213;
+html[data-theme-template='sultandefense-tactical'],
+html[data-theme-template='sultandefense-imperial-armor'] {
+  /* Mat Osmanlı Altını (brand accent) */
+  --cyan-50: #faf6ef;
+  --cyan-100: #f1e8d6;
+  --cyan-200: #e6d6b8;
+  --cyan-300: #d9c099;
+  --cyan-400: #D4B996; /* Bright Hover (acilmis altin) */
+  --cyan-500: #C5A880; /* Mat Altin (ana) */
+  --cyan-600: #8C6F3F; /* Koyu altin — light mode kontrast */
+  --cyan-700: #74592f;
+  --cyan-800: #5a4524;
+  --cyan-900: #3f301a;
+  --cyan-950: #221a0e;
 
-  /* Deep Navy & Gunmetal (Neutrals) */
+  /* Antrasit & Titanyum (Neutrals) */
   --navy-0: #ffffff;
-  --navy-50: #F4F6F8;
-  --navy-100: #D5DDE5;
-  --navy-200: #B0C0D0;
-  --navy-300: #8A97A6;
-  --navy-400: #51606F;
-  --navy-500: #415A77;
-  --navy-600: #2C3E52;
-  --navy-700: #1B263B; /* Gunmetal (surface) */
-  --navy-800: #0D1B2A; /* Deep Navy (bg) */
-  --navy-900: #060d14;
-  --navy-950: #020406;
+  --navy-50: #F4F1EC;  /* parsomen (light bg) */
+  --navy-100: #E2DDD3;
+  --navy-200: #C2BCAF;
+  --navy-300: #9A968C;
+  --navy-400: #5C584F;
+  --navy-500: #46433C;
+  --navy-600: #3C4044;
+  --navy-700: #2D3134; /* Titanyum (surface) */
+  --navy-800: #1A1A1D; /* Antrasit (bg) */
+  --navy-900: #121214;
+  --navy-950: #0a0a0b;
+
+  /* Derin Bordo (ikincil detay: menu alti, ikon, vurgu) */
+  --bordeaux-400: #9a2a32;
+  --bordeaux-500: #7A1B22;
+  --bordeaux-600: #5e141a;
 
   /* Status */
   --status-success: #25d366;
@@ -113,11 +121,12 @@ html[data-theme-mode='light'],
   --color-border: var(--border-subtle);
   --color-border-strong: var(--border-strong);
 
-  /* Brand — cyan */
+  /* Brand — mat altin */
   --color-brand: var(--cyan-600);
   --color-brand-light: var(--cyan-400);
   --color-brand-dark: var(--cyan-700);
   --color-accent: var(--navy-700);
+  --color-secondary: var(--bordeaux-500);
   --color-on-brand: var(--navy-0);
 }
 
@@ -134,7 +143,7 @@ html[data-theme-mode='dark'] {
   --surface-dark: var(--navy-900);
   --surface-dark-strong: var(--navy-950);
 
-  --text-strong: #E0E1DD;
+  --text-strong: #EDEAE3;
   --text-body: var(--navy-200);
   --text-muted: var(--navy-300);
   --text-inverse: var(--navy-800);
@@ -143,19 +152,19 @@ html[data-theme-mode='dark'] {
   --border-subtle: var(--navy-700);
   --border-strong: var(--navy-600);
 
-  /* Glass — cyan tonlu */
-  --color-glass-bg: rgb(43 212 217 / 0.04);
-  --color-glass-bg-strong: rgb(43 212 217 / 0.08);
-  --color-glass-border: rgb(43 212 217 / 0.1);
-  --color-glass-hover: rgb(43 212 217 / 0.08);
+  /* Glass — altin tonlu */
+  --color-glass-bg: rgb(197 168 128 / 0.05);
+  --color-glass-bg-strong: rgb(197 168 128 / 0.09);
+  --color-glass-border: rgb(197 168 128 / 0.12);
+  --color-glass-hover: rgb(197 168 128 / 0.09);
 
   /* Misc */
   --color-border-on-dark: rgb(255 255 255 / 0.1);
   --color-dark-link-hover: #ffffff;
 
-  /* Hero glow — cyan */
+  /* Hero glow — altin */
   --color-hero-glow-brand: color-mix(in srgb, var(--cyan-500) 20%, transparent);
-  --color-hero-glow-muted: rgb(43 212 217 / 0.08);
+  --color-hero-glow-muted: rgb(197 168 128 / 0.08);
 
   /* Semantic tokenlar */
   --color-bg: var(--surface-base);
@@ -171,11 +180,12 @@ html[data-theme-mode='dark'] {
   --color-border: var(--border-subtle);
   --color-border-strong: var(--border-strong);
 
-  /* Brand — cyan */
+  /* Brand — mat altin */
   --color-brand: var(--cyan-500);
   --color-brand-light: var(--cyan-400);
   --color-brand-dark: var(--cyan-600);
   --color-accent: var(--cyan-500);
+  --color-secondary: var(--bordeaux-500);
   --color-on-brand: var(--cyan-950);
 }
 
@@ -302,14 +312,14 @@ h6 {
   background-color: var(--color-bg-dark);
 }
 
-/* sultandefense-tactical: cyan radial glow, çelik/koyu mavi gradient */
+/* imperial-armor: altin radial glow, antrasit/titanyum gradient */
 .surface-dark-shell::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top left, rgb(43 212 217 / 0.14), transparent 30%),
-    linear-gradient(135deg, rgb(13 27 42 / 0.97), rgb(27 38 59 / 0.94));
+    radial-gradient(circle at top left, rgb(197 168 128 / 0.14), transparent 30%),
+    linear-gradient(135deg, rgb(26 26 29 / 0.97), rgb(45 49 52 / 0.94));
   pointer-events: none;
 }
 
@@ -338,18 +348,18 @@ h6 {
   background-color: var(--color-glass-hover);
 }
 
-/* ─── Marka CTA Yüzeyi (Tactical Cyan) ─── */
+/* ─── Marka CTA Yüzeyi (Mat Altın) ─── */
 
-/* sultandefense-tactical: cyan gradient, koyu metin */
+/* imperial-armor: altin gradient, antrasit metin */
 .surface-brand-cta {
-  border: 1px solid rgb(43 212 217 / 0.3);
-  background: linear-gradient(135deg, rgb(43 212 217 / 0.95), rgb(14 124 130 / 0.95));
-  color: #052a2c;
-  box-shadow: 0 20px 60px rgb(43 212 217 / 0.18);
+  border: 1px solid rgb(197 168 128 / 0.4);
+  background: linear-gradient(135deg, rgb(197 168 128 / 0.97), rgb(140 111 63 / 0.97));
+  color: #1A1A1D;
+  box-shadow: 0 20px 60px rgb(197 168 128 / 0.2);
 }
 
 .surface-brand-cta-subtle {
-  color: rgb(13 27 42 / 0.68);
+  color: rgb(26 26 29 / 0.68);
 }
 
 /* ─── Hero Glow ─── */
@@ -365,7 +375,7 @@ h6 {
 
 /* sultandefense-tactical: koyu çelik/navy overlay */
 .media-overlay {
-  background: linear-gradient(180deg, rgb(13 27 42 / 0.04), rgb(13 27 42 / 0.82));
+  background: linear-gradient(180deg, rgb(26 26 29 / 0.04), rgb(26 26 29 / 0.82));
 }
 
 .media-overlay-title {

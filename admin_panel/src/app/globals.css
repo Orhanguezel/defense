@@ -8,24 +8,26 @@
 @import "../styles/presets/soft-pop.css";
 @import "../styles/presets/tangerine.css";
 
-/* Sultan Defense Brand Colors */
+/* Sultan Defense Brand Colors — İmparatorluk Zırhı (altin/antrasit/bordo)
+   NOT: --logo-coral* isimleri legacy (Ensotek); degerler İmparatorluk Zırhı altin olcegi. */
 :root {
-  /* Logo Primary Colors — Çelik & Cyan */
-  --logo-coral-light: #4FE3E8;      /* Cyan bright — highlights */
-  --logo-coral: #2BD4D9;            /* Tactical Cyan — main brand color */
-  --logo-coral-medium: #0E7C82;     /* Medium Cyan — default on light */
-  --logo-coral-dark: #0D1B2A;       /* Deep Navy */
-  --logo-coral-darkest: #1B263B;    /* Gunmetal — text, details */
-  
+  /* Logo Primary Colors — Mat Altin */
+  --logo-coral-light: #D4B996;      /* acilmis altin — highlights */
+  --logo-coral: #C5A880;            /* Mat Osmanli Altini — ana marka */
+  --logo-coral-medium: #8C6F3F;     /* koyu altin — acik zeminde */
+  --logo-coral-dark: #2D3134;       /* Titanyum */
+  --logo-coral-darkest: #1A1A1D;    /* Antrasit — metin/detay */
+
   /* Background Colors for Logo */
-  --logo-bg-light: #F4F6F8;         /* Light mode primary */
-  --logo-bg-white: #FFFFFF;         /* Pure white */
-  --logo-bg-dark: #0D1B2A;          /* Deep Navy — dark mode */
-  --logo-bg-black: #0B131E;         /* Deep Navy 950 — pure dark */
-  
+  --logo-bg-light: #F4F1EC;         /* parsomen — light mode */
+  --logo-bg-white: #FFFFFF;         /* pure white */
+  --logo-bg-dark: #1A1A1D;          /* Antrasit — dark mode */
+  --logo-bg-black: #0A0A0B;         /* pure dark */
+
   /* Logo Accents */
-  --logo-gold: #2BD4D9;             /* Tactical Cyan — primary accent */
-  --logo-shadow: rgba(43, 212, 217, 0.15);  /* Cyan glow */
+  --logo-gold: #C5A880;             /* Mat Altin — primary accent */
+  --logo-bordeaux: #7A1B22;         /* Derin Bordo — ikincil detay */
+  --logo-shadow: rgba(197, 168, 128, 0.15);  /* altin glow */
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -105,7 +107,7 @@ These serve as the fallback; there is no separate default.css file. */
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0.004 286.32);
   --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.708 0 0);
+  --ring: var(--logo-coral);
   --chart-1: oklch(0.809 0.105 251.813);
   --chart-2: oklch(0.623 0.214 259.815);
   --chart-3: oklch(0.546 0.245 262.881);
@@ -113,7 +115,7 @@ These serve as the fallback; there is no separate default.css file. */
   --chart-5: oklch(0.424 0.199 265.638);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.546 0.245 262.881);
+  --sidebar-primary: var(--logo-coral);
   --sidebar-primary-foreground: oklch(0.97 0.014 254.604);
   --sidebar-accent: oklch(0.967 0.001 286.375);
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
@@ -133,7 +135,7 @@ These serve as the fallback; there is no separate default.css file. */
   --popover: oklch(0.21 0.006 285.885);
   --popover-foreground: oklch(0.985 0 0);
   /* Primary Dark: Coral Light or Medium */
-  --primary: var(--logo-coral-medium);
+  --primary: var(--logo-coral);
   --primary-foreground: oklch(0.141 0.005 285.823); /* Dark text on light coral */
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
@@ -144,7 +146,7 @@ These serve as the fallback; there is no separate default.css file. */
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --ring: var(--logo-coral);
   --chart-1: oklch(0.809 0.105 251.813);
   --chart-2: oklch(0.623 0.214 259.815);
   --chart-3: oklch(0.546 0.245 262.881);
@@ -152,7 +154,7 @@ These serve as the fallback; there is no separate default.css file. */
   --chart-5: oklch(0.424 0.199 265.638);
   --sidebar: oklch(0.21 0.006 285.885);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.623 0.214 259.815);
+  --sidebar-primary: var(--logo-coral);
   --sidebar-primary-foreground: oklch(0.97 0.014 254.604);
   --sidebar-accent: oklch(0.274 0.006 286.033);
   --sidebar-accent-foreground: oklch(0.985 0 0);

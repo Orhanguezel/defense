@@ -14,7 +14,8 @@
       "Bash(convert -background \"#0D1B2A\" sultandefense-mark.svg /tmp/mark2.png)",
       "Bash(google-chrome --headless --disable-gpu --no-sandbox --hide-scrollbars --window-size=1200,800 --screenshot=/tmp/cs_imperial.png \"file:///tmp/cs_imperial.html\")",
       "Bash(scp -q deploy/coming-soon/index.html srv1731955:/var/www/sultandefense/index.html)",
-      "Bash(curl -s --max-time 20 \"https://sultandefense.com/?v=$\\(date +%s\\)\")"
+      "Bash(curl -s --max-time 20 \"https://sultandefense.com/?v=$\\(date +%s\\)\")",
+      "Bash(awk '{print $5,$NF}')"
     ]
   }
 }
