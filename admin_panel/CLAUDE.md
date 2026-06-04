@@ -1,11 +1,11 @@
 
-# CLAUDE.md - Ensotek Admin Panel
+# CLAUDE.md - Sultan Defense Admin Panel
 
-Bu dosya, Claude Code için Ensotek Admin Panel projesinde çalışırken izlenmesi gereken kurallar ve standartları içerir.
+Bu dosya, Claude Code için Sultan Defense Admin Panel projesinde çalışırken izlenmesi gereken kurallar ve standartları içerir.
 
 ## 📋 Proje Genel Bakış
 
-**Ensotek Admin Panel** - Next.js 16 tabanlı, dinamik tema desteği olan modern admin yönetim paneli.
+**Sultan Defense Admin Panel** - Next.js 16 tabanlı, dinamik tema desteği olan modern admin yönetim paneli.
 
 - **Framework:** Next.js 16.1.1 (App Router)
 - **UI Framework:** React 19.2.3
@@ -67,26 +67,29 @@ admin_panel/
 
 ### 2. CSS Değişken Sistemi (Design Tokens)
 
-#### Ensotek Marka Renkleri
+#### Sultan Defense Marka Renkleri — "İmparatorluk Zırhı"
+
+> NOT: `--logo-coral*` isimleri **legacy** (Ensotek'ten); değerleri Mat Altın. İsimleri DEĞİŞTİRME.
 
 ```css
 :root {
-  /* Logo Primary Colors */
-  --logo-coral-light: #F4BDB3;      /* Highlights, light bg text */
-  --logo-coral: #E8A598;            /* Main brand color */
-  --logo-coral-medium: #D88D7E;     /* Default logo on light */
-  --logo-coral-dark: #C77665;       /* Logo on very light bg */
-  --logo-coral-darkest: #A6604F;    /* Text, details */
+  /* Logo Primary Colors — Mat Altın */
+  --logo-coral-light: #D4B996;      /* açılmış altın — highlights */
+  --logo-coral: #C5A880;            /* Mat Osmanlı Altını — ana marka */
+  --logo-coral-medium: #8C6F3F;     /* koyu altın — açık zeminde */
+  --logo-coral-dark: #2D3134;       /* Titanyum */
+  --logo-coral-darkest: #1A1A1D;    /* Antrasit — metin/detay */
 
   /* Background Colors for Logo */
-  --logo-bg-light: #FDFCFB;         /* Light mode primary */
-  --logo-bg-white: #FFFFFF;         /* Pure white */
-  --logo-bg-dark: #1A1512;          /* Dark mode */
-  --logo-bg-black: #0A0806;         /* Pure black */
+  --logo-bg-light: #F4F1EC;         /* parşömen — light mode */
+  --logo-bg-white: #FFFFFF;         /* pure white */
+  --logo-bg-dark: #1A1A1D;          /* Antrasit — dark mode */
+  --logo-bg-black: #0A0A0B;         /* pure dark */
 
   /* Logo Accents */
-  --logo-gold: #E8C57A;             /* Accent touch */
-  --logo-shadow: rgba(232, 165, 152, 0.15);  /* Soft glow */
+  --logo-gold: #C5A880;             /* Mat Altın — primary accent */
+  --logo-bordeaux: #7A1B22;         /* Derin Bordo — ikincil detay */
+  --logo-shadow: rgba(197, 168, 128, 0.15);  /* altın glow */
 }
 ```
 
@@ -97,7 +100,7 @@ admin_panel/
 :root {
   --background: oklch(1 0 0);                    /* Beyaz */
   --foreground: oklch(0.141 0.005 285.823);      /* Koyu gri */
-  --primary: var(--logo-coral);                  /* Ensotek Coral */
+  --primary: var(--logo-coral);                  /* Mat Altın */
   --primary-foreground: oklch(0.985 0 0);        /* Açık metin */
   --muted: oklch(0.967 0.001 286.375);           /* Soluk arka plan */
   --border: oklch(0.92 0.004 286.32);            /* Kenarlık */
@@ -111,7 +114,7 @@ admin_panel/
 .dark {
   --background: oklch(0.141 0.005 285.823);      /* Koyu gri */
   --foreground: oklch(0.985 0 0);                /* Açık beyaz */
-  --primary: var(--logo-coral-medium);           /* Coral Medium */
+  --primary: var(--logo-coral-medium);           /* Koyu Altın */
   --primary-foreground: oklch(0.141 0.005 285.823); /* Koyu metin */
   --muted: oklch(0.274 0.006 286.033);           /* Koyu soluk */
   --border: oklch(1 0 0 / 10%);                  /* Yarı saydam */
@@ -1057,7 +1060,7 @@ src/app/(main)/admin/(admin)/chat/
 ## 🎯 Özet
 
 1. **Stil sistemi dinamik** - CSS değişkenleri ve tema presetleri
-2. **Ensotek marka renkleri** - `--logo-coral` serisi kullan
+2. **Sultan Defense marka renkleri** - `--logo-coral` serisi (legacy isim, değer altın) kullan
 3. **Shadcn/UI komponentleri** - Radix UI + CVA
 4. **i18n zorunlu** - tr, en, de
 5. **RTK Query** - API için

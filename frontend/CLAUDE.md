@@ -1,15 +1,18 @@
-# CLAUDE.md — Vista İnşaat Frontend
+# CLAUDE.md — Sultan Defense Frontend
 
 ## Proje Özeti
 
-`vistainsaat-frontend`, Vista İnşaat için geliştirilen Next.js tabanlı kurumsal tanıtım ve teklif toplama frontend'idir.
-Ana hedefler:
+`sultandefense-frontend`, Sultan Defense Ltd., Co. için geliştirilen Next.js tabanlı defans/savunma sanayi
+ürün katalog ve teklif (RFQ) toplama frontend'idir. Ana hedefler:
 
-- ArchDaily ilhamlı editorial tasarım
+- Premium, otoriter, "zırh/metal" estetiği (İmparatorluk Zırhı)
 - Teknik SEO uyumlu sayfa yapısı
-- Çok dilli içerik (TR/EN)
-- Token tabanlı tema yönetimi (vista-construction)
+- Çok dilli içerik (ürün kataloğu: 10 defans kategorisi)
+- Token tabanlı tema yönetimi (sultandefense-imperial-armor)
 - Dark / Light mode desteği
+
+> İçerik kaynağı: `docs/content/` (sayfa metinleri, 10 kategori, şirket bilgisi).
+> NOT: Rotalar hâlâ inşaat dönemi (projeler/hizmetler); defans slug'larına (products/services) geçiş Faz 5.
 
 ## Sayfa Yapısı (URL Rotaları)
 
@@ -29,20 +32,20 @@ Ana hedefler:
 /[locale]/legal/[slug]    → Yasal sayfalar
 ```
 
-## Tema Kontratı
+## Tema Kontratı — "İmparatorluk Zırhı"
 
-- Template: `vista-construction`
-- Intent: `premium-editorial-neutral-gold`
-- Referans: `/THEMA.md` (proje kökünde)
-- Kaynak: `src/styles/globals.css`, `src/theme/templates.ts`
+- Template: `sultandefense-imperial-armor`
+- Intent: `imperial-armor-anthracite-gold-bordeaux`
+- Kaynak: `src/styles/globals.css`, `src/theme/templates.ts` · Marka: `docs/brand/`
 
 ### Kural Özeti
 
 - Component dark/light bilmez — `dark:bg-*` YASAK
 - Semantic token kullan: `bg-[var(--color-bg)]`
 - Dark section: `surface-dark-heading`, `surface-dark-text`, `surface-dark-panel`
-- Brand rengi altın: `--color-brand = var(--gold-500)` (#b8a98a)
-- Tipografi: Syne (--font-heading) + DM Sans (--font-body)
+- Brand rengi **mat altın**: `--color-brand` = `#C5A880`; zemin antrasit `#1A1A1D`; ikincil **bordo** `#7A1B22`
+- NOT: primitive ölçek isimleri (`--cyan-*` / `--navy-*`) **legacy**; değerleri altın/antrasit (isimleri değiştirme)
+- Tipografi: Oswald (--font-heading) + Inter (--font-body)
 
 ## Zorunlu Çalışma Kuralları
 
@@ -86,12 +89,12 @@ buildPageMetadata({ ..., noIndex: true })
 ## API Endpoint Şablonu
 
 ```
-GET /api/projects?module_key=vistainsaat&locale=tr&is_active=1
+GET /api/projects?module_key=sultandefense&locale=tr&is_active=1
 GET /api/projects/by-slug/[slug]?locale=tr
-GET /api/services?module_key=vistainsaat&locale=tr
-GET /api/galleries?module_key=vistainsaat&locale=tr
-GET /api/custom_pages?module_key=vistainsaat_blog&locale=tr
-GET /api/site_settings/[key]?prefix=vistainsaat__
+GET /api/services?module_key=sultandefense&locale=tr
+GET /api/galleries?module_key=sultandefense&locale=tr
+GET /api/custom_pages?module_key=sultandefense_blog&locale=tr
+GET /api/site_settings/[key]?prefix=sultandefense__
 ```
 
 ## Media SEO Kontratı
