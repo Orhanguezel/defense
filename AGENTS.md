@@ -67,3 +67,8 @@ sultandefense kimligiyle degistir. Tam liste ve sira: **[REBRAND_CHECKLIST.md](R
 - **Kör sed/replace YAPMA** (`vista`/`insaat` cok genel; degisken adlari/3.parti string bozar). Dosya bazli, anlamli.
 - Her fazdan sonra: ilgili app `bun run build` + commit (main) + push.
 - Site icerigi tek dogru kaynak: `docs/content/` (README'de sayfa→slug haritasi + sirket bilgileri).
+
+### Orkestrasyon (4 arac)
+Claude tasarla → **Codex implement** → **Antigravity gorsel QA** ([`docs/antigravity-qa.md`](docs/antigravity-qa.md))
+→ Copilot cilala. Codex her fazı bitirince Antigravity o fazin gorsel dogrulamasini yapar; bulgular Codex'e
+geri beslenir (Claude review). Ayni dosyada ayni anda iki arac calismaz.
