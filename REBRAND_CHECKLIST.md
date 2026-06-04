@@ -91,11 +91,13 @@ seed **icerik** doldurma (defans), locale icerikleri (19 dil), nginx conf, Faz 6
 - [ ] Sunucu `187.77.79.59`: configi /etc/nginx/sites-enabled'a al, MySQL+seed, PM2 x3, `pm2 save`
 - [ ] Cloudflare alt domain (`admin.`) DNS + SSL (Full strict icin Origin CA cert)
 
-## Faz 7 — Temizlik / Final **(Claude)**
-- [ ] Kok `sultandefense.com/` ürün gorsel klasoru → mantikli yer; kokteki `SAVRONIK_*_premium.*` duzenle
-- [ ] vistainsaat/ensotek md/dok gozden gecir (CLAUDE.md x2 — Claude)
-- [ ] **Final tarama:** `grep -riE "vista|insaat|ensotek|kompozit|koenig" --exclude-dir=node_modules` → 0
-- [ ] Lighthouse + SEO denetimi (canli)
+## Faz 7 — Temizlik / Final **(Claude)** ✅ esasen TAMAMLANDI
+- [x] Kok ic `sultandefense.com/` ürün gorsel klasoru → `docs/product-images/` (SAVRONIK dahil)
+- [x] vistainsaat/ensotek md/dok gozden gecirildi (CLAUDE.md x2, README, .gitignore, dev notlar; all-schemas.txt silindi)
+- [x] **Final tarama:** app `src`/`public` + repo grep = **0** (vista/insaat/ensotek/kompozit)
+      _(istisna: bilincli legacy notlar — admin globals.css/CLAUDE.md `--logo-coral`; ve doc rehber dosyalari)_
+- [x] Kozmetik identifier: `VISTA_BRAND/PREFIX`→`BRAND_KEY/PREFIX`, `KompozitAdminRouteGate`→`AdminRouteGate`
+- [ ] Lighthouse + SEO denetimi (canli — **deploy sonrasi**)
 
 ---
 
