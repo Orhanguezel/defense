@@ -1,8 +1,8 @@
 {
   "nav": {
     "home": "Ana Sayfa",
-    "projects": "Projeler",
-    "services": "Faaliyetler",
+    "projects": "Urunler",
+    "services": "Tedarik Sureci",
     "about": "Hakkımızda",
     "gallery": "Galeri",
     "blog": "Haberler",
@@ -10,24 +10,24 @@
     "offer": "Teklif Al",
     "login": "Giriş Yap",
     "register": "Kayıt Ol",
-    "residential": "Konut Projeleri",
-    "commercial": "Ticari Projeler",
-    "mixed": "Karma Kullanım",
-    "restoration": "Restorasyon",
-    "construction": "İnşaat & Taahhüt",
-    "project_management": "Proje Yönetimi",
-    "architectural_design": "Mimari Tasarım",
-    "interior_design": "İç Mimarlık",
+    "residential": "Balistik Koruma",
+    "commercial": "Muhabere ve Elektronik",
+    "mixed": "Saha Lojistigi",
+    "restoration": "Deniz Sistemleri",
+    "project_management": "Ihracat Uyumu",
+    "interior_design": "Guvenli Lojistik",
     "corporate": "Kurumsal",
     "vision": "Vizyonumuz",
     "team": "Ekibimiz",
     "career": "Kariyer",
-    "tagline": "Türkiye'nin lider inşaat firması",
+    "tagline": "A’dan Z’ye savunma tedarik ve ihracat partneri",
     "profile": "Profilim",
-    "logout": "Çıkış Yap"
+    "logout": "Çıkış Yap",
+    "procurement": "Savunma Tedariki",
+    "quality_acceptance": "Kalite Kabul"
   },
   "footer": {
-    "description": "Konut, ticari ve karma kullanım projelerinde güvenilir inşaat ve mimarlık çözümleri.",
+    "description": "Savunma urunleri icin B2B tedarik, ihracat uyumu ve guvenli lojistik koordinasyonu.",
     "rights": "Tüm hakları saklıdır",
     "privacy": "Gizlilik Politikası",
     "terms": "Kullanım Koşulları",
@@ -60,7 +60,7 @@
     },
     "requestOffer": "Teklif İste",
     "offerCtaTitle": "Projeniz İçin Ücretsiz Keşif ve Teklif Hazırlayalım",
-    "offerCtaDescription": "Konut, ticari veya karma kullanım projeleriniz için proje kapsamı, termin ve bütçe beklentilerinizi birlikte netleştirip size özel teklif hazırlayalım.",
+    "offerCtaDescription": "Savunma tedariki, ihracat kapsamı, hedef ülke ve teslimat beklentilerinizi birlikte netleştirip size özel teklif hazırlayalım.",
     "freeOfObligation": "Ücretsiz ve bağlayıcı değildir",
     "send": "Gönder",
     "name": "Ad Soyad",
@@ -78,82 +78,82 @@
   },
   "home": {
     "hero": {
-      "title": "İnşaat ve Mimarlıkta Güvenilir Çözüm Ortağı",
-      "subtitle": "Konut, ticari ve karma kullanım projelerinde tasarımdan teslimata kaliteli, zamanında ve şeffaf bir inşaat deneyimi sunuyoruz.",
-      "cta": "Projelerimizi İnceleyin",
-      "ctaSecondary": "Teklif Alın",
-      "badge": "Vista İnşaat",
-      "newProjectBadge": "Yeni Proje",
-      "workflowLabel": "Proje Süreci",
-      "workflowTitle": "Projenize özel planlama ve uygulama",
-      "workflowBadgeTitle": "Şeffaf",
-      "workflowBadgeSubtitle": "Süreç ve iletişim",
+      "title": "A’dan Z’ye Kuresel Savunma Tedarik Cozumleri",
+      "subtitle": "Turkiye’nin savunma sanayi uretim gucune acilan guvenilir kapiniz. Taktik ekipman, askeri elektronik ve lojistik cozumlerin uçtan uca tedarikini yonetiyoruz.",
+      "cta": "Katalogu Inceleyin",
+      "ctaSecondary": "Tedarik Teklifi Alin",
+      "badge": "Sultan Defense",
+      "newProjectBadge": "Yeni Kabiliyet",
+      "workflowLabel": "Tedarik Sureci",
+      "workflowTitle": "Operasyonel ihtiyaciniza gore planlanan tedarik akisi",
+      "workflowBadgeTitle": "Uyumlu",
+      "workflowBadgeSubtitle": "Ihracata hazir ve yasal olarak net",
       "metrics": {
-        "prototypeTitle": "Ön Proje",
-        "prototypeDesc": "Fizibilite, konsept tasarım ve ilk maliyet tahmini",
-        "productionTitle": "Uygulama",
-        "productionDesc": "Kalite kontrolü, termin takibi ve şeffaf iletişim",
-        "engineeringTitle": "Mühendislik",
-        "engineeringDesc": "Statik, zemin etüdü ve teknik çözüm desteği"
+        "prototypeTitle": "Kaynak Bulma",
+        "prototypeDesc": "Ihtiyac analizi, uretici belirleme ve teklif koordinasyonu",
+        "productionTitle": "Uyum",
+        "productionDesc": "EUC yonetimi, ihracat izinleri ve kalite guvencesi",
+        "engineeringTitle": "Teslimat",
+        "engineeringDesc": "Uzman lojistik, guvenli sevkiyat ve zamaninda teslim"
       },
       "steps": {
-        "oneTitle": "1. Proje gereksinim analizi",
-        "oneDesc": "Lokasyon, kullanım amacı, alan, bütçe ve termin beklentilerinizi birlikte netleştiriyoruz.",
-        "twoTitle": "2. Tasarım ve mühendislik",
-        "twoDesc": "Mimari tasarım, statik proje ve mühendislik çözümlerini hazırlıyoruz.",
-        "threeTitle": "3. Uygulama ve teslim",
-        "threeDesc": "Ruhsattan teslimata tüm süreci yönetiyor, kalite ve terminé uyumu sağlıyoruz."
+        "oneTitle": "1. Operasyonel ihtiyac analizi",
+        "oneDesc": "Teknik gereksinimleri, hedef standartlari ve uyum ihtiyaclarini birlikte netlestiririz.",
+        "twoTitle": "2. Uretici koordinasyonu ve kaynak bulma",
+        "twoDesc": "Talebinizi lisansli Turk savunma ureticileriyle eslestirir ve teklif surecini yonetiriz.",
+        "threeTitle": "3. Ihracat uyumu ve teslimat",
+        "threeDesc": "EUC, ihracat izinleri ve guvenli sevkiyat planlamasini koordine ederiz."
       },
       "stats": {
-        "stepsValue": "3+",
-        "stepsLabel": "Temel proje aşaması",
-        "b2bValue": "15+",
-        "b2bLabel": "Yıllık sektör deneyimi"
+        "stepsValue": "30+",
+        "stepsLabel": "Yillik savunma deneyimi",
+        "b2bValue": "10+",
+        "b2bLabel": "Tedarik edilen urun kategorisi"
       }
     },
     "projects": {
-      "title": "Öne Çıkan Projeler",
-      "subtitle": "Konut, ticari ve karma kullanım alanlarında tamamlanan ve devam eden projelerimizden seçkiler"
+      "title": "One Cikan Urunler",
+      "subtitle": "Savunma ekipmani katalogumuzdan taktik ekipman, elektronik ve askeri lojistik cozumleri"
     },
     "latestProjects": {
-      "title": "Son Eklenen Projeler",
-      "subtitle": "En güncel projelerimizi keşfedin"
+      "title": "Son Eklenen Urunler",
+      "subtitle": "Kataloga yeni eklenen savunma ekipmanlarini kesfedin"
     },
     "services": {
-      "title": "Faaliyet Alanlarımız",
-      "subtitle": "Mimari tasarımdan inşaata, proje yönetiminden teslimata kapsamlı çözümler"
+      "title": "Tedarik Kabiliyetlerimiz",
+      "subtitle": "Balistik korumadan egitim simulatorlerine kadar A’dan Z’ye savunma tedarik cozumleri"
     },
     "whyUs": {
-      "title": "Neden Vista İnşaat?",
-      "subtitle": "Kalite, güven ve zamanında teslim odaklı inşaat anlayışıyla her projede fark yaratıyoruz",
-      "quality": "Yüksek Kalite",
-      "qualityDesc": "Malzeme seçiminden işçiliğe, her aşamada kalite standartlarına tam uyum",
-      "experience": "Deneyim",
-      "experienceDesc": "15 yılı aşkın sektör deneyimi ve tamamlanan 100+ proje ile güvenilir ortağınız",
-      "custom": "Özel Çözümler",
-      "customDesc": "Her projeye özgü tasarım ve uygulama yaklaşımı; standart değil, size özel",
-      "delivery": "Zamanında Teslim",
-      "deliveryDesc": "Proje başından teslimata kadar termin taahhüdü ve şeffaf süreç yönetimi"
+      "title": "Neden Sultan Defense?",
+      "subtitle": "Saha tecrubeli ekipman, siki uyum sureci ve hizli lojistik ile operasyonel guven sagliyoruz",
+      "quality": "NATO standardinda kalite",
+      "qualityDesc": "Her tedarikte NATO, AQAP, MIL-STD ve NIJ standartlarina uyum odagi",
+      "experience": "Koklu deneyim",
+      "experienceDesc": "1996’dan beri savunma tedarikinde kuresel alicilara hizmet veren ekip",
+      "custom": "Ihtiyaca ozel cozum",
+      "customDesc": "Operasyonel ve teknik gereksiniminize gore hazirlanan tedarik paketleri",
+      "delivery": "Hizli ve guvenli teslimat",
+      "deliveryDesc": "Hava, kara veya deniz yoluyla uyumlu ve zamaninda askeri sevkiyat"
     },
     "brands": {
-      "title": "Referans Markalar",
-      "subtitle": "Projelerimizde birlikte çalıştığımız dünya lideri markalar"
+      "title": "Uretici Agimiz",
+      "subtitle": "Tedarik icin calistigimiz secili Turk savunma ureticileri"
     },
     "gallery": {
       "title": "Galeri",
-      "subtitle": "Tamamlanan projelerimizden ve inşaat süreçlerimizden seçilen fotoğraflar"
+      "subtitle": "Savunma ekipmani katalogumuz ve uretici agimizdan secili gorseller"
     },
     "blog": {
       "title": "Haberler ve İçerikler",
-      "subtitle": "İnşaat sektörü, mimarlık trendleri ve proje deneyimlerimizden derlenen güncel içerikler",
-      "featuredLabel": "Öne Çıkan İçerik",
-      "spotlightTitle": "Sürdürülebilir İnşaat: Yeşil Bina Sertifikasyonu ve LEED Standartları",
-      "spotlightBodyPrimary": "Sürdürülebilir inşaat, enerji verimliliği, su tasarrufu ve sağlıklı iç mekan koşulları açısından giderek daha önemli bir standart haline gelmektedir. LEED (Leadership in Energy and Environmental Design) sertifikasyonu, binaların çevre dostu olduğunu belgeleyen uluslararası bir referans sistemdir.",
-      "spotlightBodySecondary": "Vista İnşaat olarak, sürdürülebilir malzeme seçimi ve enerji verimli tasarım ilkelerini her projemize entegre etmeyi hedefliyoruz. Doğru planlama yapılmadan sürdürülebilirlik hedeflerine ulaşmak mümkün değil; bu nedenle her proje için çevre dostu yaklaşımı baştan planlarız.",
+      "subtitle": "Savunma sanayi haberleri, tedarik guncellemeleri ve Sultan Defense notlari",
+      "featuredLabel": "One Cikan Icerik",
+      "spotlightTitle": "Turk Savunma Ihracatinda Buyume: NATO Standartlari ve Kuresel Talep",
+      "spotlightBodyPrimary": "Turk savunma sanayi, yerli uretim kapasitesi ve uluslararasi standartlara uygun urun aileleriyle kuresel pazarda guclu bir tedarik kaynagi haline gelmistir.",
+      "spotlightBodySecondary": "Sultan Defense, Turk savunma ureticileri ile kuresel alicilar arasinda kopru kurar; uyum, dokumantasyon ve lojistik sureclerini net ve izlenebilir sekilde yonetir.",
       "insightLabel": "Bu yazıda ne var?",
-      "insightText": "Yeşil bina standartları, sertifikasyon süreci ve projenize kattığı değer",
+      "insightText": "Savunma sanayi trendleri, uyum cerceveleri ve tedarik iyi uygulamalari",
       "archiveLabel": "Diğer İçerikler",
-      "archiveSubtitle": "İnşaat sektörü, mimarlık ve proje yönetimi hakkındaki diğer içerikler"
+      "archiveSubtitle": "Savunma, askeri lojistik ve tedarik zekasi hakkindaki diger icerikler"
     },
     "newsletter": {
       "title": "Bültenimize Abone Olun",
@@ -170,7 +170,7 @@
   },
   "projects": {
     "title": "Projelerimiz",
-    "description": "Konut, ticari ve karma kullanım alanlarında tamamlanan ve devam eden projelerimiz; kalite, estetik ve işlevselliği bir arada sunuyor.",
+    "description": "Balistik koruma, taktik ekipman, elektronik sistemler ve askeri araç çözümleri için seçilmiş ürün kategorilerimizi inceleyin.",
     "categories": "Kategoriler",
     "allCategories": "Tüm Projeler",
     "results": "sonuç",
@@ -190,7 +190,6 @@
     "filters": {
       "type": "Proje Tipi",
       "location": "Lokasyon",
-      "architects": "Mimarlar",
       "city": "Şehir",
       "year": "Yıl",
       "materials": "Malzeme",
@@ -200,11 +199,12 @@
       "status": "Durum",
       "all": "Tümü",
       "search": "Ara",
-      "residential": "Konut",
-      "commercial": "Ticari",
+      "residential": "Balistik Koruma",
+      "commercial": "Elektronik Sistemler",
       "mixed": "Karma Kullanım",
       "completed": "Tamamlandı",
-      "ongoing": "Devam Ediyor"
+      "ongoing": "Devam Ediyor",
+      "manufacturer": "Uretici"
     },
     "detail": {
       "location": "Lokasyon",
@@ -213,9 +213,9 @@
       "type": "Tip",
       "status": "Durum",
       "client": "İşveren",
-      "architect": "Mimar",
       "floors": "Kat Sayısı",
-      "units": "Daire/Birim Sayısı"
+      "units": "Daire/Birim Sayısı",
+      "manufacturer": "Uretici"
     },
     "comments": {
       "title": "Yorumlar",
@@ -241,25 +241,25 @@
     }
   },
   "services": {
-    "title": "Faaliyet Alanlarımız",
-    "description": "Mimari tasarımdan inşaata, röleve ve restorasyon çalışmalarından proje yönetimine kadar kapsamlı inşaat ve mimarlık faaliyetleri.",
-    "viewAll": "Tüm Faaliyetler",
-    "noServices": "Henüz faaliyet bulunmuyor.",
+    "title": "Tedarik Hizmetlerimiz",
+    "description": "Stratejik kaynak bulma, ihracat uyumu, kalite kabul ve guvenli kuresel teslimat dahil A’dan Z’ye savunma tedariki.",
+    "viewAll": "Tum Hizmetler",
+    "noServices": "Henüz hizmet bulunmuyor.",
     "learnMore": "DETAYLAR",
     "emptyStateNote": "Canlı içerik gelene kadar aşağıda örnek faaliyet açıklamaları gösterilmektedir.",
-    "requestService": "Bu Faaliyet İçin Teklif Alın",
+    "requestService": "Bu Hizmet Icin Teklif Alin",
     "items": {
-      "residential": "Konut Projeleri",
-      "commercial": "Ticari Projeler",
-      "restoration": "Restorasyon",
-      "projectManagement": "Proje Yönetimi",
-      "architecturalDesign": "Mimari Tasarım",
-      "interiorDesign": "İç Mimari"
+      "residential": "Stratejik Kaynak Bulma",
+      "commercial": "Ihracat Uyumu ve EUC",
+      "restoration": "Kalite Guvencesi",
+      "projectManagement": "Kuresel Lojistik",
+      "defenseAdvisory": "Savunma Danismanligi",
+      "customProcurement": "Ozel Tedarik"
     }
   },
   "gallery": {
     "title": "Galeri",
-    "description": "Tamamlanan projelerimizden, inşaat süreçlerimizden ve mimari detaylardan derlenen fotoğraf galerisi.",
+    "description": "Sultan Defense tedarik agindan savunma ekipmani, uretici tesisleri ve taktik urun gorselleri.",
     "viewAll": "Tüm Görseller",
     "noGalleries": "Henüz galeri bulunmuyor.",
     "photos": "fotoğraf",
@@ -267,7 +267,7 @@
   },
   "blog": {
     "title": "Haberler",
-    "description": "Mimarlık, inşaat teknolojileri ve Vista İnşaat'tan güncel gelişmeler.",
+    "description": "Savunma sanayi, tedarik surecleri ve Sultan Defense’ten guncel gelismeler.",
     "viewPost": "Haberi Oku",
     "allPosts": "Tüm Haberler",
     "all": "Tümü",
@@ -339,9 +339,9 @@
     "benefits": {
       "title": "Teklifte Neleri Netleştiriyoruz?",
       "items": {
-        "one": "Proje tipi: konut, ticari, karma kullanım veya restorasyon",
-        "two": "Kapsam: mimari tasarım, inşaat, proje yönetimi veya komple anahtar teslim",
-        "three": "Bütçe aralığı, termin beklentisi, lokasyon ve teknik gereksinimler"
+        "one": "Ihtiyac: urun ailesi, adet, standartlar ve hedef ulke",
+        "two": "Kapsam: kaynak bulma, ihracat uyumu, kalite kabul ve guvenli teslimat",
+        "three": "Butce araligi, termin, EUC durumu ve teknik dokuman ihtiyaci"
       }
     },
     "form": {
@@ -358,26 +358,26 @@
   },
   "about": {
     "title": "Hakkımızda",
-    "description": "Vista İnşaat, konut ve ticari projelerde tasarımdan teslimata güvenilir, kaliteli ve zamanında inşaat hizmetleri sunar.",
-    "intro": "Ekibimiz; mimari tasarım, mühendislik çözümleri ve sahada deneyimli uygulama kadrosuyla her projeyi özenle yönetir. Müşteri memnuniyeti, kalite ve zamanında teslim temel değerlerimizdir.",
+    "description": "Sultan Defense, savunma ve askeri ekipman tedarikinde kuresel B2B alicilar icin guvenilir ihracat partneridir.",
+    "intro": "1996’dan beri Sultan Defense Ltd., Co.; taktik, lojistik ve teknolojik cozumleri lisansli Turk savunma ureticileriyle eslestirerek tedarik surecini yonetir.",
     "sections": {
-      "expertiseTitle": "Uzmanlık Alanlarımız",
+      "expertiseTitle": "Uzmanlik Alanlarimiz",
       "expertiseItems": {
-        "one": "Konut projeleri: villa, apartman, rezidans ve toplu konut",
-        "two": "Ticari projeler: ofis, alışveriş merkezi ve karma kullanım yapıları",
-        "three": "Restorasyon, tadilat ve güçlendirme projeleri"
+        "one": "Balistik koruma, taktik tekstil ve saha lojistigi",
+        "two": "Muhabere, komuta elektronigi, sensor ve deniz sistemleri",
+        "three": "EUC, ihracat uyumu, kalite kabul ve guvenli teslimat"
       },
-      "processTitle": "Çalışma Modelimiz",
+      "processTitle": "Calisma Modelimiz",
       "processItems": {
-        "one": "Proje gereksinimlerini ve müşteri beklentilerini anlama",
-        "two": "Mimari tasarım, mühendislik ve izin süreçlerini yönetme",
-        "three": "Kalite kontrolü ile zamanında ve eksiksiz teslim"
+        "one": "Operasyonel ihtiyaci ve teknik standardi netlestirme",
+        "two": "Dogrulanmis uretici kanallariyla teklif ve belge akisini yonetme",
+        "three": "Kalite kontrol, ihracat uyumu ve lojistigi takip etme"
       },
-      "sectorsTitle": "Faaliyet Gösterdiğimiz Alanlar",
+      "sectorsTitle": "Odaklandigimiz Bolgeler",
       "sectorsItems": {
-        "one": "Bireysel konut yatırımcıları ve aileler",
-        "two": "Ticari gayrimenkul geliştiricileri ve kurumlar",
-        "three": "Kamu projeleri ve kentsel dönüşüm uygulamaları"
+        "one": "Orta Dogu’daki kamu ve guvenlik kurumlari",
+        "two": "Afrika kitasindaki savunma ve lojistik alicilari",
+        "three": "Turk Cumhuriyetleri icin tedarik koordinasyonu"
       },
       "stats": {
         "experience": "Yıllık Deneyim",
@@ -387,10 +387,10 @@
     }
   },
   "auth": {
-    "loginTitle": "Vista İnşaat Hesabınıza Giriş Yapın",
-    "loginSubtitle": "Projelerinizi takip edin, teklif durumunuzu görüntüleyin ve size özel içeriklere erişin.",
-    "registerTitle": "Vista İnşaat Hesabınızı Oluşturun",
-    "registerSubtitle": "Projelerinizi takip edin, teklif durumunuzu görüntüleyin ve size özel içeriklere erişin.",
+    "loginTitle": "Sultan Defense Hesabiniza Giris Yapin",
+    "loginSubtitle": "Taleplerinizi takip edin, tedarik durumunu goruntuleyin ve katalog iceriklerine erisin.",
+    "registerTitle": "Sultan Defense Hesabinizi Olusturun",
+    "registerSubtitle": "Taleplerinizi takip edin, tedarik durumunu goruntuleyin ve katalog iceriklerine erisin.",
     "continueWithGoogle": "Google ile devam et",
     "orUseEmail": "veya e-posta adresinizi kullanın",
     "email": "E-posta",
@@ -442,15 +442,15 @@
   "legal": {
     "title": "Yasal",
     "privacy": "Gizlilik Politikası",
-    "privacyDesc": "Vista İnşaat ile paylaşılan iletişim, teklif ve teknik proje verilerinin nasıl ele alındığına dair özet bilgi.",
-    "privacyContent": "<p>Vista İnşaat, iletişim ve teklif formları üzerinden iletilen verileri yalnızca talepleri değerlendirmek, teklif hazırlamak ve proje iletişimini sürdürmek amacıyla kullanır.</p><p>Gereksiz kişisel veri talep etmeyiz; proje dosyaları, çizimler ve teknik dokümanlara erişimi ilgili operasyon ekipleriyle sınırlı tutarız.</p><p>Veri güncelleme veya silme talepleri için iletişim sayfasındaki kanallar üzerinden bize ulaşabilirsiniz.</p>",
+    "privacyDesc": "Sultan Defense ile paylasilan iletisim, teklif ve teknik tedarik verilerinin nasil ele alindigina dair ozet bilgi.",
+    "privacyContent": "<p>Sultan Defense, iletisim ve teklif formlari uzerinden iletilen verileri yalnizca talepleri degerlendirmek, teklif hazirlamak ve tedarik iletisimini surdurmek amaciyla kullanir.</p><p>Gereksiz kisisel veri talep etmeyiz; teknik dokumanlara erisimi ilgili operasyon ekipleriyle sinirli tutariz.</p><p>Veri guncelleme veya silme talepleri icin iletisim sayfasindaki kanallar uzerinden bize ulasabilirsiniz.</p>",
     "terms": "Kullanım Koşulları",
-    "termsDesc": "Vista İnşaat web sitesi, teknik içerikler ve teklif iletişim kanallarının kullanımına dair genel koşullar.",
-    "termsContent": "<p>Bu sitede yer alan bilgiler genel teknik ve ticari yönlendirme amacıyla sunulur. Nihai ürün kapsamı, malzeme seçimi ve üretim koşulları proje değerlendirme sürecinde netleştirilir.</p><p>Sitedeki görseller, teknik notlar ve açıklamalar tek başına bağlayıcı nihai teklif niteliğinde değildir.</p><p>Teklif, termin ve teslim kapsamındaki taahhütler ancak ticari süreçte karşılıklı teyit sonrasında geçerli olur.</p>"
+    "termsDesc": "Sultan Defense web sitesi, teknik katalog icerikleri ve teklif iletisim kanallarinin kullanimina dair genel kosullar.",
+    "termsContent": "<p>Bu sitede yer alan bilgiler genel teknik ve tedarik yönlendirmesi amacıyla sunulur. Nihai ürün kapsamı, malzeme seçimi ve üretim koşulları proje değerlendirme sürecinde netleştirilir.</p><p>Sitedeki görseller, teknik notlar ve açıklamalar tek başına bağlayıcı nihai teklif niteliğinde değildir.</p><p>Teklif, termin ve teslim kapsamındaki taahhütler ancak ihracat ve tedarik sürecinde karşılıklı teyit sonrasında geçerli olur.</p>"
   },
   "seo": {
-    "defaultTitle": "Vista İnşaat | Güvenilir İnşaat ve Mimarlık Hizmetleri",
-    "defaultDescription": "Konut, ticari ve karma kullanım projelerinde kaliteli, zamanında ve güvenilir inşaat çözümleri. Vista İnşaat ile hayalinizdeki projeyi hayata geçirin.",
-    "keywords": "inşaat, mimarlık, konut projeleri, ticari projeler, villa, apartman, proje yönetimi, anahtar teslim"
+    "defaultTitle": "Sultan Defense | A’dan Z’ye Savunma Tedariki ve Taktik Ekipman",
+    "defaultDescription": "Sultan Defense, Orta Dogu, Afrika ve Turk Cumhuriyetleri icin taktik ekipman ve savunma teknolojileri tedarik eden kuresel B2B ihracat partneridir.",
+    "keywords": "savunma tedariki, askeri ekipman, taktik ekipman, balistik koruma, Turk savunma sanayi, ihracat partneri, sultan defense"
   }
 }

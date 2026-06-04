@@ -79,7 +79,7 @@ export default async function AboutPage({
 
   const content = normalizeRichContent(page?.content);
   const org = organizationJsonLd(locale);
-  const imageSrc = absoluteAssetUrl(page?.image_url || page?.featured_image) || '/uploads/projects/vista-insaat-proje-01.jpeg';
+  const imageSrc = absoluteAssetUrl(page?.image_url || page?.featured_image) || '/media/gallery-placeholder.svg';
 
   const breadcrumbs = [
     { label: companyName, href: localizedPath(locale, '/') },

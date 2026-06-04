@@ -15,19 +15,19 @@ const BASE_URL = `http://127.0.0.1:${PORT}`;
 const routeChecks = [
   {
     pathname: '/tr',
-    patterns: ['data-theme-template="vista-construction"', 'data-theme-mode="light"', '<link rel="canonical"'],
+    patterns: ['data-theme-template="sultandefense-imperial-armor"', 'data-theme-mode="light"', '<link rel="canonical"'],
   },
   {
     pathname: '/tr/projeler',
-    patterns: ['data-theme-template="vista-construction"', 'Sultan Defense'],
+    patterns: ['data-theme-template="sultandefense-imperial-armor"', 'Sultan Defense'],
   },
   {
     pathname: '/tr/haberler',
-    patterns: ['data-theme-template="vista-construction"', '<html lang="tr"'],
+    patterns: ['data-theme-template="sultandefense-imperial-armor"', '<html lang="tr"'],
   },
   {
     pathname: '/tr/iletisim',
-    patterns: ['data-theme-template="vista-construction"', '<html lang="tr"'],
+    patterns: ['data-theme-template="sultandefense-imperial-armor"', '<html lang="tr"'],
   },
   {
     pathname: '/robots.txt',

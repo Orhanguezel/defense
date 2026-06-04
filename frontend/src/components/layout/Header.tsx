@@ -75,9 +75,9 @@ function getMegaColumns(
       links: services.length > 0
         ? services.map(s => ({ label: s.title, url: l(`/hizmetler/${s.slug}`) }))
         : [
-            { label: t('construction'), url: l('/hizmetler') },
+            { label: t('procurement'), url: l('/hizmetler') },
             { label: t('project_management'), url: l('/hizmetler') },
-            { label: t('architectural_design'), url: l('/hizmetler') },
+            { label: t('quality_acceptance'), url: l('/hizmetler') },
             { label: t('interior_design'), url: l('/hizmetler') },
           ],
     },

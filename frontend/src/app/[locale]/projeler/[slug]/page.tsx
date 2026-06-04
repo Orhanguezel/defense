@@ -101,13 +101,13 @@ export async function generateMetadata({
     title:
       project.meta_title ||
       (locale.startsWith('en')
-        ? `${project.title} | Vista Construction`
+        ? `${project.title} | Sultan Defense`
         : `${project.title} | Sultan Defense`),
     description:
       project.meta_description ||
       (locale.startsWith('en')
-        ? `Explore ${project.title}: project scope, location, area and architectural details by Vista Construction.`
-        : `${project.title} projesi hakkında teknik kapsam, konum, alan ve mimari detayları inceleyin.`),
+        ? `Explore ${project.title}: procurement scope, standards, mission fit and logistics details by Sultan Defense.`
+        : `${project.title} için tedarik kapsamı, standartlar, görev uyumu ve lojistik detayları inceleyin.`),
     ogImage: project.image_url,
     includeLocaleAlternates: true,
   });
@@ -163,14 +163,14 @@ export default async function ProjectDetailPage({
   const area = sv('area');
   const projectType = sv('type') || project.category_name || null;
   const status = sv('status');
-  const architects = sv('architects');
-  const leadArchitect = sv('lead_architect');
+  const certifications = sv('certifications');
+  const complianceLead = sv('compliance_lead');
   const manufacturers = sv('manufacturers');
-  const projectTeam = sv('project_team');
-  const landscapeArch = sv('landscape_architecture');
-  const interiorDesign = sv('interior_design');
+  const procurementTeam = sv('procurement_team');
+  const exportRegion = sv('export_region');
+  const integrationSupport = sv('integration_support');
   const engineering = sv('engineering');
-  const generalConstruction = sv('general_construction');
+  const deliveryScope = sv('delivery_scope');
   const city = sv('city');
   const country = sv('country');
   const contractor = sv('contractor');
@@ -178,21 +178,21 @@ export default async function ProjectDetailPage({
 
   // Build spec items for the expandable component
   const primarySpecs: SpecItem[] = [
-    architects && { icon: 'architects', label: sl('architects'), value: architects, isLink: true },
+    certifications && { icon: 'certifications', label: sl('certifications'), value: certifications, isLink: true },
     area && { icon: 'area', label: sl('area'), value: area },
     year && { icon: 'year', label: sl('year'), value: year },
     manufacturers && { icon: 'manufacturers', label: sl('manufacturers'), value: manufacturers },
-    leadArchitect && { icon: 'leadArchitect', label: sl('lead_architect'), value: leadArchitect },
+    complianceLead && { icon: 'complianceLead', label: sl('compliance_lead'), value: complianceLead },
     status && { icon: 'status', label: sl('status'), value: status },
   ].filter(Boolean) as SpecItem[];
 
   const secondarySpecs: SpecItem[] = [
     projectType && { icon: 'category', label: sl('type'), value: projectType, isLink: true },
-    projectTeam && { icon: 'team', label: sl('project_team'), value: projectTeam },
-    landscapeArch && { icon: 'default', label: sl('landscape_architecture'), value: landscapeArch },
-    interiorDesign && { icon: 'default', label: sl('interior_design'), value: interiorDesign },
+    procurementTeam && { icon: 'team', label: sl('procurement_team'), value: procurementTeam },
+    exportRegion && { icon: 'default', label: sl('export_region'), value: exportRegion },
+    integrationSupport && { icon: 'default', label: sl('integration_support'), value: integrationSupport },
     engineering && { icon: 'default', label: sl('engineering'), value: engineering },
-    generalConstruction && { icon: 'default', label: sl('general_construction'), value: generalConstruction },
+    deliveryScope && { icon: 'default', label: sl('delivery_scope'), value: deliveryScope },
     city && { icon: 'city', label: sl('city'), value: city },
     country && { icon: 'country', label: sl('country'), value: country },
     location && { icon: 'location', label: sl('location'), value: location },
@@ -342,7 +342,7 @@ export default async function ProjectDetailPage({
             {(project.content || project.description) && (
               <div style={{ marginTop: 32 }}>
                 <p style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 8, fontStyle: 'italic' }}>
-                  {isEn ? 'Text description provided by the architects.' : 'Mimarlar tarafından sağlanan metin açıklama.'}
+                  {isEn ? 'Technical description provided for procurement review.' : 'Tedarik incelemesi için sağlanan teknik açıklama.'}
                 </p>
                 <div
                   style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--color-text-secondary)' }}
@@ -484,10 +484,10 @@ export default async function ProjectDetailPage({
               />
             )}
 
-            {/* ── 5. About this office / Mimar hakkında ── */}
-            {architects && (
+            {/* ── 5. Compliance summary ── */}
+            {certifications && (
               <div className="pd-sidebar-card">
-                <h3 style={{ fontSize: 15 }}>{isEn ? 'About this Office' : 'Bu Ofis Hakkında'}</h3>
+                <h3 style={{ fontSize: 15 }}>{isEn ? 'Compliance Summary' : 'Uyum Özeti'}</h3>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
                   <div
                     style={{
@@ -504,11 +504,11 @@ export default async function ProjectDetailPage({
                       flexShrink: 0,
                     }}
                   >
-                    {architects.charAt(0).toUpperCase()}
+                    {certifications.charAt(0).toUpperCase()}
                   </div>
                   <div>
                     <span style={{ fontSize: 14, fontWeight: 600, color: 'var(--color-text-primary)' }}>
-                      {architects}
+                      {certifications}
                     </span>
                     {location && (
                       <span style={{ display: 'block', fontSize: 12, color: 'var(--color-text-muted)', marginTop: 2 }}>
@@ -530,7 +530,7 @@ export default async function ProjectDetailPage({
                     textDecoration: 'none',
                   }}
                 >
-                  {isEn ? 'View All Projects' : 'Tüm Projeleri Gör'}
+                  {isEn ? 'View All Products' : 'Tüm Ürünleri Gör'}
                 </Link>
               </div>
             )}

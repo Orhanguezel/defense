@@ -58,10 +58,10 @@ export default function TwitterImage() {
                 letterSpacing: -2,
               }}
             >
-              İnşaat ve Mimarlıkta Güvenilir Çözüm Ortağı
+              Savunma Tedarikinde Güvenilir Çözüm Ortağı
             </div>
             <div style={{ display: 'flex', fontSize: 26, color: '#c8c2b8', maxWidth: 900 }}>
-              Konut, ticari ve karma kullanım projelerinde kalite ve zamanında teslim.
+              Taktik ekipman, zırh sistemleri ve ihracat süreçlerinde güvenilir çözüm ortağı.
             </div>
           </div>
           <div
@@ -74,7 +74,7 @@ export default function TwitterImage() {
           >
             <div style={{ display: 'flex' }}>sultandefense.com</div>
             <div style={{ display: 'flex', color: '#C5A880', fontWeight: 600 }}>
-              Kalite · Güven · Zamanında Teslim
+              Tedarik · Uyum · İhracat
             </div>
           </div>
         </div>

@@ -13,7 +13,7 @@ export type ProjectViewItem = {
   alt: string;
   category?: string;
   location?: string;
-  architects?: string;
+  manufacturer?: string;
   year?: string;
   area?: string;
   status?: string;
@@ -25,7 +25,7 @@ export type ProjectViewItem = {
 type FilterLabels = {
   category: string;
   location: string;
-  architects: string;
+  manufacturer: string;
   year: string;
   materials: string;
   area: string;
@@ -40,7 +40,7 @@ type FilterLabels = {
 };
 
 type DetailLabels = {
-  architects: string;
+  manufacturer: string;
   location: string;
   year: string;
   area: string;
@@ -92,7 +92,7 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
   const filterDimensions = useMemo(() => [
     { key: 'category', label: filterLabels.category, options: uniqueValues(projects, 'category') },
     { key: 'location', label: filterLabels.location, options: uniqueValues(projects, 'location') },
-    { key: 'architects', label: filterLabels.architects, options: uniqueValues(projects, 'architects') },
+    { key: 'manufacturer', label: filterLabels.manufacturer, options: uniqueValues(projects, 'manufacturer') },
     { key: 'year', label: filterLabels.year, options: uniqueValues(projects, 'year') },
     { key: 'materials', label: filterLabels.materials, options: uniqueValues(projects, 'materials') },
     { key: 'area', label: filterLabels.area, options: uniqueValues(projects, 'area') },
@@ -486,10 +486,10 @@ function ListCard({ item, detailLabels }: { item: ProjectViewItem; detailLabels?
             {item.category}
           </p>
         )}
-        {item.architects && (
+        {item.manufacturer && (
           <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', marginTop: 10 }}>
-            <strong>{detailLabels?.architects ?? 'Mimarlar'}:</strong>{' '}
-            <span style={{ color: 'var(--color-brand)' }}>{item.architects}</span>
+            <strong>{detailLabels?.manufacturer ?? 'Uretici'}:</strong>{' '}
+            <span style={{ color: 'var(--color-brand)' }}>{item.manufacturer}</span>
           </p>
         )}
         {item.location && (

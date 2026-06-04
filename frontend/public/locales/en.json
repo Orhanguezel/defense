@@ -190,7 +190,6 @@
     "filters": {
       "type": "Category",
       "location": "Origin",
-      "architects": "Manufacturer",
       "city": "Country",
       "year": "Year",
       "materials": "Materials",
@@ -204,7 +203,8 @@
       "commercial": "Electronics",
       "mixed": "Logistics",
       "completed": "Available",
-      "ongoing": "On Request"
+      "ongoing": "On Request",
+      "manufacturer": "Manufacturer"
     },
     "detail": {
       "location": "Location",
@@ -213,9 +213,9 @@
       "type": "Type",
       "status": "Status",
       "client": "Client",
-      "architect": "Architect",
       "floors": "Number of Floors",
-      "units": "Number of Units"
+      "units": "Number of Units",
+      "manufacturer": "Manufacturer"
     },
     "comments": {
       "title": "Conversation",
@@ -273,7 +273,7 @@
     "all": "All",
     "emptyStateNote": "Sample editorial topics are shown below until live news content becomes available.",
     "noPosts": "No posts found.",
-    "loveTitle": "Architecture You'll Love",
+    "loveTitle": "Defense Insights You May Like",
     "engagement": {
       "title": "Comments",
       "subtitle": "Feedback on this article",
@@ -336,9 +336,9 @@
     "benefits": {
       "title": "What We Clarify in the Quote",
       "items": {
-        "one": "Project type: residential, commercial, mixed-use or restoration",
-        "two": "Scope: architectural design, construction, project management or full turnkey",
-        "three": "Budget range, timeline expectations, location and technical requirements"
+        "one": "Requirement: product family, quantity, standards and destination country",
+        "two": "Scope: sourcing, export compliance, quality acceptance and secure delivery",
+        "three": "Budget range, timeline, EUC status and technical documentation needs"
       }
     },
     "form": {

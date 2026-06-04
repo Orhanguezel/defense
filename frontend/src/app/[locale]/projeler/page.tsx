@@ -96,7 +96,7 @@ function toViewItem(p: any, locale: string): ProjectViewItem {
     }),
     category: p.category_name || p.type || specById(specs, 'type') || undefined,
     location: specById(specs, 'location') || undefined,
-    architects: specById(specs, 'architects') || specById(specs, 'lead_architect') || undefined,
+    manufacturer: specById(specs, 'manufacturers') || specById(specs, 'certifications') || undefined,
     year: specById(specs, 'year') || undefined,
     area: specById(specs, 'area') || undefined,
     status: specById(specs, 'status') || undefined,
@@ -195,7 +195,7 @@ export default async function ProjectsPage({
             filterLabels={{
               category: t('projects.filters.type'),
               location: t('projects.filters.location'),
-              architects: t('projects.filters.architects'),
+              manufacturer: t('projects.filters.manufacturer'),
               year: t('projects.filters.year'),
               materials: t('projects.filters.materials'),
               area: t('projects.filters.area'),
@@ -209,7 +209,7 @@ export default async function ProjectsPage({
               allLabel: t('common.allLabel'),
             }}
             detailLabels={{
-              architects: t('projects.detail.architect'),
+              manufacturer: t('projects.detail.manufacturer'),
               location: t('projects.detail.location'),
               year: t('projects.detail.year'),
               area: t('projects.detail.area'),

@@ -78,8 +78,8 @@ export async function generateMetadata({
     description:
       post.meta_description ||
       (locale.startsWith('en')
-        ? `${post.title}. Read architectural news and construction insights by Sultan Defense.`
-        : `${post.title}. Sultan Defense mimarlık haberleri ve inşaat sektörü içerikleri.`),
+        ? `${post.title}. Read defense procurement and tactical equipment insights by Sultan Defense.`
+        : `${post.title}. Sultan Defense savunma tedariki ve taktik ekipman içerikleri.`),
     ogImage: post.featured_image || post.image_url,
     openGraphType: 'article',
     includeLocaleAlternates: true,
@@ -141,7 +141,7 @@ export default async function NewsDetailPage({
 
   const breadcrumbs = [
     { label: 'Sultan Defense', href: localizedPath(locale, '/') },
-    { label: isEn ? 'Architecture News' : 'Mimarlık Haberleri', href: localizedPath(locale, '/haberler') },
+    { label: isEn ? 'Defense Insights' : 'Savunma Haberleri', href: localizedPath(locale, '/haberler') },
     ...(post.category_name && post.category_slug
       ? [{ label: post.category_name, href: localizedPath(locale, `/haberler?category=${post.category_slug}`) }]
       : []),
@@ -377,10 +377,10 @@ export default async function NewsDetailPage({
 
           {/* RIGHT SIDEBAR */}
           <aside>
-            {/* Architecture You'll Love */}
+            {/* Defense insights you may like */}
             {sidebarPosts.length > 0 && (
               <div className="nd-sidebar-card">
-                <h3>{isEn ? "Architecture You'll Love" : 'Beğeneceğiniz Haberler'}</h3>
+                <h3>{isEn ? 'Defense Insights You May Like' : 'Beğenebileceğiniz Savunma İçerikleri'}</h3>
                 {sidebarPosts.map((sp: any) => (
                   <Link
                     key={sp.id ?? sp.title}

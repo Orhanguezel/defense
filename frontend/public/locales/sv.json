@@ -1,8 +1,8 @@
 {
   "nav": {
     "home": "Home",
-    "projects": "Projects",
-    "services": "Activities",
+    "projects": "Products",
+    "services": "Procurement",
     "about": "About",
     "gallery": "Gallery",
     "blog": "News",
@@ -10,12 +10,24 @@
     "offer": "Get Quote",
     "login": "Log in",
     "register": "Sign up",
+    "ballistic": "Ballistic Protection",
+    "communications": "Communication & Electronics",
+    "field_kitchen": "Field Kitchen & Support",
+    "field_logistics": "Field Support Logistics",
+    "naval": "Naval & Marine Systems",
+    "power": "Power, Battery & Generator",
+    "riot_control": "Shield & Riot Control",
+    "surveillance": "Surveillance & Sensors",
+    "tactical_gear": "Tactical Gear & Textile",
+    "training": "Training & Simulation",
+    "corporate": "Corporate",
+    "vision": "Our Vision",
     "tagline": "A to Z Defense Procurement & Export Partner",
-    "logout": "Log Out",
-    "profile": "My Profile"
+    "profile": "My Profile",
+    "logout": "Log Out"
   },
   "footer": {
-    "description": "Reliable construction and architecture solutions for residential, commercial and mixed-use projects.",
+    "description": "Your A to Z defense procurement partner. Connecting armed forces worldwide with Turkey's elite defense manufacturing sector.",
     "rights": "All rights reserved",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
@@ -33,9 +45,22 @@
     "viewAll": "View All",
     "contactUs": "Contact Us",
     "backToTop": "Back to Top",
-    "requestOffer": "Get Quote",
-    "offerCtaTitle": "Let Us Prepare a Free Site Visit and Quote for Your Project",
-    "offerCtaDescription": "For your residential, commercial or mixed-use projects, let us align project scope, timeline and budget expectations together and prepare a tailored quote.",
+    "search": "Search",
+    "searchIn": "Search {company}",
+    "closeMenu": "Close menu",
+    "clearFilters": "Clear filters",
+    "allLabel": "All",
+    "save": "Save",
+    "sending": "Sending...",
+    "guest": "Guest",
+    "relativeTime": {
+      "justNow": "just now",
+      "hoursAgo": "about {hours} hours ago",
+      "daysAgo": "{days} days ago"
+    },
+    "requestOffer": "Request Offer",
+    "offerCtaTitle": "Request a Procurement Quote from Our Export Specialists",
+    "offerCtaDescription": "For your defense equipment requirements, let us align technical specifications, delivery timelines and compliance needs — then prepare a tailored procurement quote.",
     "freeOfObligation": "Free and non-binding",
     "send": "Send",
     "name": "Full Name",
@@ -49,93 +74,86 @@
     "noResults": "No results found",
     "relatedProducts": "Related Projects",
     "relatedGallery": "Related Galleries",
-    "relatedArticles": "Related Articles",
-    "search": "Search",
-    "searchIn": "Search {company}",
-    "closeMenu": "Close menu",
-    "clearFilters": "Clear filters",
-    "allLabel": "All",
-    "save": "Save",
-    "sending": "Sending...",
-    "guest": "Guest"
+    "relatedArticles": "Related Articles"
   },
   "home": {
     "hero": {
-      "title": "Your Trusted Partner in Construction and Architecture",
-      "subtitle": "From design to delivery, we offer quality, on-time and transparent construction services for residential, commercial and mixed-use developments.",
-      "cta": "Explore Our Projects",
-      "ctaSecondary": "Get a Quote",
-      "badge": "Vista Construction",
-      "workflowLabel": "Project Process",
-      "workflowTitle": "Planning and execution tailored to your project",
-      "workflowBadgeTitle": "Transparent",
-      "workflowBadgeSubtitle": "Process and communication",
+      "title": "A to Z Global Military Procurement Solutions",
+      "subtitle": "Your trusted gateway to Turkey's battle-proven defense industry. We specialize in end-to-end procurement of advanced tactical gear, military electronics, and logistical solutions for armed forces worldwide.",
+      "cta": "Explore the Catalog",
+      "ctaSecondary": "Request a Quote",
+      "badge": "Sultan Defense",
+      "newProjectBadge": "New Capability",
+      "workflowLabel": "Procurement Process",
+      "workflowTitle": "Streamlined sourcing tailored to your operational needs",
+      "workflowBadgeTitle": "Compliant",
+      "workflowBadgeSubtitle": "Export-ready and legally cleared",
       "metrics": {
-        "prototypeTitle": "Feasibility",
-        "prototypeDesc": "Feasibility, concept design and initial cost estimation",
-        "productionTitle": "Execution",
-        "productionDesc": "Quality control, schedule tracking and open communication",
-        "engineeringTitle": "Engineering",
-        "engineeringDesc": "Structural analysis, geotechnical survey and technical solutions"
+        "prototypeTitle": "Sourcing",
+        "prototypeDesc": "Needs analysis, manufacturer identification and negotiation",
+        "productionTitle": "Compliance",
+        "productionDesc": "EUC management, export permits and quality assurance",
+        "engineeringTitle": "Delivery",
+        "engineeringDesc": "Specialized freight, logistics and secure on-time delivery"
       },
       "steps": {
-        "oneTitle": "1. Project requirements review",
-        "oneDesc": "We clarify location, intended use, area, budget and timeline expectations together.",
-        "twoTitle": "2. Design and engineering",
-        "twoDesc": "We prepare architectural design, structural plans and engineering solutions.",
-        "threeTitle": "3. Execution and delivery",
-        "threeDesc": "We manage the entire process from permits to handover, ensuring quality and schedule compliance."
+        "oneTitle": "1. Operational needs assessment",
+        "oneDesc": "We analyze your technical requirements, target specifications and compliance requirements together.",
+        "twoTitle": "2. Manufacturer liaison & sourcing",
+        "twoDesc": "We identify and negotiate with elite Turkish defense manufacturers to match your exact specifications.",
+        "threeTitle": "3. Export compliance & delivery",
+        "threeDesc": "We manage EUC paperwork, export permits and arrange specialized secure freight to your destination."
       },
       "stats": {
-        "stepsValue": "3+",
-        "stepsLabel": "Core project phases",
-        "b2bValue": "15+",
-        "b2bLabel": "Years of industry experience"
+        "stepsValue": "30+",
+        "stepsLabel": "Years of defense experience",
+        "b2bValue": "10+",
+        "b2bLabel": "Product categories procured"
       }
     },
     "projects": {
-      "title": "Featured Projects",
-      "subtitle": "A selection from our completed and ongoing residential, commercial and mixed-use developments"
+      "title": "Featured Products",
+      "subtitle": "A selection from our defense equipment catalog — tactical gear, electronics, and military logistics solutions"
     },
     "latestProjects": {
-      "title": "Latest Projects",
-      "subtitle": "Discover our most recent projects"
+      "title": "Latest Products",
+      "subtitle": "Discover our most recently cataloged defense equipment"
     },
     "services": {
-      "title": "Our Activity Areas",
-      "subtitle": "Comprehensive solutions from architectural design to construction, project management to handover"
+      "title": "Our Procurement Capabilities",
+      "subtitle": "From ballistic protection to training simulators — comprehensive A to Z defense supply solutions"
     },
     "whyUs": {
-      "title": "Why Vista Construction?",
-      "subtitle": "We make a difference in every project with a construction philosophy centered on quality, trust and on-time delivery",
-      "quality": "High Quality",
-      "qualityDesc": "Full compliance with quality standards at every stage, from material selection to workmanship",
-      "experience": "Experience",
-      "experienceDesc": "Your reliable partner with over 15 years of industry experience and 100+ completed projects",
-      "custom": "Custom Solutions",
-      "customDesc": "A design and execution approach unique to each project — not standard, but tailored to you",
-      "delivery": "On-Time Delivery",
-      "deliveryDesc": "Timeline commitment and transparent process management from project start to handover"
+      "title": "Why Sultan Defense?",
+      "subtitle": "We deliver operational confidence through combat-proven equipment, strict compliance, and rapid logistics",
+      "quality": "NATO-Standard Quality",
+      "qualityDesc": "Strict compliance with NATO, AQAP, MIL-STD and NIJ standards in every procurement",
+      "experience": "Decades of Experience",
+      "experienceDesc": "Established in 1996 — over 30 years of defense procurement expertise serving armed forces globally",
+      "custom": "Tailored Solutions",
+      "customDesc": "Custom procurement packages matched to your exact operational and technical requirements",
+      "delivery": "Rapid Secure Delivery",
+      "deliveryDesc": "Specialized military freight — air, land, or sea — ensuring on-time and fully compliant delivery"
     },
     "brands": {
-      "title": "Trusted Brands",
-      "subtitle": "World-leading brands we collaborate with in our projects"
+      "title": "Our Manufacturer Network",
+      "subtitle": "Elite Turkish defense manufacturers we partner with for procurement"
     },
     "gallery": {
       "title": "Gallery",
-      "subtitle": "Selected photographs from our completed projects and construction process"
+      "subtitle": "Selected visuals from our defense equipment catalog and partner manufacturers"
     },
     "blog": {
       "title": "News and Insights",
-      "subtitle": "Current content from construction industry news, architecture trends and our project experiences",
+      "subtitle": "Defense industry news, procurement updates and strategic insights from Sultan Defense",
       "featuredLabel": "Featured Insight",
-      "spotlightTitle": "Sustainable Construction: Green Building Certification and LEED Standards",
-      "spotlightBodyPrimary": "Sustainable construction is becoming an increasingly important standard in terms of energy efficiency, water conservation and healthy indoor environments. LEED (Leadership in Energy and Environmental Design) certification is an international reference system that certifies buildings as environmentally friendly.",
-      "spotlightBodySecondary": "At Vista Construction, we aim to integrate sustainable material selection and energy-efficient design principles into every project we undertake. Achieving sustainability goals is not possible without proper planning from the start — which is why we plan an eco-conscious approach for each project from day one.",
+      "spotlightTitle": "Turkey's Defense Export Growth: NATO Standards Meet Global Demand",
+      "spotlightBodyPrimary": "Turkey's defense industry has experienced remarkable growth, with domestic production capacity now covering over 80% of military requirements. Turkish manufacturers consistently produce equipment to NATO, AQAP, and MIL-STD specifications, making them globally competitive procurement sources.",
+      "spotlightBodySecondary": "At Sultan Defense, we act as the bridge between Turkey's elite defense manufacturers and armed forces worldwide. Our deep industry relationships and compliance expertise ensure that every procurement transaction is legally sound, logistically precise, and operationally effective.",
       "insightLabel": "What this covers",
-      "insightText": "Green building standards, certification process and the value it adds to your project",
+      "insightText": "Defense industry trends, compliance frameworks and procurement best practices",
       "archiveLabel": "More Content",
-      "archiveSubtitle": "Other content on construction, architecture and project management"
+      "archiveSubtitle": "Other content on defense, military logistics and procurement intelligence"
     },
     "newsletter": {
       "title": "Subscribe to Our Newsletter",
@@ -151,32 +169,42 @@
     }
   },
   "projects": {
-    "title": "Our Projects",
-    "description": "Our completed and ongoing residential, commercial and mixed-use projects deliver quality, aesthetics and functionality together.",
+    "title": "Products",
+    "description": "Explore our comprehensive defense equipment catalog — tactical gear, electronics, and military logistics.",
+    "viewProject": "View Product",
+    "allProjects": "All Products",
+    "results": "results",
+    "images": "Images",
+    "emptyStateNote": "Sample product titles are shown below until the live catalog feed becomes available.",
     "categories": "Categories",
-    "allCategories": "All Projects",
-    "search": "Search Projects...",
-    "noProjects": "No projects found in this category.",
-    "specs": "Project Details",
-    "requestOffer": "Get Information About This Project",
+    "allCategories": "All Products",
+    "search": "Search Products...",
+    "noProjects": "No products found in this category.",
+    "specs": "Product Details",
+    "requestOffer": "Request Procurement Quote",
+    "manufacturers": "Manufacturers",
+    "saveProject": "Save Product",
+    "loveTitle": "Products You May Need",
+    "getQuoteTitle": "Request a Procurement Quote",
+    "getQuoteDesc": "Contact our export specialists for a tailored quote.",
     "filters": {
-      "type": "Project Type",
-      "location": "Location",
-      "architects": "Architects",
-      "city": "City",
+      "type": "Category",
+      "location": "Origin",
+      "city": "Country",
       "year": "Year",
       "materials": "Materials",
-      "area": "Area",
-      "floors": "Floors",
-      "client": "Client",
+      "area": "Weight / Size",
+      "floors": "Specifications",
+      "client": "Certification",
       "status": "Status",
       "all": "All",
       "search": "Search",
-      "residential": "Residential",
-      "commercial": "Commercial",
-      "mixed": "Mixed Use",
-      "completed": "Completed",
-      "ongoing": "Ongoing"
+      "residential": "Ballistic",
+      "commercial": "Electronics",
+      "mixed": "Logistics",
+      "completed": "Available",
+      "ongoing": "On Request",
+      "manufacturer": "Manufacturer"
     },
     "detail": {
       "location": "Location",
@@ -185,13 +213,10 @@
       "type": "Type",
       "status": "Status",
       "client": "Client",
-      "architect": "Architect",
       "floors": "Number of Floors",
-      "units": "Number of Units"
+      "units": "Number of Units",
+      "manufacturer": "Manufacturer"
     },
-    "results": "results",
-    "images": "Images",
-    "emptyStateNote": "Sample projects are shown below until the live project feed becomes available.",
     "comments": {
       "title": "Conversation",
       "viewing": "Viewing",
@@ -213,38 +238,42 @@
       "captchaVerifyFailed": "Security verification failed.",
       "captchaRequired": "Complete the security verification before submitting your comment.",
       "captchaBypass": "Local development mode: security verification is bypassed."
-    },
-    "viewProject": "View Project",
-    "allProjects": "All Projects"
+    }
   },
   "services": {
-    "title": "Our Activity Areas",
-    "description": "Comprehensive construction and architecture activities from architectural design to construction, from survey and restoration to project management.",
-    "viewAll": "All Activities",
-    "noServices": "No activities found.",
-    "requestService": "Get a Quote for This Activity",
+    "title": "Our Procurement Services",
+    "description": "Comprehensive A to Z defense procurement — strategic sourcing, export compliance, quality assurance and secure global delivery.",
+    "viewAll": "All Services",
+    "noServices": "No services found.",
+    "learnMore": "LEARN MORE",
+    "emptyStateNote": "Sample service descriptions are shown below until live content becomes available.",
+    "requestService": "Request a Quote for This Service",
     "items": {
-      "residential": "Residential Projects",
-      "commercial": "Commercial Projects",
-      "restoration": "Restoration",
-      "projectManagement": "Project Management",
-      "architecturalDesign": "Architectural Design",
-      "interiorDesign": "Interior Design"
+      "sourcing": "Strategic Sourcing",
+      "compliance": "Export Compliance & EUC",
+      "qa": "Quality Assurance",
+      "logistics": "Global Logistics",
+      "consulting": "Defense Consulting",
+      "customProcurement": "Custom Procurement"
     }
   },
   "gallery": {
     "title": "Gallery",
-    "description": "A photo gallery compiled from our completed projects, construction processes and architectural details.",
+    "description": "A visual catalog of defense equipment, manufacturer facilities and tactical gear from Sultan Defense's procurement network.",
     "viewAll": "View All Images",
-    "noGalleries": "No galleries found."
+    "noGalleries": "No galleries found.",
+    "photos": "photos",
+    "emptyStateNote": "Sample gallery topics are shown below until live product visuals become available."
   },
   "blog": {
     "title": "News",
-    "description": "Construction industry news, architecture trends, project updates and sector insights.",
+    "description": "Defense industry news, military procurement insights and latest developments from Sultan Defense.",
+    "viewPost": "Read News",
+    "allPosts": "All News",
+    "all": "All",
+    "emptyStateNote": "Sample editorial topics are shown below until live news content becomes available.",
     "noPosts": "No posts found.",
-    "readMore": "Read More",
-    "publishedAt": "Published",
-    "categories": "Categories",
+    "loveTitle": "Defense Insights You May Like",
     "engagement": {
       "title": "Comments",
       "subtitle": "Feedback on this article",
@@ -307,9 +336,9 @@
     "benefits": {
       "title": "What We Clarify in the Quote",
       "items": {
-        "one": "Project type: residential, commercial, mixed-use or restoration",
-        "two": "Scope: architectural design, construction, project management or full turnkey",
-        "three": "Budget range, timeline expectations, location and technical requirements"
+        "one": "Requirement: product family, quantity, standards and destination country",
+        "two": "Scope: sourcing, export compliance, quality acceptance and secure delivery",
+        "three": "Budget range, timeline, EUC status and technical documentation needs"
       }
     },
     "form": {
@@ -325,40 +354,40 @@
     }
   },
   "about": {
-    "title": "About Us",
-    "description": "Vista Construction delivers reliable, quality and on-time construction services for residential and commercial projects from design to handover.",
-    "intro": "Our team carefully manages every project with architectural design, engineering solutions and an experienced on-site implementation team. Customer satisfaction, quality and on-time delivery are our core values.",
+    "title": "About Sultan Defense",
+    "description": "Sultan Defense Ltd., Co. is a premier global supplier and procurement partner in the defense and military sector, established in 1996.",
+    "intro": "Strategically headquartered in Turkey, we leverage the Turkish defense industry's rapidly expanding production capacity, cutting-edge R&D strength, and innovative technologies to bridge advanced military engineering with the critical needs of our clients worldwide.",
     "sections": {
-      "expertiseTitle": "Our Areas of Expertise",
+      "expertiseTitle": "Our Procurement Expertise",
       "expertiseItems": {
-        "one": "Residential projects: villas, apartment buildings, residences and mass housing",
-        "two": "Commercial projects: offices, shopping centers and mixed-use buildings",
-        "three": "Restoration, renovation and structural strengthening projects"
+        "one": "Ballistic protection, tactical gear and military textiles",
+        "two": "Communication electronics, surveillance sensors and naval systems",
+        "three": "Field logistics, power systems and training simulation software"
       },
       "processTitle": "How We Work",
       "processItems": {
-        "one": "Understanding project requirements and client expectations",
-        "two": "Managing architectural design, engineering and permit processes",
-        "three": "Quality-controlled, on-time and complete project delivery"
+        "one": "Analyzing your operational requirements and technical specifications",
+        "two": "Sourcing from licensed Turkish manufacturers and managing export compliance",
+        "three": "Quality assurance, factory acceptance tests and secure global delivery"
       },
       "sectorsTitle": "Who We Serve",
       "sectorsItems": {
-        "one": "Individual property investors and families",
-        "two": "Commercial real estate developers and institutions",
-        "three": "Public projects and urban transformation applications"
+        "one": "National armed forces and ministries of defense",
+        "two": "Law enforcement agencies and border security forces",
+        "three": "Defense contractors and international security agencies"
       },
       "stats": {
         "experience": "Years of Experience",
-        "projects": "Completed Projects",
-        "team": "Expert Team"
+        "projects": "Product Categories",
+        "team": "Export Specialists"
       }
     }
   },
   "auth": {
-    "loginTitle": "Log In to Your Vista Construction Account",
-    "loginSubtitle": "Track your projects, view quote status, and access exclusive content tailored to you.",
-    "registerTitle": "Create Your Vista Construction Account",
-    "registerSubtitle": "Track your projects, view quote status, and access exclusive content tailored to you.",
+    "loginTitle": "Log In to Your Sultan Defense Account",
+    "loginSubtitle": "Track your inquiries, view procurement status, and access exclusive catalog content.",
+    "registerTitle": "Create Your Sultan Defense Account",
+    "registerSubtitle": "Track your inquiries, view procurement status, and access exclusive catalog content.",
     "continueWithGoogle": "Continue with Google",
     "orUseEmail": "or use your email",
     "email": "Email",
@@ -373,16 +402,6 @@
     "termsOfService": "Terms of Service",
     "privacyPolicy": "Privacy Policy",
     "step": "Step {current} / {total}",
-    "errors": {
-      "user_exists": "This email is already registered. Try logging in instead.",
-      "invalid_credentials": "Invalid email or password.",
-      "invalid_email": "Please enter a valid email address.",
-      "weak_password": "Password must be at least 6 characters.",
-      "account_disabled": "Your account has been disabled.",
-      "too_many_attempts": "Too many attempts. Please wait a moment.",
-      "google_oauth_not_configured": "Google sign-in is currently unavailable.",
-      "generic": "An error occurred. Please try again."
-    },
     "profile": {
       "title": "My Profile",
       "subtitle": "View and update your account information.",
@@ -405,16 +424,30 @@
       },
       "notLoggedIn": "You need to log in to view this page.",
       "goToLogin": "Log In"
+    },
+    "errors": {
+      "user_exists": "This email is already registered. Try logging in instead.",
+      "invalid_credentials": "Invalid email or password.",
+      "invalid_email": "Please enter a valid email address.",
+      "weak_password": "Password must be at least 6 characters.",
+      "account_disabled": "Your account has been disabled.",
+      "too_many_attempts": "Too many attempts. Please wait a moment.",
+      "google_oauth_not_configured": "Google sign-in is currently unavailable.",
+      "generic": "An error occurred. Please try again."
     }
   },
   "legal": {
     "title": "Legal",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Use"
+    "privacyDesc": "Overview of how Sultan Defense handles contact, quotation and procurement data in compliance with KVKK and GDPR.",
+    "privacyContent": "<p>Sultan Defense Ltd., Co. uses submitted contact and quotation data only to evaluate procurement requests, prepare offers and maintain supply chain communication.</p><p>We do not request unnecessary personal data and we limit access to procurement files, technical documents and client credentials to relevant operational teams.</p><p>For data updates or removal requests, you can contact us at export@sultandefense.com.</p>",
+    "terms": "Terms of Use",
+    "termsDesc": "General terms for using the Sultan Defense website, product catalog and procurement communication channels.",
+    "termsContent": "<p>Information published on this website is provided for general informational and procurement guidance purposes. Sultan Defense is a procurement partner, not a direct manufacturer.</p><p>Product images are representational only and may belong to their respective manufacturers. No ownership or copyright is claimed.</p><p>All procurement inquiries are subject to export compliance review and valid End-User Certificate (EUC) requirements before any commitment is made.</p>"
   },
   "seo": {
-    "defaultTitle": "Vista Construction | Reliable Construction and Architecture Services",
-    "defaultDescription": "Quality, on-time and reliable construction solutions for residential, commercial and mixed-use projects. Bring your dream project to life with Vista Construction.",
-    "keywords": "construction, architecture, residential projects, commercial projects, villa, apartment, project management, turnkey"
+    "defaultTitle": "Sultan Defense | A to Z Defense Procurement & Tactical Equipment",
+    "defaultDescription": "Sultan Defense provides comprehensive A to Z military procurement solutions, supplying tactical gear and defense technologies to the Middle East, Africa, and Turkic Republics.",
+    "keywords": "defense procurement, military equipment, tactical gear, ballistic protection, Turkish defense industry, export partner, sultan defense"
   }
 }

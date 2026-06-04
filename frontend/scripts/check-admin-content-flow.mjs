@@ -464,8 +464,8 @@ async function main() {
   try {
     await waitForServer(proc);
 
-    await expectFrontend('/tr/about', ['Sultan Defense', 'Karbon fiber', 'Calisma Modelimiz']);
-    await expectFrontend('/en/about', ['Sultan Defense', 'carbon fiber', 'How We Work']);
+    await expectFrontend('/tr/about', ['Sultan Defense', 'savunma', 'Calisma Modelimiz']);
+    await expectFrontend('/en/about', ['Sultan Defense', 'defense', 'How We Work']);
     await expectFrontend('/tr/legal/privacy', ['Sultan Defense', '/tr/legal/privacy', '<link rel="canonical"']);
     await expectFrontend('/en/legal/privacy', ['Sultan Defense', '/en/legal/privacy', '<link rel="canonical"']);
 
@@ -475,9 +475,9 @@ async function main() {
       content.blog.tr.body,
       content.blog.tr.metaDescription,
     ]);
-    await expectFrontend('/en/blog/what-is-carbon-fiber', [
-      'What is Carbon Fiber?',
-      'Carbon fiber is an advanced material',
+    await expectFrontend('/en/blog/defense-procurement-checklist', [
+      'Defense Procurement Checklist',
+      'Defense procurement is not just product sourcing',
     ]);
 
     await expectFrontend(`/tr/products/${content.product.slug}`, [
@@ -487,9 +487,9 @@ async function main() {
       content.product.tr.alt,
       content.product.tr.metaDescription,
     ]);
-    await expectFrontend('/en/products/carbon-fiber-panel-prototype', [
-      'Carbon Fiber Panel Prototype',
-      'Sample carbon fiber panel prototype entry',
+    await expectFrontend('/en/products/ballistic-protection', [
+      'Advanced Ballistic Protection',
+      'High-performance ballistic protection gear',
     ]);
 
     await expectFrontend(`/tr/gallery/${content.gallery.slug}`, [
@@ -500,20 +500,19 @@ async function main() {
       content.gallery.tr.caption,
       content.gallery.tr.metaDescription,
     ]);
-    await expectFrontend('/en/gallery/carbon-fiber-panel-application-gallery', [
-      'Carbon Fiber Panel Application Gallery',
-      'Sample application gallery showing a carbon fiber panel',
-      'Carbon fiber panel prototype surface',
-      'Prototype surface inspection',
+    await expectFrontend('/en/gallery/ballistic-protection-catalog-gallery', [
+      'Ballistic Protection Catalog Gallery',
+      'Catalog visuals for vest, plate, helmet',
+      'Ballistic Protection Gallery',
     ]);
 
     await expectFrontend('/sitemap.xml', [
-      '/tr/blog/karbon-fiber-nedir',
-      '/tr/products/karbon-fiber-panel-prototipi',
-      '/tr/gallery/karbon-fiber-panel-uygulama-galerisi',
-      '/en/blog/what-is-carbon-fiber',
-      '/en/products/carbon-fiber-panel-prototype',
-      '/en/gallery/carbon-fiber-panel-application-gallery',
+      '/tr/blog/savunma-tedarik-kontrol-listesi',
+      '/tr/products/ballistic-protection',
+      '/tr/gallery/balistik-koruma-katalog-galerisi',
+      '/en/blog/defense-procurement-checklist',
+      '/en/products/ballistic-protection',
+      '/en/gallery/ballistic-protection-catalog-gallery',
     ]);
 
     log('Frontend admin content flow smoke passed (tr + en)');

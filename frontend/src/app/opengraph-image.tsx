@@ -67,7 +67,7 @@ export default function OpenGraphImage() {
               letterSpacing: -2,
             }}
           >
-            Güvenilir İnşaat ve Mimarlık Hizmetleri
+            Savunma Tedarik ve İhracat Çözümleri
           </div>
           <div
             style={{
@@ -77,7 +77,7 @@ export default function OpenGraphImage() {
               maxWidth: 820,
             }}
           >
-            Konut, ticari ve karma kullanım projelerinde kalite ve zamanında teslim.
+            Taktik ekipman, zırh sistemleri ve ihracat süreçlerinde güvenilir çözüm ortağı.
           </div>
         </div>
 
@@ -93,7 +93,7 @@ export default function OpenGraphImage() {
         >
           <div style={{ display: 'flex' }}>sultandefense.com</div>
           <div style={{ display: 'flex', color: '#C5A880', fontWeight: 600 }}>
-            Kalite · Zamanında Teslim · Güven
+            Tedarik · Uyum · İhracat
           </div>
         </div>
       </div>

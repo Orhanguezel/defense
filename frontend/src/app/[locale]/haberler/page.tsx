@@ -177,7 +177,7 @@ export default async function NewsPage({
         <JsonLd
           data={jsonld.graph([
             jsonld.collectionPage({
-              name: isEn ? 'Architecture News' : 'Mimarlık Haberleri',
+              name: isEn ? 'Defense Insights' : 'Savunma Haberleri',
               description: t('blog.description'),
               url: localizedUrl(locale, '/haberler'),
               mainEntity: jsonld.itemList(
@@ -354,7 +354,7 @@ export default async function NewsPage({
 
           {/* RIGHT SIDEBAR */}
           <aside>
-            {/* Architecture You'll Love */}
+            {/* Defense insights you may like */}
             {sidebarPosts.length > 0 && (
               <div className="nw-sidebar-card">
                 <h3>{t('blog.loveTitle')}</h3>

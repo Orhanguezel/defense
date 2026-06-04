@@ -98,8 +98,8 @@ export async function generateMetadata({
     locale,
     pathname: '/',
     title: seo?.title || (locale.startsWith('en')
-      ? 'Reliable Construction and Architecture Services'
-      : 'Güvenilir İnşaat ve Mimarlık Hizmetleri'),
+      ? 'A to Z Defense Procurement and Tactical Equipment'
+      : 'A’dan Z’ye Savunma Tedariki ve Taktik Ekipman'),
     description: seo?.description || t('seo.defaultDescription'),
     ogImage: seo?.og_image || undefined,
     noIndex: seo?.no_index,
@@ -286,7 +286,7 @@ export default async function HomePage({
                 const specs = project.specifications || {};
                 const categoryName = project.category?.name || specs.tip || '';
                 const location = specs.lokasyon || specs.location || '';
-                const architects = specs.mimarlar || specs.architects || '';
+                const manufacturer = specs.üreticiler || specs.manufacturers || '';
                 const area = specs.alan || specs.area || '';
                 const year = specs.yıl || specs.year || '';
                 const manufacturers = specs.üreticiler || specs.manufacturers || '';
@@ -300,7 +300,7 @@ export default async function HomePage({
                         style={{ fontFamily: 'var(--font-heading)' }}
                       >
                         {project.title}
-                        {architects ? ` / ${architects}` : ''}
+                        {manufacturer ? ` / ${manufacturer}` : ''}
                       </h2>
                     </Link>
 
@@ -329,10 +329,10 @@ export default async function HomePage({
                     </div>
 
                     <div className="mt-2 flex flex-wrap gap-x-6 gap-y-1 text-sm text-(--color-text-secondary)">
-                      {architects && (
+                      {manufacturer && (
                         <div className="flex items-center gap-1.5">
-                          <span className="text-xs text-(--color-text-muted)">{t('projects.filters.architects')}:</span>
-                          <span className="font-medium text-(--color-brand)">{architects}</span>
+                          <span className="text-xs text-(--color-text-muted)">{t('projects.filters.manufacturer')}:</span>
+                          <span className="font-medium text-(--color-brand)">{manufacturer}</span>
                         </div>
                       )}
                       {area && (
@@ -404,7 +404,7 @@ export default async function HomePage({
                           )}
                           <h4 className="text-sm font-semibold leading-snug text-(--color-text-primary) group-hover:text-(--color-brand)">
                             {p.title}
-                            {p.specifications?.mimarlar ? ` / ${p.specifications.mimarlar}` : ''}
+                            {p.specifications?.üreticiler ? ` / ${p.specifications.üreticiler}` : ''}
                           </h4>
                         </Link>
                       );

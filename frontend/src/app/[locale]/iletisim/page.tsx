@@ -34,7 +34,7 @@ export async function generateMetadata({
   return buildPageMetadata({
     locale,
     pathname: '/iletisim',
-    title: seo?.title || `${t('title')} — ${companyProfile?.company_name || (locale.startsWith('en') ? 'Vista Construction' : 'Sultan Defense')}`,
+    title: seo?.title || `${t('title')} — ${companyProfile?.company_name || 'Sultan Defense'}`,
     description: seo?.description || t('description'),
     ogImage: seo?.og_image || undefined,
     noIndex: seo?.no_index,

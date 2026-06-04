@@ -66,7 +66,7 @@ export async function generateMetadata({
     locale,
     pathname: `/hizmetler/${slug}`,
     title: service.meta_title || (locale.startsWith('en')
-      ? `${service.title} | Vista Construction Activities`
+      ? `${service.title} | Sultan Defense Activities`
       : `${service.title} | Sultan Defense Faaliyetleri`),
     description: service.meta_description || service.description,
     ogImage: absoluteAssetUrl(service.image_url) || undefined,

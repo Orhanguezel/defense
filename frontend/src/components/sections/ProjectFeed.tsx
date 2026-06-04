@@ -131,7 +131,7 @@ export function ProjectFeed({
             const specs = project.specifications || {};
             const categoryName = project.category?.name || specs.tip || '';
             const location = specs.lokasyon || specs.location || '';
-            const architects = specs.mimarlar || specs.architects || '';
+            const manufacturer = specs.üreticiler || specs.manufacturers || '';
             const area = specs.alan || specs.area || '';
             const year = specs.yıl || specs.year || '';
             const manufacturers = specs.üreticiler || specs.manufacturers || '';
@@ -146,7 +146,7 @@ export function ProjectFeed({
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     {project.title}
-                    {architects ? ` / ${architects}` : ''}
+                    {manufacturer ? ` / ${manufacturer}` : ''}
                   </h2>
                 </Link>
                 {project.created_at && (
@@ -183,10 +183,10 @@ export function ProjectFeed({
 
                 {/* Specs row */}
                 <div className="mt-2 flex flex-wrap gap-x-6 gap-y-1 text-sm text-(--color-text-secondary)">
-                  {architects && (
+                  {manufacturer && (
                     <div className="flex items-center gap-1.5">
-                      <span className="text-xs text-(--color-text-muted)">{t('projects.filters.architects')}:</span>
-                      <span className="font-medium text-(--color-brand)">{architects}</span>
+                      <span className="text-xs text-(--color-text-muted)">{t('projects.filters.manufacturer')}:</span>
+                      <span className="font-medium text-(--color-brand)">{manufacturer}</span>
                     </div>
                   )}
                   {area && (
@@ -269,7 +269,7 @@ export function ProjectFeed({
                         )}
                         <h4 className="text-sm font-semibold leading-snug text-(--color-text-primary) group-hover:text-(--color-brand)">
                           {p.title}
-                          {p.specifications?.mimarlar ? ` / ${p.specifications.mimarlar}` : ''}
+                          {p.specifications?.üreticiler ? ` / ${p.specifications.üreticiler}` : ''}
                         </h4>
                       </Link>
                     );
