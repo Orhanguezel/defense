@@ -23,3 +23,47 @@ sultandefense kimligiyle degistir. Tam liste ve sira: **[REBRAND_CHECKLIST.md](R
 - DB: lokal'de `ALTER TABLE` yasak; seed sql dosyalarini duzenle, `db:seed:*:fresh` calistir.
 - TypeScript strict.
 - Mimari/plan kararlari Claude Code'a aittir; uygulama (implement) Codex'e.
+
+---
+
+## 📌 MEVCUT DURUM & DEVIR (Claude → Codex, 2026-06-04)
+
+### Tamamlanan
+- **Faz 0 (altyapi):** repo klonlandi, git/main + origin `defense.git`, secret-koruyan `.gitignore`.
+- **Faz 1 (kimlik/config/port):** TAMAMLANDI ve push'landi. Detay REBRAND_CHECKLIST Faz 1 (hepsi [x]).
+  - **PORTLAR (KESIN):** backend **8090** · frontend **3040** · admin **3041**.
+  - package.json name'ler, ecosystem (PM2 isim+cwd+port), .env.example x3, next.config x2,
+    project.portfolio.json, kod port fallback'lari (8086→8090) yapildi.
+- **Marka karari:** `docs/brand/` — tema **Çelik & Cyan** (Deep Navy `#0D1B2A` + Tactical Cyan `#2BD4D9`),
+  koyu+açık, logo **kalkan + SD monogram**. Tokenlar `docs/brand/tokens.css`, logolar `docs/brand/logo/*.svg`.
+- **Coming-soon** sayfasi yeni marka ile CANLI (sunucu 187.77.79.59, nginx). Repo: `deploy/coming-soon/`.
+
+### Codex'in yapacagi (Faz 2-7) — REBRAND_CHECKLIST sirasiyla
+1. **Faz 0 secret rotation** (lokal `.env`/`.env.production`, gitignore'da — commit etme): JWT/COOKIE/DB/
+   Cloudinary/OAuth/SMTP yenile. `MAIL_FROM` su an `info@koenigsmassage.com` (yanlis) → `info@sultandefense.com`.
+2. **Faz 2+3 birlikte (KRITIK KUPLAJ):**
+   - Seed profili `--profile=vistainsaat` → `sultandefense` (backend/package.json scriptleri + seed loader).
+   - **`module_key=vistainsaat`** + **`prefix=vistainsaat__`** + **`vistainsaat_blog`** → `sultandefense*`.
+     Bu anahtar backend seed verisi ILE frontend API cagrilarinda (`src/lib/utils.ts`, services) AYNI ANDA
+     degismeli, yoksa veri gelmez. Once tum kullanim yerlerini `grep -rn "module_key\|vistainsaat__"` ile cikar.
+   - `backend/src/db/seed/sql/*_vistainsaat_*` (30 dosya): SEMA dosyalari isim/yorum temizligi; ICERIK
+     (`300_*`..`317_*`) defans verisiyle DOLDUR — kaynak: **`docs/content/site-content-en.md`** (tum sayfa
+     metinleri, 10 kategori) + repo kokundeki `sultandefense.com/` gorsel klasorleri (10 kategori = birebir).
+   - `backend/src/core/vista-mail.ts` (dosya adi+icerik), `core/env.ts`, modul controller/schema vistainsaat str.
+   - DB adi `sultandefense`, sonra `bun run build && bun run db:seed:*:fresh` (ALTER YASAK).
+3. **Faz 4 (admin panel):** DIKKAT — admin panel **Ensotek**'ten turedi. `src/app/globals.css` Ensotek
+   `--logo-coral` tokenlari + `src/styles/presets/*` var. Bunlari `docs/brand/tokens.css` (cyan) ile degistir.
+   Logolar `public/logo/vista-logo-*` → `docs/brand/logo/` kalkan logosu. Locale `src/locale/{tr,en,de}.json`.
+4. **Faz 5 (frontend):** tema `vista-construction` (gold `#b8a98a`, Syne/DM Sans) → `sultandefense-tactical`
+   (cyan, Oswald/Inter). `src/styles/globals.css` + `src/theme/templates.ts`. Logo/favicon/OG, 19 dil
+   `public/locales/*.json`, `public/media/*` (vistainsaat insaat gorselleri → defans). Icerik: `docs/content/`.
+5. **Faz 6 (deploy):** sunucu 187.77.79.59 — nginx reverse proxy (8090/3040/3041), MySQL+seed, PM2, Cloudflare
+   alt domain (api./admin.). `frontend/nginx-vistainsaat.conf` → sultandefense.
+6. **Faz 7 (temizlik):** repo kokundeki ic `sultandefense.com/` gorsel klasorunu duzenli yere tasi; kokte
+   bibirikmis `SAVRONIK_*_premium.{jpg,png}` dosyalarini dogru yere al; final `grep -ri "vista\|insaat"` = 0.
+
+### Onemli notlar
+- node_modules KOPYALANMADI; her app'te once `bun install`, sonra `bun run build`.
+- **Kör sed/replace YAPMA** (`vista`/`insaat` cok genel; degisken adlari/3.parti string bozar). Dosya bazli, anlamli.
+- Her fazdan sonra: ilgili app `bun run build` + commit (main) + push.
+- Site icerigi tek dogru kaynak: `docs/content/` (README'de sayfa→slug haritasi + sirket bilgileri).
