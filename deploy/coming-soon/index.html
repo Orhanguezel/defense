@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sultan Defense — Coming Soon</title>
+  <meta name="description" content="Sultan Defense — A to Z global military procurement & tactical equipment. Launching soon." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0D1B2A" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sultan Defense — Coming Soon" />
+  <meta property="og:description" content="A to Z global military procurement & tactical equipment. Launching soon." />
+  <meta property="og:url" content="https://sultandefense.com" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 144'%3E%3Cpath d='M60 6 L110 23 L110 76 C110 106 88 126 60 137 C32 126 10 106 10 76 L10 23 Z' fill='%230D1B2A' stroke='%232BD4D9' stroke-width='6'/%3E%3Ctext x='60' y='95' text-anchor='middle' font-family='Arial' font-size='46' font-weight='900' fill='%232BD4D9'%3ESD%3C/text%3E%3C/svg%3E" />
+
+  <style>
+    :root {
+      --bg: #0D1B2A;
+      --surface: #1B263B;
+      --cyan: #2BD4D9;
+      --cyan-bright: #4FE3E8;
+      --steel: #5FA8D3;
+      --text: #E0E1DD;
+      --muted: #8A97A6;
+      --border: #2C3E52;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background:
+        radial-gradient(ellipse at 50% -10%, #16314a 0%, transparent 55%),
+        linear-gradient(180deg, #0D1B2A 0%, #08111c 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 2rem;
+      position: relative; overflow: hidden;
+    }
+    /* grid overlay */
+    body::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(43,212,217,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(43,212,217,.045) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: radial-gradient(ellipse at 50% 40%, #000 30%, transparent 75%);
+    }
+    /* glow */
+    body::before {
+      content: ""; position: absolute; width: 680px; height: 680px;
+      top: -240px; left: 50%; transform: translateX(-50%);
+      background: radial-gradient(circle, rgba(43,212,217,.16), transparent 70%);
+      filter: blur(46px); animation: pulse 6s ease-in-out infinite; pointer-events: none;
+    }
+    @keyframes pulse { 0%,100%{opacity:.45} 50%{opacity:1} }
+
+    .wrap { position: relative; z-index: 1; animation: rise .9s ease both; max-width: 680px; }
+    @keyframes rise { from{opacity:0; transform:translateY(24px)} to{opacity:1; transform:translateY(0)} }
+
+    .logo { width: min(420px, 80vw); height: auto; margin: 0 auto 1.8rem;
+            filter: drop-shadow(0 0 18px rgba(43,212,217,.35)); display: block; }
+
+    .badge {
+      display: inline-block; font-family: 'Oswald', sans-serif; font-size: .8rem;
+      letter-spacing: .35em; text-transform: uppercase; color: var(--cyan);
+      border: 1px solid var(--border); border-radius: 999px;
+      padding: .45rem 1.2rem; margin-bottom: 1.4rem; background: rgba(27,38,59,.5);
+    }
+    h1 {
+      font-family: 'Oswald', sans-serif; font-weight: 600;
+      font-size: clamp(1.9rem, 5.5vw, 3.2rem); letter-spacing: .04em;
+      text-transform: uppercase; line-height: 1.1; color: #fff;
+    }
+    h1 .accent { color: var(--cyan); }
+    .divider { width: 90px; height: 2px; margin: 1.5rem auto;
+               background: linear-gradient(90deg, transparent, var(--cyan), transparent); }
+    .sub {
+      font-size: clamp(1rem, 2.6vw, 1.18rem); font-weight: 300;
+      color: var(--muted); line-height: 1.75; max-width: 560px; margin: 0 auto;
+    }
+    .meta-row {
+      margin-top: 2.2rem; display: flex; gap: 1.5rem 2.4rem; flex-wrap: wrap;
+      justify-content: center; font-family: 'Oswald', sans-serif;
+      font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; color: var(--steel);
+    }
+    .meta-row span { display: inline-flex; align-items: center; gap: .5rem; }
+    .meta-row span::before { content: ""; width: 6px; height: 6px; border-radius: 50%;
+                             background: var(--cyan); box-shadow: 0 0 8px var(--cyan); }
+    .cta { margin-top: 2.4rem; }
+    .cta a {
+      font-family: 'Oswald', sans-serif; letter-spacing: .12em; text-transform: uppercase;
+      font-size: .9rem; color: var(--bg); background: var(--cyan);
+      text-decoration: none; padding: .85rem 1.8rem; border-radius: 6px; font-weight: 600;
+      transition: background .2s, transform .2s; display: inline-block;
+    }
+    .cta a:hover { background: var(--cyan-bright); transform: translateY(-2px); }
+
+    .footer { position: absolute; bottom: 1.4rem; left: 0; right: 0;
+              font-size: .78rem; color: #4a5a6b; letter-spacing: .04em; z-index: 1; }
+    .footer a { color: var(--muted); text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Logo (kalkan + wordmark) -->
+    <svg class="logo" viewBox="0 0 480 144" role="img" aria-label="Sultan Defense" xmlns="http://www.w3.org/2000/svg">
+      <path d="M60 6 L110 23 L110 76 C110 106 88 126 60 137 C32 126 10 106 10 76 L10 23 Z" fill="#0D1B2A" stroke="#2BD4D9" stroke-width="4.5" stroke-linejoin="round"/>
+      <path d="M60 19 L98 32 L98 74 C98 98 81 114 60 122 C39 114 22 98 22 74 L22 32 Z" fill="none" stroke="#244A5E" stroke-width="2"/>
+      <path d="M34 45 L60 35 L86 45" fill="none" stroke="#2BD4D9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+      <text x="60" y="93" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-size="42" font-weight="900" fill="#2BD4D9" textLength="56" lengthAdjust="spacingAndGlyphs">SD</text>
+      <text x="142" y="64" font-family="Oswald,'Arial Narrow',sans-serif" font-size="44" font-weight="700" fill="#E0E1DD" textLength="312" lengthAdjust="spacingAndGlyphs">SULTAN</text>
+      <line x1="143" y1="78" x2="454" y2="78" stroke="#2C3E52" stroke-width="1.5"/>
+      <text x="142" y="110" font-family="Oswald,'Arial Narrow',sans-serif" font-size="27" font-weight="500" fill="#2BD4D9" textLength="312" lengthAdjust="spacingAndGlyphs">DEFENSE</text>
+    </svg>
+
+    <div class="badge">Launching Soon</div>
+    <h1>A to Z Global <span class="accent">Military Procurement</span></h1>
+    <div class="divider"></div>
+    <p class="sub">
+      Your trusted gateway to Turkey's battle-proven defense industry —
+      tactical gear, military electronics, and logistical solutions for armed forces worldwide.
+    </p>
+
+    <div class="meta-row">
+      <span>Middle East</span>
+      <span>Africa</span>
+      <span>Turkic Republics</span>
+    </div>
+
+    <div class="cta">
+      <a href="mailto:export@sultandefense.com">Contact Export Team</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; <span id="y">2026</span> Sultan Defense Ltd., Co. · İzmir, Türkiye ·
+    <a href="mailto:export@sultandefense.com">export@sultandefense.com</a>
+  </div>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

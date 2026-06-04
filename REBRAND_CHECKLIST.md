@@ -9,6 +9,11 @@ Dagilim: 35 `.ts`, 30 `.sql` (seed), 29 `.tsx`, 7 `.json`, 6 `.mjs`, 3 `.cjs`, 3
 
 > 📄 **Site içerik kaynagi (resmi metin):** [`docs/content/`](docs/content/) — tum sayfa metinleri,
 > meta title/description, 10 ürün kategorisi, sirket bilgileri. Seed/locale/page doldururken bunu kullan.
+>
+> 🎨 **Marka karari (2026-06-04):** [`docs/brand/`](docs/brand/) — Tema **Çelik & Cyan** (Deep Navy
+> `#0D1B2A` + Tactical Cyan `#2BD4D9`), koyu+açık toggle, logo **kalkan + SD monogram**.
+> Tokens: `tokens.css` · Logolar: `logo/*.svg` · Kılavuz: `brand-guidelines.md`.
+> Frontend/admin rebrand'inde bu tokenlar ve logolar kullanilacak (eski `vista-logo-*` yerine).
 
 Her madde tamamlaninca `[ ]` → `[x]`. Onceliklendirilmis; **Faz 0 bloke edicidir.**
 

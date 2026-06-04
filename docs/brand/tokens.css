@@ -1,0 +1,73 @@
+/* ============================================================
+   Sultan Defense — Design Tokens
+   Palet: Çelik & Cyan (Defense). Koyu (varsayilan) + Acik tema.
+   Frontend & admin_panel rebrand'inde bu degerler kullanilir.
+   ============================================================ */
+
+:root {
+  /* --- Marka sabitleri (tema bagimsiz) --- */
+  --sd-cyan:        #2BD4D9;  /* Tactical Cyan — ana vurgu */
+  --sd-cyan-bright: #4FE3E8;  /* hover / parlak */
+  --sd-steel:       #5FA8D3;  /* Steel Blue — ikincil */
+  --sd-navy:        #0D1B2A;  /* Deep Navy */
+  --sd-gunmetal:    #1B263B;  /* Gunmetal */
+
+  /* Durum renkleri */
+  --sd-success: #34D399;
+  --sd-warning: #FBBF24;
+  --sd-danger:  #F87171;
+  --sd-info:    var(--sd-steel);
+}
+
+/* ===================== KOYU TEMA (varsayilan) ===================== */
+:root,
+[data-theme="dark"] {
+  --bg:            #0D1B2A;  /* Deep Navy */
+  --bg-elevated:   #11223A;
+  --surface:       #1B263B;  /* Gunmetal — kart */
+  --surface-2:     #243349;
+  --border:        #2C3E52;
+  --border-strong: #3A506B;
+
+  --text:          #E0E1DD;  /* acik metin */
+  --text-muted:    #8A97A6;
+  --text-faint:    #5A6B7B;
+
+  --primary:        #2BD4D9;  /* cyan */
+  --primary-hover:  #4FE3E8;
+  --primary-contrast: #06222B; /* cyan uzerine koyu metin */
+  --secondary:      #5FA8D3;
+  --ring:           #2BD4D9;
+
+  --shadow: 0 10px 30px rgba(0,0,0,.45);
+  --glow:   0 0 24px rgba(43,212,217,.35);
+}
+
+/* ===================== ACIK TEMA ===================== */
+[data-theme="light"] {
+  --bg:            #F4F6F8;  /* light steel */
+  --bg-elevated:   #FFFFFF;
+  --surface:       #FFFFFF;
+  --surface-2:     #E8EDF1;
+  --border:        #D5DDE5;
+  --border-strong: #B9C6D2;
+
+  --text:          #0D1B2A;  /* deep navy metin */
+  --text-muted:    #51606F;
+  --text-faint:    #8A97A6;
+
+  --primary:        #0E7C82;  /* acik zeminde kontrast icin koyu cyan */
+  --primary-hover:  #0B6469;
+  --primary-contrast: #FFFFFF;
+  --secondary:      #2C5F86;
+  --ring:           #0E7C82;
+
+  --shadow: 0 8px 24px rgba(13,27,42,.10);
+  --glow:   0 0 0 rgba(0,0,0,0);
+}
+
+/* Tipografi onerisi (rebrand'de import edilecek):
+   Basliklar: 'Oswald' / 'Rajdhani' (condensed, askeri-teknik his)
+   Govde:     'Inter' / system-ui
+   Monogram:  geometrik bold sans
+*/

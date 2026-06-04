@@ -8,7 +8,10 @@
       "Bash(grep -vE '^\\\\s*#|^\\\\s*$' __TRACKED_VAR__/backend/.env)",
       "Bash(git config *)",
       "Bash(pandoc \"Sultan Defense.docx\" -t gfm --wrap=none -o docs/content/site-content-en.md)",
-      "Bash(git mv *)"
+      "Bash(git mv *)",
+      "Bash(convert -background \"#0D1B2A\" sultandefense-logo-dark.svg /tmp/logo_dark2.png)",
+      "Bash(convert -background \"#F4F6F8\" sultandefense-logo-light.svg /tmp/logo_light2.png)",
+      "Bash(convert -background \"#0D1B2A\" sultandefense-mark.svg /tmp/mark2.png)"
     ]
   }
 }
