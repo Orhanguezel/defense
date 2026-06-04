@@ -15,10 +15,9 @@ export const OFFER_STATUSES = [
   'accepted',               // kabul edildi
   'rejected',               // reddedildi
   'cancelled',              // iptal
-  'site_survey',            // keşif yapılacak
-  'contract_signed',        // sözleşme imzalandı
-  'construction_started',   // inşaat başladı
-  'construction_completed', // inşaat tamamlandı
+  'compliance_review',      // uyum kontrolu
+  'procurement_started',    // tedarik basladi
+  'procurement_completed',  // tedarik tamamlandi
 ] as const;
 
 export type OfferStatus = (typeof OFFER_STATUSES)[number];

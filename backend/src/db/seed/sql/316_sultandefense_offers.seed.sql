@@ -59,7 +59,7 @@ VALUES
 (
   'of010003-0003-4003-9003-000000000003',
   'SD-2026-0003',
-  'site_survey',
+  'compliance_review',
   'sultandefense',
   'tr',
   'Türkiye',

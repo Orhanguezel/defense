@@ -1,5 +1,5 @@
 -- =============================================================
--- FILE: 296_vistainsaat_catalog_schema.sql
+-- FILE: 008_sultandefense_catalog_schema.sql
 -- Sultan Defense — Catalog Schema (categories, category_i18n, catalog_requests)
 -- =============================================================
 

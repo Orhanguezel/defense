@@ -3,7 +3,7 @@
 -- Sultan Defense - Storage Assets table guard
 --
 -- Note: Sultan Defense storage assets are seeded in
--- 131_vistainsaat_storage_assets.seed.sql
+-- 131_sultandefense_storage_assets.seed.sql
 -- =============================================================
 
 SET NAMES utf8mb4;

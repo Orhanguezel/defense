@@ -1165,10 +1165,9 @@
         "accepted": "Kabul Edildi",
         "rejected": "Reddedildi",
         "cancelled": "İptal",
-        "site_survey": "Keşif Bekleniyor",
-        "contract_signed": "Sözleşme İmzalandı",
-        "construction_started": "İnşaat Başladı",
-        "construction_completed": "İnşaat Tamamlandı"
+        "compliance_review": "Uyum Kontrolünde",
+        "procurement_started": "Tedarik Başladı",
+        "procurement_completed": "Tedarik Tamamlandı"
       },
       "detail": {
         "createTitle": "Yeni Teklif Oluştur",

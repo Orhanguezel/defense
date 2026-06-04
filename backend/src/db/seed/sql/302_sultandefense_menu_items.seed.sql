@@ -1,5 +1,5 @@
 -- =============================================================
--- FILE: 302_vistainsaat_menu_items.seed.sql
+-- FILE: 302_sultandefense_menu_items.seed.sql
 -- Sultan Defense — header + footer menu items (TR/EN)
 -- site_id = 'sultandefense'
 -- =============================================================

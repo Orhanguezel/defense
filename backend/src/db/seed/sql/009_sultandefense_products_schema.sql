@@ -1,5 +1,5 @@
 -- =============================================================
--- FILE: 297_vistainsaat_products_schema.sql
+-- FILE: 009_sultandefense_products_schema.sql
 -- Sultan Defense — Products Schema
 -- =============================================================
 

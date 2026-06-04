@@ -551,10 +551,9 @@ export default function AdminOfferDetailClient({ id }: { id: string }) {
                       <SelectItem value="quoted">Fiyatlandırıldı</SelectItem>
                       <SelectItem value="sent">Gönderildi</SelectItem>
                       <SelectItem value="accepted">Kabul Edildi</SelectItem>
-                      <SelectItem value="site_survey">Keşif</SelectItem>
-                      <SelectItem value="contract_signed">Sözleşme İmzalandı</SelectItem>
-                      <SelectItem value="construction_started">İnşaat Başladı</SelectItem>
-                      <SelectItem value="construction_completed">Tamamlandı</SelectItem>
+                      <SelectItem value="compliance_review">Uyum Kontrolünde</SelectItem>
+                      <SelectItem value="procurement_started">Tedarik Başladı</SelectItem>
+                      <SelectItem value="procurement_completed">Tedarik Tamamlandı</SelectItem>
                       <SelectItem value="rejected">Reddedildi</SelectItem>
                       <SelectItem value="cancelled">İptal</SelectItem>
                     </SelectContent>

@@ -48,9 +48,9 @@ type Filters = {
 };
 
 function statusVariant(s: string): 'default' | 'secondary' | 'destructive' | 'outline' {
-  if (s === 'sent' || s === 'accepted' || s === 'contract_signed' || s === 'construction_completed') return 'default';
+  if (s === 'sent' || s === 'accepted' || s === 'procurement_completed') return 'default';
   if (s === 'rejected' || s === 'cancelled') return 'destructive';
-  if (s === 'quoted' || s === 'in_review' || s === 'site_survey' || s === 'construction_started') return 'outline';
+  if (s === 'quoted' || s === 'in_review' || s === 'compliance_review' || s === 'procurement_started') return 'outline';
   return 'secondary';
 }
 
@@ -187,10 +187,9 @@ export default function AdminOfferClient({ initialSource }: { initialSource?: st
                 <SelectItem value="quoted">{t('status.quoted')}</SelectItem>
                 <SelectItem value="sent">{t('status.sent')}</SelectItem>
                 <SelectItem value="accepted">{t('status.accepted')}</SelectItem>
-                <SelectItem value="site_survey">{t('status.site_survey')}</SelectItem>
-                <SelectItem value="contract_signed">{t('status.contract_signed')}</SelectItem>
-                <SelectItem value="construction_started">{t('status.construction_started')}</SelectItem>
-                <SelectItem value="construction_completed">{t('status.construction_completed')}</SelectItem>
+                <SelectItem value="compliance_review">{t('status.compliance_review')}</SelectItem>
+                <SelectItem value="procurement_started">{t('status.procurement_started')}</SelectItem>
+                <SelectItem value="procurement_completed">{t('status.procurement_completed')}</SelectItem>
                 <SelectItem value="rejected">{t('status.rejected')}</SelectItem>
                 <SelectItem value="cancelled">{t('status.cancelled')}</SelectItem>
               </SelectContent>

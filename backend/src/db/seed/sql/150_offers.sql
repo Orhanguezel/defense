@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
 CREATE TABLE IF NOT EXISTS `offer_number_counters` (
   `year`     INT          NOT NULL,
   `last_seq` INT          NOT NULL,
-  `prefix`   VARCHAR(20)  NOT NULL DEFAULT 'VIS',
+  `prefix`   VARCHAR(20)  NOT NULL DEFAULT 'SD',
 
   PRIMARY KEY (`year`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;

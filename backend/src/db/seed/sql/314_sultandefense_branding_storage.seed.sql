@@ -1,5 +1,5 @@
 -- =============================================================
--- FILE: 314_vistainsaat_branding_storage.seed.sql
+-- FILE: 314_sultandefense_branding_storage.seed.sql
 -- Sultan Defense — Branding dosyalarını storage_assets'e kaydet
 -- =============================================================
 

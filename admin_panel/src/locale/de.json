@@ -1160,7 +1160,10 @@
         "sent": "Gesendet",
         "accepted": "Angenommen",
         "rejected": "Abgelehnt",
-        "cancelled": "Storniert"
+        "cancelled": "Storniert",
+        "compliance_review": "Compliance-Prufung",
+        "procurement_started": "Beschaffung gestartet",
+        "procurement_completed": "Beschaffung abgeschlossen"
       },
       "detail": {
         "createTitle": "Neues Angebot erstellen",

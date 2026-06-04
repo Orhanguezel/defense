@@ -27,6 +27,9 @@ export const OFFER_STATUSES = [
   'accepted',
   'rejected',
   'cancelled',
+  'compliance_review',
+  'procurement_started',
+  'procurement_completed',
 ] as const;
 
 export type OfferStatus = (typeof OFFER_STATUSES)[number];

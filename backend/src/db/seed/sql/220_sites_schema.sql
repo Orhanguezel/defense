@@ -18,7 +18,7 @@ DROP TABLE IF EXISTS `sites`;
 CREATE TABLE IF NOT EXISTS `sites` (
   `id`          CHAR(36)      NOT NULL,
   `name`        VARCHAR(100)  NOT NULL,
-  `slug`        VARCHAR(64)   NOT NULL,          -- 'sultandefense' | 'vistainsaat_tr' | 'vistainsaat_com'
+  `slug`        VARCHAR(64)   NOT NULL,          -- 'sultandefense'
   `domain`      VARCHAR(255)  NOT NULL,          -- 'sultandefense.com'
   `is_active`   TINYINT(1)    NOT NULL DEFAULT 1,
 

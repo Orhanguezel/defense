@@ -659,7 +659,10 @@
         "sent": "Sent",
         "accepted": "Accepted",
         "rejected": "Rejected",
-        "cancelled": "Cancelled"
+        "cancelled": "Cancelled",
+        "compliance_review": "Compliance Review",
+        "procurement_started": "Procurement Started",
+        "procurement_completed": "Procurement Completed"
       },
       "detail": {
         "createTitle": "Create New Offer",
