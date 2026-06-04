@@ -61,7 +61,7 @@ export function Footer({
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand column */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-col items-start gap-2">
               <Image
                 src="/logo-dark.svg"
                 alt={companyProfile?.company_name || 'Sultan Defense'}
@@ -70,7 +70,7 @@ export function Footer({
                 style={{ height: '28px', width: 'auto', flexShrink: 0 }}
               />
               <h3
-                className="whitespace-nowrap text-base font-bold leading-none tracking-tight"
+                className="text-base font-bold leading-none tracking-tight"
                 style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text-on-dark)' }}
               >
                 {companyProfile?.company_name || 'Sultan Defense'}
