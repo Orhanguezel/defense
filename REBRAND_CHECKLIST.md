@@ -38,18 +38,20 @@ Her madde tamamlaninca `[ ]` → `[x]`. Onceliklendirilmis; **Faz 0 bloke edicid
 
 ## Faz 1 — Kimlik, Config, Portlar
 
-- [ ] `package.json` `name` alanlari: `vistainsaat-{backend,admin-panel,frontend}` → `sultandefense-*`
-- [ ] **Portlar** (vistainsaat: backend `8086`, frontend `3030`, admin `3004`) → sultandefense portlari belirle ve uygula:
-  - [ ] `backend/.env` PORT, `backend/ecosystem.config.cjs`
-  - [ ] `frontend/ecosystem.config.cjs` (PORT 3030)
-  - [ ] `admin_panel/ecosystem.config.cjs` (PORT 3004)
-- [ ] **PM2 app isimleri** (`ecosystem.config.cjs` x3): `vistainsaat-*` → `sultandefense-*`
-- [ ] **Domain/URL** tum env + config:
-  - [ ] `PUBLIC_URL`, `FRONTEND_URL`, `PUBLIC_API_BASE`, `CORS_ORIGIN`
-  - [ ] `NEXT_PUBLIC_API_URL`, `NEXT_PUBLIC_SITE_URL` (admin + frontend `.env`)
-  - [ ] `vistainsaat.com` → `sultandefense.com`
-- [ ] `frontend/next.config.ts` & `admin_panel/next.config.mjs`: image `remotePatterns`/domains, rewrites
-- [ ] `frontend/project.portfolio.json` → sultandefense metadata (PROJECT_PORTFOLIO_STANDARD'a uygun)
+> **SULTANDEFENSE PORTLARI:** backend `8090` · frontend `3040` · admin `3041`
+
+- [x] `package.json` `name` alanlari → `sultandefense-{backend,admin-panel,frontend}`
+- [x] **Portlar** → 8090/3040/3041 uygulandi:
+  - [x] `backend/ecosystem.config.cjs` (8090), `frontend` (3040), `admin_panel` (3041)
+  - [x] package.json script portlari (frontend 3040, admin 3041)
+  - [x] kod fallback portlari (8086→8090) src + scripts
+- [x] **PM2 app isimleri** (`ecosystem.config.cjs` x3) → `sultandefense-*` (+ cwd `/var/www/sultandefense/*`)
+- [x] **Domain/URL** (committed dosyalar):
+  - [x] `.env.example` x3: PORT, DB_NAME, CORS, URL'ler, MAIL_FROM, CLOUDINARY_FOLDER
+  - [x] `vistainsaat.com` → `sultandefense.com` (.env.example, next.config)
+  - [ ] **lokal `.env` / `.env.production`** (gitignore'da) — secret rotation ile birlikte yapilacak (Faz 0)
+- [x] `frontend/next.config.ts` & `admin_panel/next.config.mjs`: image `remotePatterns`/CSP/rewrites
+- [x] `frontend/project.portfolio.json` → sultandefense metadata + yeni tema
 - [ ] Analytics: `NEXT_PUBLIC_GA_ID`, `NEXT_PUBLIC_GTM_*` (vistainsaat hesaplari → sultandefense veya kaldir)
 
 ---

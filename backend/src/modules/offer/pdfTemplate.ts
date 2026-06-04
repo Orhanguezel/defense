@@ -539,7 +539,7 @@ export async function renderOfferPdfHtml(ctx: PdfTemplateContext): Promise<strin
       }
     } catch {
       // fallback: keep relative URL
-      const publicUrl = process.env.PUBLIC_URL || process.env.STORAGE_PUBLIC_API_BASE || 'http://127.0.0.1:8086';
+      const publicUrl = process.env.PUBLIC_URL || process.env.STORAGE_PUBLIC_API_BASE || 'http://127.0.0.1:8090';
       logoUrl = `${publicUrl.replace(/\/$/, '')}${logoUrl}`;
     }
   }

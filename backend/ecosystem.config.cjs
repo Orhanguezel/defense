@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: ecosystem.config.cjs
-// Vista İnşaat Backend — PM2 config
-// - binds to 127.0.0.1:8086 (reverse proxy only)
+// Sultan Defense Backend — PM2 config
+// - binds to 127.0.0.1:8090 (reverse proxy only)
 // - crash-loop protection + graceful shutdown
 // - logs under /home/orhan/.pm2/logs
 // =============================================================
@@ -9,8 +9,8 @@
 module.exports = {
   apps: [
     {
-      name: 'vistainsaat-backend',
-      cwd: '/var/www/vistainsaat/backend',
+      name: 'sultandefense-backend',
+      cwd: '/var/www/sultandefense/backend',
 
       script: '/home/orhan/.bun/bin/bun',
       args: 'dist/index.js',
@@ -33,11 +33,11 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
         HOST: '127.0.0.1',
-        PORT: '8086',
+        PORT: '8090',
       },
 
-      out_file: '/home/orhan/.pm2/logs/vistainsaat-backend.out.log',
-      error_file: '/home/orhan/.pm2/logs/vistainsaat-backend.err.log',
+      out_file: '/home/orhan/.pm2/logs/sultandefense-backend.out.log',
+      error_file: '/home/orhan/.pm2/logs/sultandefense-backend.err.log',
       combine_logs: true,
       time: true,
     },

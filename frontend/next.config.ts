@@ -13,15 +13,15 @@ const nextConfig: NextConfig = {
     dangerouslyAllowLocalIP: process.env.NODE_ENV === 'development',
     remotePatterns: [
       { protocol: 'https', hostname: 'res.cloudinary.com' },
-      { protocol: 'https', hostname: 'vistainsaat.com' },
-      { protocol: 'https', hostname: 'www.vistainsaat.com' },
-      { protocol: 'https', hostname: 'api.vistainsaat.com' },
+      { protocol: 'https', hostname: 'sultandefense.com' },
+      { protocol: 'https', hostname: 'www.sultandefense.com' },
+      { protocol: 'https', hostname: 'api.sultandefense.com' },
       { protocol: 'https', hostname: 'picsum.photos' },
       { protocol: 'https', hostname: 'fastly.picsum.photos' },
       ...(process.env.NODE_ENV === 'development'
         ? [
-            { protocol: 'http' as const, hostname: 'localhost', port: '8086' },
-            { protocol: 'http' as const, hostname: '127.0.0.1', port: '8086' },
+            { protocol: 'http' as const, hostname: 'localhost', port: '8090' },
+            { protocol: 'http' as const, hostname: '127.0.0.1', port: '8090' },
           ]
         : []),
     ],

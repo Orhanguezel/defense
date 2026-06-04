@@ -1,4 +1,4 @@
-const API_BASE = (process.env.SMOKE_API_BASE_URL || 'http://127.0.0.1:8086/api').replace(/\/$/, '');
+const API_BASE = (process.env.SMOKE_API_BASE_URL || 'http://127.0.0.1:8090/api').replace(/\/$/, '');
 const API_ORIGIN = API_BASE.endsWith('/api') ? API_BASE.slice(0, -4) : API_BASE;
 const ADMIN_EMAIL = process.env.SMOKE_ADMIN_EMAIL || process.env.SEED_ADMIN_EMAIL || 'orhanguzell@gmail.com';
 const ADMIN_PASSWORD = process.env.SMOKE_ADMIN_PASSWORD || process.env.SEED_ADMIN_PASSWORD || 'admin123';

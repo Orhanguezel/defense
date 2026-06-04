@@ -325,7 +325,7 @@ export default function AdminCommentsClient() {
                       <TableCell className="text-center">
                         {item.image_url ? (
                           <a
-                            href={item.image_url.startsWith('http') ? item.image_url : `${process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://localhost:8086'}${item.image_url}`}
+                            href={item.image_url.startsWith('http') ? item.image_url : `${process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://localhost:8090'}${item.image_url}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             title="Resmi görüntüle"
@@ -429,7 +429,7 @@ export default function AdminCommentsClient() {
                   <p className="text-sm">{truncate(item.content, 200)}</p>
                   {item.image_url && (
                     <a
-                      href={item.image_url.startsWith('http') ? item.image_url : `${process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://localhost:8086'}${item.image_url}`}
+                      href={item.image_url.startsWith('http') ? item.image_url : `${process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://localhost:8090'}${item.image_url}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-xs text-primary flex items-center gap-1"

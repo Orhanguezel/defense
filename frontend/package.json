@@ -1,12 +1,12 @@
 {
-  "name": "vistainsaat-frontend",
+  "name": "sultandefense-frontend",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --port 3030 --webpack",
+    "dev": "next dev --port 3040 --webpack",
     "build": "next build",
-    "start": "next start --port 3030",
-    "start:standalone": "PORT=${PORT:-3030} HOSTNAME=${HOSTNAME:-127.0.0.1} node .next/standalone/server.js",
+    "start": "next start --port 3040",
+    "start:standalone": "PORT=${PORT:-3040} HOSTNAME=${HOSTNAME:-127.0.0.1} node .next/standalone/server.js",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "test:theme": "node scripts/check-theme-tokens.mjs",

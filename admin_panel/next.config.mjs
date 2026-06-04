@@ -25,13 +25,13 @@ const nextConfig = {
       {
         protocol: 'http',
         hostname: 'localhost',
-        port: '8086',
+        port: '8090',
         pathname: '/**',
       },
       {
         protocol: 'http',
         hostname: '127.0.0.1',
-        port: '8086',
+        port: '8090',
         pathname: '/**',
       },
       {
@@ -59,15 +59,15 @@ const nextConfig = {
     const apiBase = (
       process.env.PANEL_API_URL ||
       process.env.NEXT_PUBLIC_PANEL_API_URL ||
-      'http://127.0.0.1:8086'
+      'http://127.0.0.1:8090'
     ).replace(/\/+$/, '');
 
     const csp = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-eval' 'unsafe-inline'",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "img-src 'self' blob: data: https://res.cloudinary.com https://www.vistainsaat.com https://vistainsaat.com",
-      `connect-src 'self' https://cdn.jsdelivr.net https://api.cloudinary.com https://www.vistainsaat.com https://vistainsaat.com https://api.vistainsaat.com`,
+      "img-src 'self' blob: data: https://res.cloudinary.com https://www.sultandefense.com https://sultandefense.com",
+      `connect-src 'self' https://cdn.jsdelivr.net https://api.cloudinary.com https://www.sultandefense.com https://sultandefense.com https://api.sultandefense.com`,
       "font-src 'self' https://fonts.gstatic.com data:",
       "object-src 'none'",
       "base-uri 'self'",
@@ -85,7 +85,7 @@ const nextConfig = {
 
   async rewrites() {
     const origin =
-      process.env.PANEL_API_URL || process.env.NEXT_PUBLIC_PANEL_API_URL || 'http://127.0.0.1:8186';
+      process.env.PANEL_API_URL || process.env.NEXT_PUBLIC_PANEL_API_URL || 'http://127.0.0.1:8090';
 
     const base = String(origin).replace(/\/+$/, '');
 
