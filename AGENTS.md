@@ -26,6 +26,22 @@ sultandefense kimligiyle degistir. Tam liste ve sira: **[REBRAND_CHECKLIST.md](R
 
 ---
 
+## 🟡 MARKA GUNCELLENDI (2026-06-04, Claude) — DIKKAT CODEX
+
+> **Tema artik "İmparatorluk Zırhı":** Antrasit `#1A1A1D` + Titanyum `#2D3134` zemin,
+> **Mat Osmanlı Altını `#C5A880`** ana vurgu, **Derin Bordo `#7A1B22`** ikincil detay.
+> **Çelik & Cyan (cyan `#2BD4D9`) ARTIK GECERSIZ.** Guncel degerler: `docs/brand/tokens.css`.
+>
+> **Logo degisti:** resmi **wordmark** logo (`docs/brand/logo/sultandefense-logo-{dark,light}.png`),
+> favicon/apple-touch/icon-192/512 + `sultandefense-mark.svg` (SD amblem) HAZIR.
+> Eski kalkan+SD cyan SVG'leri SILINDI.
+>
+> **Codex yapmasi gereken (onceki cyan implementasyonu uzerine):**
+> - Admin/frontend global CSS / tema tokenlarini `docs/brand/tokens.css` (altin/antrasit/bordo) ile guncelle.
+> - `admin_panel/public/logo/` ve `frontend/public/logo/` icine kopyaladigin **cyan kalkan** logolari
+>   `docs/brand/logo/` wordmark + favicon/apple-touch ile DEGISTIR.
+> - cyan hex (`#2BD4D9`, `#0D1B2A`, vb.) gecen yerleri altin/antrasit yap.
+
 ## 📌 MEVCUT DURUM & DEVIR (Claude → Codex, 2026-06-04)
 
 ### Tamamlanan

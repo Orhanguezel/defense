@@ -1,5 +1,5 @@
-export const THEME_TEMPLATE = 'vista-construction' as const;
-export const THEME_INTENT = 'premium-editorial-neutral-gold' as const;
+export const THEME_TEMPLATE = 'sultandefense-tactical' as const;
+export const THEME_INTENT = 'premium-tactical-cyan' as const;
 
 export const THEME_TOKEN_GROUPS = {
   neutral:  'Anthracite-based warm neutrals for page backgrounds, borders and text hierarchy',

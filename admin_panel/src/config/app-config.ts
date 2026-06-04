@@ -30,7 +30,7 @@ export const DEFAULT_BRANDING: AdminBrandingConfig = {
   app_name: 'Sultan Defense Admin Panel',
   app_copyright: 'Sultan Defense',
   html_lang: 'tr',
-  theme_color: '#ea580c',
+  theme_color: '#2BD4D9',
   favicon_16: '/favicon/favicon-16.png',
   favicon_32: '/favicon/favicon-32.png',
   apple_touch_icon: '/favicon/apple-touch-icon.png',
@@ -38,11 +38,11 @@ export const DEFAULT_BRANDING: AdminBrandingConfig = {
     title: 'Sultan Defense Admin Panel',
     description:
       'Sultan Defense icin urun, galeri, teklif, blog ve site ayarlarini yoneten bagimsiz admin paneli.',
-    og_url: 'http://localhost:3004/',
+    og_url: 'http://localhost:3041/',
     og_title: 'Sultan Defense Admin Panel',
     og_description:
       'Sultan Defense projeleri icin icerik, medya, teklif ve site ayari yonetim ekrani.',
-    og_image: '/logo/png/vista_logo_512.png',
+    og_image: '/logo/sultandefense-logo-light.svg',
     twitter_card: 'summary_large_image',
   },
 };

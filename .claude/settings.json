@@ -11,7 +11,10 @@
       "Bash(git mv *)",
       "Bash(convert -background \"#0D1B2A\" sultandefense-logo-dark.svg /tmp/logo_dark2.png)",
       "Bash(convert -background \"#F4F6F8\" sultandefense-logo-light.svg /tmp/logo_light2.png)",
-      "Bash(convert -background \"#0D1B2A\" sultandefense-mark.svg /tmp/mark2.png)"
+      "Bash(convert -background \"#0D1B2A\" sultandefense-mark.svg /tmp/mark2.png)",
+      "Bash(google-chrome --headless --disable-gpu --no-sandbox --hide-scrollbars --window-size=1200,800 --screenshot=/tmp/cs_imperial.png \"file:///tmp/cs_imperial.html\")",
+      "Bash(scp -q deploy/coming-soon/index.html srv1731955:/var/www/sultandefense/index.html)",
+      "Bash(curl -s --max-time 20 \"https://sultandefense.com/?v=$\\(date +%s\\)\")"
     ]
   }
 }

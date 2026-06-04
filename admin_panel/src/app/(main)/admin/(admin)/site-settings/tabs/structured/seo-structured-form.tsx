@@ -189,7 +189,7 @@ function SimpleSeoForm({
             value={v.site_title}
             onChange={(e) => set({ site_title: e.target.value })}
             disabled={disabled}
-            placeholder="Sultan Defense | Güvenilir İnşaat Hizmetleri"
+            placeholder="Sultan Defense | Military Procurement & Tactical Gear"
           />
         </div>
 
@@ -202,7 +202,7 @@ function SimpleSeoForm({
             onChange={(e) => set({ site_description: e.target.value })}
             disabled={disabled}
             className="text-sm"
-            placeholder="Konut, ticari ve karma kullanım projelerinde kaliteli inşaat çözümleri."
+            placeholder="A to Z tactical solutions, ballistic protection, and military procurement."
           />
         </div>
 
@@ -242,7 +242,7 @@ function SimpleSeoForm({
             value={v.og_image}
             onChange={(e) => set({ og_image: e.target.value })}
             disabled={disabled}
-            placeholder="/logo/png/vista_logo_512.png"
+            placeholder="/logo/png/sultandefense_logo_512.png"
           />
         </div>
       </div>

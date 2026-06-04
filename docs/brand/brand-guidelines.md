@@ -27,26 +27,26 @@
 
 > Tüm değerler kod olarak: [`tokens.css`](tokens.css) (CSS custom properties).
 
-## 2. Logo
+## 2. Logo (HAZIR — resmi müşteri logosu)
 
-> **Resmi logo müşteri tarafından sağlanır** (PNG). Logo paketi bu kaynaktan üretilir:
-> tam logo (koyu/açık), sadece amblem, favicon ve apple-touch ikonları.
+Logo bir **wordmark**: "SULTAN" mat altın + "DEFENSE" açık/antrasit. Paket `docs/brand/logo/`:
 
-| Üretilecek dosya | Kullanım |
-|------------------|----------|
-| `logo/sultandefense-logo-dark.*` | Koyu zeminde tam logo |
-| `logo/sultandefense-logo-light.*` | Açık zeminde tam logo |
-| `logo/sultandefense-mark.*` | Sadece amblem (küçük alan) |
-| `favicon.ico` / `favicon-16/32/48` | Tarayıcı sekmesi |
-| `apple-touch-icon-180.png` + diğer boyutlar | iOS/Android ana ekran |
+| Dosya | Kullanım |
+|-------|----------|
+| `sultandefense-logo-dark.png` | Koyu zeminde tam logo (şeffaf; SULTAN altın + DEFENSE açık) |
+| `sultandefense-logo-light.png` | Açık zeminde tam logo (şeffaf; SULTAN altın + DEFENSE antrasit) |
+| `sultandefense-logo-onDark.png` | Solid antrasit zeminli (OG/sosyal paylaşım) |
+| `sultandefense-logo-source.png` | Müşteri orijinali (arşiv) |
+| `sultandefense-mark.svg` | **SD amblemi** (wordmark dar alana sığmaz; favicon/app-icon için) |
+| `favicon.ico` | Tarayıcı sekmesi (16/32/48 gömülü) |
+| `apple-touch-icon.png` (180) | iOS/Android ana ekran |
+| `icon-192.png`, `icon-512.png` | PWA / web manifest |
 
 **Kurallar:**
 - Logoyu germe/eğme, marka dışı renk verme, gölge ekleme YAPILMAZ.
 - Minimum boş alan: logo yüksekliğinin %25'i kadar her yönde.
-- Koyu zeminde açık/altın varyant, açık zeminde koyu varyant kullanılır.
-
-> ⏳ **Durum:** Müşteri logosu (PNG) bekleniyor; geldiğinde kırpılıp koyu/açık + favicon/apple-touch
-> paketi üretilecek. Eski kalkan+SD monogram SVG'leri (Çelik & Cyan dönemi) bu logoyla DEĞİŞTİRİLECEK.
+- Koyu zeminde `-dark`, açık zeminde `-light` varyant kullanılır.
+- Küçük/kare alan (favicon, avatar) için `mark.svg` (SD amblemi).
 
 ## 3. Tipografi
 

@@ -151,7 +151,7 @@ export const SeoPagesStructuredForm: React.FC<SeoPagesStructuredFormProps> = ({
                       onChange={(e) => updatePage(cfg.key, { og_image: e.target.value })}
                       disabled={disabled}
                       className="h-8"
-                      placeholder="/logo/png/vista_logo_512.png"
+                      placeholder="/logo/png/sultandefense_logo_512.png"
                     />
                   </div>
 

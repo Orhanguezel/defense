@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 144" role="img" aria-label="Sultan Defense">
+  <!-- Kalkan govdesi -->
+  <path d="M60 6 L110 23 L110 76 C110 106 88 126 60 137 C32 126 10 106 10 76 L10 23 Z"
+        fill="#0D1B2A" stroke="#2BD4D9" stroke-width="4.5" stroke-linejoin="round"/>
+  <!-- Ic cizgi -->
+  <path d="M60 19 L98 32 L98 74 C98 98 81 114 60 122 C39 114 22 98 22 74 L22 32 Z"
+        fill="none" stroke="#244A5E" stroke-width="2"/>
+  <!-- Ust chevron aksani -->
+  <path d="M34 45 L60 35 L86 45" fill="none" stroke="#2BD4D9" stroke-width="3.5"
+        stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  <!-- SD monogram -->
+  <text x="60" y="93" text-anchor="middle"
+        font-family="'Arial Black','Helvetica Neue',Arial,sans-serif"
+        font-size="42" font-weight="900" fill="#2BD4D9"
+        textLength="56" lengthAdjust="spacingAndGlyphs">SD</text>
+</svg>

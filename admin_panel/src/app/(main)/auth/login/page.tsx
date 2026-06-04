@@ -29,7 +29,7 @@ export default function Login() {
       />
 
       {/* Sağ (form) */}
-      <div className="flex w-full items-center justify-center bg-background p-8 lg:w-2/3">
+      <div className="flex flex-1 items-center justify-center bg-background p-8">
         <div className="w-full max-w-md space-y-10 py-24 lg:py-32">
           <div className="space-y-4 text-center">
             <div className="font-medium tracking-tight">{t('admin.auth.login.title')}</div>

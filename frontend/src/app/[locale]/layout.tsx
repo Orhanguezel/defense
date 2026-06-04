@@ -2,7 +2,7 @@ import 'server-only';
 
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import { DM_Sans, Syne } from 'next/font/google';
+import { Inter, Oswald } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Toaster } from 'sonner';
@@ -29,14 +29,13 @@ function pickFirstString(...values: unknown[]): string {
   return '';
 }
 
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ['latin', 'latin-ext'],
-  axes: ['opsz'],
   variable: '--font-body',
   display: 'swap',
 });
 
-const syne = Syne({
+const oswald = Oswald({
   subsets: ['latin', 'latin-ext'],
   variable: '--font-heading',
   display: 'swap',
@@ -171,7 +170,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${dmSans.variable} ${syne.variable}`}
+      className={`${inter.variable} ${oswald.variable}`}
       data-theme-template={THEME_TEMPLATE}
       data-theme-intent={THEME_INTENT}
       data-theme-mode="light"

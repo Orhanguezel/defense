@@ -3,38 +3,38 @@
 
 /* ─────────────────────────────────────────────
    KATMAN 1: Primitive Tokenlar
-   Template: vista-construction
-   Intent:   premium-editorial-neutral-gold
+   Template: sultandefense-tactical
+   Intent:   premium-tactical-cyan
    ───────────────────────────────────────────── */
 
 :root,
-html[data-theme-template='vista-construction'] {
-  /* Altın / Şampanya */
-  --gold-50: #faf8f4;
-  --gold-100: #f3eee3;
-  --gold-200: #e8dcc8;
-  --gold-300: #dccfaf;
-  --gold-400: #d4c4a0;
-  --gold-500: #b8a98a; /* ← Ana marka rengi */
-  --gold-600: #9e8f6f;
-  --gold-700: #8b7962;
-  --gold-800: #6b5d48;
-  --gold-900: #4e4436;
-  --gold-950: #2e271f;
+html[data-theme-template='sultandefense-tactical'] {
+  /* Tactical Cyan */
+  --cyan-50: #ecfdf5;
+  --cyan-100: #d1fae5;
+  --cyan-200: #a7f3d0;
+  --cyan-300: #6ee7b7;
+  --cyan-400: #4FE3E8; /* Bright Hover */
+  --cyan-500: #2BD4D9; /* Tactical Cyan */
+  --cyan-600: #0E7C82; /* Deep Cyan for Light Mode */
+  --cyan-700: #0b5d61;
+  --cyan-800: #084346;
+  --cyan-900: #052a2c;
+  --cyan-950: #021213;
 
-  /* Antrasit / Volkanik Nötr */
-  --anthracite-0: #ffffff;
-  --anthracite-50: #f5f5f4;
-  --anthracite-100: #e8e7e5;
-  --anthracite-200: #d4d2ce;
-  --anthracite-300: #b8b5b0;
-  --anthracite-400: #8e8b87;
-  --anthracite-500: #6b6864;
-  --anthracite-600: #4e4b47;
-  --anthracite-700: #3c3a37;
-  --anthracite-800: #2e2c29;
-  --anthracite-900: #1e1c1a;
-  --anthracite-950: #141311;
+  /* Deep Navy & Gunmetal (Neutrals) */
+  --navy-0: #ffffff;
+  --navy-50: #F4F6F8;
+  --navy-100: #D5DDE5;
+  --navy-200: #B0C0D0;
+  --navy-300: #8A97A6;
+  --navy-400: #51606F;
+  --navy-500: #415A77;
+  --navy-600: #2C3E52;
+  --navy-700: #1B263B; /* Gunmetal (surface) */
+  --navy-800: #0D1B2A; /* Deep Navy (bg) */
+  --navy-900: #060d14;
+  --navy-950: #020406;
 
   /* Status */
   --status-success: #25d366;
@@ -43,8 +43,8 @@ html[data-theme-template='vista-construction'] {
   --status-danger: #dc2626;
 
   /* Tipografi */
-  --font-heading: 'Syne', system-ui, sans-serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-heading: var(--font-heading, 'Oswald', sans-serif);
+  --font-body: var(--font-body, 'Inter', sans-serif);
 
   /* Spacing & Layout */
   --section-py: clamp(4rem, 8vw, 7rem);
@@ -70,20 +70,20 @@ html[data-theme-template='vista-construction'] {
 html[data-theme-mode='light'],
 :root:not([data-theme-mode]) {
   /* Surface ara tokenlar */
-  --surface-base: var(--anthracite-50);
-  --surface-raised: var(--anthracite-0);
-  --surface-muted: var(--anthracite-100);
-  --surface-dark: var(--anthracite-900);
-  --surface-dark-strong: #000000;
+  --surface-base: var(--navy-50);
+  --surface-raised: var(--navy-0);
+  --surface-muted: var(--navy-100);
+  --surface-dark: var(--navy-800);
+  --surface-dark-strong: var(--navy-950);
 
-  --text-strong: var(--anthracite-900);
-  --text-body: var(--anthracite-600);
-  --text-muted: var(--anthracite-400);
-  --text-inverse: var(--anthracite-50);
-  --text-soft-inverse: var(--anthracite-300);
+  --text-strong: var(--navy-800);
+  --text-body: var(--navy-500);
+  --text-muted: var(--navy-400);
+  --text-inverse: var(--navy-50);
+  --text-soft-inverse: var(--navy-300);
 
-  --border-subtle: var(--anthracite-200);
-  --border-strong: var(--anthracite-300);
+  --border-subtle: var(--navy-100);
+  --border-strong: var(--navy-200);
 
   /* Glass */
   --color-glass-bg: rgb(255 255 255 / 0.06);
@@ -95,8 +95,8 @@ html[data-theme-mode='light'],
   --color-border-on-dark: rgb(255 255 255 / 0.12);
   --color-dark-link-hover: var(--text-inverse);
 
-  /* Hero glow — altın tonu */
-  --color-hero-glow-brand: color-mix(in srgb, var(--gold-400) 16%, transparent);
+  /* Hero glow — cyan */
+  --color-hero-glow-brand: color-mix(in srgb, var(--cyan-400) 16%, transparent);
   --color-hero-glow-muted: rgb(255 255 255 / 0.06);
 
   /* Semantic tokenlar */
@@ -113,12 +113,12 @@ html[data-theme-mode='light'],
   --color-border: var(--border-subtle);
   --color-border-strong: var(--border-strong);
 
-  /* Brand — altın */
-  --color-brand: var(--gold-500);
-  --color-brand-light: var(--gold-300);
-  --color-brand-dark: var(--gold-700);
-  --color-accent: var(--anthracite-800);
-  --color-on-brand: var(--anthracite-950);
+  /* Brand — cyan */
+  --color-brand: var(--cyan-600);
+  --color-brand-light: var(--cyan-400);
+  --color-brand-dark: var(--cyan-700);
+  --color-accent: var(--navy-700);
+  --color-on-brand: var(--navy-0);
 }
 
 /* ─────────────────────────────────────────────
@@ -127,35 +127,35 @@ html[data-theme-mode='light'],
    ───────────────────────────────────────────── */
 
 html[data-theme-mode='dark'] {
-  /* Surface ara tokenlar — sıcak siyah tonları */
-  --surface-base: #0f0e0d;
-  --surface-raised: #1a1816;
-  --surface-muted: #201e1b;
-  --surface-dark: #0a0908;
-  --surface-dark-strong: #000000;
+  /* Surface ara tokenlar — koyu mavi / çelik tonları */
+  --surface-base: var(--navy-800);
+  --surface-raised: var(--navy-700);
+  --surface-muted: var(--navy-600);
+  --surface-dark: var(--navy-900);
+  --surface-dark-strong: var(--navy-950);
 
-  --text-strong: #f0ece6;
-  --text-body: #c8c2b8;
-  --text-muted: #8c8880;
-  --text-inverse: #f5f4f2;
-  --text-soft-inverse: #c4bfb8;
+  --text-strong: #E0E1DD;
+  --text-body: var(--navy-200);
+  --text-muted: var(--navy-300);
+  --text-inverse: var(--navy-800);
+  --text-soft-inverse: var(--navy-400);
 
-  --border-subtle: #2a2825;
-  --border-strong: #3a3835;
+  --border-subtle: var(--navy-700);
+  --border-strong: var(--navy-600);
 
-  /* Glass — altın tonlu */
-  --color-glass-bg: rgb(255 240 210 / 0.04);
-  --color-glass-bg-strong: rgb(255 240 210 / 0.08);
-  --color-glass-border: rgb(255 240 210 / 0.1);
-  --color-glass-hover: rgb(255 240 210 / 0.08);
+  /* Glass — cyan tonlu */
+  --color-glass-bg: rgb(43 212 217 / 0.04);
+  --color-glass-bg-strong: rgb(43 212 217 / 0.08);
+  --color-glass-border: rgb(43 212 217 / 0.1);
+  --color-glass-hover: rgb(43 212 217 / 0.08);
 
   /* Misc */
   --color-border-on-dark: rgb(255 255 255 / 0.1);
   --color-dark-link-hover: #ffffff;
 
-  /* Hero glow — dark'ta altın daha belirgin */
-  --color-hero-glow-brand: color-mix(in srgb, var(--gold-500) 20%, transparent);
-  --color-hero-glow-muted: rgb(184 169 138 / 0.08);
+  /* Hero glow — cyan */
+  --color-hero-glow-brand: color-mix(in srgb, var(--cyan-500) 20%, transparent);
+  --color-hero-glow-muted: rgb(43 212 217 / 0.08);
 
   /* Semantic tokenlar */
   --color-bg: var(--surface-base);
@@ -171,12 +171,12 @@ html[data-theme-mode='dark'] {
   --color-border: var(--border-subtle);
   --color-border-strong: var(--border-strong);
 
-  /* Brand — dark'ta biraz açık altın */
-  --color-brand: var(--gold-400);
-  --color-brand-light: var(--gold-300);
-  --color-brand-dark: var(--gold-600);
-  --color-accent: var(--gold-500);
-  --color-on-brand: var(--anthracite-950);
+  /* Brand — cyan */
+  --color-brand: var(--cyan-500);
+  --color-brand-light: var(--cyan-400);
+  --color-brand-dark: var(--cyan-600);
+  --color-accent: var(--cyan-500);
+  --color-on-brand: var(--cyan-950);
 }
 
 /* ─────────────────────────────────────────────
@@ -302,14 +302,14 @@ h6 {
   background-color: var(--color-bg-dark);
 }
 
-/* vista-construction: altın radial glow, sıcak antrasit gradient */
+/* sultandefense-tactical: cyan radial glow, çelik/koyu mavi gradient */
 .surface-dark-shell::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top left, rgb(184 169 138 / 0.14), transparent 30%),
-    linear-gradient(135deg, rgb(15 14 13 / 0.97), rgb(26 24 22 / 0.94));
+    radial-gradient(circle at top left, rgb(43 212 217 / 0.14), transparent 30%),
+    linear-gradient(135deg, rgb(13 27 42 / 0.97), rgb(27 38 59 / 0.94));
   pointer-events: none;
 }
 
@@ -338,18 +338,18 @@ h6 {
   background-color: var(--color-glass-hover);
 }
 
-/* ─── Marka CTA Yüzeyi (Altın) ─── */
+/* ─── Marka CTA Yüzeyi (Tactical Cyan) ─── */
 
-/* vista-construction: altın gradient, koyu metin */
+/* sultandefense-tactical: cyan gradient, koyu metin */
 .surface-brand-cta {
-  border: 1px solid rgb(184 169 138 / 0.3);
-  background: linear-gradient(135deg, rgb(158 143 111 / 0.95), rgb(139 121 98 / 0.95));
-  color: var(--anthracite-950);
-  box-shadow: 0 20px 60px rgb(184 169 138 / 0.18);
+  border: 1px solid rgb(43 212 217 / 0.3);
+  background: linear-gradient(135deg, rgb(43 212 217 / 0.95), rgb(14 124 130 / 0.95));
+  color: #052a2c;
+  box-shadow: 0 20px 60px rgb(43 212 217 / 0.18);
 }
 
 .surface-brand-cta-subtle {
-  color: rgb(20 19 17 / 0.68);
+  color: rgb(13 27 42 / 0.68);
 }
 
 /* ─── Hero Glow ─── */
@@ -363,9 +363,9 @@ h6 {
 
 /* ─── Medya Overlay (Proje Kartları) ─── */
 
-/* vista-construction: sıcak siyah overlay, soğuk değil */
+/* sultandefense-tactical: koyu çelik/navy overlay */
 .media-overlay {
-  background: linear-gradient(180deg, rgb(20 19 17 / 0.04), rgb(20 19 17 / 0.82));
+  background: linear-gradient(180deg, rgb(13 27 42 / 0.04), rgb(13 27 42 / 0.82));
 }
 
 .media-overlay-title {
