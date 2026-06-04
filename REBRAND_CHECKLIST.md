@@ -47,6 +47,7 @@ seed **icerik** doldurma (defans), locale icerikleri (19 dil), nginx conf, Faz 6
 ---
 
 ## Faz 0 — Secret Rotation (Claude iskele + kullanici degerleri)
+> Rehber: [`docs/SECRET_ROTATION.md`](docs/SECRET_ROTATION.md) (gercek secret icermez)
 - [ ] `JWT_SECRET`, `COOKIE_SECRET` (yeni rastgele)
 - [ ] `DB_PASSWORD` (sultandefense DB)
 - [ ] `CLOUDINARY_*`, `GOOGLE_CLIENT_ID/SECRET`, `RECAPTCHA_*`, `GROQ_API_KEY`
@@ -85,9 +86,10 @@ seed **icerik** doldurma (defans), locale icerikleri (19 dil), nginx conf, Faz 6
 - [ ] `carbon-fiber.jpg` (frontend kokunde) + diger kompozit/insaat artiklari sil
 
 ## Faz 6 — Deploy / Altyapi **(Claude)**
-- [ ] `frontend/nginx-vistainsaat.conf` → `nginx-sultandefense.conf` (server_name/port/root)
-- [ ] Sunucu `187.77.79.59`: nginx reverse proxy (8090/3040/3041), MySQL+seed, PM2, `pm2 save`
-- [ ] Cloudflare alt domain (api./admin.) + SSL (Full strict icin origin cert)
+- [x] nginx prod config → [`deploy/nginx/sultandefense.conf`](deploy/nginx/sultandefense.conf)
+      (frontend 3040 + backend 8090 + admin.sultandefense.com 3041, origin cert, `nginx -t` ok)
+- [ ] Sunucu `187.77.79.59`: configi /etc/nginx/sites-enabled'a al, MySQL+seed, PM2 x3, `pm2 save`
+- [ ] Cloudflare alt domain (`admin.`) DNS + SSL (Full strict icin Origin CA cert)
 
 ## Faz 7 — Temizlik / Final **(Claude)**
 - [ ] Kok `sultandefense.com/` ürün gorsel klasoru → mantikli yer; kokteki `SAVRONIK_*_premium.*` duzenle
