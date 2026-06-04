@@ -18,7 +18,7 @@ export default function OpenGraphImage() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          background: 'linear-gradient(135deg, #0f0e0d 0%, #1a1816 60%, #201e1b 100%)',
+          background: 'linear-gradient(135deg, #121214 0%, #1A1A1D 60%, #2D3134 100%)',
           color: '#ffffff',
           padding: '56px',
           fontFamily: 'Arial, sans-serif',
@@ -38,7 +38,7 @@ export default function OpenGraphImage() {
               fontSize: 22,
               letterSpacing: 4,
               textTransform: 'uppercase',
-              color: '#b8a98a',
+              color: '#C5A880',
               fontWeight: 600,
             }}
           >
@@ -49,7 +49,7 @@ export default function OpenGraphImage() {
               display: 'flex',
               width: 80,
               height: 3,
-              background: '#b8a98a',
+              background: '#C5A880',
             }}
           />
         </div>
@@ -92,7 +92,7 @@ export default function OpenGraphImage() {
           }}
         >
           <div style={{ display: 'flex' }}>sultandefense.com</div>
-          <div style={{ display: 'flex', color: '#b8a98a', fontWeight: 600 }}>
+          <div style={{ display: 'flex', color: '#C5A880', fontWeight: 600 }}>
             Kalite · Zamanında Teslim · Güven
           </div>
         </div>

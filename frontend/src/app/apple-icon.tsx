@@ -17,15 +17,15 @@ export default function AppleIcon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#111827',
-          color: '#ea580c',
+          background: '#1A1A1D',
+          color: '#C5A880',
           borderRadius: 36,
-          fontSize: 76,
-          fontWeight: 700,
+          fontSize: 68,
+          fontWeight: 900,
           fontFamily: 'Inter, Arial, sans-serif',
         }}
       >
-        MK
+        SD
       </div>
     ),
     size,

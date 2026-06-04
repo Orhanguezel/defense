@@ -7,8 +7,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Sultan Defense — A to Z defense procurement and tactical equipment supplier.',
     start_url: '/tr',
     display: 'standalone',
-    background_color: '#141311',
-    theme_color: '#b8a98a',
+    background_color: '#1A1A1D',
+    theme_color: '#C5A880',
     icons: [
       {
         src: '/icon',

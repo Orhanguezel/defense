@@ -17,15 +17,15 @@ export default function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#111827',
-          color: '#ea580c',
+          background: '#1A1A1D',
+          color: '#C5A880',
           borderRadius: 14,
-          fontSize: 34,
-          fontWeight: 700,
+          fontSize: 30,
+          fontWeight: 900,
           fontFamily: 'Inter, Arial, sans-serif',
         }}
       >
-        MK
+        SD
       </div>
     ),
     size,

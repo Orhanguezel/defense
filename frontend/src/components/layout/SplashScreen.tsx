@@ -64,7 +64,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           align-items: center;
           justify-content: center;
           flex-direction: column;
-          background: #0f0e0d;
+          background: #121214;
           overflow: hidden;
         }
 
@@ -73,9 +73,9 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           position: absolute;
           inset: 0;
           background:
-            radial-gradient(ellipse 80% 60% at 50% 40%, rgba(184,169,138,0.14) 0%, transparent 70%),
-            radial-gradient(ellipse 60% 50% at 20% 80%, rgba(184,169,138,0.06) 0%, transparent 60%),
-            radial-gradient(ellipse 50% 40% at 80% 20%, rgba(212,196,160,0.08) 0%, transparent 50%);
+            radial-gradient(ellipse 80% 60% at 50% 40%, rgba(197,168,128,0.14) 0%, transparent 70%),
+            radial-gradient(ellipse 60% 50% at 20% 80%, rgba(197,168,128,0.06) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 40% at 80% 20%, rgba(212,185,150,0.08) 0%, transparent 50%);
         }
 
         /* ── Gold gridlines ── */
@@ -87,19 +87,19 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
         }
         .splash-line-v {
           position: absolute;
-          background: linear-gradient(180deg, transparent, rgba(184,169,138,0.12), transparent);
+          background: linear-gradient(180deg, transparent, rgba(197,168,128,0.12), transparent);
           width: 1px;
           height: 100%;
           animation: splash-line-pulse 3.5s ease-in-out infinite;
         }
         .splash-line-v:nth-child(1) { left: 15%; animation-delay: 0s; }
         .splash-line-v:nth-child(2) { left: 30%; animation-delay: 0.5s; }
-        .splash-line-v:nth-child(3) { left: 50%; animation-delay: 0.2s; background: linear-gradient(180deg, transparent 20%, rgba(184,169,138,0.18) 50%, transparent 80%); }
+        .splash-line-v:nth-child(3) { left: 50%; animation-delay: 0.2s; background: linear-gradient(180deg, transparent 20%, rgba(197,168,128,0.18) 50%, transparent 80%); }
         .splash-line-v:nth-child(4) { left: 70%; animation-delay: 0.7s; }
         .splash-line-v:nth-child(5) { left: 85%; animation-delay: 0.3s; }
         .splash-line-h {
           position: absolute;
-          background: linear-gradient(90deg, transparent, rgba(184,169,138,0.08), transparent);
+          background: linear-gradient(90deg, transparent, rgba(197,168,128,0.08), transparent);
           height: 1px;
           width: 100%;
         }
@@ -118,7 +118,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
         .splash-dot {
           position: absolute;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(212,196,160,0.9), rgba(184,169,138,0.2));
+          background: radial-gradient(circle, rgba(212,185,150,0.9), rgba(197,168,128,0.2));
           animation: splash-dot-drift 5s ease-in-out infinite;
           opacity: 0;
         }
@@ -145,7 +145,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           position: absolute;
           width: 180px;
           height: 180px;
-          border: 1px solid rgba(184,169,138,0.18);
+          border: 1px solid rgba(197,168,128,0.18);
           transform: rotate(45deg) scale(0);
           animation: splash-dia-in 1.4s cubic-bezier(0.22,1,0.36,1) 0.15s forwards;
         }
@@ -153,7 +153,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           position: absolute;
           width: 120px;
           height: 120px;
-          border: 1px solid rgba(184,169,138,0.10);
+          border: 1px solid rgba(197,168,128,0.10);
           transform: rotate(45deg) scale(0);
           animation: splash-dia-in 1.4s cubic-bezier(0.22,1,0.36,1) 0.35s forwards;
         }
@@ -173,7 +173,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
         @keyframes splash-logo-appear { to { opacity: 1; transform: scale(1); } }
 
         .splash-logo-img {
-          filter: brightness(1.3) drop-shadow(0 0 50px rgba(184,169,138,0.35));
+          filter: brightness(1.3) drop-shadow(0 0 50px rgba(197,168,128,0.35));
         }
 
         /* Glow halo */
@@ -182,7 +182,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           width: 220px;
           height: 220px;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(184,169,138,0.22) 0%, transparent 70%);
+          background: radial-gradient(circle, rgba(197,168,128,0.22) 0%, transparent 70%);
           filter: blur(40px);
           animation: splash-halo-breathe 2.5s ease-in-out infinite;
           z-index: -1;
@@ -207,7 +207,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           font-weight: 800;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          background: linear-gradient(135deg, #e8dcc8 0%, #b8a98a 30%, #d4c4a0 60%, #9e8f6f 100%);
+          background: linear-gradient(135deg, #e8dcc8 0%, #C5A880 30%, #d4c4a0 60%, #9e8f6f 100%);
           background-size: 300% 100%;
           -webkit-background-clip: text;
           background-clip: text;
@@ -228,7 +228,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           width: 0;
           height: 1px;
           margin-top: 20px;
-          background: linear-gradient(90deg, transparent, rgba(184,169,138,0.5), transparent);
+          background: linear-gradient(90deg, transparent, rgba(197,168,128,0.5), transparent);
           animation: splash-rule-grow 1s cubic-bezier(0.22,1,0.36,1) 1.2s forwards;
         }
         @keyframes splash-rule-grow { to { width: clamp(100px, 28vw, 220px); } }
@@ -248,7 +248,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           font-weight: 400;
           letter-spacing: 0.24em;
           text-transform: uppercase;
-          color: rgba(184,169,138,0.55);
+          color: rgba(197,168,128,0.55);
         }
 
         /* ── Bottom badge ── */
@@ -264,7 +264,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           font-size: 10px;
           letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: rgba(184,169,138,0.30);
+          color: rgba(197,168,128,0.30);
         }
 
         /* ── Corner brackets ── */
@@ -272,7 +272,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           position: absolute;
           width: 48px;
           height: 48px;
-          border-color: rgba(184,169,138,0.14);
+          border-color: rgba(197,168,128,0.14);
           border-style: solid;
           opacity: 0;
           animation: splash-corner-fade 0.8s ease-out 0.7s forwards;

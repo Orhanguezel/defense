@@ -16,7 +16,7 @@ export default function TwitterImage() {
           width: '100%',
           height: '100%',
           display: 'flex',
-          background: '#0f0e0d',
+          background: '#121214',
           color: '#ffffff',
           padding: '48px',
           fontFamily: 'Arial, sans-serif',
@@ -28,10 +28,10 @@ export default function TwitterImage() {
             flex: 1,
             flexDirection: 'column',
             justifyContent: 'space-between',
-            border: '1px solid rgba(184,169,138,0.20)',
+            border: '1px solid rgba(197,168,128,0.20)',
             borderRadius: 24,
             padding: '40px',
-            background: 'linear-gradient(180deg, rgba(184,169,138,0.04), rgba(184,169,138,0.00))',
+            background: 'linear-gradient(180deg, rgba(197,168,128,0.04), rgba(197,168,128,0.00))',
           }}
         >
           <div
@@ -40,7 +40,7 @@ export default function TwitterImage() {
               fontSize: 20,
               textTransform: 'uppercase',
               letterSpacing: 4,
-              color: '#b8a98a',
+              color: '#C5A880',
               fontWeight: 600,
             }}
           >
@@ -73,7 +73,7 @@ export default function TwitterImage() {
             }}
           >
             <div style={{ display: 'flex' }}>sultandefense.com</div>
-            <div style={{ display: 'flex', color: '#b8a98a', fontWeight: 600 }}>
+            <div style={{ display: 'flex', color: '#C5A880', fontWeight: 600 }}>
               Kalite · Güven · Zamanında Teslim
             </div>
           </div>
