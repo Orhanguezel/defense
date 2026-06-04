@@ -136,7 +136,7 @@ export function RegisterClient({ locale }: { locale: string }) {
           <Link href={localizedPath(locale, '/')} style={{ display: 'inline-block' }}>
             <Image
               src="/logo-dark.svg"
-              alt="Vista İnşaat"
+              alt="Sultan Defense"
               width={56}
               height={56}
               style={{ height: 56, width: 'auto' }}

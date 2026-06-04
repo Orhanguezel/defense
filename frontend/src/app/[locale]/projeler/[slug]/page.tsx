@@ -41,7 +41,7 @@ function specLabel(id: string, locale: string): string {
 async function fetchProject(slug: string, locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/products/by-slug/${encodeURIComponent(slug)}?locale=${locale}&item_type=vistainsaat`,
+      `${API_BASE_URL}/products/by-slug/${encodeURIComponent(slug)}?locale=${locale}&item_type=sultandefense`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return null;
@@ -63,7 +63,7 @@ async function fetchSidebarProjects(
   } = {},
 ) {
   const params = new URLSearchParams({
-    item_type: 'vistainsaat',
+    item_type: 'sultandefense',
     is_active: '1',
     locale,
     limit: String(opts.limit ?? 4),
@@ -102,7 +102,7 @@ export async function generateMetadata({
       project.meta_title ||
       (locale.startsWith('en')
         ? `${project.title} | Vista Construction`
-        : `${project.title} | Vista İnşaat`),
+        : `${project.title} | Sultan Defense`),
     description:
       project.meta_description ||
       (locale.startsWith('en')
@@ -216,7 +216,7 @@ export default async function ProjectDetailPage({
   const shareUrl = `${SITE_URL}/${locale}/projeler/${slug}`;
 
   const breadcrumbs = [
-    { label: 'Vista İnşaat', href: localizedPath(locale, '/') },
+    { label: 'Sultan Defense', href: localizedPath(locale, '/') },
     { label: isEn ? 'Projects' : 'Projeler', href: localizedPath(locale, '/projeler') },
     ...(projectType ? [{ label: projectType, href: localizedPath(locale, '/projeler') }] : []),
     { label: project.title },

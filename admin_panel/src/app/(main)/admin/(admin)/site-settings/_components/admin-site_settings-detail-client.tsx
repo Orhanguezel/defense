@@ -459,8 +459,8 @@ const BusinessHoursStructuredRenderer: React.FC<StructuredRenderProps> = ({
 
 /* ----------------------------- component ----------------------------- */
 
-const VISTA_BRAND = 'vistainsaat';
-const VISTA_PREFIX = 'vistainsaat__';
+const VISTA_BRAND = 'sultandefense';
+const VISTA_PREFIX = 'sultandefense__';
 
 export default function SiteSettingsDetailClient({ id }: { id: string }) {
   const router = useRouter();

@@ -66,10 +66,10 @@ export async function generateMetadata({
   const logoValue = { ...readSettingValue(legacyLogo), ...readSettingValue(siteLogo) };
   const ogValue = readSettingValue(siteOgDefaultImage);
 
-  const title = asStr(val.site_title) || 'Vista İnşaat | Kurumsal İnşaat ve Mimarlık';
+  const title = asStr(val.site_title) || 'Sultan Defense | Defense Procurement';
   const description =
     asStr(val.site_description) ||
-    'Vista İnşaat — konut, ticari ve karma kullanım projelerinde güvenilir çözüm ortağı.';
+    'Sultan Defense — A to Z defense procurement and tactical equipment supplier.';
   const faviconUrl = pickFirstString(
     logoValue.favicon_url,
     logoValue.favicon,
@@ -85,7 +85,7 @@ export async function generateMetadata({
     ogValue.image_url,
   );
 
-  const siteName = asStr(val.site_title).split('|')[0]?.trim() || 'Vista İnşaat';
+  const siteName = asStr(val.site_title).split('|')[0]?.trim() || 'Sultan Defense';
 
   return {
     title: { default: title, template: `%s | ${siteName}` },

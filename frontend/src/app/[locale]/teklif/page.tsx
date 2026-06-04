@@ -29,7 +29,7 @@ export async function generateMetadata({
     title: projectName 
         ? `${projectName} - ${t('title')}`
         : (seo?.title || (locale.startsWith('en')
-          ? `${t('title')} - Vista Construction Quote & Project Evaluation`
+          ? `${t('title')} - Sultan Defense Quote & Project Evaluation`
           : `${t('title')} - Teklif ve Proje Değerlendirme`)),
     description: seo?.description || t('description'),
     ogImage: seo?.og_image || undefined,
@@ -54,7 +54,7 @@ export default async function OfferPage({
     <div style={{ maxWidth: 1280, margin: '0 auto', padding: '16px 16px 60px' }}>
       <div>
         <Breadcrumbs items={[
-          { label: 'Vista İnşaat', href: localizedPath(locale, '/') },
+          { label: 'Sultan Defense', href: localizedPath(locale, '/') },
           { label: locale.startsWith('en') ? 'Request a Quote' : 'Teklif Al' },
         ]} />
         <ContentPageHeader

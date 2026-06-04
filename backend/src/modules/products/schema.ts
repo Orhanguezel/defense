@@ -23,7 +23,7 @@ import {
 import { sql } from 'drizzle-orm';
 import { categories } from '../categories/schema';
 
-export type ProductItemType = 'product' | 'sparepart' | 'vistainsaat';
+export type ProductItemType = 'product' | 'sparepart' | 'sultandefense';
 
 /* =========================
  * PRODUCTS (BASE TABLO – DİL BAĞIMSIZ)
@@ -34,7 +34,7 @@ export const products = mysqlTable(
     id: char('id', { length: 36 }).primaryKey().notNull(),
 
     // ✅ Ürün tipi: product / sparepart / kompozit
-    item_type: mysqlEnum('item_type', ['product', 'sparepart', 'vistainsaat']).notNull().default('product'),
+    item_type: mysqlEnum('item_type', ['product', 'sparepart', 'sultandefense']).notNull().default('product'),
 
     // Dilden bağımsız alanlar
     category_id: char('category_id', { length: 36 }).notNull(),

@@ -80,12 +80,12 @@ function extractJSON(text: string): any {
   throw new Error('AI yanıtından JSON çıkarılamadı');
 }
 
-const SYSTEM_PROMPT = `Sen Vista İnşaat firması için profesyonel içerik yazarısın.
-Vista İnşaat, Antalya merkezli konut, ticari ve endüstriyel projelerde uzmanlaşmış bir inşaat ve mimarlık firmasıdır.
+const SYSTEM_PROMPT = `Sen Sultan Defense firması için profesyonel içerik yazarısın.
+Sultan Defense, İzmir merkezli, savunma ve askeri ekipman alanında küresel tedarik ve ihracat partneridir.
 
 Kurallar:
 - Profesyonel, güvenilir ve teknik bir ton kullan
-- İnşaat sektörüne uygun terminoloji kullan
+- Savunma tedariki ve ihracat süreçlerine uygun terminoloji kullan
 - SEO dostu içerik üret (anahtar kelime yoğunluğu doğal olsun)
 - HTML formatında içerik üret (<p>, <h2>, <h3>, <ul>, <li>, <strong> tagları kullan)
 - Başlıklar kısa ve etkileyici olsun

@@ -1,6 +1,6 @@
 -- =============================================================
 -- FILE: 315_vistainsaat_hero_video.seed.sql
--- Vista İnşaat — Hero video storage + site_settings
+-- Sultan Defense — Hero video storage + site_settings
 -- =============================================================
 
 SET NAMES utf8mb4;
@@ -21,7 +21,7 @@ ON DUPLICATE KEY UPDATE `url` = VALUES(`url`), `updated_at` = VALUES(`updated_at
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES (
   UUID(),
-  'vistainsaat__hero',
+  'sultandefense__hero',
   '*',
   CAST(JSON_OBJECT(
     'video_desktop', '/uploads/video/hero-desktop.mp4',

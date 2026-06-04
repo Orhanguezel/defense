@@ -22,7 +22,7 @@ export function AuthBrandPanel({ heading, subtext }: Props) {
   const isSvg = rawLogoUrl.endsWith('.svg');
   const logoUrl = rawLogoUrl;
   const logoAlt: string = logoVal?.alt || 'Logo';
-  const appName: string = configVal?.branding?.app_name || 'Vista İnşaat';
+  const appName: string = configVal?.branding?.app_name || 'Sultan Defense';
 
   return (
     <div className="hidden bg-primary lg:flex lg:w-1/3 flex-col items-center justify-center p-12 text-center">

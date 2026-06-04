@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/offer/schema.ts
-// Vista İnşaat – Offer Module Schema (Drizzle ORM)
+// Sultan Defense – Offer Module Schema (Drizzle ORM)
 // =============================================================
 
 import {
@@ -34,8 +34,8 @@ export const offersTable = mysqlTable(
 
     status: varchar('status', { length: 32 }).notNull().default('new'),
 
-    /** Teklifin geldiği kaynak site/marka: 'vistainsaat' | 'vistainsaat' | ... */
-    source: varchar('source', { length: 64 }).notNull().default('vistainsaat'),
+    /** Teklifin geldiği kaynak site/marka: 'sultandefense' | 'sultandefense' | ... */
+    source: varchar('source', { length: 64 }).notNull().default('sultandefense'),
 
     locale: varchar('locale', { length: 10 }),
 

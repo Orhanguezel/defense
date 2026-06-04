@@ -1,7 +1,7 @@
 -- =============================================================
--- FILE: 304_vistainsaat_blog.seed.sql
--- Vista İnşaat — Blog / haber yazıları (custom_pages) + i18n (TR/EN)
--- module_key = 'vistainsaat_blog'
+-- FILE: 304_sultandefense_blog.seed.sql
+-- Sultan Defense — Blog / haber yazıları (custom_pages) + i18n (TR/EN)
+-- module_key = 'sultandefense_blog'
 -- =============================================================
 
 SET NAMES utf8mb4;
@@ -31,10 +31,10 @@ INSERT INTO `custom_pages`
   `sub_category_id`
 )
 VALUES
-  ('bb010001-5001-4001-9001-bbbbbbbb0001', 'vistainsaat_blog', 1, 1, 10, 10, '/uploads/projects/vista-insaat-proje-39.jpeg', NULL, '/uploads/projects/vista-insaat-proje-39.jpeg', NULL, '[]', '[]', NULL, NULL),
-  ('bb010002-5002-4002-9002-bbbbbbbb0002', 'vistainsaat_blog', 1, 1, 20, 20, '/uploads/projects/vista-insaat-proje-29.jpeg', NULL, '/uploads/projects/vista-insaat-proje-29.jpeg', NULL, '[]', '[]', NULL, NULL),
-  ('bb010003-5003-4003-9003-bbbbbbbb0003', 'vistainsaat_blog', 1, 0, 30, 30, '/uploads/projects/vista-insaat-proje-36.jpeg', NULL, '/uploads/projects/vista-insaat-proje-36.jpeg', NULL, '[]', '[]', NULL, NULL),
-  ('bb010004-5004-4004-9004-bbbbbbbb0004', 'vistainsaat_blog', 1, 0, 40, 40, '/uploads/projects/vista-insaat-proje-30.jpeg', NULL, '/uploads/projects/vista-insaat-proje-30.jpeg', NULL, '[]', '[]', NULL, NULL)
+  ('bb010001-5001-4001-9001-bbbbbbbb0001', 'sultandefense_blog', 1, 1, 10, 10, '/uploads/projects/vista-insaat-proje-39.jpeg', NULL, '/uploads/projects/vista-insaat-proje-39.jpeg', NULL, '[]', '[]', NULL, NULL),
+  ('bb010002-5002-4002-9002-bbbbbbbb0002', 'sultandefense_blog', 1, 1, 20, 20, '/uploads/projects/vista-insaat-proje-29.jpeg', NULL, '/uploads/projects/vista-insaat-proje-29.jpeg', NULL, '[]', '[]', NULL, NULL),
+  ('bb010003-5003-4003-9003-bbbbbbbb0003', 'sultandefense_blog', 1, 0, 30, 30, '/uploads/projects/vista-insaat-proje-36.jpeg', NULL, '/uploads/projects/vista-insaat-proje-36.jpeg', NULL, '[]', '[]', NULL, NULL),
+  ('bb010004-5004-4004-9004-bbbbbbbb0004', 'sultandefense_blog', 1, 0, 40, 40, '/uploads/projects/vista-insaat-proje-30.jpeg', NULL, '/uploads/projects/vista-insaat-proje-30.jpeg', NULL, '[]', '[]', NULL, NULL)
 ON DUPLICATE KEY UPDATE
   `module_key`   = VALUES(`module_key`),
   `is_published` = VALUES(`is_published`),
@@ -66,10 +66,10 @@ VALUES
     'tr',
     'Sürdürülebilir Bina Tasarımında Güncel Yaklaşımlar',
     'surdurulebilir-bina-tasarimi',
-    JSON_OBJECT('html', '<p>Sürdürülebilir yapı tasarımı artık bir tercih değil, inşaat sektörünün temel gereksinimi haline gelmiştir. Enerji verimliliği, su yönetimi ve malzeme döngüsü birbirini tamamlayan üç temel eksen olarak öne çıkmaktadır.</p><h2>Enerji Verimliliği</h2><p>Yüksek performanslı cephe sistemleri, ısı yalıtımı ve akıllı bina otomasyon sistemleri; yapının ömrü boyunca enerji tüketimini önemli ölçüde azaltmaktadır. Vista İnşaat projelerinde enerji modelleme, tasarım aşamasında entegre bir disiplin olarak ele alınmaktadır.</p><h2>Yeşil Sertifikasyon</h2><p>LEED ve BREEAM gibi uluslararası yeşil bina sertifikasyonları, tasarım kalitesini ve çevresel performansı belgeler. Bu standartlara uygun projeler; hem kiracı talebi hem de uzun vadeli değer açısından belirgin avantaj sağlamaktadır.</p><h2>Döngüsel Malzeme Kullanımı</h2><p>Geri dönüştürülmüş içerik oranı yüksek malzemelerin seçimi, yapım atıklarının azaltılması ve demontaj planlaması artık modern inşaat projelerinin ayrılmaz parçasıdır.</p>'),
+    JSON_OBJECT('html', '<p>Sürdürülebilir yapı tasarımı artık bir tercih değil, inşaat sektörünün temel gereksinimi haline gelmiştir. Enerji verimliliği, su yönetimi ve malzeme döngüsü birbirini tamamlayan üç temel eksen olarak öne çıkmaktadır.</p><h2>Enerji Verimliliği</h2><p>Yüksek performanslı cephe sistemleri, ısı yalıtımı ve akıllı bina otomasyon sistemleri; yapının ömrü boyunca enerji tüketimini önemli ölçüde azaltmaktadır. Sultan Defense projelerinde enerji modelleme, tasarım aşamasında entegre bir disiplin olarak ele alınmaktadır.</p><h2>Yeşil Sertifikasyon</h2><p>LEED ve BREEAM gibi uluslararası yeşil bina sertifikasyonları, tasarım kalitesini ve çevresel performansı belgeler. Bu standartlara uygun projeler; hem kiracı talebi hem de uzun vadeli değer açısından belirgin avantaj sağlamaktadır.</p><h2>Döngüsel Malzeme Kullanımı</h2><p>Geri dönüştürülmüş içerik oranı yüksek malzemelerin seçimi, yapım atıklarının azaltılması ve demontaj planlaması artık modern inşaat projelerinin ayrılmaz parçasıdır.</p>'),
     'Sürdürülebilir bina tasarımında enerji verimliliği, yeşil sertifikasyon ve döngüsel malzeme kullanımına dair güncel yaklaşımlar.',
-    'Sürdürülebilir Bina Tasarımında Güncel Yaklaşımlar | Vista İnşaat',
-    'Enerji verimliliği, LEED/BREEAM sertifikasyonu ve döngüsel malzeme kullanımı. Vista İnşaat sürdürülebilir inşaat rehberi.',
+    'Sürdürülebilir Bina Tasarımında Güncel Yaklaşımlar | Sultan Defense',
+    'Enerji verimliliği, LEED/BREEAM sertifikasyonu ve döngüsel malzeme kullanımı. Sultan Defense sürdürülebilir inşaat rehberi.',
     'sürdürülebilir bina, enerji verimliliği, LEED, yeşil inşaat'
   ),
   (
@@ -78,10 +78,10 @@ VALUES
     'tr',
     'Anahtar Teslim İnşaat: Proje Yönetiminde Doğru Model Seçimi',
     'anahtar-teslim-insaat-proje-yonetimi',
-    JSON_OBJECT('html', '<p>Anahtar teslim inşaat modeli, işverenlere tasarım, tedarik ve yapım süreçlerini tek bir sorumluluk çatısı altında yönetme imkânı sunar. Bu yaklaşımın avantajları ve dikkat edilmesi gereken noktalar nelerdir?</p><h2>Anahtar Teslim Modelin Avantajları</h2><ul><li>Tek muhatap — koordinasyon yükü azalır</li><li>Bütçe ve program disiplini artar</li><li>Tasarım-yapım entegrasyonu sorun çözümünü hızlandırır</li><li>Garanti kapsamı daha geniş ve tutarlıdır</li></ul><h2>Dikkat Edilmesi Gereken Noktalar</h2><p>İşveren gereksinimlerinin (Employer Requirements) baştan doğru ve eksiksiz tanımlanması, bu modelin başarısında belirleyici rol oynar. Belirsiz kapsam tanımları maliyet artışı ve program gecikmesine yol açabilir.</p><h2>Vista İnşaat Yaklaşımı</h2><p>Vista İnşaat; mimari, mühendislik ve yapım disiplinlerini tek çatı altında yöneterek işverenin hedeflerine sadık, bütçe ve program disiplinini koruyan bir anahtar teslim hizmet modeli sunmaktadır.</p>'),
+    JSON_OBJECT('html', '<p>Anahtar teslim inşaat modeli, işverenlere tasarım, tedarik ve yapım süreçlerini tek bir sorumluluk çatısı altında yönetme imkânı sunar. Bu yaklaşımın avantajları ve dikkat edilmesi gereken noktalar nelerdir?</p><h2>Anahtar Teslim Modelin Avantajları</h2><ul><li>Tek muhatap — koordinasyon yükü azalır</li><li>Bütçe ve program disiplini artar</li><li>Tasarım-yapım entegrasyonu sorun çözümünü hızlandırır</li><li>Garanti kapsamı daha geniş ve tutarlıdır</li></ul><h2>Dikkat Edilmesi Gereken Noktalar</h2><p>İşveren gereksinimlerinin (Employer Requirements) baştan doğru ve eksiksiz tanımlanması, bu modelin başarısında belirleyici rol oynar. Belirsiz kapsam tanımları maliyet artışı ve program gecikmesine yol açabilir.</p><h2>Sultan Defense Yaklaşımı</h2><p>Sultan Defense; mimari, mühendislik ve yapım disiplinlerini tek çatı altında yöneterek işverenin hedeflerine sadık, bütçe ve program disiplinini koruyan bir anahtar teslim hizmet modeli sunmaktadır.</p>'),
     'Anahtar teslim inşaat modelinin avantajları, riskleri ve doğru proje yönetimi yaklaşımına dair pratik rehber.',
-    'Anahtar Teslim İnşaat ve Proje Yönetimi | Vista İnşaat',
-    'Anahtar teslim inşaat modelinin avantajları, dikkat noktaları ve Vista İnşaat proje yönetimi yaklaşımı.',
+    'Anahtar Teslim İnşaat ve Proje Yönetimi | Sultan Defense',
+    'Anahtar teslim inşaat modelinin avantajları, dikkat noktaları ve Sultan Defense proje yönetimi yaklaşımı.',
     'anahtar teslim inşaat, proje yönetimi, yapım sözleşmesi'
   ),
   (
@@ -92,8 +92,8 @@ VALUES
     'tarihi-yapi-restorasyonu-ilkeleri',
     JSON_OBJECT('html', '<p>Tarihi yapıların restorasyonu; özgün doku ve karakterin korunmasını ön planda tutarken yapının uzun ömürlü ve işlevsel olmasını da sağlamalıdır. Bu denge, her projede özgün bir planlama ve müdahale stratejisi gerektirmektedir.</p><h2>Belgeleme ve Analiz</h2><p>Restorasyon öncesinde kapsamlı rölöve, restitüsyon ve restorasyon projelerinin hazırlanması zorunludur. Yapı fiziği analizleri, zemin incelemeleri ve malzeme karakterizasyon çalışmaları doğru müdahale kararlarının temelini oluşturur.</p><h2>Müdahale Hiyerarşisi</h2><p>Önce koruma, sonra konsolidasyon, ardından gerektiğinde minimal tamamlama — bu sıra, tarihi koruma disiplininin temel ilkesidir. Her müdahale belgelenmeli ve gelecekte geri alınabilir olmalıdır.</p><h2>Uyumlu Malzeme Seçimi</h2><p>Özgün malzemelere mekanik ve termal açıdan uyumlu malzemelerin seçimi, uzun vadeli bütünlük açısından kritiktir. Örneğin Portland çimento harçları, özgün kireç harçlı tarihi yapılarda doku hasarına yol açabilir.</p>'),
     'Tarihi yapı restorasyonunda belgeleme, müdahale hiyerarşisi ve malzeme seçimine dair temel ilkeler.',
-    'Tarihi Yapı Restorasyonunda Temel İlkeler | Vista İnşaat',
-    'Tarihi binaların restorasyonunda koruma ilkeleri, malzeme uyumu ve müdahale stratejisi. Vista İnşaat restorasyon uzmanlığı.',
+    'Tarihi Yapı Restorasyonunda Temel İlkeler | Sultan Defense',
+    'Tarihi binaların restorasyonunda koruma ilkeleri, malzeme uyumu ve müdahale stratejisi. Sultan Defense restorasyon uzmanlığı.',
     'tarihi yapı restorasyonu, koruma, kültürel miras, müdahale ilkeleri'
   ),
   (
@@ -104,8 +104,8 @@ VALUES
     'kentsel-donusumde-karma-kullanim',
     JSON_OBJECT('html', '<p>Karma kullanımlı yapılar, kentsel yenileme projelerinde yaşam, çalışma ve ticaret alanlarını bir arada sunarak şehirlerin sosyal ve ekonomik dokusunu güçlendirmektedir. Bu yapı tipi, özellikle toplu taşıma odaklarına yakın kentsel dönüşüm alanlarında belirleyici bir rol üstlenmektedir.</p><h2>Karma Kullanımın Avantajları</h2><ul><li>Gün boyunca canlı kentsel aktivite yaratır</li><li>Trafik yükünü azaltır — iş, alışveriş ve konut yakınlaşır</li><li>Arazi değeri ve yatırım getirisi artar</li><li>Sürdürülebilirlik hedefleriyle uyumludur</li></ul><h2>Tasarım Gereksinimleri</h2><p>Karma kullanımlı projelerde farklı fonksiyonların birbirini olumsuz etkilememesi için düşey ve yatay fonksiyon ayrımı, akustik planlama ve erişim yönetimi özenle tasarlanmalıdır.</p>'),
     'Kentsel dönüşüm projelerinde karma kullanımlı yapıların rolü, avantajları ve tasarım gereksinimleri.',
-    'Kentsel Dönüşümde Karma Kullanım Yapıları | Vista İnşaat',
-    'Karma kullanımlı yapıların kentsel dönüşümdeki rolü, tasarım gereksinimleri ve Vista İnşaat uygulama deneyimi.',
+    'Kentsel Dönüşümde Karma Kullanım Yapıları | Sultan Defense',
+    'Karma kullanımlı yapıların kentsel dönüşümdeki rolü, tasarım gereksinimleri ve Sultan Defense uygulama deneyimi.',
     'karma kullanım, kentsel dönüşüm, konut ve ticaret, şehircilik'
   )
 ON DUPLICATE KEY UPDATE

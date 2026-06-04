@@ -1,5 +1,5 @@
 -- =============================================================
--- 040_site_settings.sql (Vista İnşaat) – MULTI-LOCALE (Dynamic) [FIXED]
+-- 040_site_settings.sql (Sultan Defense) – MULTI-LOCALE (Dynamic) [FIXED]
 --  - app_locales + default_locale => locale='*'
 --  - localized settings => locale in ('tr','en')
 --  - cookie_consent => LOCALIZED (tr/en)
@@ -70,34 +70,34 @@ VALUES
   'contact_info',
   'tr',
   CAST(JSON_OBJECT(
-    'companyName','Vista İnşaat',
+    'companyName','Sultan Defense',
     'phones',JSON_ARRAY(),
-    'email','info@vistainsaat.com',
+    'email','info@sultandefense.com',
     'address','',
     'addressSecondary','',
     'whatsappNumber','',
     'taxOffice','',
     'taxNumber','',
-    'website','https://www.vistainsaat.com'
+    'website','https://www.sultandefense.com'
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3),
   NOW(3)
 ),
-(UUID(), 'catalog_pdf_url',        'tr', 'https://www.vistainsaat.com/uploads/vistainsaat/catalog/vistainsaat-katalog.pdf', NOW(3), NOW(3)),
-(UUID(), 'catalog_pdf_filename',   'tr', 'vistainsaat-katalog.pdf', NOW(3), NOW(3)),
-(UUID(), 'catalog_admin_email',    'tr', 'info@vistainsaat.com', NOW(3), NOW(3)),
-(UUID(), 'site_title',             'tr', 'Vista İnşaat', NOW(3), NOW(3)),
+(UUID(), 'catalog_pdf_url',        'tr', 'https://www.sultandefense.com/uploads/sultandefense/catalog/sultandefense-katalog.pdf', NOW(3), NOW(3)),
+(UUID(), 'catalog_pdf_filename',   'tr', 'sultandefense-katalog.pdf', NOW(3), NOW(3)),
+(UUID(), 'catalog_admin_email',    'tr', 'info@sultandefense.com', NOW(3), NOW(3)),
+(UUID(), 'site_title',             'tr', 'Sultan Defense', NOW(3), NOW(3)),
 (
   UUID(),
   'socials',
   'tr',
   CAST(JSON_OBJECT(
-    'instagram','https://instagram.com/vistainsaat',
-    'facebook','https://facebook.com/vistainsaat',
-    'youtube','https://youtube.com/@vistainsaat',
-    'linkedin','https://linkedin.com/company/vistainsaat',
-    'x','https://x.com/vistainsaat',
-    'tiktok','https://www.tiktok.com/@vistainsaat'
+    'instagram','https://instagram.com/sultandefense',
+    'facebook','https://facebook.com/sultandefense',
+    'youtube','https://youtube.com/@sultandefense',
+    'linkedin','https://linkedin.com/company/sultandefense',
+    'x','https://x.com/sultandefense',
+    'tiktok','https://www.tiktok.com/@sultandefense'
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3),
   NOW(3)
@@ -107,9 +107,9 @@ VALUES
   'company_profile',
   'tr',
   CAST(JSON_OBJECT(
-    'headline','Vista İnşaat – Güvenilir ve Kaliteli Yapı Çözümleri',
+    'headline','Sultan Defense – Güvenilir ve Kaliteli Yapı Çözümleri',
     'subline','Konut, ticari ve endüstriyel projelerde yenilikçi inşaat çözümleri sunarak yaşam alanlarınızı şekillendiriyoruz.',
-    'body','Vista İnşaat, konut, ticari ve endüstriyel yapı projelerinde kaliteli ve sürdürülebilir çözümler üreten bir inşaat firmasıdır. Müşteri memnuniyetini ön planda tutarak, modern mühendislik teknikleri ve yenilikçi tasarım anlayışıyla projeler hayata geçirmekteyiz.'
+    'body','Sultan Defense, konut, ticari ve endüstriyel yapı projelerinde kaliteli ve sürdürülebilir çözümler üreten bir inşaat firmasıdır. Müşteri memnuniyetini ön planda tutarak, modern mühendislik teknikleri ve yenilikçi tasarım anlayışıyla projeler hayata geçirmekteyiz.'
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3),
   NOW(3)
@@ -119,9 +119,9 @@ VALUES
   'company_brand',
   'tr',
   CAST(JSON_OBJECT(
-    'name','Vista İnşaat',
-    'shortName','Vista İnşaat',
-    'website','https://www.vistainsaat.com'
+    'name','Sultan Defense',
+    'shortName','Sultan Defense',
+    'website','https://www.sultandefense.com'
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3),
   NOW(3)
@@ -143,24 +143,24 @@ ON DUPLICATE KEY UPDATE
 -- =============================================================
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES
-(UUID(), 'catalog_pdf_url',        'en', 'https://www.vistainsaat.com/uploads/vistainsaat/catalog/vistainsaat-catalog.pdf', NOW(3), NOW(3)),
-(UUID(), 'catalog_pdf_filename',   'en', 'vistainsaat-catalog.pdf', NOW(3), NOW(3)),
-(UUID(), 'catalog_admin_email',    'en', 'info@vistainsaat.com', NOW(3), NOW(3)),
-(UUID(), 'site_title',             'en', 'Vista İnşaat', NOW(3), NOW(3)),
+(UUID(), 'catalog_pdf_url',        'en', 'https://www.sultandefense.com/uploads/sultandefense/catalog/sultandefense-catalog.pdf', NOW(3), NOW(3)),
+(UUID(), 'catalog_pdf_filename',   'en', 'sultandefense-catalog.pdf', NOW(3), NOW(3)),
+(UUID(), 'catalog_admin_email',    'en', 'info@sultandefense.com', NOW(3), NOW(3)),
+(UUID(), 'site_title',             'en', 'Sultan Defense', NOW(3), NOW(3)),
 (
   UUID(),
   'contact_info',
   'en',
   CAST(JSON_OBJECT(
-    'companyName','Vista İnşaat',
+    'companyName','Sultan Defense',
     'phones',JSON_ARRAY(),
-    'email','info@vistainsaat.com',
+    'email','info@sultandefense.com',
     'address','',
     'addressSecondary','',
     'whatsappNumber','',
     'taxOffice','',
     'taxNumber','',
-    'website','https://www.vistainsaat.com'
+    'website','https://www.sultandefense.com'
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3),
   NOW(3)
@@ -170,11 +170,11 @@ VALUES
   'socials',
   'en',
   CAST(JSON_OBJECT(
-    'instagram','https://instagram.com/vistainsaat',
-    'facebook','https://facebook.com/vistainsaat',
-    'youtube','https://youtube.com/@vistainsaat',
-    'linkedin','https://linkedin.com/company/vistainsaat',
-    'x','https://x.com/vistainsaat',
+    'instagram','https://instagram.com/sultandefense',
+    'facebook','https://facebook.com/sultandefense',
+    'youtube','https://youtube.com/@sultandefense',
+    'linkedin','https://linkedin.com/company/sultandefense',
+    'x','https://x.com/sultandefense',
     'tiktok',''
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3),
@@ -185,9 +185,9 @@ VALUES
   'company_brand',
   'en',
   CAST(JSON_OBJECT(
-    'name','Vista İnşaat',
-    'shortName','Vista İnşaat',
-    'website','https://www.vistainsaat.com'
+    'name','Sultan Defense',
+    'shortName','Sultan Defense',
+    'website','https://www.sultandefense.com'
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3),
   NOW(3)
@@ -197,9 +197,9 @@ VALUES
   'company_profile',
   'en',
   CAST(JSON_OBJECT(
-    'headline','Vista İnşaat – Reliable and Quality Construction Solutions',
+    'headline','Sultan Defense – Reliable and Quality Construction Solutions',
     'subline','We shape living spaces by providing innovative construction solutions in residential, commercial, and industrial projects.',
-    'body','Vista İnşaat is a construction company that delivers high-quality and sustainable solutions for residential, commercial, and industrial building projects. Prioritizing customer satisfaction, we bring projects to life using modern engineering techniques and innovative design approaches.'
+    'body','Sultan Defense is a construction company that delivers high-quality and sustainable solutions for residential, commercial, and industrial building projects. Prioritizing customer satisfaction, we bring projects to life using modern engineering techniques and innovative design approaches.'
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3),
   NOW(3)
@@ -214,15 +214,15 @@ ON DUPLICATE KEY UPDATE
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES
 (UUID(), 'storage_driver',             '*', 'cloudinary',                                  NOW(3), NOW(3)),
-(UUID(), 'storage_local_root',         '*', '/var/www/vistainsaat/uploads',                NOW(3), NOW(3)),
+(UUID(), 'storage_local_root',         '*', '/var/www/sultandefense/uploads',                NOW(3), NOW(3)),
 (UUID(), 'storage_local_base_url',     '*', '/uploads',                                    NOW(3), NOW(3)),
 (UUID(), 'cloudinary_cloud_name',      '*', 'dbozv7wqd',                                   NOW(3), NOW(3)),
 (UUID(), 'cloudinary_api_key',         '*', '644676135993432',                             NOW(3), NOW(3)),
 (UUID(), 'cloudinary_api_secret',      '*', 'C2VWxsJ5j0jZpcxOhvuTOTKhaMo',                 NOW(3), NOW(3)),
-(UUID(), 'cloudinary_folder',          '*', 'uploads/vistainsaat',                         NOW(3), NOW(3)),
+(UUID(), 'cloudinary_folder',          '*', 'uploads/sultandefense',                         NOW(3), NOW(3)),
 (UUID(), 'cloudinary_unsigned_preset', '*', 'vistainsaat_unsigned',                        NOW(3), NOW(3)),
 (UUID(), 'storage_cdn_public_base',    '*', 'https://res.cloudinary.com',                  NOW(3), NOW(3)),
-(UUID(), 'storage_public_api_base',    '*', 'https://www.vistainsaat.com/api',             NOW(3), NOW(3))
+(UUID(), 'storage_public_api_base',    '*', 'https://www.sultandefense.com/api',             NOW(3), NOW(3))
 ON DUPLICATE KEY UPDATE
   `value`      = VALUES(`value`),
   `updated_at` = VALUES(`updated_at`);
@@ -232,7 +232,7 @@ ON DUPLICATE KEY UPDATE
 -- =============================================================
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES
-(UUID(), 'public_base_url', '*', 'https://www.vistainsaat.com', NOW(3), NOW(3))
+(UUID(), 'public_base_url', '*', 'https://www.sultandefense.com', NOW(3), NOW(3))
 ON DUPLICATE KEY UPDATE
   `value`      = VALUES(`value`),
   `updated_at` = VALUES(`updated_at`);
@@ -244,10 +244,10 @@ INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `upda
 VALUES
 (UUID(), 'smtp_host',       '*', 'smtp.example.com',        NOW(3), NOW(3)),
 (UUID(), 'smtp_port',       '*', '465',                     NOW(3), NOW(3)),
-(UUID(), 'smtp_username',   '*', 'info@vistainsaat.com',    NOW(3), NOW(3)),
+(UUID(), 'smtp_username',   '*', 'info@sultandefense.com',    NOW(3), NOW(3)),
 (UUID(), 'smtp_password',   '*', 'change-me-in-admin',      NOW(3), NOW(3)),
-(UUID(), 'smtp_from_email', '*', 'info@vistainsaat.com',    NOW(3), NOW(3)),
-(UUID(), 'smtp_from_name',  '*', 'Vista İnşaat',            NOW(3), NOW(3)),
+(UUID(), 'smtp_from_email', '*', 'info@sultandefense.com',    NOW(3), NOW(3)),
+(UUID(), 'smtp_from_name',  '*', 'Sultan Defense',            NOW(3), NOW(3)),
 (UUID(), 'smtp_ssl',        '*', 'true',                    NOW(3), NOW(3))
 ON DUPLICATE KEY UPDATE
   `value`      = VALUES(`value`),
@@ -305,7 +305,7 @@ VALUES
       'dark_url','/logo/vista-logo-dark.svg',
       'width',160,
       'height',60,
-      'alt','Vista İnşaat Logo'
+      'alt','Sultan Defense Logo'
     ) AS CHAR CHARACTER SET utf8mb4
   ),
   NOW(3),
@@ -320,7 +320,7 @@ VALUES
       'url','/logo/vista-logo-dark.svg',
       'width',160,
       'height',60,
-      'alt','Vista İnşaat Logo (Dark)'
+      'alt','Sultan Defense Logo (Dark)'
     ) AS CHAR CHARACTER SET utf8mb4
   ),
   NOW(3),
@@ -335,7 +335,7 @@ VALUES
       'url','/logo/vista-logo-light.svg',
       'width',160,
       'height',60,
-      'alt','Vista İnşaat Logo (Light)'
+      'alt','Sultan Defense Logo (Light)'
     ) AS CHAR CHARACTER SET utf8mb4
   ),
   NOW(3),
@@ -348,7 +348,7 @@ VALUES
   CAST(
     JSON_OBJECT(
       'url','/favicon/favicon-32.png',
-      'alt','Vista İnşaat Favicon'
+      'alt','Sultan Defense Favicon'
     ) AS CHAR CHARACTER SET utf8mb4
   ),
   NOW(3),
@@ -361,7 +361,7 @@ VALUES
   CAST(
     JSON_OBJECT(
       'url','/favicon/apple-touch-icon.png',
-      'alt','Vista İnşaat Apple Touch Icon'
+      'alt','Sultan Defense Apple Touch Icon'
     ) AS CHAR CHARACTER SET utf8mb4
   ),
   NOW(3),
@@ -374,7 +374,7 @@ VALUES
   CAST(
     JSON_OBJECT(
       'url','/logo/png/vista_logo_512.png',
-      'alt','Vista İnşaat App Icon (512x512)'
+      'alt','Sultan Defense App Icon (512x512)'
     ) AS CHAR CHARACTER SET utf8mb4
   ),
   NOW(3),
@@ -389,7 +389,7 @@ VALUES
       'url','/logo/png/vista_logo_512.png',
       'width',1200,
       'height',630,
-      'alt','Vista İnşaat'
+      'alt','Sultan Defense'
     ) AS CHAR CHARACTER SET utf8mb4
   ),
   NOW(3),

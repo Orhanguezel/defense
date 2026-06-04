@@ -1,6 +1,6 @@
 -- =============================================================
 -- FILE: 296_vistainsaat_catalog_schema.sql
--- Vista İnşaat — Catalog Schema (categories, category_i18n, catalog_requests)
+-- Sultan Defense — Catalog Schema (categories, category_i18n, catalog_requests)
 -- =============================================================
 
 SET NAMES utf8mb4;

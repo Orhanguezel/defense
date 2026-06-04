@@ -1,6 +1,6 @@
 -- =============================================================
 -- FILE: 313_vistainsaat_general_settings.seed.sql
--- Vista İnşaat — Genel ayarlar (socials, businessHours, company_profile, ui_header)
+-- Sultan Defense — Genel ayarlar (socials, businessHours, company_profile, ui_header)
 -- =============================================================
 
 SET NAMES utf8mb4;
@@ -12,12 +12,12 @@ SET time_zone = '+00:00';
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES (
   UUID(),
-  'vistainsaat__socials',
+  'sultandefense__socials',
   'tr',
   CAST(JSON_OBJECT(
-    'instagram', 'https://www.instagram.com/vistainsaat',
-    'facebook', 'https://www.facebook.com/vistainsaat',
-    'linkedin', 'https://www.linkedin.com/company/vistainsaat',
+    'instagram', 'https://www.instagram.com/sultandefense',
+    'facebook', 'https://www.facebook.com/sultandefense',
+    'linkedin', 'https://www.linkedin.com/company/sultandefense',
     'youtube', '',
     'x', '',
     'tiktok', '',
@@ -33,12 +33,12 @@ ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), `updated_at` = VALUES(`update
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES (
   UUID(),
-  'vistainsaat__socials',
+  'sultandefense__socials',
   'en',
   CAST(JSON_OBJECT(
-    'instagram', 'https://www.instagram.com/vistainsaat',
-    'facebook', 'https://www.facebook.com/vistainsaat',
-    'linkedin', 'https://www.linkedin.com/company/vistainsaat',
+    'instagram', 'https://www.instagram.com/sultandefense',
+    'facebook', 'https://www.facebook.com/sultandefense',
+    'linkedin', 'https://www.linkedin.com/company/sultandefense',
     'youtube', '',
     'x', '',
     'tiktok', '',
@@ -54,7 +54,7 @@ ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), `updated_at` = VALUES(`update
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES (
   UUID(),
-  'vistainsaat__businessHours',
+  'sultandefense__businessHours',
   'tr',
   CAST(JSON_ARRAY(
     JSON_OBJECT('day', 'Pazartesi', 'open', '08:00', 'close', '18:00', 'closed', false),
@@ -75,7 +75,7 @@ ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), `updated_at` = VALUES(`update
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES (
   UUID(),
-  'vistainsaat__businessHours',
+  'sultandefense__businessHours',
   'en',
   CAST(JSON_ARRAY(
     JSON_OBJECT('day', 'Monday', 'open', '08:00', 'close', '18:00', 'closed', false),
@@ -96,12 +96,12 @@ ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), `updated_at` = VALUES(`update
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES (
   UUID(),
-  'vistainsaat__company_profile',
+  'sultandefense__company_profile',
   'tr',
   CAST(JSON_OBJECT(
-    'company_name', 'Vista İnşaat',
+    'company_name', 'Sultan Defense',
     'slogan', 'Kalite · Güven · Zamanında Teslim',
-    'about', 'Vista İnşaat, Antalya merkezli olarak konut, ticari ve endüstriyel projelerde anahtar teslim inşaat çözümleri sunan güvenilir bir inşaat ve mimarlık firmasıdır. Deneyimli mühendis kadromuz ve modern yapı teknolojileri ile projelerinizi zamanında ve bütçe dahilinde tamamlıyoruz.'
+    'about', 'Sultan Defense, Antalya merkezli olarak konut, ticari ve endüstriyel projelerde anahtar teslim inşaat çözümleri sunan güvenilir bir inşaat ve mimarlık firmasıdır. Deneyimli mühendis kadromuz ve modern yapı teknolojileri ile projelerinizi zamanında ve bütçe dahilinde tamamlıyoruz.'
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3), NOW(3)
 )
@@ -113,7 +113,7 @@ ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), `updated_at` = VALUES(`update
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES (
   UUID(),
-  'vistainsaat__company_profile',
+  'sultandefense__company_profile',
   'en',
   CAST(JSON_OBJECT(
     'company_name', 'Vista Construction',
@@ -130,7 +130,7 @@ ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), `updated_at` = VALUES(`update
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES (
   UUID(),
-  'vistainsaat__ui_header',
+  'sultandefense__ui_header',
   'tr',
   CAST(JSON_OBJECT(
     'nav_home', 'Ana Sayfa',
@@ -152,7 +152,7 @@ ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), `updated_at` = VALUES(`update
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES (
   UUID(),
-  'vistainsaat__ui_header',
+  'sultandefense__ui_header',
   'en',
   CAST(JSON_OBJECT(
     'nav_home', 'Home',

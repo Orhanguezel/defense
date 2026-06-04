@@ -1,6 +1,6 @@
 -- =============================================================
 -- FILE: 131_vistainsaat_storage_assets.seed.sql
--- Vista İnşaat — Local Storage Assets (uploads/)
+-- Sultan Defense — Local Storage Assets (uploads/)
 -- provider = 'local', bucket = folder name
 -- =============================================================
 

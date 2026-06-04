@@ -185,8 +185,8 @@ function ListPanel({
 
 /* ----------------------------- main component ----------------------------- */
 
-const VISTA_BRAND = 'vistainsaat';
-const VISTA_PREFIX = 'vistainsaat__';
+const VISTA_BRAND = 'sultandefense';
+const VISTA_PREFIX = 'sultandefense__';
 
 export default function AdminSiteSettingsClient() {
   const brand = VISTA_BRAND;

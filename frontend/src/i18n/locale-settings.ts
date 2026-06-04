@@ -69,7 +69,7 @@ function normalizeAppLocales(value: unknown): { activeLocales: { code: string; l
 }
 
 async function fetchSettingValue(key: string): Promise<unknown> {
-  const res = await fetch(`${API_BASE_URL}/site_settings/${encodeURIComponent(key)}?prefix=vistainsaat__`, {
+  const res = await fetch(`${API_BASE_URL}/site_settings/${encodeURIComponent(key)}?prefix=sultandefense__`, {
     next: { revalidate: 60 },
   });
 

@@ -67,7 +67,7 @@ export default async function GalleryDetailPage({
   if (!gallery) notFound();
 
   const companyProfile = (profile?.value as any) ?? {};
-  const companyName = companyProfile.company_name || 'Vista İnşaat';
+  const companyName = companyProfile.company_name || 'Sultan Defense';
 
   const images = Array.isArray(gallery.images)
     ? gallery.images.map((img: any) => ({

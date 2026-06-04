@@ -24,7 +24,7 @@ import { getEffectiveLocale, getLocalesForCreate, normalizeLocale } from './i18n
 
 /* ----------------- helpers ----------------- */
 async function getDefaultCategoryId(itemType: string): Promise<string> {
-  const moduleKey = itemType === 'vistainsaat' ? 'vistainsaat' : 'default';
+  const moduleKey = itemType === 'sultandefense' ? 'sultandefense' : 'default';
   const [row] = await db
     .select({ id: categories.id })
     .from(categories)
@@ -182,13 +182,13 @@ export const adminCreateProduct: RouteHandler = async (req, reply) => {
     const productId: string = input.id ?? randomUUID();
     const itemType: ItemType = normalizeItemType(input.item_type, 'product');
 
-    // Auto-generate product_code for vistainsaat projects
+    // Auto-generate product_code for sultandefense projects
     let productCode = input.product_code || null;
-    if (!productCode && itemType === 'vistainsaat') {
+    if (!productCode && itemType === 'sultandefense') {
       const [maxRow] = await db
         .select({ code: products.product_code })
         .from(products)
-        .where(and(eq(products.item_type, 'vistainsaat' as any), sql`${products.product_code} LIKE 'VIS-%'`))
+        .where(and(eq(products.item_type, 'sultandefense' as any), sql`${products.product_code} LIKE 'SD-%'`))
         .orderBy(desc(products.product_code))
         .limit(1);
       let nextNum = 1;
@@ -196,7 +196,7 @@ export const adminCreateProduct: RouteHandler = async (req, reply) => {
         const match = maxRow.code.match(/(\d+)$/);
         if (match) nextNum = parseInt(match[1], 10) + 1;
       }
-      productCode = `VIS-${String(nextNum).padStart(3, '0')}`;
+      productCode = `SD-${String(nextNum).padStart(3, '0')}`;
     }
 
     const coverId = input.storage_asset_id || null;

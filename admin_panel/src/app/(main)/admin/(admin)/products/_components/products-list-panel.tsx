@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/products/_components/products-list-panel.tsx
 // Products List Panel — Shadcn/UI + RTK Query
-// Vista İnşaat Admin Panel
+// Sultan Defense Admin Panel
 // =============================================================
 
 'use client';

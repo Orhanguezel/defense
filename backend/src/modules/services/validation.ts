@@ -15,7 +15,7 @@ const boolLike = z.union([
 
 export const serviceCreateSchema = z.object({
   locale: z.string().min(2).max(8).optional(),
-  module_key: z.string().min(1).max(50).optional().default('vistainsaat'),
+  module_key: z.string().min(1).max(50).optional().default('sultandefense'),
 
   title: z.string().min(1).max(255),
   slug: z.string().min(1).max(255),

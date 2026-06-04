@@ -1,6 +1,6 @@
 -- ============================================================
 -- 230_projects_schema.sql
--- Vista İnşaat proje modülü
+-- Sultan Defense proje modülü
 -- ============================================================
 
 CREATE TABLE IF NOT EXISTS `projects` (
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `projects` (
   `featured_image`           VARCHAR(500)  NULL,
   `featured_image_asset_id`  CHAR(36)      NULL,
 
-  -- Vista İnşaat proje alanları
+  -- Sultan Defense proje alanları
   `category`                 VARCHAR(100)  NULL,   -- "Su Soğutma Kulesi", "HVAC", "Proses Soğutma"
   `product_type`             VARCHAR(150)  NULL,   -- "CTP Kaportalı Açık Tip", "Kapalı Tip"
   `location`                 VARCHAR(255)  NULL,   -- "İstanbul", "Kahramanmaraş"

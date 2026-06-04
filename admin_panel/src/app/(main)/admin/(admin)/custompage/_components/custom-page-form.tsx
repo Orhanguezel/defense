@@ -784,9 +784,9 @@ function FormTabs({
           <div className="space-y-1.5">
             <label className="text-xs text-muted-foreground">Google Arama Önizlemesi</label>
             <div className="rounded-md border bg-background p-4">
-              <p className="text-xs text-muted-foreground">www.vistainsaat.com</p>
+              <p className="text-xs text-muted-foreground">www.sultandefense.com</p>
               <p className="text-sm font-medium text-[#1a0dab] truncate">
-                {values.meta_title || values.title || 'Sayfa Başlığı'} | Vista İnşaat
+                {values.meta_title || values.title || 'Sayfa Başlığı'} | Sultan Defense
               </p>
               <p className="text-xs text-muted-foreground line-clamp-2">
                 {values.meta_description || values.summary || 'Sayfa açıklaması'}

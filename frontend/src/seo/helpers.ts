@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { SITE_URL } from '@/lib/utils';
 import { AVAILABLE_LOCALES, FALLBACK_LOCALE } from '@/i18n/locales';
 
-const DEFAULT_SITE_NAME = 'Vista İnşaat';
-const DEFAULT_TITLE_SUFFIX = 'Vista İnşaat';
+const DEFAULT_SITE_NAME = 'Sultan Defense';
+const DEFAULT_TITLE_SUFFIX = 'Sultan Defense';
 const DEFAULT_OG_IMAGE = '/opengraph-image';
 
 export function stripTrailingSlash(s: string): string {

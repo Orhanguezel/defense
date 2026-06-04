@@ -73,13 +73,13 @@ export async function generateMetadata({
     title:
       post.meta_title ||
       (locale.startsWith('en')
-        ? `${post.title} | Vista Construction News`
-        : `${post.title} | Vista İnşaat Haberleri`),
+        ? `${post.title} | Sultan Defense News`
+        : `${post.title} | Sultan Defense Haberleri`),
     description:
       post.meta_description ||
       (locale.startsWith('en')
-        ? `${post.title}. Read architectural news and construction insights by Vista Construction.`
-        : `${post.title}. Vista İnşaat mimarlık haberleri ve inşaat sektörü içerikleri.`),
+        ? `${post.title}. Read architectural news and construction insights by Sultan Defense.`
+        : `${post.title}. Sultan Defense mimarlık haberleri ve inşaat sektörü içerikleri.`),
     ogImage: post.featured_image || post.image_url,
     openGraphType: 'article',
     includeLocaleAlternates: true,
@@ -132,7 +132,7 @@ export default async function NewsDetailPage({
   const imageSrc = absoluteAssetUrl(coverImage) || NEWS_PLACEHOLDER;
   const shareUrl = `${SITE_URL}/${locale}/haberler/${slug}`;
   const rawImages: string[] = Array.isArray(post.images) ? post.images : [];
-  const author = post.author_name || 'Vista İnşaat';
+  const author = post.author_name || 'Sultan Defense';
 
   const [sidebarPosts, relatedArticles] = await Promise.all([
     fetchSidebarNews(locale, slug, 4),
@@ -140,7 +140,7 @@ export default async function NewsDetailPage({
   ]);
 
   const breadcrumbs = [
-    { label: 'Vista İnşaat', href: localizedPath(locale, '/') },
+    { label: 'Sultan Defense', href: localizedPath(locale, '/') },
     { label: isEn ? 'Architecture News' : 'Mimarlık Haberleri', href: localizedPath(locale, '/haberler') },
     ...(post.category_name && post.category_slug
       ? [{ label: post.category_name, href: localizedPath(locale, `/haberler?category=${post.category_slug}`) }]

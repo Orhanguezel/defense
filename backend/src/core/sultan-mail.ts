@@ -87,7 +87,7 @@ async function getSiteName(): Promise<string> {
     .where(eq(siteSettings.key, 'site_title'))
     .limit(1);
 
-  const fallback = toLine(titleRow?.value) ?? 'Vista İnşaat';
+  const fallback = toLine(titleRow?.value) ?? 'Sultan Defense';
   cachedSiteName = fallback;
   cachedSiteNameAt = now;
   return fallback;
@@ -120,13 +120,13 @@ async function getTransporter(): Promise<{ transporter: Transporter; from: strin
     cachedSignature = signature;
   }
 
-  const fromEmail = cfg.fromEmail || cfg.username || 'no-reply@vistainsaat.local';
+  const fromEmail = cfg.fromEmail || cfg.username || 'no-reply@sultandefense.local';
   const from = cfg.fromName ? `${cfg.fromName} <${fromEmail}>` : fromEmail;
 
   return { transporter: cachedTransporter, from };
 }
 
-export async function sendVistaMail(input: SendMailInput) {
+export async function sendSultanMail(input: SendMailInput) {
   const { transporter, from } = await getTransporter();
   return transporter.sendMail({
     from,
@@ -137,7 +137,7 @@ export async function sendVistaMail(input: SendMailInput) {
   });
 }
 
-export async function sendVistaWelcomeMail(input: WelcomeMailContext) {
+export async function sendSultanWelcomeMail(input: WelcomeMailContext) {
   const siteName = input.site_name?.trim() || (await getSiteName());
   const userName = input.user_name?.trim() || input.to.split('@')[0] || 'Kullanici';
   const userEmail = input.user_email?.trim() || input.to;
@@ -151,10 +151,10 @@ export async function sendVistaWelcomeMail(input: WelcomeMailContext) {
     </div>
   `;
 
-  await sendVistaMail({ to: input.to, subject, html });
+  await sendSultanMail({ to: input.to, subject, html });
 }
 
-export async function sendVistaPasswordChangedMail(input: PasswordChangedMailContext) {
+export async function sendSultanPasswordChangedMail(input: PasswordChangedMailContext) {
   const siteName = input.site_name?.trim() || (await getSiteName());
   const userName = input.user_name?.trim() || input.to.split('@')[0] || 'Kullanici';
   const subject = `${siteName} sifre bilgilendirmesi`;
@@ -167,10 +167,10 @@ export async function sendVistaPasswordChangedMail(input: PasswordChangedMailCon
     </div>
   `;
 
-  await sendVistaMail({ to: input.to, subject, html });
+  await sendSultanMail({ to: input.to, subject, html });
 }
 
-export async function sendVistaContactAdminMail(input: ContactMailContext) {
+export async function sendSultanContactAdminMail(input: ContactMailContext) {
   const smtpCfg = await getSmtpSettings(input.locale ?? null);
   const adminTo = smtpCfg.fromEmail || smtpCfg.username || input.email;
   const siteName = await getSiteName();
@@ -193,10 +193,10 @@ export async function sendVistaContactAdminMail(input: ContactMailContext) {
     </div>
   `;
 
-  await sendVistaMail({ to: adminTo, subject, html });
+  await sendSultanMail({ to: adminTo, subject, html });
 }
 
-export async function sendVistaContactAutoReplyMail(input: ContactMailContext) {
+export async function sendSultanContactAutoReplyMail(input: ContactMailContext) {
   const siteName = await getSiteName();
   const subject = `${siteName} talebiniz alindi`;
   const html = `
@@ -208,7 +208,7 @@ export async function sendVistaContactAutoReplyMail(input: ContactMailContext) {
     </div>
   `;
 
-  await sendVistaMail({ to: input.email, subject, html });
+  await sendSultanMail({ to: input.email, subject, html });
 }
 
 function renderPricingBlock(input: OfferMailContext): string {
@@ -227,7 +227,7 @@ function renderPricingBlock(input: OfferMailContext): string {
   return `<table style="border-collapse:collapse;width:100%">${rows}</table>`;
 }
 
-export async function sendVistaOfferCustomerMail(input: OfferMailContext) {
+export async function sendSultanOfferCustomerMail(input: OfferMailContext) {
   const siteName = await getSiteName();
   const subject = `${siteName} teklifiniz hazir`;
   const html = `
@@ -244,10 +244,10 @@ export async function sendVistaOfferCustomerMail(input: OfferMailContext) {
     </div>
   `;
 
-  await sendVistaMail({ to: input.email, subject, html });
+  await sendSultanMail({ to: input.email, subject, html });
 }
 
-export async function sendVistaOfferAdminMail(input: OfferMailContext, to: string) {
+export async function sendSultanOfferAdminMail(input: OfferMailContext, to: string) {
   const siteName = await getSiteName();
   const subject = `[${siteName}] Teklif gonderildi`;
   const html = `
@@ -265,10 +265,10 @@ export async function sendVistaOfferAdminMail(input: OfferMailContext, to: strin
     </div>
   `;
 
-  await sendVistaMail({ to, subject, html });
+  await sendSultanMail({ to, subject, html });
 }
 
-export async function sendVistaOfferRequestAdminMail(input: OfferMailContext, to: string) {
+export async function sendSultanOfferRequestAdminMail(input: OfferMailContext, to: string) {
   const siteName = await getSiteName();
   const subject = `[${siteName}] Yeni teklif talebi`;
   const rows = [
@@ -290,5 +290,5 @@ export async function sendVistaOfferRequestAdminMail(input: OfferMailContext, to
     </div>
   `;
 
-  await sendVistaMail({ to, subject, html });
+  await sendSultanMail({ to, subject, html });
 }

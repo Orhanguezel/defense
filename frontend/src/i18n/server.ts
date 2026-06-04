@@ -25,7 +25,7 @@ export async function fetchSetting(
   options?: { revalidate?: number },
 ): Promise<SettingRow> {
   try {
-    const url = `${API_BASE_URL}/site_settings/${encodeURIComponent(key)}?locale=${encodeURIComponent(locale)}&prefix=vistainsaat__`;
+    const url = `${API_BASE_URL}/site_settings/${encodeURIComponent(key)}?locale=${encodeURIComponent(locale)}&prefix=sultandefense__`;
     const res = await fetch(url, {
       next: { revalidate: options?.revalidate ?? 60 },
     });
@@ -56,7 +56,7 @@ export async function fetchSliders(locale?: string): Promise<Record<string, unkn
 export async function fetchMenuItems(locale: string): Promise<Record<string, unknown>[]> {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/menu-items?locale=${encodeURIComponent(locale)}&is_active=1&site_id=vistainsaat`,
+      `${API_BASE_URL}/menu-items?locale=${encodeURIComponent(locale)}&is_active=1&site_id=sultandefense`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -70,7 +70,7 @@ export async function fetchMenuItems(locale: string): Promise<Record<string, unk
 export async function fetchFooterSections(locale: string): Promise<Record<string, unknown>[]> {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/footer-sections?locale=${encodeURIComponent(locale)}&is_active=1&site_id=vistainsaat`,
+      `${API_BASE_URL}/footer-sections?locale=${encodeURIComponent(locale)}&is_active=1&site_id=sultandefense`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -81,7 +81,7 @@ export async function fetchFooterSections(locale: string): Promise<Record<string
   }
 }
 
-export async function fetchCategories(locale: string, moduleKey: string = 'vistainsaat'): Promise<Record<string, unknown>[]> {
+export async function fetchCategories(locale: string, moduleKey: string = 'sultandefense'): Promise<Record<string, unknown>[]> {
   try {
     const res = await fetch(
       `${API_BASE_URL}/categories?locale=${encodeURIComponent(locale)}&module_key=${encodeURIComponent(moduleKey)}&is_active=1`,
@@ -98,7 +98,7 @@ export async function fetchCategories(locale: string, moduleKey: string = 'vista
 export async function fetchServices(locale: string): Promise<Record<string, unknown>[]> {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/services?locale=${encodeURIComponent(locale)}&module_key=vistainsaat&is_active=1`,
+      `${API_BASE_URL}/services?locale=${encodeURIComponent(locale)}&module_key=sultandefense&is_active=1`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];

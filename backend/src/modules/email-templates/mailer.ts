@@ -2,7 +2,7 @@
 // FILE: src/modules/email-templates/mailer.ts
 // =============================================================
 import { renderEmailTemplateByKey } from "./service";
-import { sendVistaMail } from "@/core/vista-mail";
+import { sendSultanMail } from "@/core/sultan-mail";
 
 export interface SendTemplatedEmailOptions {
   to: string;
@@ -27,7 +27,7 @@ export async function sendTemplatedEmail(opts: SendTemplatedEmailOptions) {
     );
   }
 
-  await sendVistaMail({
+  await sendSultanMail({
     to,
     subject: rendered.subject,
     html: rendered.html,

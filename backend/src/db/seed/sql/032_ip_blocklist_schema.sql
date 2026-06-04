@@ -1,6 +1,6 @@
 -- =============================================================
 -- 032_ip_blocklist_schema.sql
--- Vista İnşaat – IP blocklist table
+-- Sultan Defense – IP blocklist table
 -- =============================================================
 
 SET NAMES utf8mb4;

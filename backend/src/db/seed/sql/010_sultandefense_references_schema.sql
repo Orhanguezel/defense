@@ -1,6 +1,6 @@
 -- =============================================================
 -- FILE: 010_vistainsaat_references_schema.sql
--- Vista İnşaat — References Schema (markalar/referanslar)
+-- Sultan Defense — References Schema (markalar/referanslar)
 -- =============================================================
 
 SET NAMES utf8mb4;

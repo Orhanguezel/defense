@@ -30,7 +30,7 @@ const BLOG_PLACEHOLDER_SRC = '/media/blog-placeholder.svg';
 async function fetchFeaturedProducts(locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/products?item_type=vistainsaat&is_active=1&is_featured=1&locale=${locale}&limit=8`,
+      `${API_BASE_URL}/products?item_type=sultandefense&is_active=1&is_featured=1&locale=${locale}&limit=8`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -58,7 +58,7 @@ async function fetchReferences(locale: string) {
 async function fetchAllProjects(locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/products?item_type=vistainsaat&is_active=1&locale=${locale}&limit=10`,
+      `${API_BASE_URL}/products?item_type=sultandefense&is_active=1&locale=${locale}&limit=10`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -147,7 +147,7 @@ export default async function HomePage({
             url: siteUrl,
           }),
           jsonld.website({
-            name: 'Vista İnşaat',
+            name: 'Sultan Defense',
             url: siteUrl,
           }),
         ])}

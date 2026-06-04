@@ -114,8 +114,8 @@ export async function createApp() {
   await app.register(fastifySwagger, {
     openapi: {
       info: {
-        title: 'Vista İnşaat API',
-        description: 'Vista İnşaat Backend API Documentation',
+        title: 'Sultan Defense API',
+        description: 'Sultan Defense Backend API Documentation',
         version: '0.1.0',
       },
       servers: [

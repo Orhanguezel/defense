@@ -1,6 +1,6 @@
 -- =============================================================
 -- FILE: 310_vistainsaat_news.seed.sql
--- Vista İnşaat — Haberler / News (custom_pages) + i18n (TR/EN)
+-- Sultan Defense — Haberler / News (custom_pages) + i18n (TR/EN)
 -- module_key = 'news'
 -- =============================================================
 
@@ -135,7 +135,7 @@ VALUES
 
 <p>Yaklaşık 350 kW''lık GES şirketin üretim için gerekli enerji ihtiyacının büyük bir kısmını karşılıyoruz. Bir sonraki projemiz ise içinde kullanılan suyun geri dönüşümünü amaçlayan Atık Su Geri Dönüşüm Projesi. Tamamen fide üretim sektörüne örnek, öncü ve çevreci bir yaklaşım içerisinde Bereket Fide ile projelerimize devam etmeyi planlıyoruz.</p>'),
     'Tolkan Mimarlık''ın kurucusu Tolgahan Şahin ile röportaj: Doğaya, kullanıcıya ve işleve uyumlu projeler tasarlayan bir mimarlık ofisinin hikayesi.',
-    'Tolkan Mimarlık Röportajı: Tolgahan Şahin | Vista İnşaat Haberleri',
+    'Tolkan Mimarlık Röportajı: Tolgahan Şahin | Sultan Defense Haberleri',
     'Tolkan Mimarlık kurucusu Tolgahan Şahin ile röportaj. Sürdürülebilir tasarım, insan odaklı mimarlık ve Bereket Fide iş birliği.',
     'röportaj, tolkan mimarlık, tolgahan şahin, sürdürülebilir mimarlık, insan odaklı tasarım'
   ),
@@ -147,7 +147,7 @@ VALUES
     'istanbul-levent-ofis-kulesi-projesi',
     JSON_OBJECT('html', '<p>İstanbul''un finans merkezi Levent bölgesinde yeni bir A+ sınıfı ofis kulesi projesi başlıyor. 42 katlı yapı, sürdürülebilir tasarım ilkeleri ve akıllı bina teknolojileriyle dikkat çekecek.</p><h2>Proje Detayları</h2><p>Proje, toplam 85.000 m² kapalı alana sahip olacak. Yapının cephesinde yüksek performanslı çift cidarlı cam sistem kullanılacak. Bina otomasyon sistemi, enerji tüketimini gerçek zamanlı optimize edecek şekilde tasarlanıyor.</p><h2>Sürdürülebilirlik Hedefleri</h2><p>LEED Platinum sertifikasyonu hedeflenen projede, çatı bahçeleri, yağmur suyu toplama sistemleri ve elektrikli araç şarj istasyonları standart olarak yer alacak.</p><p>Projenin 2027 yılında tamamlanması planlanıyor.</p>'),
     'İstanbul Levent''te 42 katlı yeni ofis kulesi projesi: sürdürülebilir tasarım, akıllı bina ve LEED Platinum hedefi.',
-    'İstanbul Levent Ofis Kulesi Projesi | Vista İnşaat Haberleri',
+    'İstanbul Levent Ofis Kulesi Projesi | Sultan Defense Haberleri',
     'Levent bölgesinde 42 katlı A+ sınıfı ofis kulesi. LEED Platinum, akıllı bina teknolojileri ve sürdürülebilir cephe tasarımı.',
     'levent, ofis kulesi, LEED platinum, akıllı bina, istanbul'
   ),
@@ -159,7 +159,7 @@ VALUES
     'depreme-dayanikli-yapi-tasarimi-2025',
     JSON_OBJECT('html', '<p>Türkiye Bina Deprem Yönetmeliği''nde yapılan son güncellemeler, yapı tasarımında yeni standartlar getiriyor. Özellikle yüksek sismik bölgelerdeki konut projeleri için kritik değişiklikler söz konusu.</p><h2>Yeni Gereksinimler</h2><p>Güncellenen yönetmelik; performans bazlı tasarım yaklaşımını genişletiyor, taban izolasyonu uygulamalarını teşvik ediyor ve mevcut yapı güçlendirme standartlarını yükseltiyor.</p><h2>Malzeme Standartları</h2><p>Beton dayanım sınıfları ve donatı detaylandırma kurallarında yapılan değişiklikler, özellikle kolon-kiriş birleşim bölgelerindeki süneklik performansını artırmayı hedefliyor.</p>'),
     'Türkiye deprem yönetmeliğindeki 2025 güncellemeleri ve yapı tasarımına etkileri.',
-    'Depreme Dayanıklı Yapı Tasarımı 2025 Güncellemeleri | Vista İnşaat',
+    'Depreme Dayanıklı Yapı Tasarımı 2025 Güncellemeleri | Sultan Defense',
     'Türkiye deprem yönetmeliği 2025 güncellemeleri. Performans bazlı tasarım, taban izolasyonu ve malzeme standartları.',
     'deprem yönetmeliği, sismik tasarım, yapı güçlendirme, 2025'
   ),
@@ -171,7 +171,7 @@ VALUES
     'akilli-sehir-projeleri-altyapi-donusumu',
     JSON_OBJECT('html', '<p>Türkiye''deki büyükşehirler, akıllı şehir dönüşümünde önemli adımlar atıyor. IoT sensörleri, dijital ikiz teknolojisi ve entegre ulaşım sistemleri; kentsel altyapıyı yeniden tanımlıyor.</p><h2>Dijital İkiz Uygulamaları</h2><p>Şehirlerin dijital ikizleri, altyapı planlamasından acil durum yönetimine kadar geniş bir yelpazede karar destek sistemi olarak kullanılmaya başlandı.</p><h2>Enerji ve Su Yönetimi</h2><p>Akıllı şebeke sistemleri, su kaybını %30''a kadar azaltırken, enerji dağıtım verimliliğini önemli ölçüde artırıyor.</p>'),
     'Türkiye''de akıllı şehir projeleri, dijital ikiz teknolojisi ve altyapı dönüşümü.',
-    'Akıllı Şehir Projeleri ve Altyapı Dönüşümü | Vista İnşaat',
+    'Akıllı Şehir Projeleri ve Altyapı Dönüşümü | Sultan Defense',
     'Akıllı şehir dönüşümü, IoT altyapısı, dijital ikiz ve entegre ulaşım sistemleri.',
     'akıllı şehir, dijital ikiz, IoT, altyapı dönüşümü'
   ),
@@ -183,7 +183,7 @@ VALUES
     'moduler-yapi-sistemleri-insaat-gelecegi',
     JSON_OBJECT('html', '<p>Modüler yapı sistemleri, geleneksel inşaat yöntemlerine alternatif olarak hızla yaygınlaşıyor. Fabrikada üretilen bileşenlerin sahada montajı, inşaat süresini %40-60 oranında kısaltabiliyor.</p><h2>Avantajlar</h2><ul><li>Hız: Temel ve üst yapı paralel ilerler</li><li>Kalite: Fabrika ortamında kontrollü üretim</li><li>Sürdürülebilirlik: %70''e kadar daha az atık</li><li>Maliyet: Tekrarlayan projelerde belirgin tasarruf</li></ul><h2>Uygulama Alanları</h2><p>Otel, öğrenci yurdu, hastane ek binaları ve toplu konut projelerinde modüler sistemler giderek daha fazla tercih ediliyor.</p>'),
     'Modüler yapı sistemlerinin avantajları, uygulama alanları ve inşaat sektöründeki geleceği.',
-    'Modüler Yapı Sistemleri: İnşaat Sektörünün Geleceği | Vista İnşaat',
+    'Modüler Yapı Sistemleri: İnşaat Sektörünün Geleceği | Sultan Defense',
     'Modüler yapı teknolojisi, fabrika üretimi, hızlı montaj ve sürdürülebilir inşaat.',
     'modüler yapı, prefabrik, hızlı inşaat, sürdürülebilirlik'
   )

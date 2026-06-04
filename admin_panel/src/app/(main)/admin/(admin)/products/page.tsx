@@ -7,7 +7,7 @@ interface Props {
 
 export default async function Page({ searchParams }: Props) {
   const { type } = await searchParams;
-  const validTypes: ProductItemType[] = ['product', 'sparepart', 'vistainsaat'];
+  const validTypes: ProductItemType[] = ['product', 'sparepart', 'sultandefense'];
   const itemType: ProductItemType | undefined =
     validTypes.includes(type as ProductItemType) ? (type as ProductItemType) : undefined;
   return <ProductsListPanel itemType={itemType} />;

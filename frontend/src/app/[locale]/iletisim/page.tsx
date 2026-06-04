@@ -34,7 +34,7 @@ export async function generateMetadata({
   return buildPageMetadata({
     locale,
     pathname: '/iletisim',
-    title: seo?.title || `${t('title')} — ${companyProfile?.company_name || (locale.startsWith('en') ? 'Vista Construction' : 'Vista İnşaat')}`,
+    title: seo?.title || `${t('title')} — ${companyProfile?.company_name || (locale.startsWith('en') ? 'Vista Construction' : 'Sultan Defense')}`,
     description: seo?.description || t('description'),
     ogImage: seo?.og_image || undefined,
     noIndex: seo?.no_index,
@@ -56,10 +56,10 @@ export default async function ContactPage({
   const info = readSettingValue(contactSetting) as Record<string, string>;
   const companyProfile = readSettingValue(companyProfileSetting) as Record<string, string>;
 
-  const companyName = info.company_name || companyProfile?.company_name || 'Vista İnşaat';
+  const companyName = info.company_name || companyProfile?.company_name || 'Sultan Defense';
   const address = info.address || '';
   const phone = info.phone || '';
-  const email = info.email || 'info@vistainsaat.com';
+  const email = info.email || 'info@sultandefense.com';
   const hours = info.hours || info.working_hours || 'Pazartesi - Cuma, 09:00 - 18:00';
   const embedUrl = info.maps_embed_url;
   const responseItems = Object.values(t.raw('contact.response.items') as Record<string, string>);

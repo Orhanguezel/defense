@@ -1,6 +1,6 @@
 -- =============================================================
 -- FILE: 316_vistainsaat_offers.seed.sql
--- Vista İnşaat — Örnek teklif talepleri
+-- Sultan Defense — Örnek teklif talepleri
 -- =============================================================
 
 SET NAMES utf8mb4;
@@ -16,9 +16,9 @@ INSERT INTO `offers` (`id`, `offer_no`, `status`, `source`, `locale`, `country_c
 VALUES
 (
   'of010001-0001-4001-9001-000000000001',
-  'VIS-2026-0001',
+  'SD-2026-0001',
   'quoted',
-  'vistainsaat',
+  'sultandefense',
   'tr',
   'Türkiye',
   'Ahmet Yılmaz',
@@ -37,9 +37,9 @@ VALUES
 ),
 (
   'of010002-0002-4002-9002-000000000002',
-  'VIS-2026-0002',
+  'SD-2026-0002',
   'new',
-  'vistainsaat',
+  'sultandefense',
   'tr',
   'Türkiye',
   'Fatma Demir',
@@ -58,9 +58,9 @@ VALUES
 ),
 (
   'of010003-0003-4003-9003-000000000003',
-  'VIS-2026-0003',
+  'SD-2026-0003',
   'site_survey',
-  'vistainsaat',
+  'sultandefense',
   'tr',
   'Türkiye',
   'Mehmet Kaya',
@@ -79,9 +79,9 @@ VALUES
 ),
 (
   'of010004-0004-4004-9004-000000000004',
-  'VIS-2026-0004',
+  'SD-2026-0004',
   'accepted',
-  'vistainsaat',
+  'sultandefense',
   'en',
   'Germany',
   'Hans Mueller',
@@ -100,9 +100,9 @@ VALUES
 ),
 (
   'of010005-0005-4005-9005-000000000005',
-  'VIS-2026-0005',
+  'SD-2026-0005',
   'sent',
-  'vistainsaat',
+  'sultandefense',
   'tr',
   'Türkiye',
   'Ayşe Çelik',

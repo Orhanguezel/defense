@@ -1,6 +1,6 @@
 -- =============================================================
 -- FILE: 309_vistainsaat_news_categories.seed.sql
--- Vista İnşaat — Haber kategorileri + i18n (TR/EN)
+-- Sultan Defense — Haber kategorileri + i18n (TR/EN)
 -- module_key = 'news'
 -- =============================================================
 

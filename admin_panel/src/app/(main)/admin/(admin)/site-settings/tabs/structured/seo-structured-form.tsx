@@ -37,7 +37,7 @@ function coerceSettingValue(input: any): any {
   return input;
 }
 
-/* ── Simple SEO (vistainsaat__seo style) ── */
+/* ── Simple SEO (sultandefense__seo style) ── */
 
 type SimpleSeo = {
   site_title: string;
@@ -156,7 +156,7 @@ export const SeoStructuredForm: React.FC<SeoStructuredFormProps> = ({
 
 SeoStructuredForm.displayName = 'SeoStructuredForm';
 
-/* ── Simple SEO Form (vistainsaat__seo) ── */
+/* ── Simple SEO Form (sultandefense__seo) ── */
 
 function SimpleSeoForm({
   value: v,
@@ -189,7 +189,7 @@ function SimpleSeoForm({
             value={v.site_title}
             onChange={(e) => set({ site_title: e.target.value })}
             disabled={disabled}
-            placeholder="Vista İnşaat | Güvenilir İnşaat Hizmetleri"
+            placeholder="Sultan Defense | Güvenilir İnşaat Hizmetleri"
           />
         </div>
 
@@ -303,7 +303,7 @@ function AdvancedSeoForm({
             value={v.title_template}
             onChange={(e) => set({ title_template: e.target.value })}
             disabled={disabled}
-            placeholder="%s – Vista İnşaat"
+            placeholder="%s – Sultan Defense"
           />
           <p className="text-xs text-muted-foreground">%s sayfa başlığı ile değiştirilir</p>
         </div>

@@ -14,7 +14,7 @@ import {
   adminGetAppLocales,
   adminGetDefaultLocale,
 } from './admin.controller';
-import { sendVistaMail } from '@/core/vista-mail';
+import { sendSultanMail } from '@/core/sultan-mail';
 import { testCloudinary, testGoogleOAuth, testRecaptcha, testGroqAI, testOpenAI, testAnthropic, testGrokXAI } from './integration-tests';
 
 const BASE = '/site-settings'; // hyphen
@@ -47,12 +47,12 @@ export async function registerSiteSettingsAdmin(app: FastifyInstance) {
     if (!to) return reply.code(400).send({ error: { message: 'to alanı gerekli' } });
 
     try {
-      await sendVistaMail({
+      await sendSultanMail({
         to,
-        subject: 'Vista İnşaat — SMTP Test',
+        subject: 'Sultan Defense — SMTP Test',
         html: `<div style="font-family:Arial,sans-serif;padding:20px">
           <h2>SMTP Test Başarılı</h2>
-          <p>Bu e-posta Vista İnşaat admin panelinden gönderilmiştir.</p>
+          <p>Bu e-posta Sultan Defense admin panelinden gönderilmiştir.</p>
           <p style="color:#666;font-size:12px">${new Date().toISOString()}</p>
         </div>`,
       });
@@ -66,9 +66,9 @@ export async function registerSiteSettingsAdmin(app: FastifyInstance) {
     const to = body?.to?.trim();
     if (!to) return reply.code(400).send({ error: { message: 'to alanı gerekli' } });
     try {
-      await sendVistaMail({
+      await sendSultanMail({
         to,
-        subject: 'Vista İnşaat — SMTP Test',
+        subject: 'Sultan Defense — SMTP Test',
         html: `<div style="font-family:Arial,sans-serif;padding:20px"><h2>SMTP Test Başarılı</h2><p>${new Date().toISOString()}</p></div>`,
       });
       return reply.send({ ok: true, message: `Test e-postası ${to} adresine gönderildi` });

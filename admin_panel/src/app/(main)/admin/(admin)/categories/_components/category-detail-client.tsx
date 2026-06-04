@@ -1,7 +1,7 @@
 // =============================================================
 // FILE: src/app/(main)/admin/(admin)/categories/_components/category-detail-client.tsx
 // Category Detail/Edit — Tabs: İçerik, Görsel, SEO, JSON
-// Vista İnşaat
+// Sultan Defense
 // =============================================================
 
 'use client';
@@ -67,7 +67,7 @@ type FormValues = {
 const emptyForm = (locale: string): FormValues => ({
   locale,
   name: '', slug: '', description: '',
-  module_key: 'vistainsaat',
+  module_key: 'sultandefense',
   image_url: '', alt: '', icon: '',
   is_active: true, is_featured: false, display_order: '0',
   meta_title: '', meta_description: '',
@@ -141,7 +141,7 @@ export default function CategoryDetailClient({ id }: { id: string }) {
       name: norm(c.name),
       slug: norm(c.slug),
       description: norm(c.description),
-      module_key: norm(c.module_key) || 'vistainsaat',
+      module_key: norm(c.module_key) || 'sultandefense',
       image_url: norm(c.image_url),
       alt: norm(c.alt),
       icon: norm(c.icon),
@@ -175,7 +175,7 @@ export default function CategoryDetailClient({ id }: { id: string }) {
       name: values.name.trim(),
       slug: values.slug.trim() || slugify(values.name),
       description: toNull(values.description),
-      module_key: values.module_key || 'vistainsaat',
+      module_key: values.module_key || 'sultandefense',
       image_url: toNull(values.image_url),
       alt: toNull(values.alt),
       icon: toNull(values.icon),
@@ -277,10 +277,10 @@ export default function CategoryDetailClient({ id }: { id: string }) {
                 <div className="grid gap-4 sm:grid-cols-3">
                   <div className="space-y-1.5">
                     <Label className="text-xs text-muted-foreground">Modül</Label>
-                    <Select value={values.module_key || 'vistainsaat'} onValueChange={(v) => handleChange('module_key', v)} disabled={busy}>
+                    <Select value={values.module_key || 'sultandefense'} onValueChange={(v) => handleChange('module_key', v)} disabled={busy}>
                       <SelectTrigger><SelectValue /></SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="vistainsaat">Vista İnşaat</SelectItem>
+                        <SelectItem value="sultandefense">Sultan Defense</SelectItem>
                         <SelectItem value="product">Ürünler</SelectItem>
                         <SelectItem value="services">Hizmetler</SelectItem>
                         <SelectItem value="news">Haberler</SelectItem>
@@ -366,8 +366,8 @@ export default function CategoryDetailClient({ id }: { id: string }) {
                 <div className="space-y-1.5">
                   <Label className="text-xs text-muted-foreground">Google Önizleme</Label>
                   <div className="rounded-md border bg-background p-3">
-                    <p className="text-xs text-muted-foreground">www.vistainsaat.com</p>
-                    <p className="text-sm font-medium text-[#1a0dab] truncate">{values.meta_title || values.name || 'Kategori'} | Vista İnşaat</p>
+                    <p className="text-xs text-muted-foreground">www.sultandefense.com</p>
+                    <p className="text-sm font-medium text-[#1a0dab] truncate">{values.meta_title || values.name || 'Kategori'} | Sultan Defense</p>
                     <p className="text-xs text-muted-foreground line-clamp-2">{values.meta_description || values.description || ''}</p>
                   </div>
                 </div>

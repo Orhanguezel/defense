@@ -18,7 +18,7 @@ export const boolLike = z.union([
   z.literal('false'),
 ]);
 
-export const productItemType = z.enum(['product', 'sparepart', 'vistainsaat']);
+export const productItemType = z.enum(['product', 'sparepart', 'sultandefense']);
 export type ProductItemTypeInput = z.infer<typeof productItemType>;
 
 // ❗ Storage asset ID'leri için (uuid'e zorlamıyoruz)

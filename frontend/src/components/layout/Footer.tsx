@@ -64,7 +64,7 @@ export function Footer({
             <div className="flex items-center gap-2">
               <Image
                 src="/logo-dark.svg"
-                alt={companyProfile?.company_name || 'Vista İnşaat'}
+                alt={companyProfile?.company_name || 'Sultan Defense'}
                 width={28}
                 height={28}
                 style={{ height: '28px', width: 'auto', flexShrink: 0 }}
@@ -73,7 +73,7 @@ export function Footer({
                 className="whitespace-nowrap text-base font-bold leading-none tracking-tight"
                 style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text-on-dark)' }}
               >
-                {companyProfile?.company_name || 'Vista İnşaat'}
+                {companyProfile?.company_name || 'Sultan Defense'}
               </h3>
             </div>
             <p className="surface-dark-text text-sm leading-relaxed">
@@ -124,7 +124,7 @@ export function Footer({
 
         <div className="surface-dark-border mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 sm:flex-row">
           <p className="surface-dark-text text-xs">
-            &copy; {year} {companyProfile?.company_name || 'Vista İnşaat'}. {t('rights')}
+            &copy; {year} {companyProfile?.company_name || 'Sultan Defense'}. {t('rights')}
           </p>
           <div className="flex gap-4">
             <Link

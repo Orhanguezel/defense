@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/offer/validation.ts
-// Vista İnşaat – Offer Module Validation (Zod schemas)
+// Sultan Defense – Offer Module Validation (Zod schemas)
 // =============================================================
 
 import { z } from 'zod';
@@ -36,7 +36,7 @@ const countryFreeTextSchema = z.string().trim().min(2).max(80);
  * ------------------------------------------------------------- */
 
 export const offerRequestBodySchema = z.object({
-  source: z.string().min(1).max(64).default('vistainsaat'),
+  source: z.string().min(1).max(64).default('sultandefense'),
   locale: z.string().max(10).optional(),
 
   // ✅ Serbest metin (kısıt yok, sadece uzunluk)

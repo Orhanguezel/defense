@@ -164,7 +164,7 @@ export default function AdminServiceDetailClient({ id }: { id: string }) {
       display_order: Number(values.display_order) || 0,
       meta_title: toNull(values.meta_title),
       meta_description: toNull(values.meta_description),
-      module_key: 'vistainsaat',
+      module_key: 'sultandefense',
     };
 
     try {

@@ -17,7 +17,7 @@ const GALLERY_PLACEHOLDER_SRC = '/media/gallery-placeholder.svg';
 async function fetchGalleries(locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/galleries?module_key=vistainsaat&is_active=1&locale=${locale}&limit=50&sort=display_order&order=asc`,
+      `${API_BASE_URL}/galleries?module_key=sultandefense&is_active=1&locale=${locale}&limit=50&sort=display_order&order=asc`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -63,7 +63,7 @@ export default async function GalleryPage({
   ]);
 
   const companyProfile = (profile?.value as any) ?? {};
-  const companyName = companyProfile.company_name || 'Vista İnşaat';
+  const companyName = companyProfile.company_name || 'Sultan Defense';
 
   const visibleGalleries = galleries;
   const featured = visibleGalleries[0];

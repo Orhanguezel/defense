@@ -16,7 +16,7 @@ export async function POST(request: Request) {
   }
 
   const message = {
-    source: 'vistainsaat',
+    source: 'sultandefense',
     type: payload.type,
     pathname: payload.pathname,
     reason: payload.reason ?? '',

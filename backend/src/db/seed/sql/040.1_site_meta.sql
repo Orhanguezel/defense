@@ -1,6 +1,6 @@
 -- =============================================================
 -- 040.1_site_meta.sql  (FINAL / DRY OG IMAGE)
--- Vista İnşaat – Default Meta + Global SEO (NEW STANDARD)
+-- Sultan Defense – Default Meta + Global SEO (NEW STANDARD)
 --
 -- Fix: MySQL 1093 (ER_UPDATE_TABLE_USED)
 -- - Do not SELECT from `site_settings` inside INSERT/UPSERT statements.
@@ -61,7 +61,7 @@ SET @OG_DEFAULT := COALESCE(
 -- -------------------------------------------------------------
 
 -- Brand / default titles (ASCII-safe)
-SET @BRAND_TR := 'Vista İnşaat – Profesyonel Insaat ve Taahhut';
+SET @BRAND_TR := 'Sultan Defense – Profesyonel Insaat ve Taahhut';
 SET @BRAND_EN := 'Vista Construction – Professional Building and Contracting';
 SET @BRAND_DE := 'Vista Bau – Professionelles Bauen und Auftragnehmer';
 
@@ -80,7 +80,7 @@ SET @DESC_DE := 'Vista Bau – Wohn-, Gewerbe- und Industriebauprojekte. Schlues
 SET @DESC_GLOBAL := 'Professional construction, contracting and project management for residential, commercial and industrial buildings.';
 
 -- Global keywords (neutral)
-SET @KW_GLOBAL := 'vistainsaat, vista construction, building, contracting, project management, residential, commercial, industrial';
+SET @KW_GLOBAL := 'sultandefense, vista construction, building, contracting, project management, residential, commercial, industrial';
 
 -- -------------------------------------------------------------
 -- Build JSON payloads once (DRY)
@@ -91,7 +91,7 @@ SET @SEO_GLOBAL := CAST(
   JSON_OBJECT(
     'site_name',      @SITE_NAME_GLOBAL,
     'title_default',  @TITLE_GLOBAL,
-    'title_template', '%s – Vista İnşaat',
+    'title_template', '%s – Sultan Defense',
     'description',    @DESC_GLOBAL,
     'open_graph', JSON_OBJECT(
       'type',   'website',
@@ -115,7 +115,7 @@ SET @SEO_TR := CAST(
   JSON_OBJECT(
     'site_name',      @BRAND_TR,
     'title_default',  @BRAND_TR,
-    'title_template', '%s – Vista İnşaat',
+    'title_template', '%s – Sultan Defense',
     'description',    @DESC_TR,
     'open_graph', JSON_OBJECT(
       'type',   'website',
@@ -138,7 +138,7 @@ SET @SEO_EN := CAST(
   JSON_OBJECT(
     'site_name',      @BRAND_EN,
     'title_default',  @BRAND_EN,
-    'title_template', '%s – Vista İnşaat',
+    'title_template', '%s – Sultan Defense',
     'description',    @DESC_EN,
     'open_graph', JSON_OBJECT(
       'type',   'website',
@@ -161,7 +161,7 @@ SET @SEO_DE := CAST(
   JSON_OBJECT(
     'site_name',      @BRAND_DE,
     'title_default',  @BRAND_DE,
-    'title_template', '%s – Vista İnşaat',
+    'title_template', '%s – Sultan Defense',
     'description',    @DESC_DE,
     'open_graph', JSON_OBJECT(
       'type',   'website',
@@ -193,7 +193,7 @@ SET @META_TR := CAST(
   JSON_OBJECT(
     'title',       @BRAND_TR,
     'description', @DESC_TR,
-    'keywords',    'vistainsaat, vista insaat, insaat, taahhut, konut, ticari, endustriyel, proje yonetimi, anahtar teslim'
+    'keywords',    'sultandefense, vista insaat, insaat, taahhut, konut, ticari, endustriyel, proje yonetimi, anahtar teslim'
   ) AS CHAR CHARACTER SET utf8mb4
 );
 
@@ -201,7 +201,7 @@ SET @META_EN := CAST(
   JSON_OBJECT(
     'title',       @BRAND_EN,
     'description', @DESC_EN,
-    'keywords',    'vistainsaat, vista construction, construction, contracting, residential, commercial, industrial, project management, turnkey'
+    'keywords',    'sultandefense, vista construction, construction, contracting, residential, commercial, industrial, project management, turnkey'
   ) AS CHAR CHARACTER SET utf8mb4
 );
 
@@ -209,7 +209,7 @@ SET @META_DE := CAST(
   JSON_OBJECT(
     'title',       @BRAND_DE,
     'description', @DESC_DE,
-    'keywords',    'vistainsaat, vista bau, bau, auftragnehmer, wohnbau, gewerbebau, industriebau, projektmanagement, schluesselfertig'
+    'keywords',    'sultandefense, vista bau, bau, auftragnehmer, wohnbau, gewerbebau, industriebau, projektmanagement, schluesselfertig'
   ) AS CHAR CHARACTER SET utf8mb4
 );
 

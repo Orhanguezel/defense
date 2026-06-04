@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/offer/service.ts
-// Vista İnşaat – Offer Module Service
+// Sultan Defense – Offer Module Service
 //   - PDF (Puppeteer) → uploads/offers/*.pdf
 //   - Fallback txt dosyası (pdf-error.txt)
 //   - Email templates + notifications
@@ -25,10 +25,10 @@ import { updateOffer } from './repository';
 import { renderOfferPdfHtml } from './pdfTemplate';
 
 import {
-  sendVistaOfferAdminMail,
-  sendVistaOfferCustomerMail,
-  sendVistaOfferRequestAdminMail,
-} from '@/core/vista-mail';
+  sendSultanOfferAdminMail,
+  sendSultanOfferCustomerMail,
+  sendSultanOfferRequestAdminMail,
+} from '@/core/sultan-mail';
 import { telegramNotify } from '@/modules/telegram/telegram.notifier';
 
 // ✅ Product schema (i18n)
@@ -392,7 +392,7 @@ export async function generateAndAttachOfferPdf(
   offer: OfferRow,
 ): Promise<{ pdf_url: string | null; pdf_asset_id: string | null }> {
   const siteTitleRaw = await getSiteSettingValue('site_title', offer.locale ?? null);
-  const siteName = (typeof siteTitleRaw === 'string' && siteTitleRaw) || 'Vista İnşaat';
+  const siteName = (typeof siteTitleRaw === 'string' && siteTitleRaw) || 'Sultan Defense';
 
   const productId = offer.product_id ?? null;
 
@@ -446,7 +446,7 @@ async function sendCustomerOfferMail(ctx: OfferEmailContext): Promise<boolean> {
   const o = ctx.offer;
   const pdfAbs = await toAbsolutePublicUrl(ctx.pdf_url ?? o.pdf_url ?? null, o.locale ?? null);
 
-  await sendVistaOfferCustomerMail({
+  await sendSultanOfferCustomerMail({
     customer_name: o.customer_name,
     company_name: o.company_name,
     offer_no: o.offer_no ?? o.id,
@@ -475,7 +475,7 @@ async function sendAdminOfferMail(ctx: OfferEmailContext): Promise<boolean> {
   const pdfAbs = await toAbsolutePublicUrl(ctx.pdf_url ?? o.pdf_url ?? null, o.locale ?? null);
 
   for (const to of adminEmails) {
-    await sendVistaOfferAdminMail(
+    await sendSultanOfferAdminMail(
       {
         customer_name: o.customer_name,
         company_name: o.company_name,
@@ -541,7 +541,7 @@ Teklif ID: ${offer.id}`;
     if (!adminEmails.length) return;
 
     for (const to of adminEmails) {
-      await sendVistaOfferRequestAdminMail(
+      await sendSultanOfferRequestAdminMail(
         {
           customer_name: offer.customer_name,
           company_name: offer.company_name,

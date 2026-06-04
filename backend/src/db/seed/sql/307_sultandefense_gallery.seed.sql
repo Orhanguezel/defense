@@ -1,7 +1,7 @@
 -- =============================================================
 -- FILE: 307_vistainsaat_gallery.seed.sql
--- Vista İnşaat — Örnek galeri verileri (TR/EN)
--- module_key = 'vistainsaat'
+-- Sultan Defense — Örnek galeri verileri (TR/EN)
+-- module_key = 'sultandefense'
 -- source_type = 'project'
 -- =============================================================
 
@@ -22,9 +22,9 @@ INSERT INTO `galleries`
   `display_order`
 )
 VALUES
-  ('kg010001-8001-4001-9001-eeeeeeee0001', 'vistainsaat', 'kd010001-7001-4001-9001-dddddddd0001', 'project', 1, 1, 10),
-  ('kg010002-8002-4002-9002-eeeeeeee0002', 'vistainsaat', 'kd010002-7002-4002-9002-dddddddd0002', 'project', 1, 1, 20),
-  ('kg010003-8003-4003-9003-eeeeeeee0003', 'vistainsaat', 'kd010003-7003-4003-9003-dddddddd0003', 'project', 1, 0, 30)
+  ('kg010001-8001-4001-9001-eeeeeeee0001', 'sultandefense', 'kd010001-7001-4001-9001-dddddddd0001', 'project', 1, 1, 10),
+  ('kg010002-8002-4002-9002-eeeeeeee0002', 'sultandefense', 'kd010002-7002-4002-9002-dddddddd0002', 'project', 1, 1, 20),
+  ('kg010003-8003-4003-9003-eeeeeeee0003', 'sultandefense', 'kd010003-7003-4003-9003-dddddddd0003', 'project', 1, 0, 30)
 ON DUPLICATE KEY UPDATE
   `module_key` = VALUES(`module_key`),
   `source_id` = VALUES(`source_id`),
@@ -49,7 +49,7 @@ VALUES
    'Boğaz Manzaralı Rezidans — Yapım Süreci Galerisi',
    'bogaz-manzarali-rezidans-yapim-galerisi',
    'Boğaz Manzaralı Rezidans projesinin temel, betonarme, dış cephe ve peyzaj aşamalarını belgeleyen yapım süreci fotoğrafları.',
-   'Boğaz Manzaralı Rezidans Yapım Galerisi | Vista İnşaat',
+   'Boğaz Manzaralı Rezidans Yapım Galerisi | Sultan Defense',
    'Boğaz Manzaralı Rezidans projesinin yapım süreci fotoğrafları. Temel, betonarme ve cephe aşamaları.'),
   ('kg010001-8001-4001-9001-eeeeeeee0001', 'en',
    'Bosphorus View Residences — Construction Progress Gallery',
@@ -62,7 +62,7 @@ VALUES
    'Levent Ofis Kulesi — İnşaat ve Cephe Galerisi',
    'levent-ofis-kulesi-insaat-galerisi',
    'Levent Ofis Kulesi''nin çelik strüktür montajı, curtain wall giydirme ve ortak alan bitişini belgeleyen galeri.',
-   'Levent Ofis Kulesi İnşaat Galerisi | Vista İnşaat',
+   'Levent Ofis Kulesi İnşaat Galerisi | Sultan Defense',
    'Levent Ofis Kulesi çelik montaj, curtain wall ve iç bitişi yapım süreci fotoğrafları.'),
   ('kg010002-8002-4002-9002-eeeeeeee0002', 'en',
    'Levent Office Tower — Construction & Facade Gallery',
@@ -75,7 +75,7 @@ VALUES
    'Kadıköy Karma Yapı Kompleksi — Yapım Galerisi',
    'kadikoy-karma-yapi-galerisi',
    'Kadıköy Karma Yapı Kompleksi''nin betonarme iskelet, cephe ve iç mekân bitişini belgeleyen fotoğraf serisi.',
-   'Kadıköy Karma Yapı Kompleksi Yapım Galerisi | Vista İnşaat',
+   'Kadıköy Karma Yapı Kompleksi Yapım Galerisi | Sultan Defense',
    'Kadıköy Karma Yapı Kompleksi yapım süreci galerisi. Betonarme, cephe ve iç mekân aşamaları.'),
   ('kg010003-8003-4003-9003-eeeeeeee0003', 'en',
    'Kadıköy Mixed-Use Complex — Construction Gallery',

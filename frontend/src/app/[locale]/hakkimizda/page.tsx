@@ -27,7 +27,7 @@ async function fetchAboutPage(locale: string) {
 async function fetchServices(locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/services?module_key=vistainsaat&is_active=1&locale=${locale}&limit=10`,
+      `${API_BASE_URL}/services?module_key=sultandefense&is_active=1&locale=${locale}&limit=10`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -75,7 +75,7 @@ export default async function AboutPage({
   ]);
 
   const companyProfile = (profile?.value as any) ?? {};
-  const companyName = companyProfile.company_name || 'Vista İnşaat';
+  const companyName = companyProfile.company_name || 'Sultan Defense';
 
   const content = normalizeRichContent(page?.content);
   const org = organizationJsonLd(locale);

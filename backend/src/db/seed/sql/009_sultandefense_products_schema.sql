@@ -1,6 +1,6 @@
 -- =============================================================
 -- FILE: 297_vistainsaat_products_schema.sql
--- Vista İnşaat — Products Schema
+-- Sultan Defense — Products Schema
 -- =============================================================
 
 SET NAMES utf8mb4;

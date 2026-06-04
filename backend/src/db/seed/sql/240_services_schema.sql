@@ -1,11 +1,11 @@
 -- ============================================================
 -- 240_services_schema.sql
--- Vista İnşaat hizmet modülü
+-- Sultan Defense hizmet modülü
 -- ============================================================
 
 CREATE TABLE IF NOT EXISTS `services` (
   `id`                CHAR(36)      NOT NULL,
-  `module_key`        VARCHAR(50)   NOT NULL DEFAULT 'vistainsaat',
+  `module_key`        VARCHAR(50)   NOT NULL DEFAULT 'sultandefense',
   `category_id`       CHAR(36)      NULL,
 
   `is_active`         TINYINT       NOT NULL DEFAULT 1,

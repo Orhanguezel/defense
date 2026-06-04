@@ -7,14 +7,13 @@
     "build": "bun x tsc -p tsconfig.json && bun x tsc-alias -p tsconfig.json && node scripts/fix-esm-extensions.mjs",
     "start": "node --experimental-specifier-resolution=node dist/index.js",
     "start:bun": "bun dist/index.js",
-    "db:seed": "node --experimental-specifier-resolution=node dist/db/seed/index.js --profile=vistainsaat",
-    "db:seed:nodrop": "node --experimental-specifier-resolution=node dist/db/seed/index.js --profile=vistainsaat --no-drop",
+    "db:seed": "node --experimental-specifier-resolution=node dist/db/seed/index.js --profile=sultandefense",
+    "db:seed:nodrop": "node --experimental-specifier-resolution=node dist/db/seed/index.js --profile=sultandefense --no-drop",
     "db:seed:only": "node --experimental-specifier-resolution=node dist/db/seed/index.js --only=",
     "db:seed:full": "node --experimental-specifier-resolution=node dist/db/seed/index.js",
     "db:seed:full:nodrop": "node --experimental-specifier-resolution=node dist/db/seed/index.js --no-drop",
-    "db:seed:vistainsaat": "node --experimental-specifier-resolution=node dist/db/seed/index.js --profile=vistainsaat --no-drop",
-    "db:seed:vistainsaat:fresh": "node --experimental-specifier-resolution=node dist/db/seed/index.js --profile=vistainsaat",
-    "test:smoke:vistainsaat-admin": "node scripts/smoke-vistainsaat-admin.mjs"
+    "db:seed:sultandefense": "node --experimental-specifier-resolution=node dist/db/seed/index.js --profile=sultandefense --no-drop",
+    "db:seed:sultandefense:fresh": "node --experimental-specifier-resolution=node dist/db/seed/index.js --profile=sultandefense"
   },
   "dependencies": {
     "@fastify/cookie": "^11",

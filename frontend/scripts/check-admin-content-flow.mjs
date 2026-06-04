@@ -6,7 +6,7 @@ import { spawn } from 'node:child_process';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const BUILD_ID_FILE = path.join(ROOT, '.next', 'BUILD_ID');
-const STANDALONE_DIR = path.join(ROOT, '.next', 'standalone', 'vistainsaat');
+const STANDALONE_DIR = path.join(ROOT, '.next', 'standalone', 'sultandefense');
 const STANDALONE_SERVER = path.join(STANDALONE_DIR, 'server.js');
 const PREPARE_SCRIPT = path.join(ROOT, 'scripts', 'prepare-standalone.mjs');
 
@@ -211,7 +211,7 @@ async function createAdminContent() {
         method: 'POST',
         headers,
         body: JSON.stringify({
-          module_key: 'vistainsaat_blog',
+          module_key: 'sultandefense_blog',
           locale: 'tr',
           title: pageTitle,
           slug: pageSlug,
@@ -252,7 +252,7 @@ async function createAdminContent() {
         method: 'POST',
         headers,
         body: JSON.stringify({
-          item_type: 'vistainsaat',
+          item_type: 'sultandefense',
           locale: 'tr',
           title: productTitle,
           slug: productSlug,
@@ -261,7 +261,7 @@ async function createAdminContent() {
           alt: `Admin flow product alt ${ts}`,
           price: 0,
           category_id: VISTAINSAAT_CATEGORY_ID,
-          tags: ['admin-flow', 'vistainsaat'],
+          tags: ['admin-flow', 'sultandefense'],
           meta_title: `${productTitle} Meta`,
           meta_description: `Admin flow product meta description ${ts}`,
           is_active: true,
@@ -298,7 +298,7 @@ async function createAdminContent() {
         method: 'POST',
         headers,
         body: JSON.stringify({
-          module_key: 'vistainsaat',
+          module_key: 'sultandefense',
           source_type: 'standalone',
           locale: 'tr',
           title: galleryTitle,
@@ -464,10 +464,10 @@ async function main() {
   try {
     await waitForServer(proc);
 
-    await expectFrontend('/tr/about', ['Vista İnşaat', 'Karbon fiber', 'Calisma Modelimiz']);
-    await expectFrontend('/en/about', ['Vista İnşaat', 'carbon fiber', 'How We Work']);
-    await expectFrontend('/tr/legal/privacy', ['Vista İnşaat', '/tr/legal/privacy', '<link rel="canonical"']);
-    await expectFrontend('/en/legal/privacy', ['Vista İnşaat', '/en/legal/privacy', '<link rel="canonical"']);
+    await expectFrontend('/tr/about', ['Sultan Defense', 'Karbon fiber', 'Calisma Modelimiz']);
+    await expectFrontend('/en/about', ['Sultan Defense', 'carbon fiber', 'How We Work']);
+    await expectFrontend('/tr/legal/privacy', ['Sultan Defense', '/tr/legal/privacy', '<link rel="canonical"']);
+    await expectFrontend('/en/legal/privacy', ['Sultan Defense', '/en/legal/privacy', '<link rel="canonical"']);
 
     await expectFrontend(`/tr/blog/${content.blog.slug}`, [
       content.blog.tr.metaTitle,

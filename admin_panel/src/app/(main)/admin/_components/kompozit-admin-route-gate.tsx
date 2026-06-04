@@ -44,9 +44,9 @@ export function KompozitAdminRouteGate({ children }: { children: React.ReactNode
     <div className="mx-auto flex min-h-[50vh] max-w-3xl items-center justify-center">
       <Card className="w-full border-orange-200 bg-orange-50/60">
         <CardHeader>
-          <CardTitle>Bu ekran Vista İnşaat panelinde aktif değil</CardTitle>
+          <CardTitle>Bu ekran Sultan Defense panelinde aktif değil</CardTitle>
           <CardDescription>
-            Bu admin panel Vista İnşaat operasyonları için özelleştirildi. Bu route mevcut panelde aktif değil.
+            Bu admin panel Sultan Defense operasyonları için özelleştirildi. Bu route mevcut panelde aktif değil.
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-wrap gap-3">

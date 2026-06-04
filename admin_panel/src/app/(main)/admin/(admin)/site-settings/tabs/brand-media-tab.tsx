@@ -57,7 +57,7 @@ function extractLogoData(raw: any): LogoData {
   const obj = coerce(raw?.value ?? raw) ?? {};
   return {
     logo_url: String(obj.logo_url ?? ''),
-    logo_alt: String(obj.logo_alt ?? 'Vista İnşaat'),
+    logo_alt: String(obj.logo_alt ?? 'Sultan Defense'),
     logo_dark_url: String(obj.logo_dark_url ?? ''),
     favicon_url: String(obj.favicon_url ?? ''),
     apple_touch_icon_url: String(obj.apple_touch_icon_url ?? ''),

@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: seo-pages-structured-form.tsx
-// Vista İnşaat — Sayfa bazlı SEO yönetimi (seo_pages)
+// Sultan Defense — Sayfa bazlı SEO yönetimi (seo_pages)
 // =============================================================
 
 "use client";

@@ -6,9 +6,9 @@ import { ContactCreateSchema } from "./validation";
 import { repoCreateContact } from "./repository";
 import type { ContactView } from "./schema";
 import {
-  sendVistaContactAdminMail,
-  sendVistaContactAutoReplyMail,
-} from "@/core/vista-mail";
+  sendSultanContactAdminMail,
+  sendSultanContactAutoReplyMail,
+} from "@/core/sultan-mail";
 import { telegramNotify } from "@/modules/telegram/telegram.notifier";
 
 type CreateReq = FastifyRequest<{ Body: unknown }>;
@@ -23,7 +23,7 @@ function escapeHtml(str: string): string {
 }
 
 async function sendContactEmails(contact: ContactView, locale: string | null) {
-  await sendVistaContactAdminMail({
+  await sendSultanContactAdminMail({
     name: escapeHtml(contact.name),
     email: escapeHtml(contact.email),
     phone: escapeHtml(contact.phone),
@@ -32,7 +32,7 @@ async function sendContactEmails(contact: ContactView, locale: string | null) {
     locale,
   });
 
-  await sendVistaContactAutoReplyMail({
+  await sendSultanContactAutoReplyMail({
     name: escapeHtml(contact.name),
     email: escapeHtml(contact.email),
     subject: escapeHtml(contact.subject),

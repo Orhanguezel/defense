@@ -1,7 +1,7 @@
 
 // =============================================================
 // FILE: contact-info-structured-form.tsx
-// Vista İnşaat — contact_info structured editor
+// Sultan Defense — contact_info structured editor
 // =============================================================
 
 "use client";

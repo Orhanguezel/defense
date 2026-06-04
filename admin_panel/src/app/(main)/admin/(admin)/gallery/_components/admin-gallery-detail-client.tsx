@@ -112,7 +112,7 @@ const emptyForm = (locale: string): FormValues => ({
   is_active: true,
   is_featured: false,
   display_order: '0',
-  module_key: 'vistainsaat',
+  module_key: 'sultandefense',
   source_type: '',
   source_id: '',
   cover_image: '',
@@ -598,7 +598,7 @@ export default function AdminGalleryDetailClient({ id }: { id: string }) {
                 <div className="grid gap-4 sm:grid-cols-3">
                   <div className="space-y-1.5">
                     <Label className="text-xs text-muted-foreground">Modül</Label>
-                    <Input value={values.module_key} onChange={(e) => setValues((p) => ({ ...p, module_key: e.target.value }))} disabled={disabled} placeholder="vistainsaat" />
+                    <Input value={values.module_key} onChange={(e) => setValues((p) => ({ ...p, module_key: e.target.value }))} disabled={disabled} placeholder="sultandefense" />
                   </div>
                   <div className="space-y-1.5">
                     <Label className="text-xs text-muted-foreground">Sıra</Label>
@@ -660,8 +660,8 @@ export default function AdminGalleryDetailClient({ id }: { id: string }) {
                 <div className="space-y-1.5">
                   <Label className="text-xs text-muted-foreground">Google Önizleme</Label>
                   <div className="rounded-md border bg-background p-3">
-                    <p className="text-xs text-muted-foreground">www.vistainsaat.com</p>
-                    <p className="text-sm font-medium text-[#1a0dab] truncate">{values.meta_title || values.title || 'Galeri'} | Vista İnşaat</p>
+                    <p className="text-xs text-muted-foreground">www.sultandefense.com</p>
+                    <p className="text-sm font-medium text-[#1a0dab] truncate">{values.meta_title || values.title || 'Galeri'} | Sultan Defense</p>
                     <p className="text-xs text-muted-foreground line-clamp-2">{values.meta_description || values.description || ''}</p>
                   </div>
                 </div>

@@ -15,7 +15,7 @@ const __dirname = path.dirname(__filename);
 type Flags = {
   noDrop?: boolean;
   only?: string[]; // ör: ["40","41","50"] -> sadece o dosyalar
-  profile?: 'vistainsaat';
+  profile?: 'sultandefense';
 };
 
 function parseFlags(argv: string[]): Flags {
@@ -26,17 +26,17 @@ function parseFlags(argv: string[]): Flags {
       flags.only = a.replace('--only=', '').split(',').map(s => s.trim());
     } else if (a.startsWith('--profile=')) {
       const profile = a.replace('--profile=', '').trim();
-      if (profile === 'vistainsaat') flags.profile = 'vistainsaat';
+      if (profile === 'sultandefense') flags.profile = 'sultandefense';
     }
   }
   return flags;
 }
 
 const PROFILE_PREFIXES: Record<NonNullable<Flags['profile']>, string[]> = {
-  vistainsaat: [
+  sultandefense: [
     // ── Temel şema dosyaları (CREATE TABLE) ──────────────────────────────
     '001', '003', '004', '005',
-    '008', '009', '010',  // vistainsaat_catalog_schema, products_schema, references_schema
+    '008', '009', '010',  // sultandefense_catalog_schema, products_schema, references_schema
     '017', '018',
     '020',
     '030', '031', '032',
@@ -44,12 +44,12 @@ const PROFILE_PREFIXES: Record<NonNullable<Flags['profile']>, string[]> = {
     '050', '060', '080', '090', '095',
     '110', '120', '130', '140', '150', '160', '170', '180', '190',
     '220', '230', '240',
-    // ── Vista İnşaat'a özgü şema + veri dosyaları ───────────────────────
-    '131',  // vistainsaat_storage_assets
-    '296',  // vistainsaat_catalog_schema (categories, catalog_requests)
-    '297',  // vistainsaat_products_schema
+    // ── Sultan Defense'a özgü şema + veri dosyaları ───────────────────────
+    '131',  // sultandefense_storage_assets
+    '296',  // sultandefense_catalog_schema (categories, catalog_requests)
+    '297',  // sultandefense_products_schema
     '299', '300', '301', '302', '303', '304', '305', '306', '307', '308',
-    '309',  // vistainsaat_news_categories + auth_role_patch
+    '309',  // sultandefense_news_categories + auth_role_patch
     '310', '311', '312', '313', '314', '315', '316', '317', // admin_settings + seo_pages + general + logo_storage + hero_video + offer_settings + smtp_sync
   ],
 };

@@ -1,8 +1,8 @@
 -- =============================================================
 -- 017_storage.seeds.sql  (TABLE SCHEMA ONLY)
--- Vista İnşaat - Storage Assets table guard
+-- Sultan Defense - Storage Assets table guard
 --
--- Note: Vista İnşaat storage assets are seeded in
+-- Note: Sultan Defense storage assets are seeded in
 -- 131_vistainsaat_storage_assets.seed.sql
 -- =============================================================
 

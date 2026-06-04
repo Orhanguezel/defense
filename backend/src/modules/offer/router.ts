@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/offer/router.ts
-// Vista İnşaat – Offer Module Public Routes
+// Sultan Defense – Offer Module Public Routes
 // =============================================================
 
 import type { FastifyInstance } from "fastify";

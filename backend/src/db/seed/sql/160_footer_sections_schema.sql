@@ -1,7 +1,7 @@
 -- =============================================================
 -- FILE: 160_footer_sections_schema.sql
 -- Footer Sections schema (parent + i18n)
--- Vista İnşaat – FIXED
+-- Sultan Defense – FIXED
 -- =============================================================
 
 SET NAMES utf8mb4;

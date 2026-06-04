@@ -131,7 +131,7 @@ export default async function NewsPage({
   ]);
 
   const companyProfile = (profile?.value as any) ?? {};
-  const companyName = companyProfile.company_name || 'Vista İnşaat';
+  const companyName = companyProfile.company_name || 'Sultan Defense';
 
   const visiblePosts = posts;
   const featured = visiblePosts[0];

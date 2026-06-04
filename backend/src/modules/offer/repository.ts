@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/offer/repository.ts
-// Vista İnşaat – Offer Module Repository
+// Sultan Defense – Offer Module Repository
 // =============================================================
 
 import { db } from '@/db/client';
@@ -252,7 +252,7 @@ export async function createOffer(
     id,
     offer_no,
     status: values.status ?? ('new' as any),
-    source: values.source ?? 'vistainsaat',
+    source: values.source ?? 'sultandefense',
     locale: values.locale ?? null,
     country_code: normalizedCountry,
 

@@ -1,6 +1,6 @@
 -- =============================================================
 -- FILE: 299_vistainsaat_gallery_schema.sql
--- Vista İnşaat — Galeri tablolarını oluştur
+-- Sultan Defense — Galeri tablolarını oluştur
 -- CREATE TABLE IF NOT EXISTS — ALTER kullanılmaz
 -- =============================================================
 

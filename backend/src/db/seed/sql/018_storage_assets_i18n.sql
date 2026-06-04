@@ -1,6 +1,6 @@
 -- =============================================================
 -- 201_storage_assets_i18n.sql
--- Vista İnşaat - Storage Assets i18n (for future multi-language support)
+-- Sultan Defense - Storage Assets i18n (for future multi-language support)
 -- ✅ Currently no i18n data needed
 -- ✅ Reserved for future use
 -- =============================================================

@@ -62,7 +62,7 @@ export default function Layout({ children }: Readonly<{ children: ReactNode }>) 
                     orientation="vertical"
                     className="mx-2 data-[orientation=vertical]:h-4"
                   />
-                  <h2 className="text-sm font-semibold tracking-tight hidden sm:block">Vista İnşaat Admin</h2>
+                  <h2 className="text-sm font-semibold tracking-tight hidden sm:block">Sultan Defense Admin</h2>
                 </div>
 
                 <div className="flex items-center gap-2">

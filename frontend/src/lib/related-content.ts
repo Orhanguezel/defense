@@ -73,9 +73,9 @@ function rankRelated<T extends Entity>(base: Entity, items: T[], currentSlug: st
 
 export async function fetchRelatedContent(base: Entity, currentSlug: string, locale: string) {
   const [products, blogPosts, galleries] = await Promise.all([
-    fetchList('/projects?module_key=vistainsaat&is_active=1', locale),
-    fetchList('/custom_pages?module_key=vistainsaat_blog&is_active=1', locale),
-    fetchList('/galleries?module_key=vistainsaat&is_active=1', locale),
+    fetchList('/projects?module_key=sultandefense&is_active=1', locale),
+    fetchList('/custom_pages?module_key=sultandefense_blog&is_active=1', locale),
+    fetchList('/galleries?module_key=sultandefense&is_active=1', locale),
   ]);
 
   return {

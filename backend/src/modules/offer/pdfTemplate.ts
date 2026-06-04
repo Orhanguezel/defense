@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/offer/pdfTemplate.ts
-// Vista İnşaat – Offer PDF HTML Template
+// Sultan Defense – Offer PDF HTML Template
 //   - Teklif PDF'inde kullanılacak HTML + inline CSS
 //   - Kaynak: OfferRow (offers tablosu)
 //   - Dil: site_settings.app_locales + offer.locale + default_locale
@@ -248,7 +248,7 @@ async function getCompanyBrandSettings(runtimeLocale: string): Promise<CompanyBr
   const candidateLocales = Array.from(new Set<string>([runtimeLocale, langPart, 'en', 'de', 'tr']));
 
   let brand: CompanyBrandSettings = {
-    name: 'Vista İnşaat',
+    name: 'Sultan Defense',
     shortName: null,
     website: null,
     logoUrl: null,
@@ -452,7 +452,7 @@ export async function renderOfferPdfHtml(ctx: PdfTemplateContext): Promise<strin
   const t = LABELS[labelLocale];
 
   const companyBrand = await getCompanyBrandSettings(runtimeLocale);
-  const siteName = companyBrand.name || ctx.site_name || 'Vista İnşaat';
+  const siteName = companyBrand.name || ctx.site_name || 'Sultan Defense';
 
   const offerNo = (ctx as any).offer_no || ctx.id;
   const createdAtStr = formatDate((ctx as any).created_at ?? null, labelLocale);

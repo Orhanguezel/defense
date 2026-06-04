@@ -18,7 +18,7 @@ const PROJECT_PLACEHOLDER = '/media/gallery-placeholder.svg';
 
 async function fetchProjects(locale: string) {
   const params = new URLSearchParams({
-    item_type: 'vistainsaat',
+    item_type: 'sultandefense',
     is_active: '1',
     locale,
     limit: '50',
@@ -121,7 +121,7 @@ export default async function ProjectsPage({
   ]);
 
   const companyProfile = (profile?.value as any) ?? {};
-  const companyName = companyProfile.company_name || 'Vista İnşaat';
+  const companyName = companyProfile.company_name || 'Sultan Defense';
 
   const totalCount = projects.length;
   const viewItems = projects.map((p: any) => toViewItem(p, locale));

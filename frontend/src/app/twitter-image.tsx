@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'nodejs';
-export const alt = 'Vista İnşaat';
+export const alt = 'Sultan Defense';
 export const size = {
   width: 1200,
   height: 600,
@@ -44,7 +44,7 @@ export default function TwitterImage() {
               fontWeight: 600,
             }}
           >
-            Vista İnşaat
+            Sultan Defense
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
             <div
@@ -72,7 +72,7 @@ export default function TwitterImage() {
               color: '#8c8880',
             }}
           >
-            <div style={{ display: 'flex' }}>vistainsaat.com</div>
+            <div style={{ display: 'flex' }}>sultandefense.com</div>
             <div style={{ display: 'flex', color: '#b8a98a', fontWeight: 600 }}>
               Kalite · Güven · Zamanında Teslim
             </div>

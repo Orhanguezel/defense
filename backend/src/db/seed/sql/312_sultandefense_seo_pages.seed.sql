@@ -1,7 +1,7 @@
 -- =============================================================
 -- FILE: 312_vistainsaat_seo_pages.seed.sql
--- Vista İnşaat — Sayfa bazlı SEO verileri
--- Key: vistainsaat__seo_pages (locale: tr, en)
+-- Sultan Defense — Sayfa bazlı SEO verileri
+-- Key: sultandefense__seo_pages (locale: tr, en)
 -- Frontend'deki hardcoded SEO değerlerinin backend karşılığı
 -- =============================================================
 
@@ -14,18 +14,18 @@ SET time_zone = '+00:00';
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES (
   UUID(),
-  'vistainsaat__seo_pages',
+  'sultandefense__seo_pages',
   'tr',
   CAST(JSON_OBJECT(
     'home', JSON_OBJECT(
       'title', 'Güvenilir İnşaat ve Mimarlık Hizmetleri',
-      'description', 'Vista İnşaat – Antalya merkezli konut, ticari ve karma kullanım projelerinde kaliteli, zamanında ve güvenilir inşaat çözümleri.',
+      'description', 'Sultan Defense – Antalya merkezli konut, ticari ve karma kullanım projelerinde kaliteli, zamanında ve güvenilir inşaat çözümleri.',
       'og_image', '/uploads/logo/og.png',
       'no_index', false
     ),
     'projeler', JSON_OBJECT(
       'title', 'Projelerimiz - İnşaat Portföyü',
-      'description', 'Vista İnşaat tarafından tamamlanan ve devam eden konut, ticari ve endüstriyel inşaat projeleri portföyü.',
+      'description', 'Sultan Defense tarafından tamamlanan ve devam eden konut, ticari ve endüstriyel inşaat projeleri portföyü.',
       'og_image', '/uploads/logo/og.png',
       'no_index', false
     ),
@@ -37,43 +37,43 @@ VALUES (
     ),
     'galeri', JSON_OBJECT(
       'title', 'Galeri - İnşaat Proje Görselleri',
-      'description', 'Vista İnşaat projelerinden yapım süreci fotoğrafları, mimari detaylar ve tamamlanan uygulamalar.',
+      'description', 'Sultan Defense projelerinden yapım süreci fotoğrafları, mimari detaylar ve tamamlanan uygulamalar.',
       'og_image', '/uploads/logo/og.png',
       'no_index', false
     ),
     'haberler', JSON_OBJECT(
       'title', 'Haberler - Mimarlık ve İnşaat Haberleri',
-      'description', 'İnşaat sektörü haberleri, proje güncellemeleri ve Vista İnşaat blog yazıları.',
+      'description', 'İnşaat sektörü haberleri, proje güncellemeleri ve Sultan Defense blog yazıları.',
       'og_image', '/uploads/logo/og.png',
       'no_index', false
     ),
     'hakkimizda', JSON_OBJECT(
       'title', 'Hakkımızda',
-      'description', 'Vista İnşaat – Antalya merkezli, konut ve ticari projelerde uzmanlaşmış güvenilir inşaat ve mimarlık firması.',
+      'description', 'Sultan Defense – Antalya merkezli, konut ve ticari projelerde uzmanlaşmış güvenilir inşaat ve mimarlık firması.',
       'og_image', '/uploads/logo/og.png',
       'no_index', false
     ),
     'iletisim', JSON_OBJECT(
       'title', 'İletişim',
-      'description', 'Vista İnşaat ile iletişime geçin. Antalya ofisimiz, telefon, e-posta ve konum bilgileri.',
+      'description', 'Sultan Defense ile iletişime geçin. Antalya ofisimiz, telefon, e-posta ve konum bilgileri.',
       'og_image', '/uploads/logo/og.png',
       'no_index', false
     ),
     'teklif', JSON_OBJECT(
       'title', 'Teklif Al - Proje Değerlendirme',
-      'description', 'İnşaat projeniz için Vista İnşaat''tan ücretsiz teklif ve proje değerlendirmesi alın.',
+      'description', 'İnşaat projeniz için Sultan Defense''tan ücretsiz teklif ve proje değerlendirmesi alın.',
       'og_image', '/uploads/logo/og.png',
       'no_index', false
     ),
     'legal_privacy', JSON_OBJECT(
       'title', 'Gizlilik Politikası',
-      'description', 'Vista İnşaat ile paylaşılan iletişim, teklif ve teknik proje verilerinin nasıl ele alındığına dair özet bilgi.',
+      'description', 'Sultan Defense ile paylaşılan iletişim, teklif ve teknik proje verilerinin nasıl ele alındığına dair özet bilgi.',
       'og_image', '/uploads/logo/og.png',
       'no_index', false
     ),
     'legal_terms', JSON_OBJECT(
       'title', 'Kullanım Koşulları',
-      'description', 'Vista İnşaat web sitesi, teknik içerikler ve teklif iletişim kanallarının kullanımına dair genel koşullar.',
+      'description', 'Sultan Defense web sitesi, teknik içerikler ve teklif iletişim kanallarının kullanımına dair genel koşullar.',
       'og_image', '/uploads/logo/og.png',
       'no_index', false
     )
@@ -88,7 +88,7 @@ ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), `updated_at` = VALUES(`update
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES (
   UUID(),
-  'vistainsaat__seo_pages',
+  'sultandefense__seo_pages',
   'en',
   CAST(JSON_OBJECT(
     'home', JSON_OBJECT(

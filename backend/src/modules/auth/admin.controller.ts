@@ -12,7 +12,7 @@ import {
   notifications,
   type NotificationInsert,
 } from "@/modules/notifications/schema";
-import { sendVistaPasswordChangedMail } from "@/core/vista-mail";
+import { sendSultanPasswordChangedMail } from "@/core/sultan-mail";
 
 type UserRow = typeof users.$inferSelect;
 type RoleName = "admin" | "moderator" | "user";
@@ -296,10 +296,10 @@ export function makeAdminController(_app: FastifyInstance) {
           (u.full_name && u.full_name.length > 0
             ? u.full_name
             : targetEmail.split("@")[0]) || "Kullanıcı";
-        void sendVistaPasswordChangedMail({
+        void sendSultanPasswordChangedMail({
           to: targetEmail,
           user_name: userName,
-          site_name: "Vista İnşaat",
+          site_name: "Sultan Defense",
         }).catch((err) => {
           req.log?.error?.(
             err,

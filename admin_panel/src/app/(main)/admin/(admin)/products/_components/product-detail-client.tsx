@@ -457,7 +457,7 @@ export default function ProductDetailClient({ id, itemType }: Props) {
   const adminLocale = usePreferencesStore((s) => s.adminLocale);
   const isNew = id === 'new';
   const backUrl = itemType ? `/admin/products?type=${itemType}` : '/admin/products';
-  const isProject = itemType === 'vistainsaat';
+  const isProject = itemType === 'sultandefense';
 
   const { localeOptions } = useAdminLocales();
   const [activeLocale, setActiveLocale] = React.useState<string>(adminLocale || 'tr');
@@ -1203,7 +1203,7 @@ export default function ProductDetailClient({ id, itemType }: Props) {
                     {formData.meta_title || formData.title || 'Sayfa Başlığı'}
                   </p>
                   <p className="text-[#006621] text-xs truncate">
-                    vistainsaat.com/projeler/{formData.slug || 'proje-slug'}
+                    sultandefense.com/projeler/{formData.slug || 'proje-slug'}
                   </p>
                   <p className="text-[#545454] text-xs line-clamp-2 mt-0.5">
                     {formData.meta_description || 'Meta açıklama buraya gelecek...'}

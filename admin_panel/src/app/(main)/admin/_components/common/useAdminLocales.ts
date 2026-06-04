@@ -100,7 +100,7 @@ export type UseAdminLocalesResult = {
   fetching: boolean;
 };
 
-const DEFAULT_PREFIX = 'vistainsaat__';
+const DEFAULT_PREFIX = 'sultandefense__';
 
 export function useAdminLocales(settingPrefix?: string): UseAdminLocalesResult {
   const prefix = settingPrefix ?? DEFAULT_PREFIX;

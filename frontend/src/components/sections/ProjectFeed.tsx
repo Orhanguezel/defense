@@ -76,7 +76,7 @@ export function ProjectFeed({
     setLoading(true);
     try {
       const res = await fetch(
-        `${apiUrl}/products?item_type=vistainsaat&is_active=1&locale=${locale}&limit=${PAGE_SIZE}&offset=${page * PAGE_SIZE}`
+        `${apiUrl}/products?item_type=sultandefense&is_active=1&locale=${locale}&limit=${PAGE_SIZE}&offset=${page * PAGE_SIZE}`
       );
       if (!res.ok) { setHasMore(false); return; }
       const data = await res.json();

@@ -18,9 +18,9 @@ import {
 } from "./validation";
 import { env } from "@/core/env";
 import {
-  sendVistaPasswordChangedMail,
-  sendVistaWelcomeMail,
-} from "@/core/vista-mail";
+  sendSultanPasswordChangedMail,
+  sendSultanWelcomeMail,
+} from "@/core/sultan-mail";
 import {
   notifications,
   type NotificationInsert,
@@ -321,11 +321,11 @@ export function makeAuthController(app: FastifyInstance) {
 
       // ✅ Welcome mail (async, hata kritik değil)
       const userNameForMail = full_name || email.split("@")[0];
-      void sendVistaWelcomeMail({
+      void sendSultanWelcomeMail({
         to: email,
         user_name: userNameForMail,
         user_email: email,
-        site_name: "Vista İnşaat",
+        site_name: "Sultan Defense",
       }).catch((err) => {
         req.log?.error?.(err, "welcome_mail_failed");
       });
@@ -604,10 +604,10 @@ export function makeAuthController(app: FastifyInstance) {
       const targetEmail = u.email;
       if (targetEmail) {
         const nameFromEmail = targetEmail.split("@")[0];
-        void sendVistaPasswordChangedMail({
+        void sendSultanPasswordChangedMail({
           to: targetEmail,
           user_name: nameFromEmail,
-          site_name: "Vista İnşaat",
+          site_name: "Sultan Defense",
         }).catch((err) => {
           req.log.error({ err }, "password_change_mail_failed");
         });
@@ -754,10 +754,10 @@ export function makeAuthController(app: FastifyInstance) {
         const targetEmail = email ?? p.email;
         if (targetEmail) {
           const nameFromEmail = targetEmail.split("@")[0];
-          void sendVistaPasswordChangedMail({
+          void sendSultanPasswordChangedMail({
             to: targetEmail,
             user_name: nameFromEmail,
-            site_name: "Vista İnşaat",
+            site_name: "Sultan Defense",
           }).catch((err) => {
             req.log.error(
               { err },

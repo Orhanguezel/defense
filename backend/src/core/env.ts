@@ -90,7 +90,7 @@ export const env = {
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID ?? '',
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET ?? '',
 
-  PUBLIC_URL: process.env.PUBLIC_URL || 'https://www.vistainsaat.com',
+  PUBLIC_URL: process.env.PUBLIC_URL || 'https://www.sultandefense.com',
   FRONTEND_URL: FRONTEND_URL,
 
   // ✅ SMTP / Mail (sadece fallback; asıl değerler site_settings.smtp_* ile gelebilir)

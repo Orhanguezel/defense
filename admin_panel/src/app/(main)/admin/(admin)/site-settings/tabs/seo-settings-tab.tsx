@@ -264,12 +264,12 @@ export const SeoSettingsTab: React.FC<SeoSettingsTabProps> = ({ locale, settingP
                       <div className="rounded-md border bg-background p-4">
                         <div className="space-y-1">
                           <p className="text-xs text-muted-foreground truncate">
-                            www.vistainsaat.com › {locale}{cfg.path === '/' ? '' : cfg.path}
+                            www.sultandefense.com › {locale}{cfg.path === '/' ? '' : cfg.path}
                           </p>
                           <p className="text-sm font-medium text-[#1a0dab] truncate">
                             {page.title
-                              ? `${page.title} | Vista İnşaat`
-                              : 'Vista İnşaat'}
+                              ? `${page.title} | Sultan Defense`
+                              : 'Sultan Defense'}
                           </p>
                           <p className="text-xs text-muted-foreground line-clamp-2">
                             {page.description || 'Açıklama girilmemiş.'}
@@ -294,9 +294,9 @@ export const SeoSettingsTab: React.FC<SeoSettingsTabProps> = ({ locale, settingP
                           )}
                         </div>
                         <div className="p-3 space-y-0.5">
-                          <p className="text-[10px] text-muted-foreground uppercase">vistainsaat.com</p>
+                          <p className="text-[10px] text-muted-foreground uppercase">sultandefense.com</p>
                           <p className="text-sm font-medium truncate">
-                            {page.title ? `${page.title} | Vista İnşaat` : 'Vista İnşaat'}
+                            {page.title ? `${page.title} | Sultan Defense` : 'Sultan Defense'}
                           </p>
                           <p className="text-xs text-muted-foreground line-clamp-2">
                             {page.description || 'Açıklama girilmemiş.'}

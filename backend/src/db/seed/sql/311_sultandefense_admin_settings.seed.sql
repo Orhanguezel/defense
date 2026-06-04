@@ -1,6 +1,6 @@
 
 -- =============================================================
--- FILE: 041_admin_settings.sql (Vista İnşaat)
+-- FILE: 041_admin_settings.sql (Sultan Defense)
 -- Admin Panel UI Configurations (Theme, Layout, Page Meta)
 -- =============================================================
 
@@ -30,19 +30,19 @@ VALUES
       'content_layout', 'centered'
     ),
     'branding', JSON_OBJECT(
-      'app_name', 'Vista İnşaat Admin Panel',
-      'app_copyright', 'Vista İnşaat',
+      'app_name', 'Sultan Defense Admin Panel',
+      'app_copyright', 'Sultan Defense',
       'html_lang', 'tr',
       'theme_color', '#b8a98a',
       'favicon_16', '/favicon/favicon-16.png',
       'favicon_32', '/favicon/favicon-32.png',
       'apple_touch_icon', '/favicon/apple-touch-icon.png',
       'meta', JSON_OBJECT(
-        'title', 'Vista İnşaat Admin Panel',
-        'description', 'Vista İnşaat için ürün, galeri, teklif, blog ve site ayarlarını yöneten admin paneli.',
-        'og_url', 'https://www.vistainsaat.com',
-        'og_title', 'Vista İnşaat Admin Panel',
-        'og_description', 'Vista İnşaat projeleri için içerik, medya, teklif ve site ayarı yönetim ekranı.',
+        'title', 'Sultan Defense Admin Panel',
+        'description', 'Sultan Defense için ürün, galeri, teklif, blog ve site ayarlarını yöneten admin paneli.',
+        'og_url', 'https://www.sultandefense.com',
+        'og_title', 'Sultan Defense Admin Panel',
+        'og_description', 'Sultan Defense projeleri için içerik, medya, teklif ve site ayarı yönetim ekranı.',
         'og_image', '/logo/png/vista_logo_512.png',
         'twitter_card', 'summary_large_image'
       )
@@ -75,7 +75,7 @@ VALUES
     ),
     'products', JSON_OBJECT(
       'title', 'Projeler',
-      'description', 'Vista İnşaat projeleri'
+      'description', 'Sultan Defense projeleri'
     ),
     'gallery', JSON_OBJECT(
       'title', 'Galeri',

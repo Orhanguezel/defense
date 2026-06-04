@@ -26,7 +26,7 @@ export const services = mysqlTable(
   {
     id: char('id', { length: 36 }).primaryKey().notNull(),
 
-    module_key: varchar('module_key', { length: 50 }).notNull().default('vistainsaat'),
+    module_key: varchar('module_key', { length: 50 }).notNull().default('sultandefense'),
     category_id: char('category_id', { length: 36 }),
 
     is_active: tinyint('is_active').notNull().default(1).$type<boolean>(),

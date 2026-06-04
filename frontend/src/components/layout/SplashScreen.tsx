@@ -6,7 +6,7 @@ import Image from 'next/image';
 export function SplashScreen({ companyName, tagline }: { companyName?: string; tagline?: string }) {
   const [phase, setPhase] = useState<'loading' | 'reveal' | 'exit' | 'done'>('loading');
 
-  const finalName = companyName || 'Vista İnşaat';
+  const finalName = companyName || 'Sultan Defense';
   const finalTagline = tagline || 'İnşaat & Mimarlık';
 
   const startSequence = useCallback(() => {

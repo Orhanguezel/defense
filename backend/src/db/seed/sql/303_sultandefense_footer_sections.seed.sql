@@ -1,7 +1,7 @@
 -- =============================================================
 -- FILE: 303_kompozit_footer_sections.seed.sql
--- Vista İnşaat — footer sections (TR/EN)
--- site_id = 'vistainsaat'
+-- Sultan Defense — footer sections (TR/EN)
+-- site_id = 'sultandefense'
 -- =============================================================
 
 SET NAMES utf8mb4;
@@ -17,11 +17,11 @@ INSERT INTO `footer_sections`
 (`id`, `site_id`, `is_active`, `display_order`, `created_at`, `updated_at`)
 VALUES
 -- Hızlı Erişim
-('ee010001-4001-4001-8001-ee0000000001', 'vistainsaat', 1, 0, NOW(3), NOW(3)),
+('ee010001-4001-4001-8001-ee0000000001', 'sultandefense', 1, 0, NOW(3), NOW(3)),
 -- Yasal
-('ee010002-4002-4002-8002-ee0000000002', 'vistainsaat', 1, 1, NOW(3), NOW(3)),
+('ee010002-4002-4002-8002-ee0000000002', 'sultandefense', 1, 1, NOW(3), NOW(3)),
 -- Sosyal
-('ee010003-4003-4003-8003-ee0000000003', 'vistainsaat', 1, 2, NOW(3), NOW(3))
+('ee010003-4003-4003-8003-ee0000000003', 'sultandefense', 1, 2, NOW(3), NOW(3))
 ON DUPLICATE KEY UPDATE
   `site_id`       = VALUES(`site_id`),
   `is_active`     = VALUES(`is_active`),

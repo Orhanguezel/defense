@@ -3,7 +3,7 @@
 // Ürün Admin Tipleri — backend products + product_i18n schema ile uyumlu
 // =============================================================
 
-export type ProductItemType = 'product' | 'sparepart' | 'vistainsaat';
+export type ProductItemType = 'product' | 'sparepart' | 'sultandefense';
 
 export interface AdminProductDto {
   id: string;

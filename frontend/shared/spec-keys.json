@@ -1,0 +1,149 @@
+{
+  "project": [
+    {
+      "id": "type",
+      "keys": { "tr": "tip", "en": "type", "de": "typ" },
+      "labels": { "tr": "Kategori", "en": "Category", "de": "Kategorie" }
+    },
+    {
+      "id": "solutions",
+      "keys": { "tr": "çözümler", "en": "solutions", "de": "loesungen" },
+      "labels": { "tr": "Çözümler", "en": "Solutions", "de": "Loesungen" }
+    },
+    {
+      "id": "standards",
+      "keys": { "tr": "standartlar", "en": "standards", "de": "standards" },
+      "labels": { "tr": "Standartlar", "en": "Standards", "de": "Standards" }
+    },
+    {
+      "id": "regions",
+      "keys": { "tr": "bölgeler", "en": "regions", "de": "regionen" },
+      "labels": { "tr": "Bölgeler", "en": "Regions", "de": "Regionen" }
+    },
+    {
+      "id": "manufacturers",
+      "keys": { "tr": "üreticiler", "en": "manufacturers", "de": "hersteller" },
+      "labels": { "tr": "Üreticiler", "en": "Manufacturers", "de": "Hersteller" }
+    },
+    {
+      "id": "deployment",
+      "keys": { "tr": "kurulum", "en": "deployment", "de": "bereitstellung" },
+      "labels": { "tr": "Kurulum", "en": "Deployment", "de": "Bereitstellung" }
+    },
+    {
+      "id": "use_case",
+      "keys": { "tr": "kullanım", "en": "use_case", "de": "einsatz" },
+      "labels": { "tr": "Kullanım", "en": "Use Case", "de": "Einsatz" }
+    },
+    {
+      "id": "mission",
+      "keys": { "tr": "görev", "en": "mission", "de": "mission" },
+      "labels": { "tr": "Görev", "en": "Mission", "de": "Mission" }
+    },
+    {
+      "id": "environment",
+      "keys": { "tr": "ortam", "en": "environment", "de": "umgebung" },
+      "labels": { "tr": "Ortam", "en": "Environment", "de": "Umgebung" }
+    },
+    {
+      "id": "users",
+      "keys": { "tr": "kullanıcılar", "en": "users", "de": "nutzer" },
+      "labels": { "tr": "Kullanıcılar", "en": "Users", "de": "Nutzer" }
+    },
+    {
+      "id": "capability",
+      "keys": { "tr": "kabiliyet", "en": "capability", "de": "faehigkeit" },
+      "labels": { "tr": "Kabiliyet", "en": "Capability", "de": "Faehigkeit" }
+    },
+    {
+      "id": "benefit",
+      "keys": { "tr": "fayda", "en": "benefit", "de": "nutzen" },
+      "labels": { "tr": "Fayda", "en": "Benefit", "de": "Nutzen" }
+    },
+    {
+      "id": "location",
+      "keys": { "tr": "konum", "en": "location", "de": "standort" },
+      "labels": { "tr": "Konum", "en": "Location", "de": "Standort" }
+    },
+    {
+      "id": "area",
+      "keys": { "tr": "alan", "en": "area", "de": "flaeche" },
+      "labels": { "tr": "Alan", "en": "Area", "de": "Flaeche" }
+    },
+    {
+      "id": "year",
+      "keys": { "tr": "yıl", "en": "year", "de": "jahr" },
+      "labels": { "tr": "Yıl", "en": "Year", "de": "Jahr" }
+    },
+    {
+      "id": "status",
+      "keys": { "tr": "durum", "en": "status", "de": "status" },
+      "labels": { "tr": "Durum", "en": "Status", "de": "Status" }
+    },
+    {
+      "id": "materials",
+      "keys": { "tr": "malzemeler", "en": "materials", "de": "materialien" },
+      "labels": { "tr": "Malzemeler", "en": "Materials", "de": "Materialien" }
+    },
+    {
+      "id": "floors",
+      "keys": { "tr": "kat", "en": "floors", "de": "etagen" },
+      "labels": { "tr": "Kat", "en": "Floors", "de": "Etagen" }
+    },
+    {
+      "id": "client",
+      "keys": { "tr": "müşteri", "en": "client", "de": "kunde" },
+      "labels": { "tr": "Müşteri", "en": "Client", "de": "Kunde" }
+    },
+    {
+      "id": "contractor",
+      "keys": { "tr": "yüklenici", "en": "contractor", "de": "auftragnehmer" },
+      "labels": { "tr": "Yüklenici", "en": "Contractor", "de": "Auftragnehmer" }
+    },
+    {
+      "id": "architects",
+      "keys": { "tr": "mimarlar", "en": "architects", "de": "architekten" },
+      "labels": { "tr": "Mimarlar", "en": "Architects", "de": "Architekten" }
+    },
+    {
+      "id": "lead_architect",
+      "keys": { "tr": "baş_mimar", "en": "lead_architect", "de": "leitender_architekt" },
+      "labels": { "tr": "Baş Mimar", "en": "Lead Architect", "de": "Leitender Architekt" }
+    },
+    {
+      "id": "project_team",
+      "keys": { "tr": "proje_ekibi", "en": "project_team", "de": "projektteam" },
+      "labels": { "tr": "Proje Ekibi", "en": "Project Team", "de": "Projektteam" }
+    },
+    {
+      "id": "landscape_architecture",
+      "keys": { "tr": "peyzaj_mimarisi", "en": "landscape_architecture", "de": "landschaftsarchitektur" },
+      "labels": { "tr": "Peyzaj Mimarlığı", "en": "Landscape Architecture", "de": "Landschaftsarchitektur" }
+    },
+    {
+      "id": "interior_design",
+      "keys": { "tr": "iç_mimari", "en": "interior_design", "de": "innenarchitektur" },
+      "labels": { "tr": "İç Mimari", "en": "Interior Design", "de": "Innenarchitektur" }
+    },
+    {
+      "id": "engineering",
+      "keys": { "tr": "mühendislik", "en": "engineering", "de": "technik" },
+      "labels": { "tr": "Mühendislik", "en": "Engineering", "de": "Technik" }
+    },
+    {
+      "id": "general_construction",
+      "keys": { "tr": "genel_inşaat", "en": "general_construction", "de": "generalbau" },
+      "labels": { "tr": "Genel İnşaat", "en": "General Construction", "de": "Generalbau" }
+    },
+    {
+      "id": "city",
+      "keys": { "tr": "şehir", "en": "city", "de": "stadt" },
+      "labels": { "tr": "Şehir", "en": "City", "de": "Stadt" }
+    },
+    {
+      "id": "country",
+      "keys": { "tr": "ülke", "en": "country", "de": "land" },
+      "labels": { "tr": "Ülke", "en": "Country", "de": "Land" }
+    }
+  ]
+}

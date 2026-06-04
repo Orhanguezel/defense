@@ -13,7 +13,7 @@ export const ASSETS_URL =
   process.env.NEXT_PUBLIC_ASSETS_URL ?? API_BASE_URL.replace(/\/api$/, '');
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.vistainsaat.com';
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.sultandefense.com';
 
 export function absoluteAssetUrl(value?: string | null): string | null {
   if (!value) return null;

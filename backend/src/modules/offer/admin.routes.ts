@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/offer/admin.routes.ts
-// Vista İnşaat – Offer Module Admin Routes
+// Sultan Defense – Offer Module Admin Routes
 //   - Auth + Admin guard
 // =============================================================
 
@@ -18,7 +18,7 @@ import {
   sendOfferEmailAdmin,
   sendOfferAdmin,
 } from "./admin.controller";
-import { sendVistaMail } from "@/core/vista-mail";
+import { sendSultanMail } from "@/core/sultan-mail";
 import { getOfferById } from "./repository";
 import { sendTemplatedEmail } from "@/modules/email-templates/mailer";
 
@@ -116,7 +116,7 @@ export async function registerOfferAdmin(app: FastifyInstance) {
         gross_total: offer.gross_total != null ? formatPrice(offer.gross_total) : '-',
         valid_until: offer.valid_until ? new Date(offer.valid_until).toLocaleDateString('tr-TR') : '-',
         pdf_url: offer.pdf_url || '',
-        site_name: 'Vista İnşaat',
+        site_name: 'Sultan Defense',
       };
 
       try {
@@ -131,11 +131,11 @@ export async function registerOfferAdmin(app: FastifyInstance) {
         return reply.send({ ok: true, message: `Teklif e-postası ${to} adresine gönderildi (şablon: ${templateKey})` });
       } catch (templateErr: any) {
         // Template bulunamazsa fallback inline HTML
-        const fallbackSubject = body?.subject || `Vista İnşaat — Teklif ${offer.offer_no || ''}`;
+        const fallbackSubject = body?.subject || `Sultan Defense — Teklif ${offer.offer_no || ''}`;
         const customMessage = body?.message || '';
 
         const html = `<div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;color:#1e1c1a">
-          <div style="background:#b8a98a;padding:20px;text-align:center"><h1 style="color:#fff;margin:0;font-size:22px">Vista İnşaat</h1></div>
+          <div style="background:#b8a98a;padding:20px;text-align:center"><h1 style="color:#fff;margin:0;font-size:22px">Sultan Defense</h1></div>
           <div style="padding:24px;background:#fafaf8;border:1px solid #e8e4de">
             <h2 style="margin-top:0">Teklif Bilgileri</h2>
             ${customMessage ? `<p style="background:#f0ede8;padding:12px;border-radius:6px">${customMessage.replace(/\n/g, '<br>')}</p>` : ''}
@@ -146,11 +146,11 @@ export async function registerOfferAdmin(app: FastifyInstance) {
             </table>
             ${offer.pdf_url ? `<p><a href="${offer.pdf_url}" style="background:#b8a98a;color:#fff;padding:10px 20px;text-decoration:none;border-radius:6px;display:inline-block">PDF Teklif</a></p>` : ''}
           </div>
-          <div style="padding:12px;text-align:center;color:#999;font-size:11px">Vista İnşaat | info@vistainsaat.com</div>
+          <div style="padding:12px;text-align:center;color:#999;font-size:11px">Sultan Defense | info@sultandefense.com</div>
         </div>`;
 
         try {
-          await sendVistaMail({ to, subject: fallbackSubject, html });
+          await sendSultanMail({ to, subject: fallbackSubject, html });
           return reply.send({ ok: true, message: `Teklif e-postası ${to} adresine gönderildi (fallback)` });
         } catch (err: any) {
           return reply.code(500).send({ error: { message: err.message || 'E-posta gönderilemedi' } });

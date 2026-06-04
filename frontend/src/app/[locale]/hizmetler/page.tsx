@@ -14,7 +14,7 @@ import { SeoIssueBeacon } from '@/components/monitoring/SeoIssueBeacon';
 async function fetchServices(locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/services?module_key=vistainsaat&is_active=1&locale=${locale}&limit=50`,
+      `${API_BASE_URL}/services?module_key=sultandefense&is_active=1&locale=${locale}&limit=50`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -62,7 +62,7 @@ export default async function ServicesPage({
   ]);
 
   const companyProfile = (profile?.value as any) ?? {};
-  const companyName = companyProfile.company_name || 'Vista İnşaat';
+  const companyName = companyProfile.company_name || 'Sultan Defense';
 
   const visibleServices = services;
   const featured = visibleServices[0];

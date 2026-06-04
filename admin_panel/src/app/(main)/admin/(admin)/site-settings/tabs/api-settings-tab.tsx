@@ -64,7 +64,7 @@ const SECTIONS: { title: string; fields: FieldDef[]; testEndpoint?: string }[] =
       { key: 'cloudinary_cloud_name', label: 'Cloud Name' },
       { key: 'cloudinary_api_key', label: 'API Key' },
       { key: 'cloudinary_api_secret', label: 'API Secret', type: 'password' },
-      { key: 'cloudinary_folder', label: 'Klasör', placeholder: 'uploads/vistainsaat' },
+      { key: 'cloudinary_folder', label: 'Klasör', placeholder: 'uploads/sultandefense' },
       { key: 'cloudinary_unsigned_preset', label: 'Unsigned Preset' },
     ],
   },

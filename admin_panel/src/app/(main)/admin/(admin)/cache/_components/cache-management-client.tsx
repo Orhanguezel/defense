@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
-const FRONTEND_URL = process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://www.vistainsaat.com';
+const FRONTEND_URL = process.env.NEXT_PUBLIC_FRONTEND_URL || 'https://www.sultandefense.com';
 const REVALIDATE_SECRET = process.env.NEXT_PUBLIC_REVALIDATE_SECRET || 'vista-revalidate-2026';
 
 async function revalidate(opts: { all?: boolean; path?: string }) {

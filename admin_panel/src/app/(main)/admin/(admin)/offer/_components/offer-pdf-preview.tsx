@@ -51,7 +51,7 @@ function getFileBase(): string {
     return String(window.location.origin || '').trim().replace(/\/+$/, '');
   }
 
-  return 'https://www.vistainsaat.com';
+  return 'https://www.sultandefense.com';
 }
 
 function normalizePdfPath(pdfUrl: string): string {

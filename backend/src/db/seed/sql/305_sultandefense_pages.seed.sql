@@ -1,7 +1,7 @@
 -- =============================================================
 -- FILE: 305_vistainsaat_pages.seed.sql
--- Vista İnşaat — Kurumsal + Yasal custom page içerikleri
--- module_key = 'vistainsaat_about' | 'vistainsaat_legal'
+-- Sultan Defense — Kurumsal + Yasal custom page içerikleri
+-- module_key = 'sultandefense_about' | 'sultandefense_legal'
 -- =============================================================
 
 SET NAMES utf8mb4;
@@ -28,11 +28,11 @@ INSERT INTO `custom_pages`
   `sub_category_id`
 )
 VALUES
-  ('bc010001-5001-4001-9001-cccccccc0001', 'vistainsaat_about', 1, 0, 10, 10, '/uploads/projects/vista-insaat-proje-01.jpeg', NULL, '/uploads/projects/vista-insaat-proje-01.jpeg', NULL, '[]', '[]', NULL, NULL),
-  ('bc010002-5002-4002-9002-cccccccc0002', 'vistainsaat_legal', 1, 0, 20, 20, NULL, NULL, NULL, NULL, '[]', '[]', NULL, NULL),
-  ('bc010003-5003-4003-9003-cccccccc0003', 'vistainsaat_legal', 1, 0, 30, 30, NULL, NULL, NULL, NULL, '[]', '[]', NULL, NULL),
-  ('bc010004-5004-4004-9004-cccccccc0004', 'vistainsaat_legal', 1, 0, 40, 40, NULL, NULL, NULL, NULL, '[]', '[]', NULL, NULL),
-  ('bc010005-5005-4005-9005-cccccccc0005', 'vistainsaat_legal', 1, 0, 50, 50, NULL, NULL, NULL, NULL, '[]', '[]', NULL, NULL)
+  ('bc010001-5001-4001-9001-cccccccc0001', 'sultandefense_about', 1, 0, 10, 10, '/uploads/projects/vista-insaat-proje-01.jpeg', NULL, '/uploads/projects/vista-insaat-proje-01.jpeg', NULL, '[]', '[]', NULL, NULL),
+  ('bc010002-5002-4002-9002-cccccccc0002', 'sultandefense_legal', 1, 0, 20, 20, NULL, NULL, NULL, NULL, '[]', '[]', NULL, NULL),
+  ('bc010003-5003-4003-9003-cccccccc0003', 'sultandefense_legal', 1, 0, 30, 30, NULL, NULL, NULL, NULL, '[]', '[]', NULL, NULL),
+  ('bc010004-5004-4004-9004-cccccccc0004', 'sultandefense_legal', 1, 0, 40, 40, NULL, NULL, NULL, NULL, '[]', '[]', NULL, NULL),
+  ('bc010005-5005-4005-9005-cccccccc0005', 'sultandefense_legal', 1, 0, 50, 50, NULL, NULL, NULL, NULL, '[]', '[]', NULL, NULL)
 ON DUPLICATE KEY UPDATE
   `module_key` = VALUES(`module_key`),
   `is_published` = VALUES(`is_published`),
@@ -62,10 +62,10 @@ VALUES
     'tr',
     'Hakkımızda',
     'about',
-    JSON_OBJECT('html', '<p>Vista İnşaat, konut, ticari ve karma kullanımlı yapı projelerinde tasarımdan teslimata kadar kapsamlı inşaat ve mimarlık hizmetleri sunan güvenilir bir çözüm ortağıdır. 15 yılı aşkın sektör deneyimiyle, her projeyi kalite, estetik ve zamanında teslim ilkeleriyle yönetiyoruz.</p><h2>Nasıl Çalışıyoruz?</h2><p>Her projeyi; arazi koşulları, yapısal gereksinimler, bütçe ve termin beklentileri ekseninde değerlendiriyoruz. Fizibilite çalışmasından mimari tasarıma, ruhsat süreçlerinden sahada uygulamaya kadar tüm aşamaları tek çatı altında yönetiyoruz. Şeffaf iletişim ve düzenli ilerleme raporlaması, iş süreçlerimizin temelini oluşturur.</p><h2>Uzmanlık Alanlarımız</h2><ul><li>Konut projeleri: villa, apartman, rezidans ve toplu konut inşaatı</li><li>Ticari projeler: ofis binaları, alışveriş merkezleri ve otel yapıları</li><li>Restorasyon ve güçlendirme: tarihi yapı restorasyonu, depreme karşı bina güçlendirme</li><li>Proje yönetimi: fizibiliteden teslimata profesyonel süreç yönetimi</li><li>Mimari tasarım: 3D modelleme, BIM teknolojisi ve sürdürülebilir tasarım</li><li>İç mimari ve dekorasyon: konut ve ticari mekanlar için özel tasarım çözümleri</li></ul><h2>Değerlerimiz</h2><p>Kalite standartlarına tam uyum, malzeme seçiminden işçiliğe her aşamada titizlik, depreme dayanıklı yapı teknolojileri ve enerji verimli çözümler temel değerlerimizdir. Müşteri memnuniyeti odaklı yaklaşımımızla, her projeyi özenle planlıyor ve uyguluyoruz.</p><h2>Ekibimiz</h2><p>Deneyimli mimar, inşaat mühendisi ve proje yöneticilerinden oluşan kadromuz, her projeye özgün çözümler üretir. Sahada güçlü uygulama ekibimiz ve güvenilir tedarikçi ağımızla projelerinizi zamanında ve eksiksiz teslim ediyoruz.</p><p>Vista İnşaat olarak, teknik bilgiyi uygulama disipliniyle birleştiren, müşterileriyle aynı dili konuşan ve sonuç odaklı bir inşaat partneri olmayı hedefliyoruz.</p>'),
-    'Vista İnşaat, konut ve ticari projelerde tasarımdan teslimata güvenilir inşaat ve mimarlık hizmetleri sunar.',
-    'Hakkımızda | Vista İnşaat',
-    'Vista İnşaat hakkında: 15+ yıllık deneyimle konut, ticari ve karma kullanım projelerinde güvenilir inşaat ve mimarlık hizmetleri.',
+    JSON_OBJECT('html', '<p>Sultan Defense, konut, ticari ve karma kullanımlı yapı projelerinde tasarımdan teslimata kadar kapsamlı inşaat ve mimarlık hizmetleri sunan güvenilir bir çözüm ortağıdır. 15 yılı aşkın sektör deneyimiyle, her projeyi kalite, estetik ve zamanında teslim ilkeleriyle yönetiyoruz.</p><h2>Nasıl Çalışıyoruz?</h2><p>Her projeyi; arazi koşulları, yapısal gereksinimler, bütçe ve termin beklentileri ekseninde değerlendiriyoruz. Fizibilite çalışmasından mimari tasarıma, ruhsat süreçlerinden sahada uygulamaya kadar tüm aşamaları tek çatı altında yönetiyoruz. Şeffaf iletişim ve düzenli ilerleme raporlaması, iş süreçlerimizin temelini oluşturur.</p><h2>Uzmanlık Alanlarımız</h2><ul><li>Konut projeleri: villa, apartman, rezidans ve toplu konut inşaatı</li><li>Ticari projeler: ofis binaları, alışveriş merkezleri ve otel yapıları</li><li>Restorasyon ve güçlendirme: tarihi yapı restorasyonu, depreme karşı bina güçlendirme</li><li>Proje yönetimi: fizibiliteden teslimata profesyonel süreç yönetimi</li><li>Mimari tasarım: 3D modelleme, BIM teknolojisi ve sürdürülebilir tasarım</li><li>İç mimari ve dekorasyon: konut ve ticari mekanlar için özel tasarım çözümleri</li></ul><h2>Değerlerimiz</h2><p>Kalite standartlarına tam uyum, malzeme seçiminden işçiliğe her aşamada titizlik, depreme dayanıklı yapı teknolojileri ve enerji verimli çözümler temel değerlerimizdir. Müşteri memnuniyeti odaklı yaklaşımımızla, her projeyi özenle planlıyor ve uyguluyoruz.</p><h2>Ekibimiz</h2><p>Deneyimli mimar, inşaat mühendisi ve proje yöneticilerinden oluşan kadromuz, her projeye özgün çözümler üretir. Sahada güçlü uygulama ekibimiz ve güvenilir tedarikçi ağımızla projelerinizi zamanında ve eksiksiz teslim ediyoruz.</p><p>Sultan Defense olarak, teknik bilgiyi uygulama disipliniyle birleştiren, müşterileriyle aynı dili konuşan ve sonuç odaklı bir inşaat partneri olmayı hedefliyoruz.</p>'),
+    'Sultan Defense, konut ve ticari projelerde tasarımdan teslimata güvenilir inşaat ve mimarlık hizmetleri sunar.',
+    'Hakkımızda | Sultan Defense',
+    'Sultan Defense hakkında: 15+ yıllık deneyimle konut, ticari ve karma kullanım projelerinde güvenilir inşaat ve mimarlık hizmetleri.',
     'vista inşaat, hakkımızda, inşaat firması, mimarlık, konut projeleri, ticari inşaat'
   ),
   (
@@ -74,10 +74,10 @@ VALUES
     'tr',
     'Gizlilik Politikası',
     'privacy',
-    JSON_OBJECT('html', '<p>Vista İnşaat olarak web sitesi üzerinden iletilen kişisel verilerin gizliliğini önemsiyoruz. İletişim ve teklif formlarında paylaşılan bilgiler yalnızca talep yönetimi, geri dönüş sağlama ve müşteri ilişkileri süreçleri için kullanılır.</p><h2>Toplanan Veriler</h2><ul><li>Ad soyad ve firma bilgisi</li><li>E-posta adresi ve telefon numarası</li><li>Talep içeriği, teknik dosya ve ek açıklamalar</li><li>Temel ziyaret ve performans kayıtları</li></ul><h2>Verilerin Kullanımı</h2><p>Toplanan veriler izinsiz üçüncü taraflarla pazarlama amacıyla paylaşılmaz. Yasal yükümlülükler veya açık rıza halleri dışında veri aktarımı yapılmaz.</p><h2>Haklar</h2><p>İlgili kişiler, veri işlenip işlenmediğini öğrenme, düzeltme, silme ve itiraz etme haklarına sahiptir. Taleplerinizi iletişim kanallarımız üzerinden iletebilirsiniz.</p>'),
-    'Vista İnşaat kişisel veri işleme ve gizlilik esasları.',
-    'Gizlilik Politikası | Vista İnşaat',
-    'Vista İnşaat web sitesi gizlilik politikası ve kişisel veri işleme esasları.',
+    JSON_OBJECT('html', '<p>Sultan Defense olarak web sitesi üzerinden iletilen kişisel verilerin gizliliğini önemsiyoruz. İletişim ve teklif formlarında paylaşılan bilgiler yalnızca talep yönetimi, geri dönüş sağlama ve müşteri ilişkileri süreçleri için kullanılır.</p><h2>Toplanan Veriler</h2><ul><li>Ad soyad ve firma bilgisi</li><li>E-posta adresi ve telefon numarası</li><li>Talep içeriği, teknik dosya ve ek açıklamalar</li><li>Temel ziyaret ve performans kayıtları</li></ul><h2>Verilerin Kullanımı</h2><p>Toplanan veriler izinsiz üçüncü taraflarla pazarlama amacıyla paylaşılmaz. Yasal yükümlülükler veya açık rıza halleri dışında veri aktarımı yapılmaz.</p><h2>Haklar</h2><p>İlgili kişiler, veri işlenip işlenmediğini öğrenme, düzeltme, silme ve itiraz etme haklarına sahiptir. Taleplerinizi iletişim kanallarımız üzerinden iletebilirsiniz.</p>'),
+    'Sultan Defense kişisel veri işleme ve gizlilik esasları.',
+    'Gizlilik Politikası | Sultan Defense',
+    'Sultan Defense web sitesi gizlilik politikası ve kişisel veri işleme esasları.',
     'gizlilik politikası, kişisel veri, vista inşaat'
   ),
   (
@@ -87,9 +87,9 @@ VALUES
     'Kullanım Koşulları',
     'terms',
     JSON_OBJECT('html', '<p>Bu web sitesini kullanan her ziyaretçi aşağıdaki kullanım koşullarını kabul etmiş sayılır. Sitede yer alan içerik, görsel ve teknik açıklamalar bilgilendirme amacı taşır; nihai teknik şartname yerine geçmez.</p><h2>İçerik Kullanımı</h2><p>Metin, görsel ve marka öğeleri izinsiz olarak kopyalanamaz, çoğaltılamaz veya ticari amaçla kullanılamaz.</p><h2>Sorumluluk Sınırı</h2><p>Web sitesindeki içerik güncel tutulmaya çalışılır; ancak projeye özel teknik doğrulama yapılmadan yalnızca site içeriğine dayanılarak karar verilmemelidir.</p><h2>Bağlantılar</h2><p>Harici bağlantılar bilgi amaçlıdır. Üçüncü taraf içeriklerinden doğacak sorumluluk ilgili yayıncılara aittir.</p>'),
-    'Vista İnşaat web sitesi kullanım koşulları ve sorumluluk sınırları.',
-    'Kullanım Koşulları | Vista İnşaat',
-    'Vista İnşaat web sitesi kullanım koşulları, içerik hakları ve sorumluluk sınırları.',
+    'Sultan Defense web sitesi kullanım koşulları ve sorumluluk sınırları.',
+    'Kullanım Koşulları | Sultan Defense',
+    'Sultan Defense web sitesi kullanım koşulları, içerik hakları ve sorumluluk sınırları.',
     'kullanım koşulları, vista inşaat, web sitesi şartları'
   ),
   (
@@ -98,10 +98,10 @@ VALUES
     'tr',
     'KVKK Aydınlatma Metni',
     'kvkk-aydinlatma-metni',
-    JSON_OBJECT('html', '<p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında veri sorumlusu sıfatıyla, Vista İnşaat tarafından işlenen kişisel verilere ilişkin aydınlatma bu metin ile yapılmaktadır.</p><h2>İşleme Amaçları</h2><ul><li>Teklif ve iletişim taleplerinin yönetimi</li><li>Satış ve satış sonrası süreçlerin yürütülmesi</li><li>Hizmet kalitesinin geliştirilmesi</li><li>Yasal yükümlülüklerin yerine getirilmesi</li></ul><h2>Toplama Yöntemi</h2><p>Kişisel veriler web formları, e-posta, telefon ve fiziksel evrak üzerinden toplanabilir.</p><h2>Başvuru</h2><p>KVKK kapsamındaki taleplerinizi kayıtlı iletişim kanalları üzerinden yazılı olarak iletebilirsiniz.</p>'),
+    JSON_OBJECT('html', '<p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında veri sorumlusu sıfatıyla, Sultan Defense tarafından işlenen kişisel verilere ilişkin aydınlatma bu metin ile yapılmaktadır.</p><h2>İşleme Amaçları</h2><ul><li>Teklif ve iletişim taleplerinin yönetimi</li><li>Satış ve satış sonrası süreçlerin yürütülmesi</li><li>Hizmet kalitesinin geliştirilmesi</li><li>Yasal yükümlülüklerin yerine getirilmesi</li></ul><h2>Toplama Yöntemi</h2><p>Kişisel veriler web formları, e-posta, telefon ve fiziksel evrak üzerinden toplanabilir.</p><h2>Başvuru</h2><p>KVKK kapsamındaki taleplerinizi kayıtlı iletişim kanalları üzerinden yazılı olarak iletebilirsiniz.</p>'),
     'KVKK kapsamında kişisel veri işleme ve başvuru esasları.',
-    'KVKK Aydınlatma Metni | Vista İnşaat',
-    'Vista İnşaat KVKK aydınlatma metni, veri işleme amaçları ve başvuru esasları.',
+    'KVKK Aydınlatma Metni | Sultan Defense',
+    'Sultan Defense KVKK aydınlatma metni, veri işleme amaçları ve başvuru esasları.',
     'kvkk, aydınlatma metni, kişisel veri'
   ),
   (
@@ -111,9 +111,9 @@ VALUES
     'Çerez Politikası',
     'cookies',
     JSON_OBJECT('html', '<p>Bu web sitesinde kullanıcı deneyimini iyileştirmek, temel performans ölçümleri almak ve teknik sorunları tespit etmek amacıyla çerezler kullanılabilir.</p><h2>Çerez Türleri</h2><ul><li>Zorunlu çerezler</li><li>Tercih çerezleri</li><li>Analitik ve performans çerezleri</li></ul><h2>Yönetim</h2><p>Tarayıcı ayarlarınız üzerinden çerez tercihlerinizi değiştirebilir veya mevcut çerezleri silebilirsiniz. Bazı çerezlerin devre dışı bırakılması site fonksiyonlarını etkileyebilir.</p>'),
-    'Vista İnşaat web sitesi çerez kullanımı ve tercih yönetimi bilgileri.',
-    'Çerez Politikası | Vista İnşaat',
-    'Vista İnşaat web sitesi çerez politikası, çerez türleri ve tercih yönetimi bilgileri.',
+    'Sultan Defense web sitesi çerez kullanımı ve tercih yönetimi bilgileri.',
+    'Çerez Politikası | Sultan Defense',
+    'Sultan Defense web sitesi çerez politikası, çerez türleri ve tercih yönetimi bilgileri.',
     'çerez politikası, cookies, web sitesi tercihleri'
   ),
   (

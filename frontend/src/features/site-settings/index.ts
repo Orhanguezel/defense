@@ -10,7 +10,7 @@ export const siteSettingsService = {
   getByKey: async (key: string, locale?: string): Promise<SiteSetting | null> => {
     try {
       const res = await api.get(`/site_settings/${encodeURIComponent(key)}`, {
-        params: { locale, prefix: 'vistainsaat__' },
+        params: { locale, prefix: 'sultandefense__' },
       });
       return res.data;
     } catch {

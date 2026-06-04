@@ -118,7 +118,7 @@ export const createServiceAdmin: RouteHandler = async (req, reply) => {
 
     await db.insert(services).values({
       id,
-      module_key: input.module_key || 'vistainsaat',
+      module_key: input.module_key || 'sultandefense',
       is_active: input.is_active !== undefined ? toBool(input.is_active) : 1,
       is_featured: input.is_featured !== undefined ? toBool(input.is_featured) : 0,
       display_order: input.display_order ?? 0,

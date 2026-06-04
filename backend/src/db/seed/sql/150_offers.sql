@@ -1,6 +1,6 @@
 -- =============================================================
 -- FILE: 150_offers.sql  (FINAL / DRIZZLE-ALIGNED)
--- Vista İnşaat – Offers Schema (offers + offer_number_counters)
+-- Sultan Defense – Offers Schema (offers + offer_number_counters)
 -- - Drizzle schema ile %100 uyumlu
 -- - product_id FK → products(id) ON DELETE SET NULL
 -- - service_id FK → services(id) ON DELETE SET NULL
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
 
 -- -------------------------------------------------------------
 -- 2) offer_number_counters (Sequence table)
---    - Yıl bazlı teklif numarası sayacı (VIS-YYYY-XXXX)
+--    - Yıl bazlı teklif numarası sayacı (SD-YYYY-XXXX)
 -- -------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `offer_number_counters` (
   `year`     INT          NOT NULL,

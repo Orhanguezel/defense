@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/offer/admin.controller.ts
-// Vista İnşaat – Offer Module Admin Controller
+// Sultan Defense – Offer Module Admin Controller
 //   - LIST / GET / CREATE / UPDATE / DELETE
 //   - SEND: PDF üret + mail + notification (service.ts hook)
 // =============================================================
@@ -131,7 +131,7 @@ export const createOfferAdmin: RouteHandler = async (req, reply) => {
   try {
     const id = await createOffer({
       status: b.status ?? 'new',
-      source: b.source ?? 'vistainsaat',
+      source: b.source ?? 'sultandefense',
       locale: b.locale ?? (req as any).locale ?? null,
       country_code,
       customer_name: b.customer_name.trim(),

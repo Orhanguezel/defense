@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'nodejs';
-export const alt = 'Vista İnşaat';
+export const alt = 'Sultan Defense';
 export const size = {
   width: 1200,
   height: 630,
@@ -42,7 +42,7 @@ export default function OpenGraphImage() {
               fontWeight: 600,
             }}
           >
-            Vista İnşaat
+            Sultan Defense
           </div>
           <div
             style={{
@@ -91,7 +91,7 @@ export default function OpenGraphImage() {
             color: '#8c8880',
           }}
         >
-          <div style={{ display: 'flex' }}>vistainsaat.com</div>
+          <div style={{ display: 'flex' }}>sultandefense.com</div>
           <div style={{ display: 'flex', color: '#b8a98a', fontWeight: 600 }}>
             Kalite · Zamanında Teslim · Güven
           </div>

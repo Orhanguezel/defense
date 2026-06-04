@@ -27,7 +27,7 @@ async function fetchService(slug: string, locale: string) {
 async function fetchRelatedProjects(locale: string, limit = 4) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/products?item_type=vistainsaat&is_active=1&locale=${locale}&limit=${limit}`,
+      `${API_BASE_URL}/products?item_type=sultandefense&is_active=1&locale=${locale}&limit=${limit}`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -41,7 +41,7 @@ async function fetchRelatedProjects(locale: string, limit = 4) {
 async function fetchOtherServices(locale: string, excludeSlug: string, limit = 5) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/services?module_key=vistainsaat&is_active=1&locale=${locale}&limit=${limit + 1}`,
+      `${API_BASE_URL}/services?module_key=sultandefense&is_active=1&locale=${locale}&limit=${limit + 1}`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -67,7 +67,7 @@ export async function generateMetadata({
     pathname: `/hizmetler/${slug}`,
     title: service.meta_title || (locale.startsWith('en')
       ? `${service.title} | Vista Construction Activities`
-      : `${service.title} | Vista İnşaat Faaliyetleri`),
+      : `${service.title} | Sultan Defense Faaliyetleri`),
     description: service.meta_description || service.description,
     ogImage: absoluteAssetUrl(service.image_url) || undefined,
   });
@@ -93,7 +93,7 @@ export default async function ServiceDetailPage({
   ]);
 
   const breadcrumbs = [
-    { label: 'Vista İnşaat', href: localizedPath(locale, '/') },
+    { label: 'Sultan Defense', href: localizedPath(locale, '/') },
     { label: isEn ? 'Activities' : 'Faaliyetler', href: localizedPath(locale, '/hizmetler') },
     { label: service.title },
   ];

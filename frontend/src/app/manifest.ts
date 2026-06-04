@@ -2,9 +2,9 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Vista İnşaat',
-    short_name: 'Vista İnşaat',
-    description: 'Vista İnşaat — konut, ticari ve karma kullanım projelerinde güvenilir çözüm ortağı.',
+    name: 'Sultan Defense',
+    short_name: 'Sultan Defense',
+    description: 'Sultan Defense — A to Z defense procurement and tactical equipment supplier.',
     start_url: '/tr',
     display: 'standalone',
     background_color: '#141311',

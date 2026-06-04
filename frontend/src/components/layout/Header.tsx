@@ -184,7 +184,7 @@ export function Header({
     return () => window.removeEventListener('scroll', onScroll);
   }, [onScroll, compactOnly]);
 
-  const companyName = companyProfile?.company_name || 'Vista İnşaat';
+  const companyName = companyProfile?.company_name || 'Sultan Defense';
   const megaColumns = getMegaColumns(locale, companyName, t, categories, services, news);
 
   return (
