@@ -1,13 +1,13 @@
 # Sultan Defense
 
-Sultan Defense, savunma urunleri icin B2B katalog, tedarik talebi ve admin yonetim platformudur. Proje, eski `vistainsaat` kod tabanindan Sultan Defense kimligine tasinmaktadir.
+Sultan Defense, savunma urunleri icin B2B katalog, tedarik talebi ve admin yonetim platformudur. 
 
 ## Proje Ozeti
 
 - **Frontend:** Next.js 16, React 19, TypeScript, Tailwind CSS v4, next-intl
 - **Backend:** Fastify, Bun, Drizzle ORM, MySQL
 - **Admin panel:** Next.js, Radix/Shadcn tabanli yonetim arayuzu
-- **Marka:** Sultan Defense, Celik ve Cyan tema
+- **Marka:** Sultan Defense, Imparatorluk Zirhi temasi (antrasit + mat altin + bordo)
 - **Portlar:** backend `8090`, frontend `3040`, admin `3041`
 
 ## Klasorler

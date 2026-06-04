@@ -1,6 +1,7 @@
 # CLAUDE.md — Sultan Defense
 
-Bu proje **vistainsaat** kod tabanindan klonlanmis ve **sultandefense.com** (defans/savunma sanayi katalog sitesi) icin yeniden markalanmaktadir.
+Bu proje **sultandefense.com** — defans / savunma sanayi B2B ürün katalog ve tedarik (RFQ) platformu.
+Marka: **"İmparatorluk Zırhı"** (antrasit `#1A1A1D` + mat altın `#C5A880` + bordo `#7A1B22`). Kaynak: `docs/brand/`.
 
 Repo: `https://github.com/Orhanguezel/defense.git`
 
@@ -21,10 +22,10 @@ Repo: `https://github.com/Orhanguezel/defense.git`
 - **Backend:** Fastify + Bun + Drizzle ORM + MySQL
 - **Deploy:** sunucu `187.77.79.59` (srv1731955, Ubuntu 24.04), nginx, Cloudflare proxy
 
-## Onemli — Marka Temizligi Devam Ediyor
+## Marka Temizligi — esasen TAMAMLANDI
 
-Kod tabaninda hala **vistainsaat / vista / insaat** izleri var (125+ dosya).
-Yapilacaklar: [REBRAND_CHECKLIST.md](REBRAND_CHECKLIST.md). Her tamamlanan maddeyi isaretle.
+App `src`/`public` marka grep = 0 (eski marka izleri temizlendi). Kalan: deploy (Faz 6) + secret
+rotation (Faz 0, lokal `.env`). Durum: [REBRAND_CHECKLIST.md](REBRAND_CHECKLIST.md).
 
 ## DB Schema Kurali (workspace genel kurali gecerli)
 
