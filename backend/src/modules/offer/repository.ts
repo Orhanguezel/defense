@@ -190,13 +190,13 @@ export async function getOfferById(id: string): Promise<OfferListItem | null> {
 }
 
 /* -------------------------------------------------------------
- * Teklif numarası üretimi: ENS-YYYY-0001
+ * Teklif numarası üretimi: SD-YYYY-0001
  *   - year bazlı sayaç tablosu: offer_number_counters
  * ------------------------------------------------------------- */
 
 export async function generateOfferNo(now: Date = new Date()): Promise<string> {
   const year = now.getFullYear();
-  const prefix = 'VIS';
+  const prefix = 'SD';
 
   const nextSeq = await db.transaction(async (trx) => {
     const existing = await trx

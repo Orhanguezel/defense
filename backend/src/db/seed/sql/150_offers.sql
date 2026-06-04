@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `offers` (
   `offer_no`          VARCHAR(100)   NULL,
 
   `status`            VARCHAR(32)    NOT NULL DEFAULT 'new',
-  `source`            VARCHAR(64)    NOT NULL DEFAULT 'ensotek',
+  `source`            VARCHAR(64)    NOT NULL DEFAULT 'sultandefense',
 
   `locale`            VARCHAR(10)    NULL,
   `country_code`      VARCHAR(80)    NULL,

@@ -1,6 +1,6 @@
 // =============================================================
 // FILE: src/modules/products/schema.ts  (LOCALE DESTEKLİ)  ✅ FIXED
-// - products.item_type eklendi: product | sparepart | kompozit
+// - products.item_type eklendi: product | sparepart | sultandefense
 // - index eklendi: products_item_type_idx
 // =============================================================
 import {
@@ -33,7 +33,7 @@ export const products = mysqlTable(
   {
     id: char('id', { length: 36 }).primaryKey().notNull(),
 
-    // ✅ Ürün tipi: product / sparepart / kompozit
+    // ✅ Ürün tipi: product / sparepart / sultandefense
     item_type: mysqlEnum('item_type', ['product', 'sparepart', 'sultandefense']).notNull().default('product'),
 
     // Dilden bağımsız alanlar

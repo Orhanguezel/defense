@@ -1,5 +1,5 @@
 -- =============================================================
--- FILE: 303_kompozit_footer_sections.seed.sql
+-- FILE: 303_sultandefense_footer_sections.seed.sql
 -- Sultan Defense — footer sections (TR/EN)
 -- site_id = 'sultandefense'
 -- =============================================================

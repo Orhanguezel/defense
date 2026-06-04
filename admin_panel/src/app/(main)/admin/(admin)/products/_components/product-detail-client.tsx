@@ -55,7 +55,7 @@ type TabKey = 'general' | 'images' | 'specs' | 'seo' | 'faqs' | 'reviews' | 'jso
 
 // ─── Specifications Key-Value Editor ─────────────────────────
 
-// İnşaat projesi için önerilen özellik şablonları
+// Sultan Defense urun katalogu icin onerilen ozellik sablonlari
 /** Spec key definitions — loaded from shared/spec-keys.json */
 import specKeysData from '@shared/spec-keys.json';
 
@@ -600,7 +600,7 @@ export default function ProductDetailClient({ id, itemType }: Props) {
       tags: formData.tags + (specsText ? ` | Özellikler: ${specsText}` : ''),
       locale: activeLocale || 'tr',
       target_locales: targetLocales,
-      module_key: isProject ? 'vistainsaat_project' : 'product',
+      module_key: isProject ? 'sultandefense' : 'product',
       action: 'full',
     });
 

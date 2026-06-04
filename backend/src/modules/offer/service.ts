@@ -433,7 +433,7 @@ export async function generateAndAttachOfferPdf(
 }
 
 // -------------------------------------------------------------
-// Mail helper – kompozit icin kod-temelli dar mail seti
+// Mail helper – Sultan Defense icin kod-temelli dar mail seti
 // -------------------------------------------------------------
 
 type OfferEmailContext = {

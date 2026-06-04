@@ -1,6 +1,6 @@
 -- =============================================================
--- FILE: 308_kompozit_content_reactions.sql
--- Generic content reaction totals (used by kompozit blog likes)
+-- FILE: 308_sultandefense_content_reactions.sql
+-- Generic content reaction totals (used by Sultan Defense content likes)
 -- =============================================================
 
 SET NAMES utf8mb4;
