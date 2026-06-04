@@ -333,11 +333,6 @@ export function Header({
             <Link href={localizedPath(locale, '/')} className="flex items-center gap-2">
               <Image src="/logo-dark.svg" alt={companyName} width={32} height={32}
                 style={{ height: 32, width: 'auto' }} priority />
-              <span style={{
-                fontFamily: 'var(--font-heading)', color: 'var(--color-text-primary)',
-                fontSize: 14, fontWeight: 700, letterSpacing: '0.1em',
-                textTransform: 'uppercase' as const, whiteSpace: 'nowrap' as const,
-              }}>{companyName}</span>
             </Link>
             <div className="flex items-center gap-2">
               <ThemeToggle />
@@ -411,11 +406,6 @@ export function Header({
         >
           <Link href={localizedPath(locale, '/')} className="flex items-center gap-2">
             <Image src="/logo-dark.svg" alt={companyName} width={26} height={26} style={{ height: 26, width: 'auto' }} />
-            <span style={{
-              fontFamily: 'var(--font-heading)', color: 'var(--color-text-primary)',
-              fontSize: 12, fontWeight: 700, letterSpacing: '0.1em',
-              textTransform: 'uppercase' as const, whiteSpace: 'nowrap' as const,
-            }}>{companyName}</span>
           </Link>
 
           <div className="flex items-center gap-2" style={{ border: '1px solid var(--color-border)', background: 'var(--color-bg-secondary)', borderRadius: 2, padding: '6px 12px', minWidth: 200, maxWidth: 320 }}>
@@ -469,11 +459,6 @@ export function Header({
         <div className="hdr-compact-mobile flex h-12 items-center justify-between px-4">
           <Link href={localizedPath(locale, '/')} className="flex items-center gap-2">
             <Image src="/logo-dark.svg" alt={companyName} width={24} height={24} style={{ height: 24, width: 'auto' }} />
-            <span style={{
-              fontFamily: 'var(--font-heading)', color: 'var(--color-text-primary)',
-              fontSize: 12, fontWeight: 700, letterSpacing: '0.1em',
-              textTransform: 'uppercase' as const, whiteSpace: 'nowrap' as const,
-            }}>{companyName}</span>
           </Link>
           <div className="flex items-center gap-2">
             <ThemeToggle />
