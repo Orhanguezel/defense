@@ -1,65 +1,71 @@
 # Sultan Defense — Marka Kılavuzu
 
-> Karar tarihi: 2026-06-04. Tema: **Çelik & Cyan (Defense)**, koyu + açık (toggle), logo: **kalkan + SD monogram**.
+> Güncelleme: 2026-06-04. Tema: **"İmparatorluk Zırhı" (Imperial Armor)** — Antrasit/Titanyum zemin +
+> Mat Osmanlı Altını + Derin Bordo. Koyu (ana his) + açık (toggle). Logo: **müşteri logosu** (resmi marka).
 
 ## 1. Renk Paleti
 
 ### Marka sabitleri
 | Token | Hex | Kullanim |
 |-------|-----|----------|
-| Tactical Cyan | `#2BD4D9` | Ana vurgu, CTA, linkler, aksanlar |
-| Cyan Bright | `#4FE3E8` | Hover / parlama |
-| Steel Blue | `#5FA8D3` | Ikincil vurgu |
-| Deep Navy | `#0D1B2A` | Koyu zemin / kalkan dolgusu |
-| Gunmetal | `#1B263B` | Kart / yuzey |
+| Mat Osmanlı Altını | `#C5A880` | **Ana vurgu**, CTA, butonlar, linkler (mat/eskitilmiş pirinç) |
+| Altın Hover | `#D4B996` | Hover / hafif açılmış altın |
+| Parlak Altın | `#D4AF37` | **Çok az** — vurucu küçük detay (parlak sarı genel kullanımda YOK) |
+| Derin Bordo | `#7A1B22` | İkincil detay: menü altı çizgisi, ikon, küçük vurgu (Türk kimliği) |
+| Antrasit Siyah | `#1A1A1D` | Ana koyu zemin |
+| Titanyum Grisi | `#2D3134` | Kart / yüzey |
 
-### Koyu tema (varsayilan)
-- Zemin `#0D1B2A` · Yuzey `#1B263B` · Kenarlik `#2C3E52`
-- Metin `#E0E1DD` · Soluk metin `#8A97A6`
-- Primary `#2BD4D9` (uzerine metin `#06222B`)
+### Koyu tema (varsayilan — ana his)
+- Zemin `#1A1A1D` · Yüzey `#2D3134` · Kenarlık `#3C4044`
+- Metin `#EDEAE3` (sıcak kırık beyaz) · Soluk metin `#9A968C`
+- Primary (altın) `#C5A880` (üzerine metin `#1A1A1D`) · Secondary (bordo) `#7A1B22`
 
 ### Açık tema
-- Zemin `#F4F6F8` · Yuzey `#FFFFFF` · Kenarlik `#D5DDE5`
-- Metin `#0D1B2A` · Soluk metin `#51606F`
-- Primary `#0E7C82` (acik zeminde kontrast icin koyulastirilmis cyan)
+- Zemin `#F4F1EC` (parşömen) · Yüzey `#FFFFFF` · Kenarlık `#D9D4C9`
+- Metin `#1A1A1D` · Soluk metin `#5C584F`
+- Primary `#8C6F3F` (açık zeminde kontrast için koyulaştırılmış eskitilmiş altın) · Secondary `#7A1B22`
 
-> Tum degerler kod olarak: [`tokens.css`](tokens.css) (CSS custom properties).
+> Tüm değerler kod olarak: [`tokens.css`](tokens.css) (CSS custom properties).
 
 ## 2. Logo
 
-| Dosya | Kullanim |
-|-------|----------|
-| [`logo/sultandefense-logo-dark.svg`](logo/sultandefense-logo-dark.svg) | Koyu zeminde tam logo (kalkan + wordmark) |
-| [`logo/sultandefense-logo-light.svg`](logo/sultandefense-logo-light.svg) | Acik zeminde tam logo |
-| [`logo/sultandefense-mark.svg`](logo/sultandefense-mark.svg) | Sadece kalkan (favicon, app icon, kucuk alan) |
+> **Resmi logo müşteri tarafından sağlanır** (PNG). Logo paketi bu kaynaktan üretilir:
+> tam logo (koyu/açık), sadece amblem, favicon ve apple-touch ikonları.
 
-**Konsept:** Kalkan (koruma/guven) + üstte chevron (askeri rütbe/ileri hareket) + **SD** monogram. Yan
-ında iki satir wordmark: **SULTAN** (kalin) / **DEFENSE** (cyan, genis takip), arada ince ayrac cizgisi.
+| Üretilecek dosya | Kullanım |
+|------------------|----------|
+| `logo/sultandefense-logo-dark.*` | Koyu zeminde tam logo |
+| `logo/sultandefense-logo-light.*` | Açık zeminde tam logo |
+| `logo/sultandefense-mark.*` | Sadece amblem (küçük alan) |
+| `favicon.ico` / `favicon-16/32/48` | Tarayıcı sekmesi |
+| `apple-touch-icon-180.png` + diğer boyutlar | iOS/Android ana ekran |
 
 **Kurallar:**
-- Kalkan dolgusu daima Deep Navy `#0D1B2A` (her iki temada da). Sadece wordmark rengi temaya gore degisir.
-- Minimum bos alan: kalkan yuksekliginin %25'i kadar her yonde.
-- Cok kucuk boyutta sadece kalkan (`mark.svg`) kullanilir.
-- Logoyu germe/egme, renk degistirme, golge ekleme YAPILMAZ.
+- Logoyu germe/eğme, marka dışı renk verme, gölge ekleme YAPILMAZ.
+- Minimum boş alan: logo yüksekliğinin %25'i kadar her yönde.
+- Koyu zeminde açık/altın varyant, açık zeminde koyu varyant kullanılır.
+
+> ⏳ **Durum:** Müşteri logosu (PNG) bekleniyor; geldiğinde kırpılıp koyu/açık + favicon/apple-touch
+> paketi üretilecek. Eski kalkan+SD monogram SVG'leri (Çelik & Cyan dönemi) bu logoyla DEĞİŞTİRİLECEK.
 
 ## 3. Tipografi
 
 | Rol | Font | Not |
 |-----|------|-----|
-| Basliklar / wordmark | **Oswald** (veya Rajdhani) | Condensed, askeri-teknik karakter, buyuk harf + genis takip |
-| Govde metni | **Inter** / system-ui | Okunabilir, notr |
-| Monogram | Geometrik bold sans (Arial Black fallback) | — |
+| Başlıklar | **Oswald** (alternatif: Cinzel) | Büyük harf, imparatorluk-askeri karakter |
+| Gövde metni | **Inter** / system-ui | Okunabilir, nötr |
 
-Baslik stili: `text-transform: uppercase`, `letter-spacing: .04–.16em`.
+Başlık stili: `text-transform: uppercase`, `letter-spacing: .04–.16em`.
 
 ## 4. Görsel Dil
 
-- Koyu, çelik/lacivert zeminler; cyan ışık vurguları (referans ürün görselleriyle uyumlu).
-- İnce çizgi/grid aksanlar, chevron, hedef/radar motifleri.
+- Koyu antrasit/titanyum zeminler; **mat altın** vurgular; çok ufak **bordo** detaylar.
+- Ağırbaşlı, premium, "zırh/metal" dokusu hissi. Parlak neon/sarı YOK.
+- İnce altın çizgi aksanlar, ödül/madalya, kalkan/zırh motifleri.
 - Ürün görselleri: müşterinin kategori klasörleri (Terms'e göre "temsilî" — telif notu sayfa altına).
-- Ton: ciddi, otoriter, yüksek-teknoloji. Abartılı parlama/neon'dan kaçın.
+- Ton: ciddi, otoriter, asil. Soğuk askeri sertlik + sultanlık asaleti.
 
 ## 5. Uygulama (rebrand'de)
-- `tokens.css` → frontend & admin_panel global CSS / Tailwind v4 `@theme` degiskenlerine maplenir.
+- `tokens.css` → frontend & admin_panel global CSS / Tailwind v4 `@theme` değişkenlerine maplenir.
 - Logolar → `frontend/public/logo/` ve `admin_panel/public/logo/` (eski `vista-logo-*` yerine).
-- Favicon / icon / opengraph → `mark.svg`'den uretilir.
+- Favicon / apple-touch / opengraph → müşteri logosundan üretilir.

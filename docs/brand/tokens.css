@@ -1,73 +1,76 @@
 /* ============================================================
    Sultan Defense — Design Tokens
-   Palet: Çelik & Cyan (Defense). Koyu (varsayilan) + Acik tema.
+   Tema: "İmparatorluk Zırhı" (Imperial Armor)
+   Antrasit/Titanyum zemin + Mat Osmanlı Altını + Derin Bordo.
+   Koyu (varsayilan, ana his) + Acik tema.
    Frontend & admin_panel rebrand'inde bu degerler kullanilir.
    ============================================================ */
 
 :root {
   /* --- Marka sabitleri (tema bagimsiz) --- */
-  --sd-cyan:        #2BD4D9;  /* Tactical Cyan — ana vurgu */
-  --sd-cyan-bright: #4FE3E8;  /* hover / parlak */
-  --sd-steel:       #5FA8D3;  /* Steel Blue — ikincil */
-  --sd-navy:        #0D1B2A;  /* Deep Navy */
-  --sd-gunmetal:    #1B263B;  /* Gunmetal */
+  --sd-anthracite:  #1A1A1D;  /* Antrasit Siyah — ana koyu zemin */
+  --sd-titanium:    #2D3134;  /* Titanyum Grisi — yuzey */
+  --sd-gold:        #C5A880;  /* Mat Osmanli Altini / eskitilmis pirinc — ANA vurgu */
+  --sd-gold-hover:  #D4B996;  /* hafif acilmis altin (hover) */
+  --sd-gold-bright: #D4AF37;  /* parlak altin — COK az, vurucu detay */
+  --sd-bordeaux:    #7A1B22;  /* Derin Bordo / kan kirmizi — ikincil detay */
 
   /* Durum renkleri */
-  --sd-success: #34D399;
-  --sd-warning: #FBBF24;
-  --sd-danger:  #F87171;
-  --sd-info:    var(--sd-steel);
+  --sd-success: #4E9A6B;
+  --sd-warning: #C5A880;
+  --sd-danger:  #7A1B22;   /* bordo = tehlike, marka ile uyumlu */
+  --sd-info:    #6B7A86;
 }
 
 /* ===================== KOYU TEMA (varsayilan) ===================== */
 :root,
 [data-theme="dark"] {
-  --bg:            #0D1B2A;  /* Deep Navy */
-  --bg-elevated:   #11223A;
-  --surface:       #1B263B;  /* Gunmetal — kart */
-  --surface-2:     #243349;
-  --border:        #2C3E52;
-  --border-strong: #3A506B;
+  --bg:            #1A1A1D;  /* Antrasit */
+  --bg-elevated:   #212226;
+  --surface:       #2D3134;  /* Titanyum — kart */
+  --surface-2:     #34383C;
+  --border:        #3C4044;
+  --border-strong: #4A4F54;
 
-  --text:          #E0E1DD;  /* acik metin */
-  --text-muted:    #8A97A6;
-  --text-faint:    #5A6B7B;
+  --text:          #EDEAE3;  /* sicak kirik beyaz */
+  --text-muted:    #9A968C;
+  --text-faint:    #6B6862;
 
-  --primary:        #2BD4D9;  /* cyan */
-  --primary-hover:  #4FE3E8;
-  --primary-contrast: #06222B; /* cyan uzerine koyu metin */
-  --secondary:      #5FA8D3;
-  --ring:           #2BD4D9;
+  --primary:        #C5A880;  /* mat altin */
+  --primary-hover:  #D4B996;
+  --primary-contrast: #1A1A1D; /* altin uzerine antrasit metin */
+  --secondary:      #7A1B22;  /* bordo */
+  --ring:           #C5A880;
 
-  --shadow: 0 10px 30px rgba(0,0,0,.45);
-  --glow:   0 0 24px rgba(43,212,217,.35);
+  --shadow: 0 10px 30px rgba(0,0,0,.55);
+  --glow:   0 0 22px rgba(197,168,128,.22);
 }
 
 /* ===================== ACIK TEMA ===================== */
 [data-theme="light"] {
-  --bg:            #F4F6F8;  /* light steel */
+  --bg:            #F4F1EC;  /* sicak parsomen/acik gri */
   --bg-elevated:   #FFFFFF;
   --surface:       #FFFFFF;
-  --surface-2:     #E8EDF1;
-  --border:        #D5DDE5;
-  --border-strong: #B9C6D2;
+  --surface-2:     #ECE8E1;
+  --border:        #D9D4C9;
+  --border-strong: #C2BCAF;
 
-  --text:          #0D1B2A;  /* deep navy metin */
-  --text-muted:    #51606F;
-  --text-faint:    #8A97A6;
+  --text:          #1A1A1D;  /* antrasit metin */
+  --text-muted:    #5C584F;
+  --text-faint:    #8A867C;
 
-  --primary:        #0E7C82;  /* acik zeminde kontrast icin koyu cyan */
-  --primary-hover:  #0B6469;
+  --primary:        #8C6F3F;  /* acik zeminde kontrast icin koyulastirilmis eskitilmis altin */
+  --primary-hover:  #755C33;
   --primary-contrast: #FFFFFF;
-  --secondary:      #2C5F86;
-  --ring:           #0E7C82;
+  --secondary:      #7A1B22;  /* bordo */
+  --ring:           #8C6F3F;
 
-  --shadow: 0 8px 24px rgba(13,27,42,.10);
+  --shadow: 0 8px 24px rgba(26,26,29,.10);
   --glow:   0 0 0 rgba(0,0,0,0);
 }
 
 /* Tipografi onerisi (rebrand'de import edilecek):
-   Basliklar: 'Oswald' / 'Rajdhani' (condensed, askeri-teknik his)
+   Basliklar: 'Oswald' / 'Cinzel' (imparatorluk-askeri his, buyuk harf)
    Govde:     'Inter' / system-ui
-   Monogram:  geometrik bold sans
+   Not: Altin daima MAT kullanilir; parlak --sd-gold-bright sadece kucuk vurgularda.
 */

@@ -33,12 +33,13 @@
   "relation": "Sultan Defense kurumsal web sitesi; sultandefense-backend API üzerinden çalışır",
   "featured": false,
   "theme": {
-    "template": "sultandefense-tactical",
-    "intent": "tactical-steel-cyan-dark",
+    "template": "sultandefense-imperial-armor",
+    "intent": "imperial-armor-anthracite-gold-bordeaux-dark",
     "palette": {
-      "brand": "#2BD4D9",
-      "dark": "#0D1B2A",
-      "light": "#F4F6F8"
+      "brand": "#C5A880",
+      "secondary": "#7A1B22",
+      "dark": "#1A1A1D",
+      "light": "#F4F1EC"
     },
     "fonts": {
       "heading": "Oswald",
