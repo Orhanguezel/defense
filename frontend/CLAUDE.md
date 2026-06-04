@@ -12,7 +12,7 @@
 - Dark / Light mode desteği
 
 > İçerik kaynağı: `docs/content/` (sayfa metinleri, 10 kategori, şirket bilgisi).
-> NOT: Rotalar hâlâ inşaat dönemi (projeler/hizmetler); defans slug'larına (products/services) geçiş Faz 5.
+> NOT: Rotalar geçici olarak `projeler/hizmetler` path'lerini kullanıyor; defans slug'larına (`products/services`) geçiş Faz 5.
 
 ## Sayfa Yapısı (URL Rotaları)
 
