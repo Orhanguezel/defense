@@ -1,5 +1,5 @@
 -- =============================================================
--- FILE: 315_vistainsaat_hero_video.seed.sql
+-- FILE: 315_sultandefense_hero_video.seed.sql
 -- Sultan Defense — Hero video storage + site_settings
 -- =============================================================
 
@@ -27,13 +27,13 @@ VALUES (
     'video_desktop', '/uploads/video/hero-desktop.mp4',
     'video_mobile', '/uploads/video/hero-mobile.mp4',
     'video_poster', '',
-    'headline_tr', 'Güvenilir İnşaat Çözümleri',
-    'headline_en', 'Reliable Construction Solutions',
-    'subheadline_tr', 'Konut, ticari ve endüstriyel projelerde kalite ve zamanında teslim.',
-    'subheadline_en', 'Quality and on-time delivery for residential, commercial and industrial projects.',
-    'cta_text_tr', 'Projelerimizi İnceleyin',
-    'cta_text_en', 'Explore Our Projects',
-    'cta_url', '/[locale]/projeler'
+    'headline_tr', 'Savunma Tedarikinde Guvenilir Ihracat Ortagi',
+    'headline_en', 'Trusted Export Partner for Defense Procurement',
+    'subheadline_tr', 'Kara sistemleri, balistik koruma, taktik ekipman, elektronik ve lojistik sureclerini tek dosyada yonetiyoruz.',
+    'subheadline_en', 'We coordinate land systems, ballistic protection, tactical equipment, electronics, and logistics in one procurement workflow.',
+    'cta_text_tr', 'Urunleri Inceleyin',
+    'cta_text_en', 'Explore Products',
+    'cta_url', '/[locale]/urunler'
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3), NOW(3)
 )

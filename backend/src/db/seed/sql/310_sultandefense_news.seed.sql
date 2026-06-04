@@ -1,6 +1,6 @@
 -- =============================================================
--- FILE: 310_vistainsaat_news.seed.sql
--- Sultan Defense — Haberler / News (custom_pages) + i18n (TR/EN)
+-- FILE: 310_sultandefense_news.seed.sql
+-- Sultan Defense — News (custom_pages) + i18n (TR/EN)
 -- module_key = 'news'
 -- =============================================================
 
@@ -10,319 +10,49 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 START TRANSACTION;
 
--- =========================
--- 1) CUSTOM PAGES (BASE)
--- =========================
 INSERT INTO `custom_pages`
 (
-  `id`,
-  `module_key`,
-  `is_published`,
-  `featured`,
-  `display_order`,
-  `order_num`,
-  `featured_image`,
-  `featured_image_asset_id`,
-  `image_url`,
-  `storage_asset_id`,
-  `images`,
-  `storage_image_ids`,
-  `category_id`,
-  `sub_category_id`
+  `id`, `module_key`, `is_published`, `featured`, `display_order`, `order_num`,
+  `featured_image`, `featured_image_asset_id`, `image_url`, `storage_asset_id`,
+  `images`, `storage_image_ids`, `category_id`, `sub_category_id`
 )
 VALUES
-  -- Röportaj: Tolkan Mimarlık (Röportajlar kategorisi)
-  ('nw010001-5001-4001-9001-nnnnnnnn0001', 'news', 1, 1, 10, 10,
-   '/uploads/news/tolgahan-sahin-tolkan-mimarlik.jpg', 'sa-news-0001-0001-0001-000000000001',
-   '/uploads/news/tolgahan-sahin-tolkan-mimarlik.jpg', 'sa-news-0001-0001-0001-000000000001',
-   JSON_ARRAY('/uploads/news/tolgahan-sahin-tolkan-mimarlik.jpg', '/uploads/news/tolkan-mimarlik-ofis-projesi.jpg', '/uploads/news/tolkan-mimarlik-roportaj-dergi.jpg'),
-   JSON_ARRAY('sa-news-0001-0001-0001-000000000001', 'sa-news-0002-0002-0002-000000000002', 'sa-news-0003-0003-0003-000000000003'),
-   'nccc0001-4001-4001-8001-nncccccc0001', NULL),
-  -- Proje Haberleri
-  ('nw010002-5002-4002-9002-nnnnnnnn0002', 'news', 1, 1, 20, 20,
-   '/uploads/news/istanbul-levent-ofis-kulesi.jpg', 'sa-news-0004-0004-0004-000000000004',
-   '/uploads/news/istanbul-levent-ofis-kulesi.jpg', 'sa-news-0004-0004-0004-000000000004', '[]', '[]',
-   'nccc0003-4003-4003-8003-nncccccc0003', NULL),
-  -- Sektör Haberleri
-  ('nw010003-5003-4003-9003-nnnnnnnn0003', 'news', 1, 0, 30, 30,
-   '/uploads/news/depreme-dayanikli-yapi.jpg', 'sa-news-0005-0005-0005-000000000005',
-   '/uploads/news/depreme-dayanikli-yapi.jpg', 'sa-news-0005-0005-0005-000000000005', '[]', '[]',
-   'nccc0002-4002-4002-8002-nncccccc0002', NULL),
-  -- Teknoloji
-  ('nw010004-5004-4004-9004-nnnnnnnn0004', 'news', 1, 0, 40, 40,
-   '/uploads/news/akilli-sehir-altyapi.jpg', 'sa-news-0006-0006-0006-000000000006',
-   '/uploads/news/akilli-sehir-altyapi.jpg', 'sa-news-0006-0006-0006-000000000006', '[]', '[]',
-   'nccc0004-4004-4004-8004-nncccccc0004', NULL),
-  -- Sürdürülebilirlik
-  ('nw010005-5005-4005-9005-nnnnnnnn0005', 'news', 1, 1, 50, 50,
-   '/uploads/news/moduler-yapi-sistemleri.jpg', 'sa-news-0007-0007-0007-000000000007',
-   '/uploads/news/moduler-yapi-sistemleri.jpg', 'sa-news-0007-0007-0007-000000000007', '[]', '[]',
-   'nccc0005-4005-4005-8005-nncccccc0005', NULL)
+  ('nw010001-5001-4001-9001-nnnnnnnn0001', 'news', 1, 1, 10, 10, '/media/sultandefense/news-procurement-portfolio.jpg', NULL, '/media/sultandefense/news-procurement-portfolio.jpg', NULL, '[]', '[]', 'nc010001-4001-4001-8001-000000000001', NULL),
+  ('nw010002-5002-4002-9002-nnnnnnnn0002', 'news', 1, 1, 20, 20, '/media/sultandefense/news-export-compliance.jpg', NULL, '/media/sultandefense/news-export-compliance.jpg', NULL, '[]', '[]', 'nc010002-4002-4002-8002-000000000002', NULL),
+  ('nw010003-5003-4003-9003-nnnnnnnn0003', 'news', 1, 0, 30, 30, '/media/sultandefense/news-regional-logistics.jpg', NULL, '/media/sultandefense/news-regional-logistics.jpg', NULL, '[]', '[]', 'nc010003-4003-4003-8003-000000000003', NULL),
+  ('nw010004-5004-4004-9004-nnnnnnnn0004', 'news', 1, 0, 40, 40, '/media/sultandefense/news-tactical-technology.jpg', NULL, '/media/sultandefense/news-tactical-technology.jpg', NULL, '[]', '[]', 'nc010004-4004-4004-8004-000000000004', NULL),
+  ('nw010005-5005-4005-9005-nnnnnnnn0005', 'news', 1, 1, 50, 50, '/media/sultandefense/news-defense-standards.jpg', NULL, '/media/sultandefense/news-defense-standards.jpg', NULL, '[]', '[]', 'nc010005-4005-4005-8005-000000000005', NULL)
 ON DUPLICATE KEY UPDATE
-  `module_key`   = VALUES(`module_key`),
+  `module_key` = VALUES(`module_key`),
   `is_published` = VALUES(`is_published`),
-  `featured`     = VALUES(`featured`),
-  `display_order`= VALUES(`display_order`),
+  `featured` = VALUES(`featured`),
+  `display_order` = VALUES(`display_order`),
   `featured_image` = VALUES(`featured_image`),
   `image_url` = VALUES(`image_url`),
-  `images`       = VALUES(`images`),
-  `category_id`  = VALUES(`category_id`);
+  `images` = VALUES(`images`),
+  `category_id` = VALUES(`category_id`);
 
--- =========================
--- 2) CUSTOM PAGES I18N — TR
--- =========================
 INSERT INTO `custom_pages_i18n`
-(
-  `id`,
-  `page_id`,
-  `locale`,
-  `title`,
-  `slug`,
-  `content`,
-  `summary`,
-  `meta_title`,
-  `meta_description`,
-  `tags`
-)
+(`id`, `page_id`, `locale`, `title`, `slug`, `content`, `summary`, `meta_title`, `meta_description`, `tags`)
 VALUES
-  (
-    'nw020001-6001-4001-a001-nnnnnnnn0001',
-    'nw010001-5001-4001-9001-nnnnnnnn0001',
-    'tr',
-    'Bir Tasarım Ofisinden Fazlası: Tolkan Mimarlık — Tolgahan Şahin Röportajı',
-    'tolkan-mimarlik-tolgahan-sahin-roportaji',
-    JSON_OBJECT('html', '<p class="nd-lead"><strong>Tolkan Mimarlık''ın kurucusu Tolgahan Şahin ile bir aradayız.</strong> Doğaya, kullanıcıya ve işleve uyumlu projeler tasarlayan Tolgahan Bey, "Yalnızca bir tasarım ofisi olarak değil, aynı zamanda bir inşaat ve uygulama firması olarak da faaliyet göstermekteyiz" diyor.</p>
-
-<h2>Merhaba Tolgahan Bey, Tolkan Mimarlık olarak nasıl yaşam alanları planlıyorsunuz? Bu mekanlar hangi ortak paydada buluşuyor?</h2>
-
-<p>Merhaba, Tolkan Mimarlık olarak hedefimiz herhangi bir şablona bağlı olmadan bölgeye, doğaya, kullanıcıya ve işleve uyumlu proje tasarlamak. Projelerimizdeki hassasiyetimiz, kullanıcının kendini mekana ait hissedebilmesi ve yaşam alanlarının yaşanabilir ve kullanılabilir olması. Bizim amacımız mobilya yığınıyla dolmuş yaşam alanları kurmak yerine kullanıcının talebi doğrultusunda planlanan ve kullanıcıya özgü yaşam alanları tasarlamak.</p>
-
-<h2>Proje sürecinde nasıl bir yol izliyorsunuz?</h2>
-
-<p>Proje sürecimiz birbirine alternatif taslak çizimlerle başlıyor. Başlangıç noktası olarak tasarımımızın karakterini belirlemeye çalışıyoruz ve tasarıma bir kimlik kazandırmayı amaçlıyoruz. Bu doğrultuda belirlediğimiz taslakları arsaya oturtup şekillendirmeye başlıyoruz.</p>
-
-<blockquote>"Uygulanabilir ve kullanılabilir tasarımın; kaliteli ve özenli işçiliğin, her zaman değer göreceğine ve saygıyı hak edeceğine inanıyorum."</blockquote>
-
-<h2>Bir mimarlık firmasını başarıya götüren nedir?</h2>
-
-<p>Biz daha yolun başındayız. Uygulanabilir ve kullanılabilir tasarımın; kaliteli ve özenli işçiliğin, uygulamanın her zaman değer göreceğine ve saygıyı hak edeceğine inanıyorum.</p>
-
-<h2>Yaşam dinamikleri ve toplumun sosyal yapısı, özellikle insan odaklı mimari yapı ve mekanları temelden etkiliyor.</h2>
-
-<p>Değişen yaşam dinamikleri ve kullanıcı alışkanlıkları sizce insanları nasıl tasarımlara yönlendiriyor? Benimsediğiniz mimari akımlar var mı?</p>
-
-<p>İnsan ve insan yaşamı, insan odaklı mimarlığın temelidir. Değişen yaşam dinamikleri de mimarlığa yön vermekte. Geçmişten günümüze insan ve toplum yaşantısının mimariye olan etkileri ve örnekleri mevcuttur. Örneğin gotik mimariden modern mimariye olan radikal geçiş, değişen toplum ve sosyal yaşamın mimaride bulduğu karşılığın en önemli göstergesidir.</p>
-
-<p>Devasa gotik mimari yapılardan, modernizmin getirdiği sosyal ortam ve daha işlevsel ve çok birimli yapıların, çevresine hükmeden yapılardan, çevreyle ilişki kuran yapıların tasarım ve antik mimari esinlenmelerinin yerini ortogonal tasarımlara bıraktığını görüyoruz.</p>
-
-<h2>John Lennon ve Yoko Ono''nun yatak eylemi...</h2>
-
-<p>Modern mimariden çağdaş mimarlığa geçiş ne radikal değil, bir birikimin ve teknolojinin sunduğu imkanlar dahilinde, çeşitli üretim biçimlerinin mimaride karşılık bulmasıyla gerçekleşmektedir. Fakat çağdaş mimarlığın içinde radikal değişimler, insan yaşantısının değişen yapısı ile mevcuttur.</p>
-
-<p>Aklıma gelen en kapsamlı örnek, John Lennon (müzisyen, The Beatles grubu üyesi) ile sevgilisi Yoko Ono''nun yataklarında başlattığı "çalışma" eylemi (1969). Aylarca yataklarında saçlarını uzattı müzik yaptı, yemeklerini yataklarında yiyen ve yataklarında açtıkları pankartlarla günden güne sanatçılar, o dönem işçi ve iş yüküne eleştirel bir biçimde yaptıkları eylem ile çalışma disiplinlerini ve biçimlerini sorgulamışlardı.</p>
-
-<blockquote>"Mimarlıkta geleceğin sürdürülebilir tasarım odaklı olduğunu düşünüyorum."</blockquote>
-
-<h2>Geleceğin mimarlığı hakkında ne düşünüyorsunuz?</h2>
-
-<p>Mimarlıkta geleceğin sürdürülebilir tasarım odaklı olduğunu düşünüyorum. Karbon ayak izi düşük ve enerji verimli yüksek malzeme kullanımı geleceğin her mimari tasarımın gerekliliği haline gelecek diye düşünüyorum.</p>
-
-<h2>Bereket Fide ile İş Birliği</h2>
-
-<p>Mimarlık firmamızın yanı sıra Bereket Fide İnşaat ile toplu konut ve müstakil konut üzerine çalışmalarına başladık. Bu projelerde geleceğe yönelik olarak enerji tasarrufu sağlayan konut projelerine imza atmak istiyoruz.</p>
-
-<p>İş birliğimize Bereket Fide Merkez Ofisi''nin restorasyonu ve üretim tesisinin enerji verimliliğini artırmaya başladık. Projede mevcut kullanılabilir tüm yapı elemanlarını geri dönüştürmeye ve tekrar kullanmaya özen gösterdik. Yapıda mevcut duvar, çelik kirişler, çatı panellerini ve zemin, enerji verimliliği yüksek olarak bilinen çelik kolonlara güçlendirdik.</p>
-
-<p>Yaklaşık 350 kW''lık GES şirketin üretim için gerekli enerji ihtiyacının büyük bir kısmını karşılıyoruz. Bir sonraki projemiz ise içinde kullanılan suyun geri dönüşümünü amaçlayan Atık Su Geri Dönüşüm Projesi. Tamamen fide üretim sektörüne örnek, öncü ve çevreci bir yaklaşım içerisinde Bereket Fide ile projelerimize devam etmeyi planlıyoruz.</p>'),
-    'Tolkan Mimarlık''ın kurucusu Tolgahan Şahin ile röportaj: Doğaya, kullanıcıya ve işleve uyumlu projeler tasarlayan bir mimarlık ofisinin hikayesi.',
-    'Tolkan Mimarlık Röportajı: Tolgahan Şahin | Sultan Defense Haberleri',
-    'Tolkan Mimarlık kurucusu Tolgahan Şahin ile röportaj. Sürdürülebilir tasarım, insan odaklı mimarlık ve Bereket Fide iş birliği.',
-    'röportaj, tolkan mimarlık, tolgahan şahin, sürdürülebilir mimarlık, insan odaklı tasarım'
-  ),
-  (
-    'nw020002-6002-4002-a002-nnnnnnnn0002',
-    'nw010002-5002-4002-9002-nnnnnnnn0002',
-    'tr',
-    'İstanbul''da Yeni Bir Ofis Kulesi Projesi: Levent Bölgesi Yeniden Şekilleniyor',
-    'istanbul-levent-ofis-kulesi-projesi',
-    JSON_OBJECT('html', '<p>İstanbul''un finans merkezi Levent bölgesinde yeni bir A+ sınıfı ofis kulesi projesi başlıyor. 42 katlı yapı, sürdürülebilir tasarım ilkeleri ve akıllı bina teknolojileriyle dikkat çekecek.</p><h2>Proje Detayları</h2><p>Proje, toplam 85.000 m² kapalı alana sahip olacak. Yapının cephesinde yüksek performanslı çift cidarlı cam sistem kullanılacak. Bina otomasyon sistemi, enerji tüketimini gerçek zamanlı optimize edecek şekilde tasarlanıyor.</p><h2>Sürdürülebilirlik Hedefleri</h2><p>LEED Platinum sertifikasyonu hedeflenen projede, çatı bahçeleri, yağmur suyu toplama sistemleri ve elektrikli araç şarj istasyonları standart olarak yer alacak.</p><p>Projenin 2027 yılında tamamlanması planlanıyor.</p>'),
-    'İstanbul Levent''te 42 katlı yeni ofis kulesi projesi: sürdürülebilir tasarım, akıllı bina ve LEED Platinum hedefi.',
-    'İstanbul Levent Ofis Kulesi Projesi | Sultan Defense Haberleri',
-    'Levent bölgesinde 42 katlı A+ sınıfı ofis kulesi. LEED Platinum, akıllı bina teknolojileri ve sürdürülebilir cephe tasarımı.',
-    'levent, ofis kulesi, LEED platinum, akıllı bina, istanbul'
-  ),
-  (
-    'nw020003-6003-4003-a003-nnnnnnnn0003',
-    'nw010003-5003-4003-9003-nnnnnnnn0003',
-    'tr',
-    'Depreme Dayanıklı Yapı Tasarımında 2025 Güncellemeleri',
-    'depreme-dayanikli-yapi-tasarimi-2025',
-    JSON_OBJECT('html', '<p>Türkiye Bina Deprem Yönetmeliği''nde yapılan son güncellemeler, yapı tasarımında yeni standartlar getiriyor. Özellikle yüksek sismik bölgelerdeki konut projeleri için kritik değişiklikler söz konusu.</p><h2>Yeni Gereksinimler</h2><p>Güncellenen yönetmelik; performans bazlı tasarım yaklaşımını genişletiyor, taban izolasyonu uygulamalarını teşvik ediyor ve mevcut yapı güçlendirme standartlarını yükseltiyor.</p><h2>Malzeme Standartları</h2><p>Beton dayanım sınıfları ve donatı detaylandırma kurallarında yapılan değişiklikler, özellikle kolon-kiriş birleşim bölgelerindeki süneklik performansını artırmayı hedefliyor.</p>'),
-    'Türkiye deprem yönetmeliğindeki 2025 güncellemeleri ve yapı tasarımına etkileri.',
-    'Depreme Dayanıklı Yapı Tasarımı 2025 Güncellemeleri | Sultan Defense',
-    'Türkiye deprem yönetmeliği 2025 güncellemeleri. Performans bazlı tasarım, taban izolasyonu ve malzeme standartları.',
-    'deprem yönetmeliği, sismik tasarım, yapı güçlendirme, 2025'
-  ),
-  (
-    'nw020004-6004-4004-a004-nnnnnnnn0004',
-    'nw010004-5004-4004-9004-nnnnnnnn0004',
-    'tr',
-    'Akıllı Şehir Projeleri ve Altyapı Dönüşümü',
-    'akilli-sehir-projeleri-altyapi-donusumu',
-    JSON_OBJECT('html', '<p>Türkiye''deki büyükşehirler, akıllı şehir dönüşümünde önemli adımlar atıyor. IoT sensörleri, dijital ikiz teknolojisi ve entegre ulaşım sistemleri; kentsel altyapıyı yeniden tanımlıyor.</p><h2>Dijital İkiz Uygulamaları</h2><p>Şehirlerin dijital ikizleri, altyapı planlamasından acil durum yönetimine kadar geniş bir yelpazede karar destek sistemi olarak kullanılmaya başlandı.</p><h2>Enerji ve Su Yönetimi</h2><p>Akıllı şebeke sistemleri, su kaybını %30''a kadar azaltırken, enerji dağıtım verimliliğini önemli ölçüde artırıyor.</p>'),
-    'Türkiye''de akıllı şehir projeleri, dijital ikiz teknolojisi ve altyapı dönüşümü.',
-    'Akıllı Şehir Projeleri ve Altyapı Dönüşümü | Sultan Defense',
-    'Akıllı şehir dönüşümü, IoT altyapısı, dijital ikiz ve entegre ulaşım sistemleri.',
-    'akıllı şehir, dijital ikiz, IoT, altyapı dönüşümü'
-  ),
-  (
-    'nw020005-6005-4005-a005-nnnnnnnn0005',
-    'nw010005-5005-4005-9005-nnnnnnnn0005',
-    'tr',
-    'Modüler Yapı Sistemleri: İnşaat Sektörünün Geleceği',
-    'moduler-yapi-sistemleri-insaat-gelecegi',
-    JSON_OBJECT('html', '<p>Modüler yapı sistemleri, geleneksel inşaat yöntemlerine alternatif olarak hızla yaygınlaşıyor. Fabrikada üretilen bileşenlerin sahada montajı, inşaat süresini %40-60 oranında kısaltabiliyor.</p><h2>Avantajlar</h2><ul><li>Hız: Temel ve üst yapı paralel ilerler</li><li>Kalite: Fabrika ortamında kontrollü üretim</li><li>Sürdürülebilirlik: %70''e kadar daha az atık</li><li>Maliyet: Tekrarlayan projelerde belirgin tasarruf</li></ul><h2>Uygulama Alanları</h2><p>Otel, öğrenci yurdu, hastane ek binaları ve toplu konut projelerinde modüler sistemler giderek daha fazla tercih ediliyor.</p>'),
-    'Modüler yapı sistemlerinin avantajları, uygulama alanları ve inşaat sektöründeki geleceği.',
-    'Modüler Yapı Sistemleri: İnşaat Sektörünün Geleceği | Sultan Defense',
-    'Modüler yapı teknolojisi, fabrika üretimi, hızlı montaj ve sürdürülebilir inşaat.',
-    'modüler yapı, prefabrik, hızlı inşaat, sürdürülebilirlik'
-  )
+  ('nw020001-6001-4001-a001-nnnnnnnn0001', 'nw010001-5001-4001-9001-nnnnnnnn0001', 'tr', 'Sultan Defense Savunma Tedarik Portfoyunu Yayina Aldi', 'sultan-defense-savunma-tedarik-portfoyu', JSON_OBJECT('html', '<p>Sultan Defense, kara sistemleri, balistik koruma, taktik tekstil, optik, elektronik ve lojistik destek kalemlerini kapsayan savunma tedarik portfoyunu yayina aldi.</p><h2>B2B odakli katalog</h2><p>Katalog, kamu kurumlari, guvenlik birimleri ve yetkili ticari alicilar icin urun ailelerini sade ve karsilastirilabilir sekilde sunar.</p><h2>Tedarik sureci</h2><p>Teknik gereksinim toplama, uretici dogrulama, ihracat uyumu, kalite kabul ve sevkiyat planlama adimlari tek is akisi olarak yurutulur.</p>'), 'Sultan Defense savunma tedarik portfoyu ve B2B katalog yapisi hakkinda duyuru.', 'Sultan Defense Savunma Tedarik Portfoyu | Haberler', 'Sultan Defense kara sistemleri, balistik koruma, taktik tekstil, optik ve elektronik tedarik portfoyunu yayina aldi.', 'savunma tedariki, B2B katalog, Sultan Defense'),
+  ('nw020002-6002-4002-a002-nnnnnnnn0002', 'nw010002-5002-4002-9002-nnnnnnnn0002', 'tr', 'EUC ve Ihracat Izin Dosyalari Icin Yeni Kontrol Akisi', 'euc-ihracat-izin-kontrol-akisi', JSON_OBJECT('html', '<p>Sultan Defense, son kullanici belgesi ve ihracat izin dosyalarinin teklif asamasinda kontrol edilmesi icin standart bir on inceleme akisi devreye aldi.</p><h2>On kontrol</h2><p>Alici bilgisi, nihai kullanim amaci, hedef ulke, urun teknik kodlari ve dokuman tutarliligi erken asamada dogrulanir.</p><h2>Daha az gecikme</h2><p>Eksik belge kaynakli gecikmeleri azaltmak icin uretici, alici ve lojistik taraflari ayni dokuman seti uzerinden koordine edilir.</p>'), 'EUC, ihracat izni ve dokuman tutarliligi icin standart kontrol akisi.', 'EUC ve Ihracat Izin Kontrol Akisi | Sultan Defense', 'Sultan Defense son kullanici belgesi, ihracat izni ve dokuman uyumu icin yeni on kontrol akisi uyguluyor.', 'EUC, ihracat izni, export compliance'),
+  ('nw020003-6003-4003-a003-nnnnnnnn0003', 'nw010003-5003-4003-9003-nnnnnnnn0003', 'tr', 'Orta Dogu, Afrika ve Turk Cumhuriyetleri Icin Lojistik Planlama', 'bolgesel-savunma-lojistik-planlama', JSON_OBJECT('html', '<p>Savunma urunlerinde sevkiyat planlamasi rota secimi, gumruk dokumanlari, ambalaj, tasima modu ve teslim sekli kararlarini birlikte gerektirir.</p><h2>Bolge bazli yaklasim</h2><p>Orta Dogu, Afrika ve Turk Cumhuriyetleri icin operasyonel gereksinimler, transit riskleri ve yerel ithalat kurallari ulke bazinda degerlendirilir.</p><h2>Izlenebilirlik</h2><p>Sultan Defense, teslimat surecinde dokuman takibi ve paydas koordinasyonunu merkezi olarak yurutur.</p>'), 'Hedef pazarlarda savunma lojistigi ve sevkiyat planlamasina dair ozet.', 'Bolgesel Savunma Lojistik Planlama | Sultan Defense', 'Savunma urunleri icin Orta Dogu, Afrika ve Turk Cumhuriyetleri odakli lojistik planlama.', 'askeri lojistik, savunma sevkiyat, gumruk'),
+  ('nw020004-6004-4004-a004-nnnnnnnn0004', 'nw010004-5004-4004-9004-nnnnnnnn0004', 'tr', 'Taktik Haberlesme ve Sensor Taleplerinde Artis', 'taktik-haberlesme-sensor-talepleri', JSON_OBJECT('html', '<p>Saha birlikleri ve kritik tesis guvenligi icin taktik haberlesme, sensor, optik ve simülasyon ekipmanlarina yonelik talepler artiyor.</p><h2>Uyumluluk onceligi</h2><p>Mevcut sistemlerle entegrasyon, frekans, guc, iklim dayanimi ve egitim ihtiyaci teknik degerlendirmenin merkezinde yer alir.</p><h2>Paket cozum</h2><p>Sultan Defense, ekipman, aksesuar, yedek parca ve egitim gereksinimlerini birlikte degerlendirerek tedarik dosyasi hazirlar.</p>'), 'Taktik haberlesme, sensor ve optik taleplerinde teknik uyumluluk odagi.', 'Taktik Haberlesme ve Sensor Talepleri | Sultan Defense', 'Taktik haberlesme, sensor, optik ve simülasyon ekipmanlarinda uyumluluk ve tedarik notlari.', 'taktik haberlesme, sensor, optik, simülasyon'),
+  ('nw020005-6005-4005-a005-nnnnnnnn0005', 'nw010005-5005-4005-9005-nnnnnnnn0005', 'tr', 'NATO, AQAP, MIL-STD, NIJ ve NSN Standartlari', 'savunma-standartlari-nato-aqap-mil-std-nij-nsn', JSON_OBJECT('html', '<p>Savunma tedarikinde standart referanslari, urun kalitesini ve operasyonel uygunlugu karsilastirilabilir hale getirir.</p><h2>Standart setleri</h2><p>NATO, AQAP, MIL-STD, NIJ, ISO 9001 ve NSN referanslari urun ailesine gore farkli anlamlar tasir. Dogru standart, dogru kullanim senaryosuyla eslestirilmelidir.</p><h2>Belge dogrulama</h2><p>Sultan Defense, sertifika ve teknik dokumanlari teklif dosyasi icinde kontrol ederek alici kararini destekler.</p>'), 'Savunma tedarikinde standart ve sertifika referanslarini anlamak icin kisa rehber.', 'Savunma Standartlari | Sultan Defense', 'NATO, AQAP, MIL-STD, NIJ, ISO 9001 ve NSN standartlarinin savunma tedarikindeki rolu.', 'NATO, AQAP, MIL-STD, NIJ, NSN'),
+  ('nw020006-6006-4006-a006-nnnnnnnn0006', 'nw010001-5001-4001-9001-nnnnnnnn0001', 'en', 'Sultan Defense Publishes Its Defense Procurement Portfolio', 'sultan-defense-procurement-portfolio', JSON_OBJECT('html', '<p>Sultan Defense has published its procurement portfolio covering land systems, ballistic protection, tactical textile, optics, electronics, and logistics support items.</p><h2>B2B catalog focus</h2><p>The catalog presents product families in a clear and comparable structure for public institutions, security units, and authorized commercial buyers.</p><h2>Procurement workflow</h2><p>Requirement intake, manufacturer validation, export compliance, quality acceptance, and shipment planning are managed as one workflow.</p>'), 'Announcement of Sultan Defense procurement portfolio and B2B catalog structure.', 'Sultan Defense Procurement Portfolio | News', 'Sultan Defense publishes its land systems, ballistic protection, tactical textile, optics, and electronics procurement portfolio.', 'defense procurement, B2B catalog, Sultan Defense'),
+  ('nw020007-6007-4007-a007-nnnnnnnn0007', 'nw010002-5002-4002-9002-nnnnnnnn0002', 'en', 'New Review Flow for EUC and Export Permit Files', 'euc-export-permit-review-flow', JSON_OBJECT('html', '<p>Sultan Defense has introduced a standard pre-review flow for end-user certificates and export permit files during quotation.</p><h2>Pre-check</h2><p>Buyer identity, end use, destination country, product technical codes, and document consistency are reviewed early.</p><h2>Fewer delays</h2><p>To reduce missing-document delays, manufacturer, buyer, and logistics parties are coordinated through the same document set.</p>'), 'Standard review flow for EUC, export permits, and document consistency.', 'EUC and Export Permit Review Flow | Sultan Defense', 'Sultan Defense applies a new pre-review flow for end-user certificates, export permits, and document compliance.', 'EUC, export permit, export compliance'),
+  ('nw020008-6008-4008-a008-nnnnnnnn0008', 'nw010003-5003-4003-9003-nnnnnnnn0003', 'en', 'Logistics Planning for the Middle East, Africa, and Turkic Republics', 'regional-defense-logistics-planning', JSON_OBJECT('html', '<p>Shipment planning for defense products combines route selection, customs documents, packaging, transport mode, and delivery terms.</p><h2>Region-specific approach</h2><p>For the Middle East, Africa, and Turkic Republics, operational requirements, transit risks, and local import rules are assessed country by country.</p><h2>Traceability</h2><p>Sultan Defense centrally manages document tracking and stakeholder coordination during delivery.</p>'), 'A brief note on defense logistics and shipment planning for target regions.', 'Regional Defense Logistics Planning | Sultan Defense', 'Logistics planning for defense products focused on the Middle East, Africa, and Turkic Republics.', 'military logistics, defense shipment, customs'),
+  ('nw020009-6009-4009-a009-nnnnnnnn0009', 'nw010004-5004-4004-9004-nnnnnnnn0004', 'en', 'Rising Demand for Tactical Communications and Sensors', 'tactical-communications-sensor-demand', JSON_OBJECT('html', '<p>Demand is rising for tactical communications, sensor, optics, and simulation equipment for field units and critical facility security.</p><h2>Compatibility first</h2><p>Integration with existing systems, frequency, power, climate resistance, and training needs sit at the center of technical review.</p><h2>Package approach</h2><p>Sultan Defense prepares procurement files by evaluating equipment, accessories, spare parts, and training needs together.</p>'), 'Technical compatibility focus in tactical communications, sensor, and optics requests.', 'Tactical Communications and Sensor Demand | Sultan Defense', 'Procurement notes on compatibility for tactical communications, sensors, optics, and simulation equipment.', 'tactical communications, sensor, optics, simulation'),
+  ('nw020010-6010-4010-a010-nnnnnnnn0010', 'nw010005-5005-4005-9005-nnnnnnnn0005', 'en', 'NATO, AQAP, MIL-STD, NIJ, and NSN Standards', 'defense-standards-nato-aqap-mil-std-nij-nsn', JSON_OBJECT('html', '<p>Standards references make defense product quality and operational suitability easier to compare.</p><h2>Standard sets</h2><p>NATO, AQAP, MIL-STD, NIJ, ISO 9001, and NSN references mean different things by product family. The right standard must match the right use case.</p><h2>Document validation</h2><p>Sultan Defense checks certificates and technical documents inside the offer file to support buyer decisions.</p>'), 'A short guide to standards and certificate references in defense procurement.', 'Defense Standards | Sultan Defense', 'The role of NATO, AQAP, MIL-STD, NIJ, ISO 9001, and NSN standards in defense procurement.', 'NATO, AQAP, MIL-STD, NIJ, NSN')
 ON DUPLICATE KEY UPDATE
-  `title`            = VALUES(`title`),
-  `slug`             = VALUES(`slug`),
-  `content`          = VALUES(`content`),
-  `summary`          = VALUES(`summary`),
-  `meta_title`       = VALUES(`meta_title`),
+  `title` = VALUES(`title`),
+  `slug` = VALUES(`slug`),
+  `content` = VALUES(`content`),
+  `summary` = VALUES(`summary`),
+  `meta_title` = VALUES(`meta_title`),
   `meta_description` = VALUES(`meta_description`),
-  `tags`             = VALUES(`tags`);
-
--- =========================
--- 3) CUSTOM PAGES I18N — EN
--- =========================
-INSERT INTO `custom_pages_i18n`
-(
-  `id`,
-  `page_id`,
-  `locale`,
-  `title`,
-  `slug`,
-  `content`,
-  `summary`,
-  `meta_title`,
-  `meta_description`,
-  `tags`
-)
-VALUES
-  (
-    'nw020006-6006-4006-a006-nnnnnnnn0006',
-    'nw010001-5001-4001-9001-nnnnnnnn0001',
-    'en',
-    'More Than a Design Office: Tolkan Architecture — Interview with Tolgahan Şahin',
-    'tolkan-architecture-tolgahan-sahin-interview',
-    JSON_OBJECT('html', '<p class="nd-lead"><strong>We sat down with Tolgahan Şahin, founder of Tolkan Architecture.</strong> Designing projects that are in harmony with nature, users, and function, Tolgahan says: "We operate not only as a design office, but also as a construction and implementation firm."</p>
-
-<h2>Hello Tolgahan, how does Tolkan Architecture plan living spaces? What common ground do these spaces share?</h2>
-
-<p>Hello, at Tolkan Architecture our goal is to design projects that are compatible with the region, nature, users, and function, without being tied to any template. Our sensitivity in our projects is that the user can feel a sense of belonging to the space, and that living areas are livable and usable. Our aim is to design living spaces planned according to user needs, rather than filling spaces with furniture.</p>
-
-<h2>What path do you follow in the project process?</h2>
-
-<p>Our project process begins with alternative sketch drawings. We try to determine the character of our design as a starting point, aiming to give the design an identity. Accordingly, we start placing and shaping the sketches on the site.</p>
-
-<blockquote>"I believe that applicable and usable design, quality and careful craftsmanship, will always be valued and deserve respect."</blockquote>
-
-<h2>What drives an architecture firm to success?</h2>
-
-<p>We are still at the beginning of the road. I believe that applicable and usable design, quality and careful craftsmanship, will always be valued and deserve respect.</p>
-
-<h2>Life dynamics and social structure fundamentally affect human-centered architectural buildings and spaces.</h2>
-
-<p>How do changing life dynamics and user habits direct people toward new designs? Are there architectural movements you embrace?</p>
-
-<p>Humans and human life are the foundation of human-centered architecture. Changing life dynamics also guide architecture. From past to present, there are effects and examples of human and social life on architecture. For example, the radical transition from Gothic architecture to modern architecture is the most important indicator of changes in society and social life reflected in architecture.</p>
-
-<p>From massive Gothic architectural structures, we see that the social environment and more functional multi-unit buildings brought by modernism, from structures that dominate their surroundings to structures that establish relationships with their environment, and that design and ancient architectural inspirations have given way to orthogonal designs.</p>
-
-<h2>John Lennon and Yoko Ono''s Bed-In...</h2>
-
-<p>The transition from modern to contemporary architecture is not radical but occurs through the accumulation and possibilities offered by technology, finding expression in various production methods in architecture. However, within contemporary architecture, there are radical changes in the changing structure of human life.</p>
-
-<p>The most comprehensive example that comes to mind is John Lennon (musician, member of The Beatles) and his partner Yoko Ono starting their "work" action in their beds (1969). For months they grew their hair in bed, made music, ate meals in bed, and with banners they hung, artists of that era questioned work discipline and its forms critically.</p>
-
-<blockquote>"I believe the future of architecture is sustainability-focused design."</blockquote>
-
-<h2>What do you think about the future of architecture?</h2>
-
-<p>I believe the future of architecture is sustainability-focused design. I think using materials with low carbon footprint and high energy efficiency will become a requirement of every architectural design in the future.</p>
-
-<h2>Partnership with Bereket Fide</h2>
-
-<p>In addition to our architecture firm, we have started working on mass housing and detached housing with Bereket Fide Construction. In these projects, we want to sign energy-saving housing projects for the future.</p>
-
-<p>We started our partnership by improving the energy efficiency of Bereket Fide Head Office restoration and production facility. In the project, we took care to recycle and reuse all available building elements. We strengthened existing walls, steel beams, roof panels and flooring with steel columns known for high energy efficiency.</p>
-
-<p>We are meeting a large portion of the company''s production energy needs with an approximately 350 kW solar energy system. Our next project is the Waste Water Recycling Project aimed at recycling used water. We plan to continue our projects with Bereket Fide as a pioneering and environmentally friendly approach in the seedling production sector.</p>'),
-    'Interview with Tolgahan Şahin, founder of Tolkan Architecture: A design office that creates projects in harmony with nature, users, and function.',
-    'Tolkan Architecture Interview: Tolgahan Şahin | Vista Construction News',
-    'Interview with Tolkan Architecture founder Tolgahan Şahin. Sustainable design, human-centered architecture and Bereket Fide partnership.',
-    'interview, tolkan architecture, tolgahan sahin, sustainable architecture, human-centered design'
-  ),
-  (
-    'nw020007-6007-4007-a007-nnnnnnnn0007',
-    'nw010002-5002-4002-9002-nnnnnnnn0002',
-    'en',
-    'New Office Tower Project in Istanbul: Levent District Being Reshaped',
-    'istanbul-levent-office-tower-project',
-    JSON_OBJECT('html', '<p>A new A+ class office tower project is starting in Istanbul''s financial center, the Levent district. The 42-storey building will stand out with its sustainable design principles and smart building technologies.</p><h2>Project Details</h2><p>The project will have a total enclosed area of 85,000 m². The building facade will feature a high-performance double-skin glass system. The building automation system is designed to optimize energy consumption in real time.</p><h2>Sustainability Goals</h2><p>The project targets LEED Platinum certification and will include roof gardens, rainwater collection systems, and electric vehicle charging stations as standard.</p><p>The project is planned for completion in 2027.</p>'),
-    'A new 42-storey office tower in Istanbul Levent: sustainable design, smart building and LEED Platinum target.',
-    'Istanbul Levent Office Tower Project | Vista Construction News',
-    'A 42-storey A+ class office tower in Levent. LEED Platinum, smart building technologies and sustainable facade design.',
-    'levent, office tower, LEED platinum, smart building, istanbul'
-  ),
-  (
-    'nw020008-6008-4008-a008-nnnnnnnn0008',
-    'nw010003-5003-4003-9003-nnnnnnnn0003',
-    'en',
-    'Earthquake-Resistant Building Design: 2025 Updates',
-    'earthquake-resistant-building-design-2025',
-    JSON_OBJECT('html', '<p>Recent updates to Turkey''s Building Earthquake Regulation bring new standards to structural design. Critical changes are particularly relevant for residential projects in high seismic zones.</p><h2>New Requirements</h2><p>The updated regulation expands the performance-based design approach, encourages base isolation applications, and raises existing structural strengthening standards.</p><h2>Material Standards</h2><p>Changes in concrete strength classes and reinforcement detailing rules aim to improve ductility performance, particularly in column-beam connection zones.</p>'),
-    'Turkey earthquake regulation 2025 updates and their impact on structural design.',
-    'Earthquake-Resistant Building Design 2025 Updates | Vista Construction',
-    'Turkey earthquake regulation 2025 updates. Performance-based design, base isolation and material standards.',
-    'earthquake regulation, seismic design, structural strengthening, 2025'
-  ),
-  (
-    'nw020009-6009-4009-a009-nnnnnnnn0009',
-    'nw010004-5004-4004-9004-nnnnnnnn0004',
-    'en',
-    'Smart City Projects and Infrastructure Transformation',
-    'smart-city-projects-infrastructure-transformation',
-    JSON_OBJECT('html', '<p>Major cities in Turkey are taking significant steps in smart city transformation. IoT sensors, digital twin technology, and integrated transportation systems are redefining urban infrastructure.</p><h2>Digital Twin Applications</h2><p>Digital twins of cities have started being used as decision support systems in a wide range from infrastructure planning to emergency management.</p><h2>Energy and Water Management</h2><p>Smart grid systems reduce water loss by up to 30% while significantly increasing energy distribution efficiency.</p>'),
-    'Smart city projects in Turkey, digital twin technology and infrastructure transformation.',
-    'Smart City Projects and Infrastructure Transformation | Vista Construction',
-    'Smart city transformation, IoT infrastructure, digital twin and integrated transportation systems.',
-    'smart city, digital twin, IoT, infrastructure transformation'
-  ),
-  (
-    'nw020010-6010-4010-a010-nnnnnnnn0010',
-    'nw010005-5005-4005-9005-nnnnnnnn0005',
-    'en',
-    'Modular Building Systems: The Future of Construction',
-    'modular-building-systems-future-construction',
-    JSON_OBJECT('html', '<p>Modular building systems are rapidly becoming widespread as an alternative to traditional construction methods. Assembly of factory-produced components on site can shorten construction time by 40-60%.</p><h2>Advantages</h2><ul><li>Speed: Foundation and superstructure progress in parallel</li><li>Quality: Controlled production in factory environment</li><li>Sustainability: Up to 70% less waste</li><li>Cost: Significant savings in repetitive projects</li></ul><h2>Application Areas</h2><p>Modular systems are increasingly preferred in hotels, student dormitories, hospital extensions, and mass housing projects.</p>'),
-    'Advantages, application areas and future of modular building systems in the construction sector.',
-    'Modular Building Systems: The Future of Construction | Vista Construction',
-    'Modular building technology, factory production, rapid assembly and sustainable construction.',
-    'modular building, prefabricated, rapid construction, sustainability'
-  )
-ON DUPLICATE KEY UPDATE
-  `title`            = VALUES(`title`),
-  `slug`             = VALUES(`slug`),
-  `content`          = VALUES(`content`),
-  `summary`          = VALUES(`summary`),
-  `meta_title`       = VALUES(`meta_title`),
-  `meta_description` = VALUES(`meta_description`),
-  `tags`             = VALUES(`tags`);
+  `tags` = VALUES(`tags`);
 
 COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;

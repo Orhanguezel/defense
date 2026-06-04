@@ -1,5 +1,5 @@
 -- =============================================================
--- FILE: 299_vistainsaat_gallery_schema.sql
+-- FILE: 299_sultandefense_gallery_schema.sql
 -- Sultan Defense — Galeri tablolarını oluştur
 -- CREATE TABLE IF NOT EXISTS — ALTER kullanılmaz
 -- =============================================================

@@ -1,5 +1,5 @@
 -- =============================================================
--- FILE: 316_vistainsaat_offer_settings.seed.sql
+-- FILE: 316_sultandefense_offer_settings.seed.sql
 -- Sultan Defense — Offer module admin notifications
 -- =============================================================
 
@@ -13,8 +13,8 @@ START TRANSACTION;
 -- =============================================================
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`)
 VALUES 
-(UUID(), 'offers_admin_email', '*', 'orhanguzell@gmail.com', NOW(3), NOW(3)),
-(UUID(), 'sultandefense__offers_admin_email', '*', 'orhanguzell@gmail.com', NOW(3), NOW(3))
+(UUID(), 'offers_admin_email', '*', 'export@sultandefense.com', NOW(3), NOW(3)),
+(UUID(), 'sultandefense__offers_admin_email', '*', 'export@sultandefense.com', NOW(3), NOW(3))
 ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), `updated_at` = VALUES(`updated_at`);
 
 -- =============================================================

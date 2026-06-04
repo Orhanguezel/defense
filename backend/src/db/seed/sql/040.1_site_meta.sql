@@ -51,7 +51,7 @@ SET @OG_DEFAULT := COALESCE(
     ORDER BY `updated_at` DESC
     LIMIT 1
   ),
-  '/logo/png/vista_logo_512.png'
+  '/logo/png/sultandefense_logo_512.png'
 );
 
 -- -------------------------------------------------------------
@@ -61,26 +61,26 @@ SET @OG_DEFAULT := COALESCE(
 -- -------------------------------------------------------------
 
 -- Brand / default titles (ASCII-safe)
-SET @BRAND_TR := 'Sultan Defense – Profesyonel Insaat ve Taahhut';
-SET @BRAND_EN := 'Vista Construction – Professional Building and Contracting';
-SET @BRAND_DE := 'Vista Bau – Professionelles Bauen und Auftragnehmer';
+SET @BRAND_TR := 'Sultan Defense – Savunma Tedarik ve Ihracat';
+SET @BRAND_EN := 'Sultan Defense – Defense Procurement and Export';
+SET @BRAND_DE := 'Sultan Defense – Verteidigungsbeschaffung und Export';
 
 -- Site name (shorter, neutral)
-SET @SITE_NAME_GLOBAL := 'Vista Construction';
+SET @SITE_NAME_GLOBAL := 'Sultan Defense';
 
 -- Global default title
-SET @TITLE_GLOBAL := 'Vista Construction – Professional Building and Contracting';
+SET @TITLE_GLOBAL := 'Sultan Defense – Defense Procurement and Export';
 
 -- Concise descriptions
-SET @DESC_TR := 'Vista Insaat – Konut, ticari ve endustriyel insaat projeleri. Anahtar teslim cozumler, taahhut ve proje yonetimi.';
-SET @DESC_EN := 'Vista Construction – Residential, commercial and industrial building projects. Turnkey solutions, contracting and project management.';
-SET @DESC_DE := 'Vista Bau – Wohn-, Gewerbe- und Industriebauprojekte. Schluesselfertige Loesungen, Auftragsvergabe und Projektmanagement.';
+SET @DESC_TR := 'Sultan Defense – Savunma urunleri icin B2B tedarik, ihracat uyumu, kalite kabul ve lojistik koordinasyonu.';
+SET @DESC_EN := 'Sultan Defense – B2B sourcing, export compliance, quality acceptance, and logistics coordination for defense products.';
+SET @DESC_DE := 'Sultan Defense – B2B-Beschaffung, Export-Compliance, Qualitatsabnahme und Logistik fur Verteidigungsprodukte.';
 
 -- Global concise description
-SET @DESC_GLOBAL := 'Professional construction, contracting and project management for residential, commercial and industrial buildings.';
+SET @DESC_GLOBAL := 'Defense procurement and export coordination for verified B2B buyers across land systems, tactical equipment, electronics, and logistics.';
 
 -- Global keywords (neutral)
-SET @KW_GLOBAL := 'sultandefense, vista construction, building, contracting, project management, residential, commercial, industrial';
+SET @KW_GLOBAL := 'sultandefense, defense procurement, tactical equipment, ballistic protection, export compliance, EUC, military logistics';
 
 -- -------------------------------------------------------------
 -- Build JSON payloads once (DRY)
@@ -193,7 +193,7 @@ SET @META_TR := CAST(
   JSON_OBJECT(
     'title',       @BRAND_TR,
     'description', @DESC_TR,
-    'keywords',    'sultandefense, vista insaat, insaat, taahhut, konut, ticari, endustriyel, proje yonetimi, anahtar teslim'
+    'keywords',    'sultandefense, savunma tedariki, taktik ekipman, balistik koruma, ihracat uyumu, EUC, askeri lojistik'
   ) AS CHAR CHARACTER SET utf8mb4
 );
 
@@ -201,7 +201,7 @@ SET @META_EN := CAST(
   JSON_OBJECT(
     'title',       @BRAND_EN,
     'description', @DESC_EN,
-    'keywords',    'sultandefense, vista construction, construction, contracting, residential, commercial, industrial, project management, turnkey'
+    'keywords',    'sultandefense, defense procurement, tactical equipment, ballistic protection, export compliance, EUC, military logistics'
   ) AS CHAR CHARACTER SET utf8mb4
 );
 
@@ -209,7 +209,7 @@ SET @META_DE := CAST(
   JSON_OBJECT(
     'title',       @BRAND_DE,
     'description', @DESC_DE,
-    'keywords',    'sultandefense, vista bau, bau, auftragnehmer, wohnbau, gewerbebau, industriebau, projektmanagement, schluesselfertig'
+    'keywords',    'sultandefense, verteidigungsbeschaffung, taktische ausrustung, ballistischer schutz, export compliance, EUC, militaerlogistik'
   ) AS CHAR CHARACTER SET utf8mb4
 );
 

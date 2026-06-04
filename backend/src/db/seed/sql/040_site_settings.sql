@@ -71,11 +71,11 @@ VALUES
   'tr',
   CAST(JSON_OBJECT(
     'companyName','Sultan Defense',
-    'phones',JSON_ARRAY(),
+    'phones',JSON_ARRAY('+90 545 552 75 35'),
     'email','info@sultandefense.com',
-    'address','',
-    'addressSecondary','',
-    'whatsappNumber','',
+    'address','Folkart Time 1 - Office Blocks, Kazimdirik, Floor 6, Flat 612, Bornova, Izmir, Turkiye',
+    'addressSecondary','Middle East, Africa and Turkic Republics procurement coordination',
+    'whatsappNumber','+905455527535',
     'taxOffice','',
     'taxNumber','',
     'website','https://www.sultandefense.com'
@@ -92,12 +92,12 @@ VALUES
   'socials',
   'tr',
   CAST(JSON_OBJECT(
-    'instagram','https://instagram.com/sultandefense',
-    'facebook','https://facebook.com/sultandefense',
-    'youtube','https://youtube.com/@sultandefense',
-    'linkedin','https://linkedin.com/company/sultandefense',
-    'x','https://x.com/sultandefense',
-    'tiktok','https://www.tiktok.com/@sultandefense'
+    'instagram','',
+    'facebook','',
+    'youtube','',
+    'linkedin','',
+    'x','',
+    'tiktok',''
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3),
   NOW(3)
@@ -107,9 +107,9 @@ VALUES
   'company_profile',
   'tr',
   CAST(JSON_OBJECT(
-    'headline','Sultan Defense – Güvenilir ve Kaliteli Yapı Çözümleri',
-    'subline','Konut, ticari ve endüstriyel projelerde yenilikçi inşaat çözümleri sunarak yaşam alanlarınızı şekillendiriyoruz.',
-    'body','Sultan Defense, konut, ticari ve endüstriyel yapı projelerinde kaliteli ve sürdürülebilir çözümler üreten bir inşaat firmasıdır. Müşteri memnuniyetini ön planda tutarak, modern mühendislik teknikleri ve yenilikçi tasarım anlayışıyla projeler hayata geçirmekteyiz.'
+    'headline','Sultan Defense – Savunma Tedarikinde Guvenilir Ihracat Ortagi',
+    'subline','Savunma urunleri icin kaynak bulma, ihracat uyumu, kalite kabul ve lojistik koordinasyonunu tek akista yonetiyoruz.',
+    'body','Sultan Defense Ltd., Co. 1996’dan beri savunma ve askeri ekipman tedarikinde B2B alicilara hizmet veren bir ihracat ve tedarik koordinasyon sirketidir. Uretici degil, dogrulanmis uretici agi ile alici arasinda guvenilir operasyon ortagidir.'
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3),
   NOW(3)
@@ -153,11 +153,11 @@ VALUES
   'en',
   CAST(JSON_OBJECT(
     'companyName','Sultan Defense',
-    'phones',JSON_ARRAY(),
+    'phones',JSON_ARRAY('+90 545 552 75 35'),
     'email','info@sultandefense.com',
-    'address','',
-    'addressSecondary','',
-    'whatsappNumber','',
+    'address','Folkart Time 1 - Office Blocks, Kazimdirik, Floor 6, Flat 612, Bornova, Izmir, Turkiye',
+    'addressSecondary','Middle East, Africa and Turkic Republics procurement coordination',
+    'whatsappNumber','+905455527535',
     'taxOffice','',
     'taxNumber','',
     'website','https://www.sultandefense.com'
@@ -170,11 +170,11 @@ VALUES
   'socials',
   'en',
   CAST(JSON_OBJECT(
-    'instagram','https://instagram.com/sultandefense',
-    'facebook','https://facebook.com/sultandefense',
-    'youtube','https://youtube.com/@sultandefense',
-    'linkedin','https://linkedin.com/company/sultandefense',
-    'x','https://x.com/sultandefense',
+    'instagram','',
+    'facebook','',
+    'youtube','',
+    'linkedin','',
+    'x','',
     'tiktok',''
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3),
@@ -197,9 +197,9 @@ VALUES
   'company_profile',
   'en',
   CAST(JSON_OBJECT(
-    'headline','Sultan Defense – Reliable and Quality Construction Solutions',
-    'subline','We shape living spaces by providing innovative construction solutions in residential, commercial, and industrial projects.',
-    'body','Sultan Defense is a construction company that delivers high-quality and sustainable solutions for residential, commercial, and industrial building projects. Prioritizing customer satisfaction, we bring projects to life using modern engineering techniques and innovative design approaches.'
+    'headline','Sultan Defense – Trusted Export Partner for Defense Procurement',
+    'subline','We coordinate sourcing, export compliance, quality acceptance, and logistics for defense products in one workflow.',
+    'body','Sultan Defense Ltd., Co. is a B2B export and procurement coordination company serving verified defense and military equipment buyers since 1996. It is not a manufacturer; it connects buyers with verified manufacturer channels and manages the procurement workflow.'
   ) AS CHAR CHARACTER SET utf8mb4),
   NOW(3),
   NOW(3)
@@ -217,10 +217,10 @@ VALUES
 (UUID(), 'storage_local_root',         '*', '/var/www/sultandefense/uploads',                NOW(3), NOW(3)),
 (UUID(), 'storage_local_base_url',     '*', '/uploads',                                    NOW(3), NOW(3)),
 (UUID(), 'cloudinary_cloud_name',      '*', 'dbozv7wqd',                                   NOW(3), NOW(3)),
-(UUID(), 'cloudinary_api_key',         '*', '644676135993432',                             NOW(3), NOW(3)),
-(UUID(), 'cloudinary_api_secret',      '*', 'C2VWxsJ5j0jZpcxOhvuTOTKhaMo',                 NOW(3), NOW(3)),
+(UUID(), 'cloudinary_api_key',         '*', 'change-me-in-admin',                          NOW(3), NOW(3)),
+(UUID(), 'cloudinary_api_secret',      '*', 'change-me-in-admin',                          NOW(3), NOW(3)),
 (UUID(), 'cloudinary_folder',          '*', 'uploads/sultandefense',                         NOW(3), NOW(3)),
-(UUID(), 'cloudinary_unsigned_preset', '*', 'vistainsaat_unsigned',                        NOW(3), NOW(3)),
+(UUID(), 'cloudinary_unsigned_preset', '*', 'sultandefense_unsigned',                      NOW(3), NOW(3)),
 (UUID(), 'storage_cdn_public_base',    '*', 'https://res.cloudinary.com',                  NOW(3), NOW(3)),
 (UUID(), 'storage_public_api_base',    '*', 'https://www.sultandefense.com/api',             NOW(3), NOW(3))
 ON DUPLICATE KEY UPDATE
@@ -301,8 +301,8 @@ VALUES
   '*',
   CAST(
     JSON_OBJECT(
-      'url','/logo/vista-logo-light.svg',
-      'dark_url','/logo/vista-logo-dark.svg',
+      'url','/logo/sultandefense-logo-light.svg',
+      'dark_url','/logo/sultandefense-logo-dark.svg',
       'width',160,
       'height',60,
       'alt','Sultan Defense Logo'
@@ -317,7 +317,7 @@ VALUES
   '*',
   CAST(
     JSON_OBJECT(
-      'url','/logo/vista-logo-dark.svg',
+      'url','/logo/sultandefense-logo-dark.svg',
       'width',160,
       'height',60,
       'alt','Sultan Defense Logo (Dark)'
@@ -332,7 +332,7 @@ VALUES
   '*',
   CAST(
     JSON_OBJECT(
-      'url','/logo/vista-logo-light.svg',
+      'url','/logo/sultandefense-logo-light.svg',
       'width',160,
       'height',60,
       'alt','Sultan Defense Logo (Light)'
@@ -373,7 +373,7 @@ VALUES
   '*',
   CAST(
     JSON_OBJECT(
-      'url','/logo/png/vista_logo_512.png',
+      'url','/logo/png/sultandefense_logo_512.png',
       'alt','Sultan Defense App Icon (512x512)'
     ) AS CHAR CHARACTER SET utf8mb4
   ),
@@ -386,7 +386,7 @@ VALUES
   '*',
   CAST(
     JSON_OBJECT(
-      'url','/logo/png/vista_logo_512.png',
+      'url','/logo/png/sultandefense_logo_512.png',
       'width',1200,
       'height',630,
       'alt','Sultan Defense'

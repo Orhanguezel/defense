@@ -1,6 +1,6 @@
 -- =============================================================
 -- FILE: 304_sultandefense_blog.seed.sql
--- Sultan Defense — Blog / haber yazıları (custom_pages) + i18n (TR/EN)
+-- Sultan Defense — Blog / field notes (custom_pages) + i18n (TR/EN)
 -- module_key = 'sultandefense_blog'
 -- =============================================================
 
@@ -10,186 +10,132 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 START TRANSACTION;
 
--- =========================
--- 1) CUSTOM PAGES (BASE)
--- =========================
 INSERT INTO `custom_pages`
 (
-  `id`,
-  `module_key`,
-  `is_published`,
-  `featured`,
-  `display_order`,
-  `order_num`,
-  `featured_image`,
-  `featured_image_asset_id`,
-  `image_url`,
-  `storage_asset_id`,
-  `images`,
-  `storage_image_ids`,
-  `category_id`,
-  `sub_category_id`
+  `id`, `module_key`, `is_published`, `featured`, `display_order`, `order_num`,
+  `featured_image`, `featured_image_asset_id`, `image_url`, `storage_asset_id`,
+  `images`, `storage_image_ids`, `category_id`, `sub_category_id`
 )
 VALUES
-  ('bb010001-5001-4001-9001-bbbbbbbb0001', 'sultandefense_blog', 1, 1, 10, 10, '/uploads/projects/vista-insaat-proje-39.jpeg', NULL, '/uploads/projects/vista-insaat-proje-39.jpeg', NULL, '[]', '[]', NULL, NULL),
-  ('bb010002-5002-4002-9002-bbbbbbbb0002', 'sultandefense_blog', 1, 1, 20, 20, '/uploads/projects/vista-insaat-proje-29.jpeg', NULL, '/uploads/projects/vista-insaat-proje-29.jpeg', NULL, '[]', '[]', NULL, NULL),
-  ('bb010003-5003-4003-9003-bbbbbbbb0003', 'sultandefense_blog', 1, 0, 30, 30, '/uploads/projects/vista-insaat-proje-36.jpeg', NULL, '/uploads/projects/vista-insaat-proje-36.jpeg', NULL, '[]', '[]', NULL, NULL),
-  ('bb010004-5004-4004-9004-bbbbbbbb0004', 'sultandefense_blog', 1, 0, 40, 40, '/uploads/projects/vista-insaat-proje-30.jpeg', NULL, '/uploads/projects/vista-insaat-proje-30.jpeg', NULL, '[]', '[]', NULL, NULL)
+  ('bb010001-5001-4001-9001-bbbbbbbb0001', 'sultandefense_blog', 1, 1, 10, 10, '/media/sultandefense/blog-procurement-checklist.jpg', NULL, '/media/sultandefense/blog-procurement-checklist.jpg', NULL, '[]', '[]', NULL, NULL),
+  ('bb010002-5002-4002-9002-bbbbbbbb0002', 'sultandefense_blog', 1, 1, 20, 20, '/media/sultandefense/blog-export-compliance.jpg', NULL, '/media/sultandefense/blog-export-compliance.jpg', NULL, '[]', '[]', NULL, NULL),
+  ('bb010003-5003-4003-9003-bbbbbbbb0003', 'sultandefense_blog', 1, 0, 30, 30, '/media/sultandefense/blog-turkish-defense-industry.jpg', NULL, '/media/sultandefense/blog-turkish-defense-industry.jpg', NULL, '[]', '[]', NULL, NULL),
+  ('bb010004-5004-4004-9004-bbbbbbbb0004', 'sultandefense_blog', 1, 0, 40, 40, '/media/sultandefense/blog-resilient-supply-chain.jpg', NULL, '/media/sultandefense/blog-resilient-supply-chain.jpg', NULL, '[]', '[]', NULL, NULL)
 ON DUPLICATE KEY UPDATE
-  `module_key`   = VALUES(`module_key`),
+  `module_key` = VALUES(`module_key`),
   `is_published` = VALUES(`is_published`),
-  `featured`     = VALUES(`featured`),
-  `display_order`= VALUES(`display_order`),
+  `featured` = VALUES(`featured`),
+  `display_order` = VALUES(`display_order`),
   `featured_image` = VALUES(`featured_image`),
   `image_url` = VALUES(`image_url`);
 
--- =========================
--- 2) CUSTOM PAGES I18N — TR
--- =========================
 INSERT INTO `custom_pages_i18n`
-(
-  `id`,
-  `page_id`,
-  `locale`,
-  `title`,
-  `slug`,
-  `content`,
-  `summary`,
-  `meta_title`,
-  `meta_description`,
-  `tags`
-)
+(`id`, `page_id`, `locale`, `title`, `slug`, `content`, `summary`, `meta_title`, `meta_description`, `tags`)
 VALUES
   (
     'bb020001-6001-4001-a001-bbbbbbbb0001',
     'bb010001-5001-4001-9001-bbbbbbbb0001',
     'tr',
-    'Sürdürülebilir Bina Tasarımında Güncel Yaklaşımlar',
-    'surdurulebilir-bina-tasarimi',
-    JSON_OBJECT('html', '<p>Sürdürülebilir yapı tasarımı artık bir tercih değil, inşaat sektörünün temel gereksinimi haline gelmiştir. Enerji verimliliği, su yönetimi ve malzeme döngüsü birbirini tamamlayan üç temel eksen olarak öne çıkmaktadır.</p><h2>Enerji Verimliliği</h2><p>Yüksek performanslı cephe sistemleri, ısı yalıtımı ve akıllı bina otomasyon sistemleri; yapının ömrü boyunca enerji tüketimini önemli ölçüde azaltmaktadır. Sultan Defense projelerinde enerji modelleme, tasarım aşamasında entegre bir disiplin olarak ele alınmaktadır.</p><h2>Yeşil Sertifikasyon</h2><p>LEED ve BREEAM gibi uluslararası yeşil bina sertifikasyonları, tasarım kalitesini ve çevresel performansı belgeler. Bu standartlara uygun projeler; hem kiracı talebi hem de uzun vadeli değer açısından belirgin avantaj sağlamaktadır.</p><h2>Döngüsel Malzeme Kullanımı</h2><p>Geri dönüştürülmüş içerik oranı yüksek malzemelerin seçimi, yapım atıklarının azaltılması ve demontaj planlaması artık modern inşaat projelerinin ayrılmaz parçasıdır.</p>'),
-    'Sürdürülebilir bina tasarımında enerji verimliliği, yeşil sertifikasyon ve döngüsel malzeme kullanımına dair güncel yaklaşımlar.',
-    'Sürdürülebilir Bina Tasarımında Güncel Yaklaşımlar | Sultan Defense',
-    'Enerji verimliliği, LEED/BREEAM sertifikasyonu ve döngüsel malzeme kullanımı. Sultan Defense sürdürülebilir inşaat rehberi.',
-    'sürdürülebilir bina, enerji verimliliği, LEED, yeşil inşaat'
+    'Savunma Tedarik Kontrol Listesi: Ihtiyactan Sevkiyata',
+    'savunma-tedarik-kontrol-listesi',
+    JSON_OBJECT('html', '<p>Savunma tedariki yalnizca urun bulma isi degildir; ihtiyac tanimi, teknik uyumluluk, uretici dogrulama, ihracat izni, son kullanici belgesi ve lojistik planlama ayni zincirin halkalaridir.</p><h2>Net ihtiyac tanimi</h2><p>Kalibre, standart, miktar, aksesuar, yedek parca ve egitim gereksinimleri bastan netlestirilmelidir. Belirsiz talep, yanlis teklif ve geciken teslimat anlamina gelir.</p><h2>Uretici ve belge kontrolu</h2><p>Sultan Defense, dogrulanmis uretici kanallariyla teknik veri sayfalarini, sertifikalari ve ihracat uygunlugunu kontrol ederek teklif surecini yonetir.</p><h2>Sevkiyat plani</h2><p>Ambalaj, rota, teslim sekli ve gumruk dokumantasyonu, urun secimi kadar erken ele alinmalidir.</p>'),
+    'Savunma tedarikinde ihtiyac tanimindan EUC ve sevkiyata kadar izlenmesi gereken temel kontrol listesi.',
+    'Savunma Tedarik Kontrol Listesi | Sultan Defense',
+    'Savunma tedarikinde teknik gereksinim, uretici dogrulama, EUC, ihracat izni ve lojistik kontrol listesi.',
+    'savunma tedariki, EUC, ihracat izni, askeri lojistik'
   ),
   (
     'bb020002-6002-4002-a002-bbbbbbbb0002',
     'bb010002-5002-4002-9002-bbbbbbbb0002',
     'tr',
-    'Anahtar Teslim İnşaat: Proje Yönetiminde Doğru Model Seçimi',
-    'anahtar-teslim-insaat-proje-yonetimi',
-    JSON_OBJECT('html', '<p>Anahtar teslim inşaat modeli, işverenlere tasarım, tedarik ve yapım süreçlerini tek bir sorumluluk çatısı altında yönetme imkânı sunar. Bu yaklaşımın avantajları ve dikkat edilmesi gereken noktalar nelerdir?</p><h2>Anahtar Teslim Modelin Avantajları</h2><ul><li>Tek muhatap — koordinasyon yükü azalır</li><li>Bütçe ve program disiplini artar</li><li>Tasarım-yapım entegrasyonu sorun çözümünü hızlandırır</li><li>Garanti kapsamı daha geniş ve tutarlıdır</li></ul><h2>Dikkat Edilmesi Gereken Noktalar</h2><p>İşveren gereksinimlerinin (Employer Requirements) baştan doğru ve eksiksiz tanımlanması, bu modelin başarısında belirleyici rol oynar. Belirsiz kapsam tanımları maliyet artışı ve program gecikmesine yol açabilir.</p><h2>Sultan Defense Yaklaşımı</h2><p>Sultan Defense; mimari, mühendislik ve yapım disiplinlerini tek çatı altında yöneterek işverenin hedeflerine sadık, bütçe ve program disiplinini koruyan bir anahtar teslim hizmet modeli sunmaktadır.</p>'),
-    'Anahtar teslim inşaat modelinin avantajları, riskleri ve doğru proje yönetimi yaklaşımına dair pratik rehber.',
-    'Anahtar Teslim İnşaat ve Proje Yönetimi | Sultan Defense',
-    'Anahtar teslim inşaat modelinin avantajları, dikkat noktaları ve Sultan Defense proje yönetimi yaklaşımı.',
-    'anahtar teslim inşaat, proje yönetimi, yapım sözleşmesi'
+    'EUC ve Ihracat Uyumu Neden Kritik?',
+    'euc-ihracat-uyumu-neden-kritik',
+    JSON_OBJECT('html', '<p>Son kullanici belgesi (EUC), savunma urunlerinin dogru alici, dogru kullanim amaci ve dogru ulkeye teslim edildigini belgeleyen temel uyum aracidir.</p><h2>Riskleri azaltir</h2><p>Eksik veya tutarsiz EUC, ihracat izni surecinde gecikmeye, sevkiyat blokajina veya teklifin iptaline yol acabilir.</p><h2>Belgeler birlikte calisir</h2><p>EUC, ithalat izni, teknik sertifika, fatura, paket listesi ve tasima evraklari ayni dosya mantigiyla hazirlanmalidir.</p><h2>Sultan Defense rolu</h2><p>Ekibimiz, alici ve uretici arasinda dokuman akisini koordine eder; mevzuat ve uretici beklentilerini erken asamada netlestirir.</p>'),
+    'Son kullanici belgesi, ihracat izni ve dokuman uyumunun savunma tedarikindeki rolunu aciklayan kisa rehber.',
+    'EUC ve Ihracat Uyumu | Sultan Defense',
+    'Savunma ihracatinda EUC, ihracat izni, ithalat belgesi ve sevkiyat dokumanlarinin onemi.',
+    'EUC, export compliance, son kullanici belgesi, savunma ihracati'
   ),
   (
     'bb020003-6003-4003-a003-bbbbbbbb0003',
     'bb010003-5003-4003-9003-bbbbbbbb0003',
     'tr',
-    'Tarihi Yapı Restorasyonunda Temel İlkeler',
-    'tarihi-yapi-restorasyonu-ilkeleri',
-    JSON_OBJECT('html', '<p>Tarihi yapıların restorasyonu; özgün doku ve karakterin korunmasını ön planda tutarken yapının uzun ömürlü ve işlevsel olmasını da sağlamalıdır. Bu denge, her projede özgün bir planlama ve müdahale stratejisi gerektirmektedir.</p><h2>Belgeleme ve Analiz</h2><p>Restorasyon öncesinde kapsamlı rölöve, restitüsyon ve restorasyon projelerinin hazırlanması zorunludur. Yapı fiziği analizleri, zemin incelemeleri ve malzeme karakterizasyon çalışmaları doğru müdahale kararlarının temelini oluşturur.</p><h2>Müdahale Hiyerarşisi</h2><p>Önce koruma, sonra konsolidasyon, ardından gerektiğinde minimal tamamlama — bu sıra, tarihi koruma disiplininin temel ilkesidir. Her müdahale belgelenmeli ve gelecekte geri alınabilir olmalıdır.</p><h2>Uyumlu Malzeme Seçimi</h2><p>Özgün malzemelere mekanik ve termal açıdan uyumlu malzemelerin seçimi, uzun vadeli bütünlük açısından kritiktir. Örneğin Portland çimento harçları, özgün kireç harçlı tarihi yapılarda doku hasarına yol açabilir.</p>'),
-    'Tarihi yapı restorasyonunda belgeleme, müdahale hiyerarşisi ve malzeme seçimine dair temel ilkeler.',
-    'Tarihi Yapı Restorasyonunda Temel İlkeler | Sultan Defense',
-    'Tarihi binaların restorasyonunda koruma ilkeleri, malzeme uyumu ve müdahale stratejisi. Sultan Defense restorasyon uzmanlığı.',
-    'tarihi yapı restorasyonu, koruma, kültürel miras, müdahale ilkeleri'
+    'Turk Savunma Sanayi Neden Talep Goruyor?',
+    'turk-savunma-sanayi-neden-talep-goruyor',
+    JSON_OBJECT('html', '<p>Turkiye, kara sistemleri, balistik koruma, taktik tekstil, haberlesme, optik ve insansiz sistemlerde hizli gelisen bir uretim ekosistemine sahiptir.</p><h2>Esnek uretim</h2><p>Turk ureticiler, farkli cografyalarin operasyonel ihtiyaclarina gore konfigrasyon ve paketleme esnekligi sunabilir.</p><h2>Rekabetci toplam maliyet</h2><p>Urun fiyati kadar teslim suresi, yedek parca, egitim ve servis kabiliyeti de toplam maliyeti belirler.</p><h2>Dogru kanal onemlidir</h2><p>Sultan Defense, aliciyi dogru uretici ve dogru belge setiyle bulusturarak sureci sadeleştirir.</p>'),
+    'Turk savunma ekosisteminin ihracat pazarlarinda neden guclu talep gordugune dair ozet degerlendirme.',
+    'Turk Savunma Sanayi Talebi | Sultan Defense',
+    'Turk savunma sanayinin esnek uretim, rekabetci maliyet ve tedarik avantajlari.',
+    'Turk savunma sanayi, defense industry, tedarik, ihracat'
   ),
   (
     'bb020004-6004-4004-a004-bbbbbbbb0004',
     'bb010004-5004-4004-9004-bbbbbbbb0004',
     'tr',
-    'Kentsel Dönüşümde Karma Kullanım Yapılarının Rolü',
-    'kentsel-donusumde-karma-kullanim',
-    JSON_OBJECT('html', '<p>Karma kullanımlı yapılar, kentsel yenileme projelerinde yaşam, çalışma ve ticaret alanlarını bir arada sunarak şehirlerin sosyal ve ekonomik dokusunu güçlendirmektedir. Bu yapı tipi, özellikle toplu taşıma odaklarına yakın kentsel dönüşüm alanlarında belirleyici bir rol üstlenmektedir.</p><h2>Karma Kullanımın Avantajları</h2><ul><li>Gün boyunca canlı kentsel aktivite yaratır</li><li>Trafik yükünü azaltır — iş, alışveriş ve konut yakınlaşır</li><li>Arazi değeri ve yatırım getirisi artar</li><li>Sürdürülebilirlik hedefleriyle uyumludur</li></ul><h2>Tasarım Gereksinimleri</h2><p>Karma kullanımlı projelerde farklı fonksiyonların birbirini olumsuz etkilememesi için düşey ve yatay fonksiyon ayrımı, akustik planlama ve erişim yönetimi özenle tasarlanmalıdır.</p>'),
-    'Kentsel dönüşüm projelerinde karma kullanımlı yapıların rolü, avantajları ve tasarım gereksinimleri.',
-    'Kentsel Dönüşümde Karma Kullanım Yapıları | Sultan Defense',
-    'Karma kullanımlı yapıların kentsel dönüşümdeki rolü, tasarım gereksinimleri ve Sultan Defense uygulama deneyimi.',
-    'karma kullanım, kentsel dönüşüm, konut ve ticaret, şehircilik'
-  )
-ON DUPLICATE KEY UPDATE
-  `title`            = VALUES(`title`),
-  `slug`             = VALUES(`slug`),
-  `content`          = VALUES(`content`),
-  `summary`          = VALUES(`summary`),
-  `meta_title`       = VALUES(`meta_title`),
-  `meta_description` = VALUES(`meta_description`),
-  `tags`             = VALUES(`tags`);
-
--- =========================
--- 3) CUSTOM PAGES I18N — EN
--- =========================
-INSERT INTO `custom_pages_i18n`
-(
-  `id`,
-  `page_id`,
-  `locale`,
-  `title`,
-  `slug`,
-  `content`,
-  `summary`,
-  `meta_title`,
-  `meta_description`,
-  `tags`
-)
-VALUES
+    'Dayanikli Taktik Tedarik Zinciri Kurmak',
+    'dayanikli-taktik-tedarik-zinciri',
+    JSON_OBJECT('html', '<p>Operasyonel kullanima gidecek ekipmanlarda tek fiyat odakli tedarik yaklasimi yeterli degildir. Sureklilik, yedek parca, alternatif uretici ve dokuman hazirligi ayni anda planlanmalidir.</p><h2>Alternatif kaynak</h2><p>Kritik kalemler icin muadil urun ve ikinci uretici secenekleri onceden belirlenmelidir.</p><h2>Kalite ve kabul</h2><p>Fabrika kabul, numune kontrolu ve standart uyumu sevkiyat oncesinde dogrulanmalidir.</p><h2>Bolgesel lojistik</h2><p>Orta Dogu, Afrika ve Turk Cumhuriyetleri icin rota, gumruk ve teslim sekli planlamasi ulke bazinda ele alinir.</p>'),
+    'Savunma ekipmani tedarikinde sureklilik, kalite kabul ve bolgesel lojistik icin pratik yaklasimlar.',
+    'Dayanikli Taktik Tedarik Zinciri | Sultan Defense',
+    'Savunma tedarik zincirinde alternatif kaynak, kalite kabul, yedek parca ve bolgesel lojistik planlama.',
+    'tedarik zinciri, taktik ekipman, kalite kabul, askeri lojistik'
+  ),
   (
     'bb020005-6005-4005-a005-bbbbbbbb0005',
     'bb010001-5001-4001-9001-bbbbbbbb0001',
     'en',
-    'Current Approaches in Sustainable Building Design',
-    'sustainable-building-design',
-    JSON_OBJECT('html', '<p>Sustainable building design is no longer optional — it has become a core requirement of the construction industry. Energy efficiency, water management, and material circularity stand out as three complementary pillars.</p><h2>Energy Efficiency</h2><p>High-performance facade systems, thermal insulation, and smart building automation significantly reduce energy consumption over a building''s lifetime. At Vista Construction, energy modeling is integrated as a discipline from the design stage.</p><h2>Green Certification</h2><p>International green building certifications such as LEED and BREEAM document design quality and environmental performance. Projects built to these standards deliver clear advantages in both tenant demand and long-term value.</p><h2>Circular Material Use</h2><p>Specifying materials with high recycled content, reducing construction waste, and planning for end-of-life disassembly are now integral to modern construction projects.</p>'),
-    'Current approaches to energy efficiency, green certification, and circular material use in sustainable building design.',
-    'Current Approaches in Sustainable Building Design | Vista Construction',
-    'Energy efficiency, LEED/BREEAM certification, and circular materials in sustainable construction. Vista Construction guide.',
-    'sustainable building, energy efficiency, LEED, green construction'
+    'Defense Procurement Checklist: From Requirement to Shipment',
+    'defense-procurement-checklist',
+    JSON_OBJECT('html', '<p>Defense procurement is not just product sourcing. Requirement definition, technical fit, manufacturer validation, export permits, end-user documentation, and logistics planning all belong to the same chain.</p><h2>Clear requirement definition</h2><p>Caliber, standard, quantity, accessories, spare parts, and training needs should be clarified before quotation. Ambiguous demand creates wrong offers and delayed delivery.</p><h2>Manufacturer and document review</h2><p>Sultan Defense works through verified manufacturer channels and checks technical data sheets, certificates, and export suitability during the offer process.</p><h2>Shipment planning</h2><p>Packaging, route, delivery terms, and customs documentation should be handled as early as product selection.</p>'),
+    'A practical checklist for defense procurement from requirement definition to EUC and shipment planning.',
+    'Defense Procurement Checklist | Sultan Defense',
+    'Defense procurement checklist covering technical requirements, manufacturer validation, EUC, export permits, and logistics.',
+    'defense procurement, EUC, export permit, military logistics'
   ),
   (
     'bb020006-6006-4006-a006-bbbbbbbb0006',
     'bb010002-5002-4002-9002-bbbbbbbb0002',
     'en',
-    'Turnkey Construction: Choosing the Right Project Delivery Model',
-    'turnkey-construction-project-delivery',
-    JSON_OBJECT('html', '<p>The turnkey construction model allows clients to manage design, procurement, and construction under a single point of responsibility. What are the advantages of this approach and what should be watched out for?</p><h2>Advantages of the Turnkey Model</h2><ul><li>Single point of contact — coordination burden is reduced</li><li>Greater budget and programme discipline</li><li>Design-build integration speeds up problem resolution</li><li>Warranty coverage is broader and more consistent</li></ul><h2>Points to Watch</h2><p>Correctly and completely defining the Employer Requirements from the outset is decisive for the success of this model. Ambiguous scope definitions can lead to cost increases and programme delays.</p><h2>Vista Construction Approach</h2><p>Vista Construction delivers a turnkey service model that manages architecture, engineering, and construction under one roof — true to the client''s goals with budget and programme discipline.</p>'),
-    'A practical guide to the advantages, risks, and correct project management approach in the turnkey construction model.',
-    'Turnkey Construction and Project Management | Vista Construction',
-    'Advantages, watch-points, and Vista Construction approach to turnkey project delivery.',
-    'turnkey construction, project management, design-build, construction contract'
+    'Why EUC and Export Compliance Matter',
+    'euc-export-compliance',
+    JSON_OBJECT('html', '<p>The end-user certificate (EUC) is a core compliance document proving the correct buyer, end use, and destination for defense products.</p><h2>It reduces risk</h2><p>An incomplete or inconsistent EUC can delay export licensing, block shipment, or cancel a quotation.</p><h2>Documents work together</h2><p>EUC, import permits, technical certificates, invoice, packing list, and transport documents should be prepared as one consistent file.</p><h2>Sultan Defense role</h2><p>Our team coordinates documentation between buyer and manufacturer, clarifying regulatory and manufacturer expectations early.</p>'),
+    'A short guide to EUC, export permits, and documentation compliance in defense procurement.',
+    'EUC and Export Compliance | Sultan Defense',
+    'The importance of EUC, export permits, import documents, and shipment paperwork in defense export workflows.',
+    'EUC, export compliance, end-user certificate, defense export'
   ),
   (
     'bb020007-6007-4007-a007-bbbbbbbb0007',
     'bb010003-5003-4003-9003-bbbbbbbb0003',
     'en',
-    'Core Principles of Historic Building Restoration',
-    'historic-building-restoration-principles',
-    JSON_OBJECT('html', '<p>Restoring historic buildings must preserve original character and fabric while also ensuring long-term durability and functionality. This balance requires a bespoke planning and intervention strategy for each project.</p><h2>Documentation and Analysis</h2><p>Comprehensive measured drawings, structural restitution studies, and material characterisation work form the foundation of sound intervention decisions.</p><h2>Hierarchy of Intervention</h2><p>Preserve first, consolidate second, then minimally complete where necessary — this sequence is the fundamental principle of conservation discipline. Every intervention must be documented and reversible.</p><h2>Compatible Material Selection</h2><p>Selecting materials mechanically and thermally compatible with the original fabric is critical for long-term integrity. Portland cement mortars, for instance, can cause masonry damage in historic lime-mortared structures.</p>'),
-    'Core principles of documentation, intervention hierarchy, and material selection in historic building restoration.',
-    'Core Principles of Historic Building Restoration | Vista Construction',
-    'Conservation principles, material compatibility, and intervention strategy in historic building restoration. Vista Construction expertise.',
-    'historic building restoration, conservation, cultural heritage, intervention principles'
+    'Why Turkish Defense Manufacturing Is in Demand',
+    'turkish-defense-manufacturing-demand',
+    JSON_OBJECT('html', '<p>Turkey has a fast-growing manufacturing ecosystem in land systems, ballistic protection, tactical textile, communications, optics, and unmanned systems.</p><h2>Flexible production</h2><p>Turkish manufacturers can often provide configuration and packaging flexibility for different operational environments.</p><h2>Competitive total cost</h2><p>Delivery time, spare parts, training, and service capability are as important as unit price.</p><h2>The right channel matters</h2><p>Sultan Defense connects buyers with the right manufacturer and document set, making the workflow clearer.</p>'),
+    'A short assessment of why Turkey’s defense manufacturing ecosystem attracts international procurement demand.',
+    'Turkish Defense Manufacturing Demand | Sultan Defense',
+    'Turkish defense manufacturing advantages in flexible production, competitive cost, and procurement readiness.',
+    'Turkish defense industry, defense manufacturing, procurement, export'
   ),
   (
     'bb020008-6008-4008-a008-bbbbbbbb0008',
     'bb010004-5004-4004-9004-bbbbbbbb0004',
     'en',
-    'The Role of Mixed-Use Buildings in Urban Regeneration',
-    'mixed-use-buildings-urban-regeneration',
-    JSON_OBJECT('html', '<p>Mixed-use buildings strengthen the social and economic fabric of cities by bringing living, working, and retail together in urban regeneration projects. This building type plays a decisive role particularly in transit-oriented development areas.</p><h2>Advantages of Mixed Use</h2><ul><li>Creates vibrant urban activity throughout the day</li><li>Reduces traffic load — work, shopping, and home converge</li><li>Land value and investment return increase</li><li>Aligns with sustainability goals</li></ul><h2>Design Requirements</h2><p>Vertical and horizontal function separation, acoustic planning, and access management must be carefully designed so that different functions do not interfere with each other in mixed-use projects.</p>'),
-    'The role, advantages, and design requirements of mixed-use buildings in urban regeneration projects.',
-    'Mixed-Use Buildings in Urban Regeneration | Vista Construction',
-    'The role of mixed-use developments in urban regeneration, design requirements, and Vista Construction project experience.',
-    'mixed-use, urban regeneration, residential and commercial, urbanism'
+    'Building a Resilient Tactical Supply Chain',
+    'resilient-tactical-supply-chain',
+    JSON_OBJECT('html', '<p>For operational equipment, procurement cannot be based on unit price alone. Continuity, spare parts, alternative suppliers, and document readiness should be planned together.</p><h2>Alternative sourcing</h2><p>Equivalent products and second-source manufacturers should be identified in advance for critical items.</p><h2>Quality and acceptance</h2><p>Factory acceptance, sample review, and standard compliance should be verified before shipment.</p><h2>Regional logistics</h2><p>Routes, customs, and delivery terms for the Middle East, Africa, and Turkic Republics are planned country by country.</p>'),
+    'Practical approaches to continuity, quality acceptance, and regional logistics in defense equipment procurement.',
+    'Resilient Tactical Supply Chain | Sultan Defense',
+    'Defense supply chain planning for alternative sources, quality acceptance, spare parts, and regional logistics.',
+    'supply chain, tactical equipment, quality acceptance, military logistics'
   )
 ON DUPLICATE KEY UPDATE
-  `title`            = VALUES(`title`),
-  `slug`             = VALUES(`slug`),
-  `content`          = VALUES(`content`),
-  `summary`          = VALUES(`summary`),
-  `meta_title`       = VALUES(`meta_title`),
+  `title` = VALUES(`title`),
+  `slug` = VALUES(`slug`),
+  `content` = VALUES(`content`),
+  `summary` = VALUES(`summary`),
+  `meta_title` = VALUES(`meta_title`),
   `meta_description` = VALUES(`meta_description`),
-  `tags`             = VALUES(`tags`);
+  `tags` = VALUES(`tags`);
 
 COMMIT;
 SET FOREIGN_KEY_CHECKS = 1;

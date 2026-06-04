@@ -1,5 +1,5 @@
 -- =============================================================
--- FILE: 316_vistainsaat_offers.seed.sql
+-- FILE: 316_sultandefense_offers.seed.sql
 -- Sultan Defense — Örnek teklif talepleri
 -- =============================================================
 
@@ -8,7 +8,7 @@ SET time_zone = '+00:00';
 
 -- Offer number counter
 INSERT INTO `offer_number_counters` (`year`, `last_seq`, `prefix`)
-VALUES (2026, 5, 'VIS')
+VALUES (2026, 5, 'SD')
 ON DUPLICATE KEY UPDATE `last_seq` = GREATEST(`last_seq`, VALUES(`last_seq`));
 
 -- Örnek teklifler
@@ -25,14 +25,14 @@ VALUES
   'Yılmaz Holding A.Ş.',
   'ahmet.yilmaz@yilmazholding.com',
   '+90 532 111 22 33',
-  'Antalya Villa Projesi Teklif Talebi',
-  'Antalya Konyaaltı bölgesinde 450 m² arsa üzerine modern villa projesi için teklif almak istiyoruz. 3+1 müstakil villa, havuz ve peyzaj dahil.',
-  '{"project_type": "villa", "estimated_area": "450 m²", "location": "Antalya / Konyaaltı", "preferred_deadline": "2026-12-01", "notes": "Havuz ve peyzaj dahil olmalı"}',
+  'Balistik Yelek ve Plaka Teklif Talebi',
+  'Seviye IIIA yelek ve NIJ uyumlu balistik plaka setleri icin fiyat, teslim suresi ve EUC gereksinimlerini paylasmanizi rica ederiz.',
+  '{"product_family": "ballistic_protection", "quantity": "250 sets", "destination": "Türkiye", "preferred_deadline": "2026-12-01", "notes": "NIJ belgesi ve numune opsiyonu gerekli"}',
   NULL, NULL,
   1, 1,
-  'TRY', 4500000.00, 20.00, 900000.00, 0.00, 5400000.00,
+  'USD', 185000.00, 0.00, 0.00, 0.00, 185000.00,
   '2026-06-01 00:00:00.000',
-  'Müşteri ile 15 Mart''ta keşif yapıldı. Mimari proje hazırlanıyor.',
+  'EUC taslagi ve teknik sartname bekleniyor.',
   NOW(3), NOW(3)
 ),
 (
@@ -46,9 +46,9 @@ VALUES
   NULL,
   'fatma.demir@gmail.com',
   '+90 541 222 33 44',
-  'Daire Renovasyon Teklifi',
-  '3+1 daire iç mekan renovasyonu. Mutfak, banyo ve zemin yenileme. Yaklaşık 120 m².',
-  '{"project_type": "renovation", "estimated_area": "120 m²", "location": "Antalya / Muratpaşa", "notes": "Mutfak ve banyo öncelikli"}',
+  'Taktik Tekstil ve Sirt Cantasi Talebi',
+  'Taktik yelek, gorev kemeri ve operasyonel sirt cantasi icin katalog ve toplu alim teklifi talep ediyoruz.',
+  '{"product_family": "tactical_textile", "quantity": "500 pcs mixed", "destination": "Türkiye", "notes": "Renk: koyu yesil ve siyah opsiyonlari"}',
   NULL, NULL,
   0, 1,
   'TRY', NULL, 20.00, NULL, NULL, NULL,
@@ -64,17 +64,17 @@ VALUES
   'tr',
   'Türkiye',
   'Mehmet Kaya',
-  'Kaya İnşaat Ltd.',
-  'mehmet@kayainsaat.com',
+  'Kaya Security Ltd.',
+  'mehmet@kayasecurity.com',
   '+90 555 333 44 55',
-  'Ticari Bina Projesi',
-  '2 katlı ticari bina inşaatı. Zemin kat mağaza, üst kat ofis olarak planlanıyor. 800 m² toplam alan.',
-  '{"project_type": "commercial", "estimated_area": "800 m²", "location": "Antalya / Kepez", "preferred_deadline": "2027-03-01", "notes": "Zemin kat mağaza, üst kat ofis"}',
+  'Taktik Haberlesme Ekipmani',
+  'El telsizi, kulaklik, anten ve sarj istasyonu iceren haberlesme seti icin teknik uygunluk ve ihracat sureci hakkinda teklif istiyoruz.',
+  '{"product_family": "communications", "quantity": "120 kits", "destination": "Türkiye", "preferred_deadline": "2027-03-01", "notes": "Frekans bandi ve kripto gereksinimi gorusulecek"}',
   NULL, NULL,
   1, 1,
-  'TRY', 8500000.00, 20.00, 1700000.00, 0.00, 10200000.00,
+  'USD', 92000.00, 0.00, 0.00, 0.00, 92000.00,
   '2026-09-01 00:00:00.000',
-  'Keşif planlanıyor. Arsa ruhsatı kontrol edilecek.',
+  'Teknik frekans gereksinimleri alici tarafindan teyit edilecek.',
   NOW(3), NOW(3)
 ),
 (
@@ -85,17 +85,17 @@ VALUES
   'en',
   'Germany',
   'Hans Mueller',
-  'Mueller Properties GmbH',
-  'hans@mueller-properties.de',
+  'Mueller Security GmbH',
+  'hans@mueller-security.de',
   '+49 171 555 6677',
-  'Holiday Apartment Complex in Antalya',
-  'We are looking for a construction partner for a 12-unit holiday apartment complex in Antalya Belek area. Total area approximately 2400 m².',
-  '{"project_type": "residential_complex", "estimated_area": "2400 m²", "location": "Antalya / Belek", "preferred_deadline": "2027-06-01", "notes": "12 units, each ~120 m², pool area required"}',
+  'Optics and Thermal Imaging Package',
+  'We are looking for a procurement partner for thermal monoculars, day optics, mounts, and spare battery packages.',
+  '{"product_family": "optics_thermal", "quantity": "80 units", "destination": "Germany", "preferred_deadline": "2027-06-01", "notes": "Export documentation and warranty terms required"}',
   NULL, NULL,
   1, 1,
   'EUR', 1200000.00, 20.00, 240000.00, 0.00, 1440000.00,
   '2026-12-01 00:00:00.000',
-  'Contract negotiations in progress. Client visiting Antalya next month.',
+  'Manufacturer options shortlisted. Export documentation review in progress.',
   NOW(3), NOW(3)
 ),
 (
@@ -109,14 +109,14 @@ VALUES
   NULL,
   'ayse.celik@outlook.com',
   '+90 538 444 55 66',
-  'Bahçe Düzenleme ve Peyzaj',
-  'Villa bahçesi için peyzaj düzenlemesi. Çim, ağaçlandırma, otomatik sulama sistemi ve dış aydınlatma.',
-  '{"project_type": "landscaping", "estimated_area": "300 m²", "location": "Antalya / Döşemealtı", "notes": "Otomatik sulama ve dış aydınlatma dahil"}',
+  'Lojistik ve Gumruk Dokuman Destegi',
+  'Orta Dogu teslimatli savunma ekipmani icin paketleme, rota ve gumruk dokuman destegi talep ediyoruz.',
+  '{"service_type": "secure_logistics", "destination": "Middle East", "notes": "EUC ve ithalat izin dokumanlari hazirlanacak"}',
   NULL, NULL,
   0, 1,
-  'TRY', 350000.00, 20.00, 70000.00, 0.00, 420000.00,
+  'USD', 12500.00, 0.00, 0.00, 0.00, 12500.00,
   '2026-05-15 00:00:00.000',
-  'Teklif gönderildi, müşteri dönüş bekliyor.',
+  'Tasima rotasi ve teslim sekli icin on teklif gonderildi.',
   NOW(3), NOW(3)
 )
 ON DUPLICATE KEY UPDATE `status` = VALUES(`status`), `updated_at` = VALUES(`updated_at`);

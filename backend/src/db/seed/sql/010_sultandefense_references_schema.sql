@@ -1,5 +1,5 @@
 -- =============================================================
--- FILE: 010_vistainsaat_references_schema.sql
+-- FILE: 010_sultandefense_references_schema.sql
 -- Sultan Defense — References Schema (markalar/referanslar)
 -- =============================================================
 

@@ -10,22 +10,22 @@
 
 /* Sultan Defense Brand Colors */
 :root {
-  /* Logo Primary Colors — Altın/Şampanya */
-  --logo-coral-light: #e8dcc8;      /* Gold 300 — highlights */
-  --logo-coral: #b8a98a;            /* Gold 500 — main brand color */
-  --logo-coral-medium: #9e8f6f;     /* Gold 600 — default on light */
-  --logo-coral-dark: #8b7962;       /* Gold 700 */
-  --logo-coral-darkest: #6b5d48;    /* Gold 800 — text, details */
+  /* Logo Primary Colors — Çelik & Cyan */
+  --logo-coral-light: #4FE3E8;      /* Cyan bright — highlights */
+  --logo-coral: #2BD4D9;            /* Tactical Cyan — main brand color */
+  --logo-coral-medium: #0E7C82;     /* Medium Cyan — default on light */
+  --logo-coral-dark: #0D1B2A;       /* Deep Navy */
+  --logo-coral-darkest: #1B263B;    /* Gunmetal — text, details */
   
   /* Background Colors for Logo */
-  --logo-bg-light: #FDFCFB;         /* Light mode primary */
+  --logo-bg-light: #F4F6F8;         /* Light mode primary */
   --logo-bg-white: #FFFFFF;         /* Pure white */
-  --logo-bg-dark: #1e1c1a;          /* Anthracite 900 — dark mode */
-  --logo-bg-black: #141311;         /* Anthracite 950 — pure dark */
+  --logo-bg-dark: #0D1B2A;          /* Deep Navy — dark mode */
+  --logo-bg-black: #0B131E;         /* Deep Navy 950 — pure dark */
   
   /* Logo Accents */
-  --logo-gold: #b8a98a;             /* Gold 500 — primary accent */
-  --logo-shadow: rgba(184, 169, 138, 0.15);  /* Gold glow */
+  --logo-gold: #2BD4D9;             /* Tactical Cyan — primary accent */
+  --logo-shadow: rgba(43, 212, 217, 0.15);  /* Cyan glow */
 }
 
 @custom-variant dark (&:is(.dark *));
@@ -93,9 +93,9 @@ These serve as the fallback; there is no separate default.css file. */
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
-  /* Primary: Ensotek Coral */
+  /* Primary: Tactical Cyan */
   --primary: var(--logo-coral);
-  --primary-foreground: oklch(0.985 0 0); /* Light text on coral */
+  --primary-foreground: oklch(0.141 0.005 285.823); /* Dark text on Cyan */
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.001 286.375);
