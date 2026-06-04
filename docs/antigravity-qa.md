@@ -45,9 +45,9 @@ Tam token listesi: [`docs/brand/tokens.css`](brand/tokens.css) — Kılavuz: [`d
 
 | Dosya | Kullanım |
 |-------|----------|
-| `sultandefense-logo-dark.png` | Koyu zeminde tam logo (SULTAN altın + DEFENSE açık) |
-| `sultandefense-logo-light.png` | Açık zeminde tam logo (SULTAN altın + DEFENSE antrasit) |
-| `sultandefense-mark.svg` | SD amblemi — favicon, dar alan, avatar |
+| `sultandefense-logo-dark.png` | Koyu zeminde tam logo |
+| `sultandefense-logo-light.png` | Açık zeminde tam logo |
+| `sultandefense-mark.svg` | SD amblemi — favicon, dar alan |
 | `favicon.ico` | Tarayıcı sekmesi |
 | `apple-touch-icon.png` | iOS/Android ana ekran |
 | `icon-192.png`, `icon-512.png` | PWA / web manifest |
@@ -64,43 +64,98 @@ Tam token listesi: [`docs/brand/tokens.css`](brand/tokens.css) — Kılavuz: [`d
 
 ---
 
-## Kontrol listesi (her sayfa için)
+## 📋 Faz 4 — Admin Panel Durum Raporu (2026-06-04)
+
+### ✅ Tamamlananlar
+
+- [x] **`admin_panel/src/app/globals.css`** — `--logo-coral*` token isimleri korundu (legacy Ensotek isimleri), ancak **değerleri İmparatorluk Zırhı altın paleti** (`#C5A880`, `#D4B996`, `#1A1A1D` vb.) olarak güncellendi. `--primary` → `var(--logo-coral)` (mat altın).
+- [x] **`admin_panel/public/logo/`** — `sultandefense-logo-dark.png`, `sultandefense-logo-light.png`, `sultandefense-mark.svg` mevcut. Eski cyan SVG logoları silindi.
+- [x] **`admin_panel/public/`** — `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` kopyalandı.
+- [x] **`admin_panel/src/app/(main)/auth/_components/auth-brand-panel.tsx`** — Login sol panel tamamen yeniden yazıldı: antrasit zemin + altın gradient overlay + `login-bg.png` arka plan + altın glassmorphic kart + wordmark logo fallback.
+- [x] **`admin_panel/src/config/app-config.ts`** — `app_name`, `theme_color` (`#1A1A1D`), OG görseli (`sultandefense-logo-light.png`) güncellendi. Tüm "Sultan Defense" olarak temiz.
+- [x] **`frontend/public/logo/`** — Wordmark PNG logolar + `sultandefense-mark.svg` mevcut. SVG kalkanlı eski logolar silindi.
+- [x] **`frontend/public/`** — `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png` kopyalandı.
+- [x] **`frontend/src/styles/globals.css`** — Primitive token isimleri `--cyan-*` / `--navy-*` (legacy alias) korundu, **değerleri tamamen altın/antrasit paletine** dönüştürüldü. Koyu tema, açık tema, glass efektler, CTA yüzeyleri, animasyonlar — hepsi İmparatorluk Zırhı paleti.
+- [x] **`frontend/src/theme/templates.ts`** — `sultandefense-imperial-armor` template aktif.
+
+---
+
+### ⚠️ Kalan Sorunlar — Codex'e Bildir
+
+#### P2 — İç Kod Temizliği (görsel etkisi yok ama rebrand tutarlılığı için gerekli)
+
+1. **`admin_panel/src/navigation/sidebar/sidebar-items.ts`** — Sidebar item key'leri hâlâ `vista_*` prefix kullanıyor (`vista_insaat`, `vista_projects`, `vista_categories` vb.). Bunlar **iç TypeScript key isimleri** olduğu için ekranda görünmüyor (labels ayrı), ancak Faz 7 temizliğinde `sultandefense_*` olarak yeniden adlandırılmalı.
+   - Etkilenen: `sidebar-items.ts` satır 102–168, `adminUi.ts` satır 74–170+
+
+2. **`admin_panel/src/app/(main)/admin/(admin)/site-settings/…`** — `VISTA_BRAND`, `VISTA_PREFIX` değişken isimleri `SD_BRAND`, `SD_PREFIX` olarak yeniden adlandırılmalı (değerleri zaten `'sultandefense'` / `'sultandefense__'`).
+   - Dosya: `admin-site_settings-detail-client.tsx` satır 462–471
+
+3. **`admin_panel/src/integrations/`** — Dosya başlık yorumlarında `// Ensotek –` ibareleri mevcut (50+ dosya). Bunlar sadece yorum satırı; görsel etkisi **sıfır**. Faz 7 toplu temizlik.
+
+#### ❓ Görsel QA Bekliyor (Admin panel çalışır durumda olmadan doğrulanamaz)
+
+- [ ] Login sayfası gerçek tarayıcıda render edildi mi? (`login-bg.png` yükleniyor mu?)
+- [ ] Sidebar logo: wordmark PNG görünüyor mu? (Sidebar logo bileşeni ayrıca kontrol gerektirir)
+- [ ] Dashboard dark/light toggle çalışıyor mu?
+- [ ] `--logo-coral` token değerleri canlıda doğru render ediliyor mu?
+- [ ] `public/logo/png/vista_logo_512.png` hâlâ `admin_panel/public/logo/png/` içinde duruyor — silinmeli veya kullanılmıyorsa Faz 7'ye ertelenmeli.
+
+---
+
+## 📋 Faz 5 — Frontend Durum Raporu
+
+### ✅ Tamamlananlar (CSS/Token Seviyesinde)
+
+- [x] `frontend/src/styles/globals.css` — İmparatorluk Zırhı palet tamam.
+- [x] `frontend/src/theme/templates.ts` — `sultandefense-imperial-armor` aktif.
+- [x] `frontend/public/logo/` — Wordmark PNG + mark.svg mevcut.
+- [x] `frontend/public/` — Favicon/icon seti mevcut.
+
+### ❌ Henüz Yapılmamış (Codex — Faz 5 devam)
+
+- [ ] Frontend sayfalarının **içerik** rebrand'ı tamamlanmadı (seed verisi henüz defans verisi değil → backend Faz 2+3 önce bitmeli).
+- [ ] 19 dil `public/locales/*.json` — "vistainsaat / inşaat / construction" içerik temizliği.
+- [ ] `public/media/*` — İnşaat görselleri → defans görselleriyle değiştirilmedi.
+- [ ] Locale switch ve tüm sayfaların görsel QA'sı yapılmadı (backend + seed hazır olunca).
+
+---
+
+## Kontrol listesi (her sayfa için — frontend görsel QA)
 
 ### Renk & Tema
-- [ ] Zemin antrasit `#1A1A1D` (koyu tema) veya parşömen `#F4F1EC` (açık tema)
-- [ ] Tüm vurgu/CTA rengi mat altın `#C5A880` — eski cyan (`#2BD4D9`) **YOK**
-- [ ] Hover durumu altın `#D4B996` — eski cyan-bright (`#4FE3E8`) **YOK**
-- [ ] İkincil detaylarda bordo `#7A1B22` doğru kullanılmış
-- [ ] Eski VistaInsaat altın `#b8a98a` **YOK**
-- [ ] Koyu/açık toggle çalışıyor; her iki modda kontrast yeterli (WCAG AA)
+- [ ] Zemin antrasit `#1A1A1D` (koyu) veya parşömen `#F4F1EC` (açık)
+- [ ] Vurgu/CTA mat altın `#C5A880` — cyan YOK
+- [ ] Hover altın `#D4B996` — cyan-bright YOK
+- [ ] İkincil detaylarda bordo `#7A1B22`
+- [ ] Eski vista gold `#b8a98a` YOK
+- [ ] Dark/light toggle çalışıyor
 
 ### Logo & Kimlik
-- [ ] Logo: `sultandefense-logo-dark.png` veya `-light.png` (zemine göre) — wordmark doğru
-- [ ] Favicon: `sultandefense-mark.svg` / `favicon.ico` — tarayıcı sekmesinde görünüyor
-- [ ] Eski kalkan+SD cyan SVG logosu **GÖRÜNMÜYOR**
-- [ ] Eski `vista-logo-*` **GÖRÜNMÜYOR**
+- [ ] Logo: wordmark PNG (`-dark.png` veya `-light.png`) doğru
+- [ ] Favicon: `sultandefense-mark.svg` / `favicon.ico`
+- [ ] Eski kalkan+SD cyan SVG GÖRÜNMÜYOR
+- [ ] `vista-logo-*` GÖRÜNMÜYOR
 
 ### İçerik & Metin
-- [ ] Görünür metinde **"vista / vistainsaat / inşaat / construction / ensotek / koenig"** **YOK**
-- [ ] Site/uygulama adı "Sultan Defense" — eski isimler yok
-- [ ] Mail/iletişim bilgilerinde `@koenigsmassage.com` **YOK** (olmalı: `@sultandefense.com`)
+- [ ] "vista / vistainsaat / inşaat / construction / ensotek / koenig" YOK
+- [ ] Mail: `@sultandefense.com` (yoksa `@koenigsmassage.com` P1)
 
 ### Tipografi
-- [ ] Başlıklar Oswald (condensed, uppercase, geniş letter-spacing)
-- [ ] Gövde metni Inter / system-ui
+- [ ] Başlıklar Oswald
+- [ ] Gövde Inter
 
 ### Görseller & Medya
-- [ ] Görseller yükleniyor — kırık `img` yok
-- [ ] İnşaat/mimari/yapı görselleri kalmamış; savunma/defans görseli var
+- [ ] Kırık `img` yok
+- [ ] İnşaat görseli kalmamış; defans görseli var
 
 ### Responsive
-- [ ] 360 px (mobil) — taşma/bozulma yok
-- [ ] 768 px (tablet) — layout sağlam
-- [ ] 1280 px (masaüstü) — tam görünüm doğru
+- [ ] 360 px — taşma yok
+- [ ] 768 px — layout sağlam
+- [ ] 1280 px — tam görünüm doğru
 
 ### Lokalizasyon
-- [ ] Locale switch çalışıyor; metin ilgili dilde
-- [ ] Dil seçimi UI'da görünür
+- [ ] Locale switch çalışıyor
+- [ ] Metin ilgili dilde
 
 ---
 
@@ -108,24 +163,8 @@ Tam token listesi: [`docs/brand/tokens.css`](brand/tokens.css) — Kılavuz: [`d
 
 Slug haritası: [`docs/content/README.md`](content/README.md)
 
-**Öncelikli:**
-`/` · `/about-us` · `/products` + 10 kategori detayı · `/services` · `/certifications` ·
+`/` · `/about-us` · `/products` + 10 kategori · `/services` · `/certifications` ·
 `/faq` · `/contact` · `/privacy-policy` · `/terms-and-conditions` · `/cookie-policy`
-
----
-
-## Admin panel (port 3041) — Faz 4
-
-> Admin panel **Ensotek**'ten türedi; `globals.css`'de eski coral (`--logo-coral`) tokenlar ve
-> `src/styles/presets/` dizininde Ensotek stilleri bulunabilir. Hepsinin temizlendiğini doğrula.
-
-### Admin kontrol listesi
-- [ ] Giriş (login) sayfası: antrasit zemin + altın CTA (Ensotek coral **YOK**)
-- [ ] Dashboard / sidebar: sultandefense wordmark logosu, altın vurgu
-- [ ] Liste, form, JSON tab'ları: dark+light her iki modda görsel olarak sağlam
-- [ ] Sidebar'da "Vista" / "Ensotek" / "Koenig" metin referansı **YOK**
-- [ ] `globals.css`'de `--logo-coral` veya Ensotek-kaynaklı token **YOK**
-- [ ] `public/logo/` klasörü: sultandefense logoları var, `vista-logo-*` **YOK**
 
 ---
 
@@ -135,15 +174,14 @@ Slug haritası: [`docs/content/README.md`](content/README.md)
 ## Faz [N] Görsel QA Raporu — [Tarih]
 
 ### [Sayfa / Bileşen]
-- ✅ GEÇTI / ⚠️ SORUN / ❌ KRİTİK
-- Açıklama (1 satır) + dosya:satır tahmini (varsa)
-- Ekran görüntüsü: [artifacts/qa-faz[N]-[slug].png]
+- ✅ GEÇTİ / ⚠️ SORUN (P2) / ❌ KRİTİK (P1)
+- Açıklama (1 satır) + dosya:satır tahmini
+- Ekran görüntüsü: artifacts/qa-faz[N]-[slug].png
 ```
 
-- Bulguları Codex'e geri besle (Claude review ister).
-- **Kör düzeltme yapma** — marka tokenı dışına çıkma, sadece `docs/brand/tokens.css` kullan.
 - P1 = blokör (cyan kaldı, logo yanlış, vista metni görünüyor) → Codex'e git, bekle.
 - P2 = kozmetik (hafif spacing, opacity) → not al, toplu gönder.
+- **Kör düzeltme yapma** — sadece `docs/brand/tokens.css` tokenlarını kullan.
 
 ---
 
@@ -151,6 +189,7 @@ Slug haritası: [`docs/content/README.md`](content/README.md)
 
 | Faz | Kapsam | Durum |
 |-----|--------|-------|
-| Faz 4 | **Admin panel** görsel QA | ⏳ Codex biter bitmez |
-| Faz 5 | **Frontend** görsel QA (en kapsamlı) | ⏳ Faz 4'ten sonra |
-| Faz 6 | Canlı `https://sultandefense.com` smoke testi (gerçek cihaz/responsive) | ⏳ Deploy sonrası |
+| Faz 4 | Admin panel CSS/logo/login | ✅ Implement tamamlandı — görsel QA bekliyor (canlı test) |
+| Faz 2+3 | Backend seed + module_key rebrand | ⏳ Codex devam ediyor |
+| Faz 5 | Frontend içerik + locale + medya | ⏳ Faz 2+3 bittikten sonra |
+| Faz 6 | Canlı smoke testi (`https://sultandefense.com`) | ⏳ Deploy sonrası |
