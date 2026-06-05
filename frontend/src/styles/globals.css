@@ -388,8 +388,8 @@ h6 {
 /* ─── Form Alanları ─── */
 
 .field-input {
-  border: 1px solid var(--color-border);
-  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border-strong);
+  background-color: var(--color-bg);
   color: var(--color-text-primary);
   border-radius: var(--radius-sm);
 }
