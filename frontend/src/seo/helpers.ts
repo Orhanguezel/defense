@@ -45,8 +45,9 @@ export function localizeSlug(locale: string, path: string): string {
   const map = SLUGS_BY_LOCALE[locale];
   if (!map) return path;
   const segs = path.split('/').filter(Boolean);
-  if (segs.length && map[segs[0]]) {
-    segs[0] = map[segs[0]];
+  const first = segs[0];
+  if (first && map[first]) {
+    segs[0] = map[first];
     return `/${segs.join('/')}`;
   }
   return path;
