@@ -179,10 +179,8 @@ export function buildDefaultFooterSections(
       items: [
         { label: navT('products'), url: localizedPath(locale, '/urunler') },
         { label: navT('services'), url: localizedPath(locale, '/hizmetler') },
-        { label: navT('blog'), url: localizedPath(locale, '/blog') },
-        { label: navT('news'), url: localizedPath(locale, '/haberler') },
         { label: navT('gallery'), url: localizedPath(locale, '/galeri') },
-        { label: navT('corporate'), url: localizedPath(locale, '/hakkimizda') },
+        { label: navT('about'), url: localizedPath(locale, '/hakkimizda') },
         { label: navT('offer'), url: localizedPath(locale, '/teklif') },
         { label: navT('contact'), url: localizedPath(locale, '/iletisim') },
       ],
