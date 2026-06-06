@@ -337,6 +337,9 @@ export default async function HomePage({
 
       {homeStats.length > 0 ? <StatsHighlightSection items={homeStats} /> : null}
 
+      {/* Hero altı tam ekran sabit-arka-plan reveal — defans görseli tam görünsün */}
+      <div className="h-[70vh] lg:h-screen" aria-hidden="true" />
+
       {/* ═══════════════════════════════════════════
           DYNAMIC CONTENT SECTIONS — Glass/Transparent (ScrollBackground görünsün)
       ═══════════════════════════════════════════ */}
