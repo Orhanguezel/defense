@@ -136,12 +136,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticRoutes = [
     { path: '', changeFrequency: 'weekly' as const, priority: 1.0 },
-    { path: '/urunler', changeFrequency: 'weekly' as const, priority: 0.9 },
-    { path: '/hizmetler', changeFrequency: 'weekly' as const, priority: 0.9 },
-    { path: '/galeri', changeFrequency: 'weekly' as const, priority: 0.8 },
-    { path: '/hakkimizda', changeFrequency: 'monthly' as const, priority: 0.6 },
-    { path: '/iletisim', changeFrequency: 'monthly' as const, priority: 0.7 },
-    { path: '/teklif', changeFrequency: 'monthly' as const, priority: 0.8 },
+    { path: '/products', changeFrequency: 'weekly' as const, priority: 0.9 },
+    { path: '/capabilities', changeFrequency: 'weekly' as const, priority: 0.9 },
+    { path: '/gallery', changeFrequency: 'weekly' as const, priority: 0.8 },
+    { path: '/about', changeFrequency: 'monthly' as const, priority: 0.6 },
+    { path: '/contact', changeFrequency: 'monthly' as const, priority: 0.7 },
+    { path: '/request-quote', changeFrequency: 'monthly' as const, priority: 0.8 },
     { path: '/certifications', changeFrequency: 'monthly' as const, priority: 0.6 },
     { path: '/faq', changeFrequency: 'monthly' as const, priority: 0.6 },
   ];
@@ -164,7 +164,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     for (const item of products) {
       entries.push({
-        url: localizedUrl(locale, `/urunler/${item.slug}`),
+        url: localizedUrl(locale, `/products/${item.slug}`),
         lastModified: resolveLastModified(item),
         changeFrequency: 'weekly',
         priority: 0.8,
@@ -174,7 +174,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     for (const item of services) {
       entries.push({
-        url: localizedUrl(locale, `/hizmetler/${item.slug}`),
+        url: localizedUrl(locale, `/capabilities/${item.slug}`),
         lastModified: resolveLastModified(item),
         changeFrequency: 'monthly',
         priority: 0.8,
@@ -184,7 +184,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     for (const item of galleries) {
       entries.push({
-        url: localizedUrl(locale, `/galeri/${item.slug}`),
+        url: localizedUrl(locale, `/gallery/${item.slug}`),
         lastModified: resolveLastModified(item),
         changeFrequency: 'monthly',
         priority: 0.6,

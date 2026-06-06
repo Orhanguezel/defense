@@ -38,7 +38,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale });
   return buildPageMetadata({
     locale,
-    pathname: `/galeri/${slug}`,
+    pathname: `/gallery/${slug}`,
     title: gallery.meta_title || gallery.title,
     description:
       gallery.meta_description ||
@@ -98,10 +98,10 @@ export default async function GalleryDetailPage({
   }));
 
   const related = await fetchRelatedContent(gallery, slug, locale);
-  const galleryUrl = localizedUrl(locale, `/galeri/${slug}`);
+  const galleryUrl = localizedUrl(locale, `/gallery/${slug}`);
   const breadcrumbs = [
     { label: companyName, href: localizedPath(locale, '/') },
-    { label: t('gallery.title'), href: localizedPath(locale, '/galeri') },
+    { label: t('gallery.title'), href: localizedPath(locale, '/gallery') },
     { label: gallery.title },
   ];
 
@@ -160,7 +160,7 @@ export default async function GalleryDetailPage({
 
       <div style={{ marginTop: 8 }}>
         <Link
-          href={localizedPath(locale, '/galeri')}
+          href={localizedPath(locale, '/gallery')}
           style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -236,12 +236,12 @@ export default async function GalleryDetailPage({
       <div style={{ marginTop: 48, display: 'grid', gap: 24, gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
         <RelatedLinks
           title={t('common.relatedGallery')}
-          hrefBase={localizedPath(locale, '/galeri')}
+          hrefBase={localizedPath(locale, '/gallery')}
           items={related.galleries}
         />
         <RelatedLinks
           title={t('common.relatedProducts')}
-          hrefBase={localizedPath(locale, '/urunler')}
+          hrefBase={localizedPath(locale, '/products')}
           items={related.products}
         />
       </div>

@@ -117,7 +117,7 @@ export async function generateMetadata({
   if (!project) return {};
   return buildPageMetadata({
     locale,
-    pathname: `/urunler/${slug}`,
+    pathname: `/products/${slug}`,
     title: project.meta_title || project.title,
     description: project.meta_description || project.description || project.title,
     ogImage: project.image_url,
@@ -240,12 +240,12 @@ export default async function ProjectDetailPage({
       })),
   ];
 
-  const shareUrl = `${SITE_URL}/${locale}/urunler/${slug}`;
+  const shareUrl = `${SITE_URL}/${locale}/products/${slug}`;
 
   const breadcrumbs = [
     { label: 'Sultan Defense', href: localizedPath(locale, '/') },
-    { label: isEn ? 'Products' : 'Ürünler', href: localizedPath(locale, '/urunler') },
-    ...(projectType ? [{ label: projectType, href: localizedPath(locale, '/urunler') }] : []),
+    { label: isEn ? 'Products' : 'Ürünler', href: localizedPath(locale, '/products') },
+    ...(projectType ? [{ label: projectType, href: localizedPath(locale, '/products') }] : []),
     { label: project.title },
   ];
 
@@ -271,7 +271,7 @@ export default async function ProjectDetailPage({
             name: project.title,
             description: project.meta_description || project.description,
             image: heroImage,
-            url: localizedUrl(locale, `/urunler/${slug}`),
+            url: localizedUrl(locale, `/products/${slug}`),
             brand: 'Sultan Defense',
             category: project.category_name || projectType || undefined,
             sku: project.product_code || undefined,
@@ -295,7 +295,7 @@ export default async function ProjectDetailPage({
               name: item.label,
               url: 'href' in item && item.href
                 ? localizedUrl(locale, (item.href as string).replace(`/${locale}`, '') || '/')
-                : localizedUrl(locale, `/urunler/${slug}`),
+                : localizedUrl(locale, `/products/${slug}`),
             })),
           ),
         ])}
@@ -443,7 +443,7 @@ export default async function ProjectDetailPage({
                 </p>
               </div>
               <Link
-                href={`${localizedPath(locale, '/teklif')}?project=${encodeURIComponent(project.title)}`}
+                href={`${localizedPath(locale, '/request-quote')}?project=${encodeURIComponent(project.title)}`}
                 style={{
                   padding: '10px 24px',
                   background: 'var(--color-brand)',
@@ -469,12 +469,12 @@ export default async function ProjectDetailPage({
             >
               <RelatedLinks
                 title={t('common.relatedProducts')}
-                hrefBase={localizedPath(locale, '/urunler')}
+                hrefBase={localizedPath(locale, '/products')}
                 items={related.products}
               />
               <RelatedLinks
                 title={t('common.relatedGallery')}
-                hrefBase={localizedPath(locale, '/galeri')}
+                hrefBase={localizedPath(locale, '/gallery')}
                 items={related.galleries}
               />
             </div>
@@ -524,7 +524,7 @@ export default async function ProjectDetailPage({
                 }
                 projects={sameCategoryProjects}
                 locale={locale}
-                moreHref={localizedPath(locale, '/urunler')}
+                moreHref={localizedPath(locale, '/products')}
                 moreLabel={isEn ? 'See All »' : 'Tümünü Gör »'}
               />
             )}
@@ -544,7 +544,7 @@ export default async function ProjectDetailPage({
                 title={isEn ? 'Recently Added' : 'Son Eklenenler'}
                 projects={recentProjects.slice(0, 4)}
                 locale={locale}
-                moreHref={localizedPath(locale, '/urunler')}
+                moreHref={localizedPath(locale, '/products')}
                 moreLabel={isEn ? 'All products »' : 'Tüm ürünler »'}
               />
             )}
@@ -594,7 +594,7 @@ export default async function ProjectDetailPage({
                   </div>
                 </div>
                 <Link
-                  href={localizedPath(locale, '/urunler')}
+                  href={localizedPath(locale, '/products')}
                   aria-label={isEn ? 'View all Sultan Defense products' : 'Sultan Defense tüm ürünlerini görüntüle'}
                   style={{
                     display: 'inline-block',
@@ -622,7 +622,7 @@ export default async function ProjectDetailPage({
                 {t('common.offerCtaDescription')}
               </p>
               <Link
-                href={`${localizedPath(locale, '/teklif')}?project=${encodeURIComponent(project.title)}`}
+                href={`${localizedPath(locale, '/request-quote')}?project=${encodeURIComponent(project.title)}`}
                 style={{
                   display: 'inline-block',
                   marginTop: 12,
@@ -665,7 +665,7 @@ function SidebarSection({
       {projects.map((rp: any) => (
         <Link
           key={rp.id ?? rp.title}
-          href={rp.slug ? localizedPath(locale, `/urunler/${rp.slug}`) : '#'}
+          href={rp.slug ? localizedPath(locale, `/products/${rp.slug}`) : '#'}
           className="pd-sidebar-item"
         >
           <div className="pd-sidebar-thumb">
@@ -748,7 +748,7 @@ function TagBasedSection({
       {projects.map((rp: any) => (
         <Link
           key={rp.id ?? rp.title}
-          href={rp.slug ? localizedPath(locale, `/urunler/${rp.slug}`) : '#'}
+          href={rp.slug ? localizedPath(locale, `/products/${rp.slug}`) : '#'}
           className="pd-sidebar-item"
         >
           <div className="pd-sidebar-thumb">

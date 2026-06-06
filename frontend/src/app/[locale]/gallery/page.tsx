@@ -41,7 +41,7 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     locale,
-    pathname: '/galeri',
+    pathname: '/gallery',
     title: seo?.title || t('gallery.title'),
     description: seo?.description || t('gallery.description'),
     ogImage: seo?.og_image || undefined,
@@ -95,13 +95,13 @@ export default async function GalleryPage({
             jsonld.collectionPage({
               name: t('gallery.title'),
               description: t('gallery.description'),
-              url: localizedUrl(locale, '/galeri'),
+              url: localizedUrl(locale, '/gallery'),
               mainEntity: jsonld.itemList(
                 visibleGalleries.map((gallery: any) => ({
                   name: gallery.title,
                   url: gallery.slug
-                    ? localizedUrl(locale, `/galeri/${gallery.slug}`)
-                    : localizedUrl(locale, '/galeri'),
+                    ? localizedUrl(locale, `/gallery/${gallery.slug}`)
+                    : localizedUrl(locale, '/gallery'),
                 })),
               ),
             }),
@@ -148,7 +148,7 @@ export default async function GalleryPage({
           <>
             <SeoIssueBeacon
               type="soft-404"
-              pathname={localizedPath(locale, '/galeri')}
+              pathname={localizedPath(locale, '/gallery')}
               reason="gallery-list-empty"
             />
             <p style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 16 }}>
@@ -162,7 +162,7 @@ export default async function GalleryPage({
             {visibleGalleries.map((g: any, index: number) => (
               <Link
                 key={g.id ?? g.title}
-                href={g.slug ? localizedPath(locale, `/galeri/${g.slug}`) : localizedPath(locale, '/galeri')}
+                href={g.slug ? localizedPath(locale, `/gallery/${g.slug}`) : localizedPath(locale, '/gallery')}
                 className="gl-card"
               >
                 <div className="gl-card-media">

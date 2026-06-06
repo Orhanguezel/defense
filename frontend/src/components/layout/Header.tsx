@@ -384,10 +384,10 @@ export function Header({
                 <ul className="space-y-2">
                   {[
                     { label: t('home'),         href: l('/') },
-                    { label: t('about'),        href: l('/hakkimizda') },
-                    { label: t('services'),     href: l('/hizmetler') },
-                    { label: t('gallery'),      href: l('/galeri') },
-                    { label: t('contact'),      href: l('/iletisim') },
+                    { label: t('about'),        href: l('/about') },
+                    { label: t('services'),     href: l('/capabilities') },
+                    { label: t('gallery'),      href: l('/gallery') },
+                    { label: t('contact'),      href: l('/contact') },
                   ].map(({ label, href }) => (
                     <li key={href}>
                       <Link
@@ -418,7 +418,7 @@ export function Header({
                   {(categories as any[]).map((c) => (
                     <li key={c.id || c.slug}>
                       <Link
-                        href={l(`/urunler?category=${encodeURIComponent(c.slug || c.name || c.title)}`)}
+                        href={l(`/products?category=${encodeURIComponent(c.slug || c.name || c.title)}`)}
                         className="text-sm transition-colors block py-0.5"
                         style={{ color: 'var(--color-text-on-dark)' }}
                         onClick={() => setMenuOpen(false)}
@@ -432,7 +432,7 @@ export function Header({
                   {/* Hızlı bağlantılar */}
                   <li style={{ marginTop: 12, paddingTop: 10, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
                     <Link
-                      href={l('/urunler')}
+                      href={l('/products')}
                       className="text-xs font-semibold uppercase tracking-wider inline-block"
                       style={{ color: 'var(--color-brand)' }}
                       onClick={() => setMenuOpen(false)}
@@ -442,7 +442,7 @@ export function Header({
                   </li>
                   <li>
                     <Link
-                      href={l('/teklif')}
+                      href={l('/request-quote')}
                       className="text-xs font-semibold uppercase tracking-wider inline-block"
                       style={{ color: 'var(--color-brand)' }}
                       onClick={() => setMenuOpen(false)}
@@ -466,7 +466,7 @@ export function Header({
                     {(services as any[]).slice(0, 8).map((s) => (
                       <li key={s.id || s.slug}>
                         <Link
-                          href={l(`/hizmetler/${s.slug}`)}
+                          href={l(`/capabilities/${s.slug}`)}
                           className="text-sm transition-colors block py-0.5"
                           style={{ color: 'var(--color-text-on-dark)' }}
                           onClick={() => setMenuOpen(false)}
@@ -492,9 +492,9 @@ export function Header({
                 </h3>
                 <ul className="space-y-2">
                   {[
-                    { label: safeNavLabel(t, 'contact', 'İletişim'), href: l('/iletisim') },
-                    { label: safeNavLabel(t, 'offer', 'Teklif Al'), href: l('/teklif') },
-                    { label: safeNavLabel(t, 'about', 'Hakkımızda'), href: l('/hakkimizda') },
+                    { label: safeNavLabel(t, 'contact', 'İletişim'), href: l('/contact') },
+                    { label: safeNavLabel(t, 'offer', 'Teklif Al'), href: l('/request-quote') },
+                    { label: safeNavLabel(t, 'about', 'Hakkımızda'), href: l('/about') },
                   ].map(({ label, href }) => (
                     <li key={href}>
                       <Link

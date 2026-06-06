@@ -66,7 +66,7 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     locale,
-    pathname: `/hizmetler/${slug}`,
+    pathname: `/capabilities/${slug}`,
     title: service.meta_title || service.title,
     description: service.meta_description || service.description,
     ogImage: absoluteAssetUrl(service.image_url) || undefined,
@@ -106,7 +106,7 @@ export default async function ServiceDetailPage({
 
   const breadcrumbs = [
     { label: 'Sultan Defense', href: localizedPath(locale, '/') },
-    { label: isEn ? 'Activities' : 'Faaliyetler', href: localizedPath(locale, '/hizmetler') },
+    { label: isEn ? 'Activities' : 'Faaliyetler', href: localizedPath(locale, '/capabilities') },
     { label: service.title },
   ];
 
@@ -147,7 +147,7 @@ export default async function ServiceDetailPage({
           jsonld.service({
             name: service.title,
             description: service.description,
-            url: localizedUrl(locale, `/hizmetler/${slug}`),
+            url: localizedUrl(locale, `/capabilities/${slug}`),
             image: imageSrc || undefined,
             provider: org.name,
           }),
@@ -156,7 +156,7 @@ export default async function ServiceDetailPage({
               name: item.label,
               url: 'href' in item && item.href
                 ? localizedUrl(locale, (item.href as string).replace(`/${locale}`, '') || '/')
-                : localizedUrl(locale, `/hizmetler/${slug}`),
+                : localizedUrl(locale, `/capabilities/${slug}`),
             })),
           ),
         ])}
@@ -232,12 +232,12 @@ export default async function ServiceDetailPage({
             >
               <RelatedLinks
                 title={t('common.relatedProducts')}
-                hrefBase={localizedPath(locale, '/urunler')}
+                hrefBase={localizedPath(locale, '/products')}
                 items={related.products}
               />
               <RelatedLinks
                 title={t('common.relatedGallery')}
-                hrefBase={localizedPath(locale, '/galeri')}
+                hrefBase={localizedPath(locale, '/gallery')}
                 items={related.galleries}
               />
             </div>
@@ -252,7 +252,7 @@ export default async function ServiceDetailPage({
                 {relatedProjects.map((p: any) => (
                   <Link
                     key={p.id ?? p.title}
-                    href={p.slug ? localizedPath(locale, `/urunler/${p.slug}`) : '#'}
+                    href={p.slug ? localizedPath(locale, `/products/${p.slug}`) : '#'}
                     className="sd-sidebar-project"
                   >
                     {absoluteAssetUrl(p.image_url) && (
@@ -277,7 +277,7 @@ export default async function ServiceDetailPage({
                   </Link>
                 ))}
                 <Link
-                  href={localizedPath(locale, '/urunler')}
+                  href={localizedPath(locale, '/products')}
                   style={{ fontSize: 13, color: 'var(--color-brand)', textDecoration: 'none', marginTop: 10, display: 'inline-block' }}
                 >
                   {isEn ? 'All Products »' : 'Tüm Ürünler »'}
@@ -292,7 +292,7 @@ export default async function ServiceDetailPage({
                 {otherServices.map((s: any) => (
                   <Link
                     key={s.id ?? s.title}
-                    href={s.slug ? localizedPath(locale, `/hizmetler/${s.slug}`) : '#'}
+                    href={s.slug ? localizedPath(locale, `/capabilities/${s.slug}`) : '#'}
                     className="sd-sidebar-item"
                   >
                     {s.title}
@@ -311,7 +311,7 @@ export default async function ServiceDetailPage({
                 {t('common.offerCtaDescription')}
               </p>
               <Link
-                href={localizedPath(locale, '/teklif')}
+                href={localizedPath(locale, '/request-quote')}
                 className="mt-5 flex items-center justify-center rounded-lg bg-(--color-brand) px-5 py-3 text-sm font-bold uppercase tracking-wide text-(--color-on-brand) no-underline transition-opacity hover:opacity-85"
               >
                 {t('common.requestOffer')}
@@ -320,7 +320,7 @@ export default async function ServiceDetailPage({
 
             {/* All services link */}
             <Link
-              href={localizedPath(locale, '/hizmetler')}
+              href={localizedPath(locale, '/capabilities')}
               className="flex items-center justify-center rounded-lg border-2 border-(--color-brand) px-4 py-3.5 text-sm font-bold text-(--color-brand-text) no-underline transition-colors hover:bg-(--color-brand) hover:text-(--color-on-brand)"
             >
               {isEn ? '← All Activities' : '← Tüm Faaliyetler'}

@@ -74,7 +74,7 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     locale,
-    pathname: '/hakkimizda',
+    pathname: '/about',
     title: seo?.title || t('about.title'),
     description: seo?.description || t('about.description'),
     ogImage: seo?.og_image || undefined,
@@ -121,7 +121,7 @@ export default async function AboutPage({
   const ctaTitle = readCtaField(cta, 'title');
   const ctaDescription = readCtaField(cta, 'description');
   const ctaButtonText = readCtaField(cta, 'button_text');
-  const ctaButtonUrl = readCtaField(cta, 'button_url') || '/teklif';
+  const ctaButtonUrl = readCtaField(cta, 'button_url') || '/request-quote';
 
   const breadcrumbs = [
     { label: companyName, href: localizedPath(locale, '/') },
@@ -167,7 +167,7 @@ export default async function AboutPage({
               name: item.label,
               url: 'href' in item && item.href
                 ? localizedUrl(locale, (item.href as string).replace(`/${locale}`, '') || '/')
-                : localizedUrl(locale, '/hakkimizda'),
+                : localizedUrl(locale, '/about'),
             })),
           ),
         ])}
@@ -290,7 +290,7 @@ export default async function AboutPage({
                 {services.map((s: any) => (
                   <Link
                     key={s.id ?? s.title}
-                    href={s.slug ? localizedPath(locale, `/hizmetler/${s.slug}`) : '#'}
+                    href={s.slug ? localizedPath(locale, `/capabilities/${s.slug}`) : '#'}
                     className="ab-sidebar-item"
                   >
                     {s.title}
@@ -334,7 +334,7 @@ export default async function AboutPage({
 
             {/* Contact link */}
             <Link
-              href={localizedPath(locale, '/iletisim')}
+              href={localizedPath(locale, '/contact')}
               style={{
                 display: 'block',
                 textAlign: 'center',
@@ -371,7 +371,7 @@ export default async function AboutPage({
             >
               <RelatedLinks
                 title={t('common.relatedProducts')}
-                hrefBase={localizedPath(locale, '/urunler')}
+                hrefBase={localizedPath(locale, '/products')}
                 items={related.products}
               />
               <RelatedLinks
@@ -386,7 +386,7 @@ export default async function AboutPage({
               />
               <RelatedLinks
                 title={t('common.relatedGallery')}
-                hrefBase={localizedPath(locale, '/galeri')}
+                hrefBase={localizedPath(locale, '/gallery')}
                 items={related.galleries}
               />
             </div>

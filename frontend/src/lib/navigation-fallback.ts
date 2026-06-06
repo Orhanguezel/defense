@@ -79,16 +79,16 @@ function isLegacyNavPath(key: string): boolean {
     '/projeler',
     '/projects',
     '/referans',
-    '/referanslar',
     '/references',
-    '/galeri',
+    '/references',
+    '/gallery',
     '/gallery',
     '/chat',
     '/login',
     '/register',
   ]);
   if (exact.has(k)) return true;
-  return k.startsWith('/galeri/') || k.startsWith('/gallery/');
+  return k.startsWith('/gallery/') || k.startsWith('/gallery/');
 }
 
 /**
@@ -99,12 +99,12 @@ export function buildDefaultMenu(locale: string, t: TranslateFn): MenuItemLike[]
   const l = (path: string) => localizedPath(locale, path);
   return [
     { title: safeNavLabel(t, 'home', 'Ana Sayfa'), url: l('/') },
-    { title: safeNavLabel(t, 'products', 'Ürünler'), url: l('/urunler') },
-    { title: safeNavLabel(t, 'about', 'Hakkımızda'), url: l('/hakkimizda') },
-    { title: safeNavLabel(t, 'services', 'Faaliyetler'), url: l('/hizmetler') },
-    { title: safeNavLabel(t, 'gallery', 'Galeri'), url: l('/galeri') },
-    { title: safeNavLabel(t, 'contact', 'İletişim'), url: l('/iletisim') },
-    { title: safeNavLabel(t, 'offer', 'Teklif Al'), url: l('/teklif') },
+    { title: safeNavLabel(t, 'products', 'Ürünler'), url: l('/products') },
+    { title: safeNavLabel(t, 'about', 'Hakkımızda'), url: l('/about') },
+    { title: safeNavLabel(t, 'services', 'Faaliyetler'), url: l('/capabilities') },
+    { title: safeNavLabel(t, 'gallery', 'Galeri'), url: l('/gallery') },
+    { title: safeNavLabel(t, 'contact', 'İletişim'), url: l('/contact') },
+    { title: safeNavLabel(t, 'offer', 'Teklif Al'), url: l('/request-quote') },
   ];
 }
 
@@ -177,19 +177,19 @@ export function buildDefaultFooterSections(
     {
       title: footerT('sections.explore'),
       items: [
-        { label: navT('products'), url: localizedPath(locale, '/urunler') },
-        { label: navT('services'), url: localizedPath(locale, '/hizmetler') },
-        { label: navT('gallery'), url: localizedPath(locale, '/galeri') },
-        { label: navT('about'), url: localizedPath(locale, '/hakkimizda') },
-        { label: navT('offer'), url: localizedPath(locale, '/teklif') },
-        { label: navT('contact'), url: localizedPath(locale, '/iletisim') },
+        { label: navT('products'), url: localizedPath(locale, '/products') },
+        { label: navT('services'), url: localizedPath(locale, '/capabilities') },
+        { label: navT('gallery'), url: localizedPath(locale, '/gallery') },
+        { label: navT('about'), url: localizedPath(locale, '/about') },
+        { label: navT('offer'), url: localizedPath(locale, '/request-quote') },
+        { label: navT('contact'), url: localizedPath(locale, '/contact') },
       ],
     },
     {
       title: footerT('sections.company'),
       items: [
-        { label: navT('about'), url: localizedPath(locale, '/hakkimizda') },
-        { label: navT('contact'), url: localizedPath(locale, '/iletisim') },
+        { label: navT('about'), url: localizedPath(locale, '/about') },
+        { label: navT('contact'), url: localizedPath(locale, '/contact') },
       ],
     },
     {

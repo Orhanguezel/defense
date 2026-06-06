@@ -25,7 +25,7 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     locale,
-    pathname: '/teklif',
+    pathname: '/request-quote',
     title: projectName
         ? `${projectName} - ${t('title')}`
         : (seo?.title || t('title')),

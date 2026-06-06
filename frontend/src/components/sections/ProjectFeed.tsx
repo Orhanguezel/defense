@@ -131,7 +131,7 @@ export function ProjectFeed({
             const categoryName = project.category?.name || specs.tip || '';
             const manufacturers = specs.üreticiler || specs.manufacturers || specs.mimarlar || '';
             const desc = stripHtml(project.description);
-            const href = localePath(locale, `/urunler/${project.slug}`);
+            const href = localePath(locale, `/products/${project.slug}`);
 
             return (
               <article key={project.id} className="group border-b border-(--color-border) pb-14 last:border-0">
@@ -220,7 +220,7 @@ export function ProjectFeed({
                     return (
                       <Link
                         key={p.id}
-                        href={localePath(locale, `/urunler/${p.slug}`)}
+                        href={localePath(locale, `/products/${p.slug}`)}
                         className="group flex gap-4"
                       >
                         {img && (
@@ -255,7 +255,7 @@ export function ProjectFeed({
                 {t('projects.getQuoteDesc')}
               </p>
               <Link
-                href={localePath(locale, '/teklif')}
+                href={localePath(locale, '/request-quote')}
                 className="mt-4 inline-block bg-(--color-brand) px-5 py-2.5 text-[11px] font-black uppercase tracking-[0.2em] text-(--color-on-brand) transition-opacity hover:opacity-90"
               >
                 {t('nav.offer')}

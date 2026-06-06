@@ -31,87 +31,40 @@ const nextConfig: NextConfig = {
 
   async rewrites() {
     const apiBase = process.env.INTERNAL_API_URL?.replace(/\/api\/?$/, '') || 'http://127.0.0.1:8090';
-    // EN Ingilizce slug -> TR-isimli rota (URL /en/about kalir, icerik /en/hakkimizda render olur)
-    const EN_SLUGS: [string, string][] = [
-      ['about', 'hakkimizda'],
-      ['products', 'urunler'],
-      ['capabilities', 'hizmetler'],
-      ['gallery', 'galeri'],
-      ['contact', 'iletisim'],
-      ['request-quote', 'teklif'],
-      ['search', 'arama'],
-      ['references', 'referanslar'],
-    ];
-    const enRewrites = EN_SLUGS.flatMap(([en, tr]) => [
-      { source: `/en/${en}`, destination: `/en/${tr}` },
-      { source: `/en/${en}/:path*`, destination: `/en/${tr}/:path*` },
-    ]);
     return [
       {
         source: '/uploads/:path*',
         destination: `${apiBase}/uploads/:path*`,
       },
-      ...enRewrites,
     ];
   },
 
   async redirects() {
+    // Eski TR (ve legacy) slug -> yeni Ingilizce slug. Tum diller Ingilizce rota kullanir.
+    const LEGACY: [string, string][] = [
+      ['hakkimizda', 'about'],
+      ['neden-biz', 'about'],
+      ['urunler', 'products'],
+      ['projeler', 'products'],
+      ['projects', 'products'],
+      ['hizmetler', 'capabilities'],
+      ['galeri', 'gallery'],
+      ['iletisim', 'contact'],
+      ['teklif', 'request-quote'],
+      ['arama', 'search'],
+      ['referanslar', 'references'],
+    ];
+    const legacyRedirects = LEGACY.flatMap(([from, to]) => [
+      { source: `/:locale/${from}`, destination: `/:locale/${to}`, permanent: true },
+      { source: `/:locale/${from}/:slug*`, destination: `/:locale/${to}/:slug*`, permanent: true },
+    ]);
     return [
-      {
-        source: '/Default',
-        destination: '/tr',
-        permanent: true,
-      },
-      {
-        source: '/default',
-        destination: '/tr',
-        permanent: true,
-      },
-      {
-        source: '/:locale/Default',
-        destination: '/:locale',
-        permanent: true,
-      },
-      {
-        source: '/:locale/default',
-        destination: '/:locale',
-        permanent: true,
-      },
-      {
-        source: '/neden-biz',
-        destination: '/tr/hakkimizda',
-        permanent: true,
-      },
-      {
-        source: '/:locale/neden-biz',
-        destination: '/:locale/hakkimizda',
-        permanent: true,
-      },
-      {
-        source: '/:locale/projeler',
-        destination: '/:locale/urunler',
-        permanent: true,
-      },
-      {
-        source: '/:locale/projeler/:slug',
-        destination: '/:locale/urunler/:slug',
-        permanent: true,
-      },
-      {
-        source: '/:locale/projects',
-        destination: '/:locale/urunler',
-        permanent: true,
-      },
-      {
-        source: '/:locale/projects/:slug',
-        destination: '/:locale/urunler/:slug',
-        permanent: true,
-      },
-      {
-        source: '/',
-        destination: '/tr',
-        permanent: true,
-      },
+      { source: '/Default', destination: '/tr', permanent: true },
+      { source: '/default', destination: '/tr', permanent: true },
+      { source: '/:locale/Default', destination: '/:locale', permanent: true },
+      { source: '/:locale/default', destination: '/:locale', permanent: true },
+      ...legacyRedirects,
+      { source: '/', destination: '/tr', permanent: true },
     ];
   },
 

@@ -245,7 +245,7 @@ export default async function HomePage({
             name: 'Sultan Defense',
             url: siteUrl,
             searchAction: {
-              targetUrlTemplate: `${siteUrl}/${locale}/urunler?q={search_term_string}`,
+              targetUrlTemplate: `${siteUrl}/${locale}/products?q={search_term_string}`,
               queryInput: 'required name=search_term_string',
             },
           }),
@@ -299,7 +299,7 @@ export default async function HomePage({
             {heroProducts.map((p: any, idx: number) => (
               <Reveal key={p.id} delay={idx * 0.1} className={idx === 2 ? 'hidden md:block' : idx === 3 ? 'hidden lg:block' : ''}>
                 <Link
-                  href={p.slug ? localizedPath(locale, `/urunler/${p.slug}`) : '#'}
+                  href={p.slug ? localizedPath(locale, `/products/${p.slug}`) : '#'}
                   title={p.title}
                   className="group relative flex h-[220px] flex-col justify-end overflow-hidden border-l-4 border-(--color-brand) p-5 shadow-2xl transition-all duration-500 hover:scale-[1.02] sm:h-[240px] md:h-[220px] lg:h-[280px] lg:p-6"
                   style={{ background: 'var(--surface-dark-strong)' }}
@@ -571,7 +571,7 @@ export default async function HomePage({
 
                   {/* Premium CTA Pill Button */}
                   <Link
-                    href={localizedPath(locale, '/teklif')}
+                    href={localizedPath(locale, '/request-quote')}
                     className="inline-flex items-center justify-center rounded-full border-2 border-(--color-glass-border) px-12 py-4 text-xs font-black uppercase tracking-[0.3em] text-(--section-bg-white) transition-all duration-500 hover:scale-105 hover:border-(--color-brand) hover:bg-(--color-brand) hover:text-(--color-on-brand) lg:text-sm"
                   >
                     {t('common.requestOffer')}

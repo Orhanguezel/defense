@@ -17,7 +17,7 @@ export default function robots(): MetadataRoute.Robots {
           '/api/',
           '/admin/',
           ...localePrefixed([
-            '/arama',
+            '/search',
             '/profil',
             '/login',
             '/register',

@@ -34,7 +34,7 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     locale,
-    pathname: '/iletisim',
+    pathname: '/contact',
     title: seo?.title || `${t('title')} — ${companyProfile?.company_name || 'Sultan Defense'}`,
     description: seo?.description || t('description'),
     ogImage: seo?.og_image || undefined,
@@ -98,7 +98,7 @@ export default async function ContactPage({
             ),
             jsonld.localBusiness({
               name: companyName,
-              url: localizedUrl(locale, '/iletisim'),
+              url: localizedUrl(locale, '/contact'),
               description: t('contact.description'),
               email,
               telephone: phone,

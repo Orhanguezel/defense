@@ -36,7 +36,7 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     locale,
-    pathname: '/referanslar',
+    pathname: '/references',
     title: seo?.title || (isEn ? 'References & Success Stories' : 'Referanslar & Başarı Hikayeleri'),
     description:
       seo?.description ||
@@ -117,7 +117,7 @@ export default async function ReferencesPage({
               jsonld.collectionPage({
                 name: pageTitle,
                 description: pageDesc,
-                url: localizedUrl(locale, '/referanslar'),
+                url: localizedUrl(locale, '/references'),
               }),
               ...reviewSchemas,
             ])}
@@ -129,7 +129,7 @@ export default async function ReferencesPage({
               jsonld.collectionPage({
                 name: pageTitle,
                 description: pageDesc,
-                url: localizedUrl(locale, '/referanslar'),
+                url: localizedUrl(locale, '/references'),
               }),
             ])}
           />
@@ -246,7 +246,7 @@ export default async function ReferencesPage({
             </p>
           </div>
           <Link
-            href={localizedPath(locale, '/teklif')}
+            href={localizedPath(locale, '/request-quote')}
             style={{ padding: '10px 24px', background: 'var(--color-brand)', color: 'var(--color-on-brand)', fontWeight: 600, fontSize: 14, textDecoration: 'none', borderRadius: 2, whiteSpace: 'nowrap' }}
           >
             {t('nav.offer')}

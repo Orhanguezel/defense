@@ -70,7 +70,7 @@ export default async function CertificationsPage({
             ? 'Sevkiyat öncesinde kalite kontrol, fabrika kabul testleri ve ürün dokümantasyonu üretici partnerlerle birlikte takip edilir. Amaç, NATO, MIL-STD, NIJ ve ilgili ülke regülasyonlarına uygun, izlenebilir teslimat sağlamaktır.'
             : 'Before shipment, quality control, factory acceptance tests and product documentation are followed together with manufacturing partners. The goal is traceable delivery aligned with NATO, MIL-STD, NIJ and destination-country requirements.'}
         </p>
-        <Link href={localizedPath(locale, '/teklif')} className="btn-primary mt-8 inline-flex px-6 py-3 text-sm font-semibold">
+        <Link href={localizedPath(locale, '/request-quote')} className="btn-primary mt-8 inline-flex px-6 py-3 text-sm font-semibold">
           {t('nav.offer')}
         </Link>
       </section>

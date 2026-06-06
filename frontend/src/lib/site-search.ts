@@ -44,8 +44,8 @@ function customPageUrl(locale: string, moduleKey: string, slug: string): string 
     return localizedPath(locale, `/legal/${encodeURIComponent(slug)}`);
   }
   if (moduleKey === 'sultandefense_about') {
-    if (slug === 'about') return localizedPath(locale, '/hakkimizda');
-    return localizedPath(locale, '/hakkimizda');
+    if (slug === 'about') return localizedPath(locale, '/about');
+    return localizedPath(locale, '/about');
   }
 
   return null;
@@ -94,7 +94,7 @@ export async function fetchSiteSearch(locale: string, rawQuery: string): Promise
       id,
       title,
       type: 'product',
-      url: localizedPath(locale, `/urunler/${encodeURIComponent(slug)}`),
+      url: localizedPath(locale, `/products/${encodeURIComponent(slug)}`),
       description: summary ?? metaDesc,
     });
   }
@@ -109,7 +109,7 @@ export async function fetchSiteSearch(locale: string, rawQuery: string): Promise
       id,
       title,
       type: 'service',
-      url: localizedPath(locale, `/hizmetler/${encodeURIComponent(slug)}`),
+      url: localizedPath(locale, `/capabilities/${encodeURIComponent(slug)}`),
       description: summary ?? undefined,
     });
   }

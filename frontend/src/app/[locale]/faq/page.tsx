@@ -75,7 +75,7 @@ export default async function FaqPage({ params }: { params: Promise<{ locale: st
           </section>
         ))}
       </div>
-      <Link href={localizedPath(locale, '/teklif')} className="btn-primary mt-10 inline-flex px-6 py-3 text-sm font-semibold">
+      <Link href={localizedPath(locale, '/request-quote')} className="btn-primary mt-10 inline-flex px-6 py-3 text-sm font-semibold">
         {t('nav.offer')}
       </Link>
     </main>

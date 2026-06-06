@@ -53,7 +53,7 @@ export function FloatingWidgets({ activeLocales = [], socials = {}, contactInfo 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      window.location.href = `/${locale}/arama?q=${encodeURIComponent(searchQuery.trim())}`;
+      window.location.href = `/${locale}/search?q=${encodeURIComponent(searchQuery.trim())}`;
       setActiveTab('none');
     }
   };
@@ -272,7 +272,7 @@ export function FloatingWidgets({ activeLocales = [], socials = {}, contactInfo 
 
           {/* Teklif Al Widget */}
           <Link
-            href={`/${locale}/teklif`}
+            href={`/${locale}/request-quote`}
             className="group flex h-[80px] w-[60px] flex-col items-center justify-center overflow-hidden border-t border-(--color-border-on-dark) text-(--color-on-brand) transition-all hover:opacity-95"
             style={{ background: 'var(--color-brand-dark)' }}
           >

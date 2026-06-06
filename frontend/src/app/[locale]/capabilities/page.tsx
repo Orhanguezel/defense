@@ -39,7 +39,7 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     locale,
-    pathname: '/hizmetler',
+    pathname: '/capabilities',
     title: seo?.title || t('services.title'),
     description: seo?.description || t('services.description'),
     ogImage: seo?.og_image || undefined,
@@ -103,11 +103,11 @@ export default async function ServicesPage({
             jsonld.collectionPage({
               name: t('services.title'),
               description: t('services.description'),
-              url: localizedUrl(locale, '/hizmetler'),
+              url: localizedUrl(locale, '/capabilities'),
               mainEntity: jsonld.itemList(
                 visibleServices.slice(0, 10).map((item: any) => ({
                   name: item.title,
-                  url: item.slug ? localizedUrl(locale, `/hizmetler/${item.slug}`) : localizedUrl(locale, '/iletisim'),
+                  url: item.slug ? localizedUrl(locale, `/capabilities/${item.slug}`) : localizedUrl(locale, '/contact'),
                 })),
               ),
             }),
@@ -126,7 +126,7 @@ export default async function ServicesPage({
           <>
             <SeoIssueBeacon
               type="soft-404"
-              pathname={localizedPath(locale, '/hizmetler')}
+              pathname={localizedPath(locale, '/capabilities')}
               reason="services-list-empty"
             />
             <p style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 16 }}>
@@ -142,7 +142,7 @@ export default async function ServicesPage({
             {/* Featured service */}
             {featured && (
               <Link
-                href={featured.slug ? localizedPath(locale, `/hizmetler/${featured.slug}`) : localizedPath(locale, '/iletisim')}
+                href={featured.slug ? localizedPath(locale, `/capabilities/${featured.slug}`) : localizedPath(locale, '/contact')}
                 className="sv-featured"
               >
                 <h2 className="sv-featured-title">{featured.title}</h2>
@@ -168,7 +168,7 @@ export default async function ServicesPage({
             {rest.map((s: any) => (
               <Link
                 key={s.id ?? s.title}
-                href={s.slug ? localizedPath(locale, `/hizmetler/${s.slug}`) : localizedPath(locale, '/iletisim')}
+                href={s.slug ? localizedPath(locale, `/capabilities/${s.slug}`) : localizedPath(locale, '/contact')}
                 className="sv-article"
               >
                 <div className="sv-article-body">
@@ -206,7 +206,7 @@ export default async function ServicesPage({
               {visibleServices.map((s: any) => (
                 <Link
                   key={s.id ?? s.title}
-                  href={s.slug ? localizedPath(locale, `/hizmetler/${s.slug}`) : localizedPath(locale, '/iletisim')}
+                  href={s.slug ? localizedPath(locale, `/capabilities/${s.slug}`) : localizedPath(locale, '/contact')}
                   className="sv-sidebar-item"
                 >
                   {s.title}
@@ -224,7 +224,7 @@ export default async function ServicesPage({
                 {t('common.offerCtaDescription')}
               </p>
               <Link
-                href={localizedPath(locale, '/teklif')}
+                href={localizedPath(locale, '/request-quote')}
                 style={{
                   display: 'inline-block',
                   marginTop: 12,
@@ -247,7 +247,7 @@ export default async function ServicesPage({
         <div className="sv-cta">
           <h2>{t('common.offerCtaTitle')}</h2>
           <p>{t('common.offerCtaDescription')}</p>
-          <Link href={localizedPath(locale, '/teklif')}>
+          <Link href={localizedPath(locale, '/request-quote')}>
             {t('common.requestOffer')}
           </Link>
         </div>

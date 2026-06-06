@@ -47,7 +47,7 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     locale,
-    pathname: '/urunler',
+    pathname: '/products',
     title: seo?.title || t('projects.title'),
     description: seo?.description || t('projects.description'),
     ogImage: seo?.og_image || undefined,
@@ -82,8 +82,8 @@ function toViewItem(p: any, locale: string): ProjectViewItem {
     id: p.id,
     title: p.title,
     href: p.slug
-      ? localizedPath(locale, `/urunler/${p.slug}`)
-      : `${localizedPath(locale, '/teklif')}?proje=${encodeURIComponent(p.title)}`,
+      ? localizedPath(locale, `/products/${p.slug}`)
+      : `${localizedPath(locale, '/request-quote')}?proje=${encodeURIComponent(p.title)}`,
     imageSrc: absoluteAssetUrl(p.featured_image) || absoluteAssetUrl(p.image_url) || absoluteAssetUrl(p.images?.[0]) || GALLERY_IMAGE_PLACEHOLDER,
     alt: buildMediaAlt({
       locale,
@@ -137,13 +137,13 @@ export default async function ProjectsPage({
             jsonld.collectionPage({
               name: t('projects.title'),
               description: t('projects.description'),
-              url: localizedUrl(locale, '/urunler'),
+              url: localizedUrl(locale, '/products'),
               mainEntity: jsonld.itemList(
                 projects.slice(0, 12).map((item: any) => ({
                   name: item.title,
                   url: item.slug
-                    ? localizedUrl(locale, `/urunler/${item.slug}`)
-                    : localizedUrl(locale, '/teklif'),
+                    ? localizedUrl(locale, `/products/${item.slug}`)
+                    : localizedUrl(locale, '/request-quote'),
                 })),
               ),
             }),
