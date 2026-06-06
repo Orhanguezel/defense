@@ -13,13 +13,27 @@ import { SocialShare } from '@/components/projects/SocialShare';
 import { ProjectComments } from '@/components/projects/ProjectComments';
 import { NewsImageGallery } from '@/components/news/NewsImageGallery';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { RelatedLinks } from '@/components/seo/RelatedLinks';
+import { fetchRelatedContent } from '@/lib/related-content';
 
-const NEWS_PLACEHOLDER = '/media/blog-placeholder.svg';
+function resolveNewsImage(post: any): string | null {
+  return absoluteAssetUrl(
+    post?.featured_image_url_resolved ||
+    post?.image_url_resolved ||
+    post?.cover_image_url_resolved ||
+    post?.featured_image ||
+    post?.image_url ||
+    post?.cover_image ||
+    post?.imageSrc ||
+    post?.featured_image_url ||
+    post?.cover_image_url,
+  ) || null;
+}
 
 async function fetchPost(slug: string, locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/custom_pages/by-slug/${encodeURIComponent(slug)}?locale=${locale}`,
+      `${API_BASE_URL}/custom-pages/by-slug/${encodeURIComponent(slug)}?locale=${locale}`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return null;
@@ -32,7 +46,7 @@ async function fetchPost(slug: string, locale: string) {
 async function fetchSidebarNews(locale: string, excludeSlug: string, limit = 4) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/custom_pages?module_key=news&is_published=1&locale=${locale}&limit=${limit + 1}&sort=created_at&order=desc`,
+      `${API_BASE_URL}/custom-pages?module_key=news&is_published=1&locale=${locale}&limit=${limit + 1}&sort=created_at&order=desc`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -47,7 +61,7 @@ async function fetchSidebarNews(locale: string, excludeSlug: string, limit = 4) 
 async function fetchRelatedArticles(locale: string, excludeSlug: string, limit = 3) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/custom_pages?module_key=news&is_published=1&locale=${locale}&limit=${limit + 1}&sort=created_at&order=desc`,
+      `${API_BASE_URL}/custom-pages?module_key=news&is_published=1&locale=${locale}&limit=${limit + 1}&sort=created_at&order=desc`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -70,16 +84,8 @@ export async function generateMetadata({
   return buildPageMetadata({
     locale,
     pathname: `/haberler/${slug}`,
-    title:
-      post.meta_title ||
-      (locale.startsWith('en')
-        ? `${post.title} | Sultan Defense News`
-        : `${post.title} | Sultan Defense Haberleri`),
-    description:
-      post.meta_description ||
-      (locale.startsWith('en')
-        ? `${post.title}. Read defense procurement and tactical equipment insights by Sultan Defense.`
-        : `${post.title}. Sultan Defense savunma tedariki ve taktik ekipman içerikleri.`),
+    title: post.meta_title || post.title,
+    description: post.meta_description || post.summary || post.title,
     ogImage: post.featured_image || post.image_url,
     openGraphType: 'article',
     includeLocaleAlternates: true,
@@ -128,20 +134,45 @@ export default async function NewsDetailPage({
 
   const content = normalizeRichContent(post.content);
   const org = organizationJsonLd(locale);
-  const coverImage = post.featured_image || post.image_url;
-  const imageSrc = absoluteAssetUrl(coverImage) || NEWS_PLACEHOLDER;
+  const imageSrc = resolveNewsImage(post);
   const shareUrl = `${SITE_URL}/${locale}/haberler/${slug}`;
-  const rawImages: string[] = Array.isArray(post.images) ? post.images : [];
+  const rawImages: string[] = Array.isArray(post.images)
+    ? post.images
+    : typeof post.images === 'string'
+      ? (() => { try { const p = JSON.parse(post.images); return Array.isArray(p) ? p : []; } catch { return []; } })()
+      : [];
+  const galleryImages = rawImages
+    .map((img, i) => {
+      const resolved = absoluteAssetUrl(img) || img;
+      if (!resolved) return null;
+      return {
+        src: resolved,
+        alt: `${post.title} — ${i + 1}`,
+      };
+    })
+    .filter((img): img is { src: string; alt: string } => Boolean(img));
   const author = post.author_name || 'Sultan Defense';
 
-  const [sidebarPosts, relatedArticles] = await Promise.all([
+  const postTags: string[] = Array.isArray(post.tags) ? post.tags : [];
+
+  const [sidebarPosts, relatedArticles, related] = await Promise.all([
     fetchSidebarNews(locale, slug, 4),
     fetchRelatedArticles(locale, slug, 3),
+    fetchRelatedContent(
+      {
+        title: post.title,
+        description: post.summary || post.description || null,
+        slug: post.slug || slug,
+        tags: postTags,
+      },
+      slug,
+      locale,
+    ),
   ]);
 
   const breadcrumbs = [
     { label: 'Sultan Defense', href: localizedPath(locale, '/') },
-    { label: isEn ? 'Defense Insights' : 'Savunma Haberleri', href: localizedPath(locale, '/haberler') },
+    { label: isEn ? 'News' : 'Haberler', href: localizedPath(locale, '/haberler') },
     ...(post.category_name && post.category_slug
       ? [{ label: post.category_name, href: localizedPath(locale, `/haberler?category=${post.category_slug}`) }]
       : []),
@@ -184,16 +215,18 @@ export default async function NewsDetailPage({
       <JsonLd
         data={jsonld.graph([
           jsonld.org(org),
-          jsonld.article({
+          jsonld.newsArticle({
             headline: post.title,
             description: post.description,
-            image: post.image_url,
+            image: imageSrc || undefined,
             datePublished: post.created_at,
             dateModified: post.updated_at,
+            author: post.author_name || org.name,
             publisher: {
               name: org.name,
               logo: org.logo as string | undefined,
             },
+            speakable: { cssSelector: ['h1.nd-title', '.nd-content'] },
           }),
           jsonld.breadcrumb(
             breadcrumbs.map((item) => ({
@@ -249,22 +282,21 @@ export default async function NewsDetailPage({
           {/* LEFT COLUMN */}
           <div>
             {/* Hero image + gallery with lightbox */}
-            <NewsImageGallery
-              heroSrc={imageSrc}
-              heroAlt={buildMediaAlt({
-                locale,
-                kind: 'blog',
-                title: post.title,
-                alt: post.featured_image_alt,
-                caption: post.description,
-                description: post.description,
-              })}
-              images={rawImages.map((img, i) => ({
-                src: absoluteAssetUrl(img) || NEWS_PLACEHOLDER,
-                alt: `${post.title} — ${i + 1}`,
-              }))}
-              caption={post.image_caption}
-            />
+            {imageSrc && (
+              <NewsImageGallery
+                heroSrc={imageSrc}
+                heroAlt={buildMediaAlt({
+                  locale,
+                  kind: 'blog',
+                  title: post.title,
+                  alt: post.featured_image_alt,
+                  caption: post.description,
+                  description: post.description,
+                })}
+                images={galleryImages}
+                caption={post.image_caption}
+              />
+            )}
 
             {/* Author + Date */}
             <div className="nd-meta">
@@ -291,18 +323,48 @@ export default async function NewsDetailPage({
             {/* Thumbnail strip is rendered inside NewsImageGallery */}
 
             {/* Tags */}
-            {post.tags && Array.isArray(post.tags) && post.tags.length > 0 && (
+            {postTags.length > 0 && (
               <div style={{ marginTop: 28 }}>
                 <h3 style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-text-muted)', marginBottom: 10 }}>
                   {isEn ? 'Tags' : 'Etiketler'}
                 </h3>
                 <div className="nd-tags">
-                  {post.tags.map((tag: string) => (
+                  {postTags.map((tag: string) => (
                     <span key={tag} className="nd-tag">{tag}</span>
                   ))}
                 </div>
               </div>
             )}
+
+            <div
+              style={{
+                marginTop: 48,
+                display: 'grid',
+                gap: 24,
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              }}
+            >
+              <RelatedLinks
+                title={t('common.relatedProducts')}
+                hrefBase={localizedPath(locale, '/urunler')}
+                items={related.products}
+              />
+              <RelatedLinks
+                title={t('common.relatedArticles')}
+                hrefBase={localizedPath(locale, '/haberler')}
+                items={related.blogPosts}
+              />
+              <RelatedLinks
+                title={t('common.relatedKnowledgePosts')}
+                hrefBase={localizedPath(locale, '/blog')}
+                items={related.knowledgePosts}
+              />
+              <RelatedLinks
+                title={t('common.relatedGallery')}
+                hrefBase={localizedPath(locale, '/galeri')}
+                items={related.galleries}
+              />
+            </div>
 
             {/* CTA */}
             <div
@@ -321,7 +383,13 @@ export default async function NewsDetailPage({
                 <h3 style={{ fontSize: 18, fontWeight: 700, color: 'var(--color-text-on-dark)', margin: 0 }}>
                   {t('projects.requestOffer')}
                 </h3>
-                <p style={{ fontSize: 14, color: 'rgba(255,255,255,.7)', marginTop: 4 }}>
+                <p
+                  style={{
+                    fontSize: 14,
+                    marginTop: 4,
+                    color: 'color-mix(in srgb, var(--section-bg-white) 70%, transparent)',
+                  }}
+                >
                   {t('common.offerCtaDescription')}
                 </p>
               </div>
@@ -330,7 +398,7 @@ export default async function NewsDetailPage({
                 style={{
                   padding: '10px 24px',
                   background: 'var(--color-brand)',
-                  color: '#fff',
+                  color: 'var(--color-on-brand)',
                   fontWeight: 600,
                   fontSize: 14,
                   textDecoration: 'none',
@@ -377,20 +445,20 @@ export default async function NewsDetailPage({
 
           {/* RIGHT SIDEBAR */}
           <aside>
-            {/* Defense insights you may like */}
+            {/* Architecture You'll Love */}
             {sidebarPosts.length > 0 && (
               <div className="nd-sidebar-card">
-                <h3>{isEn ? 'Defense Insights You May Like' : 'Beğenebileceğiniz Savunma İçerikleri'}</h3>
+                <h3>{isEn ? "News You'll Love" : 'Beğeneceğiniz Haberler'}</h3>
                 {sidebarPosts.map((sp: any) => (
                   <Link
                     key={sp.id ?? sp.title}
                     href={sp.slug ? localizedPath(locale, `/haberler/${sp.slug}`) : '#'}
                     className="nd-sidebar-item"
                   >
-                    {(sp.featured_image || sp.image_url) && (
+                    {resolveNewsImage(sp) && (
                       <div className="nd-sidebar-thumb">
                         <OptimizedImage
-                          src={absoluteAssetUrl(sp.featured_image || sp.image_url) || NEWS_PLACEHOLDER}
+                          src={resolveNewsImage(sp)!}
                           alt={sp.title}
                           fill
                           className="object-cover"
@@ -414,10 +482,10 @@ export default async function NewsDetailPage({
                     href={ra.slug ? localizedPath(locale, `/haberler/${ra.slug}`) : '#'}
                     className="nd-sidebar-item"
                   >
-                    {(ra.featured_image || ra.image_url) && (
+                    {resolveNewsImage(ra) && (
                       <div className="nd-sidebar-thumb">
                         <OptimizedImage
-                          src={absoluteAssetUrl(ra.featured_image || ra.image_url) || NEWS_PLACEHOLDER}
+                          src={resolveNewsImage(ra)!}
                           alt={ra.title}
                           fill
                           className="object-cover"
@@ -447,7 +515,7 @@ export default async function NewsDetailPage({
                   marginTop: 12,
                   padding: '8px 20px',
                   background: 'var(--color-brand)',
-                  color: '#fff',
+                  color: 'var(--color-on-brand)',
                   fontWeight: 600,
                   fontSize: 13,
                   textDecoration: 'none',

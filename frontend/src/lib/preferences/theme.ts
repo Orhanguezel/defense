@@ -26,6 +26,6 @@ export const THEME_STORAGE_KEYS = {
 } as const;
 
 export const THEME_DEFAULTS = {
-  mode: 'light' as ThemeMode,
+  mode: 'dark' as ThemeMode, // İmparatorluk Zırhı — koyu varsayılan (ana his)
   preset: 'default' as ThemePreset,
 } as const;

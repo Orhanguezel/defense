@@ -1,42 +1,67 @@
 {
   "nav": {
     "home": "Home",
+    "products": "Products",
     "projects": "Products",
-    "services": "Procurement",
+    "services": "Capabilities",
     "about": "About",
     "gallery": "Gallery",
-    "blog": "News",
+    "blog": "Blog",
+    "knowledgeHub": "Resources",
+    "catalogs": "Catalogs",
+    "news": "News",
     "contact": "Contact",
-    "offer": "Get Quote",
+    "offer": "Request Quote",
     "login": "Log in",
     "register": "Sign up",
-    "ballistic": "Ballistic Protection",
-    "communications": "Communication & Electronics",
-    "field_kitchen": "Field Kitchen & Support",
-    "field_logistics": "Field Support Logistics",
-    "naval": "Naval & Marine Systems",
-    "power": "Power, Battery & Generator",
-    "riot_control": "Shield & Riot Control",
-    "surveillance": "Surveillance & Sensors",
-    "tactical_gear": "Tactical Gear & Textile",
-    "training": "Training & Simulation",
+    "offerWidgetLine1": "Get",
+    "offerWidgetLine2": "Quote",
+    "trendingSearches": "Trending Searches:",
+    "trendSeedling": "defense equipment",
+    "trendGrafted": "Grafted",
+    "trendTomato": "Tomato",
+    "residential": "defense defense equipment",
+    "commercial": "Fruit defense equipment",
+    "mixed": "Ornamental Plants",
+    "restoration": "tactical equipment Varieties",
+    "construction": "defense equipment & tactical equipment Production",
+    "project_management": "Order Tracking",
+    "architectural_design": "Production Consulting",
+    "interior_design": "Landscape Solutions",
     "corporate": "Corporate",
     "vision": "Our Vision",
-    "tagline": "A to Z Defense Procurement & Export Partner",
+    "team": "Our Team",
+    "career": "Career",
+    "tagline": "Defense procurement and export partner",
     "profile": "My Profile",
-    "logout": "Log Out"
+    "logout": "Log Out",
+    "ariaPrimaryNavigation": "Primary navigation",
+    "ariaToggleMenu": "Open or close menu",
+    "ariaSearch": "Open site search",
+    "ariaLanguage": "Open language options",
+    "ariaContactInfo": "Open contact information",
+    "ariaSocialLinks": "Open social media links",
+    "searchPlaceholder": "Search products, services or pages...",
+    "viewAll": "View All →",
+    "viewAllProducts": "View all products",
+    "viewAllNews": "View all news"
   },
   "footer": {
-    "description": "Your A to Z defense procurement partner. Connecting armed forces worldwide with Turkey's elite defense manufacturing sector.",
+    "description": "Reliable production and supply solutions for defense, fruit and ornamental plant defense equipment.",
     "rights": "All rights reserved",
     "privacy": "Privacy Policy",
     "terms": "Terms of Use",
+    "qualityPolicy": "Quality Policy",
+    "servicePolicy": "Service Policy",
+    "dataProtectionNotice": "PDPL Information Notice",
+    "cookiePolicy": "Cookie Policy",
     "sections": {
       "explore": "Explore",
       "company": "Company",
       "legal": "Legal",
       "quickLinks": "Quick Links"
-    }
+    },
+    "ecosystemLabel": "Our Ecosystem"
   },
   "common": {
     "loading": "Loading...",
@@ -59,8 +84,8 @@
       "daysAgo": "{days} days ago"
     },
     "requestOffer": "Request Offer",
-    "offerCtaTitle": "Request a Procurement Quote from Our Export Specialists",
-    "offerCtaDescription": "For your defense equipment requirements, let us align technical specifications, delivery timelines and compliance needs — then prepare a tailored procurement quote.",
+    "offerCtaTitle": "Let Us Prepare a Free Quote for Your defense equipment Order",
+    "offerCtaDescription": "Share your requirement list, quantities and destination country; our export team will respond with the right procurement scope.",
     "freeOfObligation": "Free and non-binding",
     "send": "Send",
     "name": "Full Name",
@@ -72,150 +97,175 @@
     "required": "Required field",
     "success": "Success",
     "noResults": "No results found",
-    "relatedProducts": "Related Projects",
+    "relatedProducts": "Related Products",
     "relatedGallery": "Related Galleries",
-    "relatedArticles": "Related Articles"
+    "relatedArticles": "Related Articles",
+    "relatedKnowledgePosts": "From the knowledge hub"
   },
   "home": {
     "hero": {
-      "title": "A to Z Global Military Procurement Solutions",
-      "subtitle": "Your trusted gateway to Turkey's battle-proven defense industry. We specialize in end-to-end procurement of advanced tactical gear, military electronics, and logistical solutions for armed forces worldwide.",
-      "cta": "Explore the Catalog",
-      "ctaSecondary": "Request a Quote",
+      "title": "A to Z Defense Procurement",
+      "subtitle": "Sultan Defense is a B2B export partner supplying tactical equipment and defense technologies across the Middle East, Africa and Turkic Republics.",
+      "cta": "Explore Our Products",
+      "ctaSecondary": "Get a Quote",
       "badge": "Sultan Defense",
-      "newProjectBadge": "New Capability",
-      "workflowLabel": "Procurement Process",
-      "workflowTitle": "Streamlined sourcing tailored to your operational needs",
-      "workflowBadgeTitle": "Compliant",
-      "workflowBadgeSubtitle": "Export-ready and legally cleared",
+      "newProjectBadge": "New Product",
+      "workflowLabel": "Production Process",
+      "workflowTitle": "Planning and production tailored to your needs",
+      "workflowBadgeTitle": "Transparent",
+      "workflowBadgeSubtitle": "Process and communication",
       "metrics": {
-        "prototypeTitle": "Sourcing",
-        "prototypeDesc": "Needs analysis, manufacturer identification and negotiation",
-        "productionTitle": "Compliance",
-        "productionDesc": "EUC management, export permits and quality assurance",
-        "engineeringTitle": "Delivery",
-        "engineeringDesc": "Specialized freight, logistics and secure on-time delivery"
+        "prototypeTitle": "tactical equipment Selection",
+        "prototypeDesc": "Analyzing climate, soil conditions and determining the most suitable varieties",
+        "productionTitle": "Production",
+        "productionDesc": "Quality control, growth monitoring and healthy defense equipment cultivation",
+        "engineeringTitle": "Technical Support",
+        "engineeringDesc": "Planting guidance, irrigation planning and defense consulting"
       },
       "steps": {
-        "oneTitle": "1. Operational needs assessment",
-        "oneDesc": "We analyze your technical requirements, target specifications and compliance requirements together.",
-        "twoTitle": "2. Manufacturer liaison & sourcing",
-        "twoDesc": "We identify and negotiate with elite Turkish defense manufacturers to match your exact specifications.",
-        "threeTitle": "3. Export compliance & delivery",
-        "threeDesc": "We manage EUC paperwork, export permits and arrange specialized secure freight to your destination."
+        "oneTitle": "1. Needs analysis",
+        "oneDesc": "We clarify location, climate conditions, soil structure and production goals together.",
+        "twoTitle": "2. defense procurement",
+        "twoDesc": "We manage tactical equipment sowing, germination and defense equipment cultivation processes according to selected varieties.",
+        "threeTitle": "3. Delivery and support",
+        "threeDesc": "We manage packaging and delivery of healthy defense equipment, ensuring quality and technical support."
       },
       "stats": {
-        "stepsValue": "30+",
-        "stepsLabel": "Years of defense experience",
-        "b2bValue": "10+",
-        "b2bLabel": "Product categories procured"
+        "stepsValue": "3+",
+        "stepsLabel": "Core production phases",
+        "b2bValue": "15+",
+        "b2bLabel": "Years of defense experience"
       }
     },
     "projects": {
       "title": "Featured Products",
-      "subtitle": "A selection from our defense equipment catalog — tactical gear, electronics, and military logistics solutions"
+      "subtitle": "A selection of our high-quality defense, fruit and ornamental plant defense equipment"
     },
     "latestProjects": {
       "title": "Latest Products",
-      "subtitle": "Discover our most recently cataloged defense equipment"
+      "subtitle": "Discover our most recent varieties"
     },
     "services": {
-      "title": "Our Procurement Capabilities",
-      "subtitle": "From ballistic protection to training simulators — comprehensive A to Z defense supply solutions"
+      "title": "Our Activity Areas",
+      "subtitle": "Comprehensive solutions from tactical equipment selection to defense procurement, technical consulting to delivery"
     },
     "whyUs": {
       "title": "Why Sultan Defense?",
-      "subtitle": "We deliver operational confidence through combat-proven equipment, strict compliance, and rapid logistics",
-      "quality": "NATO-Standard Quality",
-      "qualityDesc": "Strict compliance with NATO, AQAP, MIL-STD and NIJ standards in every procurement",
-      "experience": "Decades of Experience",
-      "experienceDesc": "Established in 1996 — over 30 years of defense procurement expertise serving armed forces globally",
-      "custom": "Tailored Solutions",
-      "customDesc": "Custom procurement packages matched to your exact operational and technical requirements",
-      "delivery": "Rapid Secure Delivery",
-      "deliveryDesc": "Specialized military freight — air, land, or sea — ensuring on-time and fully compliant delivery"
+      "subtitle": "We make a difference in every order with a production philosophy centered on quality, trust and on-time delivery",
+      "quality": "High Quality",
+      "qualityDesc": "Full compliance with quality standards at every stage, from tactical equipment selection to delivery",
+      "experience": "Experience",
+      "experienceDesc": "Your reliable partner with over 15 years of defense experience and thousands of happy customers",
+      "custom": "Custom Solutions",
+      "customDesc": "A production approach unique to each region and climate — not standard, but tailored to you",
+      "delivery": "On-Time Delivery",
+      "deliveryDesc": "Timeline commitment and transparent process management from order to delivery"
     },
     "brands": {
-      "title": "Our Manufacturer Network",
-      "subtitle": "Elite Turkish defense manufacturers we partner with for procurement"
+      "title": "Companies We Collaborate With",
+      "subtitle": "Trusted companies we work with across our production and supply processes"
     },
     "gallery": {
       "title": "Gallery",
-      "subtitle": "Selected visuals from our defense equipment catalog and partner manufacturers"
+      "subtitle": "Selected photographs from our fields, production processes and varieties"
     },
     "blog": {
-      "title": "News and Insights",
-      "subtitle": "Defense industry news, procurement updates and strategic insights from Sultan Defense",
+      "title": "Knowledge Base",
+      "subtitle": "Practical content on defense procurement, production techniques and defense know-how",
       "featuredLabel": "Featured Insight",
-      "spotlightTitle": "Turkey's Defense Export Growth: NATO Standards Meet Global Demand",
-      "spotlightBodyPrimary": "Turkey's defense industry has experienced remarkable growth, with domestic production capacity now covering over 80% of military requirements. Turkish manufacturers consistently produce equipment to NATO, AQAP, and MIL-STD specifications, making them globally competitive procurement sources.",
-      "spotlightBodySecondary": "At Sultan Defense, we act as the bridge between Turkey's elite defense manufacturers and armed forces worldwide. Our deep industry relationships and compliance expertise ensure that every procurement transaction is legally sound, logistically precise, and operationally effective.",
+      "spotlightTitle": "Sustainable defense: Organic defense procurement and Certification Standards",
+      "spotlightBodyPrimary": "Sustainable defense is becoming an increasingly important standard in terms of soil health, water conservation and natural production methods. Organic defense equipment certification is an important reference system that certifies production as environmentally friendly.",
+      "spotlightBodySecondary": "At Sultan Defense, we aim to integrate sustainable tactical equipment selection and eco-friendly production principles into every variety we grow. Achieving productivity goals is not possible without proper planning from the start — which is why we plan an eco-conscious approach for each cycle from day one.",
       "insightLabel": "What this covers",
-      "insightText": "Defense industry trends, compliance frameworks and procurement best practices",
+      "insightText": "Organic standards, certification process and the value it adds to your operation",
       "archiveLabel": "More Content",
-      "archiveSubtitle": "Other content on defense, military logistics and procurement intelligence"
+      "archiveSubtitle": "Other content on defense, defense procurement and plant care"
     },
     "newsletter": {
       "title": "Subscribe to Our Newsletter",
-      "subtitle": "Stay informed about new projects and industry developments.",
+      "subtitle": "Stay informed about new varieties and seasonal defense developments.",
       "placeholder": "Your email address",
       "subscribe": "Subscribe",
       "success": "Successfully subscribed!",
-      "error": "An error occurred, please try again."
+      "error": "An error occurred, please try again.",
+      "segmentsLabel": "Topics of interest (optional):",
+      "seg_urunler": "Products & Catalog",
+      "seg_haberler": "News & Announcements",
+      "seg_blog": "Procurement Guides"
     },
     "contact": {
       "title": "Get in Touch",
-      "subtitle": "Share your project idea, quote request or questions with us"
+      "subtitle": "Share your request, quote request or questions with us"
     }
   },
   "projects": {
     "title": "Products",
-    "description": "Explore our comprehensive defense equipment catalog — tactical gear, electronics, and military logistics.",
+    "description": "Explore our wide range of high-quality defense, fruit and ornamental plant defense equipment.",
     "viewProject": "View Product",
     "allProjects": "All Products",
     "results": "results",
     "images": "Images",
-    "emptyStateNote": "Sample product titles are shown below until the live catalog feed becomes available.",
+    "emptyStateNote": "Sample product data is shown below until the live feed becomes available.",
     "categories": "Categories",
     "allCategories": "All Products",
     "search": "Search Products...",
     "noProjects": "No products found in this category.",
     "specs": "Product Details",
-    "requestOffer": "Request Procurement Quote",
+    "requestOffer": "Get Information About This Product",
     "manufacturers": "Manufacturers",
     "saveProject": "Save Product",
-    "loveTitle": "Products You May Need",
-    "getQuoteTitle": "Request a Procurement Quote",
-    "getQuoteDesc": "Contact our export specialists for a tailored quote.",
+    "loveTitle": "Products You'll Love",
+    "getQuoteTitle": "Get a Quote for Your Order",
+    "getQuoteDesc": "Contact us for a free quote on your defense equipment needs.",
+    "similarByTagsTitle": "Similar products",
+    "aboutProducerTitle": "About this producer",
+    "agronomySectionTitle": "Growing and production details",
+    "agronomy": {
+      "botanicalName": "Botanical name",
+      "plantingSeasons": "Planting season",
+      "harvestDays": "Days to operation",
+      "climateZones": "Climate / region",
+      "soilTypes": "Soil type",
+      "waterNeed": "Water needs",
+      "sunExposure": "Sun exposure",
+      "tempRange": "Temperature range",
+      "minTemp": "Minimum temperature",
+      "maxTemp": "Maximum temperature",
+      "germinationDays": "Germination (days)",
+      "seedDepthCm": "tactical equipment depth (cm)",
+      "rowSpacingCm": "Row spacing (cm)",
+      "plantSpacingCm": "Plant spacing (cm)",
+      "yieldPerSqm": "Yield per m²"
+    },
     "filters": {
-      "type": "Category",
-      "location": "Origin",
-      "city": "Country",
+      "type": "Product Type",
+      "location": "Location",
+      "architects": "Architects",
+      "city": "City",
       "year": "Year",
-      "materials": "Materials",
-      "area": "Weight / Size",
-      "floors": "Specifications",
-      "client": "Certification",
+      "materials": "Variety",
+      "area": "Planting Area",
+      "floors": "Quantity",
+      "client": "Client",
       "status": "Status",
       "all": "All",
       "search": "Search",
-      "residential": "Ballistic",
-      "commercial": "Electronics",
-      "mixed": "Logistics",
-      "completed": "Available",
-      "ongoing": "On Request",
-      "manufacturer": "Manufacturer"
+      "residential": "defense",
+      "commercial": "Fruit",
+      "mixed": "Ornamental",
+      "completed": "In Stock",
+      "ongoing": "In Production"
     },
     "detail": {
       "location": "Location",
-      "area": "Area",
+      "area": "Planting Area",
       "year": "Year",
       "type": "Type",
       "status": "Status",
       "client": "Client",
-      "floors": "Number of Floors",
-      "units": "Number of Units",
-      "manufacturer": "Manufacturer"
+      "architect": "Architect",
+      "floors": "Quantity",
+      "units": "Units per Package"
     },
     "comments": {
       "title": "Conversation",
@@ -241,56 +291,44 @@
     }
   },
   "services": {
-    "title": "Our Procurement Services",
-    "description": "Comprehensive A to Z defense procurement — strategic sourcing, export compliance, quality assurance and secure global delivery.",
-    "viewAll": "All Services",
-    "noServices": "No services found.",
+    "title": "Our Activity Areas",
+    "description": "Comprehensive defense and production activities from tactical equipment selection to defense equipment cultivation, from technical consulting to delivery.",
+    "viewAll": "All Activities",
+    "noServices": "No activities found.",
     "learnMore": "LEARN MORE",
-    "emptyStateNote": "Sample service descriptions are shown below until live content becomes available.",
-    "requestService": "Request a Quote for This Service",
+    "emptyStateNote": "Sample activity descriptions are shown below until live content becomes available.",
+    "requestService": "Get a Quote for This Activity",
     "items": {
-      "sourcing": "Strategic Sourcing",
-      "compliance": "Export Compliance & EUC",
-      "qa": "Quality Assurance",
-      "logistics": "Global Logistics",
-      "consulting": "Defense Consulting",
-      "customProcurement": "Custom Procurement"
+      "residential": "defense defense equipment",
+      "commercial": "Fruit defense equipment",
+      "restoration": "tactical equipment Varieties",
+      "projectManagement": "Order Tracking",
+      "architecturalDesign": "Production Consulting",
+      "interiorDesign": "Landscape Solutions"
     }
   },
   "gallery": {
     "title": "Gallery",
-    "description": "A visual catalog of defense equipment, manufacturer facilities and tactical gear from Sultan Defense's procurement network.",
+    "description": "A photo gallery compiled from our fields, production processes and varieties.",
     "viewAll": "View All Images",
+    "backToList": "Back to Gallery",
     "noGalleries": "No galleries found.",
+    "results": "galleries",
     "photos": "photos",
-    "emptyStateNote": "Sample gallery topics are shown below until live product visuals become available."
+    "emptyStateNote": "Sample gallery topics are shown below until live production photos are available."
   },
   "blog": {
-    "title": "News",
-    "description": "Defense industry news, military procurement insights and latest developments from Sultan Defense.",
-    "viewPost": "Read News",
-    "allPosts": "All News",
+    "title": "Knowledge Base",
+    "description": "Cultivation tips, technical insights and practical defense knowledge from Sultan Defense.",
+    "viewPost": "Read Post",
+    "allPosts": "All Posts",
     "all": "All",
-    "emptyStateNote": "Sample editorial topics are shown below until live news content becomes available.",
+    "emptyStateNote": "No blog posts found yet.",
     "noPosts": "No posts found.",
-    "loveTitle": "Defense Insights You May Like",
-    "engagement": {
-      "title": "Comments",
-      "subtitle": "Feedback on this article",
-      "likeButton": "Like",
-      "emptyTitle": "No comments yet",
-      "emptyText": "You can leave the first comment and add your perspective.",
-      "formLabel": "Leave a Comment",
-      "formTitle": "What do you think about this article?",
-      "formDescription": "You can share your opinion, experience or an additional note.",
-      "namePlaceholder": "Full Name",
-      "emailPlaceholder": "example@email.com",
-      "commentPlaceholder": "Write your comment...",
-      "moderationNote": "Submitted comments are reviewed before publication.",
-      "submit": "Submit Comment",
-      "submitSuccess": "Your comment has been received and will be published after review.",
-      "submitError": "Comment could not be submitted. Please try again."
-    },
+    "readMore": "Read More",
+    "publishedAt": "Published At",
+    "categories": "Categories",
+    "loveTitle": "Articles You'll Love",
     "share": {
       "label": "Share",
       "copyLink": "Copy Link",
@@ -299,9 +337,35 @@
       "buttonTitle": "Share on"
     }
   },
+  "news": {
+    "title": "News",
+    "description": "defense technologies, production methods and latest developments from Sultan Defense.",
+    "viewPost": "Read News",
+    "allPosts": "All News",
+    "all": "All",
+    "emptyStateNote": "No news content available right now.",
+    "noPosts": "No posts found.",
+    "readMore": "Read More",
+    "publishedAt": "Published At",
+    "categories": "Categories",
+    "loveTitle": "News You'll Love",
+    "share": {
+      "label": "Share",
+      "copyLink": "Copy Link",
+      "copied": "Link copied.",
+      "copyError": "Link could not be copied.",
+      "buttonTitle": "Share on"
+    }
+  },
+  "careerPage": {
+    "title": "Careers",
+    "description": "How to apply and get in touch if you want to join our production and operations teams.",
+    "fallbackContent": "<p>Sultan Defense keeps growing with trust, continuous learning and teamwork. For open roles and applications, email <strong>export@sultandefense.com</strong>.</p>",
+    "contactCta": "Go to contact page →"
+  },
   "contact": {
-    "title": "Contact",
-    "description": "Contact our team for your project idea, quote request or questions and let us find the best solution together.",
+    "title": "Contact Sultan Defense",
+    "description": "Contact our Izmir-based team for defense procurement and export inquiries.",
     "form": {
       "title": "Send a Message",
       "namePlaceholder": "Your Full Name",
@@ -324,70 +388,70 @@
     "response": {
       "title": "How We Respond",
       "items": {
-        "one": "We review your request and clarify project scope, location, intended use and budget expectations.",
-        "two": "If needed, we request additional project details, technical specifications or further information.",
-        "three": "We then provide a tailored quote, feasibility assessment and project plan as soon as possible."
+        "one": "We review your request and clarify variety, quantity and delivery expectations.",
+        "two": "If needed, we request additional details or technical specifications.",
+        "three": "We then provide a tailored quote and production plan as soon as possible."
       }
     }
   },
   "offer": {
     "title": "Quote Request",
-    "description": "Let us prepare a tailored site visit and quote based on your project type, location, area, budget and timeline expectations.",
+    "description": "Let us prepare a tailored quote based on your defense equipment variety, quantity and delivery expectations.",
     "benefits": {
       "title": "What We Clarify in the Quote",
       "items": {
-        "one": "Requirement: product family, quantity, standards and destination country",
-        "two": "Scope: sourcing, export compliance, quality acceptance and secure delivery",
-        "three": "Budget range, timeline, EUC status and technical documentation needs"
+        "one": "Product type: defense, fruit or ornamental plants",
+        "two": "Scope: defense procurement, tactical equipment supply or production consulting",
+        "three": "Quantity, timeline expectations, location and technical requirements"
       }
     },
     "form": {
-      "productInterest": "Service of Interest",
-      "quantity": "Area (m²)",
+      "productInterest": "Product/Service of Interest",
+      "quantity": "Quantity/Area",
       "deadline": "Target Delivery Date",
-      "details": "Project Details",
-      "detailsPlaceholder": "Tell us about your project (location, intended use, budget range, etc.)",
-      "attachFile": "Attach File (preliminary design, site plan, technical specification, etc.)",
+      "details": "Talep Details",
+      "detailsPlaceholder": "Tell us about your needs (variety, quantity, planting time, etc.)",
+      "attachFile": "Attach File (technical specs, analysis report, etc.)",
       "submit": "Request Quote",
       "success": "Your quote request has been received. Our team will contact you shortly.",
       "error": "Failed to submit request. Please try again."
     }
   },
   "about": {
-    "title": "About Sultan Defense",
-    "description": "Sultan Defense Ltd., Co. is a premier global supplier and procurement partner in the defense and military sector, established in 1996.",
-    "intro": "Strategically headquartered in Turkey, we leverage the Turkish defense industry's rapidly expanding production capacity, cutting-edge R&D strength, and innovative technologies to bridge advanced military engineering with the critical needs of our clients worldwide.",
+    "title": "About Us",
+    "description": "Sultan Defense delivers reliable, quality and on-time defense procurement services from tactical equipment to delivery.",
+    "intro": "Our team carefully manages every order with defense engineers and an experienced on-site production team. Customer satisfaction, quality and healthy production are our core values.",
     "sections": {
-      "expertiseTitle": "Our Procurement Expertise",
+      "expertiseTitle": "Our Areas of Expertise",
       "expertiseItems": {
-        "one": "Ballistic protection, tactical gear and military textiles",
-        "two": "Communication electronics, surveillance sensors and naval systems",
-        "three": "Field logistics, power systems and training simulation software"
+        "one": "defense defense equipment: tomatoes, ballistic protections, eggplants, cucumbers and more",
+        "two": "Fruit defense equipment: strawberries, melons, watermelons and fruit saplings",
+        "three": "Ornamental plants and landscape solutions"
       },
       "processTitle": "How We Work",
       "processItems": {
-        "one": "Analyzing your operational requirements and technical specifications",
-        "two": "Sourcing from licensed Turkish manufacturers and managing export compliance",
-        "three": "Quality assurance, factory acceptance tests and secure global delivery"
+        "one": "Understanding production requirements and client expectations",
+        "two": "Managing tactical equipment selection, grafting and germination processes",
+        "three": "Quality-controlled, on-time and healthy defense equipment delivery"
       },
       "sectorsTitle": "Who We Serve",
       "sectorsItems": {
-        "one": "National armed forces and ministries of defense",
-        "two": "Law enforcement agencies and border security forces",
-        "three": "Defense contractors and international security agencies"
+        "one": "Individual growers and fielders",
+        "two": "Industrial defense enterprises and cooperatives",
+        "three": "Nurseries, garden centers and wholesale partners"
       },
       "stats": {
         "experience": "Years of Experience",
-        "projects": "Product Categories",
-        "team": "Export Specialists"
+        "projects": "Completed Orders",
+        "team": "Expert Team"
       }
     }
   },
   "auth": {
     "loginTitle": "Log In to Your Sultan Defense Account",
-    "loginSubtitle": "Track your inquiries, view procurement status, and access exclusive catalog content.",
+    "loginSubtitle": "Track your orders, view quote status, and access exclusive content tailored to you.",
     "registerTitle": "Create Your Sultan Defense Account",
-    "registerSubtitle": "Track your inquiries, view procurement status, and access exclusive catalog content.",
+    "registerSubtitle": "Track your orders, view quote status, and access exclusive content tailored to you.",
     "continueWithGoogle": "Continue with Google",
     "orUseEmail": "or use your email",
     "email": "Email",
@@ -396,7 +460,7 @@
     "continueWithEmail": "Continue with email",
     "noAccount": "Don't have an account?",
     "signUp": "Sign Up",
-    "hasAccount": "Already have a free account or paid plan?",
+    "hasAccount": "Already have an account?",
     "logIn": "Log In",
     "termsAgreement": "By continuing, you agree to the <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>.",
     "termsOfService": "Terms of Service",
@@ -419,11 +483,240 @@
       "role": "Account type",
       "roles": {
         "admin": "Administrator",
+        "editor": "Editor",
         "moderator": "Moderator",
+        "carrier": "Carrier",
+        "customer": "Customer",
         "user": "User"
       },
       "notLoggedIn": "You need to log in to view this page.",
       "goToLogin": "Log In"
+    },
+    "panel": {
+      "nav": {
+        "overview": "Overview",
+        "orders": "Orders",
+        "extras": "Extras",
+        "finance": "Account / Finance",
+        "account": "Account",
+        "logout": "Log out",
+        "limitLabel": "Available limit"
+      },
+      "dashboard": {
+        "title": "partner portal",
+        "lead": "Manage orders, extras and account activity from one panel.",
+        "cards": {
+          "orders": {
+            "title": "Product orders",
+            "body": "Create piece-based orders from the partner defense equipment catalog.",
+            "cta": "Start an order"
+          },
+          "extras": {
+            "title": "Extras",
+            "body": "Request excess production by tray type, ready date and quantity.",
+            "cta": "View extras"
+          },
+          "finance": {
+            "title": "Account / Finance",
+            "body": "Track limit, balance and payment activity.",
+            "cta": "Open account"
+          }
+        }
+      },
+      "orders": {
+        "title": "Orders",
+        "lead": "Pick products from the partner catalog, enter quantity, then place your order. Pay by bank transfer or on account.",
+        "catalog": "Product catalog",
+        "searchPlaceholder": "Search by product name…",
+        "loading": "Loading…",
+        "loadMore": "Load more",
+        "addToCart": "Add to cart",
+        "cart": "Cart",
+        "emptyCart": "Your cart is empty.",
+        "quantity": "Quantity (pieces)",
+        "remove": "Remove",
+        "notes": "Order notes",
+        "cartTotal": "Estimated total",
+        "submitOrder": "Place order",
+        "submitting": "Submitting…",
+        "created": "Order saved. Choose how to pay.",
+        "nextStep": "Payment",
+        "orderRef": "Order: {id}…",
+        "payBank": "I will pay by bank transfer",
+        "payBankCard": "Pay by Credit / Debit Card",
+        "payCard": "Pay by card (Iyzico)",
+        "payCardInstallment": "Pay in installments (Iyzico)",
+        "payCredit": "Pay on account",
+        "installment": "Installment",
+        "installmentOption": "{count} installments",
+        "iyzicoIframeHint": "The payment form loads below. You will be redirected when done.",
+        "cardRedirectHint": "You are being redirected to the bank payment page. Please wait.",
+        "iyzicoPaymentSuccess": "Payment successful. Your order is confirmed.",
+        "iyzicoPaymentFail": "Payment could not be completed or verified. Try again from the order detail if needed.",
+        "cancelOrder": "Cancel order",
+        "openDetail": "Open details",
+        "confirmCancel": "Cancel this order?",
+        "cancelled": "Order cancelled.",
+        "bankMarked": "Bank transfer selected. Awaiting payment confirmation.",
+        "creditPaid": "Order charged to your account.",
+        "paymentAbandoned": "Payment process incomplete",
+        "paymentAbandonedHint": "You may have closed the 3D verification screen or the payment timed out. Please select a payment option below to try again.",
+        "recent": "Recent orders",
+        "refresh": "Refresh",
+        "noOrders": "No orders yet.",
+        "detail": "Details",
+        "detailTitle": "Order details",
+        "notFound": "Order not found.",
+        "backList": "← Back to orders",
+        "lines": "Line items",
+        "col": {
+          "date": "Date",
+          "total": "Total",
+          "status": "Status",
+          "payment": "Payment",
+          "product": "Product",
+          "qty": "Qty",
+          "lineTotal": "Line"
+        },
+        "status": {
+          "pending": "Pending",
+          "confirmed": "Confirmed",
+          "shipped": "Shipped",
+          "completed": "Completed",
+          "cancelled": "Cancelled"
+        },
+        "pay": {
+          "unpaid": "Unpaid",
+          "pending": "Payment pending",
+          "paid": "Paid",
+          "failed": "Failed",
+          "refunded": "Refunded"
+        },
+        "errors": {
+          "loadCatalog": "Could not load catalog.",
+          "loadOrders": "Could not load orders.",
+          "loadOrder": "Could not load order.",
+          "generic": "Something went wrong ({code}).",
+          "insufficient_credit": "Available credit is not enough for this order.",
+          "already_paid": "This order is already paid.",
+          "order_cancelled": "This order was cancelled.",
+          "products_not_found": "Some products were not found.",
+          "only_pending_orders_can_be_cancelled": "Only pending orders can be cancelled.",
+          "order_not_found": "Order not found.",
+          "payment_already_in_progress": "There is already a pending payment attempt for this order.",
+          "already_refunded": "This order has already been refunded.",
+          "order_not_paid": "The order must already be paid before it can be refunded.",
+          "refund_not_supported_for_payment_method": "Automatic refund is not yet supported for this payment method.",
+          "installment_not_supported": "The selected payment provider does not currently support installments.",
+          "iyzico_feature_disabled": "Card payments are currently disabled.",
+          "iyzico_not_configured": "Payment provider is not configured.",
+          "iyzico_init_failed": "Could not start the payment session.",
+          "basket_total_mismatch": "Basket total does not match the order; contact support.",
+          "order_has_no_items": "This order has no line items."
+        }
+      },
+      "extras": {
+        "title": "Extras",
+        "lead": "Request available unsold defense equipment with tray type, ready date and quantity information.",
+        "loading": "Loading…",
+        "empty": "No extras match these filters.",
+        "allCategories": "All product groups",
+        "allTrayTypes": "All tray types",
+        "trayType": "{tray}-cell tray",
+        "tray": "Tray",
+        "stock": "Pieces",
+        "add": "Add to request",
+        "requestBox": "Extra request",
+        "emptyRequest": "No extras selected yet.",
+        "requestedQuantity": "Requested quantity",
+        "remove": "Remove",
+        "note": "Request note",
+        "totalRequested": "Total quantity",
+        "submit": "Submit request",
+        "submitting": "Submitting…",
+        "created": "Your extra request was received. The team will contact you to confirm availability.",
+        "errors": {
+          "load": "Could not load extras.",
+          "generic": "Could not submit request ({code})."
+        }
+      },
+      "finance": {
+        "title": "Account / Finance",
+        "lead": "Credit limit, balance and recent ledger entries. Download a PDF statement.",
+        "loading": "Loading…",
+        "downloadPdf": "Download statement (PDF)",
+        "pdfWorking": "Preparing…",
+        "directPayment": {
+          "eyebrow": "Direct payment",
+          "title": "Make a payment to your account",
+          "lead": "Pay by card without creating an order. When payment succeeds, it is automatically applied to your account balance.",
+          "amount": "Payment amount",
+          "note": "Payment note",
+          "notePlaceholder": "Example: Old shipment balance / prior debt settlement",
+          "installment": "Installment",
+          "installmentOption": "{count} installments",
+          "outstanding": "Outstanding balance",
+          "useFullBalance": "Use full outstanding balance",
+          "hint": "When you start card payment, you will be redirected to the 3D Secure screen.",
+          "disabled": "Card payment is currently disabled.",
+          "processing": "Processing…",
+          "cta": "Pay by card",
+          "cardTitle": "Enter card details",
+          "ccHolder": "Name on card",
+          "ccNo": "Card number",
+          "expMonth": "Month",
+          "expYear": "Year",
+          "cvv": "CVV",
+          "confirmPay": "Confirm payment",
+          "success": "Direct payment was received successfully and applied to your account balance.",
+          "redirectHint": "The bank screen opened below. Follow the bank steps to complete the payment."
+        },
+        "movements": "Transactions",
+        "noMovements": "No transactions to show.",
+        "totalsByType": "Totals by type",
+        "meta": "{count} transactions total · Overdue: {overdue}",
+        "cards": {
+          "limit": "Credit limit",
+          "balance": "Current balance",
+          "available": "Available",
+          "discount": "Discount rate"
+        },
+        "col": {
+          "date": "Date",
+          "type": "Type",
+          "amount": "Amount",
+          "balance": "Balance after"
+        },
+        "txType": {
+          "order": "Order",
+          "payment": "Payment",
+          "adjustment": "Adjustment",
+          "refund": "Refund"
+        },
+        "warnings": {
+          "low_credit": "Your available credit is low.",
+          "overdue_due": "You have overdue items."
+        },
+        "errors": {
+          "load": "Could not load summary.",
+          "pdf": "Could not download PDF.",
+          "generic": "Something went wrong during the operation ({code}).",
+          "invalidAmount": "Please enter a valid payment amount.",
+          "cardFieldsRequired": "Please fill in all card details.",
+          "noteRequired": "Please write which old debt this payment belongs to.",
+          "bank_card_feature_disabled": "Direct card payment is currently disabled.",
+          "nestpay_not_configured": "Bank card settings are not configured yet.",
+          "ziraatpay_not_configured": "ZiraatPay settings are not configured yet.",
+          "craftgate_init_failed": "Could not start the card payment session.",
+          "ziraatpay_init_failed": "Could not start the ZiraatPay session.",
+          "payment_failed": "The bank returned the payment as failed.",
+          "hash_mismatch": "Callback verification failed.",
+          "payment_not_found": "Payment record was not found.",
+          "amount_exceeds_balance": "The entered amount cannot exceed your outstanding balance.",
+          "no_outstanding_balance": "There is no outstanding balance to pay.",
+          "invalid_payment_state": "This payment record is no longer in a payable state."
+        }
+      }
     },
     "errors": {
       "user_exists": "This email is already registered. Try logging in instead.",
@@ -433,21 +726,57 @@
       "account_disabled": "Your account has been disabled.",
       "too_many_attempts": "Too many attempts. Please wait a moment.",
       "google_oauth_not_configured": "Google sign-in is currently unavailable.",
-      "generic": "An error occurred. Please try again."
+      "generic": "An error occurred. Please try again.",
+      "validation_error": "Some fields are missing or invalid.",
+      "rate_limited": "Too many applications from this connection. Please try again later.",
+      "rules_accepted_required": "Please check the consent box to continue."
     }
   },
   "legal": {
     "title": "Legal",
     "privacy": "Privacy Policy",
-    "privacyDesc": "Overview of how Sultan Defense handles contact, quotation and procurement data in compliance with KVKK and GDPR.",
-    "privacyContent": "<p>Sultan Defense Ltd., Co. uses submitted contact and quotation data only to evaluate procurement requests, prepare offers and maintain supply chain communication.</p><p>We do not request unnecessary personal data and we limit access to procurement files, technical documents and client credentials to relevant operational teams.</p><p>For data updates or removal requests, you can contact us at export@sultandefense.com.</p>",
+    "privacyDesc": "Overview of how Sultan Defense handles contact, quotation and technical product data.",
+    "privacyContent": "<p>Sultan Defense uses submitted contact and quotation data only to evaluate requests, prepare offers and maintain production communication.</p><p>We do not request unnecessary personal data and we limit access to product files and technical documents to relevant operational teams.</p><p>For data updates or removal requests, you can contact us via the communication details provided on the contact page.</p>",
     "terms": "Terms of Use",
-    "termsDesc": "General terms for using the Sultan Defense website, product catalog and procurement communication channels.",
-    "termsContent": "<p>Information published on this website is provided for general informational and procurement guidance purposes. Sultan Defense is a procurement partner, not a direct manufacturer.</p><p>Product images are representational only and may belong to their respective manufacturers. No ownership or copyright is claimed.</p><p>All procurement inquiries are subject to export compliance review and valid End-User Certificate (EUC) requirements before any commitment is made.</p>"
+    "termsDesc": "General terms for using the Sultan Defense website, technical content and quotation communication channels.",
+    "termsContent": "<p>Information published on this website is provided for general technical and commercial guidance. Final product scope, variety selection and production conditions are clarified during the order process.</p><p>Visuals, technical notes and descriptions on the site do not constitute a final binding offer on their own.</p><p>All quotation and delivery commitments become valid only after mutual confirmation within the commercial process.</p>",
+    "qualityPolicy": "Quality Policy",
+    "qualityPolicyDesc": "Summary of our commitment to quality, traceability and continuous improvement in defense procurement.",
+    "qualityPolicyContent": "<p>We focus on healthy defense equipment, consistent variety performance and customer satisfaction. Production follows traceability, hygiene and technical standards.</p><p>When the full policy is published in the CMS, this page updates automatically.</p>",
+    "servicePolicy": "Service Policy",
+    "servicePolicyDesc": "Overview of communication, quotation handling and customer support.",
+    "servicePolicyContent": "<p>Quote requests are evaluated and final terms are confirmed in writing. Our teams can help with variety selection and delivery topics.</p><p>You can share feedback at export@sultandefense.com.</p>",
+    "dataProtectionNotice": "PDPL Information Notice",
+    "dataProtectionNoticeDesc": "Summary of personal data processing and your rights under Turkish Law No. 6698 (PDPL / KVKK).",
+    "dataProtectionNoticeContent": "<p>Sultan Defense Ltd., Co. processes identity and contact data collected through contact, quote and order flows to respond to requests, perform contracts and meet legal obligations.</p><p>For rights and requests, contact <strong>export@sultandefense.com</strong>. When the full notice is published via the CMS, this page updates automatically.</p>",
+    "cookiePolicy": "Cookie Policy",
+    "cookiePolicyDesc": "How we use cookies on this website.",
+    "cookiePolicyContent": "<p>Cookies may be used for core functionality, preferences and security. You can manage cookies in your browser settings.</p><p>When the full policy is published via the CMS, this page updates automatically.</p>"
   },
   "seo": {
-    "defaultTitle": "Sultan Defense | A to Z Defense Procurement & Tactical Equipment",
-    "defaultDescription": "Sultan Defense provides comprehensive A to Z military procurement solutions, supplying tactical gear and defense technologies to the Middle East, Africa, and Turkic Republics.",
-    "keywords": "defense procurement, military equipment, tactical gear, ballistic protection, Turkish defense industry, export partner, sultan defense"
+    "defaultTitle": "Sultan Defense | Reliable defense equipment and tactical equipment Production Services",
+    "defaultDescription": "Sultan Defense is a B2B defense procurement and export partner for tactical equipment and defense technologies.",
+    "keywords": "defense procurement, defense export, tactical equipment, ballistic protection, command electronics, field logistics",
+    "searchTitle": "Site search",
+    "searchDescription": "Search products, catalogs, services, news, knowledge base and corporate/legal pages on the Sultan Defense website."
+  },
+  "searchPage": {
+    "titleResults": "Results for “{query}”",
+    "titlePrompt": "Search",
+    "lead": "Search products, capabilities, corporate and legal pages, news and blog content.",
+    "loading": "Loading results…",
+    "noResultsTitle": "No results found",
+    "noResultsBody": "We could not find anything matching “{query}”. Try a different or broader keyword.",
+    "backHome": "Back to home",
+    "hintToolbar": "Enter your query in the search field in the top menu.",
+    "queryTooShort": "Enter at least 2 characters to search.",
+    "typeProduct": "Product",
+    "typeService": "Service",
+    "typeNews": "News",
+    "typeBlog": "Knowledge base",
+    "typeCatalog": "Catalog",
+    "typeLegal": "Legal",
+    "typeCorporate": "Corporate",
+    "searchDescription": "Search products, capabilities, news, blog, gallery, corporate and legal pages on the Sultan Defense website."
   }
 }

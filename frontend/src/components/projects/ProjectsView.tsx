@@ -3,6 +3,7 @@
 import { useRef, useCallback, useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { LayoutGrid, List } from 'lucide-react';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 
 export type ProjectViewItem = {
@@ -13,7 +14,7 @@ export type ProjectViewItem = {
   alt: string;
   category?: string;
   location?: string;
-  manufacturer?: string;
+  architects?: string;
   year?: string;
   area?: string;
   status?: string;
@@ -25,7 +26,7 @@ export type ProjectViewItem = {
 type FilterLabels = {
   category: string;
   location: string;
-  manufacturer: string;
+  architects: string;
   year: string;
   materials: string;
   area: string;
@@ -40,7 +41,7 @@ type FilterLabels = {
 };
 
 type DetailLabels = {
-  manufacturer: string;
+  architects: string;
   location: string;
   year: string;
   area: string;
@@ -78,6 +79,7 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
   });
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
   // Sync with URL when it changes manually
   useEffect(() => {
@@ -92,7 +94,7 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
   const filterDimensions = useMemo(() => [
     { key: 'category', label: filterLabels.category, options: uniqueValues(projects, 'category') },
     { key: 'location', label: filterLabels.location, options: uniqueValues(projects, 'location') },
-    { key: 'manufacturer', label: filterLabels.manufacturer, options: uniqueValues(projects, 'manufacturer') },
+    { key: 'architects', label: filterLabels.architects, options: uniqueValues(projects, 'architects') },
     { key: 'year', label: filterLabels.year, options: uniqueValues(projects, 'year') },
     { key: 'materials', label: filterLabels.materials, options: uniqueValues(projects, 'materials') },
     { key: 'area', label: filterLabels.area, options: uniqueValues(projects, 'area') },
@@ -137,6 +139,7 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
   /* ── Switch between grid / list ── */
   const setView = useCallback((mode: 'grid' | 'list') => {
     const el = rootRef.current;
+    setViewMode(mode);
     if (!el) return;
     el.setAttribute('data-view', mode);
   }, []);
@@ -188,22 +191,23 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
         /* ── Tabs ── */
         .pv-tabs{display:flex;gap:24px}
         .pv-tab{position:relative;padding:10px 0;font-size:14px;font-weight:500;color:var(--color-text-muted);border:none;background:none;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px}
-        .pv-tab svg{opacity:.5}
+        .pv-tab svg{opacity:.7}
         /* ── View toggle ── */
-        .pv-vbtn{width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--color-border);cursor:pointer;transition:all .15s;background:var(--color-bg);color:var(--color-text-muted)}
+        .pv-vbtn{width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--color-border);cursor:pointer;transition:all .15s;background:var(--color-bg);color:var(--color-text-primary)}
+        .pv-vbtn svg{display:block;width:16px;height:16px;flex-shrink:0;color:inherit}
         [data-view="grid"] .pv-vbtn-grid{background:var(--color-text-primary);color:var(--color-bg);border-color:var(--color-text-primary)}
         [data-view="list"] .pv-vbtn-list{background:var(--color-text-primary);color:var(--color-bg);border-color:var(--color-text-primary)}
         /* ── Filter buttons ── */
-        .pv-filter-btn{padding:6px 14px;border-radius:2px;border:1px solid var(--color-border);background:var(--color-bg);color:var(--color-text-primary);font-size:13px;font-weight:500;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;transition:all .15s}
-        .pv-filter-btn:hover{border-color:var(--color-text-muted)}
-        .pv-filter-btn[data-active="true"]{border-color:var(--color-text-primary);background:var(--color-text-primary);color:var(--color-bg)}
+        .pv-filter-btn{padding:6px 14px;border-radius:2px;border:1px solid var(--color-border);background:var(--color-bg-secondary);color:var(--color-text-primary);font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;transition:all .15s}
+        .pv-filter-btn:hover{border-color:var(--color-brand);color:var(--color-brand)}
+        .pv-filter-btn[data-active="true"]{border-color:var(--color-brand);background:var(--color-brand);color:var(--color-on-brand)}
         .pv-filter-btn[data-open="true"]{border-color:var(--color-brand);color:var(--color-brand)}
         .pv-filter-btn svg.pv-chevron{width:10px;height:10px;flex-shrink:0;transition:transform .15s}
         .pv-filter-btn[data-open="true"] svg.pv-chevron{transform:rotate(180deg)}
         .pv-clear-btn{padding:6px 12px;border-radius:2px;border:none;background:none;color:var(--color-text-muted);font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;text-decoration:underline;text-underline-offset:2px}
         .pv-clear-btn:hover{color:var(--color-text-primary)}
         /* ── Filter panel (ArchDaily style) ── */
-        .pv-panel{border:1px solid var(--color-border);background:var(--color-bg);box-shadow:0 4px 16px rgba(0,0,0,.08);padding:20px 24px 24px;margin-top:8px;position:relative}
+        .pv-panel{border:1px solid var(--color-border);background:var(--color-bg);box-shadow:0 4px 16px color-mix(in srgb,var(--color-bg-dark) 8%,transparent);padding:20px 24px 24px;margin-top:8px;position:relative}
         .pv-panel-search{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--color-border);padding-bottom:14px;margin-bottom:16px}
         .pv-panel-search svg{width:18px;height:18px;color:var(--color-text-muted);flex-shrink:0}
         .pv-panel-search input{flex:1;border:none;outline:none;background:transparent;font-size:14px;font-family:inherit;color:var(--color-text-primary);padding:0}
@@ -214,9 +218,9 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
         .pv-panel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
         @media(min-width:640px){.pv-panel-grid{grid-template-columns:repeat(3,1fr)}}
         @media(min-width:1024px){.pv-panel-grid{grid-template-columns:repeat(4,1fr)}}
-        .pv-panel-option{padding:6px 0;font-size:13px;color:var(--color-text-primary);cursor:pointer;border:none;background:none;text-align:left;font-family:inherit;transition:color .1s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-        .pv-panel-option:hover{color:var(--color-brand)}
-        .pv-panel-option[data-selected="true"]{font-weight:600;color:var(--color-brand)}
+        .pv-panel-option{padding:10px 12px;font-size:13px;color:var(--color-text-secondary);cursor:pointer;border:none;background:none;text-align:left;font-family:inherit;transition:all .1s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-radius:4px}
+        .pv-panel-option:hover{color:var(--color-brand);background:color-mix(in srgb,var(--color-brand) 5%,transparent)}
+        .pv-panel-option[data-selected="true"]{font-weight:700;color:var(--color-brand);background:color-mix(in srgb,var(--color-brand) 10%,transparent)}
         /* ── Card shared ── */
         .pv-card{text-decoration:none;display:block}
         .pv-card-img{position:relative;overflow:hidden;background:var(--color-bg-muted)}
@@ -242,14 +246,14 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
         .pv-list-meta{padding:12px 0 0}
         @media(min-width:768px){.pv-list-meta{padding:4px 0 0}}
         /* ── Tab visibility ── */
-        [data-tab="projects"] .pv-tab-projects{color:var(--color-text-primary);font-weight:600}
-        [data-tab="projects"] .pv-tab-projects svg{opacity:1}
-        [data-tab="projects"] .pv-tab-projects::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--color-text-primary)}
+        [data-tab="projects"] .pv-tab-projects{color:var(--color-brand);font-weight:700}
+        [data-tab="projects"] .pv-tab-projects svg{opacity:1;color:var(--color-brand)}
+        [data-tab="projects"] .pv-tab-projects::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--color-brand)}
         [data-tab="projects"] .pv-tab-images{color:var(--color-text-muted);font-weight:500}
         [data-tab="projects"] .pv-tab-images::after{display:none}
-        [data-tab="images"] .pv-tab-images{color:var(--color-text-primary);font-weight:600}
-        [data-tab="images"] .pv-tab-images svg{opacity:1}
-        [data-tab="images"] .pv-tab-images::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--color-text-primary)}
+        [data-tab="images"] .pv-tab-images{color:var(--color-brand);font-weight:700}
+        [data-tab="images"] .pv-tab-images svg{opacity:1;color:var(--color-brand)}
+        [data-tab="images"] .pv-tab-images::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--color-brand)}
         [data-tab="images"] .pv-tab-projects{color:var(--color-text-muted);font-weight:500}
         [data-tab="images"] .pv-tab-projects::after{display:none}
         [data-tab="projects"] .pv-projects-content{display:block}
@@ -264,7 +268,7 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
         .pv-masonry-item{break-inside:avoid;margin-bottom:16px;display:block;text-decoration:none;position:relative;overflow:hidden}
         .pv-masonry-item img{display:block;width:100%;height:auto;transition:transform .3s ease}
         .pv-masonry-item:hover img{transform:scale(1.03)}
-        .pv-masonry-overlay{position:absolute;bottom:0;left:0;right:0;padding:12px 14px;background:linear-gradient(transparent,rgba(0,0,0,.55));opacity:0;transition:opacity .25s}
+        .pv-masonry-overlay{position:absolute;bottom:0;left:0;right:0;padding:12px 14px;background:linear-gradient(transparent,color-mix(in srgb,var(--color-bg-dark) 55%,transparent));opacity:0;transition:opacity .25s}
         .pv-masonry-item:hover .pv-masonry-overlay{opacity:1}
       `}</style>
 
@@ -323,21 +327,44 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
           )}
         </div>
         {/* View toggle */}
-        <div className="pv-view-toggle" style={{ display: 'flex', flexShrink: 0 }}>
-          <button className="pv-vbtn pv-vbtn-list" aria-label="List view" onClick={() => setView('list')}>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <rect x="1" y="2" width="14" height="2" fill="currentColor" />
-              <rect x="1" y="7" width="14" height="2" fill="currentColor" />
-              <rect x="1" y="12" width="14" height="2" fill="currentColor" />
-            </svg>
+        <div className="pv-view-toggle" style={{ display: 'flex', flexShrink: 0, gap: 8 }}>
+          <button
+            className="pv-vbtn pv-vbtn-list"
+            aria-label="List view"
+            onClick={() => setView('list')}
+            style={{
+              background:
+                viewMode === 'list'
+                  ? 'color-mix(in srgb, var(--color-brand) 12%, transparent)'
+                  : 'var(--color-bg)',
+              color: viewMode === 'list' ? 'var(--color-brand)' : 'var(--color-text-primary)',
+              borderColor: viewMode === 'list' ? 'var(--color-brand)' : 'var(--color-border)',
+            }}
+          >
+            <List
+              size={16}
+              strokeWidth={2.2}
+              color={viewMode === 'list' ? 'var(--color-brand)' : 'var(--color-text-primary)'}
+            />
           </button>
-          <button className="pv-vbtn pv-vbtn-grid" aria-label="Grid view" onClick={() => setView('grid')}>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <rect x="1" y="1" width="6" height="6" fill="currentColor" />
-              <rect x="9" y="1" width="6" height="6" fill="currentColor" />
-              <rect x="1" y="9" width="6" height="6" fill="currentColor" />
-              <rect x="9" y="9" width="6" height="6" fill="currentColor" />
-            </svg>
+          <button
+            className="pv-vbtn pv-vbtn-grid"
+            aria-label="Grid view"
+            onClick={() => setView('grid')}
+            style={{
+              background:
+                viewMode === 'grid'
+                  ? 'color-mix(in srgb, var(--color-brand) 12%, transparent)'
+                  : 'var(--color-bg)',
+              color: viewMode === 'grid' ? 'var(--color-brand)' : 'var(--color-text-primary)',
+              borderColor: viewMode === 'grid' ? 'var(--color-brand)' : 'var(--color-border)',
+            }}
+          >
+            <LayoutGrid
+              size={16}
+              strokeWidth={2.2}
+              color={viewMode === 'grid' ? 'var(--color-brand)' : 'var(--color-text-primary)'}
+            />
           </button>
         </div>
       </div>
@@ -427,7 +454,7 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
       <div className="pv-images-content" style={{ marginTop: 20 }}>
         <div className="pv-masonry">
           {filtered.map((p, i) => (
-            <Link key={p.id ?? p.title} href={p.href} className="pv-masonry-item">
+            <Link key={p.id ?? p.title} href={p.href} title={p.title} className="pv-masonry-item">
               <OptimizedImage
                 src={p.imageSrc}
                 alt={p.alt}
@@ -437,7 +464,14 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
                 sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
               />
               <div className="pv-masonry-overlay">
-                <span style={{ fontSize: 14, fontWeight: 600, color: '#fff', lineHeight: 1.3 }}>
+                <span
+                  style={{
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: 'var(--section-bg-white)',
+                    lineHeight: 1.3,
+                  }}
+                >
                   {p.title}
                 </span>
               </div>
@@ -452,7 +486,7 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
 /* ── Grid card ── */
 function GridCard({ item, aspectRatio, titleSize, sizes }: { item: ProjectViewItem; aspectRatio: string; titleSize: number; sizes: string }) {
   return (
-    <Link href={item.href} className="pv-card">
+    <Link href={item.href} title={item.title} className="pv-card">
       <div className="pv-card-img" style={{ aspectRatio }}>
         <OptimizedImage src={item.imageSrc} alt={item.alt} fill className="object-cover" sizes={sizes} />
       </div>
@@ -473,7 +507,7 @@ function GridCard({ item, aspectRatio, titleSize, sizes }: { item: ProjectViewIt
 /* ── List card ── */
 function ListCard({ item, detailLabels }: { item: ProjectViewItem; detailLabels?: DetailLabels }) {
   return (
-    <Link href={item.href} className="pv-list-item">
+    <Link href={item.href} title={item.title} className="pv-list-item">
       <div className="pv-list-img">
         <OptimizedImage src={item.imageSrc} alt={item.alt} fill className="object-cover" sizes="(max-width:768px) 100vw, 320px" />
       </div>
@@ -486,15 +520,15 @@ function ListCard({ item, detailLabels }: { item: ProjectViewItem; detailLabels?
             {item.category}
           </p>
         )}
-        {item.manufacturer && (
+        {item.architects && (
           <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', marginTop: 10 }}>
-            <strong>{detailLabels?.manufacturer ?? 'Uretici'}:</strong>{' '}
-            <span style={{ color: 'var(--color-brand)' }}>{item.manufacturer}</span>
+            <strong>{detailLabels?.architects ?? 'Üretici'}:</strong>{' '}
+            <span style={{ color: 'var(--color-brand)' }}>{item.architects}</span>
           </p>
         )}
         {item.location && (
           <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', marginTop: 4 }}>
-            <strong>{detailLabels?.location ?? 'Lokasyon'}:</strong> {item.location}
+            <strong>{detailLabels?.location ?? 'Bölge'}:</strong> {item.location}
           </p>
         )}
         {item.year && (
@@ -504,7 +538,7 @@ function ListCard({ item, detailLabels }: { item: ProjectViewItem; detailLabels?
         )}
         {item.area && (
           <p style={{ fontSize: 14, color: 'var(--color-text-secondary)', marginTop: 4 }}>
-            <strong>{detailLabels?.area ?? 'Alan'}:</strong> {item.area}
+            <strong>{detailLabels?.area ?? 'Dikim Alanı'}:</strong> {item.area}
           </p>
         )}
       </div>

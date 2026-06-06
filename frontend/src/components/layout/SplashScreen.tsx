@@ -3,11 +3,20 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
-export function SplashScreen({ companyName, tagline }: { companyName?: string; tagline?: string }) {
+export function SplashScreen({
+  companyName,
+  tagline,
+  logoUrl
+}: {
+  companyName?: string;
+  tagline?: string;
+  logoUrl?: string;
+}) {
   const [phase, setPhase] = useState<'loading' | 'reveal' | 'exit' | 'done'>('loading');
 
   const finalName = companyName || 'Sultan Defense';
-  const finalTagline = tagline || 'Savunma Sanayii';
+  const finalTagline = tagline || 'A to Z Defense Procurement';
+  const finalLogo = logoUrl || '/logo/sultandefense-logo-transparent.png';
 
   const startSequence = useCallback(() => {
     // Remove SSR overlay immediately — client splash takes over
@@ -64,7 +73,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           align-items: center;
           justify-content: center;
           flex-direction: column;
-          background: #121214;
+          background: var(--section-bg-dark-deep);
           overflow: hidden;
         }
 
@@ -73,91 +82,37 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           position: absolute;
           inset: 0;
           background:
-            radial-gradient(ellipse 80% 60% at 50% 40%, rgba(197,168,128,0.14) 0%, transparent 70%),
-            radial-gradient(ellipse 60% 50% at 20% 80%, rgba(197,168,128,0.06) 0%, transparent 60%),
-            radial-gradient(ellipse 50% 40% at 80% 20%, rgba(212,185,150,0.08) 0%, transparent 50%);
+            radial-gradient(ellipse 80% 60% at 50% 40%, color-mix(in srgb, var(--green-700) 18%, transparent) 0%, transparent 70%),
+            radial-gradient(ellipse 60% 50% at 20% 80%, color-mix(in srgb, var(--green-500) 10%, transparent) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 40% at 80% 20%, color-mix(in srgb, var(--green-300) 12%, transparent) 0%, transparent 50%);
         }
 
-        /* ── Gold gridlines ── */
-        .splash-lines {
-          position: absolute;
-          inset: 0;
-          opacity: 0;
-          animation: splash-lines-in 1.8s ease-out 0.2s forwards;
-        }
-        .splash-line-v {
-          position: absolute;
-          background: linear-gradient(180deg, transparent, rgba(197,168,128,0.12), transparent);
-          width: 1px;
-          height: 100%;
-          animation: splash-line-pulse 3.5s ease-in-out infinite;
-        }
-        .splash-line-v:nth-child(1) { left: 15%; animation-delay: 0s; }
-        .splash-line-v:nth-child(2) { left: 30%; animation-delay: 0.5s; }
-        .splash-line-v:nth-child(3) { left: 50%; animation-delay: 0.2s; background: linear-gradient(180deg, transparent 20%, rgba(197,168,128,0.18) 50%, transparent 80%); }
-        .splash-line-v:nth-child(4) { left: 70%; animation-delay: 0.7s; }
-        .splash-line-v:nth-child(5) { left: 85%; animation-delay: 0.3s; }
-        .splash-line-h {
-          position: absolute;
-          background: linear-gradient(90deg, transparent, rgba(197,168,128,0.08), transparent);
-          height: 1px;
-          width: 100%;
-        }
-        .splash-line-h:nth-child(6) { top: 30%; }
-        .splash-line-h:nth-child(7) { top: 50%; }
-        .splash-line-h:nth-child(8) { top: 70%; }
-
-        @keyframes splash-lines-in { to { opacity: 1; } }
-        @keyframes splash-line-pulse {
-          0%, 100% { opacity: 0.4; }
-          50% { opacity: 1; }
-        }
-
-        /* ── Floating gold particles ── */
+        /* ── Organic floating particles ── */
         .splash-particles { position: absolute; inset: 0; pointer-events: none; }
         .splash-dot {
           position: absolute;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(212,185,150,0.9), rgba(197,168,128,0.2));
+          background: radial-gradient(
+            circle,
+            color-mix(in srgb, var(--green-300) 80%, transparent),
+            color-mix(in srgb, var(--green-700) 20%, transparent)
+          );
           animation: splash-dot-drift 5s ease-in-out infinite;
           opacity: 0;
         }
-        .splash-dot:nth-child(1)  { left: 8%;  top: 18%; width: 2px; height: 2px; animation-delay: 0.0s; }
-        .splash-dot:nth-child(2)  { left: 22%; top: 55%; width: 3px; height: 3px; animation-delay: 0.6s; }
-        .splash-dot:nth-child(3)  { left: 38%; top: 12%; width: 4px; height: 4px; animation-delay: 1.2s; }
-        .splash-dot:nth-child(4)  { left: 52%; top: 72%; width: 3px; height: 3px; animation-delay: 0.3s; }
-        .splash-dot:nth-child(5)  { left: 68%; top: 28%; width: 2px; height: 2px; animation-delay: 0.9s; }
-        .splash-dot:nth-child(6)  { left: 82%; top: 60%; width: 3px; height: 3px; animation-delay: 1.5s; }
-        .splash-dot:nth-child(7)  { left: 12%; top: 82%; width: 4px; height: 4px; animation-delay: 0.4s; }
-        .splash-dot:nth-child(8)  { left: 58%; top: 40%; width: 2px; height: 2px; animation-delay: 1.0s; }
-        .splash-dot:nth-child(9)  { left: 92%; top: 45%; width: 2px; height: 2px; animation-delay: 0.7s; }
-        .splash-dot:nth-child(10) { left: 75%; top: 88%; width: 3px; height: 3px; animation-delay: 1.3s; }
+        .splash-dot:nth-child(1)  { left: 8%;  top: 18%; width: 3px; height: 3px; animation-delay: 0.0s; }
+        .splash-dot:nth-child(2)  { left: 22%; top: 55%; width: 4px; height: 4px; animation-delay: 0.6s; }
+        .splash-dot:nth-child(3)  { left: 38%; top: 12%; width: 5px; height: 5px; animation-delay: 1.2s; }
+        .splash-dot:nth-child(4)  { left: 52%; top: 72%; width: 4px; height: 4px; animation-delay: 0.3s; }
+        .splash-dot:nth-child(5)  { left: 68%; top: 28%; width: 3px; height: 3px; animation-delay: 0.9s; }
+        .splash-dot:nth-child(6)  { left: 82%; top: 60%; width: 4px; height: 4px; animation-delay: 1.5s; }
 
         @keyframes splash-dot-drift {
           0%   { opacity: 0; transform: translateY(15px) scale(0); }
-          15%  { opacity: 0.9; transform: translateY(0) scale(1); }
-          85%  { opacity: 0.5; transform: translateY(-25px) scale(0.7); }
-          100% { opacity: 0; transform: translateY(-40px) scale(0); }
+          15%  { opacity: 0.8; transform: translateY(0) scale(1); }
+          85%  { opacity: 0.4; transform: translateY(-30px) scale(0.8); }
+          100% { opacity: 0; transform: translateY(-50px) scale(0); }
         }
-
-        /* ── Diamond ornament ── */
-        .splash-diamond {
-          position: absolute;
-          width: 180px;
-          height: 180px;
-          border: 1px solid rgba(197,168,128,0.18);
-          transform: rotate(45deg) scale(0);
-          animation: splash-dia-in 1.4s cubic-bezier(0.22,1,0.36,1) 0.15s forwards;
-        }
-        .splash-diamond-sm {
-          position: absolute;
-          width: 120px;
-          height: 120px;
-          border: 1px solid rgba(197,168,128,0.10);
-          transform: rotate(45deg) scale(0);
-          animation: splash-dia-in 1.4s cubic-bezier(0.22,1,0.36,1) 0.35s forwards;
-        }
-        @keyframes splash-dia-in { to { transform: rotate(45deg) scale(1); } }
 
         /* ── Logo ── */
         .splash-logo-wrap {
@@ -173,23 +128,23 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
         @keyframes splash-logo-appear { to { opacity: 1; transform: scale(1); } }
 
         .splash-logo-img {
-          filter: brightness(1.3) drop-shadow(0 0 50px rgba(197,168,128,0.35));
+          filter: drop-shadow(0 0 50px color-mix(in srgb, var(--green-600) 40%, transparent));
         }
 
         /* Glow halo */
         .splash-halo {
           position: absolute;
-          width: 220px;
-          height: 220px;
+          width: 380px;
+          height: 380px;
           border-radius: 50%;
-          background: radial-gradient(circle, rgba(197,168,128,0.22) 0%, transparent 70%);
-          filter: blur(40px);
-          animation: splash-halo-breathe 2.5s ease-in-out infinite;
+          background: radial-gradient(circle, color-mix(in srgb, var(--green-500) 25%, transparent) 0%, transparent 70%);
+          filter: blur(50px);
+          animation: splash-halo-breathe 3s ease-in-out infinite;
           z-index: -1;
         }
         @keyframes splash-halo-breathe {
-          0%, 100% { opacity: 0.4; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.25); }
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.8; transform: scale(1.3); }
         }
 
         /* ── Brand text ── */
@@ -202,36 +157,47 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           animation: splash-txt-in 0.9s cubic-bezier(0.22,1,0.36,1) 1s forwards;
         }
         .splash-brand span {
-          font-family: var(--font-heading, 'Syne', sans-serif);
+          font-family: var(--font-heading, sans-serif);
           font-size: clamp(26px, 5vw, 44px);
           font-weight: 800;
-          letter-spacing: 0.18em;
+          letter-spacing: 0.12em;
           text-transform: uppercase;
-          background: linear-gradient(135deg, #e8dcc8 0%, #C5A880 30%, #d4c4a0 60%, #9e8f6f 100%);
+          background: linear-gradient(
+            135deg,
+            var(--gold-300) 0%,
+            var(--gold-500) 30%,
+            var(--gold-400) 60%,
+            var(--gold-700) 100%
+          );
           background-size: 300% 100%;
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
-          animation: splash-gold-flow 3s ease infinite;
+          animation: splash-green-flow 4s ease infinite;
         }
-        @keyframes splash-gold-flow {
+        @keyframes splash-green-flow {
           0%   { background-position: 0% 50%; }
           50%  { background-position: 100% 50%; }
           100% { background-position: 0% 50%; }
         }
         @keyframes splash-txt-in { to { opacity: 1; transform: translateY(0); } }
 
-        /* ── Gold divider ── */
+        /* ── Brand divider ── */
         .splash-rule {
           position: relative;
           z-index: 2;
           width: 0;
           height: 1px;
           margin-top: 20px;
-          background: linear-gradient(90deg, transparent, rgba(197,168,128,0.5), transparent);
+          background: linear-gradient(
+            90deg,
+            transparent,
+            color-mix(in srgb, var(--gold-500) 40%, transparent),
+            transparent
+          );
           animation: splash-rule-grow 1s cubic-bezier(0.22,1,0.36,1) 1.2s forwards;
         }
-        @keyframes splash-rule-grow { to { width: clamp(100px, 28vw, 220px); } }
+        @keyframes splash-rule-grow { to { width: clamp(120px, 30vw, 260px); } }
 
         /* ── Tagline ── */
         .splash-tagline {
@@ -243,12 +209,12 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           animation: splash-txt-in 0.8s cubic-bezier(0.22,1,0.36,1) 1.5s forwards;
         }
         .splash-tagline span {
-          font-family: var(--font-body, 'DM Sans', sans-serif);
-          font-size: clamp(11px, 1.8vw, 14px);
-          font-weight: 400;
-          letter-spacing: 0.24em;
+          font-family: var(--font-body, sans-serif);
+          font-size: clamp(12px, 2vw, 15px);
+          font-weight: 500;
+          letter-spacing: 0.2em;
           text-transform: uppercase;
-          color: rgba(197,168,128,0.55);
+          color: color-mix(in srgb, var(--gold-300) 80%, transparent);
         }
 
         /* ── Bottom badge ── */
@@ -260,22 +226,22 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
           animation: splash-txt-in 0.8s cubic-bezier(0.22,1,0.36,1) 1.8s forwards;
         }
         .splash-badge span {
-          font-family: var(--font-body, 'DM Sans', sans-serif);
-          font-size: 10px;
-          letter-spacing: 0.2em;
+          font-family: var(--font-body, sans-serif);
+          font-size: 11px;
+          letter-spacing: 0.15em;
           text-transform: uppercase;
-          color: rgba(197,168,128,0.30);
+          color: color-mix(in srgb, var(--gold-500) 40%, transparent);
         }
 
-        /* ── Corner brackets ── */
+        /* ── Corner accents ── */
         .splash-corner {
           position: absolute;
-          width: 48px;
-          height: 48px;
-          border-color: rgba(197,168,128,0.14);
+          width: 50px;
+          height: 50px;
+          border-color: color-mix(in srgb, var(--gold-500) 15%, transparent);
           border-style: solid;
           opacity: 0;
-          animation: splash-corner-fade 0.8s ease-out 0.7s forwards;
+          animation: splash-corner-fade 1s ease-out 0.8s forwards;
         }
         .splash-c-tl { top: 24px; left: 24px; border-width: 1px 0 0 1px; }
         .splash-c-tr { top: 24px; right: 24px; border-width: 1px 1px 0 0; }
@@ -304,46 +270,24 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
       {/* BG */}
       <div className="splash-bg-gradient" />
 
-      {/* Grid lines */}
-      <div className="splash-lines">
-        <div className="splash-line-v" />
-        <div className="splash-line-v" />
-        <div className="splash-line-v" />
-        <div className="splash-line-v" />
-        <div className="splash-line-v" />
-        <div className="splash-line-h" />
-        <div className="splash-line-h" />
-        <div className="splash-line-h" />
-      </div>
-
-      {/* Particles */}
-      <div className="splash-particles">
-        {Array.from({ length: 10 }).map((_, i) => (
-          <div key={i} className="splash-dot" />
-        ))}
-      </div>
-
-      {/* Corner brackets */}
+      {/* Corner accents */}
       <div className="splash-corner splash-c-tl" />
       <div className="splash-corner splash-c-tr" />
       <div className="splash-corner splash-c-bl" />
       <div className="splash-corner splash-c-br" />
 
-      {/* Diamond frames */}
-      <div className="splash-diamond" />
-      <div className="splash-diamond-sm" />
-
       {/* Logo */}
       <div className="splash-logo-wrap">
         <div className="splash-halo" />
         <Image
-          src="/sd-logo.svg"
+          src={finalLogo}
           alt={finalName}
-          width={110}
-          height={110}
+          width={240}
+          height={240}
           className="splash-logo-img"
-          style={{ height: 110, width: 'auto' }}
+          style={{ height: 'auto', width: 240, objectFit: 'contain' }}
           priority
+          unoptimized={finalLogo.startsWith('/uploads/') || finalLogo.endsWith('.svg')}
         />
       </div>
 
@@ -362,7 +306,7 @@ export function SplashScreen({ companyName, tagline }: { companyName?: string; t
 
       {/* Bottom badge */}
       <div className="splash-badge">
-        <span>Est. 1996 — Türkiye</span>
+        <span>Bereket ve Kalite ile...</span>
       </div>
     </div>
   );

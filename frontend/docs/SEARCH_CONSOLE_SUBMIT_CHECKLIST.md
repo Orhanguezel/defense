@@ -3,8 +3,8 @@
 ## Pre-Submit
 
 1. Production domain property dogrulanmis olmali.
-2. `https://www.sultandefense.com/robots.txt` acik olmali.
-3. `https://www.sultandefense.com/sitemap.xml` 200 donmeli.
+2. `https://www.bereketfide.com.tr/robots.txt` acik olmali.
+3. `https://www.bereketfide.com.tr/sitemap.xml` 200 donmeli.
 4. Canonical ve hreflang kontrolleri tamamlanmis olmali.
 5. En az bir product, blog ve gallery detail URL'i manuel test edilmis olmali.
 
@@ -14,8 +14,8 @@
 2. `Sitemaps` ekraninda `sitemap.xml` gir.
 3. Oncelikli URL'leri `URL Inspection` ile test et:
    - `/tr`
-   - `/tr/projeler`
-   - bir proje detail
+   - `/tr/urunler`
+   - bir urun detail
    - bir haber detail
    - bir gallery detail
 4. `Page indexing` ekraninda yeni hata veya excluded pattern var mi kontrol et.

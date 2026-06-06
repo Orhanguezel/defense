@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { SD_PALETTE_HEX as C } from '@/lib/sultandefense-palette-hex';
 
 export const runtime = 'nodejs';
 export const alt = 'Sultan Defense';
@@ -18,8 +19,8 @@ export default function OpenGraphImage() {
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          background: 'linear-gradient(135deg, #121214 0%, #1A1A1D 60%, #2D3134 100%)',
-          color: '#ffffff',
+          background: `linear-gradient(135deg, ${C.gold950} 0%, ${C.soil900} 42%, ${C.gold900} 100%)`,
+          color: C.sectionWhite,
           padding: '56px',
           fontFamily: 'Arial, sans-serif',
         }}
@@ -38,7 +39,7 @@ export default function OpenGraphImage() {
               fontSize: 22,
               letterSpacing: 4,
               textTransform: 'uppercase',
-              color: '#C5A880',
+              color: C.gold400,
               fontWeight: 600,
             }}
           >
@@ -49,7 +50,7 @@ export default function OpenGraphImage() {
               display: 'flex',
               width: 80,
               height: 3,
-              background: '#C5A880',
+              background: C.gold550,
             }}
           />
         </div>
@@ -63,21 +64,21 @@ export default function OpenGraphImage() {
               lineHeight: 1.08,
               fontWeight: 700,
               maxWidth: 900,
-              color: '#f0ece6',
+              color: C.textOnDarkHead,
               letterSpacing: -2,
             }}
           >
-            Savunma Tedarik ve İhracat Çözümleri
+            A to Z Defense Procurement
           </div>
           <div
             style={{
               display: 'flex',
               fontSize: 28,
-              color: '#c8c2b8',
+              color: C.gold300,
               maxWidth: 820,
             }}
           >
-            Taktik ekipman, zırh sistemleri ve ihracat süreçlerinde güvenilir çözüm ortağı.
+            Tactical equipment and defense technologies for qualified B2B procurement.
           </div>
         </div>
 
@@ -88,12 +89,12 @@ export default function OpenGraphImage() {
             alignItems: 'center',
             justifyContent: 'space-between',
             fontSize: 22,
-            color: '#8c8880',
+            color: C.green500,
           }}
         >
           <div style={{ display: 'flex' }}>sultandefense.com</div>
-          <div style={{ display: 'flex', color: '#C5A880', fontWeight: 600 }}>
-            Tedarik · Uyum · İhracat
+          <div style={{ display: 'flex', color: C.gold400, fontWeight: 600 }}>
+            Compliance · Sourcing · Export
           </div>
         </div>
       </div>

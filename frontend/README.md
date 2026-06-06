@@ -1,28 +1,27 @@
-# Sultan Defense Frontend
+# Bereket Fide Frontend
 
-**Sultan Defense — Defense Procurement Catalog Site**
+**Bereket Fide — Kurumsal Web Sitesi**
 
-Next.js tabanlı savunma tedarik katalog ve teklif toplama platformu.
+Next.js tabanlı kurumsal tanıtım ve ürün katalog platformu.
 
-Domain hedefi: `https://www.sultandefense.com`
+Domain hedefi: `https://www.bereketfide.com.tr`
 
 ---
 
 ## Workspace Yapısı
 
 ```
-sultandefense.com/
+bereketfide/
   frontend/           <- bu repo
     src/
       app/[locale]/   <- App Router, tüm rotalar locale altında
-        projeler/     <- ürün kategorileri (liste + detay)
-        hizmetler/    <- tedarik hizmetleri (liste + detay)
-        galeri/       <- galeri (liste + detay)
-        haberler/     <- haberler/blog (liste + detay)
-        hakkimizda/   <- hakkımızda
-        iletisim/     <- iletişim
-        teklif/       <- teklif formu
-        legal/[slug]/ <- yasal sayfalar
+        urunler/      <- ürün katalog (liste + detay)
+        galeri/        <- galeri (liste + detay)
+        haberler/      <- haberler/blog (liste + detay)
+        hakkimizda/    <- hakkımızda
+        iletisim/      <- iletişim
+        teklif/        <- talep formu
+        legal/[slug]/  <- yasal sayfalar
       features/       <- domain feature modülleri
       components/     <- UI, layout, seo, widgets
       seo/            <- JSON-LD builder'ları, metadata helper'ları
@@ -78,11 +77,11 @@ npm run audit:lighthouse    # Lighthouse CI SEO assertion
 
 Token-first tema yapısı kullanılır.
 
-- Template: `sultandefense-imperial-armor`
-- Intent: `imperial-armor-anthracite-gold-bordeaux`
+- Template: `bereket-harvest`
+- Intent: `clean-natural-wheat-gold`
 - Kaynak: `src/styles/globals.css`, `src/theme/templates.ts`
-- Renk paleti: antrasit, titanyum, mat Osmanlı altını ve bordo
-- Tipografi ve tokenlar: `src/styles/globals.css`, `src/theme/templates.ts`
+- Renk paleti: başak altını (#b8a98a), kırık krem (#ffffff), toprak/antrasit (#1e1c1a)
+- Tipografi: Syne (başlık) + DM Sans (body)
 
 ---
 
@@ -93,7 +92,7 @@ Her indekslenebilir sayfa için zorunlu set:
 - `generateMetadata` (title, description, canonical, hreflang, OG, Twitter)
 - `x-default` alternate link
 - Uygun `robots` direktifi
-- JSON-LD (Organization, CreativeWork, Service, Breadcrumb, LocalBusiness)
+- JSON-LD (Organization, Product, Breadcrumb, LocalBusiness)
 
 Helper: `buildPageMetadata({ locale, pathname, title, description, ogImage?, noIndex? })`
 

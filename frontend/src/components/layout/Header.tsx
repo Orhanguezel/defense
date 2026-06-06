@@ -3,27 +3,27 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Search, LogOut, User } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { localizedPath } from '@/seo';
-import { fetchCurrentUser, logout, type AuthUser } from '@/lib/auth';
 
-const ThemeToggle = dynamic(
-  () => import('@/components/theme/ThemeToggle').then((m) => m.ThemeToggle),
-  { ssr: false, loading: () => <span className="inline-block h-7 w-7" /> },
-);
-const LanguageSwitcher = dynamic<{ locale: string; activeLocales?: { code: string; label: string }[] }>(
-  () => import('./LanguageSwitcher').then((m) => m.LanguageSwitcher),
-  { ssr: false, loading: () => <span className="inline-block h-7 w-10" /> },
-);
+/* ── Types ── */
 
 interface MenuItem {
   title?: string;
   url?: string;
   children?: MenuItem[];
   [key: string]: unknown;
+}
+
+function safeNavLabel(t: (key: string) => string, key: string, fallback: string): string {
+  try {
+    const value = t(key);
+    return value || fallback;
+  } catch {
+    return fallback;
+  }
 }
 
 function normalizeItems(raw: Record<string, unknown>[]): MenuItem[] {
@@ -36,604 +36,536 @@ function normalizeItems(raw: Record<string, unknown>[]): MenuItem[] {
     .filter((i) => i.title);
 }
 
-/* ── Mega menu column data ── */
-function getMegaColumns(
-  locale: string,
-  companyName: string,
-  t: any,
-  categories: any[] = [],
-  services: any[] = [],
-  news: any[] = []
-) {
-  const l = (path: string) => localizedPath(locale, path);
-  return [
-    {
-      title: companyName,
-      links: [
-        { label: t('projects'), url: l('/projeler'), bold: true },
-        { label: t('services'), url: l('/hizmetler'), bold: true },
-        { label: t('blog'), url: l('/haberler'), bold: true },
-        { label: t('gallery'), url: l('/galeri'), bold: true },
-        { label: t('about'), url: l('/hakkimizda'), bold: true },
-        { label: t('contact'), url: l('/iletisim'), bold: true },
-        { label: t('offer'), url: l('/teklif'), bold: true },
-      ],
-    },
-    {
-      title: t('projects'),
-      links: categories.length > 0 
-        ? categories.map(c => ({ label: c.title, url: l(`/projeler?category=${c.slug}`) }))
-        : [
-            { label: t('residential'), url: l('/projeler') },
-            { label: t('commercial'), url: l('/projeler') },
-            { label: t('mixed'), url: l('/projeler') },
-            { label: t('restoration'), url: l('/projeler') },
-          ],
-    },
-    {
-      title: t('services'),
-      links: services.length > 0
-        ? services.map(s => ({ label: s.title, url: l(`/hizmetler/${s.slug}`) }))
-        : [
-            { label: t('procurement'), url: l('/hizmetler') },
-            { label: t('project_management'), url: l('/hizmetler') },
-            { label: t('quality_acceptance'), url: l('/hizmetler') },
-            { label: t('interior_design'), url: l('/hizmetler') },
-          ],
-    },
-    {
-      title: t('blog'),
-      links: news.map(n => ({ label: n.title, url: l(`/haberler/${n.slug}`) })),
-    },
-    {
-      title: t('corporate'),
-      links: [
-        { label: t('about'), url: l('/hakkimizda') },
-        { label: t('vision'), url: l('/hakkimizda') },
-        { label: t('team'), url: l('/hakkimizda') },
-        { label: t('career'), url: l('/iletisim') },
-      ],
-    },
-  ];
+function ChevronDown({ className }: { className?: string }) {
+  return (
+    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className={className} aria-hidden>
+      <path
+        d="M2.5 3.75L5 6.25L7.5 3.75"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
 }
 
-export function Header({
-  menuItems,
-  logoUrl,
-  locale,
-  activeLocales,
-  companyProfile,
-  categories = [],
-  services = [],
-  news = [],
-}: {
+function isNavActive(pathname: string, url: string, locale: string): boolean {
+  const home = localizedPath(locale, '/');
+  if (url === home) return pathname === url;
+  return pathname.startsWith(url || '');
+}
+
+function itemOrChildActive(pathname: string, item: MenuItem, locale: string): boolean {
+  if (isNavActive(pathname, item.url ?? '', locale)) return true;
+  return (item.children ?? []).some((c) => isNavActive(pathname, c.url ?? '', locale));
+}
+
+
+/* ── Props ── */
+
+interface HeaderProps {
   menuItems: Record<string, unknown>[];
   logoUrl: string;
+  logoDarkUrl?: string;
   locale: string;
   activeLocales?: { code: string; label: string }[];
   companyProfile?: Record<string, string>;
   categories?: Record<string, unknown>[];
   services?: Record<string, unknown>[];
   news?: Record<string, unknown>[];
-}) {
+}
+
+/* ── Component ── */
+
+export function Header({
+  menuItems,
+  logoUrl,
+  logoDarkUrl,
+  locale,
+  activeLocales,
+  companyProfile,
+  categories = [],
+  services = [],
+  news = [],
+}: HeaderProps) {
   const t = useTranslations('nav');
-  const tc = useTranslations('common');
-  const fT = useTranslations('footer');
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [user, setUser] = useState<AuthUser | null>(null);
-  const [profileOpen, setProfileOpen] = useState(false);
-  const profileRef = useRef<HTMLDivElement>(null);
-  const expandedRef = useRef<HTMLDivElement>(null);
-  const compactRef = useRef<HTMLDivElement>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const items = normalizeItems(menuItems);
 
-  const isHome = /^\/[a-z]{2}\/?$/.test(pathname);
-  const compactOnly = !isHome;
-  // Fetch auth user
-  useEffect(() => {
-    fetchCurrentUser().then(setUser);
-  }, [pathname]);
+  const handleDropdownEnter = useCallback((key: string) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpenDropdown(key);
+  }, []);
 
-  // Close profile dropdown on outside click
-  useEffect(() => {
-    if (!profileOpen) return;
-    const handler = (e: MouseEvent) => {
-      if (profileRef.current && !profileRef.current.contains(e.target as Node)) {
-        setProfileOpen(false);
-      }
-    };
-    document.addEventListener('click', handler);
-    return () => document.removeEventListener('click', handler);
-  }, [profileOpen]);
+  const handleDropdownLeave = useCallback(() => {
+    closeTimer.current = setTimeout(() => setOpenDropdown(null), 150);
+  }, []);
 
-  const handleLogout = async () => {
-    await logout();
-    setUser(null);
-    setProfileOpen(false);
-    window.location.href = localizedPath(locale, '/');
-  };
+  const companyName = companyProfile?.shortName || companyProfile?.company_name || 'Sultan Defense';
+  const companySlogan = companyProfile?.headline || t('tagline');
+  const l = (path: string) => localizedPath(locale, path);
 
   // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
-    setProfileOpen(false);
+    setOpenDropdown(null);
   }, [pathname]);
 
-  // Lock body scroll when menu open
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!openDropdown) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpenDropdown(null);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [openDropdown]);
+
+  // Lock body scroll
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [menuOpen]);
 
-  const onScroll = useCallback(() => {
-    if (!compactRef.current) return;
-    if (compactOnly) {
-      compactRef.current.style.transform = 'translateY(0)';
-      return;
-    }
-    if (!expandedRef.current) return;
-    const gone = expandedRef.current.getBoundingClientRect().bottom <= 0;
-    compactRef.current.style.transform = gone ? 'translateY(0)' : 'translateY(-100%)';
-  }, [compactOnly]);
-
+  // Scroll detection
   useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
     onScroll();
-    if (compactOnly) return;
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
-  }, [onScroll, compactOnly]);
+  }, []);
 
-  const companyName = companyProfile?.company_name || 'Sultan Defense';
-  const megaColumns = getMegaColumns(locale, companyName, t, categories, services, news);
+
+
+  // Tema moduna göre logo seçimi
+  const [isDark, setIsDark] = useState(false);
+  useEffect(() => {
+    const check = () => setIsDark(document.documentElement.getAttribute('data-theme-mode') === 'dark');
+    check();
+    const observer = new MutationObserver(check);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme-mode'] });
+    return () => observer.disconnect();
+  }, []);
+
+  const fallbackLogo = '/logo/sultandefense-emblem.png';
+  const logoSrc = isDark ? (logoDarkUrl || logoUrl || fallbackLogo) : (logoUrl || fallbackLogo);
+  void logoSrc; // mevcut site ayarından gelen logo ileride kullanılabilir
 
   return (
-    <div>
-      {/* ══════════════════════════════════════════
-          EXPANDED — homepage top (not sticky)
-      ══════════════════════════════════════════ */}
-      {!compactOnly && (
-      <header ref={expandedRef} style={{ background: 'var(--color-bg)' }}>
-        {/* Row 1: utility | logo | actions */}
-        <div>
-          <style>{`@media(min-width:1024px){.hdr-desktop-row{display:grid !important}}`}</style>
-          <div
-            className="hdr-desktop-row mx-auto max-w-7xl px-8"
-            style={{ display: 'none', gridTemplateColumns: '1fr auto 1fr', alignItems: 'start', paddingTop: 16, paddingBottom: 16 }}
-          >
-            <div className="flex items-center gap-3" style={{ paddingTop: 4 }}>
-              <ThemeToggle />
-              <span style={{ width: 1, height: 16, background: 'var(--color-border)' }} aria-hidden="true" />
-              <LanguageSwitcher locale={locale} activeLocales={activeLocales} />
-            </div>
-
-            <Link href={localizedPath(locale, '/')} className="flex flex-col items-center" style={{ gap: 8 }}>
-              <Image
-                src="/sd-logo.svg"
-                alt={companyName}
-                width={80}
-                height={80}
-                style={{ height: 80, width: 'auto' }}
-                priority
-              />
-              <span
-                style={{
-                  fontFamily: 'var(--font-heading)',
-                  color: 'var(--color-text-secondary)',
-                  fontSize: 12,
-                  fontWeight: 500,
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase' as const,
-                  whiteSpace: 'nowrap' as const,
-                }}
-              >
-                {t('tagline')}
-              </span>
-            </Link>
-
-            <div className="flex items-center justify-end gap-4" style={{ paddingTop: 4 }}>
-              {user ? (
-                <div ref={profileRef} style={{ position: 'relative' }}>
-                  <button
-                    type="button"
-                    onClick={() => setProfileOpen(!profileOpen)}
-                    style={{
-                      display: 'flex', alignItems: 'center', gap: 8,
-                      padding: '6px 12px', borderRadius: 4,
-                      border: '1px solid var(--color-border)', background: 'var(--color-bg)',
-                      cursor: 'pointer', fontSize: 13, fontWeight: 600,
-                      color: 'var(--color-text-primary)',
-                    }}
-                  >
-                    <span style={{
-                      width: 28, height: 28, borderRadius: '50%',
-                      background: 'var(--color-brand)', color: '#fff',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      fontSize: 12, fontWeight: 700,
-                    }}>
-                      {(user.full_name || user.email).charAt(0).toUpperCase()}
-                    </span>
-                    {user.full_name || user.email.split('@')[0]}
-                  </button>
-                  {profileOpen && (
-                    <div style={{
-                      position: 'absolute', top: '100%', right: 0, marginTop: 6,
-                      minWidth: 200, background: 'var(--color-bg)',
-                      border: '1px solid var(--color-border)', borderRadius: 6,
-                      boxShadow: '0 4px 16px rgba(0,0,0,0.1)', zIndex: 60,
-                      padding: '8px 0',
-                    }}>
-                      <div style={{ padding: '8px 16px', fontSize: 12, color: 'var(--color-text-muted)', borderBottom: '1px solid var(--color-border)', marginBottom: 4 }}>
-                        {user.email}
-                      </div>
-                      <Link
-                        href={localizedPath(locale, '/profil')}
-                        onClick={() => setProfileOpen(false)}
-                        style={{
-                          width: '100%', display: 'flex', alignItems: 'center', gap: 8,
-                          padding: '8px 16px', fontSize: 13, color: 'var(--color-text-primary)',
-                          textDecoration: 'none',
-                        }}
-                      >
-                        <User style={{ width: 14, height: 14 }} />
-                        {t('profile')}
-                      </Link>
-                      <button
-                        type="button"
-                        onClick={handleLogout}
-                        style={{
-                          width: '100%', display: 'flex', alignItems: 'center', gap: 8,
-                          padding: '8px 16px', border: 'none', background: 'none',
-                          cursor: 'pointer', fontSize: 13, color: 'var(--color-text-primary)',
-                          textAlign: 'left',
-                        }}
-                      >
-                        <LogOut style={{ width: 14, height: 14 }} />
-                        {t('logout')}
-                      </button>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <>
-                  <Link
-                    href={localizedPath(locale, '/login')}
-                    style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', transition: 'color 0.15s' }}
-                  >
-                    {t('login')}
-                  </Link>
-                  <span style={{ width: 1, height: 16, background: 'var(--color-border)' }} aria-hidden="true" />
-                  <Link
-                    href={localizedPath(locale, '/register')}
-                    style={{
-                      fontSize: 13, fontWeight: 700, color: 'var(--color-text-on-dark)',
-                      background: 'var(--color-accent)', padding: '8px 20px', borderRadius: 4,
-                      transition: 'opacity 0.15s',
-                    }}
-                  >
-                    {t('register')}
-                  </Link>
-                </>
-              )}
-              <span style={{ width: 1, height: 16, background: 'var(--color-border)' }} aria-hidden="true" />
-              <button
-                type="button"
-                onClick={() => setMenuOpen(!menuOpen)}
-                style={{ padding: 6, color: 'var(--color-text-primary)' }}
-                aria-label="Menü"
-              >
-                {menuOpen ? <X style={{ width: 22, height: 22 }} /> : <Menu style={{ width: 22, height: 22 }} />}
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile */}
-          <style>{`@media(min-width:1024px){.hdr-mobile-row{display:none !important}}`}</style>
-          <div className="hdr-mobile-row flex h-14 items-center justify-between px-4">
-            <Link href={localizedPath(locale, '/')} className="flex items-center gap-2">
-              <Image src="/sd-logo.svg" alt={companyName} width={32} height={32}
-                style={{ height: 32, width: 'auto' }} priority />
-            </Link>
-            <div className="flex items-center gap-2">
-              <ThemeToggle />
-              <LanguageSwitcher locale={locale} activeLocales={activeLocales} />
-              <button type="button" className="rounded-md p-2" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü">
-                {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Row 2: nav (desktop inline) */}
-        <style>{`@media(max-width:1023px){.hdr-nav-row{display:none !important}}`}</style>
-        <nav className="hdr-nav-row" aria-label="Ana navigasyon">
-          <div className="mx-auto flex max-w-7xl items-center justify-center px-8">
-            {items.map((item) => (
-              <div key={item.url} className="group relative flex items-center">
-                <Link
-                  href={item.url!}
-                  style={{ padding: '18px 24px', fontSize: 15, fontWeight: 700, color: 'var(--color-text-primary)', transition: 'color 0.15s' }}
-                  className="hover:text-(--color-brand)"
-                >
-                  {item.title}
-                </Link>
-                {(item.children?.length ?? 0) > 0 && (
-                  <div
-                    className="invisible absolute left-0 top-full z-20 w-52 rounded-lg p-2 shadow-lg opacity-0 transition-all group-hover:visible group-hover:opacity-100"
-                    style={{ border: '1px solid var(--color-border)', background: 'var(--color-bg)' }}
-                  >
-                    {item.children!.map((child) => (
-                      <Link key={child.url} href={child.url!} className="block rounded-md px-3 py-2 text-sm" style={{ color: 'var(--color-text-secondary)' }}>
-                        {child.title}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </nav>
-
-        {/* Row 3: search */}
-        <div className="hdr-nav-row" style={{ padding: '14px 32px' }}>
-          <div className="mx-auto" style={{ maxWidth: 640 }}>
-            <div className="flex items-center gap-3" style={{ border: '1px solid var(--color-border)', background: 'var(--color-bg-secondary)', borderRadius: 2, padding: '10px 16px' }}>
-              <Search style={{ width: 18, height: 18, flexShrink: 0, color: 'var(--color-text-muted)' }} />
-              <input type="search" placeholder={tc('searchIn', { company: companyName })}
-                className="w-full bg-transparent outline-none" style={{ color: 'var(--color-text-primary)', fontSize: 14 }} />
-            </div>
-          </div>
-        </div>
-      </header>
-      )}
-
-      {/* ══════════════════════════════════════════
-          COMPACT — fixed header when scrolled / non-home
-      ══════════════════════════════════════════ */}
-      <div
-        ref={compactRef}
+    <>
+      {/* Ana üst menü — yapışkan, açık/beyaz zemin */}
+      <header
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
-          position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50,
-          background: 'var(--color-bg)', borderBottom: '1px solid var(--color-border)',
-          transform: compactOnly ? 'translateY(0)' : 'translateY(-100%)',
-          transition: compactOnly ? 'none' : 'transform 0.25s ease',
+          background: 'color-mix(in srgb, var(--color-bg-secondary) 95%, transparent)',
+          backdropFilter: 'blur(10px)',
+          boxShadow: scrolled
+            ? '0 2px 20px color-mix(in srgb, var(--color-bg-dark) 8%, transparent)'
+            : 'none',
+          height: 80,
         }}
       >
-        <style>{`@media(min-width:1024px){.hdr-compact-desktop{display:grid !important}}`}</style>
         <div
-          className="hdr-compact-desktop mx-auto max-w-7xl items-center px-8 py-2"
-          style={{ display: 'none', gridTemplateColumns: 'auto auto 1fr auto', gap: 16 }}
+          className="mx-auto flex items-center justify-between h-full"
+          style={{ maxWidth: 1600, padding: '0 clamp(1rem, 4vw, 3rem)' }}
         >
-          <Link href={localizedPath(locale, '/')} className="flex items-center gap-2">
-            <Image src="/sd-logo.svg" alt={companyName} width={26} height={26} style={{ height: 26, width: 'auto' }} />
-          </Link>
 
-          <div className="flex items-center gap-2" style={{ border: '1px solid var(--color-border)', background: 'var(--color-bg-secondary)', borderRadius: 2, padding: '6px 12px', minWidth: 200, maxWidth: 320 }}>
-            <Search style={{ width: 14, height: 14, flexShrink: 0, color: 'var(--color-text-muted)' }} />
-            <input type="search" placeholder={tc('search')} className="w-full bg-transparent outline-none" style={{ color: 'var(--color-text-primary)', fontSize: 13 }} />
+          {/* ── Sol: Hamburger + Ana Menü Linkleri ── */}
+          <div className="flex items-center gap-6 h-full">
+            <button
+              type="button"
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex items-center justify-center transition-all duration-300 hover:scale-105"
+              style={{
+                width: 52,
+                height: 52,
+                background: 'var(--color-brand)',
+                color: 'var(--color-on-brand)',
+                borderRadius: 'var(--radius-sm)',
+              }}
+              aria-label={t('ariaToggleMenu')}
+              aria-expanded={menuOpen}
+            >
+              {menuOpen ? <X className="size-7" /> : <Menu className="size-7" />}
+            </button>
+
+            <nav
+              className="ml-2 hidden flex-wrap items-center gap-4 xl:gap-6 lg:flex"
+              aria-label={t('ariaPrimaryNavigation')}
+            >
+              {items.map((item, idx) => {
+                const dKey = `dd-${idx}`;
+                const hasChildren = Boolean(item.children?.length);
+                const active = itemOrChildActive(pathname, item, locale);
+
+                if (!hasChildren) {
+                  return (
+                    <Link
+                      key={dKey}
+                      href={item.url || '#'}
+                      title={item.title}
+                      className="group relative text-[12px] font-bold uppercase tracking-[0.12em] transition-colors xl:text-[13px] xl:tracking-[0.15em]"
+                      style={{
+                        color: active ? 'var(--color-brand)' : 'var(--color-text-primary)',
+                      }}
+                    >
+                      {item.title}
+                      <span
+                        className="absolute -bottom-1 left-0 h-0.5 bg-(--color-brand) transition-all duration-300"
+                        style={{ width: active ? '100%' : '0' }}
+                      />
+                    </Link>
+                  );
+                }
+
+                return (
+                  <div
+                    key={dKey}
+                    className="relative"
+                    onMouseEnter={() => handleDropdownEnter(dKey)}
+                    onMouseLeave={handleDropdownLeave}
+                  >
+                    <Link
+                      href={item.url || '#'}
+                      title={item.title}
+                      className="group relative inline-flex items-center gap-1 text-[12px] font-bold uppercase tracking-[0.12em] transition-colors xl:text-[13px] xl:tracking-[0.15em]"
+                      style={{
+                        color: active ? 'var(--color-brand)' : 'var(--color-text-primary)',
+                      }}
+                      aria-expanded={openDropdown === dKey}
+                    >
+                      {item.title}
+                      <ChevronDown
+                        className={`shrink-0 transition-transform duration-200 ${openDropdown === dKey ? 'rotate-180' : ''}`}
+                      />
+                      <span
+                        className="absolute -bottom-1 left-0 h-0.5 bg-(--color-brand) transition-all duration-300"
+                        style={{ width: active ? '100%' : '0' }}
+                      />
+                    </Link>
+                    {openDropdown === dKey && (
+                      <div
+                        className="absolute left-0 top-full z-[60] pt-2"
+                        onMouseEnter={() => handleDropdownEnter(dKey)}
+                        onMouseLeave={handleDropdownLeave}
+                      >
+                        <div
+                          className="min-w-[220px] py-2"
+                          style={{
+                            background: 'var(--color-bg-secondary)',
+                            border: '1px solid var(--color-border)',
+                            borderRadius: 'var(--radius-sm)',
+                            boxShadow:
+                              '0 12px 40px color-mix(in srgb, var(--color-bg-dark) 14%, transparent)',
+                          }}
+                          role="menu"
+                        >
+                          {item.children!.map((ch, ci) => {
+                            const subActive = isNavActive(pathname, ch.url ?? '', locale);
+                            return (
+                              <Link
+                                key={`${dKey}-sub-${ci}`}
+                                href={ch.url ?? '#'}
+                                role="menuitem"
+                                className="block px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] transition-colors xl:text-[12px]"
+                                style={{
+                                  color: subActive ? 'var(--color-brand)' : 'var(--color-text-primary)',
+                                  background: subActive
+                                    ? 'color-mix(in srgb, var(--color-brand) 8%, transparent)'
+                                    : 'transparent',
+                                }}
+                                onMouseEnter={(e) => {
+                                  if (!subActive) {
+                                    e.currentTarget.style.background =
+                                      'color-mix(in srgb, var(--color-brand) 5%, transparent)';
+                                  }
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.currentTarget.style.background = subActive
+                                    ? 'color-mix(in srgb, var(--color-brand) 8%, transparent)'
+                                    : 'transparent';
+                                }}
+                              >
+                                {ch.title}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </nav>
           </div>
 
-          <nav className="flex items-center justify-center" aria-label="Compact navigasyon">
-            {items.map((item) => (
-              <Link key={item.url} href={item.url!}
-                style={{ padding: '8px 14px', fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', transition: 'color 0.15s' }}
-                className="hover:text-(--color-brand)"
-              >{item.title}</Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center justify-end gap-3">
-            {user ? (
-              <button
-                type="button"
-                onClick={() => setProfileOpen(!profileOpen)}
-                style={{
-                  width: 30, height: 30, borderRadius: '50%',
-                  background: 'var(--color-brand)', color: '#fff',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontSize: 12, fontWeight: 700, border: 'none', cursor: 'pointer',
-                }}
-              >
-                {(user.full_name || user.email).charAt(0).toUpperCase()}
-              </button>
-            ) : (
-              <>
-                <Link href={localizedPath(locale, '/login')} style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)', transition: 'color 0.15s' }}>
-                  {t('login')}
-                </Link>
-                <Link href={localizedPath(locale, '/register')} style={{
-                  fontSize: 12, fontWeight: 700, color: 'var(--color-text-on-dark)',
-                  background: 'var(--color-accent)', padding: '6px 16px', borderRadius: 4, transition: 'opacity 0.15s',
-                }}>{t('register')}</Link>
-              </>
-            )}
-            <span style={{ width: 1, height: 16, background: 'var(--color-border)' }} aria-hidden="true" />
-            <button type="button" onClick={() => setMenuOpen(!menuOpen)} style={{ padding: 4, color: 'var(--color-text-primary)' }} aria-label="Menü">
-              {menuOpen ? <X style={{ width: 20, height: 20 }} /> : <Menu style={{ width: 20, height: 20 }} />}
-            </button>
+          {/* ── Sağ: Logo ── */}
+          <div className="flex items-center gap-4 sm:gap-8 h-full">
+            {/* Logo */}
+            <Link
+              href={l('/')}
+              title="Sultan Defense"
+              className="flex h-full shrink-0 items-center gap-3 border-l border-(--color-border) pl-8"
+            >
+              <Image
+                src="/logo/sultandefense-emblem.png"
+                alt="Sultan Defense"
+                width={52}
+                height={52}
+                className="object-contain shrink-0"
+                style={{ height: 48, width: 48 }}
+                priority
+              />
+              <span className="hidden sm:flex flex-col leading-tight">
+                <span
+                  className="font-bold tracking-[0.06em] uppercase"
+                  style={{ fontSize: 15, color: 'var(--color-brand)' }}
+                >
+                  Sultan Defense
+                </span>
+                <span
+                  className="font-medium tracking-[0.04em] uppercase"
+                  style={{ fontSize: 9, color: 'var(--color-text-secondary)', letterSpacing: '0.08em' }}
+                >
+                  Türk Savunma Teknolojileri
+                </span>
+              </span>
+            </Link>
           </div>
         </div>
 
-        {/* Mobile compact */}
-        <style>{`@media(min-width:1024px){.hdr-compact-mobile{display:none !important}}`}</style>
-        <div className="hdr-compact-mobile flex h-12 items-center justify-between px-4">
-          <Link href={localizedPath(locale, '/')} className="flex items-center gap-2">
-            <Image src="/sd-logo.svg" alt={companyName} width={24} height={24} style={{ height: 24, width: 'auto' }} />
-          </Link>
-          <div className="flex items-center gap-2">
-            <ThemeToggle />
-            <LanguageSwitcher locale={locale} activeLocales={activeLocales} />
-            <button type="button" className="rounded-md p-1.5" onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü">
-              {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-            </button>
-          </div>
-        </div>
-      </div>
 
-      {/* Spacer for fixed compact header on non-home pages */}
-      {compactOnly && <div style={{ height: 48 }} className="lg:h-[44px]!" />}
 
-      {/* ══════════════════════════════════════════
-          FULLSCREEN MEGA MENU OVERLAY
-      ══════════════════════════════════════════ */}
+        {/* Thin accent line */}
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-(--color-brand) opacity-30 group-hover:opacity-100 transition-opacity" />
+      </header>
+
+      {/* Header yüksekliği kadar boşluk (72px header + 3px altın çizgi) */}
+      <div style={{ height: 75 }} />
+
+      {/* ═══════════════════════════════════════════
+          MEGA MENÜ OVERLAY
+      ═══════════════════════════════════════════ */}
       {menuOpen && (
         <div
-          style={{
-            position: 'fixed',
-            inset: 0,
-            zIndex: 100,
-            background: 'var(--color-bg)',
-            overflowY: 'auto',
-            display: 'flex',
-            flexDirection: 'column',
-          }}
+          className="fixed inset-0 z-40"
+          style={{ top: 75 }}
         >
-          {/* ── Top bar ── */}
-          <div style={{ borderBottom: '1px solid var(--color-border)', flexShrink: 0 }}>
-            <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
-              <div className="flex items-center gap-5">
-                <ThemeToggle />
-                <LanguageSwitcher locale={locale} activeLocales={activeLocales} />
-              </div>
-              <div className="flex items-center gap-4">
-                {user ? (
-                  <>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                      <span style={{
-                        width: 28, height: 28, borderRadius: '50%',
-                        background: 'var(--color-brand)', color: '#fff',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        fontSize: 12, fontWeight: 700,
-                      }}>
-                        {(user.full_name || user.email).charAt(0).toUpperCase()}
-                      </span>
-                      <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--color-text-primary)' }}>
-                        {user.full_name || user.email.split('@')[0]}
-                      </span>
-                    </div>
-                    <button
-                      type="button"
-                      onClick={() => { setMenuOpen(false); handleLogout(); }}
-                      style={{
-                        display: 'flex', alignItems: 'center', gap: 6,
-                        fontSize: 13, fontWeight: 500, color: 'var(--color-text-secondary)',
-                        background: 'none', border: 'none', cursor: 'pointer',
-                      }}
-                    >
-                      <LogOut style={{ width: 14, height: 14 }} />
-                      {t('logout')}
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <Link
-                      href={localizedPath(locale, '/login')}
-                      onClick={() => setMenuOpen(false)}
-                      style={{ fontSize: 14, fontWeight: 500, color: 'var(--color-text-primary)' }}
-                    >
-                      {t('login')}
-                    </Link>
-                    <Link
-                      href={localizedPath(locale, '/register')}
-                      onClick={() => setMenuOpen(false)}
-                      style={{
-                        fontSize: 13, fontWeight: 700, color: 'var(--color-text-on-dark)',
-                        background: 'var(--color-accent)', padding: '8px 20px', borderRadius: 4,
-                      }}
-                    >
-                      {t('register')}
-                    </Link>
-                  </>
-                )}
-                <span style={{ width: 1, height: 16, background: 'var(--color-border)' }} aria-hidden="true" />
-                <button
-                  type="button"
-                  onClick={() => setMenuOpen(false)}
-                  style={{ padding: 6, color: 'var(--color-text-primary)' }}
-                  aria-label={tc('closeMenu')}
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: 'color-mix(in srgb, var(--color-bg-dark) 50%, transparent)',
+            }}
+            onClick={() => setMenuOpen(false)}
+          />
+
+          {/* Panel */}
+          <div
+            className="relative overflow-y-auto"
+            style={{
+              background: 'var(--color-bg-dark)',
+              maxHeight: 'calc(100vh - 75px)',
+              borderBottom: '3px solid var(--color-brand)',
+            }}
+          >
+            <div
+              className="mx-auto grid gap-8 py-10"
+              style={{
+                maxWidth: 1400,
+                padding: '2.5rem clamp(1rem, 3vw, 2rem)',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+              }}
+            >
+              {/* Kolom 1: Kurumsal */}
+              <div>
+                <h3
+                  className="text-sm font-bold uppercase tracking-wider mb-4"
+                  style={{ color: 'var(--color-brand)', letterSpacing: '0.1em' }}
                 >
-                  <X style={{ width: 22, height: 22 }} />
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* ── Multi-column content ── */}
-          <div style={{ flex: 1, padding: '48px 0' }}>
-            {/* Desktop: 5 columns */}
-            <style>{`
-              @media(min-width:1024px){.mega-grid{display:grid !important;grid-template-columns:repeat(5,1fr);gap:40px}}
-              @media(max-width:1023px){.mega-grid{display:flex !important;flex-direction:column;gap:32px}}
-            `}</style>
-            <div className="mega-grid mx-auto max-w-7xl px-6" style={{ display: 'none' }}>
-              {megaColumns.map((col) => (
-                <div key={col.title}>
-                  <h3 style={{
-                    fontSize: 15,
-                    fontWeight: 700,
-                    color: 'var(--color-text-primary)',
-                    marginBottom: 20,
-                    fontFamily: 'var(--font-heading)',
-                    letterSpacing: '0.02em',
-                  }}>
-                    {col.title}
-                  </h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                    {col.links.map((link, i) => (
+                  {companyName}
+                </h3>
+                <ul className="space-y-2">
+                  {[
+                    { label: t('home'),         href: l('/') },
+                    { label: t('about'),        href: l('/hakkimizda') },
+                    { label: t('news'),         href: l('/haberler') },
+                    { label: t('blog'),         href: l('/blog') },
+                    { label: 'Referanslar',     href: l('/referanslar') },
+                  ].map(({ label, href }) => (
+                    <li key={href}>
                       <Link
-                        key={`${link.label}-${i}`}
-                        href={link.url}
+                        href={href}
+                        className="text-sm transition-colors block py-0.5"
+                        style={{ color: 'var(--color-text-on-dark)' }}
                         onClick={() => setMenuOpen(false)}
-                        style={{
-                          fontSize: 14,
-                          fontWeight: ('bold' in link && link.bold) ? 600 : 400,
-                          color: 'var(--color-text-secondary)',
-                          padding: '5px 0',
-                          transition: 'color 0.15s',
-                          textDecoration: 'none',
-                        }}
-                        className="hover:text-(--color-brand)"
+                        onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand-light)'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-text-on-dark)'; }}
                       >
-                        {link.label}
+                        {label}
                       </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Footer bar ── */}
-          <div style={{ borderTop: '1px solid var(--color-border)', flexShrink: 0, padding: '20px 0' }}>
-            <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6">
-              <div className="flex flex-wrap items-center gap-5">
-                <Link href={localizedPath(locale, '/hakkimizda')} onClick={() => setMenuOpen(false)}
-                  style={{ fontSize: 13, color: 'var(--color-text-secondary)', textDecoration: 'underline' }}>
-                  {t('about')}
-                </Link>
-                <Link href={localizedPath(locale, '/iletisim')} onClick={() => setMenuOpen(false)}
-                  style={{ fontSize: 13, color: 'var(--color-text-secondary)', textDecoration: 'underline' }}>
-                  {t('contact')}
-                </Link>
-                <Link href={localizedPath(locale, '/legal/privacy')} onClick={() => setMenuOpen(false)}
-                  style={{ fontSize: 13, color: 'var(--color-text-secondary)', textDecoration: 'underline' }}>
-                  {fT('privacy')}
-                </Link>
-                <Link href={localizedPath(locale, '/legal/terms')} onClick={() => setMenuOpen(false)}
-                  style={{ fontSize: 13, color: 'var(--color-text-secondary)', textDecoration: 'underline' }}>
-                  {fT('terms')}
-                </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <div className="flex items-center gap-3">
-                <Image src="/sd-logo.svg" alt={companyName} width={20} height={20} style={{ height: 20, width: 'auto', opacity: 0.5 }} />
-                <span style={{ fontSize: 12, color: 'var(--color-text-muted)' }}>
-                  © {new Date().getFullYear()} {companyName}. {fT('rights')}
-                </span>
+
+              {/* Kolom 2: Ürünler */}
+              <div>
+                <h3
+                  className="text-sm font-bold uppercase tracking-wider mb-4"
+                  style={{ color: 'var(--color-brand)', letterSpacing: '0.1em' }}
+                >
+                  {t('products')}
+                </h3>
+                <ul className="space-y-2">
+                  {/* Kategoriler */}
+                  {(categories as any[]).map((c) => (
+                    <li key={c.id || c.slug}>
+                      <Link
+                        href={l(`/urunler?category=${encodeURIComponent(c.slug || c.name || c.title)}`)}
+                        className="text-sm transition-colors block py-0.5"
+                        style={{ color: 'var(--color-text-on-dark)' }}
+                        onClick={() => setMenuOpen(false)}
+                        onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand-light)'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-text-on-dark)'; }}
+                      >
+                        {c.title || c.name}
+                      </Link>
+                    </li>
+                  ))}
+                  {/* Hızlı bağlantılar */}
+                  <li style={{ marginTop: 12, paddingTop: 10, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                    <Link
+                      href={l('/urunler')}
+                      className="text-xs font-semibold uppercase tracking-wider inline-block"
+                      style={{ color: 'var(--color-brand)' }}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {t('viewAll')}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={l('/teklif')}
+                      className="text-xs font-semibold uppercase tracking-wider inline-block"
+                      style={{ color: 'var(--color-brand)' }}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {t('offer')} →
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Kolom 3: Faaliyetler */}
+              {services.length > 0 && (
+                <div>
+                  <h3
+                    className="text-sm font-bold uppercase tracking-wider mb-4"
+                    style={{ color: 'var(--color-brand)', letterSpacing: '0.1em' }}
+                  >
+                    {t('services')}
+                  </h3>
+                  <ul className="space-y-2">
+                    {(services as any[]).slice(0, 8).map((s) => (
+                      <li key={s.id || s.slug}>
+                        <Link
+                          href={l(`/hizmetler/${s.slug}`)}
+                          className="text-sm transition-colors block py-0.5"
+                          style={{ color: 'var(--color-text-on-dark)' }}
+                          onClick={() => setMenuOpen(false)}
+                          onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand-light)'; }}
+                          onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-text-on-dark)'; }}
+                        >
+                          {s.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Kolom 4: Haberler */}
+              {news.length > 0 && (
+                <div>
+                  <h3
+                    className="text-sm font-bold uppercase tracking-wider mb-4"
+                    style={{ color: 'var(--color-brand)', letterSpacing: '0.1em' }}
+                  >
+                    {t('news')}
+                  </h3>
+                  <ul className="space-y-2">
+                    {(news as any[]).slice(0, 5).map((n) => (
+                      <li key={n.id || n.slug}>
+                        <Link
+                          href={l(`/haberler/${n.slug}`)}
+                          className="text-sm transition-colors block py-0.5 line-clamp-1"
+                          style={{ color: 'var(--color-text-on-dark)' }}
+                          onClick={() => setMenuOpen(false)}
+                          onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand-light)'; }}
+                          onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-text-on-dark)'; }}
+                        >
+                          {n.title}
+                        </Link>
+                      </li>
+                    ))}
+                    <li style={{ marginTop: 12, paddingTop: 10, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                      <Link
+                        href={l('/haberler')}
+                        className="text-xs font-semibold uppercase tracking-wider inline-block"
+                        style={{ color: 'var(--color-brand)' }}
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        {t('viewAll')}
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+
+              {/* Kolom 5: İletişim */}
+              <div>
+                <h3
+                  className="text-sm font-bold uppercase tracking-wider mb-4"
+                  style={{ color: 'var(--color-brand)', letterSpacing: '0.1em' }}
+                >
+                  {t('contact')}
+                </h3>
+                <ul className="space-y-2">
+                  {[
+                    { label: safeNavLabel(t, 'contact', 'İletişim'), href: l('/iletisim') },
+                    { label: safeNavLabel(t, 'offer', 'Teklif Al'), href: l('/teklif') },
+                    { label: safeNavLabel(t, 'about', 'Hakkımızda'), href: l('/hakkimizda') },
+                  ].map(({ label, href }) => (
+                    <li key={href}>
+                      <Link
+                        href={href}
+                        className="text-sm transition-colors block py-0.5"
+                        style={{ color: 'var(--color-text-on-dark)' }}
+                        onClick={() => setMenuOpen(false)}
+                        onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand-light)'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-text-on-dark)'; }}
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }

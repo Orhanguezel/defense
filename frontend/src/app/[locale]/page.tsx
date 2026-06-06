@@ -3,34 +3,103 @@ import 'server-only';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, Play, Bookmark } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
+import {
+  showHomeBlogBand,
+  showHomeNewsBand,
+  showHomeReferencesBand,
+} from '@/config/public-features';
 import { absoluteAssetUrl, API_BASE_URL } from '@/lib/utils';
 import { JsonLd, buildPageMetadata, jsonld, localizedPath, organizationJsonLd, siteUrlBase, readSettingValue, asStr } from '@/seo';
-import { NewsletterForm } from '@/components/sections/NewsletterForm';
-import { SectionHeader } from '@/components/patterns/SectionHeader';
 import { Reveal } from '@/components/motion/Reveal';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
-import { HeroVideoPlayer } from '@/components/ui/HeroVideoPlayer';
-
-import { buildMediaAlt } from '@/lib/media-seo';
 import { BrandCarousel } from '@/components/sections/BrandCarousel';
+import { StatsHighlightSection } from '@/components/sections/StatsHighlightSection';
+
 import { ProjectFeed } from '@/components/sections/ProjectFeed';
-import { fetchSetting } from '@/i18n/server';
-import { SaveProjectButton } from '@/components/projects/SaveProjectButton';
-function resolveImageUrl(value?: string | null): string | null {
-  if (!value) return null;
+import { fetchReferences, fetchSetting } from '@/i18n/server';
+import { fetchSeoPage } from '@/seo/server';
+import { ScrollBackground } from '@/components/sections/ScrollBackground';
+import { HeroBackgroundVideo } from '@/components/ui/HeroBackgroundVideo';
+
+function resolveImageUrl(value?: string | null): string {
+  if (!value) return '';
   if (/^https?:\/\//i.test(value)) return value;
   if (value.startsWith('/media/')) return value;
-  return absoluteAssetUrl(value);
+  return absoluteAssetUrl(value) || '';
 }
 
-const BLOG_PLACEHOLDER_SRC = '/media/blog-placeholder.svg';
+function resolveHeroMediaUrl(value?: unknown): string {
+  const normalized = asStr(value).trim();
+  if (!normalized) return '';
+  if (/^https?:\/\//i.test(normalized)) return normalized;
+  if (normalized.startsWith('/media/')) return normalized;
+  return absoluteAssetUrl(normalized) || '';
+}
+
+function resolveBlogImage(post: any): string {
+  return resolveImageUrl(
+    post?.featured_image_url_resolved ||
+    post?.image_url_resolved ||
+    post?.cover_image_url_resolved ||
+    post?.featured_image ||
+    post?.image_url ||
+    post?.cover_image ||
+    post?.featured_image_url ||
+    post?.cover_image_url ||
+    post?.imageSrc,
+  );
+}
+
+function normalizeBackgrounds(input: unknown): { url: string; alt: string }[] {
+  let data = input;
+  if (typeof input === 'string') {
+    try { data = JSON.parse(input); } catch { return []; }
+  }
+  if (!Array.isArray(data)) return [];
+
+  return data
+    .map((item) => {
+      if (!item || typeof item !== 'object') return null;
+      const rawUrl = typeof (item as { url?: unknown }).url === 'string' ? (item as { url: string }).url : '';
+      const alt = typeof (item as { alt?: unknown }).alt === 'string' ? (item as { alt: string }).alt : '';
+      if (!rawUrl) return null;
+
+      return {
+        url: rawUrl,
+        alt,
+      };
+    })
+    .filter((item): item is { url: string; alt: string } => Boolean(item));
+}
+
+function normalizeHomeStats(input: unknown): { value: number; label: string }[] {
+  if (!Array.isArray(input)) return [];
+
+  return input
+    .map((item) => {
+      if (!item || typeof item !== 'object') return null;
+
+      const rawValue =
+        typeof (item as { value?: unknown }).value === 'number'
+          ? (item as { value: number }).value
+          : Number((item as { value?: unknown }).value);
+      const label =
+        typeof (item as { label?: unknown }).label === 'string'
+          ? (item as { label: string }).label.trim()
+          : '';
+
+      if (!Number.isFinite(rawValue) || !label) return null;
+      return { value: rawValue, label };
+    })
+    .filter((item): item is { value: number; label: string } => Boolean(item));
+}
 
 async function fetchFeaturedProducts(locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/products?item_type=sultandefense&is_active=1&is_featured=1&locale=${locale}&limit=8`,
+      `${API_BASE_URL}/products?item_type=sultandefense&is_active=1&is_featured=1&locale=${locale}&limit=20`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -41,24 +110,10 @@ async function fetchFeaturedProducts(locale: string) {
   }
 }
 
-async function fetchReferences(locale: string) {
+async function fetchLatestNonFeaturedProducts(locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/references?is_published=1&locale=${locale}&limit=30`,
-      { next: { revalidate: 3600 } },
-    );
-    if (!res.ok) return [];
-    const data = await res.json();
-    return Array.isArray(data) ? data : (data as any)?.items ?? [];
-  } catch {
-    return [];
-  }
-}
-
-async function fetchAllProjects(locale: string) {
-  try {
-    const res = await fetch(
-      `${API_BASE_URL}/products?item_type=sultandefense&is_active=1&locale=${locale}&limit=10`,
+      `${API_BASE_URL}/products?item_type=sultandefense&is_active=1&is_featured=0&locale=${locale}&limit=10`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -72,7 +127,7 @@ async function fetchAllProjects(locale: string) {
 async function fetchFeaturedBlogPosts(locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/custom_pages?module_key=news&is_published=1&featured=1&locale=${locale}&limit=3`,
+      `${API_BASE_URL}/custom-pages?module_key=blog&is_published=1&featured=1&locale=${locale}&limit=3`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -83,7 +138,19 @@ async function fetchFeaturedBlogPosts(locale: string) {
   }
 }
 
-import { fetchSeoPage } from '@/seo/server';
+async function fetchFeaturedNewsPosts(locale: string) {
+  try {
+    const res = await fetch(
+      `${API_BASE_URL}/custom-pages?module_key=news&is_published=1&locale=${locale}&limit=2`,
+      { next: { revalidate: 300 } },
+    );
+    if (!res.ok) return [];
+    const data = await res.json();
+    return Array.isArray(data) ? data : (data as any)?.items ?? [];
+  } catch {
+    return [];
+  }
+}
 
 export async function generateMetadata({
   params,
@@ -97,9 +164,7 @@ export async function generateMetadata({
   return buildPageMetadata({
     locale,
     pathname: '/',
-    title: seo?.title || (locale.startsWith('en')
-      ? 'A to Z Defense Procurement and Tactical Equipment'
-      : 'A’dan Z’ye Savunma Tedariki ve Taktik Ekipman'),
+    title: seo?.title || 'Sultan Defense',
     description: seo?.description || t('seo.defaultDescription'),
     ogImage: seo?.og_image || undefined,
     noIndex: seo?.no_index,
@@ -114,397 +179,410 @@ export default async function HomePage({
   const { locale } = await params;
   const t = await getTranslations({ locale });
 
-  const [products, blogPosts, references, allProjects, heroSetting] = await Promise.all([
+  const [products, blogPosts, newsPosts, latestProducts, references, heroVideoSetting, heroConfigSetting, homeBackgroundsSetting, homeStatsSetting, socialsSetting] = await Promise.all([
     fetchFeaturedProducts(locale),
-    fetchFeaturedBlogPosts(locale),
-    fetchReferences(locale),
-    fetchAllProjects(locale),
-    fetchSetting('hero', locale),
+    showHomeBlogBand ? fetchFeaturedBlogPosts(locale) : Promise.resolve([]),
+    showHomeNewsBand ? fetchFeaturedNewsPosts(locale) : Promise.resolve([]),
+    fetchLatestNonFeaturedProducts(locale),
+    showHomeReferencesBand ? fetchReferences(locale, 12) : Promise.resolve([]),
+    fetchSetting('hero_video', locale),
+    fetchSetting('hero_config', locale),
+    fetchSetting('home_backgrounds', locale).then(res => res || fetchSetting('home_backgrounds', '*')),
+    fetchSetting('home_stats', locale),
+    fetchSetting('socials', locale),
   ]);
 
-  const h = readSettingValue(heroSetting);
-  const headline = locale === 'tr' ? asStr(h.headline_tr) : asStr(h.headline_en);
-  const subheadline = locale === 'tr' ? asStr(h.subheadline_tr) : asStr(h.subheadline_en);
-  const ctaText = locale === 'tr' ? asStr(h.cta_text_tr) : asStr(h.cta_text_en);
+  const heroVideo = readSettingValue(heroVideoSetting);
+  const heroConfig = readSettingValue(heroConfigSetting);
+  const homeBackgrounds = normalizeBackgrounds(homeBackgroundsSetting?.value);
+  const homeStats = normalizeHomeStats(homeStatsSetting?.value);
 
+  const heroVideoUrl = resolveHeroMediaUrl(heroVideo.url);
+  const heroPoster = resolveHeroMediaUrl(heroVideo.poster);
+  const heroTitle = asStr(heroConfig.title) || t('home.hero.title');
+  const heroSubtitle = asStr(heroConfig.subtitle) || t('home.hero.subtitle');
+
+  const socials = readSettingValue(socialsSetting) as Record<string, string>;
+  const sameAs = Object.values(socials).filter((v) => typeof v === 'string' && /^https?:\/\//.test(v));
   const siteUrl = siteUrlBase();
-  const visibleBrands = references.map((r: any) => ({
-    ...r,
-    logo_url: resolveImageUrl(r.featured_image || r.logo_url || r.image_url),
-  }));
-  const visibleProducts = products.slice(0, 8);
+  const heroProducts = products.slice(0, 4);
+  const highlightProducts = products.slice(4);
   const visibleBlogPosts = blogPosts.slice(0, 3);
-  const featuredBlogPost = visibleBlogPosts[0];
+  const visibleNewsPosts = newsPosts.slice(0, 2);
 
   return (
-    <main className="min-h-screen">
+    <div className="relative min-h-screen">
+      <style dangerouslySetInnerHTML={{ __html: 'body { background-color: transparent !important; }' }} />
       <JsonLd
         data={jsonld.graph([
           jsonld.org({
             ...organizationJsonLd(locale, {
               description: t('seo.defaultDescription'),
+              sameAs,
             }),
+            '@id': 'https://www.sultandefense.com/#organization',
             url: siteUrl,
+            foundingDate: '2006',
+            knowsAbout: [
+              'Ballistic Protection',
+              'Communication & Command Electronics',
+              'Containerized Field Kitchen & Support Units',
+              'Field Support Logistics',
+              'Naval & Marine Systems',
+              'Power/Battery/Generator',
+              'Shield & Riot Control Solutions',
+              'Surveillance/Sensors/Security',
+              'Tactical Gear & Textile',
+              'Training & Simulation Software',
+            ],
+            contactPoint: {
+              telephone: '+90 545 552 75 35',
+              contactType: 'export sales',
+              availableLanguage: ['Turkish', 'English', 'German'],
+            },
           }),
           jsonld.website({
             name: 'Sultan Defense',
             url: siteUrl,
+            searchAction: {
+              targetUrlTemplate: `${siteUrl}/${locale}/urunler?q={search_term_string}`,
+              queryInput: 'required name=search_term_string',
+            },
           }),
         ])}
       />
 
-      {/* Hero — ArchDaily editorial grid */}
-      <section className="bg-(--color-bg)">
-        <div className="mx-auto max-w-7xl px-4 pt-4 pb-6 lg:px-6">
-          <div className="flex flex-col gap-2.5 lg:grid lg:grid-cols-[1.15fr_1fr]" style={{ minHeight: '560px' }}>
+      {/* ═══════════════════════════════════════════
+          DYNAMIC SCROLL BACKGROUND
+      ═══════════════════════════════════════════ */}
+      <ScrollBackground backgrounds={homeBackgrounds} />
 
-            {/* Left — Main video panel */}
-            <HeroVideoPlayer
-              src={absoluteAssetUrl(asStr(h.video_desktop)) || absoluteAssetUrl('/uploads/video/hero-desktop.mp4') || ''}
-              mobileSrc={absoluteAssetUrl(asStr(h.video_mobile)) || absoluteAssetUrl('/uploads/video/hero-mobile.mp4') || ''}
-              poster={absoluteAssetUrl(asStr(h.video_poster)) || absoluteAssetUrl(visibleProducts[0]?.image_url) || undefined}
-              badge={t('home.hero.newProjectBadge')}
-              title={headline || visibleProducts[0]?.title}
-              description={subheadline || undefined}
-              ctaText={ctaText || undefined}
-              ctaUrl={asStr(h.cta_url)?.replace('[locale]', locale) || undefined}
-            />
+      {/* ═══════════════════════════════════════════
+          HERO — Dynamic industrial/premium redesign
+      ═══════════════════════════════════════════ */}
+      <section className="home-hero relative flex min-h-[900px] w-full flex-col overflow-hidden px-0 pt-24 pb-12 sm:min-h-[980px] sm:pt-28 md:min-h-[860px] md:pt-32 lg:h-screen lg:min-h-[700px] lg:items-center lg:justify-center lg:pt-0 lg:pb-0">
+        {/* Background Overlay / Video */}
+        {heroVideoUrl ? (
+          <HeroBackgroundVideo src={heroVideoUrl} poster={heroPoster || undefined} />
+        ) : (
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              background:
+                'linear-gradient(135deg, var(--gold-950) 0%, var(--soil-900) 42%, color-mix(in srgb, var(--gold-900) 50%, var(--soil-800) 50%) 100%)',
+            }}
+            aria-hidden="true"
+          />
+        )}
+        {/* Kontrast katmanı — globals.css .home-hero-media-scrim (DB ile ezilmez) */}
+        <div className="home-hero-media-scrim" aria-hidden="true" />
 
-            {/* Right — left stack + full-height news */}
-            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-
-                {/* Left column — stacked cards */}
-                <div className="flex flex-col gap-2.5 min-h-[400px] lg:min-h-0">
-                  {/* Project with play icon */}
-                  {visibleProducts[0] && (
-                    <Link
-                      href={visibleProducts[0].slug ? localizedPath(locale, `/projeler/${visibleProducts[0].slug}`) : localizedPath(locale, '/projeler')}
-                      className="group relative flex-1 overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-(--color-bg-muted)">
-                        {absoluteAssetUrl(visibleProducts[0].image_url) && (
-                          <OptimizedImage
-                            src={absoluteAssetUrl(visibleProducts[0].image_url)!}
-                            alt={buildMediaAlt({ locale, kind: 'project', title: visibleProducts[0].title })}
-                            fill
-                            sizes="(max-width: 1024px) 50vw, 18vw"
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                        )}
-                      </div>
-                      <div className="absolute left-3 top-3 z-10 flex size-8 items-center justify-center rounded-full bg-white/90 shadow-sm">
-                        <Play className="size-3.5 fill-(--color-text-primary) text-(--color-text-primary)" />
-                      </div>
-                    </Link>
-                  )}
-
-                  {/* Project image */}
-                  {visibleProducts[1] && (
-                    <Link
-                      href={visibleProducts[1].slug ? localizedPath(locale, `/projeler/${visibleProducts[1].slug}`) : localizedPath(locale, '/projeler')}
-                      className="group relative flex-1 overflow-hidden"
-                    >
-                      <div className="absolute inset-0 bg-(--color-bg-muted)">
-                        {absoluteAssetUrl(visibleProducts[1].image_url) && (
-                          <OptimizedImage
-                            src={absoluteAssetUrl(visibleProducts[1].image_url)!}
-                            alt={buildMediaAlt({ locale, kind: 'project', title: visibleProducts[1].title })}
-                            fill
-                            sizes="(max-width: 1024px) 50vw, 18vw"
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                        )}
-                      </div>
-                    </Link>
-                  )}
-
-                  {/* CTA button */}
-                  <Link
-                    href={localizedPath(locale, '/teklif')}
-                    className="flex items-center justify-center gap-3 bg-(--color-brand) px-6 py-4 text-center transition-opacity hover:opacity-90"
-                  >
-                    <p className="text-sm font-bold text-white lg:text-base" style={{ fontFamily: 'var(--font-heading)' }}>
-                      {t('home.hero.ctaSecondary')}
-                    </p>
-                    <ArrowRight className="size-4 text-white" />
-                  </Link>
-                </div>
-
-                {/* Right column — full-height news card */}
-                {featuredBlogPost ? (
-                  <Link
-                    href={featuredBlogPost.slug ? localizedPath(locale, `/haberler/${featuredBlogPost.slug}`) : localizedPath(locale, '/haberler')}
-                    className="group flex flex-col overflow-hidden min-h-[320px] lg:min-h-0"
-                  >
-                    <div className="relative flex-1 overflow-hidden bg-(--color-bg-muted) aspect-4/5 sm:aspect-auto">
-                      <OptimizedImage
-                        src={resolveImageUrl(featuredBlogPost.featured_image || featuredBlogPost.image_url) || BLOG_PLACEHOLDER_SRC}
-                        alt={featuredBlogPost.title}
-                        fill
-                        sizes="(max-width: 1024px) 100vw, 25vw"
-                        className="object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                    <div className="bg-(--color-bg) pt-3 pb-1">
-                      <p className="text-xs font-medium uppercase tracking-wider text-(--color-brand)">
-                        {t('nav.blog')}
-                      </p>
-                      <h2
-                        className="mt-1 text-sm font-semibold leading-snug text-(--color-brand) lg:text-base"
-                        style={{ fontFamily: 'var(--font-heading)' }}
-                      >
-                        {featuredBlogPost.title}
-                      </h2>
-                    </div>
-                  </Link>
-                ) : (
-                  <div className="bg-(--color-bg-muted)" />
-                )}
-
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* Featured Projects — ArchDaily expanded cards */}
-      <section className="section-py">
-        <div className="mx-auto max-w-7xl px-4 lg:px-6">
-          <div className="motion-fade-up mb-8">
-            <SectionHeader
-              title={t('home.projects.title')}
-              description={t('home.projects.subtitle')}
-            />
-          </div>
-          <div className="lg:grid lg:grid-cols-[1fr_320px] lg:gap-10">
-            {/* Main feed */}
-            <div className="space-y-10">
-              {visibleProducts.slice(0, 4).map((project: any) => {
-                const mainImage = absoluteAssetUrl(project.image_url);
-                const thumbs = (project.images || []).slice(0, 5).map((img: string) => absoluteAssetUrl(img)).filter(Boolean) as string[];
-                const extraCount = (project.images?.length || 0) - 5;
-                const specs = project.specifications || {};
-                const categoryName = project.category?.name || specs.tip || '';
-                const location = specs.lokasyon || specs.location || '';
-                const manufacturer = specs.üreticiler || specs.manufacturers || '';
-                const area = specs.alan || specs.area || '';
-                const year = specs.yıl || specs.year || '';
-                const manufacturers = specs.üreticiler || specs.manufacturers || '';
-                const projectHref = project.slug ? localizedPath(locale, `/projeler/${project.slug}`) : localizedPath(locale, '/projeler');
-
-                return (
-                  <article key={project.id ?? project.title} className="border-b border-(--color-border) pb-10">
-                    <Link href={projectHref}>
-                      <h2
-                        className="text-xl font-bold text-(--color-text-primary) hover:text-(--color-brand) lg:text-2xl"
-                        style={{ fontFamily: 'var(--font-heading)' }}
-                      >
-                        {project.title}
-                        {manufacturer ? ` / ${manufacturer}` : ''}
-                      </h2>
-                    </Link>
-
-                    {mainImage && (
-                      <Link href={projectHref} className="group relative mt-4 block aspect-16/10 overflow-hidden bg-(--color-bg-muted)">
-                        <OptimizedImage
-                          src={mainImage}
-                          alt={project.title}
-                          fill
-                          sizes="(max-width: 1024px) 100vw, 660px"
-                          className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                        />
-                      </Link>
-                    )}
-
-                    <div className="mt-3 flex flex-wrap items-center gap-x-1.5 text-xs font-semibold uppercase tracking-wide">
-                      {categoryName && (
-                        <span className="text-(--color-brand)">{categoryName}</span>
-                      )}
-                      {categoryName && location && (
-                        <span className="text-(--color-text-muted)">·</span>
-                      )}
-                      {location && (
-                        <span className="text-(--color-text-secondary)">{location}</span>
-                      )}
-                    </div>
-
-                    <div className="mt-2 flex flex-wrap gap-x-6 gap-y-1 text-sm text-(--color-text-secondary)">
-                      {manufacturer && (
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-xs text-(--color-text-muted)">{t('projects.filters.manufacturer')}:</span>
-                          <span className="font-medium text-(--color-brand)">{manufacturer}</span>
-                        </div>
-                      )}
-                      {area && (
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-xs text-(--color-text-muted)">{t('projects.filters.area')}:</span>
-                          <span className="font-medium">{area}</span>
-                        </div>
-                      )}
-                      {year && (
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-xs text-(--color-text-muted)">{t('projects.filters.year')}:</span>
-                          <span className="font-medium text-(--color-brand)">{year}</span>
-                        </div>
-                      )}
-                      {manufacturers && (
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-xs text-(--color-text-muted)">{t('projects.manufacturers')}:</span>
-                          <span className="font-medium">{manufacturers}</span>
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="mt-3 flex items-center justify-between">
-                      <SaveProjectButton 
-                        projectId={project.id} 
-                        label={t('projects.saveProject')} 
-                      />
-                      <Link
-                        href={projectHref}
-                        className="text-xs font-medium text-(--color-brand) hover:underline"
-                      >
-                        {t('common.readMore')} »
-                      </Link>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-
-            {/* Sidebar — desktop only */}
-            <aside className="hidden lg:block">
-              <div className="sticky top-24 space-y-8">
-                <div className="border-b border-(--color-border) pb-6">
-                  <h3
-                    className="mb-4 text-lg font-bold text-(--color-text-primary)"
-                    style={{ fontFamily: 'var(--font-heading)' }}
-                  >
-                    {t('projects.loveTitle')}
-                  </h3>
-                  <div className="space-y-5">
-                    {visibleProducts.slice(0, 4).map((p: any) => {
-                      const img = absoluteAssetUrl(p.image_url);
-                      return (
-                        <Link
-                          key={p.id}
-                          href={p.slug ? localizedPath(locale, `/projeler/${p.slug}`) : localizedPath(locale, '/projeler')}
-                          className="group flex gap-3"
-                        >
-                          {img && (
-                            <div className="relative aspect-4/3 w-24 shrink-0 overflow-hidden bg-(--color-bg-muted)">
-                              <OptimizedImage
-                                src={img}
-                                alt={p.title}
-                                fill
-                                sizes="96px"
-                                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                              />
-                            </div>
-                          )}
-                          <h4 className="text-sm font-semibold leading-snug text-(--color-text-primary) group-hover:text-(--color-brand)">
-                            {p.title}
-                            {p.specifications?.üreticiler ? ` / ${p.specifications.üreticiler}` : ''}
-                          </h4>
-                        </Link>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="bg-(--color-bg-muted) p-5">
-                  <p
-                    className="text-sm font-bold text-(--color-text-primary)"
-                    style={{ fontFamily: 'var(--font-heading)' }}
-                  >
-                    {t('projects.getQuoteTitle')}
-                  </p>
-                  <p className="mt-1 text-xs text-(--color-text-secondary)">
-                    {t('projects.getQuoteDesc')}
-                  </p>
-                  <Link
-                    href={localizedPath(locale, '/teklif')}
-                    className="mt-3 inline-block bg-(--color-brand) px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90"
-                  >
-                    {t('nav.offer')}
-                  </Link>
-                </div>
+        {/* Hero Content — Centered Heading */}
+        <div className="relative z-10 mb-10 w-full max-w-7xl px-6 text-center sm:mb-12 lg:mb-16">
+          <Reveal>
+            <h1 className="home-hero-title text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl">
+              {heroTitle}
+            </h1>
+            {heroSubtitle && (
+              <div className="home-hero-subtitle-wrap mt-4 sm:mt-5 lg:mt-6">
+                <p className="home-hero-subtitle text-base sm:text-lg md:text-xl lg:text-2xl">
+                  {heroSubtitle}
+                </p>
               </div>
-            </aside>
+            )}
+          </Reveal>
+        </div>
+
+        {/* Hero Category Navigation — Humintech-inspired cards */}
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 lg:px-6">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
+            {heroProducts.map((p: any, idx: number) => (
+              <Reveal key={p.id} delay={idx * 0.1} className={idx === 2 ? 'hidden md:block' : idx === 3 ? 'hidden lg:block' : ''}>
+                <Link
+                  href={p.slug ? localizedPath(locale, `/urunler/${p.slug}`) : '#'}
+                  title={p.title}
+                  className="group relative flex h-[220px] flex-col justify-end overflow-hidden border-l-4 border-(--color-brand) p-5 shadow-2xl transition-all duration-500 hover:scale-[1.02] sm:h-[240px] md:h-[220px] lg:h-[280px] lg:p-6"
+                  style={{ background: 'var(--surface-dark-strong)' }}
+                >
+                  <OptimizedImage
+                    src={resolveImageUrl(p.image_url)}
+                    alt={p.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover opacity-60 transition-all duration-700 group-hover:opacity-100"
+                  />
+                  <div className="home-hero-product-card-overlay" aria-hidden="true" />
+                  <div className="relative z-10 text-left w-full">
+                    <h2 className="home-hero-product-title text-lg sm:text-xl">
+                      {p.title}
+                    </h2>
+                    {p.summary && (
+                      <p className="home-hero-product-summary mb-2 line-clamp-2 text-sm font-medium opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                        {p.summary}
+                      </p>
+                    )}
+                    <div className="mt-4 flex items-center text-[10px] font-black text-(--color-brand-light) uppercase tracking-[0.2em]">
+                       {t('common.readMore')} <ArrowRight className="ml-2 size-3" />
+                    </div>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
           </div>
         </div>
+
+        {/* Bottom indicator line */}
+        <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-(--color-brand)" />
       </section>
 
-      {/* Brands / References */}
-      <section className="section-py">
-        <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="motion-fade-up">
-            <SectionHeader
-              title={t('home.brands.title')}
-              description={t('home.brands.subtitle')}
-              align="center"
-            />
-          </div>
-          <div className="motion-fade-up motion-delay-2 mt-10">
-            <BrandCarousel brands={visibleBrands} />
-          </div>
-        </div>
-      </section>
+      {homeStats.length > 0 ? <StatsHighlightSection items={homeStats} /> : null}
 
-      {/* All Projects — ArchDaily-style infinite feed */}
-      <section className="section-py border-t border-(--color-border)">
-        <ProjectFeed
-          initialProjects={allProjects}
-          locale={locale}
-          apiUrl={API_BASE_URL}
-          backendUrl={API_BASE_URL.replace(/\/api\/?$/, '')}
-          title={t('home.latestProjects.title')}
-          subtitle={t('home.latestProjects.subtitle')}
-          sidebarProjects={visibleProducts.slice(0, 4)}
-          sidebarTitle={t('projects.loveTitle')}
-          readMoreLabel={t('common.readMore')}
-        />
-      </section>
+      {/* ═══════════════════════════════════════════
+          DYNAMIC CONTENT SECTIONS — Glass/Transparent (ScrollBackground görünsün)
+      ═══════════════════════════════════════════ */}
+      <div className="relative space-y-24 py-24">
 
-      {/* CTA */}
-      <section className="bg-(--color-bg-dark)">
-        <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8 lg:py-28">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2
-              className="text-3xl font-bold text-(--color-text-on-dark) lg:text-4xl"
-              style={{ fontFamily: 'var(--font-heading)' }}
-            >
-              {t('common.offerCtaTitle')}
-            </h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-(--color-text-on-dark)/70">
-              {t('common.offerCtaDescription')}
-            </p>
-            <Link
-              href={localizedPath(locale, '/teklif')}
-              className="mt-8 inline-flex items-center gap-2 bg-(--color-brand) px-8 py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ fontFamily: 'var(--font-heading)' }}
-            >
-              {t('common.requestOffer')}
-              <ArrowRight className="size-4" />
-            </Link>
-          </div>
-        </div>
-      </section>
+        {/* Knowledge Base Feed */}
+        {visibleBlogPosts.length > 0 ? (
+          <section className="mx-auto max-w-7xl px-4 lg:px-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:gap-8">
+              {visibleBlogPosts.map((post: any, idx: number) => (
+                <Reveal key={post.id} delay={idx * 0.1}>
+                    <div className="group relative flex h-full flex-col items-center border border-(--color-border-on-dark) bg-(--color-bg-dark) p-6 text-center transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    {resolveBlogImage(post) ? (
+                      <div className="relative mb-8 aspect-4/3 w-full overflow-hidden">
+                        <OptimizedImage
+                          src={resolveBlogImage(post)}
+                          alt={post.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                      </div>
+                    ) : null}
 
-      {/* Newsletter */}
-      <section className="section-py bg-(--color-bg-muted)">
-        <div className="mx-auto max-w-xl px-4 text-center">
-          <div className="motion-fade-up">
-            <h2 className="text-2xl font-bold">{t('home.newsletter.title')}</h2>
-            <p className="mt-2 text-(--color-text-secondary)">
-              {t('home.newsletter.subtitle')}
-            </p>
-          </div>
-          <div className="motion-fade-up motion-delay-2">
-            <NewsletterForm locale={locale} />
-          </div>
-        </div>
-      </section>
-    </main>
+                    <div className="flex flex-1 flex-col items-center">
+                      <h3
+                        className="mb-4 text-lg font-extrabold uppercase leading-tight tracking-widest text-(--section-bg-white) transition-colors group-hover:text-(--color-brand-text) lg:text-xl"
+                        style={{ fontFamily: 'var(--font-heading)' }}
+                      >
+                        {post.title}
+                      </h3>
+                      <p className="mb-8 line-clamp-3 text-sm leading-relaxed text-(--color-text-muted)">
+                        {post.summary || post.content_text?.substring(0, 100)}
+                      </p>
+
+                      <Link
+                        href={localizedPath(locale, `/blog/${post.slug}`)}
+                        title={post.title}
+                        className="mt-auto rounded-full border-2 border-(--color-glass-border) px-8 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-(--section-bg-white) transition-all duration-300 hover:scale-105 hover:border-(--color-brand) hover:bg-(--color-brand) hover:text-(--color-on-brand)"
+                      >
+                        {t('common.readMore')}
+                      </Link>
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {visibleNewsPosts.length ? (
+          <section className="border-y border-(--color-border) bg-(--color-bg-secondary) py-24">
+            <div className="mx-auto max-w-7xl px-4 lg:px-6">
+              <div className="mb-8">
+                <h2
+                  className="text-2xl font-bold text-(--color-text-primary) lg:text-3xl"
+                  style={{ fontFamily: 'var(--font-heading)' }}
+                >
+                  {t('news.title')}
+                </h2>
+                <p className="mt-2 text-sm text-(--color-text-secondary)">
+                  {t('news.description')}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+                {visibleNewsPosts.map((post: any) => {
+                  const mainImage = resolveBlogImage(post);
+                  const postHref = post.slug
+                    ? localizedPath(locale, `/haberler/${post.slug}`)
+                    : localizedPath(locale, '/haberler');
+
+                  return (
+                    <article
+                      key={post.id}
+                      className="overflow-hidden border border-(--color-border) bg-(--color-bg-secondary) transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+                    >
+                      {mainImage ? (
+                        <Link
+                          href={postHref}
+                          title={post.title}
+                          className="group relative block aspect-16/10 overflow-hidden bg-(--color-bg-muted)"
+                        >
+                          <OptimizedImage
+                            src={mainImage}
+                            alt={post.title}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                          />
+                        </Link>
+                      ) : null}
+
+                      <div className="p-6 lg:p-8">
+                        {post.category_name ? (
+                          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-(--color-brand-text)">
+                            {post.category_name}
+                          </div>
+                        ) : null}
+
+                        <Link href={postHref} title={post.title}>
+                          <h3
+                            className="mt-3 text-2xl font-bold text-(--color-text-primary) transition-colors hover:text-(--color-brand-text)"
+                            style={{ fontFamily: 'var(--font-heading)' }}
+                          >
+                            {post.title}
+                          </h3>
+                        </Link>
+
+                        {post.summary ? (
+                          <p className="mt-4 text-sm leading-7 text-(--color-text-secondary)">
+                            {post.summary}
+                          </p>
+                        ) : null}
+
+                        <div className="mt-6 flex items-center justify-between gap-4">
+                          <span className="text-xs text-(--color-text-muted)">
+                            {post.created_at
+                              ? new Date(post.created_at).toLocaleDateString(
+                                  locale === 'en' ? 'en-US' : 'tr-TR',
+                                )
+                              : ''}
+                          </span>
+                          <Link
+                            href={postHref}
+                            title={`${post.title} — ${t('common.readMore')}`}
+                            className="text-xs font-medium text-(--color-brand-text) hover:underline"
+                          >
+                            {t('common.readMore')} »
+                          </Link>
+                        </div>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        {/* Öne Çıkanlar — hero'ya sığmayan featured ürünler */}
+        {highlightProducts.length > 0 && (
+          <section className="border-b border-(--color-border) bg-white/95 py-24 backdrop-blur-sm">
+            <div className="mx-auto max-w-7xl px-4 lg:px-6">
+              <ProjectFeed
+                initialProjects={highlightProducts}
+                locale={locale}
+                apiUrl={API_BASE_URL}
+                backendUrl={API_BASE_URL.replace(/\/api\/?$/, '')}
+                title={t('home.projects.title')}
+                subtitle={t('home.projects.subtitle')}
+                sidebarProjects={heroProducts}
+                sidebarTitle={t('projects.loveTitle')}
+                readMoreLabel={t('common.readMore')}
+                extraParams="&is_featured=1"
+              />
+            </div>
+          </section>
+        )}
+
+
+
+        {references.length ? (
+          <section className="w-full">
+            <div className="mx-auto max-w-7xl px-4 lg:px-6 mb-12">
+              <Reveal>
+                <div className="text-center">
+                  <p
+                    className="text-xs font-black uppercase tracking-[0.35em] drop-shadow-sm"
+                    style={{ color: 'var(--color-brand-light)' }}
+                  >
+                    {t('home.brands.title')}
+                  </p>
+                  <p className="mx-auto mt-4 max-w-2xl text-sm font-medium text-(--section-bg-white)/80 sm:text-base drop-shadow-md">
+                    {t('home.brands.subtitle')}
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+
+            <Reveal delay={0.1}>
+              <div
+                className="relative w-full border-y border-(--color-border-on-dark) py-16 shadow-2xl backdrop-blur-xl"
+                style={{
+                  background: 'color-mix(in srgb, var(--color-bg-dark) 85%, transparent)',
+                }}
+              >
+                <div className="absolute top-0 left-0 h-1 w-32 bg-(--color-brand)" />
+                <BrandCarousel brands={references.map((r: any) => ({ ...r, logo_url: resolveImageUrl(r.featured_image || r.logo_url || r.image_url) }))} />
+                <div className="absolute bottom-0 right-0 h-1 w-32 bg-(--color-brand)" />
+              </div>
+            </Reveal>
+          </section>
+        ) : null}
+
+        {/* Son Eklenenler — featured olmayan ürünler */}
+        {latestProducts.length > 0 && (
+          <section className="border-t border-(--color-border) bg-white py-24">
+            <div className="mx-auto max-w-7xl px-4 lg:px-6">
+              <ProjectFeed
+                initialProjects={latestProducts}
+                locale={locale}
+                apiUrl={API_BASE_URL}
+                backendUrl={API_BASE_URL.replace(/\/api\/?$/, '')}
+                title={t('home.latestProjects.title')}
+                subtitle={t('home.latestProjects.subtitle')}
+                sidebarProjects={heroProducts}
+                sidebarTitle={t('home.projects.title')}
+                extraParams="&is_featured=0"
+              />
+            </div>
+          </section>
+        )}
+
+        {/* CTA - Final Premium Section (Humintech Inspired) */}
+        <section className="mx-auto max-w-7xl px-4 py-24">
+           <Reveal>
+             <div className="relative overflow-hidden border border-(--color-border-on-dark) bg-(--color-bg-dark) p-12 text-center shadow-2xl lg:p-24">
+                <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+                  <h2
+                    className="mb-8 text-3xl font-black uppercase leading-tight tracking-[0.15em] text-(--section-bg-white) lg:text-6xl"
+                    style={{ fontFamily: 'var(--font-heading)' }}
+                  >
+                     {t('common.offerCtaTitle')}
+                  </h2>
+                  <p className="mx-auto mb-12 max-w-2xl text-base leading-relaxed font-medium text-(--color-text-muted) lg:text-xl">
+                     {t('common.offerCtaDescription')}
+                  </p>
+
+                  {/* Premium CTA Pill Button */}
+                  <Link
+                    href={localizedPath(locale, '/teklif')}
+                    className="inline-flex items-center justify-center rounded-full border-2 border-(--color-glass-border) px-12 py-4 text-xs font-black uppercase tracking-[0.3em] text-(--section-bg-white) transition-all duration-500 hover:scale-105 hover:border-(--color-brand) hover:bg-(--color-brand) hover:text-(--color-on-brand) lg:text-sm"
+                  >
+                    {t('common.requestOffer')}
+                  </Link>
+                </div>
+
+                {/* Subtle background decoration */}
+                <div className="absolute top-0 left-0 w-32 h-1 bg-(--color-brand)" />
+                <div className="absolute bottom-0 right-0 w-32 h-1 bg-(--color-brand)" />
+             </div>
+           </Reveal>
+        </section>
+
+      </div>
+    </div>
   );
 }

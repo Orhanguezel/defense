@@ -1,99 +1,108 @@
 'use client';
 
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 interface BrandItem {
   id?: number | string;
   title: string;
   logo_url?: string | null;
   image_url?: string | null;
+  featured_image?: string | null;
   website_url?: string | null;
 }
 
 export function BrandCarousel({ brands }: { brands: BrandItem[] }) {
-  if (!brands.length) return null;
+  const items = brands.filter((brand) => {
+    const logoSrc = brand.logo_url || brand.image_url || brand.featured_image;
+    return Boolean(logoSrc);
+  });
 
-  // Duplicate the list to create seamless infinite scroll
-  const doubled = [...brands, ...brands];
+  if (!items.length) return null;
+
+  // We double the items for a continuous scroll loop
+  const doubled = [...items, ...items];
 
   return (
-    <>
+    <div className="relative w-full overflow-hidden">
       <style>{`
-        @keyframes brand-scroll {
+        @keyframes brand-loop {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
         }
-        .brand-track {
-          animation: brand-scroll 30s linear infinite;
+        .brand-loop-track {
+          display: flex;
+          align-items: center;
+          width: max-content;
+          animation: brand-loop 40s linear infinite;
         }
-        .brand-track:hover {
+        .brand-loop-track:hover {
           animation-play-state: paused;
         }
+        @media (max-width: 768px) {
+          .brand-loop-track {
+            animation-duration: 30s;
+          }
+        }
       `}</style>
+
       <div
+        className="relative"
         style={{
-          overflow: 'hidden',
-          width: '100%',
-          maskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
-          WebkitMaskImage: 'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
+          maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+          WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
         }}
       >
-        <div
-          className="brand-track"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 80,
-            width: 'max-content',
-          }}
-        >
+        <div className="brand-loop-track flex gap-8 py-4 md:gap-14 md:py-6">
           {doubled.map((brand, i) => {
-            const logoSrc = brand.logo_url || brand.image_url;
+            const logoSrc = brand.logo_url || brand.image_url || brand.featured_image;
             const key = `${brand.id ?? brand.title}-${i}`;
 
-            return (
+            const TileContent = (
               <div
-                key={key}
-                style={{
-                  flexShrink: 0,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: 64,
-                  opacity: 0.9,
-                  transition: 'all 0.3s ease',
-                }}
-                className="hover:scale-110 hover:opacity-100"
+                className={cn(
+                  'group relative flex h-28 w-44 items-center justify-center overflow-hidden transition-all duration-500 md:h-32 md:w-52',
+                  'rounded-lg border border-white/20 bg-white shadow-md',
+                  'hover:scale-[1.04] hover:border-(--color-brand) hover:shadow-xl',
+                  brand.website_url && 'cursor-pointer'
+                )}
               >
-                {logoSrc ? (
+                <div className="relative h-full w-full">
                   <Image
-                    src={logoSrc}
+                    src={logoSrc!}
                     alt={brand.title}
-                    width={180}
-                    height={64}
-                    style={{ height: 60, width: 'auto', objectFit: 'contain' }}
+                    fill
+                    sizes="(max-width: 768px) 176px, 208px"
+                    className="object-contain p-4 md:p-5 transition-all duration-500 group-hover:scale-105"
                     unoptimized
                   />
-                ) : (
-                  <span
-                    style={{
-                      fontFamily: 'var(--font-heading)',
-                      fontSize: 22,
-                      fontWeight: 700,
-                      color: 'var(--color-text-primary)',
-                      whiteSpace: 'nowrap',
-                      letterSpacing: '0.05em',
-                      textTransform: 'uppercase',
-                    }}
+                </div>
+
+                {/* Gold accent line on hover */}
+                <div className="absolute inset-x-0 bottom-0 h-[2px] w-0 bg-linear-to-r from-transparent via-(--color-brand) to-transparent transition-all duration-700 group-hover:w-full" />
+              </div>
+            );
+
+            return (
+              <div key={key} className="flex shrink-0 items-center justify-center">
+                {brand.website_url ? (
+                  <a
+                    href={brand.website_url}
+                    target="_blank"
+                    rel="nofollow noopener noreferrer"
+                    aria-label={brand.title}
+                    className="block"
                   >
-                    {brand.title}
-                  </span>
+                    {TileContent}
+                  </a>
+                ) : (
+                  TileContent
                 )}
               </div>
             );
           })}
         </div>
       </div>
-    </>
+    </div>
   );
 }

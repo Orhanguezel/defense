@@ -6,17 +6,17 @@ import { spawn } from 'node:child_process';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const BUILD_ID_FILE = path.join(ROOT, '.next', 'BUILD_ID');
-const STANDALONE_DIR = path.join(ROOT, '.next', 'standalone', 'sultandefense');
+const STANDALONE_DIR = path.join(ROOT, '.next', 'standalone', 'bereketfide');
 const STANDALONE_SERVER = path.join(STANDALONE_DIR, 'server.js');
 const PREPARE_SCRIPT = path.join(ROOT, 'scripts', 'prepare-standalone.mjs');
 
 const FRONTEND_PORT = 3122;
 const FRONTEND_BASE_URL = process.env.SMOKE_FRONTEND_BASE_URL || `http://127.0.0.1:${FRONTEND_PORT}`;
-const API_BASE = (process.env.SMOKE_API_BASE_URL || process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8090/api').replace(/\/$/, '');
+const API_BASE = (process.env.SMOKE_API_BASE_URL || process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8086/api').replace(/\/$/, '');
 const API_ORIGIN = API_BASE.endsWith('/api') ? API_BASE.slice(0, -4) : API_BASE;
 const ADMIN_EMAIL = process.env.SMOKE_ADMIN_EMAIL || process.env.SEED_ADMIN_EMAIL || 'orhanguzell@gmail.com';
 const ADMIN_PASSWORD = process.env.SMOKE_ADMIN_PASSWORD || process.env.SEED_ADMIN_PASSWORD || 'admin123';
-const SD_CATEGORY_ID = 'cccc0001-4001-4001-8001-cccccccc0001';
+const BEREKETFIDE_CATEGORY_ID = 'cccc0001-4001-4001-8001-cccccccc0001';
 
 const created = {
   pageId: null,
@@ -211,7 +211,7 @@ async function createAdminContent() {
         method: 'POST',
         headers,
         body: JSON.stringify({
-          module_key: 'sultandefense_blog',
+          module_key: 'bereketfide_blog',
           locale: 'tr',
           title: pageTitle,
           slug: pageSlug,
@@ -252,7 +252,7 @@ async function createAdminContent() {
         method: 'POST',
         headers,
         body: JSON.stringify({
-          item_type: 'sultandefense',
+          item_type: 'bereketfide',
           locale: 'tr',
           title: productTitle,
           slug: productSlug,
@@ -260,8 +260,8 @@ async function createAdminContent() {
           image_url: `${API_ORIGIN}/media/gallery-placeholder.svg`,
           alt: `Admin flow product alt ${ts}`,
           price: 0,
-          category_id: SD_CATEGORY_ID,
-          tags: ['admin-flow', 'sultandefense'],
+          category_id: BEREKETFIDE_CATEGORY_ID,
+          tags: ['admin-flow', 'bereketfide'],
           meta_title: `${productTitle} Meta`,
           meta_description: `Admin flow product meta description ${ts}`,
           is_active: true,
@@ -298,7 +298,7 @@ async function createAdminContent() {
         method: 'POST',
         headers,
         body: JSON.stringify({
-          module_key: 'sultandefense',
+          module_key: 'bereketfide',
           source_type: 'standalone',
           locale: 'tr',
           title: galleryTitle,
@@ -464,10 +464,10 @@ async function main() {
   try {
     await waitForServer(proc);
 
-    await expectFrontend('/tr/about', ['Sultan Defense', 'savunma', 'Calisma Modelimiz']);
-    await expectFrontend('/en/about', ['Sultan Defense', 'defense', 'How We Work']);
-    await expectFrontend('/tr/legal/privacy', ['Sultan Defense', '/tr/legal/privacy', '<link rel="canonical"']);
-    await expectFrontend('/en/legal/privacy', ['Sultan Defense', '/en/legal/privacy', '<link rel="canonical"']);
+    await expectFrontend('/tr/about', ['Bereket Fide', 'Karbon fiber', 'Calisma Modelimiz']);
+    await expectFrontend('/en/about', ['Bereket Fide', 'carbon fiber', 'How We Work']);
+    await expectFrontend('/tr/legal/privacy', ['Bereket Fide', '/tr/legal/privacy', '<link rel="canonical"']);
+    await expectFrontend('/en/legal/privacy', ['Bereket Fide', '/en/legal/privacy', '<link rel="canonical"']);
 
     await expectFrontend(`/tr/blog/${content.blog.slug}`, [
       content.blog.tr.metaTitle,
@@ -475,9 +475,9 @@ async function main() {
       content.blog.tr.body,
       content.blog.tr.metaDescription,
     ]);
-    await expectFrontend('/en/blog/defense-procurement-checklist', [
-      'Defense Procurement Checklist',
-      'Defense procurement is not just product sourcing',
+    await expectFrontend('/en/blog/what-is-carbon-fiber', [
+      'What is Carbon Fiber?',
+      'Carbon fiber is an advanced material',
     ]);
 
     await expectFrontend(`/tr/products/${content.product.slug}`, [
@@ -487,9 +487,9 @@ async function main() {
       content.product.tr.alt,
       content.product.tr.metaDescription,
     ]);
-    await expectFrontend('/en/products/ballistic-protection', [
-      'Advanced Ballistic Protection',
-      'High-performance ballistic protection gear',
+    await expectFrontend('/en/products/carbon-fiber-panel-prototype', [
+      'Carbon Fiber Panel Prototype',
+      'Sample carbon fiber panel prototype entry',
     ]);
 
     await expectFrontend(`/tr/gallery/${content.gallery.slug}`, [
@@ -500,19 +500,20 @@ async function main() {
       content.gallery.tr.caption,
       content.gallery.tr.metaDescription,
     ]);
-    await expectFrontend('/en/gallery/ballistic-protection-catalog-gallery', [
-      'Ballistic Protection Catalog Gallery',
-      'Catalog visuals for vest, plate, helmet',
-      'Ballistic Protection Gallery',
+    await expectFrontend('/en/gallery/carbon-fiber-panel-application-gallery', [
+      'Carbon Fiber Panel Application Gallery',
+      'Sample application gallery showing a carbon fiber panel',
+      'Carbon fiber panel prototype surface',
+      'Prototype surface inspection',
     ]);
 
     await expectFrontend('/sitemap.xml', [
-      '/tr/blog/savunma-tedarik-kontrol-listesi',
-      '/tr/products/ballistic-protection',
-      '/tr/gallery/balistik-koruma-katalog-galerisi',
-      '/en/blog/defense-procurement-checklist',
-      '/en/products/ballistic-protection',
-      '/en/gallery/ballistic-protection-catalog-gallery',
+      '/tr/blog/karbon-fiber-nedir',
+      '/tr/products/karbon-fiber-panel-prototipi',
+      '/tr/gallery/karbon-fiber-panel-uygulama-galerisi',
+      '/en/blog/what-is-carbon-fiber',
+      '/en/products/carbon-fiber-panel-prototype',
+      '/en/gallery/carbon-fiber-panel-application-gallery',
     ]);
 
     log('Frontend admin content flow smoke passed (tr + en)');

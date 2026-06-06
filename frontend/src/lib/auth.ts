@@ -1,4 +1,14 @@
 import api from './axios';
+import { setSessionAccessToken } from './session-access-token';
+
+/** Backend user_roles + JWT primary role */
+export type AuthUserRole =
+  | 'admin'
+  | 'editor'
+  | 'carrier'
+  | 'customer'
+  | 'moderator'
+  | 'user';
 
 export type AuthUser = {
   id: string;
@@ -7,7 +17,7 @@ export type AuthUser = {
   phone: string | null;
   email_verified: number;
   is_active: number;
-  role: 'admin' | 'moderator' | 'user';
+  role: AuthUserRole;
 };
 
 type AuthResponse = {
@@ -26,7 +36,9 @@ export async function loginWithEmail(
     email,
     password,
   });
-  return res.data;
+  const data = res.data as AuthResponse;
+  if (data.access_token) setSessionAccessToken(data.access_token);
+  return data;
 }
 
 /** Email/password signup */
@@ -40,7 +52,9 @@ export async function signupWithEmail(
     password,
     full_name: fullName,
   });
-  return res.data;
+  const data = res.data as AuthResponse;
+  if (data.access_token) setSessionAccessToken(data.access_token);
+  return data;
 }
 
 /** Start Google OAuth redirect flow */
@@ -75,6 +89,7 @@ export async function updateProfile(data: {
 
 /** Logout */
 export async function logout(): Promise<void> {
+  setSessionAccessToken(null);
   try {
     await api.post('/auth/logout');
   } catch {

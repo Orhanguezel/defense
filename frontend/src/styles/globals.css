@@ -3,56 +3,80 @@
 
 /* ─────────────────────────────────────────────
    KATMAN 1: Primitive Tokenlar
-   Template: sultandefense-imperial-armor
-   Intent:   imperial-armor (antrasit + mat altin + bordo)
-   NOT: primitive olcek isimleri (cyan / navy) legacy; degerler İmparatorluk Zırhı.
-        cyan olcek = MAT ALTIN, navy olcek = ANTRASIT / TITANYUM notr.
+   Template: sultan-imperial-armor
+   Intent:   imperial-armor-anthracite-gold (Antrasit + Mat Osmanlı Altını + Derin Bordo)
    ───────────────────────────────────────────── */
 
 :root,
-html[data-theme-template='sultandefense-tactical'],
-html[data-theme-template='sultandefense-imperial-armor'] {
-  /* Mat Osmanlı Altını (brand accent) */
-  --cyan-50: #faf6ef;
-  --cyan-100: #f1e8d6;
-  --cyan-200: #e6d6b8;
-  --cyan-300: #d9c099;
-  --cyan-400: #D4B996; /* Bright Hover (acilmis altin) */
-  --cyan-500: #C5A880; /* Mat Altin (ana) */
-  --cyan-600: #8C6F3F; /* Koyu altin — light mode kontrast */
-  --cyan-700: #74592f;
-  --cyan-800: #5a4524;
-  --cyan-900: #3f301a;
-  --cyan-950: #221a0e;
+html[data-theme-template='sultan-imperial-armor'] {
+  /* Altın — Mat Osmanlı Altını / eskitilmiş pirinç (marka vurgu) */
+  --gold-50: #faf8f4;
+  --gold-100: #f3ede1;
+  --gold-200: #e7d9c2;
+  --gold-300: #d9c2a0;
+  --gold-400: #d4b996; /* ← Altın hover / açık vurgu */
+  --gold-500: #c5a880; /* ← Mat Osmanlı Altını — ANA marka vurgusu (logo/dekoratif) */
+  --gold-550: #8c6f3f; /* ← WCAG AA uyumlu altın (beyaz metin/açık zemin: ≥4.5:1) */
+  --gold-600: #a8895f;
+  --gold-700: #7a5f3f; /* ← Koyu altın / hover */
+  --gold-800: #5c4730;
+  --gold-900: #3e2f20;
+  --gold-950: #241c13;
 
-  /* Antrasit & Titanyum (Neutrals) */
-  --navy-0: #ffffff;
-  --navy-50: #F4F1EC;  /* parsomen (light bg) */
-  --navy-100: #E2DDD3;
-  --navy-200: #C2BCAF;
-  --navy-300: #9A968C;
-  --navy-400: #5C584F;
-  --navy-500: #46433C;
-  --navy-600: #3C4044;
-  --navy-700: #2D3134; /* Titanyum (surface) */
-  --navy-800: #1A1A1D; /* Antrasit (bg) */
-  --navy-900: #121214;
-  --navy-950: #0a0a0b;
+  /* Bordo — Derin Bordo / kan kırmızı (ikincil detay, Türk kimliği) */
+  --green-50: #fbf2f2;
+  --green-100: #f5e0e1;
+  --green-200: #e8bcbe;
+  --green-300: #d68f93;
+  --green-400: #b85258;
+  --green-500: #93262d;
+  --green-600: #7a1b22; /* ← Derin Bordo — ikincil vurgu */
+  --green-700: #631419;
+  --green-800: #4d0f14;
+  --green-900: #3a0c10;
 
-  /* Derin Bordo (ikincil detay: menu alti, ikon, vurgu) */
-  --bordeaux-400: #9a2a32;
-  --bordeaux-500: #7A1B22;
-  --bordeaux-600: #5e141a;
+  /* Antrasit / Titanyum — koyu zeminler ve nötr yüzeyler */
+  --soil-50: #f4f1ec; /* ← Parşömen (açık zemin) */
+  --soil-100: #e6e2d9;
+  --soil-200: #d9d4c9;
+  --soil-300: #b3aea4;
+  --soil-400: #8a857b;
+  --soil-500: #5c584f;
+  --soil-600: #45403a;
+  --soil-700: #34383c;
+  --soil-800: #2d3134; /* ← Titanyum Grisi (yüzey/kart) */
+  --soil-900: #1a1a1d; /* ← Antrasit Siyah — ana koyu zemin */
+  --soil-950: #121214;
 
-  /* Status */
-  --status-success: #25d366;
-  --status-success-strong: #1faa52;
-  --status-warning: #f59e0b;
-  --status-danger: #dc2626;
+  /* Antrasit nötr — metin & kenarlık rampası */
+  --anthracite-50: #f4f1ec;
+  --anthracite-100: #e6e2d9;
+  --anthracite-200: #d9d4c9; /* ← açık tema kenarlık (subtle) */
+  --anthracite-300: #c2bcb0; /* ← açık tema kenarlık (strong) */
+  --anthracite-400: #8a857b; /* ← açık tema soluk metin */
+  --anthracite-500: #6b6760;
+  --anthracite-600: #5c584f; /* ← açık tema gövde metni */
+  --anthracite-700: #45403a;
+  --anthracite-800: #2d3134;
+  --anthracite-900: #1a1a1d; /* ← açık tema güçlü metin */
+  --anthracite-950: #121214; /* ← altın üzeri metin (koyu) */
+
+  /* Status (marka uyumlu) */
+  --status-success: #4e9a6b;
+  --status-success-strong: #2d7a3a;
+  --status-warning: #c5a880;
+  --status-danger: #7a1b22;
+
+  /* Section arka plan token'ları */
+  --section-bg-light: #f4f1ec;
+  --section-bg-green-light: var(--green-50);
+  --section-bg-white: #ffffff;
+  --section-bg-dark: var(--soil-900);
+  --section-bg-dark-deep: var(--soil-950);
 
   /* Tipografi */
-  --font-heading: var(--font-heading, 'Oswald', sans-serif);
-  --font-body: var(--font-body, 'Inter', sans-serif);
+  --font-heading: 'Syne', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
 
   /* Spacing & Layout */
   --section-py: clamp(4rem, 8vw, 7rem);
@@ -78,20 +102,20 @@ html[data-theme-template='sultandefense-imperial-armor'] {
 html[data-theme-mode='light'],
 :root:not([data-theme-mode]) {
   /* Surface ara tokenlar */
-  --surface-base: var(--navy-50);
-  --surface-raised: var(--navy-0);
-  --surface-muted: var(--navy-100);
-  --surface-dark: var(--navy-800);
-  --surface-dark-strong: var(--navy-950);
+  --surface-base: var(--gold-50);
+  --surface-raised: #ffffff;
+  --surface-muted: var(--green-50);
+  --surface-dark: var(--soil-900);
+  --surface-dark-strong: var(--soil-950);
 
-  --text-strong: var(--navy-800);
-  --text-body: var(--navy-500);
-  --text-muted: var(--navy-400);
-  --text-inverse: var(--navy-50);
-  --text-soft-inverse: var(--navy-300);
+  --text-strong: var(--anthracite-900);
+  --text-body: var(--anthracite-600);
+  --text-muted: var(--anthracite-400);
+  --text-inverse: #e8e6dc;
+  --text-soft-inverse: #d0cdc4;
 
-  --border-subtle: var(--navy-100);
-  --border-strong: var(--navy-200);
+  --border-subtle: var(--anthracite-200);
+  --border-strong: var(--anthracite-300);
 
   /* Glass */
   --color-glass-bg: rgb(255 255 255 / 0.06);
@@ -103,8 +127,8 @@ html[data-theme-mode='light'],
   --color-border-on-dark: rgb(255 255 255 / 0.12);
   --color-dark-link-hover: var(--text-inverse);
 
-  /* Hero glow — cyan */
-  --color-hero-glow-brand: color-mix(in srgb, var(--cyan-400) 16%, transparent);
+  /* Hero glow — altın tonu */
+  --color-hero-glow-brand: color-mix(in srgb, var(--gold-400) 16%, transparent);
   --color-hero-glow-muted: rgb(255 255 255 / 0.06);
 
   /* Semantic tokenlar */
@@ -112,6 +136,8 @@ html[data-theme-mode='light'],
   --color-bg-secondary: var(--surface-raised);
   --color-bg-muted: var(--surface-muted);
   --color-bg-dark: var(--surface-dark);
+  --color-bg-alt: var(--section-bg-light);
+  --color-surface: var(--color-bg-secondary);
 
   --color-text-primary: var(--text-strong);
   --color-text-secondary: var(--text-body);
@@ -121,13 +147,14 @@ html[data-theme-mode='light'],
   --color-border: var(--border-subtle);
   --color-border-strong: var(--border-strong);
 
-  /* Brand — mat altin */
-  --color-brand: var(--cyan-600);
-  --color-brand-light: var(--cyan-400);
-  --color-brand-dark: var(--cyan-700);
-  --color-accent: var(--navy-700);
-  --color-secondary: var(--bordeaux-500);
-  --color-on-brand: var(--navy-0);
+  /* Brand — altın (WCAG AA uyumlu) */
+  --color-brand: var(--gold-550); /* ← AA uyumlu: beyaz metin üzerinde ≥4.5:1 */
+  --color-brand-light: var(--gold-400);
+  --color-brand-dark: var(--gold-700);
+  --color-brand-text: var(--gold-700); /* Küçük metin için koyu varyant */
+  --color-brand-logo: var(--gold-500); /* Logo için orijinal açık altın */
+  --color-accent: var(--green-600);
+  --color-on-brand: #ffffff;
 }
 
 /* ─────────────────────────────────────────────
@@ -136,41 +163,43 @@ html[data-theme-mode='light'],
    ───────────────────────────────────────────── */
 
 html[data-theme-mode='dark'] {
-  /* Surface ara tokenlar — koyu mavi / çelik tonları */
-  --surface-base: var(--navy-800);
-  --surface-raised: var(--navy-700);
-  --surface-muted: var(--navy-600);
-  --surface-dark: var(--navy-900);
-  --surface-dark-strong: var(--navy-950);
+  /* Surface ara tokenlar — Antrasit / Titanyum */
+  --surface-base: #1a1a1d; /* Antrasit — ana koyu zemin */
+  --surface-raised: #2d3134; /* Titanyum — kart/yüzey */
+  --surface-muted: #212226;
+  --surface-dark: #141416;
+  --surface-dark-strong: #0e0e10;
 
-  --text-strong: #EDEAE3;
-  --text-body: var(--navy-200);
-  --text-muted: var(--navy-300);
-  --text-inverse: var(--navy-800);
-  --text-soft-inverse: var(--navy-400);
+  --text-strong: #edeae3; /* sıcak kırık beyaz */
+  --text-body: #cbc6bd;
+  --text-muted: #9a968c;
+  --text-inverse: #f5f4f2;
+  --text-soft-inverse: #cbc6bd;
 
-  --border-subtle: var(--navy-700);
-  --border-strong: var(--navy-600);
+  --border-subtle: #3c4044;
+  --border-strong: #4a4f54;
 
-  /* Glass — altin tonlu */
-  --color-glass-bg: rgb(197 168 128 / 0.05);
-  --color-glass-bg-strong: rgb(197 168 128 / 0.09);
-  --color-glass-border: rgb(197 168 128 / 0.12);
-  --color-glass-hover: rgb(197 168 128 / 0.09);
+  /* Glass — altın tonlu */
+  --color-glass-bg: rgb(255 240 210 / 0.04);
+  --color-glass-bg-strong: rgb(255 240 210 / 0.08);
+  --color-glass-border: rgb(255 240 210 / 0.1);
+  --color-glass-hover: rgb(255 240 210 / 0.08);
 
   /* Misc */
   --color-border-on-dark: rgb(255 255 255 / 0.1);
   --color-dark-link-hover: #ffffff;
 
-  /* Hero glow — altin */
-  --color-hero-glow-brand: color-mix(in srgb, var(--cyan-500) 20%, transparent);
-  --color-hero-glow-muted: rgb(197 168 128 / 0.08);
+  /* Hero glow — dark'ta altın daha belirgin */
+  --color-hero-glow-brand: color-mix(in srgb, var(--gold-500) 20%, transparent);
+  --color-hero-glow-muted: rgb(184 169 138 / 0.08);
 
   /* Semantic tokenlar */
   --color-bg: var(--surface-base);
   --color-bg-secondary: var(--surface-raised);
   --color-bg-muted: var(--surface-muted);
   --color-bg-dark: var(--surface-dark);
+  --color-bg-alt: var(--surface-muted);
+  --color-surface: var(--color-bg-secondary);
 
   --color-text-primary: var(--text-strong);
   --color-text-secondary: var(--text-body);
@@ -180,13 +209,13 @@ html[data-theme-mode='dark'] {
   --color-border: var(--border-subtle);
   --color-border-strong: var(--border-strong);
 
-  /* Brand — mat altin */
-  --color-brand: var(--cyan-500);
-  --color-brand-light: var(--cyan-400);
-  --color-brand-dark: var(--cyan-600);
-  --color-accent: var(--cyan-500);
-  --color-secondary: var(--bordeaux-500);
-  --color-on-brand: var(--cyan-950);
+  /* Brand — dark'ta biraz açık altın */
+  --color-brand: var(--gold-500); /* Mat Osmanlı altını — koyu zeminde ana vurgu */
+  --color-brand-light: var(--gold-400);
+  --color-brand-dark: var(--gold-700);
+  --color-brand-text: var(--gold-400); /* Dark modda açık altın metin (koyu arka plan üzerinde yeterli kontrast) */
+  --color-accent: var(--green-600); /* Derin bordo — ikincil vurgu */
+  --color-on-brand: var(--anthracite-950);
 }
 
 /* ─────────────────────────────────────────────
@@ -304,22 +333,110 @@ h6 {
   box-shadow: 0 4px 24px rgb(20 19 17 / 0.08);
 }
 
+/* ─── Ana sayfa hero — okunabilirlik (yalnızca sınıf; DB/seed metin güncellemesiyle silinmez) ─── */
+
+section.home-hero {
+  isolation: isolate;
+}
+
+/**
+ * Video / görsel üzerine sabit karartma + hafif yeşil ton.
+ * Inline style veya admin panelden gelen renk yerine her zaman bu katman kullanılır.
+ */
+.home-hero-media-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--soil-950) 58%, transparent) 0%,
+    color-mix(in srgb, var(--green-900) 48%, transparent) 35%,
+    color-mix(in srgb, var(--green-900) 78%, transparent) 100%
+  );
+}
+
+.home-hero-title {
+  font-family: var(--font-heading);
+  color: var(--color-brand-light);
+  line-height: 1.05;
+  text-shadow:
+    0 1px 2px color-mix(in srgb, var(--color-bg-dark) 90%, transparent),
+    0 4px 32px color-mix(in srgb, var(--color-bg-dark) 50%, transparent);
+}
+
+/**
+ * Global h2 { color: text-strong } kurallarını aşmak için yeterli özgüllük.
+ */
+section.home-hero h2.home-hero-product-title {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--section-bg-white);
+  text-shadow:
+    0 1px 2px rgb(0 0 0 / 0.95),
+    0 2px 20px rgb(0 0 0 / 0.75);
+}
+
+section.home-hero p.home-hero-product-summary {
+  color: color-mix(in srgb, var(--section-bg-white) 94%, transparent);
+  text-shadow: 0 1px 3px rgb(0 0 0 / 0.88);
+}
+
+.home-hero-subtitle-wrap {
+  display: inline-block;
+  max-width: 48rem;
+  margin-inline: auto;
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-bg-dark) 48%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 24px rgb(0 0 0 / 0.25);
+}
+
+.home-hero-subtitle {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-inverse);
+  text-shadow:
+    0 1px 2px rgb(0 0 0 / 0.92),
+    0 3px 22px rgb(0 0 0 / 0.62);
+}
+
+/**
+ * Kart görseli üzerine — saf siyah gradient (Tailwind sınıf adı DB ile değişmez).
+ */
+.home-hero-product-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(0 0 0 / 0.92) 0%, rgb(0 0 0 / 0.5) 48%, rgb(0 0 0 / 0.1) 100%);
+  transition: opacity 0.5s ease;
+}
+
+.group:hover .home-hero-product-card-overlay {
+  opacity: 0.92;
+}
+
 /* ─── Koyu Section Yüzeyleri ─── */
 
 .surface-dark-shell {
   position: relative;
   overflow: hidden;
-  background-color: var(--color-bg-dark);
+  background-color: var(--soil-900);
 }
 
-/* imperial-armor: altin radial glow, antrasit/titanyum gradient */
+/* sultan-imperial-armor: altin radial glow, sicak antrasit gradient */
 .surface-dark-shell::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top left, rgb(197 168 128 / 0.14), transparent 30%),
-    linear-gradient(135deg, rgb(26 26 29 / 0.97), rgb(45 49 52 / 0.94));
+    radial-gradient(circle at top left, rgb(184 169 138 / 0.14), transparent 30%),
+    linear-gradient(135deg, rgb(15 14 13 / 0.97), rgb(26 24 22 / 0.94));
   pointer-events: none;
 }
 
@@ -348,18 +465,18 @@ h6 {
   background-color: var(--color-glass-hover);
 }
 
-/* ─── Marka CTA Yüzeyi (Mat Altın) ─── */
+/* ─── Marka CTA Yüzeyi (Altın) ─── */
 
-/* imperial-armor: altin gradient, antrasit metin */
+/* sultan-imperial-armor: altin gradient, koyu metin */
 .surface-brand-cta {
-  border: 1px solid rgb(197 168 128 / 0.4);
-  background: linear-gradient(135deg, rgb(197 168 128 / 0.97), rgb(140 111 63 / 0.97));
-  color: #1A1A1D;
-  box-shadow: 0 20px 60px rgb(197 168 128 / 0.2);
+  border: 1px solid rgb(184 169 138 / 0.3);
+  background: linear-gradient(135deg, rgb(158 143 111 / 0.95), rgb(139 121 98 / 0.95));
+  color: var(--anthracite-950);
+  box-shadow: 0 20px 60px rgb(184 169 138 / 0.18);
 }
 
 .surface-brand-cta-subtle {
-  color: rgb(26 26 29 / 0.68);
+  color: rgb(20 19 17 / 0.68);
 }
 
 /* ─── Hero Glow ─── */
@@ -373,9 +490,9 @@ h6 {
 
 /* ─── Medya Overlay (Proje Kartları) ─── */
 
-/* sultandefense-tactical: koyu çelik/navy overlay */
+/* sultan-imperial-armor: sicak siyah overlay */
 .media-overlay {
-  background: linear-gradient(180deg, rgb(26 26 29 / 0.04), rgb(26 26 29 / 0.82));
+  background: linear-gradient(180deg, rgb(20 19 17 / 0.04), rgb(20 19 17 / 0.82));
 }
 
 .media-overlay-title {
@@ -388,8 +505,8 @@ h6 {
 /* ─── Form Alanları ─── */
 
 .field-input {
-  border: 1px solid var(--color-border-strong);
-  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-bg-secondary);
   color: var(--color-text-primary);
   border-radius: var(--radius-sm);
 }
@@ -401,6 +518,26 @@ h6 {
 .field-input:focus-visible {
   outline: 2px solid var(--color-brand);
   outline-offset: 2px;
+}
+
+.bf-alert-danger {
+  border: 1px solid color-mix(in srgb, var(--status-danger) 22%, transparent);
+  background: color-mix(in srgb, var(--status-danger) 8%, transparent);
+  color: var(--status-danger);
+}
+
+.bf-alert-success {
+  border: 1px solid color-mix(in srgb, var(--color-success) 22%, transparent);
+  background: color-mix(in srgb, var(--color-success) 8%, transparent);
+  color: var(--color-success-dark);
+}
+
+.bf-link-danger {
+  color: var(--status-danger);
+}
+
+.bf-link-danger:hover {
+  text-decoration: underline;
 }
 
 /* ─── Butonlar ─── */
@@ -492,6 +629,29 @@ h6 {
   color: inherit;
 }
 
+/* ─── Premium Redesign Utilities ─── */
+
+.premium-bg-parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  will-change: transform;
+}
+
+.glass-premium {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold-300) 0%, var(--gold-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* ─────────────────────────────────────────────
    Animasyon & Motion
    ───────────────────────────────────────────── */
@@ -499,7 +659,7 @@ h6 {
 @keyframes fade-up-in {
   from {
     opacity: 0;
-    transform: translate3d(0, 28px, 0);
+    transform: translate3d(0, 40px, 0);
   }
   to {
     opacity: 1;
@@ -524,7 +684,7 @@ h6 {
     transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translate3d(0, -6px, 0);
+    transform: translate3d(0, -10px, 0);
   }
 }
 
@@ -533,7 +693,7 @@ h6 {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
   }
   70% {
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
   }
   100% {
     box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
@@ -541,38 +701,30 @@ h6 {
 }
 
 .motion-fade-up {
-  animation: fade-up-in 860ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fade-up-in 1000ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .motion-slide-right {
   animation: slide-in-right 920ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .motion-float-soft {
-  animation: float-soft 5.8s ease-in-out 1.2s infinite;
+  animation: float-soft 5s ease-in-out infinite;
 }
 .motion-pulse {
   animation: whatsapp-pulse 2s infinite;
 }
 
-.motion-delay-1 {
-  animation-delay: 120ms;
-}
-.motion-delay-2 {
-  animation-delay: 220ms;
-}
-.motion-delay-3 {
-  animation-delay: 320ms;
-}
-.motion-delay-4 {
-  animation-delay: 420ms;
-}
+.motion-delay-1 { animation-delay: 150ms; }
+.motion-delay-2 { animation-delay: 300ms; }
+.motion-delay-3 { animation-delay: 450ms; }
+.motion-delay-4 { animation-delay: 600ms; }
 
 /* Scroll Reveal */
 .reveal {
   opacity: 0;
-  transform: translate3d(0, 26px, 0);
+  transform: translate3d(0, 30px, 0);
   transition:
-    opacity 760ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 1000ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1000ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 
@@ -596,4 +748,12 @@ h6 {
 
 .disable-transitions * {
   transition: none !important;
+}
+
+.section-spacing {
+  @apply py-24 lg:py-40;
+}
+
+.container-tight {
+  @apply mx-auto max-w-6xl px-6;
 }

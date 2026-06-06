@@ -2,7 +2,7 @@
 import json
 import os
 
-locales_dir = '/home/orhan/Documents/Projeler/sultandefense/frontend/public/locales'
+locales_dir = '/home/orhan/Documents/Projeler/vistainsaat/frontend/public/locales'
 
 # Projects keys to ensure
 project_keys = {

@@ -29,15 +29,15 @@ const GENERIC_TERMS = new Set([
 
 const KIND_LABELS: Record<'tr' | 'en', Record<MediaKind, string>> = {
   tr: {
-    product: 'savunma urunu gorseli',
-    project: 'savunma urunu gorseli',
+    product: 'urun gorseli',
+    project: 'defans urunu gorseli',
     service: 'hizmet gorseli',
     gallery: 'urun galerisi gorseli',
     'gallery-cover': 'galeri kapak gorseli',
     blog: 'haber kapak gorseli',
   },
   en: {
-    product: 'defense product visual',
+    product: 'product visual',
     project: 'defense product visual',
     service: 'service visual',
     gallery: 'product gallery visual',

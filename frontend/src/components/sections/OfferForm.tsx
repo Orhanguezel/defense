@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { toast } from 'sonner';
 import api from '@/lib/axios';
+import { trackGoogleAdsConversion } from '@/lib/google-ads';
 
 export function OfferFormClient({
   locale,
@@ -36,6 +37,7 @@ export function OfferFormClient({
           preferred_deadline: fd.get('deadline'),
         },
       });
+      trackGoogleAdsConversion('offer_submit');
       toast.success(t('success'));
       (e.target as HTMLFormElement).reset();
     } catch {
@@ -45,61 +47,38 @@ export function OfferFormClient({
     }
   }
 
+  const cls =
+    'w-full rounded border border-(--color-border) bg-(--color-bg-secondary) px-4 py-3 text-sm text-(--color-text-primary) outline-none placeholder:text-(--color-text-muted) focus:border-(--color-brand) focus:ring-1 focus:ring-(--color-brand)/30';
+
   return (
-    <form onSubmit={handleSubmit} className="surface-card space-y-4 rounded-xl p-6">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
-        <input
-          name="name"
-          required
-          placeholder={tc('name')}
-          className="field-input rounded-lg px-4 py-2.5 text-sm focus:border-(--color-brand) focus:outline-none"
-        />
-        <input
-          name="email"
-          type="email"
-          required
-          placeholder={tc('email')}
-          className="field-input rounded-lg px-4 py-2.5 text-sm focus:border-(--color-brand) focus:outline-none"
-        />
-        <input
-          name="phone"
-          placeholder={tc('phone')}
-          className="field-input rounded-lg px-4 py-2.5 text-sm focus:border-(--color-brand) focus:outline-none"
-        />
-        <input
-          name="company"
-          placeholder={tc('company')}
-          className="field-input rounded-lg px-4 py-2.5 text-sm focus:border-(--color-brand) focus:outline-none"
-        />
+        <input name="name" required placeholder={tc('name')} className={cls} />
+        <input name="email" type="email" required placeholder={tc('email')} className={cls} />
+        <input name="phone" placeholder={tc('phone')} className={cls} />
+        <input name="company" placeholder={tc('company')} className={cls} />
       </div>
       <input
         name="product_interest"
         defaultValue={preselectedProduct || ''}
         placeholder={t('productInterest')}
-        className="field-input w-full rounded-lg px-4 py-2.5 text-sm focus:border-(--color-brand) focus:outline-none"
+        className={cls}
       />
       <div className="grid gap-4 sm:grid-cols-2">
-        <input
-          name="quantity"
-          placeholder={t('quantity')}
-          className="field-input rounded-lg px-4 py-2.5 text-sm focus:border-(--color-brand) focus:outline-none"
-        />
-        <input
-          name="deadline"
-          placeholder={t('deadline')}
-          className="field-input rounded-lg px-4 py-2.5 text-sm focus:border-(--color-brand) focus:outline-none"
-        />
+        <input name="quantity" placeholder={t('quantity')} className={cls} />
+        <input name="deadline" placeholder={t('deadline')} className={cls} />
       </div>
       <textarea
         name="details"
         rows={5}
         placeholder={t('detailsPlaceholder')}
-        className="field-input w-full rounded-lg px-4 py-2.5 text-sm focus:border-(--color-brand) focus:outline-none"
+        className={cls}
+        style={{ resize: 'vertical' }}
       />
       <button
         type="submit"
         disabled={sending}
-        className="btn-primary w-full rounded-lg px-6 py-3 text-sm font-medium transition-colors disabled:opacity-50"
+        className="btn-primary w-full rounded-lg px-6 py-3 text-sm font-semibold transition-colors disabled:opacity-50"
       >
         {sending ? tc('loading') : t('submit')}
       </button>

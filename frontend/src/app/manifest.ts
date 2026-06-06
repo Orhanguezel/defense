@@ -1,14 +1,16 @@
 import type { MetadataRoute } from 'next';
+import { SD_PALETTE_HEX as C } from '@/lib/sultandefense-palette-hex';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Sultan Defense',
     short_name: 'Sultan Defense',
-    description: 'Sultan Defense — A to Z defense procurement and tactical equipment supplier.',
+    description:
+      'Sultan Defense — savunma sanayi ürünlerinde güvenilir tedarik ve ihracat çözüm ortağınız.',
     start_url: '/tr',
     display: 'standalone',
-    background_color: '#1A1A1D',
-    theme_color: '#C5A880',
+    background_color: C.surfaceBaseDark,
+    theme_color: C.soil900,
     icons: [
       {
         src: '/icon',

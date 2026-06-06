@@ -2,7 +2,7 @@ import 'server-only';
 
 import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
-import { Inter, Oswald } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Toaster } from 'sonner';
@@ -16,6 +16,7 @@ import { ensureFooterSections, ensureMenuItems } from '@/lib/navigation-fallback
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { ClientShell } from '@/components/layout/ClientShell';
+import { GoogleTagScripts, GtmNoscript } from '@/components/analytics/GoogleTagScripts';
 import { THEME_INTENT, THEME_TEMPLATE } from '@/theme/templates';
 import { ThemeBootScript } from '@/scripts/theme-boot';
 
@@ -35,7 +36,7 @@ const inter = Inter({
   display: 'swap',
 });
 
-const oswald = Oswald({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin', 'latin-ext'],
   variable: '--font-heading',
   display: 'swap',
@@ -65,14 +66,17 @@ export async function generateMetadata({
   const logoValue = { ...readSettingValue(legacyLogo), ...readSettingValue(siteLogo) };
   const ogValue = readSettingValue(siteOgDefaultImage);
 
-  const title = asStr(val.site_title) || 'Sultan Defense | Defense Procurement';
+  const title = asStr(val.site_title) || 'Sultan Defense | A to Z Defense Procurement';
   const description =
     asStr(val.site_description) ||
-    'Sultan Defense — A to Z defense procurement and tactical equipment supplier.';
+    'Sultan Defense is a B2B defense procurement and export partner supplying tactical equipment and defense technologies.';
+  const author = asStr(val.author) || undefined;
+  const publisher = asStr(val.publisher) || undefined;
   const faviconUrl = pickFirstString(
     logoValue.favicon_url,
     logoValue.favicon,
     logoValue.icon_url,
+    '/logo/sultandefense-favicon.png',
   );
   const appleTouchIconUrl = pickFirstString(
     logoValue.apple_touch_icon_url,
@@ -89,6 +93,8 @@ export async function generateMetadata({
   return {
     title: { default: title, template: `%s | ${siteName}` },
     description,
+    ...(author ? { authors: [{ name: author }] } : {}),
+    ...(publisher ? { publisher } : {}),
     metadataBase: new URL(siteUrl),
     alternates: {
       canonical: '/',
@@ -144,6 +150,7 @@ export default async function LocaleLayout({
     socialsSetting,
     activeLocales,
     companyProfileSetting,
+    contactInfoSetting,
     categories,
     services,
     news,
@@ -155,36 +162,42 @@ export default async function LocaleLayout({
     fetchSetting('socials', locale),
     fetchActiveLocaleConfigs(),
     fetchSetting('company_profile', locale),
+    fetchSetting('contact_info', locale),
     fetchCategories(locale),
     fetchServices(locale),
     fetchNews(locale),
   ]);
 
   const logoValue = { ...readSettingValue(legacyLogoSetting), ...readSettingValue(siteLogoSetting) };
-  const logoUrl = pickFirstString(logoValue.logo_url, logoValue.url, logoValue.logo_dark_url);
+  const logoUrl = pickFirstString(logoValue.logo_url, '/logo/sultandefense-logo-transparent.png');
+  const logoDarkUrl = pickFirstString(logoValue.logo_dark_url, logoUrl);
   const stableMenuItems = ensureMenuItems(menuItems, locale, navT);
   const stableFooterSections = ensureFooterSections(footerSections, locale, navT, footerT);
   const socials = readSettingValue(socialsSetting) as Record<string, string>;
   const companyProfile = readSettingValue(companyProfileSetting) as Record<string, string>;
+  const contactInfo = readSettingValue(contactInfoSetting) as Record<string, string>;
 
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${oswald.variable}`}
+      className={`${inter.variable} ${plusJakartaSans.variable}`}
       data-theme-template={THEME_TEMPLATE}
       data-theme-intent={THEME_INTENT}
-      data-theme-mode="light"
+      data-theme-mode="dark"
       data-theme-preset="default"
       suppressHydrationWarning
     >
       <head>
+        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
         <ThemeBootScript />
+        <GoogleTagScripts />
       </head>
       <body
         className="min-h-screen bg-(--color-bg) text-(--color-text-primary) antialiased"
-        data-theme-mode="light"
+        data-theme-mode="dark"
         suppressHydrationWarning
       >
+        <GtmNoscript />
         {/* SSR Splash Screen: inline overlay that hides content until client takes over */}
         <div
           id="sultandefense-splash-ssr"
@@ -192,7 +205,7 @@ export default async function LocaleLayout({
             position: 'fixed',
             inset: 0,
             zIndex: 99998,
-            background: '#0f0e0d',
+            background: 'var(--section-bg-dark-deep)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -209,7 +222,8 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header 
             menuItems={stableMenuItems} 
-            logoUrl={logoUrl} 
+            logoUrl={logoUrl}
+            logoDarkUrl={logoDarkUrl}
             locale={locale} 
             activeLocales={activeLocales} 
             companyProfile={companyProfile}
@@ -218,11 +232,15 @@ export default async function LocaleLayout({
             news={news as any[]}
           />
           <main className="flex-1">{children}</main>
-          <Footer sections={stableFooterSections} locale={locale} socials={socials} companyProfile={companyProfile} />
-          <ClientShell 
-            companyName={companyProfile?.company_name} 
-            tagline={companyProfile?.slogan} 
+          <Footer sections={stableFooterSections} locale={locale} socials={socials} companyProfile={companyProfile} logoUrl={logoUrl} logoDarkUrl={logoDarkUrl} />
+          <ClientShell
+            companyName={contactInfo?.company_name || companyProfile?.company_name}
+            tagline={companyProfile?.slogan}
+            logoUrl={logoDarkUrl}
             whatsappNumber={socials?.whatsapp}
+            socials={socials}
+            contactInfo={{ ...companyProfile, ...contactInfo }}
+            activeLocales={activeLocales.map(l => ({ code: l.code, label: l.label }))}
           />
           <Toaster position="bottom-right" richColors />
         </NextIntlClientProvider>

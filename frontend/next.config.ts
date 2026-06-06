@@ -5,12 +5,14 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  output: 'standalone',
 
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     minimumCacheTTL: 2592000,
     dangerouslyAllowLocalIP: process.env.NODE_ENV === 'development',
+    dangerouslyAllowSVG: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'res.cloudinary.com' },
       { protocol: 'https', hostname: 'sultandefense.com' },
@@ -27,8 +29,68 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  async rewrites() {
+    const apiBase = process.env.INTERNAL_API_URL?.replace(/\/api\/?$/, '') || 'http://127.0.0.1:8090';
+    return [
+      {
+        source: '/uploads/:path*',
+        destination: `${apiBase}/uploads/:path*`,
+      },
+    ];
+  },
+
   async redirects() {
     return [
+      {
+        source: '/Default',
+        destination: '/tr',
+        permanent: true,
+      },
+      {
+        source: '/default',
+        destination: '/tr',
+        permanent: true,
+      },
+      {
+        source: '/:locale/Default',
+        destination: '/:locale',
+        permanent: true,
+      },
+      {
+        source: '/:locale/default',
+        destination: '/:locale',
+        permanent: true,
+      },
+      {
+        source: '/neden-biz',
+        destination: '/tr/hakkimizda',
+        permanent: true,
+      },
+      {
+        source: '/:locale/neden-biz',
+        destination: '/:locale/hakkimizda',
+        permanent: true,
+      },
+      {
+        source: '/:locale/projeler',
+        destination: '/:locale/urunler',
+        permanent: true,
+      },
+      {
+        source: '/:locale/projeler/:slug',
+        destination: '/:locale/urunler/:slug',
+        permanent: true,
+      },
+      {
+        source: '/:locale/projects',
+        destination: '/:locale/urunler',
+        permanent: true,
+      },
+      {
+        source: '/:locale/projects/:slug',
+        destination: '/:locale/urunler/:slug',
+        permanent: true,
+      },
       {
         source: '/',
         destination: '/tr',
@@ -74,4 +136,5 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
 };
 
-export default withNextIntl(nextConfig);
+// Workspace'te iki ayrı node_modules/next örneği; plugin ile NextConfig tipleri çakışıyor.
+export default withNextIntl(nextConfig as Parameters<typeof withNextIntl>[0]);

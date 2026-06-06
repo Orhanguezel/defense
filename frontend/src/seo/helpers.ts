@@ -72,6 +72,7 @@ export function buildSeoTitle(title: string, suffix = DEFAULT_TITLE_SUFFIX): str
   if (!clean) return suffix;
   // Strip any existing suffix variants to avoid duplication
   const stripped = clean
+    .replace(/\s*\|\s*Bereket\s+Fide\s*$/i, '')
     .replace(/\s*\|\s*Sultan\s+Defense\s*$/i, '')
     .trim();
   if (!stripped) return suffix;
@@ -97,13 +98,32 @@ export function organizationJsonLd(locale: string, input?: {
 }) {
   return {
     name: DEFAULT_SITE_NAME,
+    '@id': `${siteUrlBase()}/#organization`,
     url: localizedUrl(locale, '/'),
-    description: input?.description,
-    email: input?.email,
-    telephone: input?.telephone,
-    address: input?.address,
+    description: input?.description || 'B2B defense procurement and export partner supplying certified tactical equipment and defense technologies.',
+    email: input?.email || 'export@sultandefense.com',
+    telephone: input?.telephone || '+90 545 552 75 35',
+    address: input?.address || 'Folkart Time 1, Kazımdirik, Kat 6/612, Bornova, 35100 İzmir, Türkiye',
     logo: input?.logo ? absoluteMediaUrl(input.logo) : absoluteUrl('/icon'),
     sameAs: input?.sameAs,
+    foundingDate: '1996',
+    knowsAbout: [
+      'Ballistic Protection',
+      'Communication & Command Electronics',
+      'Containerized Field Kitchen & Support Units',
+      'Field Support Logistics',
+      'Naval & Marine Systems',
+      'Power/Battery/Generator',
+      'Shield & Riot Control Solutions',
+      'Surveillance/Sensors/Security',
+      'Tactical Gear & Textile',
+      'Training & Simulation Software',
+    ],
+    contactPoint: {
+      telephone: '+90 545 552 75 35',
+      contactType: 'export sales',
+      availableLanguage: ['Turkish', 'English'],
+    },
   };
 }
 

@@ -6,7 +6,7 @@ import { spawn } from 'node:child_process';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '..');
 const BUILD_ID_FILE = path.join(ROOT, '.next', 'BUILD_ID');
-const STANDALONE_DIR = path.join(ROOT, '.next', 'standalone', 'sultandefense');
+const STANDALONE_DIR = path.join(ROOT, '.next', 'standalone', 'bereketfide');
 const STANDALONE_SERVER = path.join(STANDALONE_DIR, 'server.js');
 const PREPARE_SCRIPT = path.join(ROOT, 'scripts', 'prepare-standalone.mjs');
 const PORT = 3121;
@@ -15,19 +15,19 @@ const BASE_URL = `http://127.0.0.1:${PORT}`;
 const routeChecks = [
   {
     pathname: '/tr',
-    patterns: ['data-theme-template="sultandefense-imperial-armor"', 'data-theme-mode="light"', '<link rel="canonical"'],
+    patterns: ['data-theme-template="bereket-harvest"', 'data-theme-mode="light"', '<link rel="canonical"'],
   },
   {
-    pathname: '/tr/projeler',
-    patterns: ['data-theme-template="sultandefense-imperial-armor"', 'Sultan Defense'],
+    pathname: '/tr/urunler',
+    patterns: ['data-theme-template="bereket-harvest"', 'Bereket Fide'],
   },
   {
     pathname: '/tr/haberler',
-    patterns: ['data-theme-template="sultandefense-imperial-armor"', '<html lang="tr"'],
+    patterns: ['data-theme-template="bereket-harvest"', '<html lang="tr"'],
   },
   {
     pathname: '/tr/iletisim',
-    patterns: ['data-theme-template="sultandefense-imperial-armor"', '<html lang="tr"'],
+    patterns: ['data-theme-template="bereket-harvest"', '<html lang="tr"'],
   },
   {
     pathname: '/robots.txt',
@@ -35,7 +35,7 @@ const routeChecks = [
   },
   {
     pathname: '/sitemap.xml',
-    patterns: ['<urlset', '/tr/projeler', '/tr/haberler'],
+    patterns: ['<urlset', '/tr/urunler', '/tr/haberler'],
   },
 ];
 

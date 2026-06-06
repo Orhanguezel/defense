@@ -2,6 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
+import { showFooterNewsletter } from '@/config/public-features';
+import { NewsletterForm } from '@/components/sections/NewsletterForm';
+import { localizedPath } from '@/seo';
+import { legalComplianceSlug, legalPageSlug } from '@/lib/navigation-fallback';
+
 interface FooterSection {
   title?: string;
   items?: { label?: string; url?: string }[];
@@ -36,13 +41,18 @@ export function Footer({
   locale,
   socials,
   companyProfile,
+  logoUrl,
+  logoDarkUrl,
 }: {
   sections: Record<string, unknown>[];
   locale: string;
   socials?: Record<string, string>;
   companyProfile?: Record<string, string>;
+  logoUrl?: string;
+  logoDarkUrl?: string;
 }) {
   const t = useTranslations('footer');
+  const tNews = useTranslations('home.newsletter');
   const normalized = normalizeSections(sections);
   const year = new Date().getFullYear();
 
@@ -61,20 +71,15 @@ export function Footer({
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand column */}
           <div className="space-y-4">
-            <div className="flex flex-col items-start gap-2">
+            <div>
               <Image
-                src="/sd-logo.svg"
+                src={logoDarkUrl || logoUrl || '/logo/sultandefense-logo-transparent.png'}
                 alt={companyProfile?.company_name || 'Sultan Defense'}
-                width={28}
-                height={28}
-                style={{ height: '28px', width: 'auto', flexShrink: 0 }}
+                width={200}
+                height={70}
+                style={{ height: '64px', width: 'auto', maxWidth: '220px' }}
+                unoptimized={(logoDarkUrl || logoUrl || '').startsWith('/uploads/')}
               />
-              <h3
-                className="text-base font-bold leading-none tracking-tight"
-                style={{ fontFamily: 'var(--font-heading)', color: 'var(--color-text-on-dark)' }}
-              >
-                {companyProfile?.company_name || 'Sultan Defense'}
-              </h3>
             </div>
             <p className="surface-dark-text text-sm leading-relaxed">
               {companyProfile?.about || t('description')}
@@ -87,9 +92,9 @@ export function Footer({
                     key={key}
                     href={url}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="nofollow noopener noreferrer"
                     aria-label={label}
-                    className="surface-dark-text transition-colors hover:text-(--color-brand)"
+                    className="surface-dark-text transition-colors hover:text-(--color-brand-text)"
                   >
                     <svg className="size-5" viewBox="0 0 24 24" fill="currentColor">
                       <path d={path} />
@@ -103,9 +108,9 @@ export function Footer({
           {/* Dynamic sections */}
           {normalized.map((section) => (
             <div key={section.title} className="space-y-3">
-              <h4 className="surface-dark-text text-sm font-semibold uppercase tracking-wider">
+              <h3 className="surface-dark-text text-sm font-semibold uppercase tracking-wider">
                 {section.title}
-              </h4>
+              </h3>
               <ul className="space-y-1">
                 {section.items?.map((item) => (
                   <li key={item.url}>
@@ -122,26 +127,67 @@ export function Footer({
           ))}
         </div>
 
+        {showFooterNewsletter ? (
+          <div className="surface-dark-border mt-12 border-t pt-10">
+            <div className="mx-auto max-w-lg text-center lg:text-left">
+              <h3 className="surface-dark-text text-base font-semibold tracking-wide">
+                {tNews('title')}
+              </h3>
+              <p className="surface-dark-text mt-2 text-sm opacity-75">{tNews('subtitle')}</p>
+              <NewsletterForm locale={locale} />
+            </div>
+          </div>
+        ) : null}
+
         <div className="surface-dark-border mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 sm:flex-row">
           <p className="surface-dark-text text-xs">
-            &copy; {year} {companyProfile?.company_name || 'Sultan Defense'}. {t('rights')}
+            &copy; {year} {companyProfile?.company_name || 'Sultan Defense Ltd., Co.'}. {t('rights')}
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 sm:justify-end">
             <Link
-              href={`/${locale}/legal/privacy`}
+              href={localizedPath(locale, `/legal/${legalPageSlug(locale, 'privacy')}`)}
               className="surface-dark-link inline-flex min-h-9 items-center py-1 text-xs"
             >
               {t('privacy')}
             </Link>
             <Link
-              href={`/${locale}/legal/terms`}
+              href={localizedPath(locale, `/legal/${legalPageSlug(locale, 'terms')}`)}
               className="surface-dark-link inline-flex min-h-9 items-center py-1 text-xs"
             >
               {t('terms')}
             </Link>
-            <span className="surface-dark-text inline-flex min-h-9 items-center py-1 text-xs ml-2 sm:ml-4 border-l border-gray-700 pl-4 sm:pl-6">
+            <Link
+              href={localizedPath(locale, `/legal/${legalPageSlug(locale, 'quality')}`)}
+              className="surface-dark-link inline-flex min-h-9 items-center py-1 text-xs"
+            >
+              {t('qualityPolicy')}
+            </Link>
+            <Link
+              href={localizedPath(locale, `/legal/${legalPageSlug(locale, 'service')}`)}
+              className="surface-dark-link inline-flex min-h-9 items-center py-1 text-xs"
+            >
+              {t('servicePolicy')}
+            </Link>
+            <Link
+              href={localizedPath(locale, `/legal/${legalComplianceSlug(locale, 'dataNotice')}`)}
+              className="surface-dark-link inline-flex min-h-9 items-center py-1 text-xs"
+            >
+              {t('dataProtectionNotice')}
+            </Link>
+            <Link
+              href={localizedPath(locale, `/legal/${legalComplianceSlug(locale, 'cookies')}`)}
+              className="surface-dark-link inline-flex min-h-9 items-center py-1 text-xs"
+            >
+              {t('cookiePolicy')}
+            </Link>
+            <span className="surface-dark-text surface-dark-border ml-2 inline-flex min-h-9 items-center border-l py-1 pl-4 text-xs sm:ml-4 sm:pl-6">
               Design by{' '}
-              <a href="https://guezelwebdesign.com" target="_blank" rel="nofollow noopener noreferrer" className="ml-1 text-(--color-brand-light) hover:text-white transition-colors hover:underline font-medium tracking-wide">
+              <a
+                href="https://guezelwebdesign.com"
+                target="_blank"
+                rel="nofollow noopener noreferrer"
+                className="ml-1 font-medium tracking-wide text-(--color-brand-light) transition-colors hover:text-(--section-bg-white) hover:underline"
+              >
                 GWD
               </a>
             </span>

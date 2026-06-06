@@ -1,5 +1,10 @@
 import type { MetadataRoute } from 'next';
+import { AVAILABLE_LOCALES } from '@/i18n/locales';
 import { siteUrlBase } from '@/seo/helpers';
+
+function localePrefixed(paths: string[]): string[] {
+  return AVAILABLE_LOCALES.flatMap((loc) => paths.map((p) => `/${loc}${p}`));
+}
 
 export default function robots(): MetadataRoute.Robots {
   const siteUrl = siteUrlBase();
@@ -8,7 +13,18 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/admin/'],
+        disallow: [
+          '/api/',
+          '/admin/',
+          ...localePrefixed([
+            '/arama',
+            '/profil',
+            '/login',
+            '/register',
+          ]),
+          '/_next/',
+          '/*?_rsc=',
+        ],
       },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,

@@ -2,380 +2,103 @@
   "project": [
     {
       "id": "type",
-      "keys": {
-        "tr": "tip",
-        "en": "type",
-        "de": "typ"
-      },
-      "labels": {
-        "tr": "Kategori",
-        "en": "Category",
-        "de": "Kategorie"
-      }
+      "keys": { "tr": "tip", "en": "type", "de": "type" },
+      "labels": { "tr": "Tip", "en": "Type", "de": "Type" }
     },
     {
-      "id": "solutions",
-      "keys": {
-        "tr": "çözümler",
-        "en": "solutions",
-        "de": "loesungen"
-      },
-      "labels": {
-        "tr": "Çözümler",
-        "en": "Solutions",
-        "de": "Loesungen"
-      }
-    },
-    {
-      "id": "standards",
-      "keys": {
-        "tr": "standartlar",
-        "en": "standards",
-        "de": "standards"
-      },
-      "labels": {
-        "tr": "Standartlar",
-        "en": "Standards",
-        "de": "Standards"
-      }
-    },
-    {
-      "id": "regions",
-      "keys": {
-        "tr": "bölgeler",
-        "en": "regions",
-        "de": "regionen"
-      },
-      "labels": {
-        "tr": "Bölgeler",
-        "en": "Regions",
-        "de": "Regionen"
-      }
-    },
-    {
-      "id": "manufacturers",
-      "keys": {
-        "tr": "üreticiler",
-        "en": "manufacturers",
-        "de": "hersteller"
-      },
-      "labels": {
-        "tr": "Üreticiler",
-        "en": "Manufacturers",
-        "de": "Hersteller"
-      }
-    },
-    {
-      "id": "deployment",
-      "keys": {
-        "tr": "kurulum",
-        "en": "deployment",
-        "de": "bereitstellung"
-      },
-      "labels": {
-        "tr": "Kurulum",
-        "en": "Deployment",
-        "de": "Bereitstellung"
-      }
-    },
-    {
-      "id": "use_case",
-      "keys": {
-        "tr": "kullanım",
-        "en": "use_case",
-        "de": "einsatz"
-      },
-      "labels": {
-        "tr": "Kullanım",
-        "en": "Use Case",
-        "de": "Einsatz"
-      }
-    },
-    {
-      "id": "mission",
-      "keys": {
-        "tr": "görev",
-        "en": "mission",
-        "de": "mission"
-      },
-      "labels": {
-        "tr": "Görev",
-        "en": "Mission",
-        "de": "Mission"
-      }
-    },
-    {
-      "id": "environment",
-      "keys": {
-        "tr": "ortam",
-        "en": "environment",
-        "de": "umgebung"
-      },
-      "labels": {
-        "tr": "Ortam",
-        "en": "Environment",
-        "de": "Umgebung"
-      }
-    },
-    {
-      "id": "users",
-      "keys": {
-        "tr": "kullanıcılar",
-        "en": "users",
-        "de": "nutzer"
-      },
-      "labels": {
-        "tr": "Kullanıcılar",
-        "en": "Users",
-        "de": "Nutzer"
-      }
-    },
-    {
-      "id": "capability",
-      "keys": {
-        "tr": "kabiliyet",
-        "en": "capability",
-        "de": "faehigkeit"
-      },
-      "labels": {
-        "tr": "Kabiliyet",
-        "en": "Capability",
-        "de": "Faehigkeit"
-      }
-    },
-    {
-      "id": "benefit",
-      "keys": {
-        "tr": "fayda",
-        "en": "benefit",
-        "de": "nutzen"
-      },
-      "labels": {
-        "tr": "Fayda",
-        "en": "Benefit",
-        "de": "Nutzen"
-      }
+      "id": "category",
+      "keys": { "tr": "kategori", "en": "category", "de": "category" },
+      "labels": { "tr": "Kategori", "en": "Category", "de": "Category" }
     },
     {
       "id": "location",
-      "keys": {
-        "tr": "konum",
-        "en": "location",
-        "de": "standort"
-      },
-      "labels": {
-        "tr": "Konum",
-        "en": "Location",
-        "de": "Standort"
-      }
-    },
-    {
-      "id": "area",
-      "keys": {
-        "tr": "alan",
-        "en": "area",
-        "de": "flaeche"
-      },
-      "labels": {
-        "tr": "Alan",
-        "en": "Area",
-        "de": "Flaeche"
-      }
+      "keys": { "tr": "konum", "en": "location", "de": "location" },
+      "labels": { "tr": "Konum", "en": "Location", "de": "Location" }
     },
     {
       "id": "year",
-      "keys": {
-        "tr": "yıl",
-        "en": "year",
-        "de": "jahr"
-      },
-      "labels": {
-        "tr": "Yıl",
-        "en": "Year",
-        "de": "Jahr"
-      }
+      "keys": { "tr": "yil", "en": "year", "de": "year" },
+      "labels": { "tr": "Yıl", "en": "Year", "de": "Year" }
     },
     {
       "id": "status",
-      "keys": {
-        "tr": "durum",
-        "en": "status",
-        "de": "status"
-      },
-      "labels": {
-        "tr": "Durum",
-        "en": "Status",
-        "de": "Status"
-      }
+      "keys": { "tr": "durum", "en": "status", "de": "status" },
+      "labels": { "tr": "Durum", "en": "Status", "de": "Status" }
     },
     {
       "id": "materials",
-      "keys": {
-        "tr": "malzemeler",
-        "en": "materials",
-        "de": "materialien"
-      },
-      "labels": {
-        "tr": "Malzemeler",
-        "en": "Materials",
-        "de": "Materialien"
-      }
+      "keys": { "tr": "malzemeler", "en": "materials", "de": "materials" },
+      "labels": { "tr": "Malzemeler", "en": "Materials", "de": "Materials" }
+    },
+    {
+      "id": "area",
+      "keys": { "tr": "kapsam", "en": "scope", "de": "scope" },
+      "labels": { "tr": "Kapsam", "en": "Scope", "de": "Scope" }
     },
     {
       "id": "floors",
-      "keys": {
-        "tr": "kat",
-        "en": "floors",
-        "de": "etagen"
-      },
-      "labels": {
-        "tr": "Kat",
-        "en": "Floors",
-        "de": "Etagen"
-      }
-    },
-    {
-      "id": "client",
-      "keys": {
-        "tr": "müşteri",
-        "en": "client",
-        "de": "kunde"
-      },
-      "labels": {
-        "tr": "Müşteri",
-        "en": "Client",
-        "de": "Kunde"
-      }
+      "keys": { "tr": "birimler", "en": "units", "de": "units" },
+      "labels": { "tr": "Birimler", "en": "Units", "de": "Units" }
     },
     {
       "id": "contractor",
-      "keys": {
-        "tr": "yüklenici",
-        "en": "contractor",
-        "de": "auftragnehmer"
-      },
-      "labels": {
-        "tr": "Yüklenici",
-        "en": "Contractor",
-        "de": "Auftragnehmer"
-      }
+      "keys": { "tr": "tedarikci", "en": "supplier", "de": "supplier" },
+      "labels": { "tr": "Tedarikçi", "en": "Supplier", "de": "Supplier" }
     },
     {
-      "id": "certifications",
-      "keys": {
-        "tr": "sertifikalar",
-        "en": "certifications",
-        "de": "zertifizierungen"
-      },
-      "labels": {
-        "tr": "Sertifikalar",
-        "en": "Certifications",
-        "de": "Zertifizierungen"
-      }
+      "id": "client",
+      "keys": { "tr": "alici", "en": "buyer", "de": "buyer" },
+      "labels": { "tr": "Alıcı", "en": "Buyer", "de": "Buyer" }
     },
     {
-      "id": "compliance_lead",
-      "keys": {
-        "tr": "uyum_sorumlusu",
-        "en": "compliance_lead",
-        "de": "compliance_lead"
-      },
-      "labels": {
-        "tr": "Uyum Sorumlusu",
-        "en": "Compliance Lead",
-        "de": "Compliance Lead"
-      }
+      "id": "architects",
+      "keys": { "tr": "uretim_partneri", "en": "manufacturing_partner", "de": "manufacturing_partner" },
+      "labels": { "tr": "Üretim Partneri", "en": "Manufacturing Partner", "de": "Manufacturing Partner" }
     },
     {
-      "id": "procurement_team",
-      "keys": {
-        "tr": "tedarik_ekibi",
-        "en": "procurement_team",
-        "de": "beschaffungsteam"
-      },
-      "labels": {
-        "tr": "Tedarik Ekibi",
-        "en": "Procurement Team",
-        "de": "Beschaffungsteam"
-      }
+      "id": "lead_architect",
+      "keys": { "tr": "ana_partner", "en": "lead_partner", "de": "lead_partner" },
+      "labels": { "tr": "Ana Partner", "en": "Lead Partner", "de": "Lead Partner" }
     },
     {
-      "id": "export_region",
-      "keys": {
-        "tr": "ihracat_bolgesi",
-        "en": "export_region",
-        "de": "exportregion"
-      },
-      "labels": {
-        "tr": "Ihracat Bolgesi",
-        "en": "Export Region",
-        "de": "Exportregion"
-      }
+      "id": "manufacturers",
+      "keys": { "tr": "ureticiler", "en": "manufacturers", "de": "manufacturers" },
+      "labels": { "tr": "Üreticiler", "en": "Manufacturers", "de": "Manufacturers" }
     },
     {
-      "id": "integration_support",
-      "keys": {
-        "tr": "entegrasyon_destegi",
-        "en": "integration_support",
-        "de": "integrationssupport"
-      },
-      "labels": {
-        "tr": "Entegrasyon Destegi",
-        "en": "Integration Support",
-        "de": "Integrationssupport"
-      }
+      "id": "project_team",
+      "keys": { "tr": "tedarik_ekibi", "en": "procurement_team", "de": "procurement_team" },
+      "labels": { "tr": "Tedarik Ekibi", "en": "Procurement Team", "de": "Procurement Team" }
+    },
+    {
+      "id": "landscape_architecture",
+      "keys": { "tr": "uyumluluk", "en": "compliance", "de": "compliance" },
+      "labels": { "tr": "Uyumluluk", "en": "Compliance", "de": "Compliance" }
+    },
+    {
+      "id": "interior_design",
+      "keys": { "tr": "paketleme", "en": "packaging", "de": "packaging" },
+      "labels": { "tr": "Paketleme", "en": "Packaging", "de": "Packaging" }
     },
     {
       "id": "engineering",
-      "keys": {
-        "tr": "mühendislik",
-        "en": "engineering",
-        "de": "technik"
-      },
-      "labels": {
-        "tr": "Mühendislik",
-        "en": "Engineering",
-        "de": "Technik"
-      }
+      "keys": { "tr": "teknik_destek", "en": "technical_support", "de": "technical_support" },
+      "labels": { "tr": "Teknik Destek", "en": "Technical Support", "de": "Technical Support" }
     },
     {
-      "id": "delivery_scope",
-      "keys": {
-        "tr": "teslimat_kapsami",
-        "en": "delivery_scope",
-        "de": "lieferumfang"
-      },
-      "labels": {
-        "tr": "Teslimat Kapsami",
-        "en": "Delivery Scope",
-        "de": "Lieferumfang"
-      }
+      "id": "general_construction",
+      "keys": { "tr": "lojistik", "en": "logistics", "de": "logistics" },
+      "labels": { "tr": "Lojistik", "en": "Logistics", "de": "Logistics" }
     },
     {
       "id": "city",
-      "keys": {
-        "tr": "şehir",
-        "en": "city",
-        "de": "stadt"
-      },
-      "labels": {
-        "tr": "Şehir",
-        "en": "City",
-        "de": "Stadt"
-      }
+      "keys": { "tr": "sehir", "en": "city", "de": "city" },
+      "labels": { "tr": "Şehir", "en": "City", "de": "City" }
     },
     {
       "id": "country",
-      "keys": {
-        "tr": "ülke",
-        "en": "country",
-        "de": "land"
-      },
-      "labels": {
-        "tr": "Ülke",
-        "en": "Country",
-        "de": "Land"
-      }
+      "keys": { "tr": "ulke", "en": "country", "de": "country" },
+      "labels": { "tr": "Ülke", "en": "Country", "de": "Country" }
     }
   ]
 }

@@ -1,14 +1,16 @@
 {
-  "title": "Sultan Defense",
-  "fullName": "Sultan Defense — Defans Tedarik & Katalog Web Sitesi",
+  "title": "Bereket Fide",
+  "fullName": "Bereket Fide — Kurumsal Web Sitesi",
   "category": "CORPORATE WEBSITE",
-  "summary": "Sultan Defense Ltd., Co. için geliştirilen Next.js tabanlı kurumsal katalog ve tedarik talebi platformu. Savunma sanayi ürün kataloğu (10 kategori), çok dilli yapı, teknik SEO altyapısı, hizmetler/sertifikalar ve iletişim/teklif formu içermektedir.",
+  "summary": "Bereket Fide markası için geliştirilen Next.js tabanlı kurumsal tanıtım ve teklif toplama platformu. Modern, tarım odaklı tasarım, TR/EN çok dilli yapı, teknik SEO altyapısı, ürün portföyü, galeri, haber ve iletişim/teklif formu içermektedir.",
   "techs": [
     "Next.js 16",
     "TypeScript",
     "Tailwind CSS v4",
     "next-intl",
     "React Query",
+    "framer-motion",
+    "lucide-react",
     "Zod",
     "React Hook Form",
     "Zustand",
@@ -16,34 +18,34 @@
     "Radix UI"
   ],
   "features": [
-    "Çok dilli (next-intl)",
-    "Ürün kataloğu (10 kategori: Ballistic, Naval, Tactical, Surveillance...)",
-    "Hizmetler / tedarik süreci",
-    "Sertifikalar & uyumluluk (NATO/AQAP/MIL-STD/NSN)",
-    "İletişim ve teklif (RFQ) formu",
+    "TR/EN multilingual (next-intl)",
+    "Ürün portföyü (liste + detay + galeri)",
+    "Faaliyetler katalogu",
+    "Galeri sistemi",
+    "Bilgi Bankası / Haberler",
+    "İletişim ve teklif formu",
     "Technical SEO (canonical, hreflang, JSON-LD, sitemap)",
-    "Token tabanlı tema sistemi (sultandefense-tactical)",
+    "Token tabanlı tema sistemi (bereketfide)",
     "Dark / Light mode",
-    "KVKK / GDPR uyumlu yasal sayfalar"
+    "Newsletter"
   ],
-  "websiteUrl": "https://www.sultandefense.com",
-  "domainTarget": "https://www.sultandefense.com",
-  "devPort": 3040,
+  "websiteUrl": "https://www.bereketfide.com.tr",
+  "domainTarget": "https://www.bereketfide.com.tr",
+  "devPort": 3030,
   "status": "in-development",
-  "relation": "Sultan Defense kurumsal web sitesi; sultandefense-backend API üzerinden çalışır",
+  "relation": "Bereket Fide kurumsal web sitesi; bereketfide-backend API üzerinden çalışır",
   "featured": false,
   "theme": {
-    "template": "sultandefense-imperial-armor",
-    "intent": "imperial-armor-anthracite-gold-bordeaux-dark",
+    "template": "bereketfide",
+    "intent": "modern-agricultural-premium",
     "palette": {
-      "brand": "#C5A880",
-      "secondary": "#7A1B22",
-      "dark": "#1A1A1D",
-      "light": "#F4F1EC"
+      "brand": "#27823b",
+      "dark": "#2b2b2b",
+      "light": "#ffffff"
     },
     "fonts": {
-      "heading": "Oswald",
-      "body": "Inter"
+      "heading": "Outfit",
+      "body": "Plus Jakarta Sans"
     }
   }
 }

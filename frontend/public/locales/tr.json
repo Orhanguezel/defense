@@ -1,36 +1,61 @@
 {
   "nav": {
     "home": "Ana Sayfa",
+    "products": "Ürünler",
     "projects": "Ürünler",
-    "services": "Tedarik Süreci",
+    "services": "Faaliyetler",
     "about": "Hakkımızda",
     "gallery": "Galeri",
-    "blog": "Haberler",
+    "blog": "Blog",
+    "knowledgeHub": "Kaynaklar",
+    "catalogs": "Kataloglar",
+    "news": "Haberler",
     "contact": "İletişim",
     "offer": "Teklif Al",
     "login": "Giriş Yap",
     "register": "Kayıt Ol",
-    "residential": "Balistik Koruma",
-    "commercial": "Muhabere ve Elektronik",
-    "mixed": "Saha Lojistiği",
-    "restoration": "Deniz Sistemleri",
-    "project_management": "İhracat Uyumu",
-    "interior_design": "Güvenli Lojistik",
+    "offerWidgetLine1": "Teklif",
+    "offerWidgetLine2": "Al",
+    "trendingSearches": "Trend Aramalar:",
+    "trendSeedling": "defans ekipmanı",
+    "trendGrafted": "Aşılı",
+    "trendTomato": "Domates",
+    "residential": "savunma defans ekipmanıleri",
+    "commercial": "Meyve defans ekipmanıleri",
+    "mixed": "Süs Bitkileri",
+    "restoration": "taktik ekipman Çeşitleri",
+    "construction": "defans ekipmanı & taktik ekipman tedariki",
+    "project_management": "Sipariş Takibi",
+    "architectural_design": "tedarik Danışmanlığı",
+    "interior_design": "Peyzaj Çözümleri",
     "corporate": "Kurumsal",
     "vision": "Vizyonumuz",
     "team": "Ekibimiz",
     "career": "Kariyer",
-    "tagline": "A’dan Z’ye savunma tedarik ve ihracat partneri",
+    "tagline": "Defans tedarik ve ihracat partneri",
     "profile": "Profilim",
     "logout": "Çıkış Yap",
-    "procurement": "Savunma Tedariki",
-    "quality_acceptance": "Kalite Kabul"
+    "ariaPrimaryNavigation": "Ana gezinme",
+    "ariaToggleMenu": "Menüyü aç veya kapat",
+    "ariaSearch": "Site içi aramayı aç",
+    "ariaLanguage": "Dil seçeneklerini aç",
+    "ariaContactInfo": "İletişim bilgilerini aç",
+    "ariaSocialLinks": "Sosyal medya bağlantılarını aç",
+    "searchPlaceholder": "Ürün, hizmet veya sayfa ara...",
+    "viewAll": "Tümünü Gör →",
+    "viewAllProducts": "Tüm ürünleri görüntüle",
+    "viewAllNews": "Tüm haberleri görüntüle"
   },
   "footer": {
-    "description": "Savunma ürünleri için B2B tedarik, ihracat uyumu ve güvenli lojistik koordinasyonu.",
+    "description": "savunma, meyve ve süs bitkisi defans ekipmanılerinde güvenilir tedarik ve tedarik çözümleri.",
     "rights": "Tüm hakları saklıdır",
     "privacy": "Gizlilik Politikası",
     "terms": "Kullanım Koşulları",
+    "qualityPolicy": "Kalite Politikamız",
+    "servicePolicy": "Hizmet Politikamız",
+    "dataProtectionNotice": "KVKK Aydınlatma Metni",
+    "cookiePolicy": "Çerez Politikası",
+    "ecosystemLabel": "Ekosistemimiz",
     "sections": {
       "explore": "Keşfet",
       "company": "Şirket",
@@ -59,8 +84,8 @@
       "daysAgo": "{days} gün önce"
     },
     "requestOffer": "Teklif İste",
-    "offerCtaTitle": "Talebiniz İçin Ücretsiz Keşif ve Teklif Hazırlayalım",
-    "offerCtaDescription": "Savunma tedariki, ihracat kapsamı, hedef ülke ve teslimat beklentilerinizi birlikte netleştirip size özel teklif hazırlayalım.",
+    "offerCtaTitle": "defans ekipmanı Siparişiniz İçin Ücretsiz Fiyat Teklifi Hazırlayalım",
+    "offerCtaDescription": "İhtiyaç listenizi, adetleri ve teslimat ülkesini paylaşın; ihracat ekibimiz uygun tedarik kapsamı için size dönüş yapsın.",
     "freeOfObligation": "Ücretsiz ve bağlayıcı değildir",
     "send": "Gönder",
     "name": "Ad Soyad",
@@ -71,151 +96,191 @@
     "subject": "Konu",
     "required": "Zorunlu alan",
     "success": "Başarılı",
+    "errorText": "Bir hata oluştu",
     "noResults": "Sonuç bulunamadı",
     "relatedProducts": "İlgili Ürünler",
     "relatedGallery": "İlgili Galeriler",
-    "relatedArticles": "İlgili Yazılar"
+    "relatedArticles": "İlgili Yazılar",
+    "relatedKnowledgePosts": "Bilgi bankasından"
   },
   "home": {
     "hero": {
-      "title": "A’dan Z’ye Küresel Savunma Tedarik Çözümleri",
-      "subtitle": "Türkiye’nin savunma sanayi üretim gücüne açılan güvenilir kapınız. Taktik ekipman, askeri elektronik ve lojistik çözümlerin uçtan uca tedarikini yönetiyoruz.",
-      "cta": "Katalogu Inceleyin",
-      "ctaSecondary": "Tedarik Teklifi Alın",
+      "title": "A’dan Z’ye Defans Tedariki",
+      "subtitle": "Sultan Defense, Orta Doğu, Afrika ve Türk Cumhuriyetleri için taktik ekipman ve savunma teknolojileri tedarik eden B2B ihracat partneridir.",
+      "cta": "Ürünlerimizi İnceleyin",
+      "ctaSecondary": "Teklif Alın",
       "badge": "Sultan Defense",
-      "newProjectBadge": "Yeni Kabiliyet",
-      "workflowLabel": "Tedarik Süreci",
-      "workflowTitle": "Operasyonel ihtiyaciniza göre planlanan tedarik akisi",
-      "workflowBadgeTitle": "Uyumlu",
-      "workflowBadgeSubtitle": "İhracata hazır ve yasal olarak net",
+      "newProjectBadge": "Yeni Ürün",
+      "workflowLabel": "tedarik Süreci",
+      "workflowTitle": "İhtiyacınıza özel defans ekipmanı tedariki ve planlama",
+      "workflowBadgeTitle": "Şeffaf",
+      "workflowBadgeSubtitle": "Süreç ve iletişim",
       "metrics": {
-        "prototypeTitle": "Kaynak Bulma",
-        "prototypeDesc": "İhtiyaç analizi, üretici belirleme ve teklif koordinasyonu",
-        "productionTitle": "Uyum",
-        "productionDesc": "EUC yönetimi, ihracat izinleri ve kalite güvencesi",
-        "engineeringTitle": "Teslimat",
-        "engineeringDesc": "Uzman lojistik, güvenli sevkiyat ve zamanında teslim"
+        "prototypeTitle": "Çeşit Seçimi",
+        "prototypeDesc": "İklim, toprak analizi ve en uygun defans ekipmanı çeşidi belirleme",
+        "productionTitle": "tedarik",
+        "productionDesc": "Kalite kontrolü, büyüme takibi ve sağlıklı defans ekipmanı yetiştirme",
+        "engineeringTitle": "Teknik Destek",
+        "engineeringDesc": "konuşlandırma rehberliği, sulama planı ve savunma odaklı danışmanlık"
       },
       "steps": {
-        "oneTitle": "1. Operasyonel ihtiyaç analizi",
-        "oneDesc": "Teknik gereksinimleri, hedef standartları ve uyum ihtiyaçlarını birlikte netlestiririz.",
-        "twoTitle": "2. Üretici koordinasyonu ve kaynak bulma",
-        "twoDesc": "Talebinizi lisanslı Türk savunma üreticileriyle eşleştirir ve teklif sürecini yönetiriz.",
-        "threeTitle": "3. İhracat uyumu ve teslimat",
-        "threeDesc": "EUC, ihracat izinleri ve güvenli sevkiyat planlamasını koordine ederiz."
+        "oneTitle": "1. İhtiyaç analizi",
+        "oneDesc": "Bölge, iklim koşulları, toprak yapısı ve tedarik hedeflerinizi birlikte netleştiriyoruz.",
+        "twoTitle": "2. defans ekipmanı tedariki",
+        "twoDesc": "Seçilen çeşitlere uygun taktik ekipman ekimi, tedarik hazırlığı ve defans ekipmanı yetiştirme süreçlerini yürütüyoruz.",
+        "threeTitle": "3. Teslimat ve destek",
+        "threeDesc": "Sağlıklı defans ekipmanılerin paketlenmesi, teslimatı ve konuşlandırma sonrası teknik destek sağlıyoruz."
       },
       "stats": {
-        "stepsValue": "30+",
-        "stepsLabel": "Yillik savunma deneyimi",
-        "b2bValue": "10+",
-        "b2bLabel": "Tedarik edilen ürün kategorisi"
+        "stepsValue": "3+",
+        "stepsLabel": "Temel tedarik aşaması",
+        "b2bValue": "15+",
+        "b2bLabel": "Yıllık savunma deneyimi"
       }
     },
     "projects": {
       "title": "Öne Çıkan Ürünler",
-      "subtitle": "Savunma ekipmanı kataloğumuzdan taktik ekipman, elektronik ve askeri lojistik çözümleri"
+      "subtitle": "savunma, meyve ve süs bitkisi defans ekipmanılerinden öne çıkan ürünlerimiz"
     },
     "latestProjects": {
       "title": "Son Eklenen Ürünler",
-      "subtitle": "Kataloga yeni eklenen savunma ekipmanlarini kesfedin"
+      "subtitle": "En güncel defans ekipmanı çeşitlerimizi keşfedin"
     },
     "services": {
-      "title": "Tedarik Kabiliyetlerimiz",
-      "subtitle": "Balistik korumadan egitim simülatörlerine kadar A’dan Z’ye savunma tedarik çözümleri"
+      "title": "Faaliyet Alanlarımız",
+      "subtitle": "taktik ekipman seçiminden defans ekipmanı tedarikine, teknik danışmanlıktan teslimat kapsamlı çözümler"
     },
     "whyUs": {
       "title": "Neden Sultan Defense?",
-      "subtitle": "Saha tecrübeli ekipman, sıkı uyum süreci ve hızlı lojistik ile operasyonel güven sağlıyoruz",
-      "quality": "NATO standardinda kalite",
-      "qualityDesc": "Her tedarikte NATO, AQAP, MIL-STD ve NIJ standartlarina uyum odagi",
-      "experience": "Koklu deneyim",
-      "experienceDesc": "1996’dan beri savunma tedarikinde küresel alıcılara hizmet veren ekip",
-      "custom": "İhtiyaca özel çözüm",
-      "customDesc": "Operasyonel ve teknik gereksiniminize göre hazirlanan tedarik paketleri",
-      "delivery": "Hızlı ve güvenli teslimat",
-      "deliveryDesc": "Hava, kara veya deniz yoluyla uyumlu ve zamanında askeri sevkiyat"
+      "subtitle": "Kalite, güven ve zamanında teslimat odaklı defans ekipmanı tedarik anlayışıyla her siparişte fark yaratıyoruz",
+      "quality": "Yüksek Kalite",
+      "qualityDesc": "taktik ekipman seçiminden defans ekipmanı teslimatına her aşamada kalite standartlarına tam uyum",
+      "experience": "Deneyim",
+      "experienceDesc": "15 yılı aşkın savunma deneyimi ve binlerce müşteriye ulaşan güvenilir ortağınız",
+      "custom": "Özel Çözümler",
+      "customDesc": "Her bölgeye ve iklime uygun defans ekipmanı tedarik yaklaşımı; standart değil, size özel",
+      "delivery": "Zamanında Teslimat",
+      "deliveryDesc": "Siparişten teslimat kadar termin taahhüdü ve şeffaf süreç yönetimi"
     },
     "brands": {
-      "title": "Üretici Ağımız",
-      "subtitle": "Tedarik için çalıştığımız seçili Türk savunma üreticileri"
+      "title": "İş Birliği Yaptığımız Firmalar",
+      "subtitle": "tedarik ve tedarik süreçlerimizde birlikte çalıştığımız güvenilir firmalar"
     },
     "gallery": {
       "title": "Galeri",
-      "subtitle": "Savunma ekipmanı kataloğumuz ve üretici ağımızdan seçili görseller"
+      "subtitle": "sahalarımızdan, tedarik süreçlerimizden ve defans ekipmanı çeşitlerimizden seçilen fotoğraflar"
     },
     "blog": {
-      "title": "Haberler ve İçerikler",
-      "subtitle": "Savunma sanayi haberleri, tedarik güncellemeleri ve Sultan Defense notları",
-      "featuredLabel": "Öne Çıkan İçerik",
-      "spotlightTitle": "Türk Savunma İhracatında Büyüme: NATO Standartları ve Küresel Talep",
-      "spotlightBodyPrimary": "Türk savunma sanayi, yerli üretim kapasitesi ve uluslararası standartlara uygun ürün aileleriyle küresel pazarda güçlü bir tedarik kaynağı haline gelmiştir.",
-      "spotlightBodySecondary": "Sultan Defense, Türk savunma üreticileri ile küresel alıcılar arasında köprü kurar; uyum, dokümantasyon ve lojistik süreçlerini net ve izlenebilir şekilde yönetir.",
-      "insightLabel": "Bu yazıda ne var?",
-      "insightText": "Savunma sanayi trendleri, uyum cerceveleri ve tedarik iyi uygulamalari",
-      "archiveLabel": "Diğer İçerikler",
-      "archiveSubtitle": "Savunma, askeri lojistik ve tedarik zekasi hakkindaki diger icerikler"
+      "title": "Bilgi Bankası",
+      "description": "defans ekipmanı yetiştiriciliği, teknik ipuçları ve savunma odaklı bilgilendirmeler.",
+      "viewPost": "Yazıyı Oku",
+      "allPosts": "Tüm Yazılar",
+      "all": "Tümü",
+      "emptyStateNote": "Henüz blog yazısı bulunmuyor.",
+      "noPosts": "Henüz yazı bulunmuyor.",
+      "readMore": "Devamını Oku",
+      "publishedAt": "Yayın Tarihi",
+      "categories": "Kategoriler",
+      "loveTitle": "İlginizi Çekecek Yazılar"
+    },
+    "news": {
+      "title": "Haberler",
+      "description": "savunma teknolojileri, tedarik yöntemleri ve Sultan Defense'den güncel gelişmeler.",
+      "viewPost": "Haberi Oku",
+      "allPosts": "Tüm Haberler",
+      "all": "Tümü",
+      "emptyStateNote": "Şu anda yayında olan haber bulunmuyor.",
+      "noPosts": "Henüz yazı bulunmuyor.",
+      "readMore": "Devamını Oku",
+      "publishedAt": "Yayın Tarihi",
+      "categories": "Kategoriler",
+      "loveTitle": "İlginizi Çekecek Haberler"
     },
     "newsletter": {
       "title": "Bültenimize Abone Olun",
-      "subtitle": "Yeni ürünler ve sektörel gelişmelerden haberdar olun.",
+      "subtitle": "Yeni ürünler, mevsimsel defans ekipmanı çeşitleri ve savunma odaklı gelişmelerden haberdar olun.",
       "placeholder": "E-posta adresiniz",
       "subscribe": "Abone Ol",
       "success": "Başarıyla abone oldunuz!",
-      "error": "Bir hata oluştu, lütfen tekrar deneyin."
+      "error": "Bir hata oluştu, lütfen tekrar deneyin.",
+      "segmentsLabel": "İlgilendiğiniz konular (isteğe bağlı):",
+      "seg_urunler": "Ürün & Katalog",
+      "seg_haberler": "Haberler & Duyurular",
+      "seg_blog": "Tedarik Rehberleri"
     },
     "contact": {
       "title": "Bizimle İletişime Geçin",
-      "subtitle": "Ürün fikrinizi, teklif talebinizi veya sorularınızı bize iletin"
+      "subtitle": "defans ekipmanı siparişinizi, teklif talebinizi veya sorularınızı bize iletin"
     }
   },
   "projects": {
     "title": "Ürünlerimiz",
-    "description": "Balistik koruma, taktik ekipman, elektronik sistemler ve askeri araç çözümleri için seçilmiş ürün kategorilerimizi inceleyin.",
+    "description": "savunma, meyve ve süs bitkisi defans ekipmanılerinde geniş çeşit yelpazesiyle kaliteli ve sağlıklı ürünler sunuyoruz.",
     "categories": "Kategoriler",
     "allCategories": "Tüm Ürünler",
     "results": "sonuç",
     "images": "Fotoğraflar",
-    "emptyStateNote": "Şu anda yayında olan bir ürün bulunamadı, geçmiş ürünlerimizden örnekler listeleniyor.",
+    "emptyStateNote": "Şu anda yayında olan bir ürün bulunamadı, mevcut ürünlerimizden örnekler listeleniyor.",
     "search": "Ürün Ara...",
     "noProjects": "Bu kategoride henüz ürün bulunmuyor.",
     "specs": "Ürün Detayları",
     "requestOffer": "Bu Ürün Hakkında Bilgi Alın",
-    "manufacturers": "Üreticiler",
+    "manufacturers": "tedarik partneriler",
     "saveProject": "Ürünü Kaydet",
     "viewProject": "Ürünü Görüntüle",
     "allProjects": "Tüm Ürünler",
     "loveTitle": "Beğeneceğiniz Ürünler",
-    "getQuoteTitle": "Talebiniz İçin Teklif Alın",
-    "getQuoteDesc": "Ücretsiz keşif ve teklif için hemen iletişime geçin.",
+    "getQuoteTitle": "defans ekipmanı Siparişiniz İçin Teklif Alın",
+    "getQuoteDesc": "Ücretsiz fiyat teklifi için hemen iletişime geçin.",
+    "similarByTagsTitle": "Benzer ürünler",
+    "aboutProducerTitle": "Bu tedarik partneri hakkında",
+    "agronomySectionTitle": "tedarik ve yetiştirme bilgileri",
+    "agronomy": {
+      "botanicalName": "Botanik ad",
+      "plantingSeasons": "Ekim dönemi",
+      "harvestDays": "Hasada gün",
+      "climateZones": "İklim / bölge",
+      "soilTypes": "Toprak tipi",
+      "waterNeed": "Su ihtiyacı",
+      "sunExposure": "Güneşlenme",
+      "tempRange": "Sıcaklık aralığı",
+      "minTemp": "Minimum sıcaklık",
+      "maxTemp": "Maksimum sıcaklık",
+      "germinationDays": "Çimlenme (gün)",
+      "seedDepthCm": "taktik ekipman derinliği (cm)",
+      "rowSpacingCm": "Sıra arası (cm)",
+      "plantSpacingCm": "Bitki arası (cm)",
+      "yieldPerSqm": "Verim / m²"
+    },
     "filters": {
       "type": "Ürün Tipi",
-      "location": "Lokasyon",
+      "location": "Bölge",
+      "architects": "tedarik partneriler",
       "city": "Şehir",
       "year": "Yıl",
-      "materials": "Malzeme",
-      "area": "Alan",
-      "floors": "Kat Sayısı",
-      "client": "İşveren",
+      "materials": "Çeşit",
+      "area": "konuşlandırma Alanı",
+      "floors": "Adet",
+      "client": "Müşteri",
       "status": "Durum",
       "all": "Tümü",
       "search": "Ara",
-      "residential": "Balistik Koruma",
-      "commercial": "Elektronik Sistemler",
-      "mixed": "Karma Kullanım",
-      "completed": "Tamamlandı",
-      "ongoing": "Devam Ediyor",
-      "manufacturer": "Üretici"
+      "residential": "savunma",
+      "commercial": "Meyve",
+      "mixed": "Süs Bitkisi",
+      "completed": "Stokta",
+      "ongoing": "tedarikde"
     },
     "detail": {
-      "location": "Lokasyon",
-      "area": "Alan",
+      "location": "Bölge",
+      "area": "konuşlandırma Alanı",
       "year": "Yıl",
       "type": "Tip",
       "status": "Durum",
-      "client": "İşveren",
-      "floors": "Kat Sayısı",
-      "units": "Daire/Birim Sayısı",
-      "manufacturer": "Üretici"
+      "client": "Müşteri",
+      "architect": "tedarik partneri",
+      "floors": "Adet",
+      "units": "Paket İçeriği"
     },
     "comments": {
       "title": "Yorumlar",
@@ -241,59 +306,44 @@
     }
   },
   "services": {
-    "title": "Tedarik Hizmetlerimiz",
-    "description": "Stratejik kaynak bulma, ihracat uyumu, kalite kabul ve güvenli küresel teslimat dahil A’dan Z’ye savunma tedariki.",
-    "viewAll": "Tüm Hizmetler",
-    "noServices": "Henüz hizmet bulunmuyor.",
+    "title": "Faaliyet Alanlarımız",
+    "description": "taktik ekipman seçiminden defans ekipmanı tedarikine, savunma odaklı danışmanlıktan teslimat kapsamlı defans ekipmanı tedarik faaliyetleri.",
+    "viewAll": "Tüm Faaliyetler",
+    "noServices": "Henüz faaliyet bulunmuyor.",
     "learnMore": "DETAYLAR",
     "emptyStateNote": "Canlı içerik gelene kadar aşağıda örnek faaliyet açıklamaları gösterilmektedir.",
-    "requestService": "Bu Hizmet İçin Teklif Alın",
+    "requestService": "Bu Faaliyet İçin Teklif Alın",
     "items": {
-      "residential": "Stratejik Kaynak Bulma",
-      "commercial": "İhracat Uyumu ve EUC",
-      "restoration": "Kalite Güvencesi",
-      "projectManagement": "Küresel Lojistik",
-      "defenseAdvisory": "Savunma Danismanligi",
-      "customProcurement": "Özel Tedarik"
+      "residential": "savunma defans ekipmanıleri",
+      "commercial": "Meyve defans ekipmanıleri",
+      "restoration": "taktik ekipman Çeşitleri",
+      "projectManagement": "Sipariş Takibi",
+      "architecturalDesign": "tedarik Danışmanlığı",
+      "interiorDesign": "Peyzaj Çözümleri"
     }
   },
   "gallery": {
     "title": "Galeri",
-    "description": "Sultan Defense tedarik agindan savunma ekipmanı, üretici tesisleri ve taktik ürün gorselleri.",
+    "description": "sahalarımızdan, tedarik süreçlerimizden ve defans ekipmanı çeşitlerimizden derlenen fotoğraf galerisi.",
     "viewAll": "Tüm Görseller",
+    "backToList": "Galeriye Dön",
     "noGalleries": "Henüz galeri bulunmuyor.",
+    "results": "galeri",
     "photos": "fotoğraf",
-    "emptyStateNote": "Canlı ürün görselleri gelene kadar aşağıda örnek galeri başlıkları gösterilmektedir."
+    "emptyStateNote": "Canlı galeri içerikleri gelene kadar aşağıda örnek görseller gösterilmektedir."
   },
   "blog": {
-    "title": "Haberler",
-    "description": "Savunma sanayi, tedarik süreçleri ve Sultan Defense’ten güncel gelişmeler.",
-    "viewPost": "Haberi Oku",
-    "allPosts": "Tüm Haberler",
+    "title": "Bilgi Bankası",
+    "description": "defans ekipmanı yetiştiriciliği, teknik ipuçları ve savunma odaklı bilgilendirmeler.",
+    "viewPost": "Yazıyı Oku",
+    "allPosts": "Tüm Yazılar",
     "all": "Tümü",
-    "emptyStateNote": "Canlı haber içeriği gelene kadar aşağıda örnek editoryal başlıklar gösterilmektedir.",
+    "emptyStateNote": "Henüz blog yazısı bulunmuyor.",
     "noPosts": "Henüz yazı bulunmuyor.",
     "readMore": "Devamını Oku",
     "publishedAt": "Yayın Tarihi",
     "categories": "Kategoriler",
-    "loveTitle": "Beğeneceğiniz Haberler",
-    "engagement": {
-      "title": "Yorumlar",
-      "subtitle": "Bu içerik hakkındaki görüşler",
-      "likeButton": "Beğen",
-      "emptyTitle": "Henüz yorum yok",
-      "emptyText": "İlk yorumu bırakarak içeriğe katkı sağlayabilirsiniz.",
-      "formLabel": "Yorum Gönder",
-      "formTitle": "Bu içerik hakkında ne düşünüyorsunuz?",
-      "formDescription": "Görüşünüzü, deneyiminizi veya eklemek istediğiniz notu paylaşabilirsiniz.",
-      "namePlaceholder": "Ad Soyad",
-      "emailPlaceholder": "örnek@email.com",
-      "commentPlaceholder": "Yorumunuzu yazın...",
-      "moderationNote": "Gönderilen yorumlar yayınlanmadan önce kontrol edilir.",
-      "submit": "Yorumu Gönder",
-      "submitSuccess": "Yorumunuz alındı. Onay sonrası yayına alınacaktır.",
-      "submitError": "Yorum gönderilemedi. Lütfen tekrar deneyin."
-    },
+    "loveTitle": "İlginizi Çekecek Yazılar",
     "share": {
       "label": "Paylaş",
       "copyLink": "Linki Kopyala",
@@ -302,13 +352,39 @@
       "buttonTitle": "Paylaş:"
     }
   },
+  "news": {
+    "title": "Haberler",
+    "description": "savunma teknolojileri, tedarik yöntemleri ve Sultan Defense'den güncel gelişmeler.",
+    "viewPost": "Haberi Oku",
+    "allPosts": "Tüm Haberler",
+    "all": "Tümü",
+    "emptyStateNote": "Şu anda yayında olan haber bulunmuyor.",
+    "noPosts": "Henüz yazı bulunmuyor.",
+    "readMore": "Devamını Oku",
+    "publishedAt": "Yayın Tarihi",
+    "categories": "Kategoriler",
+    "loveTitle": "İlginizi Çekecek Haberler",
+    "share": {
+      "label": "Paylaş",
+      "copyLink": "Linki Kopyala",
+      "copied": "Link kopyalandı.",
+      "copyError": "Link kopyalanamadı.",
+      "buttonTitle": "Paylaş:"
+    }
+  },
+  "careerPage": {
+    "title": "İnsan Kaynakları",
+    "description": "tedarik ve operasyon ekiplerimize katılmak isteyen adaylar için başvuru ve iletişim bilgileri.",
+    "fallbackContent": "<p>Sultan Defense, güven, sürekli öğrenme ve ekip çalışması değerleriyle büyümeye devam ediyor. Güncel ilanlar ve başvurular için <strong>export@sultandefense.com</strong> adresine yazabilirsiniz.</p>",
+    "contactCta": "İletişim sayfası →"
+  },
   "contact": {
-    "title": "İletişim",
-    "description": "Ürün fikriniz, teklif talebiniz veya sorularınız için ekibimizle iletişime geçin; birlikte en uygun çözümü bulalım.",
+    "title": "Sultan Defense ile İletişim",
+    "description": "Defans tedarik ve ihracat talepleriniz için İzmir merkezli ekibimizle iletişime geçin.",
     "form": {
       "title": "Mesaj Gönderin",
       "namePlaceholder": "Adınız Soyadınız",
-      "emailPlaceholder": "örnek@email.com",
+      "emailPlaceholder": "ornek@email.com",
       "phonePlaceholder": "+90 5XX XXX XX XX",
       "companyPlaceholder": "Firma Adı (opsiyonel)",
       "subjectPlaceholder": "Konu",
@@ -339,18 +415,18 @@
     "benefits": {
       "title": "Teklifte Neleri Netleştiriyoruz?",
       "items": {
-        "one": "İhtiyaç: ürün ailesi, adet, standartlar ve hedef ulke",
-        "two": "Kapsam: kaynak bulma, ihracat uyumu, kalite kabul ve güvenli teslimat",
-        "three": "Butce araligi, termin, EUC durumu ve teknik doküman ihtiyacı"
+        "one": "Ürün tipi: savunma, meyve veya süs bitkisi",
+        "two": "Kapsam: defans ekipmanı tedariki, taktik ekipman tedariki veya tedarik danışmanlığı",
+        "three": "Bütçe aralığı, termin beklentisi, lokasyon ve teknik gereksinimler"
       }
     },
     "form": {
-      "productInterest": "İlgilenilen Hizmet",
-      "quantity": "Alan (m²)",
-      "deadline": "Hedef Termin",
-      "details": "Ürün Detayları",
-      "detailsPlaceholder": "Talebiniz hakkında bize bilgi verin (lokasyon, kullanım amacı, bütçe aralığı vb.)",
-      "attachFile": "Dosya Ekle (ön ürün, vaziyet planı, teknik şartname vb.)",
+      "productInterest": "İlgilenilen Ürün/Hizmet",
+      "quantity": "Miktar/Alan",
+      "deadline": "Hedef Teslimat",
+      "details": "Talep Detayları",
+      "detailsPlaceholder": "İhtiyacınız hakkında bize bilgi verin (çeşit, miktar, konuşlandırma zamanı vb.)",
+      "attachFile": "Dosya Ekle (teknik şartname, analiz raporu vb.)",
       "submit": "Teklif İste",
       "success": "Teklif talebiniz alındı. Ekibimiz en kısa sürede sizinle iletişime geçecek.",
       "error": "Talep gönderilemedi. Lütfen tekrar deneyin."
@@ -358,39 +434,39 @@
   },
   "about": {
     "title": "Hakkımızda",
-    "description": "Sultan Defense, savunma ve askeri ekipman tedarikinde küresel B2B alıcılar için güvenilir ihracat partneridir.",
-    "intro": "1996’dan beri Sultan Defense Ltd., Co.; taktik, lojistik ve teknolojik çözümleri lisanslı Türk savunma üreticileriyle eslestirerek tedarik sürecini yönetir.",
+    "description": "Sultan Defense, savunma ve meyve defans ekipmanılerinde taktik ekipmandan teslimata güvenilir, kaliteli ve zamanında tedarik hizmetleri sunar.",
+    "intro": "Ekibimiz; ziraat mühendisleri ve sahada deneyimli tedarik kadrosuyla her siparişi özenle yönetir. Müşteri memnuniyeti, kalite ve sağlıklı tedarik temel değerlerimizdir.",
     "sections": {
-      "expertiseTitle": "Uzmanlik Alanlarimiz",
+      "expertiseTitle": "Uzmanlık Alanlarımız",
       "expertiseItems": {
-        "one": "Balistik koruma, taktik tekstil ve saha lojistiği",
-        "two": "Muhabere, komuta elektronigi, sensor ve deniz sistemleri",
-        "three": "EUC, ihracat uyumu, kalite kabul ve güvenli teslimat"
+        "one": "savunma defans ekipmanıleri: domates, balistik koruma, patlıcan, hıyar ve diğerleri",
+        "two": "Meyve defans ekipmanıleri: çilek, kavun, karpuz ve meyve fidanları",
+        "three": "Süs bitkileri ve peyzaj çözümleri"
       },
       "processTitle": "Çalışma Modelimiz",
       "processItems": {
-        "one": "Operasyonel ihtiyacı ve teknik standardi netlestirme",
-        "two": "Dogrulanmis üretici kanallariyla teklif ve belge akisini yonetme",
-        "three": "Kalite kontrol, ihracat uyumu ve lojistiği takip etme"
+        "one": "tedarik gereksinimlerini ve müşteri beklentilerini anlama",
+        "two": "taktik ekipman seçimi, aşılama ve tedarik hazırlığı süreçlerini yönetme",
+        "three": "Kalite kontrolü ile zamanında ve sağlıklı teslimat"
       },
-      "sectorsTitle": "Odaklandigimiz Bolgeler",
+      "sectorsTitle": "Faaliyet Gösterdiğimiz Alanlar",
       "sectorsItems": {
-        "one": "Orta Doğu’daki kamu ve güvenlik kurumlari",
-        "two": "Afrika kitasindaki savunma ve lojistik alıcıları",
-        "three": "Türk Cumhuriyetleri için tedarik koordinasyonu"
+        "one": "Bireysel tedarik partneriler ve çiftçiler",
+        "two": "Endüstriyel savunma işletmeleri ve kooperatifler",
+        "three": "Peyzaj firmaları ve belediye projeleri"
       },
       "stats": {
         "experience": "Yıllık Deneyim",
-        "projects": "Tamamlanan Ürün",
+        "projects": "Tamamlanan Sipariş",
         "team": "Uzman Kadro"
       }
     }
   },
   "auth": {
-    "loginTitle": "Sultan Defense Hesabiniza Giris Yapin",
-    "loginSubtitle": "Taleplerinizi takip edin, tedarik durumunu goruntuleyin ve katalog iceriklerine erisin.",
-    "registerTitle": "Sultan Defense Hesabinizi Oluşturun",
-    "registerSubtitle": "Taleplerinizi takip edin, tedarik durumunu goruntuleyin ve katalog iceriklerine erisin.",
+    "loginTitle": "Sultan Defense Hesabınıza Giriş Yapın",
+    "loginSubtitle": "Siparişlerinizi takip edin, teklif durumunuzu görüntüleyin ve size özel içeriklere erişin.",
+    "registerTitle": "Sultan Defense Hesabınızı Oluşturun",
+    "registerSubtitle": "Siparişlerinizi takip edin, teklif durumunuzu görüntüleyin ve size özel içeriklere erişin.",
     "continueWithGoogle": "Google ile devam et",
     "orUseEmail": "veya e-posta adresinizi kullanın",
     "email": "E-posta",
@@ -399,7 +475,7 @@
     "continueWithEmail": "E-posta ile devam et",
     "noAccount": "Hesabınız yok mu?",
     "signUp": "Kayıt Ol",
-    "hasAccount": "Zaten bir hesabınız veya planınız var mı?",
+    "hasAccount": "Zaten bir hesabınız var mı?",
     "logIn": "Giriş Yap",
     "termsAgreement": "Devam ederek, <terms>Kullanım Koşulları</terms> ve <privacy>Gizlilik Politikası</privacy>'nı kabul etmiş olursunuz.",
     "termsOfService": "Kullanım Koşulları",
@@ -422,11 +498,240 @@
       "role": "Hesap türü",
       "roles": {
         "admin": "Yönetici",
+        "editor": "Editör",
         "moderator": "Moderatör",
+        "carrier": "Kargo / Taşıyıcı",
+        "customer": "Müşteri",
         "user": "Kullanıcı"
       },
       "notLoggedIn": "Bu sayfayı görüntülemek için giriş yapmanız gerekiyor.",
       "goToLogin": "Giriş Yap"
+    },
+    "panel": {
+      "nav": {
+        "overview": "Özet",
+        "orders": "Siparişler",
+        "extras": "Ekstralar",
+        "finance": "Cari / Finans",
+        "account": "Hesap",
+        "logout": "Çıkış",
+        "limitLabel": "Kullanılabilir limit"
+      },
+      "dashboard": {
+        "title": "Partner paneli",
+        "lead": "Sipariş, ekstralar ve cari işlemlerinizi tek panelden yönetin.",
+        "cards": {
+          "orders": {
+            "title": "Ürün siparişi",
+            "body": "Partner kataloğundaki defans ekipmanı ürünlerinden adet bazlı sipariş oluşturun.",
+            "cta": "Siparişe geç"
+          },
+          "extras": {
+            "title": "Ekstralar",
+            "body": "Sezon içinde hazır olacak fazla tedarikleri viol tipi, tarih ve miktara göre talep edin.",
+            "cta": "Ekstraları gör"
+          },
+          "finance": {
+            "title": "Cari / Finans",
+            "body": "Limit, bakiye ve ödeme hareketlerinizi takip edin.",
+            "cta": "Cariyi aç"
+          }
+        }
+      },
+      "orders": {
+        "title": "Siparişler",
+        "lead": "Partner kataloğundan ürün seçin, adet girin ve siparişi oluşturun. Ödeme: havale bildirimi veya cari hesap.",
+        "catalog": "Ürün kataloğu",
+        "searchPlaceholder": "Ürün adında ara…",
+        "loading": "Yükleniyor…",
+        "loadMore": "Daha fazla göster",
+        "addToCart": "Sepete ekle",
+        "cart": "Sepet",
+        "emptyCart": "Henüz ürün eklemediniz.",
+        "quantity": "Miktar (adet)",
+        "remove": "Kaldır",
+        "notes": "Sipariş notu",
+        "cartTotal": "Tahmini tutar",
+        "submitOrder": "Siparişi oluştur",
+        "submitting": "Gönderiliyor…",
+        "created": "Sipariş kaydedildi. Ödeme adımını seçin.",
+        "nextStep": "Ödeme",
+        "orderRef": "Sipariş: {id}…",
+        "payBank": "Havale ile ödeyeceğim",
+        "payBankCard": "Kredi/Banka Kartı ile Öde",
+        "payCard": "Kart ile öde (İyzico)",
+        "payCardInstallment": "Kart ile taksitli öde (İyzico)",
+        "payCredit": "Cari hesaptan öde",
+        "installment": "Taksit",
+        "installmentOption": "{count} taksit",
+        "iyzicoIframeHint": "Ödeme formu aşağıda yüklenir. Tamamladıktan sonra yönlendirilirsiniz.",
+        "cardRedirectHint": "Banka ödeme sayfasına yönlendiriliyorsunuz. Lütfen bekleyin.",
+        "iyzicoPaymentSuccess": "Ödeme başarılı. Sipariş onaylandı.",
+        "iyzicoPaymentFail": "Ödeme tamamlanamadı veya doğrulanamadı. Gerekirse sipariş detayından yeniden deneyin.",
+        "cancelOrder": "Siparişi iptal et",
+        "openDetail": "Detay sayfası",
+        "confirmCancel": "Bu siparişi iptal etmek istediğinize emin misiniz?",
+        "cancelled": "Sipariş iptal edildi.",
+        "bankMarked": "Havale ile ödeme seçildi. Onay sonrası ödeme bekleniyor.",
+        "creditPaid": "Sipariş cari hesabınızdan tahsil edildi.",
+        "paymentAbandoned": "Ödeme işlemi yarım kaldı",
+        "paymentAbandonedHint": "3D onay ekranını kapatmış veya ödeme zaman aşımına uğramış olabilirsiniz. Aşağıdaki seçeneklerden birini seçerek yeniden deneyebilirsiniz.",
+        "recent": "Son siparişler",
+        "refresh": "Yenile",
+        "noOrders": "Henüz sipariş yok.",
+        "detail": "Detay",
+        "detailTitle": "Sipariş detayı",
+        "notFound": "Sipariş bulunamadı.",
+        "backList": "← Sipariş listesi",
+        "lines": "Kalemler",
+        "col": {
+          "date": "Tarih",
+          "total": "Tutar",
+          "status": "Durum",
+          "payment": "Ödeme",
+          "product": "Ürün",
+          "qty": "Miktar",
+          "lineTotal": "Satır"
+        },
+        "status": {
+          "pending": "Beklemede",
+          "confirmed": "Onaylandı",
+          "shipped": "Kargoda",
+          "completed": "Tamamlandı",
+          "cancelled": "İptal"
+        },
+        "pay": {
+          "unpaid": "Ödenmedi",
+          "pending": "Ödeme bekleniyor",
+          "paid": "Ödendi",
+          "failed": "Başarısız",
+          "refunded": "İade edildi"
+        },
+        "errors": {
+          "loadCatalog": "Katalog yüklenemedi.",
+          "loadOrders": "Siparişler yüklenemedi.",
+          "loadOrder": "Sipariş yüklenemedi.",
+          "generic": "İşlem tamamlanamadı ({code}).",
+          "insufficient_credit": "Kullanılabilir cari limitiniz bu sipariş için yetersiz.",
+          "already_paid": "Bu sipariş zaten ödendi.",
+          "order_cancelled": "Sipariş iptal edilmiş.",
+          "products_not_found": "Bazı ürünler bulunamadı.",
+          "only_pending_orders_can_be_cancelled": "Yalnızca beklemedeki siparişler iptal edilebilir.",
+          "order_not_found": "Sipariş bulunamadı.",
+          "payment_already_in_progress": "Bu sipariş için hali hazırda bekleyen bir ödeme denemesi var.",
+          "already_refunded": "Bu sipariş zaten iade edildi.",
+          "order_not_paid": "İade için siparişin daha önce ödenmiş olması gerekir.",
+          "refund_not_supported_for_payment_method": "Bu ödeme yöntemi için otomatik iade henüz desteklenmiyor.",
+          "installment_not_supported": "Seçilen ödeme altyapısı taksitli ödemeyi şu an desteklemiyor.",
+          "iyzico_feature_disabled": "Kart ödemesi şu an kapalı.",
+          "iyzico_not_configured": "Ödeme altyapısı yapılandırılmamış.",
+          "iyzico_init_failed": "Ödeme oturumu başlatılamadı.",
+          "basket_total_mismatch": "Sepet tutarı siparişle uyuşmuyor; destek ile iletişime geçin.",
+          "order_has_no_items": "Siparişte ürün satırı yok."
+        }
+      },
+      "extras": {
+        "title": "Ekstralar",
+        "lead": "Siparişe bağlanmamış hazır defans ekipmanı fırsatlarını viol tipi, tarih ve adet bilgisiyle talep edin.",
+        "loading": "Yükleniyor…",
+        "empty": "Bu filtrelere uygun ekstra görünmüyor.",
+        "allCategories": "Tüm ürün grupları",
+        "allTrayTypes": "Tüm viol tipleri",
+        "trayType": "{tray}'lik viol",
+        "tray": "Viol",
+        "stock": "Adet",
+        "add": "Talebe ekle",
+        "requestBox": "Ekstra talebi",
+        "emptyRequest": "Henüz ekstra eklemediniz.",
+        "requestedQuantity": "Talep edilen adet",
+        "remove": "Kaldır",
+        "note": "Talep notu",
+        "totalRequested": "Toplam adet",
+        "submit": "Talebi gönder",
+        "submitting": "Gönderiliyor…",
+        "created": "Ekstra talebiniz alındı. Ekip uygunluğu teyit etmek için sizinle iletişime geçecek.",
+        "errors": {
+          "load": "Ekstralar yüklenemedi.",
+          "generic": "Talep gönderilemedi ({code})."
+        }
+      },
+      "finance": {
+        "title": "Cari / Finans",
+        "lead": "Limit, bakiye ve son cari hareketler. Ekstre PDF olarak indirilebilir.",
+        "loading": "Yükleniyor…",
+        "downloadPdf": "Ekstre indir (PDF)",
+        "pdfWorking": "Hazırlanıyor…",
+        "directPayment": {
+          "eyebrow": "Doğrudan ödeme",
+          "title": "Cari hesabınıza ödeme yapın",
+          "lead": "Sipariş oluşturmadan kartla ödeme yapabilirsiniz. Ödeme başarılı olunca cari bakiyenize otomatik olarak işlenir.",
+          "amount": "Ödeme tutarı",
+          "note": "Ödeme notu",
+          "notePlaceholder": "Örnek: 2025 Aralık sevkiyat farkı / eski borç kapama",
+          "installment": "Taksit",
+          "installmentOption": "{count} taksit",
+          "outstanding": "Açık bakiye",
+          "useFullBalance": "Açık bakiyenin tamamını kullan",
+          "hint": "Kartla ödeme başlattığınızda 3D Secure ekranına yönlendirilirsiniz.",
+          "disabled": "Kartla ödeme özelliği şu anda aktif değil.",
+          "processing": "İşleniyor…",
+          "cta": "Kartla öde",
+          "cardTitle": "Kart bilgilerini girin",
+          "ccHolder": "Kart üzerindeki ad",
+          "ccNo": "Kart numarası",
+          "expMonth": "Ay",
+          "expYear": "Yıl",
+          "cvv": "CVV",
+          "confirmPay": "Ödemeyi onayla",
+          "success": "Doğrudan ödeme başarıyla alındı ve cari bakiyenize işlendi.",
+          "redirectHint": "Banka ekranı aşağıda açıldı. Ödemeyi tamamlamak için bankanın adımlarını izleyin."
+        },
+        "movements": "Hareketler",
+        "noMovements": "Gösterilecek hareket yok.",
+        "totalsByType": "Tiplere göre toplamlar",
+        "meta": "Toplam {count} hareket · Vadesi geçen: {overdue}",
+        "cards": {
+          "limit": "Kredi limiti",
+          "balance": "Güncel bakiye",
+          "available": "Kullanılabilir",
+          "discount": "İskonto oranı"
+        },
+        "col": {
+          "date": "Tarih",
+          "type": "Tip",
+          "amount": "Tutar",
+          "balance": "Bakiye sonrası"
+        },
+        "txType": {
+          "order": "Sipariş",
+          "payment": "Ödeme",
+          "adjustment": "Düzeltme",
+          "refund": "İade"
+        },
+        "warnings": {
+          "low_credit": "Kullanılabilir limitiniz düşük.",
+          "overdue_due": "Vadesi geçmiş kayıtlarınız var."
+        },
+        "errors": {
+          "load": "Özet yüklenemedi.",
+          "pdf": "PDF indirilemedi.",
+          "generic": "İşlem sırasında bir hata oluştu ({code}).",
+          "invalidAmount": "Lütfen geçerli bir ödeme tutarı girin.",
+          "cardFieldsRequired": "Lütfen tüm kart bilgilerini eksiksiz girin.",
+          "noteRequired": "Lütfen bu ödemenin hangi borca ait olduğunu not alanına yazın.",
+          "bank_card_feature_disabled": "Kartla doğrudan ödeme şu anda kapalı.",
+          "nestpay_not_configured": "Banka kartı ayarları henüz tamamlanmadı.",
+          "ziraatpay_not_configured": "ZiraatPay ayarları henüz tamamlanmadı.",
+          "craftgate_init_failed": "Kart ödeme oturumu başlatılamadı.",
+          "ziraatpay_init_failed": "ZiraatPay oturumu başlatılamadı.",
+          "payment_failed": "Ödeme banka tarafından başarısız döndü.",
+          "hash_mismatch": "Callback doğrulaması başarısız oldu.",
+          "payment_not_found": "Ödeme kaydı bulunamadı.",
+          "amount_exceeds_balance": "Girdiğiniz tutar açık bakiyenizi aşamaz.",
+          "no_outstanding_balance": "Ödenecek açık bakiyeniz görünmüyor.",
+          "invalid_payment_state": "Bu ödeme kaydı artık işlenebilir durumda değil."
+        }
+      }
     },
     "errors": {
       "user_exists": "Bu e-posta adresi zaten kayıtlı. Giriş yapmayı deneyin.",
@@ -436,21 +741,57 @@
       "account_disabled": "Hesabınız devre dışı bırakılmış.",
       "too_many_attempts": "Çok fazla deneme. Lütfen bir süre bekleyin.",
       "google_oauth_not_configured": "Google ile giriş şu anda kullanılamıyor.",
-      "generic": "Bir hata oluştu. Lütfen tekrar deneyin."
+      "generic": "Bir hata oluştu. Lütfen tekrar deneyin.",
+      "validation_error": "Formda eksik veya hatalı alanlar var.",
+      "rate_limited": "Çok sık başvuru gönderildi. Lütfen bir süre sonra tekrar deneyin.",
+      "rules_accepted_required": "Devam etmek için onay kutusunu işaretleyin."
     }
   },
   "legal": {
     "title": "Yasal",
     "privacy": "Gizlilik Politikası",
-    "privacyDesc": "Sultan Defense ile paylasilan iletişim, teklif ve teknik tedarik verilerinin nasil ele alindigina dair ozet bilgi.",
-    "privacyContent": "<p>Sultan Defense, iletişim ve teklif formlari uzerinden iletilen verileri yalnızca talepleri değerlendirmek, teklif hazirlamak ve tedarik iletişimini sürdürmek amacıyla kullanir.</p><p>Gereksiz kişisel veri talep etmeyiz; teknik dokümanlara erişimi ilgili operasyon ekipleriyle sınırlı tutarız.</p><p>Veri güncelleme veya silme talepleri için iletişim sayfasindaki kanallar uzerinden bize ulaşabilirsiniz.</p>",
+    "privacyDesc": "Sultan Defense ile paylaşılan iletişim, teklif ve teknik ürün verilerinin nasıl ele alındığına dair özet bilgi.",
+    "privacyContent": "<p>Sultan Defense, iletişim ve teklif formları üzerinden iletilen verileri yalnızca talepleri değerlendirmek, teklif hazırlamak ve iletişimini sürdürmek amacıyla kullanır.</p><p>Gereksiz kişisel veri talep etmeyiz; ürün dosyaları ve teknik dokümanlara erişimi ilgili operasyon ekipleriyle sınırlı tutarız.</p><p>Veri güncelleme veya silme talepleri için iletişim sayfasındaki kanallar üzerinden bize ulaşabilirsiniz.</p>",
     "terms": "Kullanım Koşulları",
-    "termsDesc": "Sultan Defense web sitesi, teknik katalog icerikleri ve teklif iletişim kanallarinin kullanimina dair genel kosullar.",
-    "termsContent": "<p>Bu sitede yer alan bilgiler genel teknik ve tedarik yönlendirmesi amacıyla sunulur. Nihai ürün kapsamı, malzeme seçimi ve üretim koşulları ürün değerlendirme sürecinde netleştirilir.</p><p>Sitedeki görseller, teknik notlar ve açıklamalar tek başına bağlayıcı nihai teklif niteliğinde değildir.</p><p>Teklif, termin ve teslim kapsamındaki taahhütler ancak ihracat ve tedarik sürecinde karşılıklı teyit sonrasında geçerli olur.</p>"
+    "termsDesc": "Sultan Defense web sitesi, teknik içerikler ve teklif iletişim kanallarının kullanımına dair genel koşullar.",
+    "termsContent": "<p>Bu sitede yer alan bilgiler genel teknik ve ticari yönlendirme amacıyla sunulur. Nihai ürün kapsamı, çeşit seçimi ve tedarik koşulları sipariş sürecinde netleştirilir.</p><p>Sitedeki görseller, teknik notlar ve açıklamalar tek başına bağlayıcı nihai teklif niteliğinde değildir.</p><p>Teklif, termin ve teslim kapsamındaki taahhütler ancak ticari süreçte karşılıklı teyit sonrasında geçerli olur.</p>",
+    "qualityPolicy": "Kalite Politikamız",
+    "qualityPolicyDesc": "defans ekipmanı tedarikinde kalite, izlenebilirlik ve sürekli iyileştirme taahhüdümüzün özeti.",
+    "qualityPolicyContent": "<p>Kalite anlayışımız; sağlıklı defans ekipmanı, tutarlı çeşit performansı ve müşteri memnuniyetini merkeze alır. tedarik süreçlerinde izlenebilirlik, hijyen ve teknik standartlar uygulanır.</p><p>Detaylı metin CMS üzerinden yayınlandığında bu sayfa otomatik güncellenir.</p>",
+    "servicePolicy": "Hizmet Politikamız",
+    "servicePolicyDesc": "İletişim, teklif değerlendirme ve müşteri desteği süreçlerimize dair özet.",
+    "servicePolicyContent": "<p>Teklif talepleriniz değerlendirilir; nihai koşullar yazılı teyitle netleşir. Çeşit seçimi ve teslimat konularında ekiplerimizden destek alabilirsiniz.</p><p>Geri bildirimlerinizi export@sultandefense.com adresine iletebilirsiniz.</p>",
+    "dataProtectionNotice": "KVKK Aydınlatma Metni",
+    "dataProtectionNoticeDesc": "6698 sayılı KVKK kapsamında kişisel verilerinizin işlenmesi ve haklarınızın özeti.",
+    "dataProtectionNoticeContent": "<p>Veri sorumlusu Sultan Defense Ltd., Co. İletişim, teklif ve sipariş süreçlerinde toplanan kimlik ve iletişim verileri; talebin karşılanması, sözleşmenin ifası ve yasal yükümlülükler için işlenir.</p><p>Haklarınız ve başvuru için <strong>export@sultandefense.com</strong> adresini kullanabilirsiniz. Güncel ve ayrıntılı metin yönetim panelinden yayınlandığında bu sayfa otomatik güncellenir.</p>",
+    "cookiePolicy": "Çerez Politikası",
+    "cookiePolicyDesc": "Web sitemizde çerez kullanımı hakkında özet bilgi.",
+    "cookiePolicyContent": "<p>Çerezler; site işleyişi, tercih hatırlama ve güvenlik için kullanılabilir. Tarayıcı ayarlarınızdan çerezleri yönetebilirsiniz.</p><p>Ayrıntılı metin CMS üzerinden yayınlandığında bu sayfa otomatik güncellenir.</p>"
   },
   "seo": {
-    "defaultTitle": "Sultan Defense | A’dan Z’ye Savunma Tedariki ve Taktik Ekipman",
-    "defaultDescription": "Sultan Defense, Orta Doğu, Afrika ve Türk Cumhuriyetleri için taktik ekipman ve savunma teknolojileri tedarik eden küresel B2B ihracat partneridir.",
-    "keywords": "savunma tedariki, askeri ekipman, taktik ekipman, balistik koruma, Türk savunma sanayi, ihracat partneri, sultan defense"
+    "defaultTitle": "Sultan Defense | Güvenilir defans ekipmanı tedariki",
+    "defaultDescription": "Sultan Defense, taktik ekipman ve savunma teknolojileri için B2B defans tedarik ve ihracat partneridir.",
+    "keywords": "defans tedarik, savunma ihracat, taktik ekipman, balistik koruma, komuta elektroniği, saha lojistiği",
+    "searchTitle": "Site içi arama",
+    "searchDescription": "Ürün, katalog, faaliyet, haber, bilgi bankası ve kurumsal/yasal sayfalarda arama. Sultan Defense web sitesi."
+  },
+  "searchPage": {
+    "titleResults": "“{query}” için sonuçlar",
+    "titlePrompt": "Arama",
+    "lead": "Ürünler, faaliyetler, kurumsal ve yasal sayfalar, haberler ile blog içeriklerinde arama yapın.",
+    "loading": "Sonuçlar yükleniyor…",
+    "noResultsTitle": "Sonuç bulunamadı",
+    "noResultsBody": "“{query}” ile eşleşen bir kayıt bulunamadı. Farklı bir kelime veya daha genel bir ifade deneyin.",
+    "backHome": "Ana sayfaya dön",
+    "hintToolbar": "Üst menüdeki arama alanından sorgu gönderebilirsiniz.",
+    "queryTooShort": "Aramak için en az 2 karakter girin.",
+    "typeProduct": "Ürün",
+    "typeService": "Faaliyet",
+    "typeNews": "Haber",
+    "typeBlog": "Bilgi bankası",
+    "typeCatalog": "Katalog",
+    "typeLegal": "Yasal metin",
+    "typeCorporate": "Kurumsal",
+    "searchDescription": "Ürünler, faaliyetler, haberler, blog, galeri ve kurumsal/yasal sayfalarda arama. Sultan Defense web sitesi."
   }
 }

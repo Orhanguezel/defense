@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { SD_PALETTE_HEX as C } from '@/lib/sultandefense-palette-hex';
 
 export const runtime = 'nodejs';
 export const alt = 'Sultan Defense';
@@ -16,8 +17,8 @@ export default function TwitterImage() {
           width: '100%',
           height: '100%',
           display: 'flex',
-          background: '#121214',
-          color: '#ffffff',
+          background: C.surfaceBaseDark,
+          color: C.sectionWhite,
           padding: '48px',
           fontFamily: 'Arial, sans-serif',
         }}
@@ -28,10 +29,10 @@ export default function TwitterImage() {
             flex: 1,
             flexDirection: 'column',
             justifyContent: 'space-between',
-            border: '1px solid rgba(197,168,128,0.20)',
+            border: '1px solid rgba(184, 134, 45, 0.2)',
             borderRadius: 24,
             padding: '40px',
-            background: 'linear-gradient(180deg, rgba(197,168,128,0.04), rgba(197,168,128,0.00))',
+            background: 'linear-gradient(180deg, rgba(212, 168, 67, 0.06), rgba(212, 168, 67, 0))',
           }}
         >
           <div
@@ -40,7 +41,7 @@ export default function TwitterImage() {
               fontSize: 20,
               textTransform: 'uppercase',
               letterSpacing: 4,
-              color: '#C5A880',
+              color: C.gold500,
               fontWeight: 600,
             }}
           >
@@ -54,14 +55,14 @@ export default function TwitterImage() {
                 fontWeight: 700,
                 lineHeight: 1.06,
                 maxWidth: 900,
-                color: '#f0ece6',
+                color: C.textOnDarkHead,
                 letterSpacing: -2,
               }}
             >
-              Savunma Tedarikinde Güvenilir Çözüm Ortağı
+              Defense Procurement and Export Partner
             </div>
-            <div style={{ display: 'flex', fontSize: 26, color: '#c8c2b8', maxWidth: 900 }}>
-              Taktik ekipman, zırh sistemleri ve ihracat süreçlerinde güvenilir çözüm ortağı.
+            <div style={{ display: 'flex', fontSize: 26, color: C.textOnDarkBody, maxWidth: 900 }}>
+              Tactical equipment, certified sourcing and export coordination for global security buyers.
             </div>
           </div>
           <div
@@ -69,12 +70,12 @@ export default function TwitterImage() {
               display: 'flex',
               justifyContent: 'space-between',
               fontSize: 20,
-              color: '#8c8880',
+              color: C.textOnDarkMuted,
             }}
           >
             <div style={{ display: 'flex' }}>sultandefense.com</div>
-            <div style={{ display: 'flex', color: '#C5A880', fontWeight: 600 }}>
-              Tedarik · Uyum · İhracat
+            <div style={{ display: 'flex', color: C.gold500, fontWeight: 600 }}>
+              Compliance · Sourcing · Export
             </div>
           </div>
         </div>

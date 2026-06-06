@@ -10,25 +10,35 @@ export const API_BASE_URL =
 
 // Resmi barındıran sunucu (API URL'inden /api kısmını çıkarıyoruz)
 export const ASSETS_URL =
-  process.env.NEXT_PUBLIC_ASSETS_URL ?? API_BASE_URL.replace(/\/api$/, '');
+  process.env.NEXT_PUBLIC_ASSETS_URL ?? API_BASE_URL.replace(/\/api(\/v\d+)?$/, '');
 
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.sultandefense.com';
+
+function encodeAssetLikeUrl(value: string): string {
+  try {
+    // Zaten encode edilmiş URL'yi tekrar encode etme (%20, %28 vs. varsa)
+    if (value.includes('%')) return value;
+    return encodeURI(value);
+  } catch {
+    return value;
+  }
+}
 
 export function absoluteAssetUrl(value?: string | null): string | null {
   if (!value) return null;
   
   // Eğer tam URL ise (http://...) olduğu gibi döndür
-  if (/^https?:\/\//i.test(value)) return value;
+  if (/^https?:\/\//i.test(value)) return encodeAssetLikeUrl(value);
   
   // Frontend'in kendi /public klasöründeki statik dosyalar (Görünür URL'de başında / olur)
-  const localStaticPaths = ['/media/', '/brands/', '/icons/', '/logo-', '/favicon'];
+  const localStaticPaths = ['/media/', '/icons/', '/logo-', '/favicon'];
   const normalized = value.startsWith('/') ? value : `/${value}`;
   
   if (localStaticPaths.some(path => normalized.startsWith(path))) {
-    return normalized; // Kendi sunucusundan (frontend) çeksin
+    return encodeAssetLikeUrl(normalized); // Kendi sunucusundan (frontend) çeksin
   }
   
   // Geri kalan her şeyi (özellikle /uploads/) Backend sunucusundan çekiyoruz
-  return `${ASSETS_URL}${normalized}`;
+  return encodeAssetLikeUrl(`${ASSETS_URL}${normalized}`);
 }

@@ -18,14 +18,36 @@ export function OptimizedImage({
   onLoad,
   ...props
 }: OptimizedImageProps) {
-  const [loaded, setLoaded] = useState(false);
   const [error, setError] = useState(false);
+  const isRemoteUpload =
+    typeof props.src === 'string' &&
+    (props.src.includes('/uploads/') ||
+      props.src.includes('localhost:8090') ||
+      props.src.includes('localhost:8096') ||
+      props.src.includes('127.0.0.1:8090') ||
+      props.src.includes('127.0.0.1:8096') ||
+      props.src.includes('example.guezelwebdesign.com') ||
+      props.src.includes('sultandefense.com'));
+
+  // Next.js Image hata verirse, düz <img> ile fallback dene
+  if (error && typeof props.src === 'string') {
+    return (
+      // biome-ignore lint: fallback img
+      <img
+        src={props.src}
+        alt={alt}
+        className={cn('object-cover', className)}
+        style={props.fill ? { position: 'absolute', inset: 0, width: '100%', height: '100%' } : undefined}
+        loading="lazy"
+      />
+    );
+  }
 
   if (error) {
     return (
       <div
         className={cn(
-          'flex items-center justify-center bg-[var(--color-border)] text-[var(--color-text-muted)]',
+          'flex items-center justify-center bg-(--color-border) text-(--color-text-muted)',
           fallbackClassName ?? className,
         )}
         role="img"
@@ -43,14 +65,13 @@ export function OptimizedImage({
       {...props}
       alt={alt}
       className={cn(
-        'transition-opacity duration-300',
-        loaded ? 'opacity-100' : 'opacity-0',
+        'transition-opacity duration-300 opacity-100',
         className,
       )}
+      unoptimized={props.unoptimized ?? isRemoteUpload}
       placeholder="blur"
       blurDataURL={BLUR_DATA_URL}
       onLoad={(e) => {
-        setLoaded(true);
         if (typeof onLoad === 'function') onLoad(e);
       }}
       onError={() => setError(true)}

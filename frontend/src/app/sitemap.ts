@@ -47,21 +47,21 @@ async function fetchItems(endpoint: string): Promise<SitemapItem[]> {
   }
 }
 
-async function fetchLegalItems(): Promise<SitemapItem[]> {
-  return fetchLegalItemsForLocale('tr');
-}
-
 async function fetchLegalItemsForLocale(locale: string): Promise<SitemapItem[]> {
-  const legalSlugs =
-    locale.startsWith('en')
-      ? ['privacy', 'terms']
-      : ['privacy', 'terms'];
+  const lc = String(locale || 'tr').toLowerCase();
+  const policySlugs = lc.startsWith('tr')
+    ? ['kalite-politikasi', 'hizmet-politikasi']
+    : lc.startsWith('de')
+      ? ['qualitaetspolitik', 'servicepolitik']
+      : ['quality-policy', 'service-policy'];
+  const kvkkOrPdpl = lc.startsWith('en') ? 'pdpl-information-notice' : 'kvkk-aydinlatma-metni';
+  const legalSlugs = ['privacy', 'terms', ...policySlugs, kvkkOrPdpl, 'cookies'];
 
   const rows = await Promise.all(
     legalSlugs.map(async (slug) => {
       try {
         const res = await fetch(
-          `${API_BASE_URL}/custom_pages/by-slug/${encodeURIComponent(slug)}?locale=${encodeURIComponent(locale)}`,
+          `${API_BASE_URL}/custom-pages/by-slug/${encodeURIComponent(slug)}?locale=${encodeURIComponent(locale)}`,
           { next: { revalidate: 3600 } },
         );
         if (!res.ok) return null;
@@ -79,6 +79,37 @@ async function fetchLegalItemsForLocale(locale: string): Promise<SitemapItem[]> 
   );
 
   return rows.filter(Boolean) as SitemapItem[];
+}
+
+/** Public liste; `custom-pages` icin `limit` max 250 (backend sema). */
+async function fetchPublishedCustomPages(locale: string, moduleKey: string): Promise<SitemapItem[]> {
+  try {
+    const res = await fetch(
+      `${API_BASE_URL}/custom-pages?module_key=${encodeURIComponent(moduleKey)}&locale=${encodeURIComponent(locale)}&limit=250`,
+      { next: { revalidate: 3600 } },
+    );
+    if (!res.ok) return [];
+    const data = await res.json();
+    const items = Array.isArray(data) ? data : (data as any)?.items ?? [];
+    return items
+      .filter((item: any) => item?.slug)
+      .map((item: any) => ({
+        slug: item.slug,
+        updated_at: item.updated_at ?? null,
+        created_at: item.created_at ?? null,
+        title: item.title ?? null,
+        description: item.meta_description ?? item.summary ?? null,
+        image_url:
+          item.featured_image_url_resolved ??
+          item.featured_image ??
+          item.cover_image_url_resolved ??
+          item.cover_image ??
+          null,
+        image_alt: item.title ?? null,
+      }));
+  } catch {
+    return [];
+  }
 }
 
 function resolveLastModified(item?: SitemapItem): Date | undefined {
@@ -105,21 +136,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticRoutes = [
     { path: '', changeFrequency: 'weekly' as const, priority: 1.0 },
-    { path: '/projeler', changeFrequency: 'weekly' as const, priority: 0.9 },
+    { path: '/urunler', changeFrequency: 'weekly' as const, priority: 0.9 },
     { path: '/hizmetler', changeFrequency: 'weekly' as const, priority: 0.9 },
     { path: '/galeri', changeFrequency: 'weekly' as const, priority: 0.8 },
     { path: '/haberler', changeFrequency: 'weekly' as const, priority: 0.7 },
+    { path: '/blog', changeFrequency: 'weekly' as const, priority: 0.7 },
     { path: '/hakkimizda', changeFrequency: 'monthly' as const, priority: 0.6 },
     { path: '/iletisim', changeFrequency: 'monthly' as const, priority: 0.7 },
     { path: '/teklif', changeFrequency: 'monthly' as const, priority: 0.8 },
+    { path: '/certifications', changeFrequency: 'monthly' as const, priority: 0.6 },
+    { path: '/faq', changeFrequency: 'monthly' as const, priority: 0.6 },
   ];
 
   for (const locale of locales) {
-    const [products, services, galleries, blogPosts, legalPages] = await Promise.all([
+    const [products, services, galleries, newsPosts, blogPosts, legalPages] = await Promise.all([
       fetchItems(`/products?item_type=sultandefense&locale=${encodeURIComponent(locale)}`),
       fetchItems(`/services?module_key=sultandefense&locale=${encodeURIComponent(locale)}`),
       fetchItems(`/galleries?module_key=sultandefense&locale=${encodeURIComponent(locale)}`),
-      fetchItems(`/custom_pages?module_key=news&locale=${encodeURIComponent(locale)}`),
+      fetchPublishedCustomPages(locale, 'news'),
+      fetchPublishedCustomPages(locale, 'blog'),
       fetchLegalItemsForLocale(locale),
     ]);
 
@@ -133,7 +168,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     for (const item of products) {
       entries.push({
-        url: localizedUrl(locale, `/projeler/${item.slug}`),
+        url: localizedUrl(locale, `/urunler/${item.slug}`),
         lastModified: resolveLastModified(item),
         changeFrequency: 'weekly',
         priority: 0.8,
@@ -161,12 +196,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       });
     }
 
-    for (const item of blogPosts) {
+    for (const item of newsPosts) {
       entries.push({
         url: localizedUrl(locale, `/haberler/${item.slug}`),
         lastModified: resolveLastModified(item),
         changeFrequency: 'monthly',
         priority: 0.7,
+        images: resolveSitemapImages(item),
+      });
+    }
+
+    for (const item of blogPosts) {
+      entries.push({
+        url: localizedUrl(locale, `/blog/${item.slug}`),
+        lastModified: resolveLastModified(item),
+        changeFrequency: 'monthly',
+        priority: 0.65,
         images: resolveSitemapImages(item),
       });
     }

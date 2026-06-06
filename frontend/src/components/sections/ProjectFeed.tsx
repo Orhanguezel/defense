@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { Bookmark } from 'lucide-react';
 import { absoluteAssetUrl } from '@/lib/utils';
 import { SaveProjectButton } from '@/components/projects/SaveProjectButton';
@@ -32,6 +32,7 @@ interface ProjectFeedProps {
   sidebarProjects?: ProjectItem[];
   sidebarTitle?: string;
   readMoreLabel?: string;
+  extraParams?: string;
 }
 
 function localePath(locale: string, path: string): string {
@@ -60,6 +61,7 @@ export function ProjectFeed({
   sidebarProjects,
   sidebarTitle,
   readMoreLabel,
+  extraParams,
 }: ProjectFeedProps) {
   const t = useTranslations();
   const finalReadMore = readMoreLabel || t('common.readMore');
@@ -76,7 +78,7 @@ export function ProjectFeed({
     setLoading(true);
     try {
       const res = await fetch(
-        `${apiUrl}/products?item_type=sultandefense&is_active=1&locale=${locale}&limit=${PAGE_SIZE}&offset=${page * PAGE_SIZE}`
+        `${apiUrl}/products?item_type=sultandefense&is_active=1&locale=${locale}&limit=${PAGE_SIZE}&offset=${page * PAGE_SIZE}${extraParams || ''}`
       );
       if (!res.ok) { setHasMore(false); return; }
       const data = await res.json();
@@ -93,7 +95,7 @@ export function ProjectFeed({
     } finally {
       setLoading(false);
     }
-  }, [loading, hasMore, page, apiUrl, locale]);
+  }, [loading, hasMore, page, apiUrl, locale, extraParams]);
 
   useEffect(() => {
     const el = sentinelRef.current;
@@ -131,22 +133,22 @@ export function ProjectFeed({
             const specs = project.specifications || {};
             const categoryName = project.category?.name || specs.tip || '';
             const location = specs.lokasyon || specs.location || '';
-            const manufacturer = specs.üreticiler || specs.manufacturers || '';
+            const architects = specs.mimarlar || specs.architects || '';
             const area = specs.alan || specs.area || '';
             const year = specs.yıl || specs.year || '';
             const manufacturers = specs.üreticiler || specs.manufacturers || '';
-            const projectHref = localePath(locale, `/projeler/${project.slug}`);
+            const projectHref = localePath(locale, `/urunler/${project.slug}`);
 
             return (
               <article key={project.id} className="border-b border-(--color-border) pb-10">
                 {/* Title + time */}
-                <Link href={projectHref}>
+                <Link href={projectHref} title={project.title}>
                   <h2
-                    className="text-xl font-bold text-(--color-text-primary) hover:text-(--color-brand) lg:text-2xl"
+                    className="text-xl font-bold text-(--color-text-primary) hover:text-(--color-brand-text) lg:text-2xl"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     {project.title}
-                    {manufacturer ? ` / ${manufacturer}` : ''}
+                    {architects ? ` / ${architects}` : ''}
                   </h2>
                 </Link>
                 {project.created_at && (
@@ -157,8 +159,8 @@ export function ProjectFeed({
 
                 {/* Main image */}
                 {mainImage && (
-                  <Link href={projectHref} className="group relative mt-4 block aspect-16/10 overflow-hidden bg-(--color-bg-muted)">
-                    <Image
+                  <Link href={projectHref} title={project.title} className="group relative mt-4 block aspect-16/10 overflow-hidden bg-(--color-bg-muted)">
+                    <OptimizedImage
                       src={mainImage}
                       alt={project.title}
                       fill
@@ -171,7 +173,7 @@ export function ProjectFeed({
                 {/* Category tags + location */}
                 <div className="mt-3 flex flex-wrap items-center gap-x-1.5 text-xs font-semibold uppercase tracking-wide">
                   {categoryName && (
-                    <span className="text-(--color-brand)">{categoryName}</span>
+                    <span className="text-(--color-brand-text)">{categoryName}</span>
                   )}
                   {categoryName && location && (
                     <span className="text-(--color-text-muted)">·</span>
@@ -183,10 +185,10 @@ export function ProjectFeed({
 
                 {/* Specs row */}
                 <div className="mt-2 flex flex-wrap gap-x-6 gap-y-1 text-sm text-(--color-text-secondary)">
-                  {manufacturer && (
+                  {architects && (
                     <div className="flex items-center gap-1.5">
-                      <span className="text-xs text-(--color-text-muted)">{t('projects.filters.manufacturer')}:</span>
-                      <span className="font-medium text-(--color-brand)">{manufacturer}</span>
+                      <span className="text-xs text-(--color-text-muted)">{t('projects.filters.architects')}:</span>
+                      <span className="font-medium text-(--color-brand-text)">{architects}</span>
                     </div>
                   )}
                   {area && (
@@ -198,7 +200,7 @@ export function ProjectFeed({
                   {year && (
                     <div className="flex items-center gap-1.5">
                       <span className="text-xs text-(--color-text-muted)">{t('projects.filters.year')}:</span>
-                      <span className="font-medium text-(--color-brand)">{year}</span>
+                      <span className="font-medium text-(--color-brand-text)">{year}</span>
                     </div>
                   )}
                   {manufacturers && (
@@ -217,7 +219,7 @@ export function ProjectFeed({
                   />
                   <Link
                     href={projectHref}
-                    className="text-xs font-medium text-(--color-brand) hover:underline"
+                    className="text-xs font-medium text-(--color-brand-text) hover:underline"
                   >
                     {finalReadMore} »
                   </Link>
@@ -253,12 +255,12 @@ export function ProjectFeed({
                     return (
                       <Link
                         key={p.id}
-                        href={localePath(locale, `/projeler/${p.slug}`)}
+                        href={localePath(locale, `/urunler/${p.slug}`)}
                         className="group flex gap-3"
                       >
                         {img && (
                           <div className="relative aspect-4/3 w-24 shrink-0 overflow-hidden bg-(--color-bg-muted)">
-                            <Image
+                            <OptimizedImage
                               src={img}
                               alt={p.title}
                               fill
@@ -267,9 +269,9 @@ export function ProjectFeed({
                             />
                           </div>
                         )}
-                        <h4 className="text-sm font-semibold leading-snug text-(--color-text-primary) group-hover:text-(--color-brand)">
+                        <h4 className="text-sm font-semibold leading-snug text-(--color-text-primary) group-hover:text-(--color-brand-text)">
                           {p.title}
-                          {p.specifications?.üreticiler ? ` / ${p.specifications.üreticiler}` : ''}
+                          {p.specifications?.mimarlar ? ` / ${p.specifications.mimarlar}` : ''}
                         </h4>
                       </Link>
                     );
@@ -291,11 +293,12 @@ export function ProjectFeed({
               </p>
               <Link
                 href={localePath(locale, '/teklif')}
-                className="mt-3 inline-block bg-(--color-brand) px-4 py-2 text-xs font-semibold text-white transition-opacity hover:opacity-90"
+                className="mt-3 inline-block bg-(--color-brand) px-4 py-2 text-xs font-semibold text-(--color-on-brand) transition-opacity hover:opacity-90"
               >
                 {t('nav.offer')}
               </Link>
             </div>
+
           </div>
         </aside>
       </div>

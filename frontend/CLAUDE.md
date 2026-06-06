@@ -2,140 +2,96 @@
 
 ## Proje Özeti
 
-`sultandefense-frontend`, Sultan Defense Ltd., Co. için geliştirilen Next.js tabanlı defans/savunma sanayi
-ürün katalog ve teklif (RFQ) toplama frontend'idir. Ana hedefler:
+`sultandefense-frontend`, Sultan Defense için Next.js tabanlı **B2B defans tedarik/ihracat** ürün katalog +
+**RFQ (teklif)** frontend'idir. Bu kod tabanı bereketfide frontend'inden uyarlandı (bkz. kök
+[`FRONTEND_SWAP_PLAN.md`](../FRONTEND_SWAP_PLAN.md)). Hedefler:
 
-- Premium, otoriter, "zırh/metal" estetiği (İmparatorluk Zırhı)
-- Teknik SEO uyumlu sayfa yapısı
-- Çok dilli içerik (ürün kataloğu: 10 defans kategorisi)
-- Token tabanlı tema yönetimi (sultandefense-imperial-armor)
-- Dark / Light mode desteği
+- Kurumsal, güven veren, "askeri/imparatorluk" hissi veren koyu tasarım
+- Teknik SEO uyumlu sayfa yapısı, çok dilli içerik (TR/EN)
+- Token tabanlı tema (sultan-imperial-armor), koyu varsayılan + açık toggle
 
-> İçerik kaynağı: `docs/content/` (sayfa metinleri, 10 kategori, şirket bilgisi).
-> NOT: Rotalar geçici olarak `projeler/hizmetler` path'lerini kullanıyor; defans slug'larına (`products/services`) geçiş Faz 5.
-
-## Sayfa Yapısı (URL Rotaları)
+## Sayfa Yapısı (Faz 3 sadeleştirmesi sonrası hedef)
 
 ```
-/[locale]/                → Anasayfa
-/[locale]/projeler        → Proje portföyü listesi
-/[locale]/projeler/[slug] → Proje detay
-/[locale]/hizmetler       → Faaliyetler listesi
-/[locale]/hizmetler/[slug]→ Faaliyet detay
-/[locale]/galeri          → Galeri
-/[locale]/galeri/[slug]   → Galeri detay
-/[locale]/haberler        → Blog / Haberler
-/[locale]/haberler/[slug] → Blog yazı detay
+/[locale]/                → Anasayfa (hero, A-Z capabilities, FAQ, CTA)
+/[locale]/urunler         → Ürün katalog listesi (10 defans kategorisi)
+/[locale]/urunler/[slug]  → Ürün detay
+/[locale]/hizmetler       → Hizmetler / tedarik süreci
+/[locale]/galeri[/slug]   → Galeri
+/[locale]/referanslar     → Referanslar
+/[locale]/haberler[/slug] → Blog / Haberler (custom_pages module_key=news) — opsiyonel
 /[locale]/hakkimizda      → Hakkımızda
-/[locale]/iletisim        → İletişim
-/[locale]/teklif          → Teklif formu
-/[locale]/legal/[slug]    → Yasal sayfalar
+/[locale]/iletisim        → İletişim (İzmir/Bornova)
+/[locale]/teklif          → RFQ / teklif talebi
+/[locale]/legal/[slug]    → Yasal sayfalar (privacy / terms / cookie)
+/[locale]/certifications  → Sertifikalar & uyumluluk (eklenecek)
+/[locale]/faq             → SSS (eklenecek)
 ```
+
+> KALDIRILDI (backend desteksiz, içerik planı dışı): bayi portalı (bayi-girisi/kayit/odeme/agi/dashboard/
+> panel/finans), kataloglar, kampanya, fiyat-listesi, bilgi-bankasi, ekim-takvimi, insan-kaynaklari.
 
 ## Tema Kontratı — "İmparatorluk Zırhı"
 
-- Template: `sultandefense-imperial-armor`
-- Intent: `imperial-armor-anthracite-gold-bordeaux`
-- Kaynak: `src/styles/globals.css`, `src/theme/templates.ts` · Marka: `docs/brand/`
+- Template: `sultan-imperial-armor` · Intent: `imperial-armor-anthracite-gold`
+- **Koyu varsayılan** (ana his) + açık toggle. Kaynak: `src/styles/globals.css`, `src/theme/templates.ts`.
+- Renkler: Antrasit `#1A1A1D` (zemin) · Titanyum `#2D3134` (yüzey) · **Mat Osmanlı Altını `#C5A880`** (ana
+  vurgu/CTA) · Derin Bordo `#7A1B22` (ikincil/küçük vurgu). Token referansı: `docs/brand/tokens.css`.
 
 ### Kural Özeti
 
-- Component dark/light bilmez — `dark:bg-*` YASAK
-- Semantic token kullan: `bg-[var(--color-bg)]`
-- Dark section: `surface-dark-heading`, `surface-dark-text`, `surface-dark-panel`
-- Brand rengi **mat altın**: `--color-brand` = `#C5A880`; zemin antrasit `#1A1A1D`; ikincil **bordo** `#7A1B22`
-- NOT: primitive ölçek isimleri (`--cyan-*` / `--navy-*`) **legacy**; değerleri altın/antrasit (isimleri değiştirme)
-- Tipografi: Oswald (--font-heading) + Inter (--font-body)
+- Component dark/light bilmez — `dark:bg-*` YASAK. Semantic token kullan: `bg-(--color-bg)`, `text-(--color-text-primary)`.
+- Marka: `--color-brand` = mat altın. İkincil: `--color-accent` = bordo.
+- Primitive ramplar: `--gold-*` (altın), `--green-*` (= bordo değerleri), `--soil-*` + `--anthracite-*` (antrasit/titanyum).
 
-## Zorunlu Çalışma Kuralları
+## Logo / Marka Asset Kontratı
 
-- Her yeni sayfa veya section önce mevcut SEO pattern'i ile hizalanır.
-- Metadata, canonical, hreflang, robots ve JSON-LD mantığı helper seviyesinde tekrar kullanılır.
-- Query parametreli indeks riski olan URL'lerde canonical temiz path'e döner; gerekiyorsa `noindex,follow` kullanılır.
-- Her locale aynı component pattern'ini kullanır; locale bazlı fark yalnızca veri ve mesaj katmanında olur.
+- Kare amblem (şeffaf): `public/logo/sultandefense-emblem.png` — header'da amblem + HTML "SULTAN DEFENSE"
+  wordmark olarak kullanılır (menüye sığan yatay lockup; ayrı raster gerekmez).
+- Tam logo (şeffaf, koyu zemin): `public/logo/sultandefense-logo-transparent.png` — footer/OG.
+- Favicon / apple-touch / PWA: koyu (#1A1A1D) kutucuklu amblem — `public/favicon.ico`, `public/apple-touch-icon.png`,
+  `public/icons/icon-{192,512}.png`, `maskable-512.png`. icon.tsx/apple-icon.tsx kaynak: `public/logo/sultandefense-{favicon,apple-touch-icon}.png`.
+- Kaynak: `docs/brand/logo/sultandefense-logo-source-v2.png` (resmi logo).
+
+## API Endpoint Şablonu (sultandefense backend, port 8090, path `/api` — v1 YOK)
+
+```
+GET /api/products?item_type=sultandefense&locale=tr&is_active=1
+GET /api/products/by-slug/[slug]?item_type=sultandefense&locale=tr
+GET /api/categories?module_key=sultandefense&locale=tr
+GET /api/galleries?module_key=sultandefense&locale=tr
+GET /api/services?module_key=sultandefense&locale=tr
+GET /api/custom-pages?module_key=news&locale=tr            # blog/haberler
+GET /api/site_settings/[key]?prefix=sultandefense__
+GET /api/menu-items?site_id=sultandefense  ·  /api/footer-sections?site_id=sultandefense
+POST /api/offers  (source=sultandefense)  ·  /api/contacts  ·  /api/newsletter/subscribe
+```
 
 ## SEO Pattern Kontratı
 
-Her indekslenebilir sayfa için aşağıdakiler kontrol edilmeden iş tamamlanmış sayılmaz:
+Her indekslenebilir sayfa: `generateMetadata` → `buildPageMetadata()` (`src/seo/helpers.ts`), canonical,
+hreflang + `x-default`, robots, OG/Twitter, JSON-LD (Organization = Sultan Defense Ltd., 1996, defans
+tedarik/ihracat partneri — üretici DEĞİL). Boş veride kontrollü fallback UI.
 
-- `generateMetadata` — `buildPageMetadata()` kullanılır (`src/seo/helpers.ts`)
-- canonical
-- hreflang + `x-default`
-- uygun `robots`
-- Open Graph / Twitter alanları
-- JSON-LD şeması (sayfa tipine göre)
-- Boş veri durumunda kontrollü fallback UI
+## Kritik Dosyalar
 
-**Varsayılan pattern:**
-
-```ts
-// Listing sayfası
-buildPageMetadata({ locale, pathname: '/projeler', title, description })
-
-// Detay sayfası
-buildPageMetadata({ locale, pathname: '/projeler/[slug]', title, description, ogImage })
-
-// Filtreli / query-driven sayfa
-buildPageMetadata({ ..., noIndex: true })
-```
-
-**JSON-LD şemaları** (`src/seo/jsonld.ts`):
-
-- Anasayfa: `Organization` + `LocalBusiness`
-- Proje detay: `CreativeWork` + `BreadcrumbList`
-- Faaliyet detay: `Service` + `BreadcrumbList`
-- İletişim: `LocalBusiness` (adres, tel, openingHours)
-
-## API Endpoint Şablonu
-
-```
-GET /api/projects?module_key=sultandefense&locale=tr&is_active=1
-GET /api/projects/by-slug/[slug]?locale=tr
-GET /api/services?module_key=sultandefense&locale=tr
-GET /api/galleries?module_key=sultandefense&locale=tr
-GET /api/custom_pages?module_key=sultandefense_blog&locale=tr
-GET /api/site_settings/[key]?prefix=sultandefense__
-```
-
-## Media SEO Kontratı
-
-- `alt` metni title-only fallback olarak bırakılmaz; `src/lib/media-seo.ts` içindeki helper ile anlamsal fallback üretilir.
-- `caption` varsa title tekrar etmez.
-- Görsel `width` ve `height` API'den geliyorsa kullanılır; gelmiyorsa tek bir merkezi fallback uygulanır.
-- Yeni görseller kebab-case dosya adı ile yüklenir: `bosphorus-residence-dis-cephe-01.jpg`
+| Dosya | Amaç |
+| --- | --- |
+| `src/styles/globals.css` | Renk token'ları (sultan-imperial-armor) |
+| `src/theme/templates.ts` | Template adı |
+| `src/lib/utils.ts` | SITE_URL, API_BASE_URL |
+| `src/lib/sultandefense-palette-hex.ts` | OG/manifest için hex paleti |
+| `src/seo/helpers.ts` / `src/seo/jsonld.ts` | Metadata + JSON-LD |
+| `public/locales/{tr,en}.json` | Çeviriler |
 
 ## Test
 
 ```bash
-npm run build          # Build kontrol
-npm run type-check     # TypeScript kontrol
-npm run test:theme     # Tema token kontrol (raw hex, bg-white, dark: yok)
-npm run test:seo       # SEO smoke test (canonical, hreflang, robots, sitemap)
-npm run test:media     # Media alt/caption kontrol
-npm run audit:crawl    # Tam site tarama raporu
-npm run audit:lighthouse # Lighthouse CI
+bun install && bun run build      # type + build
+bun run dev                       # :3040 (backend :8090 açık olmalı)
 ```
-
-## Kritik Dosyalar
-
-| Dosya                            | Amaç                    |
-| -------------------------------- | ----------------------- |
-| `src/styles/globals.css`         | Renk token'ları         |
-| `src/theme/templates.ts`         | Template adı            |
-| `src/lib/utils.ts`               | SITE_URL, API_BASE_URL  |
-| `src/seo/helpers.ts`             | buildPageMetadata()     |
-| `src/seo/jsonld.ts`              | JSON-LD builder'ları    |
-| `src/lib/content-fallbacks.ts`   | Offline fallback içerik |
-| `src/lib/navigation-fallback.ts` | Fallback nav linkleri   |
-| `public/locales/tr.json`         | TR çeviriler            |
-| `public/locales/en.json`         | EN çeviriler            |
 
 ## Delivery Kuralı
 
-Aşağıdaki dosyalar birbirinden kopuk güncellenmez:
-
-- `CLAUDE.md`
-- `PLAN.md` (proje kökünde)
-- `THEMA.md` (proje kökünde)
-- `src/styles/globals.css`
-- `src/theme/templates.ts`
+Bunlar kopuk güncellenmez: `CLAUDE.md`, `src/styles/globals.css`, `src/theme/templates.ts`,
+kök `FRONTEND_SWAP_PLAN.md`.
