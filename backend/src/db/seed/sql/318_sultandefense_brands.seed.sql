@@ -17,3 +17,7 @@ UPDATE references_i18n SET title='NUROL TEKNOLOJİ'  WHERE reference_id='ref1000
 UPDATE references_i18n SET title='SAVRONİK'         WHERE reference_id='ref10004-4004-4004-8004-000000000004';
 UPDATE references_i18n SET title='ASİSGUARD'        WHERE reference_id='ref10005-4005-4005-8005-000000000005';
 UPDATE references_i18n SET title='MİLSOFT'          WHERE reference_id='ref10006-4006-4006-8006-000000000006';
+-- Tum marka referanslarini anasayfa bandinda goster (is_featured=1)
+UPDATE `references` SET is_featured=1 WHERE id IN (
+ 'ref10001-4001-4001-8001-000000000001','ref10002-4002-4002-8002-000000000002','ref10003-4003-4003-8003-000000000003',
+ 'ref10004-4004-4004-8004-000000000004','ref10005-4005-4005-8005-000000000005','ref10006-4006-4006-8006-000000000006');
