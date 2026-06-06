@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import {
-  Search, Globe, User, Share2, ClipboardList, X,
+  Search, Globe, User, Share2, ClipboardList, X, ChevronLeft,
   Instagram, Facebook, Linkedin, Youtube, Twitter, Phone, Mail, MapPin
 } from 'lucide-react';
 
@@ -23,6 +23,7 @@ interface FloatingWidgetsProps {
 
 export function FloatingWidgets({ activeLocales = [], socials = {}, contactInfo = {} }: FloatingWidgetsProps) {
   const [activeTab, setActiveTab] = useState<'none' | 'search' | 'lang' | 'info' | 'social'>('none');
+  const [expanded, setExpanded] = useState(false); // mobil: tutaca dokununca acilir
   const [searchQuery, setSearchQuery] = useState('');
   const locale = useLocale();
   const pathname = usePathname();
@@ -125,11 +126,24 @@ export function FloatingWidgets({ activeLocales = [], socials = {}, contactInfo 
         </div>
       )}
 
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-9000 flex flex-col pointer-events-none">
+      <div className="group fixed right-0 top-1/2 -translate-y-1/2 z-9000 flex flex-row-reverse items-center pointer-events-none">
 
-        {/* ── FLOATING BAR ── */}
+        {/* Mobil tutac — dokununca bari acar (masaustunde gizli; bar her zaman acik) */}
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          aria-label="Araçlar"
+          aria-expanded={expanded}
+          className="pointer-events-auto flex h-16 w-6 items-center justify-center rounded-l-md text-(--color-on-brand) shadow-2xl lg:hidden"
+          style={{ background: 'var(--color-brand)' }}
+        >
+          <ChevronLeft size={16} className={`transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`} />
+        </button>
+
+        {/* ── FLOATING BAR ── (mobilde varsayilan gizli; tutac/hover ile acilir) */}
         <div
-          className="relative mr-0 flex w-[60px] flex-col shadow-2xl pointer-events-auto"
+          data-open={expanded}
+          className="relative flex w-0 flex-col overflow-hidden opacity-0 shadow-2xl transition-all duration-300 pointer-events-auto group-hover:w-[60px] group-hover:opacity-100 data-[open=true]:w-[60px] data-[open=true]:opacity-100 lg:w-[60px] lg:opacity-100"
           style={{ background: 'var(--color-bg-dark)' }}
         >
 
