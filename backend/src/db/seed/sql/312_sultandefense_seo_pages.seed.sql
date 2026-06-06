@@ -13,7 +13,7 @@ VALUES (
   'sultandefense__seo_pages',
   'tr',
   CAST(JSON_OBJECT(
-    'home', JSON_OBJECT('title', 'A-Z Savunma Tedariki ve Taktik Ekipman', 'description', 'Sultan Defense, taktik ekipman, askeri elektronik, lojistik destek ve savunma teknolojileri icin uc uca tedarik cozumleri sunar.', 'og_image', '/logo/png/sultandefense_logo_512.png', 'no_index', false),
+    'home', JSON_OBJECT('title', 'Savunma Tedariki ve Taktik Ekipman', 'description', 'Sultan Defense, taktik ekipman, askeri elektronik, lojistik destek ve savunma teknolojileri icin uc uca tedarik cozumleri sunar.', 'og_image', '/logo/png/sultandefense_logo_512.png', 'no_index', false),
     'projeler', JSON_OBJECT('title', 'Savunma Urun Kategorileri', 'description', 'Balistik koruma, muhabere, sahra lojistigi, deniz sistemleri, guc cozumleri, gozetleme ve taktik tekstil kategorilerini inceleyin.', 'og_image', '/logo/png/sultandefense_logo_512.png', 'no_index', false),
     'hizmetler', JSON_OBJECT('title', 'Savunma Tedarik Sureci', 'description', 'Stratejik kaynak bulma, uretici koordinasyonu, EUC ve ihracat uyumu, kalite kontrol ve guvenli lojistik sureclerimiz.', 'og_image', '/logo/png/sultandefense_logo_512.png', 'no_index', false),
     'galeri', JSON_OBJECT('title', 'Savunma Urun Galerisi', 'description', 'Sultan Defense tedarik agindaki savunma, guvenlik, lojistik ve taktik ekipman gorselleri.', 'og_image', '/logo/png/sultandefense_logo_512.png', 'no_index', false),
@@ -34,7 +34,7 @@ VALUES (
   'sultandefense__seo_pages',
   'en',
   CAST(JSON_OBJECT(
-    'home', JSON_OBJECT('title', 'A to Z Defense Procurement & Tactical Equipment', 'description', 'Sultan Defense supplies tactical gear, military electronics, logistics systems, and defense technologies through end-to-end procurement workflows.', 'og_image', '/logo/png/sultandefense_logo_512.png', 'no_index', false),
+    'home', JSON_OBJECT('title', 'Defense Procurement & Tactical Equipment', 'description', 'Sultan Defense supplies tactical gear, military electronics, logistics systems, and defense technologies through end-to-end procurement workflows.', 'og_image', '/logo/png/sultandefense_logo_512.png', 'no_index', false),
     'projeler', JSON_OBJECT('title', 'Defense Product Categories', 'description', 'Explore ballistic protection, communications, field logistics, naval systems, power solutions, surveillance, and tactical textile categories.', 'og_image', '/logo/png/sultandefense_logo_512.png', 'no_index', false),
     'hizmetler', JSON_OBJECT('title', 'Defense Procurement Process', 'description', 'Strategic sourcing, manufacturer liaison, EUC and export compliance, quality assurance, and secure global logistics.', 'og_image', '/logo/png/sultandefense_logo_512.png', 'no_index', false),
     'galeri', JSON_OBJECT('title', 'Defense Product Gallery', 'description', 'Defense, security, logistics, and tactical equipment visuals from the Sultan Defense procurement network.', 'og_image', '/logo/png/sultandefense_logo_512.png', 'no_index', false),

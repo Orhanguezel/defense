@@ -84,7 +84,7 @@
       "daysAgo": "{days} gün önce"
     },
     "requestOffer": "Teklif İste",
-    "offerCtaTitle": "defans ekipmanı Siparişiniz İçin Ücretsiz Fiyat Teklifi Hazırlayalım",
+    "offerCtaTitle": "Siparişiniz İçin Ücretsiz Fiyat Teklifi Hazırlayalım",
     "offerCtaDescription": "İhtiyaç listenizi, adetleri ve teslimat ülkesini paylaşın; ihracat ekibimiz uygun tedarik kapsamı için size dönüş yapsın.",
     "freeOfObligation": "Ücretsiz ve bağlayıcı değildir",
     "send": "Gönder",
@@ -105,7 +105,7 @@
   },
   "home": {
     "hero": {
-      "title": "A’dan Z’ye Defans Tedariki",
+      "title": "Güvenilir Savunma Tedarik Ortağınız",
       "subtitle": "Sultan Defense, Orta Doğu, Afrika ve Türk Cumhuriyetleri için taktik ekipman ve savunma teknolojileri tedarik eden B2B ihracat partneridir.",
       "cta": "Ürünlerimizi İnceleyin",
       "ctaSecondary": "Teklif Alın",
@@ -769,7 +769,7 @@
     "cookiePolicyContent": "<p>Çerezler; site işleyişi, tercih hatırlama ve güvenlik için kullanılabilir. Tarayıcı ayarlarınızdan çerezleri yönetebilirsiniz.</p><p>Ayrıntılı metin CMS üzerinden yayınlandığında bu sayfa otomatik güncellenir.</p>"
   },
   "seo": {
-    "defaultTitle": "Sultan Defense | Güvenilir defans ekipmanı tedariki",
+    "defaultTitle": "Sultan Defense | Güvenilir Savunma Tedariki ve Taktik Ekipman",
     "defaultDescription": "Sultan Defense, taktik ekipman ve savunma teknolojileri için B2B defans tedarik ve ihracat partneridir.",
     "keywords": "defans tedarik, savunma ihracat, taktik ekipman, balistik koruma, komuta elektroniği, saha lojistiği",
     "searchTitle": "Site içi arama",

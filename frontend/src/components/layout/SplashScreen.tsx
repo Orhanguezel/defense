@@ -15,7 +15,7 @@ export function SplashScreen({
   const [phase, setPhase] = useState<'loading' | 'reveal' | 'exit' | 'done'>('loading');
 
   const finalName = companyName || 'Sultan Defense';
-  const finalTagline = tagline || 'A to Z Defense Procurement';
+  const finalTagline = tagline || 'Defense Procurement';
   const finalLogo = logoUrl || '/logo/sultandefense-logo-transparent.png';
 
   const startSequence = useCallback(() => {

@@ -500,7 +500,7 @@ export default async function HomePage({
 
 
         {references.length ? (
-          <section className="w-full">
+          <section className="w-full min-h-[50vh] flex flex-col justify-center py-12">
             <div className="mx-auto max-w-7xl px-4 lg:px-6 mb-12">
               <Reveal>
                 <div className="text-center">
@@ -557,12 +557,12 @@ export default async function HomePage({
              <div className="relative overflow-hidden border border-(--color-border-on-dark) bg-(--color-bg-dark) p-12 text-center shadow-2xl lg:p-24">
                 <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
                   <h2
-                    className="mb-8 text-3xl font-black uppercase leading-tight tracking-[0.15em] text-(--section-bg-white) lg:text-6xl"
+                    className="mb-8 text-3xl font-black uppercase leading-tight tracking-[0.15em] text-white lg:text-6xl"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
                      {t('common.offerCtaTitle')}
                   </h2>
-                  <p className="mx-auto mb-12 max-w-2xl text-base leading-relaxed font-medium text-(--color-text-muted) lg:text-xl">
+                  <p className="mx-auto mb-12 max-w-2xl text-base leading-relaxed font-medium text-white/80 lg:text-xl">
                      {t('common.offerCtaDescription')}
                   </p>
 

@@ -84,7 +84,7 @@
       "daysAgo": "{days} days ago"
     },
     "requestOffer": "Request Offer",
-    "offerCtaTitle": "Let Us Prepare a Free Quote for Your defense equipment Order",
+    "offerCtaTitle": "Let Us Prepare a Free Quote for Your Order",
     "offerCtaDescription": "Share your requirement list, quantities and destination country; our export team will respond with the right procurement scope.",
     "freeOfObligation": "Free and non-binding",
     "send": "Send",
@@ -104,7 +104,7 @@
   },
   "home": {
     "hero": {
-      "title": "A to Z Defense Procurement",
+      "title": "Your Trusted Defense Procurement Partner",
       "subtitle": "Sultan Defense is a B2B export partner supplying tactical equipment and defense technologies across the Middle East, Africa and Turkic Republics.",
       "cta": "Explore Our Products",
       "ctaSecondary": "Get a Quote",
@@ -754,7 +754,7 @@
     "cookiePolicyContent": "<p>Cookies may be used for core functionality, preferences and security. You can manage cookies in your browser settings.</p><p>When the full policy is published via the CMS, this page updates automatically.</p>"
   },
   "seo": {
-    "defaultTitle": "Sultan Defense | Reliable defense equipment and tactical equipment Production Services",
+    "defaultTitle": "Sultan Defense | Reliable Defense Procurement & Tactical Equipment",
     "defaultDescription": "Sultan Defense is a B2B defense procurement and export partner for tactical equipment and defense technologies.",
     "keywords": "defense procurement, defense export, tactical equipment, ballistic protection, command electronics, field logistics",
     "searchTitle": "Site search",

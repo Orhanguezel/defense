@@ -54,12 +54,12 @@ INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `upda
 VALUES
   (UUID(), 'sultandefense__company_profile', 'tr', CAST(JSON_OBJECT(
     'company_name', 'Sultan Defense Ltd., Co.',
-    'slogan', 'A-Z Savunma Tedariki ve Ihracat Partneri',
+    'slogan', 'Savunma Tedariki ve Ihracat Partneri',
     'about', '1996 yilindan bu yana Sultan Defense Ltd., Co. savunma ve askeri ekipman alaninda kuresel tedarik partneri olarak calisir. Turkiye savunma sanayisinin uretim kapasitesini Orta Dogu, Afrika ve Turk Cumhuriyetleri basta olmak uzere uluslararasi kurumlarin operasyonel ihtiyaclariyla bulusturur.'
   ) AS CHAR CHARACTER SET utf8mb4), NOW(3), NOW(3)),
   (UUID(), 'sultandefense__company_profile', 'en', CAST(JSON_OBJECT(
     'company_name', 'Sultan Defense Ltd., Co.',
-    'slogan', 'A to Z Defense Procurement & Export Partner',
+    'slogan', 'Defense Procurement & Export Partner',
     'about', 'Established in 1996, Sultan Defense Ltd., Co. is a global supplier and procurement partner in the defense and military sector. We connect Turkey''s advanced defense manufacturing capacity with the operational requirements of armed forces, law enforcement, and security agencies worldwide.'
   ) AS CHAR CHARACTER SET utf8mb4), NOW(3), NOW(3))
 ON DUPLICATE KEY UPDATE `value` = VALUES(`value`), `updated_at` = VALUES(`updated_at`);

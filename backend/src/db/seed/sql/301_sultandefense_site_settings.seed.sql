@@ -30,7 +30,7 @@ VALUES (
   'sultandefense__seo',
   'tr',
   JSON_OBJECT(
-    'site_title', 'Sultan Defense | A-Z Savunma Tedariki ve Taktik Ekipman',
+    'site_title', 'Sultan Defense | Savunma Tedariki ve Taktik Ekipman',
     'site_description', 'Sultan Defense, Orta Dogu, Afrika ve Turk Cumhuriyetleri icin uc uca savunma tedariki, taktik ekipman ve ihracat cozumleri sunar.',
     'keywords', 'savunma tedariki, askeri ekipman, taktik ekipman, balistik koruma, askeri ihracat, Sultan Defense',
     'og_image', '/logo/png/sultandefense_logo_512.png',
@@ -46,8 +46,8 @@ VALUES (
   'sultandefense__seo',
   'en',
   JSON_OBJECT(
-    'site_title', 'A to Z Defense Procurement & Tactical Equipment | Sultan Defense',
-    'site_description', 'Sultan Defense provides comprehensive A to Z military procurement solutions, supplying tactical gear and defense technologies to the Middle East, Africa, and Turkic Republics.',
+    'site_title', 'Defense Procurement & Tactical Equipment | Sultan Defense',
+    'site_description', 'Sultan Defense provides comprehensive military procurement solutions, supplying tactical gear and defense technologies to the Middle East, Africa, and Turkic Republics.',
     'keywords', 'defense procurement, tactical gear, military equipment, ballistic protection, export compliance, Sultan Defense',
     'og_image', '/logo/png/sultandefense_logo_512.png',
     'og_type', 'website'
@@ -147,8 +147,8 @@ VALUES (
   '*',
   JSON_OBJECT(
     'brand_name', 'Sultan Defense',
-    'brand_tagline_tr', 'A-Z Savunma Tedariki ve Ihracat Partneri',
-    'brand_tagline_en', 'A to Z Defense Procurement & Export Partner',
+    'brand_tagline_tr', 'Savunma Tedariki ve Ihracat Partneri',
+    'brand_tagline_en', 'Defense Procurement & Export Partner',
     'primary_color', '#0D1B2A',
     'accent_color', '#2BD4D9',
     'dark_color', '#07111C',

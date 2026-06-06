@@ -68,7 +68,7 @@ export default function OpenGraphImage() {
               letterSpacing: -2,
             }}
           >
-            A to Z Defense Procurement
+            Defense Procurement
           </div>
           <div
             style={{

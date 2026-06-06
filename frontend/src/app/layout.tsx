@@ -9,7 +9,7 @@ const metadataBase = new URL(siteUrl);
 export const metadata: Metadata = {
   metadataBase,
   title: {
-    default: 'Sultan Defense | A to Z Defense Procurement',
+    default: 'Sultan Defense | Defense Procurement',
     template: '%s | Sultan Defense',
   },
   description: `B2B defense procurement and export partner for tactical equipment and defense technologies. Sultan Defense — ${metadataBase.host}`,

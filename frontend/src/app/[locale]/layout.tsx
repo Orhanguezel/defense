@@ -66,7 +66,7 @@ export async function generateMetadata({
   const logoValue = { ...readSettingValue(legacyLogo), ...readSettingValue(siteLogo) };
   const ogValue = readSettingValue(siteOgDefaultImage);
 
-  const title = asStr(val.site_title) || 'Sultan Defense | A to Z Defense Procurement';
+  const title = asStr(val.site_title) || 'Sultan Defense | Defense Procurement';
   const description =
     asStr(val.site_description) ||
     'Sultan Defense is a B2B defense procurement and export partner supplying tactical equipment and defense technologies.';
