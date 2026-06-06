@@ -143,7 +143,7 @@ export function FloatingWidgets({ activeLocales = [], socials = {}, contactInfo 
         {/* ── FLOATING BAR ── (mobilde varsayilan gizli; tutac/hover ile acilir) */}
         <div
           data-open={expanded}
-          className="relative flex w-0 flex-col overflow-hidden opacity-0 shadow-2xl transition-all duration-300 pointer-events-auto group-hover:w-[60px] group-hover:opacity-100 data-[open=true]:w-[60px] data-[open=true]:opacity-100 lg:w-[60px] lg:opacity-100"
+          className="relative flex w-0 flex-col overflow-hidden opacity-0 shadow-2xl transition-all duration-300 pointer-events-auto group-hover:w-[60px] group-hover:opacity-100 group-hover:overflow-visible data-[open=true]:w-[60px] data-[open=true]:opacity-100 data-[open=true]:overflow-visible lg:w-[60px] lg:opacity-100 lg:overflow-visible"
           style={{ background: 'var(--color-bg-dark)' }}
         >
 
