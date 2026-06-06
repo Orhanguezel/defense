@@ -17,14 +17,14 @@
     "offerWidgetLine1": "Teklif",
     "offerWidgetLine2": "Al",
     "trendingSearches": "Trend Aramalar:",
-    "trendSeedling": "defans ekipmanı",
+    "trendSeedling": "Öne Çıkanlar",
     "trendGrafted": "Aşılı",
     "trendTomato": "Domates",
-    "residential": "savunma defans ekipmanıleri",
-    "commercial": "Meyve defans ekipmanıleri",
+    "residential": "Balistik Koruma",
+    "commercial": "Taktik Ekipman",
     "mixed": "Süs Bitkileri",
-    "restoration": "taktik ekipman Çeşitleri",
-    "construction": "defans ekipmanı & taktik ekipman tedariki",
+    "restoration": "Savunma Sistemleri",
+    "construction": "Savunma Tedarik & Lojistik",
     "project_management": "Sipariş Takibi",
     "architectural_design": "tedarik Danışmanlığı",
     "interior_design": "Peyzaj Çözümleri",
@@ -112,24 +112,24 @@
       "badge": "Sultan Defense",
       "newProjectBadge": "Yeni Ürün",
       "workflowLabel": "tedarik Süreci",
-      "workflowTitle": "İhtiyacınıza özel defans ekipmanı tedariki ve planlama",
+      "workflowTitle": "İhtiyacınıza özel savunma tedariki ve planlama",
       "workflowBadgeTitle": "Şeffaf",
       "workflowBadgeSubtitle": "Süreç ve iletişim",
       "metrics": {
-        "prototypeTitle": "Çeşit Seçimi",
-        "prototypeDesc": "İklim, toprak analizi ve en uygun defans ekipmanı çeşidi belirleme",
+        "prototypeTitle": "İhtiyaç Analizi",
+        "prototypeDesc": "Kapsam, teknik şartname ve hedef ülkeye en uygun çözümün belirlenmesi",
         "productionTitle": "tedarik",
-        "productionDesc": "Kalite kontrolü, büyüme takibi ve sağlıklı defans ekipmanı yetiştirme",
+        "productionDesc": "Kalite kontrolü, uygunluk denetimi ve standartlara uygun tedarik",
         "engineeringTitle": "Teknik Destek",
         "engineeringDesc": "konuşlandırma rehberliği, sulama planı ve savunma odaklı danışmanlık"
       },
       "steps": {
         "oneTitle": "1. İhtiyaç analizi",
         "oneDesc": "Bölge, iklim koşulları, toprak yapısı ve tedarik hedeflerinizi birlikte netleştiriyoruz.",
-        "twoTitle": "2. defans ekipmanı tedariki",
-        "twoDesc": "Seçilen çeşitlere uygun taktik ekipman ekimi, tedarik hazırlığı ve defans ekipmanı yetiştirme süreçlerini yürütüyoruz.",
+        "twoTitle": "2. Tedarik ve hazırlık",
+        "twoDesc": "Seçilen kalemlere uygun tedarik, uygunluk hazırlığı ve kalite kontrol süreci",
         "threeTitle": "3. Teslimat ve destek",
-        "threeDesc": "Sağlıklı defans ekipmanılerin paketlenmesi, teslimatı ve konuşlandırma sonrası teknik destek sağlıyoruz."
+        "threeDesc": "Ürünlerin paketlenmesi, ihracatı/teslimatı ve teslimat sonrası teknik destek"
       },
       "stats": {
         "stepsValue": "3+",
@@ -148,17 +148,17 @@
     },
     "services": {
       "title": "Faaliyet Alanlarımız",
-      "subtitle": "taktik ekipman seçiminden defans ekipmanı tedarikine, teknik danışmanlıktan teslimat kapsamlı çözümler"
+      "subtitle": "Ürün seçiminden tedarike, teknik danışmanlıktan teslimata kapsamlı çözümler"
     },
     "whyUs": {
       "title": "Neden Sultan Defense?",
-      "subtitle": "Kalite, güven ve zamanında teslimat odaklı defans ekipmanı tedarik anlayışıyla her siparişte fark yaratıyoruz",
+      "subtitle": "Kalite, güven ve zamanında teslimat odaklı savunma tedarik anlayışı",
       "quality": "Yüksek Kalite",
-      "qualityDesc": "taktik ekipman seçiminden defans ekipmanı teslimatına her aşamada kalite standartlarına tam uyum",
+      "qualityDesc": "Ürün seçiminden teslimata her aşamada kalite ve uygunluk standartlarına tam uyum",
       "experience": "Deneyim",
       "experienceDesc": "15 yılı aşkın savunma deneyimi ve binlerce müşteriye ulaşan güvenilir ortağınız",
       "custom": "Özel Çözümler",
-      "customDesc": "Her bölgeye ve iklime uygun defans ekipmanı tedarik yaklaşımı; standart değil, size özel",
+      "customDesc": "Her ülke ve operasyona uygun tedarik yaklaşımı; standart değil, size özel",
       "delivery": "Zamanında Teslimat",
       "deliveryDesc": "Siparişten teslimat kadar termin taahhüdü ve şeffaf süreç yönetimi"
     },
@@ -168,11 +168,11 @@
     },
     "gallery": {
       "title": "Galeri",
-      "subtitle": "sahalarımızdan, tedarik süreçlerimizden ve defans ekipmanı çeşitlerimizden seçilen fotoğraflar"
+      "subtitle": "Ürünlerimizden, tedarik süreçlerimizden ve sahadan seçilmiş görseller"
     },
     "blog": {
       "title": "Bilgi Bankası",
-      "description": "defans ekipmanı yetiştiriciliği, teknik ipuçları ve savunma odaklı bilgilendirmeler.",
+      "description": "Savunma sanayi, teknik bilgiler ve sektörel gelişmeler.",
       "viewPost": "Yazıyı Oku",
       "allPosts": "Tüm Yazılar",
       "all": "Tümü",
@@ -198,7 +198,7 @@
     },
     "newsletter": {
       "title": "Bültenimize Abone Olun",
-      "subtitle": "Yeni ürünler, mevsimsel defans ekipmanı çeşitleri ve savunma odaklı gelişmelerden haberdar olun.",
+      "subtitle": "Yeni ürünler, tedarik fırsatları ve savunma sanayi gelişmelerinden haberdar olun",
       "placeholder": "E-posta adresiniz",
       "subscribe": "Abone Ol",
       "success": "Başarıyla abone oldunuz!",
@@ -210,7 +210,7 @@
     },
     "contact": {
       "title": "Bizimle İletişime Geçin",
-      "subtitle": "defans ekipmanı siparişinizi, teklif talebinizi veya sorularınızı bize iletin"
+      "subtitle": "Tedarik talebinizi, teklif isteğinizi veya sorularınızı bize iletin"
     }
   },
   "projects": {
@@ -234,10 +234,10 @@
     "getQuoteDesc": "Ücretsiz fiyat teklifi için hemen iletişime geçin.",
     "similarByTagsTitle": "Benzer ürünler",
     "aboutProducerTitle": "Bu tedarik partneri hakkında",
-    "agronomySectionTitle": "tedarik ve yetiştirme bilgileri",
+    "agronomySectionTitle": "Teknik bilgiler",
     "agronomy": {
       "botanicalName": "Botanik ad",
-      "plantingSeasons": "Ekim dönemi",
+      "plantingSeasons": "Teslimat süresi",
       "harvestDays": "Hasada gün",
       "climateZones": "İklim / bölge",
       "soilTypes": "Toprak tipi",
@@ -258,7 +258,7 @@
       "architects": "tedarik partneriler",
       "city": "Şehir",
       "year": "Yıl",
-      "materials": "Çeşit",
+      "materials": "Tür",
       "area": "konuşlandırma Alanı",
       "floors": "Adet",
       "client": "Müşteri",
@@ -266,8 +266,8 @@
       "all": "Tümü",
       "search": "Ara",
       "residential": "savunma",
-      "commercial": "Meyve",
-      "mixed": "Süs Bitkisi",
+      "commercial": "Taktik",
+      "mixed": "Sistem",
       "completed": "Stokta",
       "ongoing": "tedarikde"
     },
@@ -307,16 +307,16 @@
   },
   "services": {
     "title": "Faaliyet Alanlarımız",
-    "description": "taktik ekipman seçiminden defans ekipmanı tedarikine, savunma odaklı danışmanlıktan teslimat kapsamlı defans ekipmanı tedarik faaliyetleri.",
+    "description": "Ürün seçiminden tedarike, savunma odaklı danışmanlıktan teslimata kapsamlı hizmetler",
     "viewAll": "Tüm Faaliyetler",
     "noServices": "Henüz faaliyet bulunmuyor.",
     "learnMore": "DETAYLAR",
     "emptyStateNote": "Canlı içerik gelene kadar aşağıda örnek faaliyet açıklamaları gösterilmektedir.",
     "requestService": "Bu Faaliyet İçin Teklif Alın",
     "items": {
-      "residential": "savunma defans ekipmanıleri",
-      "commercial": "Meyve defans ekipmanıleri",
-      "restoration": "taktik ekipman Çeşitleri",
+      "residential": "Balistik Koruma",
+      "commercial": "Taktik Ekipman",
+      "restoration": "Savunma Sistemleri",
       "projectManagement": "Sipariş Takibi",
       "architecturalDesign": "tedarik Danışmanlığı",
       "interiorDesign": "Peyzaj Çözümleri"
@@ -324,7 +324,7 @@
   },
   "gallery": {
     "title": "Galeri",
-    "description": "sahalarımızdan, tedarik süreçlerimizden ve defans ekipmanı çeşitlerimizden derlenen fotoğraf galerisi.",
+    "description": "Ürünlerimizden, tedarik süreçlerimizden ve sahadan derlenen fotoğraf galerisi",
     "viewAll": "Tüm Görseller",
     "backToList": "Galeriye Dön",
     "noGalleries": "Henüz galeri bulunmuyor.",
@@ -334,7 +334,7 @@
   },
   "blog": {
     "title": "Bilgi Bankası",
-    "description": "defans ekipmanı yetiştiriciliği, teknik ipuçları ve savunma odaklı bilgilendirmeler.",
+    "description": "Savunma sanayi, teknik bilgiler ve sektörel gelişmeler.",
     "viewPost": "Yazıyı Oku",
     "allPosts": "Tüm Yazılar",
     "all": "Tümü",
@@ -415,8 +415,8 @@
     "benefits": {
       "title": "Teklifte Neleri Netleştiriyoruz?",
       "items": {
-        "one": "Ürün tipi: savunma, meyve veya süs bitkisi",
-        "two": "Kapsam: defans ekipmanı tedariki, taktik ekipman tedariki veya tedarik danışmanlığı",
+        "one": "Ürün tipi: balistik koruma, taktik ekipman veya savunma sistemi",
+        "two": "Kapsam: ürün tedariki, ekipman tedariki veya tedarik danışmanlığı",
         "three": "Bütçe aralığı, termin beklentisi, lokasyon ve teknik gereksinimler"
       }
     },
@@ -425,7 +425,7 @@
       "quantity": "Miktar/Alan",
       "deadline": "Hedef Teslimat",
       "details": "Talep Detayları",
-      "detailsPlaceholder": "İhtiyacınız hakkında bize bilgi verin (çeşit, miktar, konuşlandırma zamanı vb.)",
+      "detailsPlaceholder": "İhtiyacınız hakkında bize bilgi verin (ürün, miktar, hedef ülke, teslimat zamanı vb.)",
       "attachFile": "Dosya Ekle (teknik şartname, analiz raporu vb.)",
       "submit": "Teklif İste",
       "success": "Teklif talebiniz alındı. Ekibimiz en kısa sürede sizinle iletişime geçecek.",
@@ -434,13 +434,13 @@
   },
   "about": {
     "title": "Hakkımızda",
-    "description": "Sultan Defense, savunma ve meyve defans ekipmanılerinde taktik ekipmandan teslimata güvenilir, kaliteli ve zamanında tedarik hizmetleri sunar.",
+    "description": "Sultan Defense, savunma sanayi ürünlerinde tedarikten teslimata güvenilir bir ihracat ve tedarik ortağıdır.",
     "intro": "Ekibimiz; ziraat mühendisleri ve sahada deneyimli tedarik kadrosuyla her siparişi özenle yönetir. Müşteri memnuniyeti, kalite ve sağlıklı tedarik temel değerlerimizdir.",
     "sections": {
       "expertiseTitle": "Uzmanlık Alanlarımız",
       "expertiseItems": {
-        "one": "savunma defans ekipmanıleri: domates, balistik koruma, patlıcan, hıyar ve diğerleri",
-        "two": "Meyve defans ekipmanıleri: çilek, kavun, karpuz ve meyve fidanları",
+        "one": "Balistik koruma ve vücut zırhı çözümleri",
+        "two": "Taktik ekipman, tekstil ve saha destek sistemleri",
         "three": "Süs bitkileri ve peyzaj çözümleri"
       },
       "processTitle": "Çalışma Modelimiz",
@@ -523,7 +523,7 @@
         "cards": {
           "orders": {
             "title": "Ürün siparişi",
-            "body": "Partner kataloğundaki defans ekipmanı ürünlerinden adet bazlı sipariş oluşturun.",
+            "body": "Partner kataloğundaki ürünlerden adet bazlı sipariş oluşturun.",
             "cta": "Siparişe geç"
           },
           "extras": {
@@ -632,7 +632,7 @@
       },
       "extras": {
         "title": "Ekstralar",
-        "lead": "Siparişe bağlanmamış hazır defans ekipmanı fırsatlarını viol tipi, tarih ve adet bilgisiyle talep edin.",
+        "lead": "Siparişe bağlanmamış hazır ürün fırsatlarını tip, tarih ve adet bilgisiyle talep edin.",
         "loading": "Yükleniyor…",
         "empty": "Bu filtrelere uygun ekstra görünmüyor.",
         "allCategories": "Tüm ürün grupları",
@@ -754,13 +754,13 @@
     "privacyContent": "<p>Sultan Defense, iletişim ve teklif formları üzerinden iletilen verileri yalnızca talepleri değerlendirmek, teklif hazırlamak ve iletişimini sürdürmek amacıyla kullanır.</p><p>Gereksiz kişisel veri talep etmeyiz; ürün dosyaları ve teknik dokümanlara erişimi ilgili operasyon ekipleriyle sınırlı tutarız.</p><p>Veri güncelleme veya silme talepleri için iletişim sayfasındaki kanallar üzerinden bize ulaşabilirsiniz.</p>",
     "terms": "Kullanım Koşulları",
     "termsDesc": "Sultan Defense web sitesi, teknik içerikler ve teklif iletişim kanallarının kullanımına dair genel koşullar.",
-    "termsContent": "<p>Bu sitede yer alan bilgiler genel teknik ve ticari yönlendirme amacıyla sunulur. Nihai ürün kapsamı, çeşit seçimi ve tedarik koşulları sipariş sürecinde netleştirilir.</p><p>Sitedeki görseller, teknik notlar ve açıklamalar tek başına bağlayıcı nihai teklif niteliğinde değildir.</p><p>Teklif, termin ve teslim kapsamındaki taahhütler ancak ticari süreçte karşılıklı teyit sonrasında geçerli olur.</p>",
+    "termsContent": "<p>Bu sitede yer alan bilgiler genel teknik ve ticari yönlendirme amacıyla sunulur. Nihai ürün kapsamı, ürün seçimi ve tedarik koşulları sipariş sürecinde netleştirilir.</p><p>Sitedeki görseller, teknik notlar ve açıklamalar tek başına bağlayıcı nihai teklif niteliğinde değildir.</p><p>Teklif, termin ve teslim kapsamındaki taahhütler ancak ticari süreçte karşılıklı teyit sonrasında geçerli olur.</p>",
     "qualityPolicy": "Kalite Politikamız",
-    "qualityPolicyDesc": "defans ekipmanı tedarikinde kalite, izlenebilirlik ve sürekli iyileştirme taahhüdümüzün özeti.",
-    "qualityPolicyContent": "<p>Kalite anlayışımız; sağlıklı defans ekipmanı, tutarlı çeşit performansı ve müşteri memnuniyetini merkeze alır. tedarik süreçlerinde izlenebilirlik, hijyen ve teknik standartlar uygulanır.</p><p>Detaylı metin CMS üzerinden yayınlandığında bu sayfa otomatik güncellenir.</p>",
+    "qualityPolicyDesc": "Savunma tedarikinde kalite, izlenebilirlik ve sürekli iyileştirme taahhüdümüzün özeti.",
+    "qualityPolicyContent": "<p>Kalite anlayışımız; güvenilir ürün, tutarlı ürün performansı ve müşteri memnuniyetini merkeze alır. tedarik süreçlerinde izlenebilirlik, hijyen ve teknik standartlar uygulanır.</p><p>Detaylı metin CMS üzerinden yayınlandığında bu sayfa otomatik güncellenir.</p>",
     "servicePolicy": "Hizmet Politikamız",
     "servicePolicyDesc": "İletişim, teklif değerlendirme ve müşteri desteği süreçlerimize dair özet.",
-    "servicePolicyContent": "<p>Teklif talepleriniz değerlendirilir; nihai koşullar yazılı teyitle netleşir. Çeşit seçimi ve teslimat konularında ekiplerimizden destek alabilirsiniz.</p><p>Geri bildirimlerinizi export@sultandefense.com adresine iletebilirsiniz.</p>",
+    "servicePolicyContent": "<p>Teklif talepleriniz değerlendirilir; nihai koşullar yazılı teyitle netleşir. Ürün seçimi ve teslimat konularında ekiplerimizden destek alabilirsiniz.</p><p>Geri bildirimlerinizi export@sultandefense.com adresine iletebilirsiniz.</p>",
     "dataProtectionNotice": "KVKK Aydınlatma Metni",
     "dataProtectionNoticeDesc": "6698 sayılı KVKK kapsamında kişisel verilerinizin işlenmesi ve haklarınızın özeti.",
     "dataProtectionNoticeContent": "<p>Veri sorumlusu Sultan Defense Ltd., Co. İletişim, teklif ve sipariş süreçlerinde toplanan kimlik ve iletişim verileri; talebin karşılanması, sözleşmenin ifası ve yasal yükümlülükler için işlenir.</p><p>Haklarınız ve başvuru için <strong>export@sultandefense.com</strong> adresini kullanabilirsiniz. Güncel ve ayrıntılı metin yönetim panelinden yayınlandığında bu sayfa otomatik güncellenir.</p>",

@@ -100,24 +100,9 @@ export function buildDefaultMenu(locale: string, t: TranslateFn): MenuItemLike[]
   return [
     { title: safeNavLabel(t, 'home', 'Ana Sayfa'), url: l('/') },
     { title: safeNavLabel(t, 'products', 'Ürünler'), url: l('/urunler') },
-    {
-      title: safeNavLabel(t, 'corporate', 'Kurumsal'),
-      url: l('/hakkimizda'),
-      children: [
-        { title: safeNavLabel(t, 'about', 'Hakkımızda'), url: l('/hakkimizda') },
-        { title: safeNavLabel(t, 'news', 'Haberler'), url: l('/haberler') },
-      ],
-    },
+    { title: safeNavLabel(t, 'about', 'Hakkımızda'), url: l('/hakkimizda') },
     { title: safeNavLabel(t, 'services', 'Faaliyetler'), url: l('/hizmetler') },
-    {
-      title: safeNavLabel(t, 'knowledgeHub', 'Kaynaklar'),
-      url: l('/blog'),
-      children: [
-        { title: safeNavLabel(t, 'blog', 'Blog'), url: l('/blog') },
-        { title: safeNavLabel(t, 'news', 'Haberler'), url: l('/haberler') },
-        { title: safeNavLabel(t, 'gallery', 'Galeri'), url: l('/galeri') },
-      ],
-    },
+    { title: safeNavLabel(t, 'gallery', 'Galeri'), url: l('/galeri') },
     { title: safeNavLabel(t, 'contact', 'İletişim'), url: l('/iletisim') },
     { title: safeNavLabel(t, 'offer', 'Teklif Al'), url: l('/teklif') },
   ];

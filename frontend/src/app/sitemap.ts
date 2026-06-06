@@ -139,8 +139,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/urunler', changeFrequency: 'weekly' as const, priority: 0.9 },
     { path: '/hizmetler', changeFrequency: 'weekly' as const, priority: 0.9 },
     { path: '/galeri', changeFrequency: 'weekly' as const, priority: 0.8 },
-    { path: '/haberler', changeFrequency: 'weekly' as const, priority: 0.7 },
-    { path: '/blog', changeFrequency: 'weekly' as const, priority: 0.7 },
     { path: '/hakkimizda', changeFrequency: 'monthly' as const, priority: 0.6 },
     { path: '/iletisim', changeFrequency: 'monthly' as const, priority: 0.7 },
     { path: '/teklif', changeFrequency: 'monthly' as const, priority: 0.8 },
@@ -149,12 +147,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   for (const locale of locales) {
-    const [products, services, galleries, newsPosts, blogPosts, legalPages] = await Promise.all([
+    const [products, services, galleries, legalPages] = await Promise.all([
       fetchItems(`/products?item_type=sultandefense&locale=${encodeURIComponent(locale)}`),
       fetchItems(`/services?module_key=sultandefense&locale=${encodeURIComponent(locale)}`),
       fetchItems(`/galleries?module_key=sultandefense&locale=${encodeURIComponent(locale)}`),
-      fetchPublishedCustomPages(locale, 'news'),
-      fetchPublishedCustomPages(locale, 'blog'),
       fetchLegalItemsForLocale(locale),
     ]);
 
@@ -196,25 +192,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       });
     }
 
-    for (const item of newsPosts) {
-      entries.push({
-        url: localizedUrl(locale, `/haberler/${item.slug}`),
-        lastModified: resolveLastModified(item),
-        changeFrequency: 'monthly',
-        priority: 0.7,
-        images: resolveSitemapImages(item),
-      });
-    }
-
-    for (const item of blogPosts) {
-      entries.push({
-        url: localizedUrl(locale, `/blog/${item.slug}`),
-        lastModified: resolveLastModified(item),
-        changeFrequency: 'monthly',
-        priority: 0.65,
-        images: resolveSitemapImages(item),
-      });
-    }
 
     for (const item of legalPages) {
       entries.push({

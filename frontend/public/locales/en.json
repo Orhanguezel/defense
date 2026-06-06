@@ -17,14 +17,14 @@
     "offerWidgetLine1": "Get",
     "offerWidgetLine2": "Quote",
     "trendingSearches": "Trending Searches:",
-    "trendSeedling": "defense equipment",
+    "trendSeedling": "Featured",
     "trendGrafted": "Grafted",
     "trendTomato": "Tomato",
-    "residential": "defense defense equipment",
-    "commercial": "Fruit defense equipment",
-    "mixed": "Ornamental Plants",
+    "residential": "Ballistic Protection",
+    "commercial": "Tactical Equipment",
+    "mixed": "Defense Systems",
     "restoration": "tactical equipment Varieties",
-    "construction": "defense equipment & tactical equipment Production",
+    "construction": "Defense Procurement & Logistics",
     "project_management": "Order Tracking",
     "architectural_design": "Production Consulting",
     "interior_design": "Landscape Solutions",
@@ -118,7 +118,7 @@
         "prototypeTitle": "tactical equipment Selection",
         "prototypeDesc": "Analyzing climate, soil conditions and determining the most suitable varieties",
         "productionTitle": "Production",
-        "productionDesc": "Quality control, growth monitoring and healthy defense equipment cultivation",
+        "productionDesc": "Quality control, compliance inspection and standards-compliant supply",
         "engineeringTitle": "Technical Support",
         "engineeringDesc": "Planting guidance, irrigation planning and defense consulting"
       },
@@ -126,9 +126,9 @@
         "oneTitle": "1. Needs analysis",
         "oneDesc": "We clarify location, climate conditions, soil structure and production goals together.",
         "twoTitle": "2. defense procurement",
-        "twoDesc": "We manage tactical equipment sowing, germination and defense equipment cultivation processes according to selected varieties.",
+        "twoDesc": "We manage procurement, compliance preparation and quality control for the selected items",
         "threeTitle": "3. Delivery and support",
-        "threeDesc": "We manage packaging and delivery of healthy defense equipment, ensuring quality and technical support."
+        "threeDesc": "We manage packaging, export/delivery and post-delivery technical support"
       },
       "stats": {
         "stepsValue": "3+",
@@ -174,7 +174,7 @@
       "subtitle": "Practical content on defense procurement, production techniques and defense know-how",
       "featuredLabel": "Featured Insight",
       "spotlightTitle": "Sustainable defense: Organic defense procurement and Certification Standards",
-      "spotlightBodyPrimary": "Sustainable defense is becoming an increasingly important standard in terms of soil health, water conservation and natural production methods. Organic defense equipment certification is an important reference system that certifies production as environmentally friendly.",
+      "spotlightBodyPrimary": "Defense industry technologies and standards continue to evolve rapidly.",
       "spotlightBodySecondary": "At Sultan Defense, we aim to integrate sustainable tactical equipment selection and eco-friendly production principles into every variety we grow. Achieving productivity goals is not possible without proper planning from the start — which is why we plan an eco-conscious approach for each cycle from day one.",
       "insightLabel": "What this covers",
       "insightText": "Organic standards, certification process and the value it adds to your operation",
@@ -216,7 +216,7 @@
     "saveProject": "Save Product",
     "loveTitle": "Products You'll Love",
     "getQuoteTitle": "Get a Quote for Your Order",
-    "getQuoteDesc": "Contact us for a free quote on your defense equipment needs.",
+    "getQuoteDesc": "Contact us for a free quote on your procurement needs.",
     "similarByTagsTitle": "Similar products",
     "aboutProducerTitle": "About this producer",
     "agronomySectionTitle": "Growing and production details",
@@ -251,8 +251,8 @@
       "all": "All",
       "search": "Search",
       "residential": "defense",
-      "commercial": "Fruit",
-      "mixed": "Ornamental",
+      "commercial": "Tactical",
+      "mixed": "System",
       "completed": "In Stock",
       "ongoing": "In Production"
     },
@@ -292,15 +292,15 @@
   },
   "services": {
     "title": "Our Activity Areas",
-    "description": "Comprehensive defense and production activities from tactical equipment selection to defense equipment cultivation, from technical consulting to delivery.",
+    "description": "Comprehensive services from product selection to procurement, defense-focused consulting to delivery",
     "viewAll": "All Activities",
     "noServices": "No activities found.",
     "learnMore": "LEARN MORE",
     "emptyStateNote": "Sample activity descriptions are shown below until live content becomes available.",
     "requestService": "Get a Quote for This Activity",
     "items": {
-      "residential": "defense defense equipment",
-      "commercial": "Fruit defense equipment",
+      "residential": "Ballistic Protection",
+      "commercial": "Tactical Equipment",
       "restoration": "tactical equipment Varieties",
       "projectManagement": "Order Tracking",
       "architecturalDesign": "Production Consulting",
@@ -396,11 +396,11 @@
   },
   "offer": {
     "title": "Quote Request",
-    "description": "Let us prepare a tailored quote based on your defense equipment variety, quantity and delivery expectations.",
+    "description": "Let us prepare a tailored quote based on your product, quantity and destination country",
     "benefits": {
       "title": "What We Clarify in the Quote",
       "items": {
-        "one": "Product type: defense, fruit or ornamental plants",
+        "one": "Product type: ballistic protection, tactical equipment or defense system",
         "two": "Scope: defense procurement, tactical equipment supply or production consulting",
         "three": "Quantity, timeline expectations, location and technical requirements"
       }
@@ -424,15 +424,15 @@
     "sections": {
       "expertiseTitle": "Our Areas of Expertise",
       "expertiseItems": {
-        "one": "defense defense equipment: tomatoes, ballistic protections, eggplants, cucumbers and more",
-        "two": "Fruit defense equipment: strawberries, melons, watermelons and fruit saplings",
-        "three": "Ornamental plants and landscape solutions"
+        "one": "Ballistic protection and body armor solutions",
+        "two": "Tactical gear, textile and field support systems",
+        "three": "Surveillance, communications and naval systems"
       },
       "processTitle": "How We Work",
       "processItems": {
         "one": "Understanding production requirements and client expectations",
         "two": "Managing tactical equipment selection, grafting and germination processes",
-        "three": "Quality-controlled, on-time and healthy defense equipment delivery"
+        "three": "Quality-controlled, on-time product delivery"
       },
       "sectorsTitle": "Who We Serve",
       "sectorsItems": {
@@ -508,7 +508,7 @@
         "cards": {
           "orders": {
             "title": "Product orders",
-            "body": "Create piece-based orders from the partner defense equipment catalog.",
+            "body": "Create piece-based orders from the partner product catalog.",
             "cta": "Start an order"
           },
           "extras": {
@@ -617,7 +617,7 @@
       },
       "extras": {
         "title": "Extras",
-        "lead": "Request available unsold defense equipment with tray type, ready date and quantity information.",
+        "lead": "Request available products by type, ready date and quantity.",
         "loading": "Loading…",
         "empty": "No extras match these filters.",
         "allCategories": "All product groups",
@@ -742,7 +742,7 @@
     "termsContent": "<p>Information published on this website is provided for general technical and commercial guidance. Final product scope, variety selection and production conditions are clarified during the order process.</p><p>Visuals, technical notes and descriptions on the site do not constitute a final binding offer on their own.</p><p>All quotation and delivery commitments become valid only after mutual confirmation within the commercial process.</p>",
     "qualityPolicy": "Quality Policy",
     "qualityPolicyDesc": "Summary of our commitment to quality, traceability and continuous improvement in defense procurement.",
-    "qualityPolicyContent": "<p>We focus on healthy defense equipment, consistent variety performance and customer satisfaction. Production follows traceability, hygiene and technical standards.</p><p>When the full policy is published in the CMS, this page updates automatically.</p>",
+    "qualityPolicyContent": "<p>We focus on reliable products, consistent product performance and customer satisfaction. Production follows traceability, hygiene and technical standards.</p><p>When the full policy is published in the CMS, this page updates automatically.</p>",
     "servicePolicy": "Service Policy",
     "servicePolicyDesc": "Overview of communication, quotation handling and customer support.",
     "servicePolicyContent": "<p>Quote requests are evaluated and final terms are confirmed in writing. Our teams can help with variety selection and delivery topics.</p><p>You can share feedback at export@sultandefense.com.</p>",
