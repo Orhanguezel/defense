@@ -26,6 +26,6 @@ export const THEME_STORAGE_KEYS = {
 } as const;
 
 export const THEME_DEFAULTS = {
-  mode: 'dark' as ThemeMode, // İmparatorluk Zırhı — koyu varsayılan (ana his)
+  mode: 'light' as ThemeMode, // açık varsayılan (beyaz section'lı düzen); koyu toggle ile seçilir
   preset: 'default' as ThemePreset,
 } as const;

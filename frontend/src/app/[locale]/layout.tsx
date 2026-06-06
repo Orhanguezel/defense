@@ -183,7 +183,7 @@ export default async function LocaleLayout({
       className={`${inter.variable} ${plusJakartaSans.variable}`}
       data-theme-template={THEME_TEMPLATE}
       data-theme-intent={THEME_INTENT}
-      data-theme-mode="dark"
+      data-theme-mode="light"
       data-theme-preset="default"
       suppressHydrationWarning
     >
@@ -194,7 +194,7 @@ export default async function LocaleLayout({
       </head>
       <body
         className="min-h-screen bg-(--color-bg) text-(--color-text-primary) antialiased"
-        data-theme-mode="dark"
+        data-theme-mode="light"
         suppressHydrationWarning
       >
         <GtmNoscript />
