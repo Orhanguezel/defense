@@ -385,9 +385,9 @@ export function Header({
                   {[
                     { label: t('home'),         href: l('/') },
                     { label: t('about'),        href: l('/hakkimizda') },
-                    { label: t('news'),         href: l('/haberler') },
-                    { label: t('blog'),         href: l('/blog') },
-                    { label: 'Referanslar',     href: l('/referanslar') },
+                    { label: t('services'),     href: l('/hizmetler') },
+                    { label: t('gallery'),      href: l('/galeri') },
+                    { label: t('contact'),      href: l('/iletisim') },
                   ].map(({ label, href }) => (
                     <li key={href}>
                       <Link
@@ -481,43 +481,6 @@ export function Header({
                 </div>
               )}
 
-              {/* Kolom 4: Haberler */}
-              {news.length > 0 && (
-                <div>
-                  <h3
-                    className="text-sm font-bold uppercase tracking-wider mb-4"
-                    style={{ color: 'var(--color-brand)', letterSpacing: '0.1em' }}
-                  >
-                    {t('news')}
-                  </h3>
-                  <ul className="space-y-2">
-                    {(news as any[]).slice(0, 5).map((n) => (
-                      <li key={n.id || n.slug}>
-                        <Link
-                          href={l(`/haberler/${n.slug}`)}
-                          className="text-sm transition-colors block py-0.5 line-clamp-1"
-                          style={{ color: 'var(--color-text-on-dark)' }}
-                          onClick={() => setMenuOpen(false)}
-                          onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-brand-light)'; }}
-                          onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--color-text-on-dark)'; }}
-                        >
-                          {n.title}
-                        </Link>
-                      </li>
-                    ))}
-                    <li style={{ marginTop: 12, paddingTop: 10, borderTop: '1px solid rgba(255,255,255,0.08)' }}>
-                      <Link
-                        href={l('/haberler')}
-                        className="text-xs font-semibold uppercase tracking-wider inline-block"
-                        style={{ color: 'var(--color-brand)' }}
-                        onClick={() => setMenuOpen(false)}
-                      >
-                        {t('viewAll')}
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
 
               {/* Kolom 5: İletişim */}
               <div>

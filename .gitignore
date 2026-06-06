@@ -44,5 +44,8 @@ bun.lock
 Thumbs.db
 __MACOSX/
 _frontend/
+docs/
 
 # (REBRAND_CHECKLIST.md'ye bakin)
+
+
