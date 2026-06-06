@@ -11,6 +11,12 @@
 >
 > 📄 **Site içerik kaynagi:** [`docs/content/`](docs/content/) — tum sayfa metinleri, 10 kategori, sirket bilgileri.
 
+> 🟢 **FRONTEND STRATEJI DEGISIKLIGI (2026-06-06):** Eski frontend (vistainsaat tabanli, canlida) **pasife
+> alindi → `_frontend/`**. Yerine bereketfide icin hazirlanmis daha zengin frontend (`frontend copy/` →
+> yeni `frontend/`) sultandefense'e donusturuluyor. Frontend faz/checklist artik **bu dosyada degil**:
+> **[FRONTEND_SWAP_PLAN.md](FRONTEND_SWAP_PLAN.md)** + **[docs/CODEX_FRONTEND_BRIEF.md](docs/CODEX_FRONTEND_BRIEF.md)**.
+> Asagidaki **Faz 5 (Frontend) GECERSIZ** (eski `_frontend`'e aitti). Backend (Faz 2-3) + admin (Faz 4) AYNEN gecerli.
+
 ---
 
 ## 📊 DURUM ÖZETİ (2026-06-04)
@@ -85,7 +91,7 @@ site **https://sultandefense.com** + **admin.sultandefense.com** CANLI; seed dol
 - [ ] Locale `src/locale/{tr,en,de}.json` marka metni; sidebar-items; fetch-branding; product_admin.types
 - [ ] Browser title/manifest/favicon (app-config done; dogrula)
 
-## Faz 5 — Frontend (Site) **(Codex)** — tema ✅, içerik kalan
+## Faz 5 — Frontend (Site) — ⛔ GECERSIZ (eski `_frontend`'e aitti; yeni frontend → FRONTEND_SWAP_PLAN.md)
 - [x] Tema/token altin; icon/apple-icon/og/twitter/manifest/splash; logo
 - [ ] **i18n locale (19 dil)** `public/locales/*.json` — "inşaat/construction" → defans metin (hero: tr.json "LİDER İNŞAAT FİRMASI")
 - [ ] Gereksiz dilleri sadelestir (karar — defans icin hangi diller?)

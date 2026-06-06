@@ -72,7 +72,7 @@ export function buildSeoTitle(title: string, suffix = DEFAULT_TITLE_SUFFIX): str
   if (!clean) return suffix;
   // Strip any existing suffix variants to avoid duplication
   const stripped = clean
-    .replace(/\s*\|\s*Bereket\s+Fide\s*$/i, '')
+    .replace(/\s*\|\s*Sultan\s+Defense\s*$/i, '')
     .replace(/\s*\|\s*Sultan\s+Defense\s*$/i, '')
     .trim();
   if (!stripped) return suffix;

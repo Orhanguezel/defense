@@ -62,4 +62,5 @@ Bu repo, `/home/orhan/Documents/Projeler/PROJECT_PORTFOLIO_STANDARD.md` standard
 - Calismadan once `git pull --rebase origin main`.
 - Is bittikce kucuk commit ve `git push origin main`.
 - `.env` dosyalari commit edilmez.
-- Marka temizligi icin ana takip dosyasi: `REBRAND_CHECKLIST.md`.
+- Frontend gecisi (bereketfide -> sultandefense): `FRONTEND_SWAP_PLAN.md` (faz/checklist) + `docs/CODEX_FRONTEND_BRIEF.md`.
+- Backend + admin panel marka temizligi: `AGENTS.md` (Codex Faz 2-7) + `docs/CODEX_PROMPT.md`.

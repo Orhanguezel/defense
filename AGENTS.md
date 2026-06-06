@@ -2,6 +2,17 @@
 
 Bu repo vistainsaat'ten klonlandi, **sultandefense.com** defans katalog sitesine donusturuluyor.
 
+## 🟢 STRATEJI DEGISIKLIGI — FRONTEND (2026-06-06, Claude) — CODEX DIKKAT
+
+> **Eski `frontend/` (vistainsaat) PASIFE alindi → `_frontend/`.** Yerine bereketfide icin hazirlanmis
+> daha zengin frontend (`frontend copy/` → yeni `frontend/`) sultandefense'e donusturuluyor.
+>
+> - **Frontend icin `docs/CODEX_PROMPT.md`'deki "frontend'i yerinde rebrand" yonergesi ARTIK GECERSIZ.**
+> - Frontend isi: master plan **[FRONTEND_SWAP_PLAN.md](FRONTEND_SWAP_PLAN.md)** + Codex briefi
+>   **[docs/CODEX_FRONTEND_BRIEF.md](docs/CODEX_FRONTEND_BRIEF.md)**.
+> - Is bolumu: Faz 0/1/4 (dizin swap, .env, tema/logo) **Claude**; Faz 2/3/5/6-build **Codex**.
+> - Backend (Faz 2-3) + admin panel (Faz 4) rebrand isi asagidaki "Codex'in yapacagi (Faz 2-7)" + docs/CODEX_PROMPT.md sirasiyla AYNEN gecerli.
+
 ## 🔴 BRANCH KURALI — KESIN
 
 > **Sadece `main` branch. Baska branch ACMA.**
@@ -13,8 +24,10 @@ Bu repo vistainsaat'ten klonlandi, **sultandefense.com** defans katalog sitesine
 
 ## Yapilacak is
 
-Marka temizligi: kod tabanindan tum **vistainsaat / vista / insaat** referanslarini kaldir,
-sultandefense kimligiyle degistir. Tam liste ve sira: **[REBRAND_CHECKLIST.md](REBRAND_CHECKLIST.md)**.
+Marka temizligi: kod tabanindan tum **vistainsaat / vista / insaat** (ve frontend'de **bereketfide**)
+referanslarini kaldir, sultandefense kimligiyle degistir. Faz/checklist:
+- **Frontend** (yeni bereketfide tabanli): **[FRONTEND_SWAP_PLAN.md](FRONTEND_SWAP_PLAN.md)** + **[docs/CODEX_FRONTEND_BRIEF.md](docs/CODEX_FRONTEND_BRIEF.md)**.
+- **Backend + admin panel:** asagidaki "Codex'in yapacagi (Faz 2-7)" bolumu + **[docs/CODEX_PROMPT.md](docs/CODEX_PROMPT.md)**.
 
 ## Kurallar
 
@@ -46,7 +59,7 @@ sultandefense kimligiyle degistir. Tam liste ve sira: **[REBRAND_CHECKLIST.md](R
 
 ### Tamamlanan
 - **Faz 0 (altyapi):** repo klonlandi, git/main + origin `defense.git`, secret-koruyan `.gitignore`.
-- **Faz 1 (kimlik/config/port):** TAMAMLANDI ve push'landi. Detay REBRAND_CHECKLIST Faz 1 (hepsi [x]).
+- **Faz 1 (kimlik/config/port):** TAMAMLANDI ve push'landi (kimlik/config/port).
   - **PORTLAR (KESIN):** backend **8090** · frontend **3040** · admin **3041**.
   - package.json name'ler, ecosystem (PM2 isim+cwd+port), .env.example x3, next.config x2,
     project.portfolio.json, kod port fallback'lari (8086→8090) yapildi.
