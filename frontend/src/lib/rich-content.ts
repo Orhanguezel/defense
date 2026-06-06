@@ -14,6 +14,10 @@ function pickRichHtml(value: unknown): string | null {
 }
 
 export function normalizeRichContent(value: unknown): string {
+  // API icerigi parse edilmis obje olarak dondurebilir ({ html } / { content })
+  if (value && typeof value === 'object') {
+    return pickRichHtml(value) ?? '';
+  }
   if (typeof value !== 'string') return '';
 
   const trimmed = value.trim();
