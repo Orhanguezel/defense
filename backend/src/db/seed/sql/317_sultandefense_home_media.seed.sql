@@ -17,7 +17,7 @@ DELETE FROM `site_settings`
 
 INSERT INTO `site_settings` (`id`, `key`, `locale`, `value`, `created_at`, `updated_at`) VALUES
  (UUID(), 'sultandefense__hero_video', '*',
-  '{"url":"/uploads/video/hero.mp4","poster":"","alt":"Sultan Defense"}',
+  '{"url":"/uploads/video/hero-defense-v2.mp4","poster":"","alt":"Sultan Defense"}',
   NOW(3), NOW(3)),
  (UUID(), 'sultandefense__home_backgrounds', '*',
   '[{"url":"/uploads/backgrounds/defense-bg-1.jpg","alt":"Sultan Defense"},{"url":"/uploads/backgrounds/defense-bg-2.jpg","alt":"Sultan Defense"},{"url":"/uploads/backgrounds/defense-bg-3.jpg","alt":"Sultan Defense"},{"url":"/uploads/backgrounds/defense-bg-4.jpg","alt":"Sultan Defense"}]',
