@@ -31,11 +31,27 @@ const nextConfig: NextConfig = {
 
   async rewrites() {
     const apiBase = process.env.INTERNAL_API_URL?.replace(/\/api\/?$/, '') || 'http://127.0.0.1:8090';
+    // EN Ingilizce slug -> TR-isimli rota (URL /en/about kalir, icerik /en/hakkimizda render olur)
+    const EN_SLUGS: [string, string][] = [
+      ['about', 'hakkimizda'],
+      ['products', 'urunler'],
+      ['capabilities', 'hizmetler'],
+      ['gallery', 'galeri'],
+      ['contact', 'iletisim'],
+      ['request-quote', 'teklif'],
+      ['search', 'arama'],
+      ['references', 'referanslar'],
+    ];
+    const enRewrites = EN_SLUGS.flatMap(([en, tr]) => [
+      { source: `/en/${en}`, destination: `/en/${tr}` },
+      { source: `/en/${en}/:path*`, destination: `/en/${tr}/:path*` },
+    ]);
     return [
       {
         source: '/uploads/:path*',
         destination: `${apiBase}/uploads/:path*`,
       },
+      ...enRewrites,
     ];
   },
 

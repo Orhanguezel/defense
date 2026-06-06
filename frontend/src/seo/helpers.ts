@@ -26,12 +26,39 @@ export function absoluteUrl(path: string): string {
   return `${base}${p}`;
 }
 
+// Locale'e gore URL slug haritasi (rota klasorleri TR; EN'de Ingilizce slug gosterilir,
+// next.config rewrite ile TR-isimli rotaya baglanir). Yeni dil eklenince buraya eklenir.
+const SLUGS_BY_LOCALE: Record<string, Record<string, string>> = {
+  en: {
+    hakkimizda: 'about',
+    urunler: 'products',
+    hizmetler: 'capabilities',
+    galeri: 'gallery',
+    iletisim: 'contact',
+    teklif: 'request-quote',
+    arama: 'search',
+    referanslar: 'references',
+  },
+};
+
+export function localizeSlug(locale: string, path: string): string {
+  const map = SLUGS_BY_LOCALE[locale];
+  if (!map) return path;
+  const segs = path.split('/').filter(Boolean);
+  if (segs.length && map[segs[0]]) {
+    segs[0] = map[segs[0]];
+    return `/${segs.join('/')}`;
+  }
+  return path;
+}
+
 export function localizedPath(
   locale: string,
   pathname: string,
 ): string {
-  const p = pathname.startsWith('/') ? pathname : `/${pathname}`;
+  let p = pathname.startsWith('/') ? pathname : `/${pathname}`;
   if (p === '/') return `/${locale}`;
+  p = localizeSlug(locale, p);
   return `/${locale}${p}`;
 }
 
