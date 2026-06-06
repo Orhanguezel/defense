@@ -140,11 +140,11 @@
     },
     "projects": {
       "title": "Öne Çıkan Ürünler",
-      "subtitle": "savunma, meyve ve süs bitkisi defans ekipmanılerinden öne çıkan ürünlerimiz"
+      "subtitle": "Savunma sanayi ürün yelpazemizden öne çıkan çözümler"
     },
     "latestProjects": {
       "title": "Son Eklenen Ürünler",
-      "subtitle": "En güncel defans ekipmanı çeşitlerimizi keşfedin"
+      "subtitle": "Kataloğumuza en son eklenen savunma ürünleri"
     },
     "services": {
       "title": "Faaliyet Alanlarımız",
@@ -215,7 +215,7 @@
   },
   "projects": {
     "title": "Ürünlerimiz",
-    "description": "savunma, meyve ve süs bitkisi defans ekipmanılerinde geniş çeşit yelpazesiyle kaliteli ve sağlıklı ürünler sunuyoruz.",
+    "description": "Savunma sanayi ürün ve sistemlerimizde geniş çözüm yelpazesi",
     "categories": "Kategoriler",
     "allCategories": "Tüm Ürünler",
     "results": "sonuç",

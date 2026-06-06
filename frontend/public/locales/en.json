@@ -139,11 +139,11 @@
     },
     "projects": {
       "title": "Featured Products",
-      "subtitle": "A selection of our high-quality defense, fruit and ornamental plant defense equipment"
+      "subtitle": "Featured solutions from our defense product range"
     },
     "latestProjects": {
       "title": "Latest Products",
-      "subtitle": "Discover our most recent varieties"
+      "subtitle": "Latest defense products added to our catalog"
     },
     "services": {
       "title": "Our Activity Areas",
@@ -200,7 +200,7 @@
   },
   "projects": {
     "title": "Products",
-    "description": "Explore our wide range of high-quality defense, fruit and ornamental plant defense equipment.",
+    "description": "A broad range of defense industry products and systems",
     "viewProject": "View Product",
     "allProjects": "All Products",
     "results": "results",
