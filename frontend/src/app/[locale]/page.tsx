@@ -500,7 +500,7 @@ export default async function HomePage({
 
 
         {references.length ? (
-          <section className="w-full min-h-[50vh] flex flex-col justify-center py-12">
+          <section className="w-full min-h-[85vh] flex flex-col justify-center py-16">
             <div className="mx-auto max-w-7xl px-4 lg:px-6 mb-12">
               <Reveal>
                 <div className="text-center">
@@ -519,9 +519,9 @@ export default async function HomePage({
 
             <Reveal delay={0.1}>
               <div
-                className="relative w-full border-y border-(--color-border-on-dark) py-12 shadow-2xl backdrop-blur-sm"
+                className="relative w-full border-y border-(--color-border-on-dark) py-12 shadow-2xl backdrop-blur-[2px]"
                 style={{
-                  background: 'color-mix(in srgb, var(--color-bg-dark) 45%, transparent)',
+                  background: 'color-mix(in srgb, var(--color-bg-dark) 22%, transparent)',
                 }}
               >
                 <div className="absolute top-0 left-0 h-1 w-32 bg-(--color-brand)" />
