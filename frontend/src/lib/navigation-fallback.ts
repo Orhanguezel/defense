@@ -216,12 +216,24 @@ export function ensureFooterSections(
 ): Record<string, unknown>[] {
   const fallbackSections = buildDefaultFooterSections(locale, navT, footerT);
 
-  if (input.length === 0) {
+  // Kaldirilan sayfalara (haberler/blog) giden footer linklerini ele; bos kalan section'i dusur
+  const isRemoved = (url: string) => /\/(haberler|blog)(\/|$|\?)/.test(url);
+  const sanitized = input
+    .map((section) => {
+      const items = (Array.isArray(section.items) ? section.items : []).filter((it) => {
+        const url = String((it as any)?.url ?? (it as any)?.href ?? '').trim();
+        return url !== '' && !isRemoved(url);
+      });
+      return { ...section, items };
+    })
+    .filter((section) => Array.isArray(section.items) && (section.items as unknown[]).length > 0);
+
+  if (sanitized.length === 0) {
     return fallbackSections as unknown as Record<string, unknown>[];
   }
 
   const existingUrls = new Set<string>();
-  for (const section of input) {
+  for (const section of sanitized) {
     const items = Array.isArray(section.items) ? section.items : [];
     for (const item of items) {
       const url = String((item as any)?.url ?? (item as any)?.href ?? '').trim();
@@ -233,10 +245,10 @@ export function ensureFooterSections(
     .flatMap((section) => section.items)
     .filter((item) => !existingUrls.has(item.url));
 
-  if (quickLinks.length === 0) return input;
+  if (quickLinks.length === 0) return sanitized;
 
   return [
-    ...input,
+    ...sanitized,
     {
       title: footerT('sections.quickLinks'),
       items: quickLinks,
