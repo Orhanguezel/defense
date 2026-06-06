@@ -1,14 +1,13 @@
 import Link from 'next/link';
-import { headers } from 'next/headers';
+import { getLocale } from 'next-intl/server';
 import { BrandCtaPanel } from '@/components/patterns/BrandCtaPanel';
 import { SeoIssueBeacon } from '@/components/monitoring/SeoIssueBeacon';
 import { FALLBACK_LOCALE } from '@/i18n/locales';
 
-function detectLocale(headersList: Headers): string {
+async function detectLocale(): Promise<string> {
   try {
-    const pathname = headersList.get('x-pathname') || headersList.get('x-invoke-path') || '';
-    const match = pathname.match(/^\/([a-z]{2})\//);
-    if (match) return match[1] || FALLBACK_LOCALE;
+    const locale = await getLocale();
+    if (locale) return locale;
   } catch {}
   return FALLBACK_LOCALE;
 }
@@ -27,9 +26,8 @@ const LABELS: Record<string, { title: string; description: string; cta: string }
 };
 
 export default async function NotFound() {
-  const headersList = await headers();
-  const locale = detectLocale(headersList);
-  const t = LABELS[locale] || LABELS.tr;
+  const locale = await detectLocale();
+  const t = LABELS[locale] || LABELS.en;
 
   if (!t) return null;
 
