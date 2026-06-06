@@ -139,6 +139,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: '/products', changeFrequency: 'weekly' as const, priority: 0.9 },
     { path: '/capabilities', changeFrequency: 'weekly' as const, priority: 0.9 },
     { path: '/gallery', changeFrequency: 'weekly' as const, priority: 0.8 },
+    { path: '/news', changeFrequency: 'weekly' as const, priority: 0.7 },
     { path: '/about', changeFrequency: 'monthly' as const, priority: 0.6 },
     { path: '/contact', changeFrequency: 'monthly' as const, priority: 0.7 },
     { path: '/request-quote', changeFrequency: 'monthly' as const, priority: 0.8 },
@@ -147,10 +148,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ];
 
   for (const locale of locales) {
-    const [products, services, galleries, legalPages] = await Promise.all([
+    const [products, services, galleries, newsPosts, legalPages] = await Promise.all([
       fetchItems(`/products?item_type=sultandefense&locale=${encodeURIComponent(locale)}`),
       fetchItems(`/services?module_key=sultandefense&locale=${encodeURIComponent(locale)}`),
       fetchItems(`/galleries?module_key=sultandefense&locale=${encodeURIComponent(locale)}`),
+      fetchPublishedCustomPages(locale, 'news'),
       fetchLegalItemsForLocale(locale),
     ]);
 
@@ -187,6 +189,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: localizedUrl(locale, `/gallery/${item.slug}`),
         lastModified: resolveLastModified(item),
         changeFrequency: 'monthly',
+        priority: 0.6,
+        images: resolveSitemapImages(item),
+      });
+    }
+
+    for (const item of newsPosts) {
+      entries.push({
+        url: localizedUrl(locale, `/news/${item.slug}`),
+        lastModified: resolveLastModified(item),
+        changeFrequency: 'weekly',
         priority: 0.6,
         images: resolveSitemapImages(item),
       });

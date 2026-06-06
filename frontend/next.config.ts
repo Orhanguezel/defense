@@ -53,6 +53,8 @@ const nextConfig: NextConfig = {
       ['teklif', 'request-quote'],
       ['arama', 'search'],
       ['referanslar', 'references'],
+      ['haberler', 'news'],
+      ['blog', 'news'],
     ];
     const legacyRedirects = LEGACY.flatMap(([from, to]) => [
       { source: `/:locale/${from}`, destination: `/:locale/${to}`, permanent: true },

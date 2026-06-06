@@ -103,6 +103,7 @@ export function buildDefaultMenu(locale: string, t: TranslateFn): MenuItemLike[]
     { title: safeNavLabel(t, 'about', 'Hakkımızda'), url: l('/about') },
     { title: safeNavLabel(t, 'services', 'Faaliyetler'), url: l('/capabilities') },
     { title: safeNavLabel(t, 'gallery', 'Galeri'), url: l('/gallery') },
+    { title: safeNavLabel(t, 'news', 'Haberler'), url: l('/news') },
     { title: safeNavLabel(t, 'contact', 'İletişim'), url: l('/contact') },
     { title: safeNavLabel(t, 'offer', 'Teklif Al'), url: l('/request-quote') },
   ];
