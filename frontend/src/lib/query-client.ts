@@ -48,12 +48,12 @@ export const queryKeys = {
     list: (locale?: string) => ['slider', 'list', locale] as const,
   },
   menuItems: {
-    all: ['menu-items'] as const,
-    list: (locale?: string) => ['menu-items', 'list', locale] as const,
+    all: ['menu_items'] as const,
+    list: (locale?: string) => ['menu_items', 'list', locale] as const,
   },
   footerSections: {
-    all: ['footer-sections'] as const,
-    list: (locale?: string) => ['footer-sections', 'list', locale] as const,
+    all: ['footer_sections'] as const,
+    list: (locale?: string) => ['footer_sections', 'list', locale] as const,
   },
   siteSettings: {
     all: ['site-settings'] as const,

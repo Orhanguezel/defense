@@ -17,7 +17,7 @@ import { fetchSeoPage } from '@/seo/server';
 async function fetchAboutPage(locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/custom-pages/by-slug/about?locale=${locale}`,
+      `${API_BASE_URL}/custom_pages/by-slug/about?locale=${locale}`,
       { next: { revalidate: 0 } },
     );
     if (!res.ok) return null;

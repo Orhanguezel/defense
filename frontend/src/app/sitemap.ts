@@ -61,7 +61,7 @@ async function fetchLegalItemsForLocale(locale: string): Promise<SitemapItem[]> 
     legalSlugs.map(async (slug) => {
       try {
         const res = await fetch(
-          `${API_BASE_URL}/custom-pages/by-slug/${encodeURIComponent(slug)}?locale=${encodeURIComponent(locale)}`,
+          `${API_BASE_URL}/custom_pages/by-slug/${encodeURIComponent(slug)}?locale=${encodeURIComponent(locale)}`,
           { next: { revalidate: 3600 } },
         );
         if (!res.ok) return null;
@@ -81,11 +81,11 @@ async function fetchLegalItemsForLocale(locale: string): Promise<SitemapItem[]> 
   return rows.filter(Boolean) as SitemapItem[];
 }
 
-/** Public liste; `custom-pages` icin `limit` max 250 (backend sema). */
+/** Public liste; `custom_pages` icin `limit` max 250 (backend sema). */
 async function fetchPublishedCustomPages(locale: string, moduleKey: string): Promise<SitemapItem[]> {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/custom-pages?module_key=${encodeURIComponent(moduleKey)}&locale=${encodeURIComponent(locale)}&limit=250`,
+      `${API_BASE_URL}/custom_pages?module_key=${encodeURIComponent(moduleKey)}&locale=${encodeURIComponent(locale)}&limit=250`,
       { next: { revalidate: 3600 } },
     );
     if (!res.ok) return [];

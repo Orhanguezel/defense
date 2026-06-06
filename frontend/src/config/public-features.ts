@@ -15,13 +15,13 @@ function envExplicitlyDisabled(v: string | undefined): boolean {
 export const showHomeReferencesBand = envTruthy(process.env.NEXT_PUBLIC_FEATURE_HOME_REFERENCES);
 
 /**
- * Ana sayfa on plan blog kartlari (`custom-pages` blog). Varsayilan acik.
+ * Ana sayfa on plan blog kartlari (`custom_pages` blog). Varsayilan acik.
  * Kapatmak icin: `NEXT_PUBLIC_FEATURE_HOME_BLOG=0` (veya `false` / `no` / `off`).
  */
 export const showHomeBlogBand = !envExplicitlyDisabled(process.env.NEXT_PUBLIC_FEATURE_HOME_BLOG);
 
 /**
- * Ana sayfa haber bandi (`custom-pages` news). Varsayilan acik.
+ * Ana sayfa haber bandi (`custom_pages` news). Varsayilan acik.
  * Kapatmak icin: `NEXT_PUBLIC_FEATURE_HOME_NEWS=0` (veya `false` / `no` / `off`).
  */
 export const showHomeNewsBand = !envExplicitlyDisabled(process.env.NEXT_PUBLIC_FEATURE_HOME_NEWS);

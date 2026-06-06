@@ -127,7 +127,7 @@ async function fetchLatestNonFeaturedProducts(locale: string) {
 async function fetchFeaturedBlogPosts(locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/custom-pages?module_key=blog&is_published=1&featured=1&locale=${locale}&limit=3`,
+      `${API_BASE_URL}/custom_pages?module_key=blog&is_published=1&featured=1&locale=${locale}&limit=3`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -141,7 +141,7 @@ async function fetchFeaturedBlogPosts(locale: string) {
 async function fetchFeaturedNewsPosts(locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/custom-pages?module_key=news&is_published=1&locale=${locale}&limit=2`,
+      `${API_BASE_URL}/custom_pages?module_key=news&is_published=1&locale=${locale}&limit=2`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];

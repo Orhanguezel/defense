@@ -56,7 +56,7 @@ export async function fetchSliders(locale?: string): Promise<Record<string, unkn
 export async function fetchMenuItems(locale: string): Promise<Record<string, unknown>[]> {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/menu-items?locale=${encodeURIComponent(locale)}&is_active=1&site_id=sultandefense&nested=true`,
+      `${API_BASE_URL}/menu_items?locale=${encodeURIComponent(locale)}&is_active=1&site_id=sultandefense&nested=true`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -70,7 +70,7 @@ export async function fetchMenuItems(locale: string): Promise<Record<string, unk
 export async function fetchFooterSections(locale: string): Promise<Record<string, unknown>[]> {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/footer-sections?locale=${encodeURIComponent(locale)}&is_active=1&site_id=sultandefense`,
+      `${API_BASE_URL}/footer_sections?locale=${encodeURIComponent(locale)}&is_active=1&site_id=sultandefense`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -131,7 +131,7 @@ export async function fetchReferences(locale: string, limit: number = 12): Promi
 export async function fetchNews(locale: string, limit: number = 5): Promise<Record<string, unknown>[]> {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/custom-pages?module_key=news&locale=${encodeURIComponent(locale)}&is_active=1&limit=${limit}`,
+      `${API_BASE_URL}/custom_pages?module_key=news&locale=${encodeURIComponent(locale)}&is_active=1&limit=${limit}`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];

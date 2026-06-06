@@ -75,7 +75,7 @@ export async function fetchSiteSearch(locale: string, rawQuery: string): Promise
       })
       .catch(() => ({ data: [] })),
     api
-      .get<unknown>('/custom-pages', {
+      .get<unknown>('/custom_pages', {
         params: { search: q, locale, is_published: '1', limit: 25 },
       })
       .catch(() => ({ data: [] })),
