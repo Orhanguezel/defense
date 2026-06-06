@@ -9,7 +9,6 @@
 @import "../styles/presets/tangerine.css";
 
 /* Sultan Defense Brand Colors — İmparatorluk Zırhı (altin/antrasit/bordo)
-   NOT: --logo-coral* isimleri legacy (Ensotek); degerler İmparatorluk Zırhı altin olcegi. */
 :root {
   /* Logo Primary Colors — Mat Altin */
   --logo-coral-light: #D4B996;      /* acilmis altin — highlights */

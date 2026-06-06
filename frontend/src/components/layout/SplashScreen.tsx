@@ -16,7 +16,7 @@ export function SplashScreen({
 
   const finalName = companyName || 'Sultan Defense';
   const finalTagline = tagline || 'Defense Procurement';
-  const finalLogo = logoUrl || '/logo/sultandefense-logo-transparent.png';
+  const finalLogo = logoUrl || '/logo/sultandefense-logo-onDark.png';
 
   const startSequence = useCallback(() => {
     // Remove SSR overlay immediately — client splash takes over

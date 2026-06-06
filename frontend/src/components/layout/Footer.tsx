@@ -73,11 +73,11 @@ export function Footer({
           <div className="space-y-4">
             <div>
               <Image
-                src={logoDarkUrl || logoUrl || '/logo/sultandefense-logo-transparent.png'}
+                src={logoDarkUrl || logoUrl || '/logo/sultandefense-logo-onDark.png'}
                 alt={companyProfile?.company_name || 'Sultan Defense'}
-                width={200}
-                height={70}
-                style={{ height: '64px', width: 'auto', maxWidth: '220px' }}
+                width={1287}
+                height={272}
+                style={{ height: '56px', width: 'auto', maxWidth: '260px' }}
                 unoptimized={(logoDarkUrl || logoUrl || '').startsWith('/uploads/')}
               />
             </div>

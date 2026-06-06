@@ -15,7 +15,32 @@
       "Bash(google-chrome --headless --disable-gpu --no-sandbox --hide-scrollbars --window-size=1200,800 --screenshot=/tmp/cs_imperial.png \"file:///tmp/cs_imperial.html\")",
       "Bash(scp -q deploy/coming-soon/index.html srv1731955:/var/www/sultandefense/index.html)",
       "Bash(curl -s --max-time 20 \"https://sultandefense.com/?v=$\\(date +%s\\)\")",
-      "Bash(awk '{print $5,$NF}')"
+      "Bash(awk '{print $5,$NF}')",
+      "Bash(sed -i 's/#b8a98a/#C5A880/g; s/#0f0e0d/#121214/g; s/#1a1816/#1A1A1D/g; s/#201e1b/#2D3134/g' frontend/src/app/opengraph-image.tsx)",
+      "Bash(sed -i \"s/#b8a98a/#C5A880/g; s/#141311/#1A1A1D/g\" frontend/src/app/manifest.ts)",
+      "Bash(grep -vE \"^\\\\s*[0-9]+:\\\\s*\\\\*/$|^\\\\s*[0-9]+:.*; \\\\*/\")",
+      "Bash(curl -s -o /dev/null -w \"/tr: %{http_code} \\(%{time_total}s\\)\\\\n\" --max-time 90 \"http://localhost:3040/tr?cb=1\")",
+      "Bash(google-chrome --headless --disable-gpu --no-sandbox --hide-scrollbars --window-size=1366,1000 --virtual-time-budget=8000 --screenshot=/tmp/qa_frontend_home2.png http://localhost:3040/tr)",
+      "Bash(git rm *)",
+      "Bash(curl -s -o /dev/null -w \"admin https: %{http_code}\\\\n\" --max-time 20 \"https://admin.sultandefense.com/?cb=$\\(date +%s\\)\")",
+      "Bash(node --check backend/scripts/smoke-sultandefense-admin.mjs)",
+      "Bash(node --check frontend/scripts/check-admin-content-flow.mjs)",
+      "Bash(curl -s --max-time 15 \"https://sultandefense.com/api/services?module_key=sultandefense&locale=tr&limit=2\")",
+      "Bash(curl -s --max-time 15 \"https://sultandefense.com/api/categories?module_key=sultandefense&locale=tr&limit=3\")",
+      "Bash(convert -background \"#F4F1EC\" -resize 300x logo-dark.svg /tmp/logo_on_light.png)",
+      "Bash(convert -background \"#1A1A1D\" -resize 300x logo-dark.svg /tmp/logo_on_dark.png)",
+      "Bash(convert /tmp/logo_on_light.png /tmp/logo_on_dark.png -append /tmp/logo_both.png)",
+      "Bash(scp -q frontend/public/logo-dark.svg srv1731955:/var/www/sultandefense/frontend/public/logo-dark.svg)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{content_type}\\\\n\" --max-time 15 \"https://sultandefense.com/logo-dark.svg\")",
+      "Bash(google-chrome --headless --disable-gpu --no-sandbox --hide-scrollbars --window-size=1366,500 --virtual-time-budget=8000 --screenshot=/tmp/logo_live.png https://sultandefense.com/tr?cb=__CMDSUB_OUTPUT__)",
+      "Bash(python3 -c 'import sys,json;d=json.load\\(sys.stdin\\);print\\(\"success:\",d[\"success\"]\\);print\\(\" errors:\",d.get\\(\"errors\"\\)\\) if not d[\"success\"] else print\\(\"  purge OK\"\\)')",
+      "Bash(sed -n '330,345p' frontend/src/components/layout/Header.tsx)",
+      "Bash(sed -n '408,420p' frontend/src/components/layout/Header.tsx)",
+      "Bash(sed -n '466,478p' frontend/src/components/layout/Header.tsx)",
+      "Bash(rsync -az frontend/src/components/layout/Header.tsx srv1731955:/var/www/sultandefense/frontend/src/components/layout/Header.tsx)"
+    ],
+    "additionalDirectories": [
+      "/home/orhan/.claude/projects/-home-orhan-Documents-Projeler/memory"
     ]
   }
 }

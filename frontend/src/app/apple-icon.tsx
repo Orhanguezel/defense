@@ -12,7 +12,7 @@ export const contentType = 'image/png';
 
 export default async function AppleIcon() {
   try {
-    const iconPath = join(process.cwd(), 'public', 'logo', 'sultandefense-apple-touch-icon.png');
+    const iconPath = join(process.cwd(), 'public', 'apple-touch-icon.png');
     const buffer = await readFile(iconPath);
     return new Response(buffer, {
       headers: { 'Content-Type': contentType },

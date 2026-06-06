@@ -8,9 +8,9 @@ export const size = { width: 64, height: 64 };
 export const contentType = 'image/png';
 
 export default async function Icon() {
-  // public/logo/sultandefense-favicon.png dosyasını oku
+  // public/icon-192.png dosyasını oku
   try {
-    const faviconPath = join(process.cwd(), 'public', 'logo', 'sultandefense-favicon.png');
+    const faviconPath = join(process.cwd(), 'public', 'icon-192.png');
     const buffer = await readFile(faviconPath);
     return new Response(buffer, {
       headers: { 'Content-Type': 'image/png' },

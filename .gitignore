@@ -43,5 +43,6 @@ bun.lock
 .DS_Store
 Thumbs.db
 __MACOSX/
+_frontend/
 
 # (REBRAND_CHECKLIST.md'ye bakin)

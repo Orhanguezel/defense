@@ -157,7 +157,7 @@ export function Header({
     return () => observer.disconnect();
   }, []);
 
-  const fallbackLogo = '/logo/sultandefense-emblem.png';
+  const fallbackLogo = '/logo/sultandefense-logo-light.png';
   const logoSrc = isDark ? (logoDarkUrl || logoUrl || fallbackLogo) : (logoUrl || fallbackLogo);
   void logoSrc; // mevcut site ayarından gelen logo ileride kullanılabilir
 
@@ -315,31 +315,17 @@ export function Header({
             <Link
               href={l('/')}
               title="Sultan Defense"
-              className="flex h-full shrink-0 items-center gap-3 border-l border-(--color-border) pl-8"
+              className="flex h-full shrink-0 items-center border-l border-(--color-border) pl-8"
             >
               <Image
-                src="/logo/sultandefense-emblem.png"
+                src={isDark ? '/logo/sultandefense-logo-onDark.png' : '/logo/sultandefense-logo-light.png'}
                 alt="Sultan Defense"
-                width={52}
-                height={52}
-                className="object-contain shrink-0"
-                style={{ height: 48, width: 48 }}
+                width={1287}
+                height={272}
+                className="object-contain shrink-0 w-auto"
+                style={{ height: 42 }}
                 priority
               />
-              <span className="hidden sm:flex flex-col leading-tight">
-                <span
-                  className="font-bold tracking-[0.06em] uppercase"
-                  style={{ fontSize: 15, color: 'var(--color-brand)' }}
-                >
-                  Sultan Defense
-                </span>
-                <span
-                  className="font-medium tracking-[0.04em] uppercase"
-                  style={{ fontSize: 9, color: 'var(--color-text-secondary)', letterSpacing: '0.08em' }}
-                >
-                  Türk Savunma Teknolojileri
-                </span>
-              </span>
             </Link>
           </div>
         </div>

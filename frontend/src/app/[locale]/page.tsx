@@ -519,9 +519,9 @@ export default async function HomePage({
 
             <Reveal delay={0.1}>
               <div
-                className="relative w-full border-y border-(--color-border-on-dark) py-16 shadow-2xl backdrop-blur-xl"
+                className="relative w-full border-y border-(--color-border-on-dark) py-12 shadow-2xl backdrop-blur-sm"
                 style={{
-                  background: 'color-mix(in srgb, var(--color-bg-dark) 85%, transparent)',
+                  background: 'color-mix(in srgb, var(--color-bg-dark) 45%, transparent)',
                 }}
               >
                 <div className="absolute top-0 left-0 h-1 w-32 bg-(--color-brand)" />

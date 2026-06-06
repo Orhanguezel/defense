@@ -76,7 +76,7 @@ export async function generateMetadata({
     logoValue.favicon_url,
     logoValue.favicon,
     logoValue.icon_url,
-    '/logo/sultandefense-favicon.png',
+    '/icon-192.png',
   );
   const appleTouchIconUrl = pickFirstString(
     logoValue.apple_touch_icon_url,
@@ -169,8 +169,8 @@ export default async function LocaleLayout({
   ]);
 
   const logoValue = { ...readSettingValue(legacyLogoSetting), ...readSettingValue(siteLogoSetting) };
-  const logoUrl = pickFirstString(logoValue.logo_url, '/logo/sultandefense-logo-transparent.png');
-  const logoDarkUrl = pickFirstString(logoValue.logo_dark_url, logoUrl);
+  const logoUrl = pickFirstString(logoValue.logo_url, '/logo/sultandefense-logo-light.png');
+  const logoDarkUrl = pickFirstString(logoValue.logo_dark_url, '/logo/sultandefense-logo-onDark.png');
   const stableMenuItems = ensureMenuItems(menuItems, locale, navT);
   const stableFooterSections = ensureFooterSections(footerSections, locale, navT, footerT);
   const socials = readSettingValue(socialsSetting) as Record<string, string>;
