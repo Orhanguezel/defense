@@ -244,16 +244,6 @@ export default async function GalleryDetailPage({
           hrefBase={localizedPath(locale, '/urunler')}
           items={related.products}
         />
-        <RelatedLinks
-          title={t('common.relatedArticles')}
-          hrefBase={localizedPath(locale, '/haberler')}
-          items={related.blogPosts}
-        />
-        <RelatedLinks
-          title={t('common.relatedKnowledgePosts')}
-          hrefBase={localizedPath(locale, '/blog')}
-          items={related.knowledgePosts}
-        />
       </div>
     </div>
   );

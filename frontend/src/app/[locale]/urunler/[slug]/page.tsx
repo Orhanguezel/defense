@@ -473,16 +473,6 @@ export default async function ProjectDetailPage({
                 items={related.products}
               />
               <RelatedLinks
-                title={t('common.relatedArticles')}
-                hrefBase={localizedPath(locale, '/haberler')}
-                items={related.blogPosts}
-              />
-              <RelatedLinks
-                title={t('common.relatedKnowledgePosts')}
-                hrefBase={localizedPath(locale, '/blog')}
-                items={related.knowledgePosts}
-              />
-              <RelatedLinks
                 title={t('common.relatedGallery')}
                 hrefBase={localizedPath(locale, '/galeri')}
                 items={related.galleries}
