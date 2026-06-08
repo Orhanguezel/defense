@@ -32,17 +32,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const seo = await fetchSeoPage(locale, 'referanslar');
-  const isEn = locale.startsWith('en');
+  const t = await getTranslations({ locale });
 
   return buildPageMetadata({
     locale,
     pathname: '/references',
-    title: seo?.title || (isEn ? 'References & Success Stories' : 'Referanslar & Başarı Hikayeleri'),
-    description:
-      seo?.description ||
-      (isEn
-        ? 'Reference projects and procurement success stories from Sultan Defense. See how our defense supply coordination supports qualified buyers.'
-        : 'Sultan Defense referansları ve tedarik başarı hikayeleri. Savunma tedarik koordinasyonumuzun alıcılara nasıl destek verdiğini görün.'),
+    title: seo?.title || t('detail.referencesTitle'),
+    description: seo?.description || t('seo.defaultDescription'),
     ogImage: seo?.og_image || undefined,
   });
 }
@@ -54,7 +50,6 @@ export default async function ReferencesPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
-  const isEn = locale.startsWith('en');
 
   const [references, profile] = await Promise.all([
     fetchReferences(locale),
@@ -62,10 +57,8 @@ export default async function ReferencesPage({
   ]);
 
   const companyName = (profile?.value as any)?.company_name || 'Sultan Defense';
-  const pageTitle = isEn ? 'References & Success Stories' : 'Referanslar & Başarı Hikayeleri';
-  const pageDesc = isEn
-    ? 'Real procurement, real delivery discipline. Discover how Sultan Defense supports defense buyers with certified sourcing and export coordination.'
-    : 'Gerçek tedarik, gerçek teslimat disiplini. Sultan Defense’in sertifikalı kaynak bulma ve ihracat koordinasyonuyla savunma alıcılarını nasıl desteklediğini keşfedin.';
+  const pageTitle = t('detail.referencesTitle');
+  const pageDesc = t('seo.defaultDescription');
 
   const featured = references.slice(0, 3);
   const rest = references.slice(3);
@@ -145,7 +138,7 @@ export default async function ReferencesPage({
 
         {references.length === 0 && (
           <p style={{ fontSize: 14, color: 'var(--color-text-muted)', marginTop: 8 }}>
-            {isEn ? 'No references published yet.' : 'Henüz referans yayınlanmamış.'}
+            {t('detail.noReferences')}
           </p>
         )}
 
@@ -239,7 +232,7 @@ export default async function ReferencesPage({
         <div className="ref-cta">
           <div>
             <h3 style={{ fontSize: 18, fontWeight: 700, color: 'var(--color-text-on-dark)', margin: 0 }}>
-              {isEn ? 'Start a Sultan Defense Procurement Request' : 'Sultan Defense Tedarik Talebi Başlatın'}
+              {t('detail.startProcurement')}
             </h3>
             <p style={{ fontSize: 14, marginTop: 4, color: 'color-mix(in srgb, var(--section-bg-white) 70%, transparent)' }}>
               {t('common.offerCtaDescription')}

@@ -244,7 +244,7 @@ export default async function ProjectDetailPage({
 
   const breadcrumbs = [
     { label: 'Sultan Defense', href: localizedPath(locale, '/') },
-    { label: isEn ? 'Products' : 'Ürünler', href: localizedPath(locale, '/products') },
+    { label: t('detail.products'), href: localizedPath(locale, '/products') },
     ...(projectType ? [{ label: projectType, href: localizedPath(locale, '/products') }] : []),
     { label: project.title },
   ];
@@ -392,7 +392,7 @@ export default async function ProjectDetailPage({
             {(project.content || project.description) && (
               <div style={{ marginTop: 32 }}>
                 <p style={{ fontSize: 13, color: 'var(--color-text-muted)', marginBottom: 8, fontStyle: 'italic' }}>
-                  {isEn ? 'Product description and sourcing details prepared for B2B procurement.' : 'B2B tedarik için hazırlanan ürün açıklaması ve kapsam bilgileri.'}
+                  {t('detail.productDescFallback')}
                 </p>
                 <div
                   style={{ fontSize: 15, lineHeight: 1.75, color: 'var(--color-text-secondary)' }}
@@ -405,7 +405,7 @@ export default async function ProjectDetailPage({
             {tags.length > 0 && (
               <div style={{ marginTop: 32 }}>
                 <h3 style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-text-muted)', marginBottom: 10 }}>
-                  {isEn ? 'Tags' : 'Etiketler'}
+                  {t('detail.tags')}
                 </h3>
                 <div className="pd-tags">
                   {tags.map((tag: string) => (
@@ -517,22 +517,18 @@ export default async function ProjectDetailPage({
             {/* ── 1. Same category projects ── */}
             {sameCategoryProjects.length > 0 && (
               <SidebarSection
-                title={
-                  projectType
-                    ? (isEn ? `More ${projectType}` : `Daha Fazla ${projectType}`)
-                    : (isEn ? 'More Products' : 'Daha Fazla Ürün')
-                }
+                title={t('detail.moreProducts')}
                 projects={sameCategoryProjects}
                 locale={locale}
                 moreHref={localizedPath(locale, '/products')}
-                moreLabel={isEn ? 'See All »' : 'Tümünü Gör »'}
+                moreLabel={t('detail.seeAll')}
               />
             )}
 
             {/* ── 2. Featured / Öne Çıkanlar ── */}
             {featuredProjects.length > 0 && (
               <SidebarSection
-                title={isEn ? 'Featured Products' : 'Öne Çıkan Ürünler'}
+                title={t('detail.featuredProducts')}
                 projects={featuredProjects.slice(0, 3)}
                 locale={locale}
               />
@@ -541,11 +537,11 @@ export default async function ProjectDetailPage({
             {/* ── 3. Recently Added / Son Eklenenler ── */}
             {recentProjects.length > 0 && (
               <SidebarSection
-                title={isEn ? 'Recently Added' : 'Son Eklenenler'}
+                title={t('detail.recentlyAdded')}
                 projects={recentProjects.slice(0, 4)}
                 locale={locale}
                 moreHref={localizedPath(locale, '/products')}
-                moreLabel={isEn ? 'All products »' : 'Tüm ürünler »'}
+                moreLabel={t('detail.allProducts')}
               />
             )}
 
@@ -595,7 +591,7 @@ export default async function ProjectDetailPage({
                 </div>
                 <Link
                   href={localizedPath(locale, '/products')}
-                  aria-label={isEn ? 'View all Sultan Defense products' : 'Sultan Defense tüm ürünlerini görüntüle'}
+                  aria-label={t('detail.viewAllProductsAria')}
                   style={{
                     display: 'inline-block',
                     padding: '6px 16px',
@@ -607,7 +603,7 @@ export default async function ProjectDetailPage({
                     textDecoration: 'none',
                   }}
                 >
-                  {isEn ? 'View All Products' : 'Tüm Ürünleri Gör'}
+                  {t('detail.viewAllProducts')}
                 </Link>
               </div>
             )}

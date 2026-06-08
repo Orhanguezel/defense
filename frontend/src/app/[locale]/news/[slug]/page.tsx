@@ -92,9 +92,11 @@ export async function generateMetadata({
   });
 }
 
+const INTL_LOCALE: Record<string, string> = { en: 'en-US', de: 'de-DE', ar: 'ar', ru: 'ru-RU', tr: 'tr-TR' };
+
 function formatDate(dateStr: string, locale: string): string {
   try {
-    return new Date(dateStr).toLocaleDateString(locale.startsWith('en') ? 'en-US' : 'tr-TR', {
+    return new Date(dateStr).toLocaleDateString(INTL_LOCALE[(locale || 'en').slice(0, 2)] || 'en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -172,7 +174,7 @@ export default async function NewsDetailPage({
 
   const breadcrumbs = [
     { label: 'Sultan Defense', href: localizedPath(locale, '/') },
-    { label: isEn ? 'News' : 'Haberler', href: localizedPath(locale, '/news') },
+    { label: t('detail.news'), href: localizedPath(locale, '/news') },
     ...(post.category_name && post.category_slug
       ? [{ label: post.category_name, href: localizedPath(locale, `/news?category=${post.category_slug}`) }]
       : []),
@@ -301,12 +303,12 @@ export default async function NewsDetailPage({
             {/* Author + Date */}
             <div className="nd-meta">
               <span className="nd-author">
-                {isEn ? 'Written by ' : 'Yazan: '}
+                {t('detail.writtenBy')}{' '}
                 <b>{author}</b>
               </span>
               {post.created_at && (
                 <span className="nd-date">
-                  {isEn ? 'Published on ' : 'Yayınlanma: '}
+                  {t('detail.publishedOn')}{' '}
                   {formatDate(post.created_at, locale)}
                 </span>
               )}
@@ -326,7 +328,7 @@ export default async function NewsDetailPage({
             {postTags.length > 0 && (
               <div style={{ marginTop: 28 }}>
                 <h3 style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-text-muted)', marginBottom: 10 }}>
-                  {isEn ? 'Tags' : 'Etiketler'}
+                  {t('detail.tags')}
                 </h3>
                 <div className="nd-tags">
                   {postTags.map((tag: string) => (
@@ -448,7 +450,7 @@ export default async function NewsDetailPage({
             {/* Architecture You'll Love */}
             {sidebarPosts.length > 0 && (
               <div className="nd-sidebar-card">
-                <h3>{isEn ? "News You'll Love" : 'Beğeneceğiniz Haberler'}</h3>
+                <h3>{t('detail.newsYoullLove')}</h3>
                 {sidebarPosts.map((sp: any) => (
                   <Link
                     key={sp.id ?? sp.title}
@@ -475,7 +477,7 @@ export default async function NewsDetailPage({
             {/* Related Articles */}
             {relatedArticles.length > 0 && (
               <div className="nd-sidebar-card">
-                <div className="nd-related-title">{isEn ? 'RELATED ARTICLES' : 'İLGİLİ HABERLER'}</div>
+                <div className="nd-related-title">{t('detail.relatedArticles')}</div>
                 {relatedArticles.map((ra: any) => (
                   <Link
                     key={ra.id ?? ra.title}

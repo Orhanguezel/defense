@@ -933,5 +933,30 @@
     "typeLegal": "Rechtliches",
     "typeCorporate": "Unternehmen",
     "searchDescription": "Durchsuchen Sie Produkte, Leistungen, Neuigkeiten, Blog, Galerie sowie Unternehmens- und Rechtsseiten auf der Sultan-Defense-Website."
+  },
+  "detail": {
+    "products": "Produkte",
+    "activities": "Aktivitäten",
+    "news": "Neuigkeiten",
+    "tags": "Schlagwörter",
+    "featuredProducts": "Empfohlene Produkte",
+    "recentlyAdded": "Kürzlich hinzugefügt",
+    "moreProducts": "Weitere Produkte",
+    "seeAll": "Alle anzeigen »",
+    "allProducts": "Alle Produkte »",
+    "allProductsCap": "Alle Produkte »",
+    "viewAllProducts": "Alle Produkte ansehen",
+    "viewAllProductsAria": "Alle Sultan Defense Produkte ansehen",
+    "relatedProducts": "Ähnliche Produkte",
+    "otherActivities": "Weitere Aktivitäten",
+    "allActivities": "← Alle Aktivitäten",
+    "writtenBy": "Verfasst von",
+    "publishedOn": "Veröffentlicht am",
+    "newsYoullLove": "Neuigkeiten, die Ihnen gefallen werden",
+    "relatedArticles": "VERWANDTE ARTIKEL",
+    "productDescFallback": "Produktbeschreibung und Beschaffungsdetails für die B2B-Beschaffung vorbereitet.",
+    "referencesTitle": "Referenzen & Erfolgsgeschichten",
+    "noReferences": "Noch keine Referenzen veröffentlicht.",
+    "startProcurement": "Eine Sultan Defense Beschaffungsanfrage starten"
   }
 }

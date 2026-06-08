@@ -948,5 +948,30 @@
     "typeLegal": "Yasal metin",
     "typeCorporate": "Kurumsal",
     "searchDescription": "Ürünler, faaliyetler, haberler, blog, galeri ve kurumsal/yasal sayfalarda arama. Sultan Defense web sitesi."
+  },
+  "detail": {
+    "products": "Ürünler",
+    "activities": "Faaliyetler",
+    "news": "Haberler",
+    "tags": "Etiketler",
+    "featuredProducts": "Öne Çıkan Ürünler",
+    "recentlyAdded": "Yeni Eklenenler",
+    "moreProducts": "Daha Fazla Ürün",
+    "seeAll": "Tümünü Gör »",
+    "allProducts": "Tüm ürünler »",
+    "allProductsCap": "Tüm Ürünler »",
+    "viewAllProducts": "Tüm Ürünleri Gör",
+    "viewAllProductsAria": "Tüm Sultan Defense ürünlerini gör",
+    "relatedProducts": "İlgili Ürünler",
+    "otherActivities": "Diğer Faaliyetler",
+    "allActivities": "← Tüm Faaliyetler",
+    "writtenBy": "Yazan",
+    "publishedOn": "Yayınlanma tarihi",
+    "newsYoullLove": "Beğeneceğiniz Haberler",
+    "relatedArticles": "İLGİLİ MAKALELER",
+    "productDescFallback": "Ürün açıklaması ve tedarik detayları B2B satın alma için hazırlanmıştır.",
+    "referencesTitle": "Referanslar ve Başarı Hikayeleri",
+    "noReferences": "Henüz referans yayınlanmadı.",
+    "startProcurement": "Sultan Defense Tedarik Talebi Başlat"
   }
 }

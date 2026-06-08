@@ -189,7 +189,7 @@ export default async function NewsPage({
         <JsonLd
           data={jsonld.graph([
             jsonld.collectionPage({
-              name: isEn ? 'News' : 'Haberler',
+              name: t('detail.news'),
               description: t('news.description'),
               url: localizedUrl(locale, '/news'),
               mainEntity: jsonld.itemList(

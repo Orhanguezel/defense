@@ -933,5 +933,30 @@
     "typeLegal": "قانوني",
     "typeCorporate": "مؤسسي",
     "searchDescription": "ابحث في المنتجات والقدرات والأخبار والمدونة ومعرض الصور والصفحات المؤسسية والقانونية على موقع Sultan Defense."
+  },
+  "detail": {
+    "products": "المنتجات",
+    "activities": "الأنشطة",
+    "news": "الأخبار",
+    "tags": "الوسوم",
+    "featuredProducts": "منتجات مميزة",
+    "recentlyAdded": "أُضيفت حديثًا",
+    "moreProducts": "المزيد من المنتجات",
+    "seeAll": "عرض الكل »",
+    "allProducts": "جميع المنتجات »",
+    "allProductsCap": "جميع المنتجات »",
+    "viewAllProducts": "عرض جميع المنتجات",
+    "viewAllProductsAria": "عرض جميع منتجات Sultan Defense",
+    "relatedProducts": "منتجات ذات صلة",
+    "otherActivities": "أنشطة أخرى",
+    "allActivities": "← جميع الأنشطة",
+    "writtenBy": "بقلم",
+    "publishedOn": "نُشر في",
+    "newsYoullLove": "أخبار ستنال إعجابك",
+    "relatedArticles": "مقالات ذات صلة",
+    "productDescFallback": "وصف المنتج وتفاصيل التوريد مُعدّة لعمليات الشراء بين الشركات.",
+    "referencesTitle": "المراجع وقصص النجاح",
+    "noReferences": "لم تُنشر أي مراجع بعد.",
+    "startProcurement": "ابدأ طلب توريد من Sultan Defense"
   }
 }

@@ -106,7 +106,7 @@ export default async function ServiceDetailPage({
 
   const breadcrumbs = [
     { label: 'Sultan Defense', href: localizedPath(locale, '/') },
-    { label: isEn ? 'Activities' : 'Faaliyetler', href: localizedPath(locale, '/capabilities') },
+    { label: t('detail.activities'), href: localizedPath(locale, '/capabilities') },
     { label: service.title },
   ];
 
@@ -212,7 +212,7 @@ export default async function ServiceDetailPage({
             {serviceTags.length > 0 && (
               <div style={{ marginTop: 28 }}>
                 <h3 style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--color-text-muted)', marginBottom: 10 }}>
-                  {isEn ? 'Tags' : 'Etiketler'}
+                  {t('detail.tags')}
                 </h3>
                 <div className="sd-tags">
                   {serviceTags.map((tag: string) => (
@@ -248,7 +248,7 @@ export default async function ServiceDetailPage({
             {/* Related projects */}
             {relatedProjects.length > 0 && (
               <div className="sd-sidebar-card">
-                <h3>{isEn ? 'Related Products' : 'İlgili Ürünler'}</h3>
+                <h3>{t('detail.relatedProducts')}</h3>
                 {relatedProjects.map((p: any) => (
                   <Link
                     key={p.id ?? p.title}
@@ -280,7 +280,7 @@ export default async function ServiceDetailPage({
                   href={localizedPath(locale, '/products')}
                   style={{ fontSize: 13, color: 'var(--color-brand)', textDecoration: 'none', marginTop: 10, display: 'inline-block' }}
                 >
-                  {isEn ? 'All Products »' : 'Tüm Ürünler »'}
+                  {t('detail.allProductsCap')}
                 </Link>
               </div>
             )}
@@ -288,7 +288,7 @@ export default async function ServiceDetailPage({
             {/* Other services */}
             {otherServices.length > 0 && (
               <div className="sd-sidebar-card">
-                <h3>{isEn ? 'Other Activities' : 'Diğer Faaliyetler'}</h3>
+                <h3>{t('detail.otherActivities')}</h3>
                 {otherServices.map((s: any) => (
                   <Link
                     key={s.id ?? s.title}
@@ -323,7 +323,7 @@ export default async function ServiceDetailPage({
               href={localizedPath(locale, '/capabilities')}
               className="flex items-center justify-center rounded-lg border-2 border-(--color-brand) px-4 py-3.5 text-sm font-bold text-(--color-brand-text) no-underline transition-colors hover:bg-(--color-brand) hover:text-(--color-on-brand)"
             >
-              {isEn ? '← All Activities' : '← Tüm Faaliyetler'}
+              {t('detail.allActivities')}
             </Link>
           </aside>
         </div>

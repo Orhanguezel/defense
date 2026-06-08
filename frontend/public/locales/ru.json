@@ -933,5 +933,30 @@
     "typeLegal": "Правовая информация",
     "typeCorporate": "Корпоративная информация",
     "searchDescription": "Поиск товаров, возможностей, новостей, блога, галереи, корпоративных и правовых страниц на веб-сайте Sultan Defense."
+  },
+  "detail": {
+    "products": "Продукция",
+    "activities": "Деятельность",
+    "news": "Новости",
+    "tags": "Теги",
+    "featuredProducts": "Рекомендуемая продукция",
+    "recentlyAdded": "Недавно добавленные",
+    "moreProducts": "Больше продукции",
+    "seeAll": "Смотреть все »",
+    "allProducts": "Вся продукция »",
+    "allProductsCap": "Вся продукция »",
+    "viewAllProducts": "Посмотреть всю продукцию",
+    "viewAllProductsAria": "Посмотреть всю продукцию Sultan Defense",
+    "relatedProducts": "Сопутствующая продукция",
+    "otherActivities": "Другая деятельность",
+    "allActivities": "← Вся деятельность",
+    "writtenBy": "Автор",
+    "publishedOn": "Опубликовано",
+    "newsYoullLove": "Новости, которые вам понравятся",
+    "relatedArticles": "СВЯЗАННЫЕ СТАТЬИ",
+    "productDescFallback": "Описание продукции и сведения о поставке подготовлены для B2B-закупок.",
+    "referencesTitle": "Референсы и истории успеха",
+    "noReferences": "Референсы ещё не опубликованы.",
+    "startProcurement": "Подать запрос на закупку Sultan Defense"
   }
 }

@@ -933,5 +933,30 @@
     "typeLegal": "Legal",
     "typeCorporate": "Corporate",
     "searchDescription": "Search products, capabilities, news, blog, gallery, corporate and legal pages on the Sultan Defense website."
+  },
+  "detail": {
+    "products": "Products",
+    "activities": "Activities",
+    "news": "News",
+    "tags": "Tags",
+    "featuredProducts": "Featured Products",
+    "recentlyAdded": "Recently Added",
+    "moreProducts": "More Products",
+    "seeAll": "See All »",
+    "allProducts": "All products »",
+    "allProductsCap": "All Products »",
+    "viewAllProducts": "View All Products",
+    "viewAllProductsAria": "View all Sultan Defense products",
+    "relatedProducts": "Related Products",
+    "otherActivities": "Other Activities",
+    "allActivities": "← All Activities",
+    "writtenBy": "Written by",
+    "publishedOn": "Published on",
+    "newsYoullLove": "News You'll Love",
+    "relatedArticles": "RELATED ARTICLES",
+    "productDescFallback": "Product description and sourcing details prepared for B2B procurement.",
+    "referencesTitle": "References & Success Stories",
+    "noReferences": "No references published yet.",
+    "startProcurement": "Start a Sultan Defense Procurement Request"
   }
 }
