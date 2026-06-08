@@ -80,10 +80,7 @@ export function ProjectComments({ targetType, targetId, apiBaseUrl, locale, text
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const emojiPickerRef = useRef<HTMLDivElement>(null);
 
-  // reCAPTCHA state
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  const captchaRef = useRef<HTMLDivElement>(null);
-  const widgetIdRef = useRef<number | null>(null);
+  // reCAPTCHA v3 — gorunmez, submit aninda token uretir
   const [captchaReady, setCaptchaReady] = useState(false);
   const [isLocalhost, setIsLocalhost] = useState(false);
 
@@ -94,32 +91,7 @@ export function ProjectComments({ targetType, targetId, apiBaseUrl, locale, text
     }
   }, []);
 
-  // Render reCAPTCHA widget
-  useEffect(() => {
-    if (isLocalhost || !captchaReady) return;
-    const container = captchaRef.current;
-    if (!container || widgetIdRef.current != null) return;
-
-    const theme =
-      document.documentElement.dataset.themeMode === 'dark' ? 'dark' : 'light';
-
-    const renderWidget = () => {
-      if (!window.grecaptcha || typeof window.grecaptcha.render !== 'function') return;
-      const id = window.grecaptcha.render(container, {
-        sitekey: RECAPTCHA_SITE_KEY,
-        theme,
-        callback: (token) => setCaptchaToken(token),
-        'expired-callback': () => setCaptchaToken(null),
-      });
-      widgetIdRef.current = id;
-    };
-
-    if (window.grecaptcha && typeof window.grecaptcha.ready === 'function') {
-      window.grecaptcha.ready(renderWidget);
-    } else {
-      renderWidget();
-    }
-  }, [captchaReady, isLocalhost]);
+  // v3'te gorunur widget render edilmez; token submit aninda grecaptcha.execute ile alinir.
 
   /* Load comments on first render */
   const loadComments = useCallback(async () => {
@@ -180,9 +152,14 @@ export function ProjectComments({ targetType, targetId, apiBaseUrl, locale, text
       const content = (fd.get('content') as string)?.trim();
       if (!content) return;
 
-      // reCAPTCHA check (skip on localhost)
-      if (!isLocalhost && !captchaToken) {
-        return;
+      // reCAPTCHA v3: submit aninda gorunmez token uret (localhost'ta atla)
+      let captchaToken = '';
+      if (!isLocalhost) {
+        try {
+          if (window.grecaptcha && typeof window.grecaptcha.execute === 'function') {
+            captchaToken = await window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'comment' });
+          }
+        } catch { /* ignore */ }
       }
 
       setSubmitting(true);
@@ -210,16 +187,12 @@ export function ProjectComments({ targetType, targetId, apiBaseUrl, locale, text
           setImagePreview(null);
           setUploadedImageUrl(null);
           setUploadedMediaType('image');
-          setCaptchaToken(null);
-          if (widgetIdRef.current != null && window.grecaptcha) {
-            window.grecaptcha.reset(widgetIdRef.current);
-          }
           setLoaded(false);
         }
       } catch { /* silent */ }
       setSubmitting(false);
     },
-    [apiBaseUrl, targetType, targetId, texts.guest, submitting, uploadedImageUrl, captchaToken, isLocalhost],
+    [apiBaseUrl, targetType, targetId, texts.guest, submitting, uploadedImageUrl, isLocalhost],
   );
 
   /* Image select + upload */
@@ -322,7 +295,7 @@ export function ProjectComments({ targetType, targetId, apiBaseUrl, locale, text
       {/* reCAPTCHA script */}
       {!isLocalhost && (
         <Script
-          src="https://www.google.com/recaptcha/api.js?render=explicit"
+          src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
           strategy="afterInteractive"
           onReady={() => setCaptchaReady(true)}
         />
@@ -483,7 +456,7 @@ export function ProjectComments({ targetType, targetId, apiBaseUrl, locale, text
             <button
               type="submit"
               className="pc-submit"
-              disabled={submitting || uploading || (!isLocalhost && !captchaToken)}
+              disabled={submitting || uploading}
             >
               {submitting ? texts.sending : texts.submitComment}
             </button>
@@ -498,11 +471,11 @@ export function ProjectComments({ targetType, targetId, apiBaseUrl, locale, text
         </div>
       </form>
 
-      {/* reCAPTCHA widget */}
-      {!isLocalhost && (
-        <div className="pc-captcha">
-          <div ref={captchaRef} />
-        </div>
+      {/* reCAPTCHA v3 — gorunmez; Google rozeti otomatik gelir. */}
+      {!isLocalhost && captchaReady && (
+        <p className="pc-captcha" style={{ fontSize: 11, opacity: 0.6, marginTop: 8 }}>
+          reCAPTCHA ile korunmaktadır.
+        </p>
       )}
 
       {/* Comments list */}

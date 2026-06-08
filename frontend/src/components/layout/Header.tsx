@@ -336,8 +336,8 @@ export function Header({
         <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-(--color-brand) opacity-30 group-hover:opacity-100 transition-opacity" />
       </header>
 
-      {/* Header yüksekliği kadar boşluk (72px header + 3px altın çizgi) */}
-      <div style={{ height: 75 }} />
+      {/* Header yüksekliği kadar boşluk (80px header + 2px altın çizgi + tampon) */}
+      <div style={{ height: 88 }} />
 
       {/* ═══════════════════════════════════════════
           MEGA MENÜ OVERLAY
@@ -345,7 +345,7 @@ export function Header({
       {menuOpen && (
         <div
           className="fixed inset-0 z-40"
-          style={{ top: 75 }}
+          style={{ top: 82 }}
         >
           {/* Backdrop */}
           <div
@@ -361,7 +361,7 @@ export function Header({
             className="relative overflow-y-auto"
             style={{
               background: 'var(--color-bg-dark)',
-              maxHeight: 'calc(100vh - 75px)',
+              maxHeight: 'calc(100vh - 82px)',
               borderBottom: '3px solid var(--color-brand)',
             }}
           >
@@ -369,7 +369,8 @@ export function Header({
               className="mx-auto grid gap-8 py-10"
               style={{
                 maxWidth: 1400,
-                padding: '2.5rem clamp(1rem, 3vw, 2rem)',
+                /* alt padding fazla: WhatsApp/floating buton son menü ögelerini örtmesin */
+                padding: '2rem clamp(1rem, 3vw, 2rem) 7rem',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
               }}
             >

@@ -224,6 +224,8 @@ html[data-theme-mode='dark'] {
 
 html {
   scroll-behavior: smooth;
+  /* sabit header (80px) altinda kalmasin: anchor/scroll hedefleri offset'li */
+  scroll-padding-top: 92px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scrollbar-color: var(--color-text-muted) var(--color-bg-secondary);
