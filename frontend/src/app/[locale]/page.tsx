@@ -349,13 +349,14 @@ export default async function HomePage({
         <StatsHighlightSection items={homeStats} />
       ) : null}
 
-      {/* 3 promo kart — B2B tedarik / ihracata hazır / küresel iş birliği */}
+      {/* 3 promo kart — arka plan resmi gorunen alanda, dikey ortali */}
       {promoCards.length > 0 && (
-        <section className="relative z-10 mx-auto max-w-7xl px-4 py-16 lg:px-6 lg:py-20">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <section className="relative z-10 flex min-h-[85vh] items-center py-16">
+          <div className="absolute inset-0 bg-black/25" aria-hidden="true" />
+          <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-4 md:grid-cols-3 lg:px-6">
             {promoCards.map((card, idx) => (
               <Reveal key={card.title} delay={idx * 0.1}>
-                <div className="group flex h-full flex-col border-t-4 border-(--color-brand) bg-(--color-bg-dark) p-8 shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                <div className="group flex h-full flex-col border-t-4 border-(--color-brand) bg-(--color-bg-dark)/90 p-8 shadow-2xl backdrop-blur-sm transition-all duration-500 hover:-translate-y-2">
                   <h3
                     className="text-lg font-black uppercase leading-tight tracking-[0.08em] text-(--section-bg-white) lg:text-xl"
                     style={{ fontFamily: 'var(--font-heading)' }}
@@ -377,9 +378,6 @@ export default async function HomePage({
           </div>
         </section>
       )}
-
-      {/* Hero altı sabit-arka-plan reveal — defans görseli görünsün (yarım ekran) */}
-      <div className="h-[40vh] lg:h-[50vh]" aria-hidden="true" />
 
       {/* ═══════════════════════════════════════════
           DYNAMIC CONTENT SECTIONS — Glass/Transparent (ScrollBackground görünsün)

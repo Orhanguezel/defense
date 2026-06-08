@@ -85,8 +85,10 @@ export function StatsHighlightSection({ title, ticker, items }: StatsHighlightSe
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-(--color-bg-dark) py-0"
+      className="relative z-10 flex min-h-[85vh] flex-col justify-center overflow-hidden py-14"
     >
+      {/* okunabilirlik icin hafif koyu scrim (arka plan resmi gorunur kalir) */}
+      <div className="pointer-events-none absolute inset-0 bg-black/30" aria-hidden="true" />
       <style>{`
         @keyframes b2b-ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         .b2b-ticker-track { display:inline-flex; white-space:nowrap; animation: b2b-ticker-scroll 38s linear infinite; }
