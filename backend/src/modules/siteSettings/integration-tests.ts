@@ -4,6 +4,7 @@
 
 import type { FastifyRequest, FastifyReply } from 'fastify';
 import { env } from '@/core/env';
+import { getRecaptchaSettings } from './service';
 
 type TestResult = { ok: boolean; service: string; message: string; details?: any };
 
@@ -58,13 +59,14 @@ export async function testGoogleOAuth(_req: FastifyRequest, reply: FastifyReply)
   }
 }
 
-/** reCAPTCHA — verify with test token */
+/** reCAPTCHA — verify with test token (DB-yonetimli secret) */
 export async function testRecaptcha(_req: FastifyRequest, reply: FastifyReply) {
-  const secret = process.env.RECAPTCHA_SECRET_KEY || '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
-  const enabled = process.env.RECAPTCHA_ENABLED !== '0' && process.env.RECAPTCHA_ENABLED !== 'false';
+  const rc = await getRecaptchaSettings();
+  const secret = rc.secretKey || '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
+  const enabled = rc.enabled;
 
   if (!enabled) {
-    return reply.send({ ok: true, service: 'recaptcha', message: 'reCAPTCHA devre dışı (RECAPTCHA_ENABLED=0)' } satisfies TestResult);
+    return reply.send({ ok: true, service: 'recaptcha', message: 'reCAPTCHA devre dışı' } satisfies TestResult);
   }
 
   try {

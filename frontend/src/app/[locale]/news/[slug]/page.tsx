@@ -11,6 +11,7 @@ import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { buildMediaAlt } from '@/lib/media-seo';
 import { SocialShare } from '@/components/projects/SocialShare';
 import { ProjectComments } from '@/components/projects/ProjectComments';
+import { fetchSetting } from '@/i18n/server';
 import { NewsImageGallery } from '@/components/news/NewsImageGallery';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { RelatedLinks } from '@/components/seo/RelatedLinks';
@@ -133,6 +134,9 @@ export default async function NewsDetailPage({
   const isEn = locale.startsWith('en');
   const post = await fetchPost(slug, locale);
   if (!post) notFound();
+  const recaptchaSetting = await fetchSetting('recaptcha_site_key', locale);
+  const recaptchaSiteKey =
+    typeof recaptchaSetting?.value === 'string' && recaptchaSetting.value ? recaptchaSetting.value : undefined;
 
   const content = normalizeRichContent(post.content);
   const org = organizationJsonLd(locale);
@@ -418,6 +422,7 @@ export default async function NewsDetailPage({
               targetId={post.id || slug}
               apiBaseUrl={API_BASE_URL}
               locale={locale}
+              siteKey={recaptchaSiteKey}
               texts={{
                 title: t('projects.comments.title'),
                 viewing: t('projects.comments.viewing'),

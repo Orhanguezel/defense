@@ -8,7 +8,7 @@ import {
   IdParamSchema,
   // ReviewReactionSchema  // ❌ artık kullanmıyoruz
 } from "./validation";
-import { isRecaptchaEnabled, shouldBypassRecaptchaForOrigin, verifyRecaptchaToken } from './recaptcha';
+import { getRecaptchaRuntime, shouldBypassRecaptchaForOrigin, verifyRecaptchaToken } from './recaptcha';
 
 import {
   repoListReviewsPublic,
@@ -53,7 +53,8 @@ export async function createReviewPublic(req: FastifyRequest, reply: FastifyRepl
   const body = ReviewCreateSchema.parse((req as any).body);
   const requestOrigin = typeof req.headers.origin === 'string' ? req.headers.origin : '';
 
-  if (isRecaptchaEnabled() && !shouldBypassRecaptchaForOrigin(requestOrigin)) {
+  const recaptcha = await getRecaptchaRuntime();
+  if (recaptcha.enabled && !shouldBypassRecaptchaForOrigin(requestOrigin)) {
     if (!body.captcha_token) {
       return reply.code(400).send({ error: { message: 'captcha_required' } });
     }
@@ -62,7 +63,7 @@ export async function createReviewPublic(req: FastifyRequest, reply: FastifyRepl
       ((req.headers['x-forwarded-for'] as string | undefined)?.split(',')[0] || '').trim() ||
       req.ip;
 
-    const verification = await verifyRecaptchaToken(body.captcha_token, remoteIp || undefined);
+    const verification = await verifyRecaptchaToken(body.captcha_token, remoteIp || undefined, recaptcha.secret);
 
     if (!verification.success) {
       return reply

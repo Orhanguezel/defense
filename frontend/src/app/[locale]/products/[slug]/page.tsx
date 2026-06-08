@@ -13,6 +13,7 @@ import { SocialShare } from '@/components/projects/SocialShare';
 import { ProjectSpecs } from '@/components/projects/ProjectSpecs';
 import type { SpecItem } from '@/components/projects/ProjectSpecs';
 import { ProjectComments } from '@/components/projects/ProjectComments';
+import { fetchSetting } from '@/i18n/server';
 import { buildMediaAlt } from '@/lib/media-seo';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { RelatedLinks } from '@/components/seo/RelatedLinks';
@@ -165,6 +166,11 @@ export default async function ProjectDetailPage({
 
   const specs = coerceProductSpecifications(project.specifications);
   const isEn = locale.startsWith('en');
+
+  // reCAPTCHA site key (admin-yonetimli, DB ayarindan) — yorum widget'ina gecilir
+  const recaptchaSetting = await fetchSetting('recaptcha_site_key', locale);
+  const recaptchaSiteKey =
+    typeof recaptchaSetting?.value === 'string' && recaptchaSetting.value ? recaptchaSetting.value : undefined;
 
   /** Resolve spec value by id — searches all locale key variants */
   function sv(id: string): string | null {
@@ -485,6 +491,7 @@ export default async function ProjectDetailPage({
               targetId={projectId || slug}
               apiBaseUrl={API_BASE_URL}
               locale={locale}
+              siteKey={recaptchaSiteKey}
               texts={{
                 title: t('projects.comments.title'),
                 viewing: t('projects.comments.viewing'),

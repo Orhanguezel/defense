@@ -6,7 +6,7 @@ import type { FastifyRequest, FastifyReply } from "fastify";
 import { CommentCreateSchema, CommentListParamsSchema } from "./validation";
 import { repoCreateComment, repoListComments } from "./repository";
 import {
-  isRecaptchaEnabled,
+  getRecaptchaRuntime,
   shouldBypassRecaptchaForOrigin,
   verifyRecaptchaToken,
 } from "../review/recaptcha";
@@ -47,7 +47,8 @@ export async function createCommentPublic(req: CreateReq, reply: FastifyReply) {
   // reCAPTCHA verification (bypass on localhost in dev)
   const requestOrigin = typeof req.headers.origin === "string" ? req.headers.origin : "";
 
-  if (isRecaptchaEnabled() && !shouldBypassRecaptchaForOrigin(requestOrigin)) {
+  const recaptcha = await getRecaptchaRuntime();
+  if (recaptcha.enabled && !shouldBypassRecaptchaForOrigin(requestOrigin)) {
     if (!parsed.data.captcha_token) {
       return reply
         .code(400)
@@ -61,6 +62,7 @@ export async function createCommentPublic(req: CreateReq, reply: FastifyReply) {
     const verification = await verifyRecaptchaToken(
       parsed.data.captcha_token,
       remoteIp || undefined,
+      recaptcha.secret,
     );
 
     if (!verification.success) {

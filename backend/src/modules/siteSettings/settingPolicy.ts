@@ -55,6 +55,11 @@ export const GLOBAL_ONLY_KEYS = new Set<string>([
   'google_client_id',
   'google_client_secret',
 
+  // recaptcha (admin-yonetimli)
+  'recaptcha_site_key',
+  'recaptcha_secret_key',
+  'recaptcha_enabled',
+
   // storage
   'storage_driver',
   'storage_local_root',

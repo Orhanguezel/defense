@@ -25,6 +25,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const ALL_KEYS = [
   'google_client_id', 'google_client_secret',
+  'recaptcha_site_key', 'recaptcha_secret_key', 'recaptcha_enabled',
   'cloudinary_cloud_name', 'cloudinary_api_key', 'cloudinary_api_secret', 'cloudinary_folder', 'cloudinary_unsigned_preset',
   'gtm_container_id', 'ga4_measurement_id',
   'ai_provider_order',
@@ -55,6 +56,15 @@ const SECTIONS: { title: string; fields: FieldDef[]; testEndpoint?: string }[] =
     fields: [
       { key: 'google_client_id', label: 'Client ID', placeholder: '...apps.googleusercontent.com' },
       { key: 'google_client_secret', label: 'Client Secret', type: 'password' },
+    ],
+  },
+  {
+    title: 'reCAPTCHA (v2)',
+    testEndpoint: '/api/admin/site_settings/test/recaptcha',
+    fields: [
+      { key: 'recaptcha_site_key', label: 'Site Key (public)', placeholder: '6Lc...' },
+      { key: 'recaptcha_secret_key', label: 'Secret Key (private)', type: 'password' },
+      { key: 'recaptcha_enabled', label: 'Aktif (1 = açık, 0 = kapalı)', placeholder: '1' },
     ],
   },
   {

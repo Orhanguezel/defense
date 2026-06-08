@@ -1,13 +1,19 @@
+// reCAPTCHA — admin-yonetimli (site_settings) + env fallback.
+import { getRecaptchaSettings } from '@/modules/siteSettings/service';
+
 const DEFAULT_TEST_SECRET_KEY = '6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe';
 
-function getRecaptchaSecret() {
-  return process.env.RECAPTCHA_SECRET_KEY || DEFAULT_TEST_SECRET_KEY;
-}
-
-export function isRecaptchaEnabled() {
-  const raw = process.env.RECAPTCHA_ENABLED;
-  if (raw == null || raw === '') return true;
-  return ['1', 'true', 'yes', 'on'].includes(String(raw).toLowerCase());
+/** Calisma zamani reCAPTCHA config (DB > env > test). */
+export async function getRecaptchaRuntime(): Promise<{ secret: string; enabled: boolean }> {
+  try {
+    const s = await getRecaptchaSettings();
+    return { secret: s.secretKey || DEFAULT_TEST_SECRET_KEY, enabled: s.enabled };
+  } catch {
+    // DB erisilemezse env fallback
+    const raw = process.env.RECAPTCHA_ENABLED;
+    const enabled = raw == null || raw === '' ? true : ['1', 'true', 'yes', 'on'].includes(String(raw).toLowerCase());
+    return { secret: process.env.RECAPTCHA_SECRET_KEY || DEFAULT_TEST_SECRET_KEY, enabled };
+  }
 }
 
 export function shouldBypassRecaptchaForOrigin(origin?: string | null) {
@@ -22,9 +28,11 @@ export function shouldBypassRecaptchaForOrigin(origin?: string | null) {
   }
 }
 
-export async function verifyRecaptchaToken(token: string, remoteIp?: string) {
+export async function verifyRecaptchaToken(token: string, remoteIp?: string, secret?: string) {
+  const secretKey = secret || (await getRecaptchaRuntime()).secret;
+
   const params = new URLSearchParams();
-  params.set('secret', getRecaptchaSecret());
+  params.set('secret', secretKey);
   params.set('response', token);
   if (remoteIp) params.set('remoteip', remoteIp);
 

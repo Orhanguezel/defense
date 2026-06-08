@@ -3,8 +3,9 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import Script from 'next/script';
 
-const RECAPTCHA_SITE_KEY =
-  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI';
+// Site key oncelik: DB ayari (prop) > env > gercek default (public anahtar).
+const RECAPTCHA_SITE_KEY_FALLBACK =
+  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6LcFPhQtAAAAAGPtD2oUzMgUKJLYV6fNK9uZYEhk';
 
 const EMOJI_LIST = [
   '😀','😂','😍','🥰','😎','🤔','😢','😡',
@@ -58,9 +59,12 @@ type Props = {
   apiBaseUrl: string;
   locale: string;
   texts: CommentTexts;
+  /** reCAPTCHA site key (DB ayarindan; yoksa env/default) */
+  siteKey?: string;
 };
 
-export function ProjectComments({ targetType, targetId, apiBaseUrl, locale, texts }: Props) {
+export function ProjectComments({ targetType, targetId, apiBaseUrl, locale, texts, siteKey }: Props) {
+  const RECAPTCHA_SITE_KEY = siteKey || RECAPTCHA_SITE_KEY_FALLBACK;
   const [comments, setComments] = useState<Comment[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [loading, setLoading] = useState(false);

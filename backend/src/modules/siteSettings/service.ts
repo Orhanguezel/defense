@@ -639,6 +639,45 @@ export async function getGoogleSettings(locale?: string | null): Promise<GoogleS
 }
 
 // ---------------------------------------------------------------------------
+// reCAPTCHA (admin-managed: site_settings + env fallback)
+// ---------------------------------------------------------------------------
+
+const RECAPTCHA_KEYS = ['recaptcha_site_key', 'recaptcha_secret_key', 'recaptcha_enabled'] as const;
+
+export type RecaptchaSettings = {
+  siteKey: string | null;
+  secretKey: string | null;
+  enabled: boolean;
+};
+
+export async function getRecaptchaSettings(locale?: string | null): Promise<RecaptchaSettings> {
+  const localeCandidates = await buildLocaleFallbackChain({ requested: locale });
+  const map = await loadSettingsMap({ keys: RECAPTCHA_KEYS, localeCandidates });
+
+  const siteKey =
+    normalizeStr(map.get('recaptcha_site_key')) ??
+    normalizeStr(process.env.RECAPTCHA_SITE_KEY) ??
+    normalizeStr(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) ??
+    null;
+
+  const secretKey =
+    normalizeStr(map.get('recaptcha_secret_key')) ??
+    normalizeStr(process.env.RECAPTCHA_SECRET_KEY) ??
+    null;
+
+  const enabledRaw =
+    normalizeStr(map.get('recaptcha_enabled')) ?? normalizeStr(process.env.RECAPTCHA_ENABLED);
+
+  // Belirtilmemisse: secret varsa aktif say. Belirtilmisse degerine bak.
+  const enabled =
+    enabledRaw == null || enabledRaw === ''
+      ? Boolean(secretKey)
+      : ['1', 'true', 'yes', 'on'].includes(enabledRaw.toLowerCase());
+
+  return { siteKey, secretKey, enabled };
+}
+
+// ---------------------------------------------------------------------------
 // PUBLIC BASE URL
 // ---------------------------------------------------------------------------
 

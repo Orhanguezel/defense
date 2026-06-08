@@ -16,6 +16,21 @@ function parseDbValue(s: string): unknown {
   }
 }
 
+/** Public endpoint'ten asla donulmemesi gereken hassas anahtarlar (secret/sifre). */
+function isSensitiveSettingKey(key: string): boolean {
+  const k = String(key || '').toLowerCase().replace(/^sultandefense__/, '');
+  return (
+    k.endsWith('_secret') ||
+    k.endsWith('secret_key') ||
+    k.endsWith('_password') ||
+    k.endsWith('_secret_key') ||
+    k === 'recaptcha_secret_key' ||
+    k === 'smtp_password' ||
+    k.includes('api_secret') ||
+    k.includes('client_secret')
+  );
+}
+
 function rowToDto(r: typeof siteSettings.$inferSelect) {
   return {
     id: r.id,
@@ -94,6 +109,11 @@ export const listSiteSettings: RouteHandler = async (req, reply) => {
 export const getSiteSettingByKey: RouteHandler = async (req, reply) => {
   const { key } = req.params as { key: string };
   const query = (req.query || {}) as { locale?: string; prefix?: string };
+
+  // Guvenlik: hassas anahtarlar (secret/sifre) public endpoint'ten donulmez.
+  if (isSensitiveSettingKey(`${typeof query.prefix === 'string' ? query.prefix : ''}${key}`) || isSensitiveSettingKey(key)) {
+    return reply.code(404).send({ error: { message: 'not_found' } });
+  }
   const qLocale = query.locale as string | undefined;
   const prefix = typeof query.prefix === 'string' ? query.prefix.trim() : '';
 
