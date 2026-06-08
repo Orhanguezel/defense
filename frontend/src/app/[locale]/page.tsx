@@ -494,8 +494,7 @@ export default async function HomePage({
 
         {/* 3 promo kart — haberlerin altindaki arka plan resimli alanda */}
         {promoCards.length > 0 && (
-          <section className="relative z-10 flex min-h-[80vh] items-center py-16" style={{ marginTop: 0 }}>
-            <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
+          <section className="relative z-10 flex min-h-[85vh] items-center py-16">
             <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-4 md:grid-cols-3 lg:px-6">
               {promoCards.map((card, idx) => (
                 <Reveal key={card.title} delay={idx * 0.1}>
@@ -524,7 +523,7 @@ export default async function HomePage({
 
         {/* Öne Çıkanlar — hero'ya sığmayan featured ürünler */}
         {highlightProducts.length > 0 && (
-          <section className="border-b border-(--color-border) bg-white/95 py-24 backdrop-blur-sm" style={{ marginTop: 0 }}>
+          <section className="border-b border-(--color-border) bg-white/95 py-24 backdrop-blur-sm">
             <div className="mx-auto max-w-7xl px-4 lg:px-6">
               <ProjectFeed
                 initialProjects={highlightProducts}
