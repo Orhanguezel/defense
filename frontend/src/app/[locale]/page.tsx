@@ -492,10 +492,10 @@ export default async function HomePage({
           </section>
         ) : null}
 
-        {/* 3 promo kart — haberlerin altindaki arka plan resimli alanda, dikey ortali */}
+        {/* 3 promo kart — haberlerin altindaki arka plan resimli alanda */}
         {promoCards.length > 0 && (
-          <section className="relative z-10 flex min-h-[85vh] items-center py-16">
-            <div className="absolute inset-0 bg-black/25" aria-hidden="true" />
+          <section className="relative z-10 py-16 lg:py-20">
+            <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
             <div className="relative mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-4 md:grid-cols-3 lg:px-6">
               {promoCards.map((card, idx) => (
                 <Reveal key={card.title} delay={idx * 0.1}>
