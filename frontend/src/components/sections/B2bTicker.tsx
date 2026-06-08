@@ -23,7 +23,6 @@ export function B2bTicker({ text }: B2bTickerProps) {
       <style>{`
         @keyframes b2b-ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
         .b2b-ticker-track { display:inline-flex; white-space:nowrap; animation: b2b-ticker-scroll 38s linear infinite; }
-        .b2b-ticker-wrap:hover .b2b-ticker-track { animation-play-state: paused; }
         @media (prefers-reduced-motion: reduce){ .b2b-ticker-track { animation: none; } }
       `}</style>
       <div className="b2b-ticker-track">

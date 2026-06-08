@@ -9,11 +9,8 @@ import { JsonLd, buildPageMetadata, jsonld, localizedPath, localizedUrl, organiz
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { ProjectGallery } from '@/components/projects/ProjectGallery';
 import type { GalleryImage } from '@/components/projects/ProjectGallery';
-import { SocialShare } from '@/components/projects/SocialShare';
 import { ProjectSpecs } from '@/components/projects/ProjectSpecs';
 import type { SpecItem } from '@/components/projects/ProjectSpecs';
-import { ProjectComments } from '@/components/projects/ProjectComments';
-import { fetchSetting } from '@/i18n/server';
 import { buildMediaAlt } from '@/lib/media-seo';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { RelatedLinks } from '@/components/seo/RelatedLinks';
@@ -168,9 +165,6 @@ export default async function ProjectDetailPage({
   const isEn = locale.startsWith('en');
 
   // reCAPTCHA site key (admin-yonetimli, DB ayarindan) — yorum widget'ina gecilir
-  const recaptchaSetting = await fetchSetting('recaptcha_site_key', locale);
-  const recaptchaSiteKey =
-    typeof recaptchaSetting?.value === 'string' && recaptchaSetting.value ? recaptchaSetting.value : undefined;
 
   /** Resolve spec value by id — searches all locale key variants */
   function sv(id: string): string | null {
@@ -246,7 +240,6 @@ export default async function ProjectDetailPage({
       })),
   ];
 
-  const shareUrl = `${SITE_URL}/${locale}/products/${slug}`;
 
   const breadcrumbs = [
     { label: 'Sultan Defense', href: localizedPath(locale, '/') },
@@ -325,17 +318,6 @@ export default async function ProjectDetailPage({
         >
           {project.title}
         </h1>
-
-        {/* ── Social share ── */}
-        <div style={{ marginBottom: 16 }}>
-          <SocialShare
-            url={shareUrl}
-            title={project.title}
-            description={project.meta_description || project.description?.slice(0, 160)}
-            locale={locale}
-            saveLabel={t('common.save')}
-          />
-        </div>
 
         {/* ── Main layout: content + sidebar ── */}
         <div className="pd-layout">
@@ -485,38 +467,6 @@ export default async function ProjectDetailPage({
               />
             </div>
 
-            {/* ── Comments ── */}
-            <ProjectComments
-              targetType="project"
-              targetId={projectId || slug}
-              apiBaseUrl={API_BASE_URL}
-              locale={locale}
-              siteKey={recaptchaSiteKey}
-              texts={{
-                title: t('projects.comments.title'),
-                viewing: t('projects.comments.viewing'),
-                commentingAs: t('projects.comments.commentingAs'),
-                guest: t('common.guest'),
-                loginLink: t('projects.comments.loginLink'),
-                signupLink: t('projects.comments.signupLink'),
-                namePlaceholder: t('projects.comments.namePlaceholder'),
-                commentPlaceholder: t('projects.comments.commentPlaceholder'),
-                uploadingImage: t('projects.comments.uploadingImage'),
-                photoVideo: t('projects.comments.photoVideo'),
-                submitComment: t('projects.comments.submitComment'),
-                sending: t('common.sending'),
-                successMessage: t('projects.comments.successMessage'),
-                loadingComments: t('projects.comments.loadingComments'),
-                emptyTitle: t('projects.comments.emptyTitle'),
-                emptySubtitle: t('projects.comments.emptySubtitle'),
-                captchaLoading: t('projects.comments.captchaLoading'),
-                captchaPending: t('projects.comments.captchaPending'),
-                captchaLoadFailed: t('projects.comments.captchaLoadFailed'),
-                captchaVerifyFailed: t('projects.comments.captchaVerifyFailed'),
-                captchaRequired: t('projects.comments.captchaRequired'),
-                captchaBypass: t('projects.comments.captchaBypass'),
-              }}
-            />
           </div>
 
           {/* ══ RIGHT SIDEBAR ══ */}

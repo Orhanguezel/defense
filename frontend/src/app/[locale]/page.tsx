@@ -217,7 +217,8 @@ export default async function HomePage({
   const visibleNewsPosts = newsPosts.slice(0, 2);
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen" style={{ marginTop: -88 }}>
+      {/* header spacer'i (88px) sönümle: tam-ekran hero header'in altina flush gelsin, ust serit kalmasin */}
       <style dangerouslySetInnerHTML={{ __html: 'body { background-color: transparent !important; }' }} />
       <JsonLd
         data={jsonld.graph([

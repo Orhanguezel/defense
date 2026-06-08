@@ -158,10 +158,13 @@ export function SplashScreen({
         }
         .splash-brand span {
           font-family: var(--font-heading, sans-serif);
-          font-size: clamp(26px, 5vw, 44px);
+          /* mobilde tek satira sigsin */
+          font-size: clamp(16px, 4.2vw, 44px);
           font-weight: 800;
-          letter-spacing: 0.12em;
+          letter-spacing: 0.06em;
           text-transform: uppercase;
+          white-space: nowrap;
+          padding: 0 12px;
           background: linear-gradient(
             135deg,
             var(--gold-300) 0%,
@@ -302,11 +305,6 @@ export function SplashScreen({
       {/* Tagline */}
       <div className="splash-tagline">
         <span>{finalTagline}</span>
-      </div>
-
-      {/* Bottom badge */}
-      <div className="splash-badge">
-        <span>Bereket ve Kalite ile...</span>
       </div>
     </div>
   );
