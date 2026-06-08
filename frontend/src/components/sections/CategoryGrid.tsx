@@ -1,9 +1,20 @@
+'use client';
+
+import type { MouseEvent } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { absoluteAssetUrl } from '@/lib/utils';
 import { localizedPath } from '@/seo';
 import { GALLERY_IMAGE_PLACEHOLDER } from '@/lib/placeholders';
+
+/** Hedef listeye yumuşak kaydır (sticky header offset için scroll-margin elementte) */
+function scrollToList() {
+  if (typeof document === 'undefined') return;
+  const el = document.getElementById('urun-listesi');
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
 
 export type CategoryCard = {
   name: string;
@@ -22,7 +33,15 @@ type Props = {
 };
 
 export function CategoryGrid({ categories, locale, heading, subtitle, viewLabel }: Props) {
+  const router = useRouter();
   if (!categories.length) return null;
+
+  function handleSelect(e: MouseEvent, href: string) {
+    // Aynı sayfada filtreyi uygula + listeye odaklan (sayfa degismedigi icin his veriyoruz)
+    e.preventDefault();
+    router.push(href, { scroll: false });
+    scrollToList();
+  }
 
   return (
     <section style={{ marginTop: 8, marginBottom: 8 }}>
@@ -57,6 +76,7 @@ export function CategoryGrid({ categories, locale, heading, subtitle, viewLabel 
             <Link
               key={cat.slug || cat.name}
               href={href}
+              onClick={(e) => handleSelect(e, href)}
               title={cat.name}
               className="group"
               style={{

@@ -226,7 +226,7 @@ export default async function ProjectsPage({
         )}
 
         {/* ── Tabs + Filters + View toggle + Content ── */}
-        <div style={{ marginTop: 32 }}>
+        <div id="urun-listesi" style={{ marginTop: 32, scrollMarginTop: 100 }}>
           <Suspense fallback={null}><ProjectsView
             projects={viewItems}
             locale={locale}
