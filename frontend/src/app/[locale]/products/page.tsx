@@ -9,7 +9,8 @@ import { JsonLd, buildPageMetadata, jsonld, localizedPath, localizedUrl } from '
 import { buildMediaAlt } from '@/lib/media-seo';
 import { SeoIssueBeacon } from '@/components/monitoring/SeoIssueBeacon';
 import { ProjectsView } from '@/components/projects/ProjectsView';
-import { fetchSetting } from '@/i18n/server';
+import { CategoryGrid, type CategoryCard } from '@/components/sections/CategoryGrid';
+import { fetchSetting, fetchCategories } from '@/i18n/server';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import type { ProjectViewItem } from '@/components/projects/ProjectsView';
 import specKeysData from '@shared/spec-keys.json';
@@ -114,13 +115,24 @@ export default async function ProjectsPage({
   const t = await getTranslations({ locale });
   const isEn = locale.startsWith('en');
 
-  const [projects, profile] = await Promise.all([
+  const [projects, profile, categoriesRaw] = await Promise.all([
     fetchProjects(locale),
     fetchSetting('company_profile', locale),
+    fetchCategories(locale),
   ]);
 
   const companyProfile = (profile?.value as any) ?? {};
   const companyName = companyProfile.company_name || 'Sultan Defense';
+
+  const categories: CategoryCard[] = (Array.isArray(categoriesRaw) ? categoriesRaw : [])
+    .map((c: any) => ({
+      name: String(c.name ?? c.title ?? '').trim(),
+      slug: String(c.slug ?? '').trim(),
+      description: typeof c.description === 'string' ? c.description : undefined,
+      image_url: c.image_url ?? c.image ?? undefined,
+      alt: c.alt ?? undefined,
+    }))
+    .filter((c: CategoryCard) => c.name);
 
   const totalCount = projects.length;
   const viewItems = projects.map((p: any) => toViewItem(p, locale));
@@ -200,8 +212,21 @@ export default async function ProjectsPage({
           {t('projects.exportNote')}
         </p>
 
+        {/* ── Product categories grid ── */}
+        {categories.length > 0 && (
+          <div style={{ marginTop: 28 }}>
+            <CategoryGrid
+              categories={categories}
+              locale={locale}
+              heading={t('projects.categoriesHeading')}
+              subtitle={t('projects.categoriesSubtitle')}
+              viewLabel={t('projects.viewProducts')}
+            />
+          </div>
+        )}
+
         {/* ── Tabs + Filters + View toggle + Content ── */}
-        <div style={{ marginTop: 16 }}>
+        <div style={{ marginTop: 32 }}>
           <Suspense fallback={null}><ProjectsView
             projects={viewItems}
             locale={locale}
