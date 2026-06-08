@@ -16,6 +16,7 @@ import { Reveal } from '@/components/motion/Reveal';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { BrandCarousel } from '@/components/sections/BrandCarousel';
 import { StatsHighlightSection } from '@/components/sections/StatsHighlightSection';
+import { B2bTicker } from '@/components/sections/B2bTicker';
 
 import { ProjectFeed } from '@/components/sections/ProjectFeed';
 import { fetchReferences, fetchSetting } from '@/i18n/server';
@@ -338,11 +339,13 @@ export default async function HomePage({
         <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-(--color-brand)" />
       </section>
 
-      {/* B2B EXPORT istatistik bandı — sol dik başlık + kayan şerit + 4 sayı */}
+      {/* Kayan şerit (carousel) — hero'nun hemen altında, tam genişlik */}
+      <B2bTicker text={b2bExport.ticker} />
+
+      {/* B2B EXPORT istatistik bölümü — tek, ortalı, arka plan resimli alanda */}
       {b2bExport.stats.length > 0 ? (
         <StatsHighlightSection
           title={b2bExport.title}
-          ticker={b2bExport.ticker}
           items={b2bExport.stats}
         />
       ) : homeStats.length > 0 ? (

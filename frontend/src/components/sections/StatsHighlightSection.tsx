@@ -11,8 +11,6 @@ type StatItem = {
 type StatsHighlightSectionProps = {
   /** Left vertical heading, e.g. "B2B EXPORT" */
   title?: string;
-  /** Scrolling marquee text (pipe-separated phrases recommended) */
-  ticker?: string;
   items: StatItem[];
 };
 
@@ -55,7 +53,7 @@ function AnimatedValue({ value, start }: { value: string | number; start: boolea
   );
 }
 
-export function StatsHighlightSection({ title, ticker, items }: StatsHighlightSectionProps) {
+export function StatsHighlightSection({ title, items }: StatsHighlightSectionProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [started, setStarted] = useState(false);
 
@@ -78,10 +76,6 @@ export function StatsHighlightSection({ title, ticker, items }: StatsHighlightSe
 
   if (!items.length) return null;
 
-  const tickerPhrases = ticker
-    ? ticker.split('|').map((p) => p.trim()).filter(Boolean)
-    : [];
-
   return (
     <section
       ref={sectionRef}
@@ -89,39 +83,6 @@ export function StatsHighlightSection({ title, ticker, items }: StatsHighlightSe
     >
       {/* okunabilirlik icin hafif koyu scrim (arka plan resmi gorunur kalir) */}
       <div className="pointer-events-none absolute inset-0 bg-black/30" aria-hidden="true" />
-      <style>{`
-        @keyframes b2b-ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-        .b2b-ticker-track { display:inline-flex; white-space:nowrap; animation: b2b-ticker-scroll 38s linear infinite; }
-        .b2b-ticker-wrap:hover .b2b-ticker-track { animation-play-state: paused; }
-        @media (prefers-reduced-motion: reduce){ .b2b-ticker-track { animation: none; } }
-      `}</style>
-
-      {/* Kayan şerit */}
-      {tickerPhrases.length > 0 && (
-        <div
-          className="b2b-ticker-wrap relative overflow-hidden border-y py-2.5"
-          style={{
-            borderColor: 'color-mix(in srgb, var(--color-brand) 30%, transparent)',
-            background: 'color-mix(in srgb, var(--color-brand) 7%, transparent)',
-          }}
-        >
-          <div className="b2b-ticker-track">
-            {[0, 1].map((dup) => (
-              <span key={dup} className="inline-flex shrink-0" aria-hidden={dup === 1}>
-                {tickerPhrases.map((phrase, i) => (
-                  <span
-                    key={`${dup}-${i}`}
-                    className="inline-flex items-center px-6 text-[12px] font-semibold uppercase tracking-[0.18em] text-(--section-bg-white) sm:text-[13px]"
-                  >
-                    <span className="mr-6 inline-block size-1.5 rounded-full bg-(--color-brand)" />
-                    {phrase}
-                  </span>
-                ))}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
 
       <div className="relative mx-auto flex max-w-7xl flex-col gap-5 px-4 py-10 lg:flex-row lg:items-stretch lg:gap-6 lg:px-6 lg:py-14">
         {/* Sol dik başlık */}
