@@ -39,8 +39,11 @@ VALUES
   '*',
   CAST(
     JSON_ARRAY(
-      JSON_OBJECT('code','tr','label','Türkçe','is_default', TRUE, 'is_active', TRUE),
-      JSON_OBJECT('code','en','label','English','is_default', FALSE, 'is_active', TRUE)
+      JSON_OBJECT('code','en','label','English','is_default', TRUE,  'is_active', TRUE),
+      JSON_OBJECT('code','de','label','Deutsch','is_default', FALSE, 'is_active', TRUE),
+      JSON_OBJECT('code','ar','label','العربية','is_default', FALSE, 'is_active', TRUE),
+      JSON_OBJECT('code','ru','label','Русский','is_default', FALSE, 'is_active', TRUE),
+      JSON_OBJECT('code','tr','label','Türkçe','is_default', FALSE, 'is_active', FALSE)
     ) AS CHAR CHARACTER SET utf8mb4
   ),
   NOW(3),
