@@ -103,7 +103,9 @@
     "relatedProducts": "Verwandte Produkte",
     "relatedGallery": "Verwandte Galerien",
     "relatedArticles": "Verwandte Artikel",
-    "relatedKnowledgePosts": "Aus dem Wissensbereich"
+    "relatedKnowledgePosts": "Aus dem Wissensbereich",
+    "share": "Teilen",
+    "copyLink": "Link kopieren"
   },
   "home": {
     "heroCards": [
@@ -427,7 +429,7 @@
     }
   },
   "news": {
-    "title": "Neuigkeiten",
+    "title": "Nachrichten aus der Verteidigungsindustrie",
     "description": "Verteidigungstechnologien, Produktionsmethoden und neueste Entwicklungen von Sultan Defense.",
     "viewPost": "Neuigkeit lesen",
     "allPosts": "Alle Neuigkeiten",

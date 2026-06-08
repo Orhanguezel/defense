@@ -103,7 +103,9 @@
     "relatedProducts": "Сопутствующая продукция",
     "relatedGallery": "Похожие галереи",
     "relatedArticles": "Похожие статьи",
-    "relatedKnowledgePosts": "Из базы знаний"
+    "relatedKnowledgePosts": "Из базы знаний",
+    "share": "Поделиться",
+    "copyLink": "Скопировать ссылку"
   },
   "home": {
     "heroCards": [
@@ -427,7 +429,7 @@
     }
   },
   "news": {
-    "title": "Новости",
+    "title": "Новости оборонной промышленности",
     "description": "Оборонные технологии, методы производства и последние события от Sultan Defense.",
     "viewPost": "Читать новость",
     "allPosts": "Все новости",

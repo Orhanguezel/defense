@@ -104,7 +104,9 @@
     "relatedProducts": "İlgili Ürünler",
     "relatedGallery": "İlgili Galeriler",
     "relatedArticles": "İlgili Yazılar",
-    "relatedKnowledgePosts": "Bilgi bankasından"
+    "relatedKnowledgePosts": "Bilgi bankasından",
+    "share": "Paylaş",
+    "copyLink": "Bağlantıyı kopyala"
   },
   "home": {
     "heroCards": [
@@ -442,8 +444,8 @@
     }
   },
   "news": {
-    "title": "Haberler",
-    "description": "savunma teknolojileri, tedarik yöntemleri ve Sultan Defense'den güncel gelişmeler.",
+    "title": "Savunma Sanayisinde Haberler",
+    "description": "Savunma teknolojileri, tedarik yöntemleri ve Sultan Defense'den güncel gelişmeler.",
     "viewPost": "Haberi Oku",
     "allPosts": "Tüm Haberler",
     "all": "Tümü",

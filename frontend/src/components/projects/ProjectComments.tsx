@@ -295,7 +295,7 @@ export function ProjectComments({ targetType, targetId, apiBaseUrl, locale, text
       {/* reCAPTCHA script */}
       {!isLocalhost && (
         <Script
-          src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}
+          src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}&hl=${locale}`}
           strategy="afterInteractive"
           onReady={() => setCaptchaReady(true)}
         />

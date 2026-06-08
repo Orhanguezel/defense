@@ -103,7 +103,9 @@
     "relatedProducts": "منتجات ذات صلة",
     "relatedGallery": "معارض ذات صلة",
     "relatedArticles": "مقالات ذات صلة",
-    "relatedKnowledgePosts": "من مركز المعرفة"
+    "relatedKnowledgePosts": "من مركز المعرفة",
+    "share": "مشاركة",
+    "copyLink": "نسخ الرابط"
   },
   "home": {
     "heroCards": [
@@ -427,7 +429,7 @@
     }
   },
   "news": {
-    "title": "الأخبار",
+    "title": "أخبار صناعة الدفاع",
     "description": "تقنيات الدفاع وأساليب الإنتاج وأحدث التطورات من Sultan Defense.",
     "viewPost": "اقرأ الخبر",
     "allPosts": "جميع الأخبار",

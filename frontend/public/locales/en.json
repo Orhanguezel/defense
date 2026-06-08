@@ -103,7 +103,9 @@
     "relatedProducts": "Related Products",
     "relatedGallery": "Related Galleries",
     "relatedArticles": "Related Articles",
-    "relatedKnowledgePosts": "From the knowledge hub"
+    "relatedKnowledgePosts": "From the knowledge hub",
+    "share": "Share",
+    "copyLink": "Copy link"
   },
   "home": {
     "heroCards": [
@@ -427,8 +429,8 @@
     }
   },
   "news": {
-    "title": "News",
-    "description": "defense technologies, production methods and latest developments from Sultan Defense.",
+    "title": "News in Defense Industry",
+    "description": "Defense technologies, production methods and latest developments from Sultan Defense.",
     "viewPost": "Read News",
     "allPosts": "All News",
     "all": "All",
