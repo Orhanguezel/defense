@@ -79,10 +79,10 @@ export function StatsHighlightSection({ title, items }: StatsHighlightSectionPro
   return (
     <section
       ref={sectionRef}
-      className="relative z-10 flex min-h-[85vh] flex-col justify-center overflow-hidden py-14"
+      className="relative z-10 flex min-h-[80vh] flex-col items-center justify-center overflow-hidden py-16"
     >
-      {/* okunabilirlik icin hafif koyu scrim (arka plan resmi gorunur kalir) */}
-      <div className="pointer-events-none absolute inset-0 bg-black/30" aria-hidden="true" />
+      {/* okunabilirlik icin koyu scrim (arka plan resmi gorunur kalir) */}
+      <div className="pointer-events-none absolute inset-0 bg-black/55" aria-hidden="true" />
 
       <div className="relative mx-auto flex max-w-7xl flex-col gap-5 px-4 py-10 lg:flex-row lg:items-stretch lg:gap-6 lg:px-6 lg:py-14">
         {/* Sol dik başlık */}
