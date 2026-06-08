@@ -18,6 +18,14 @@ function withDefaultParams(endpoint: string): string {
   return `${API_BASE_URL}${endpoint}${joiner}is_active=1&limit=500`;
 }
 
+/** hreflang alternates — ayni rota tum dillerde (slug'lar diller arasi ayni). */
+function langAlternates(relPath: string): Record<string, string> {
+  const langs: Record<string, string> = {};
+  for (const loc of AVAILABLE_LOCALES) langs[loc] = localizedUrl(loc, relPath);
+  langs['x-default'] = localizedUrl(AVAILABLE_LOCALES[0] ?? 'en', relPath);
+  return langs;
+}
+
 async function fetchItems(endpoint: string): Promise<SitemapItem[]> {
   try {
     const res = await fetch(withDefaultParams(endpoint), {
@@ -159,50 +167,60 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ]);
 
     for (const route of staticRoutes) {
+      const rel = route.path || '/';
       entries.push({
-        url: localizedUrl(locale, route.path || '/'),
+        url: localizedUrl(locale, rel),
         changeFrequency: route.changeFrequency,
         priority: route.priority,
+        alternates: { languages: langAlternates(rel) },
       });
     }
 
     for (const item of products) {
+      const rel = `/products/${item.slug}`;
       entries.push({
-        url: localizedUrl(locale, `/products/${item.slug}`),
+        url: localizedUrl(locale, rel),
         lastModified: resolveLastModified(item),
         changeFrequency: 'weekly',
         priority: 0.8,
         images: resolveSitemapImages(item),
+        alternates: { languages: langAlternates(rel) },
       });
     }
 
     for (const item of services) {
+      const rel = `/capabilities/${item.slug}`;
       entries.push({
-        url: localizedUrl(locale, `/capabilities/${item.slug}`),
+        url: localizedUrl(locale, rel),
         lastModified: resolveLastModified(item),
         changeFrequency: 'monthly',
         priority: 0.8,
         images: resolveSitemapImages(item),
+        alternates: { languages: langAlternates(rel) },
       });
     }
 
     for (const item of galleries) {
+      const rel = `/gallery/${item.slug}`;
       entries.push({
-        url: localizedUrl(locale, `/gallery/${item.slug}`),
+        url: localizedUrl(locale, rel),
         lastModified: resolveLastModified(item),
         changeFrequency: 'monthly',
         priority: 0.6,
         images: resolveSitemapImages(item),
+        alternates: { languages: langAlternates(rel) },
       });
     }
 
     for (const item of newsPosts) {
+      const rel = `/news/${item.slug}`;
       entries.push({
-        url: localizedUrl(locale, `/news/${item.slug}`),
+        url: localizedUrl(locale, rel),
         lastModified: resolveLastModified(item),
         changeFrequency: 'weekly',
         priority: 0.6,
         images: resolveSitemapImages(item),
+        alternates: { languages: langAlternates(rel) },
       });
     }
 
