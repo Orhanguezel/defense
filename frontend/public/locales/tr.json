@@ -249,7 +249,8 @@
   },
   "projects": {
     "title": "Ürünlerimiz",
-    "description": "Savunma sanayi ürün ve sistemlerimizde geniş çözüm yelpazesi",
+    "description": "Sultan Defense; uluslararası B2B alıcıları, devlet tedarik birimleri, distribütörler ve kurumsal müşteriler için ihracata hazır savunma, taktik ekipman, saha destek sistemleri ve güvenlik çözümleri tedarik eder — savunma, güvenlik, saha konuşlanması, lojistik, denizcilik operasyonları ve görev-kritik ihtiyaçları küresel pazarlarda destekler.",
+    "exportNote": "Tüm ürün grupları, geçerli ihracat mevzuatına ve varış ülkesi gerekliliklerine tabi olarak tedarik edilir.",
     "categories": "Kategoriler",
     "allCategories": "Tüm Ürünler",
     "results": "sonuç",

@@ -175,11 +175,29 @@ export default async function ProjectsPage({
             fontSize: 14,
             color: 'var(--color-text-secondary)',
             marginTop: 6,
-            maxWidth: 720,
+            maxWidth: 860,
             lineHeight: 1.6,
           }}
         >
           {t('projects.description')}
+        </p>
+
+        {/* İhracat uyumluluk notu */}
+        <p
+          style={{
+            display: 'inline-block',
+            marginTop: 12,
+            padding: '6px 14px',
+            fontSize: 12.5,
+            fontWeight: 600,
+            color: 'var(--color-brand-text)',
+            border: '1px solid var(--color-border)',
+            borderLeft: '3px solid var(--color-brand)',
+            background: 'var(--color-bg-secondary)',
+            lineHeight: 1.5,
+          }}
+        >
+          {t('projects.exportNote')}
         </p>
 
         {/* ── Tabs + Filters + View toggle + Content ── */}

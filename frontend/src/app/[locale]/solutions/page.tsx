@@ -3,8 +3,22 @@ import 'server-only';
 import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { API_BASE_URL } from '@/lib/utils';
+import { normalizeRichContent } from '@/lib/rich-content';
 import { JsonLd, buildPageMetadata, jsonld, localizedPath, localizedUrl, organizationJsonLd } from '@/seo';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+
+async function fetchCmsPage(locale: string) {
+  try {
+    const res = await fetch(`${API_BASE_URL}/custom_pages/by-slug/solutions?locale=${locale}`, {
+      next: { revalidate: 300 },
+    });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
 
 export async function generateMetadata({
   params,
@@ -13,12 +27,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale });
+  const page = await fetchCmsPage(locale);
 
   return buildPageMetadata({
     locale,
     pathname: '/solutions',
-    title: t('solutions.title'),
-    description: t('solutions.metaDescription'),
+    title: page?.meta_title || page?.title || t('solutions.title'),
+    description: page?.meta_description || page?.summary || t('solutions.metaDescription'),
   });
 }
 
@@ -29,17 +44,34 @@ export default async function SolutionsPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
+  const page = await fetchCmsPage(locale);
+
+  const title = page?.title || t('solutions.title');
+  const content = normalizeRichContent(page?.content);
 
   const breadcrumbs = [
     { label: 'Sultan Defense', href: localizedPath(locale, '/') },
-    { label: t('solutions.title') },
+    { label: title },
   ];
 
   return (
     <>
+      <style>{`
+        .cms-content{margin-top:24px;font-size:15px;line-height:1.8;color:var(--color-text-secondary);max-width:900px}
+        .cms-content p{margin-bottom:16px}
+        .cms-content h2,.cms-content h3{font-family:var(--font-heading);color:var(--color-text-primary);margin:32px 0 12px;font-weight:700}
+        .cms-content h2{font-size:22px}
+        .cms-content h3{font-size:18px}
+        .cms-content a{color:var(--color-brand);text-decoration:none}
+        .cms-content a:hover{text-decoration:underline}
+        .cms-content ul,.cms-content ol{margin:12px 0;padding-left:24px}
+        .cms-content li{margin-bottom:8px}
+        .cms-content strong{color:var(--color-text-primary)}
+      `}</style>
+
       <JsonLd
         data={jsonld.graph([
-          jsonld.org(organizationJsonLd(locale, { description: t('solutions.metaDescription') })),
+          jsonld.org(organizationJsonLd(locale, { description: page?.summary || t('solutions.metaDescription') })),
           jsonld.breadcrumb(
             breadcrumbs.map((item, idx) => ({
               name: item.label,
@@ -62,12 +94,16 @@ export default async function SolutionsPage({
             margin: '16px 0 20px',
           }}
         >
-          {t('solutions.title')}
+          {title}
         </h1>
 
-        <p style={{ fontSize: 17, lineHeight: 1.8, color: 'var(--color-text-secondary)', maxWidth: 800 }}>
-          {t('solutions.lead')}
-        </p>
+        {content ? (
+          <div className="cms-content" dangerouslySetInnerHTML={{ __html: content }} />
+        ) : (
+          <p style={{ fontSize: 17, lineHeight: 1.8, color: 'var(--color-text-secondary)', maxWidth: 800 }}>
+            {t('solutions.lead')}
+          </p>
+        )}
 
         <div
           style={{

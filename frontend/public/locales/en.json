@@ -234,7 +234,8 @@
   },
   "projects": {
     "title": "Products",
-    "description": "A broad range of defense industry products and systems",
+    "description": "Sultan Defense supplies export-ready defense, tactical equipment, field support systems and security solutions for international B2B buyers, government procurement units, distributors and institutional clients — supporting defense, security, field deployment, logistics, maritime operations and mission-critical requirements across global markets.",
+    "exportNote": "All product groups are supplied subject to applicable export regulations and destination-country requirements.",
     "viewProject": "View Product",
     "allProjects": "All Products",
     "results": "results",
