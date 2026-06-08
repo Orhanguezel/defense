@@ -61,12 +61,12 @@ const nextConfig: NextConfig = {
       { source: `/:locale/${from}/:slug*`, destination: `/:locale/${to}/:slug*`, permanent: true },
     ]);
     return [
-      { source: '/Default', destination: '/tr', permanent: true },
-      { source: '/default', destination: '/tr', permanent: true },
+      { source: '/Default', destination: '/en', permanent: true },
+      { source: '/default', destination: '/en', permanent: true },
       { source: '/:locale/Default', destination: '/:locale', permanent: true },
       { source: '/:locale/default', destination: '/:locale', permanent: true },
       ...legacyRedirects,
-      { source: '/', destination: '/tr', permanent: true },
+      { source: '/', destination: '/en', permanent: true },
     ];
   },
 

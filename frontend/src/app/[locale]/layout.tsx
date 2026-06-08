@@ -8,6 +8,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server';
 import { Toaster } from 'sonner';
 
 import { getLocaleSettings } from '@/i18n/locale-settings';
+import { isRtlLocale } from '@/i18n/locales';
 import { fetchSetting, fetchMenuItems, fetchFooterSections, fetchActiveLocales, fetchActiveLocaleConfigs, fetchCategories, fetchServices, fetchNews } from '@/i18n/server';
 import { getTranslations } from 'next-intl/server';
 import { siteUrlBase, asStr, asObj, readSettingValue } from '@/seo';
@@ -180,6 +181,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
+      dir={isRtlLocale(locale) ? 'rtl' : 'ltr'}
       className={`${inter.variable} ${plusJakartaSans.variable}`}
       data-theme-template={THEME_TEMPLATE}
       data-theme-intent={THEME_INTENT}

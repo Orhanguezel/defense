@@ -17,8 +17,10 @@ VALUES (
   '*',
   JSON_ARRAY(
     JSON_OBJECT('code', 'en', 'label', 'English', 'is_default', true, 'is_active', true),
-    JSON_OBJECT('code', 'tr', 'label', 'Turkce', 'is_default', false, 'is_active', true),
-    JSON_OBJECT('code', 'de', 'label', 'Deutsch', 'is_default', false, 'is_active', false)
+    JSON_OBJECT('code', 'de', 'label', 'Deutsch', 'is_default', false, 'is_active', true),
+    JSON_OBJECT('code', 'ar', 'label', 'العربية', 'is_default', false, 'is_active', true),
+    JSON_OBJECT('code', 'ru', 'label', 'Русский', 'is_default', false, 'is_active', true),
+    JSON_OBJECT('code', 'tr', 'label', 'Turkce', 'is_default', false, 'is_active', false)
   ),
   NOW(3), NOW(3)
 )
