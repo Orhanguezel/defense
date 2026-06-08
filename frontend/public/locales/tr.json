@@ -216,11 +216,11 @@
       }
     },
     "projects": {
-      "title": "Öne Çıkan Ürünler",
+      "title": "Ürünler",
       "subtitle": "Savunma sanayi ürün yelpazemizden öne çıkan çözümler"
     },
     "latestProjects": {
-      "title": "Son Eklenen Ürünler",
+      "title": "Daha Güçlü Ürünler",
       "subtitle": "Kataloğumuza en son eklenen savunma ürünleri"
     },
     "services": {
@@ -320,7 +320,7 @@
     "saveProject": "Ürünü Kaydet",
     "viewProject": "Ürünü Görüntüle",
     "allProjects": "Tüm Ürünler",
-    "loveTitle": "Beğeneceğiniz Ürünler",
+    "loveTitle": "Yeni Teknoloji Ürünleri",
     "getQuoteTitle": "Siparişiniz İçin Teklif Alın",
     "getQuoteDesc": "Ücretsiz fiyat teklifi için hemen iletişime geçin.",
     "similarByTagsTitle": "Benzer ürünler",

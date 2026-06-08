@@ -535,7 +535,7 @@ export default async function HomePage({
                 subtitle={t('home.projects.subtitle')}
                 sidebarProjects={heroProducts}
                 sidebarTitle={t('projects.loveTitle')}
-                readMoreLabel={t('common.readMore')}
+                readMoreLabel={t('projects.viewProducts')}
                 extraParams="&is_featured=1"
               />
             </div>
@@ -590,6 +590,7 @@ export default async function HomePage({
                 subtitle={t('home.latestProjects.subtitle')}
                 sidebarProjects={heroProducts}
                 sidebarTitle={t('home.projects.title')}
+                readMoreLabel={t('projects.viewProducts')}
                 extraParams="&is_featured=0"
               />
             </div>

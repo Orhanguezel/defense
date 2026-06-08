@@ -215,11 +215,11 @@
       }
     },
     "projects": {
-      "title": "Empfohlene Produkte",
+      "title": "Produkte",
       "subtitle": "Ausgewählte Lösungen aus unserem Verteidigungsproduktsortiment"
     },
     "latestProjects": {
-      "title": "Neueste Produkte",
+      "title": "Stärkere Produkte",
       "subtitle": "Neueste Verteidigungsprodukte in unserem Katalog"
     },
     "services": {
@@ -305,7 +305,7 @@
     "requestOffer": "Informationen zu diesem Produkt anfordern",
     "manufacturers": "Hersteller",
     "saveProject": "Produkt speichern",
-    "loveTitle": "Produkte, die Ihnen gefallen werden",
+    "loveTitle": "Neue Technologieprodukte",
     "getQuoteTitle": "Angebot für Ihre Bestellung anfordern",
     "getQuoteDesc": "Kontaktieren Sie uns für ein kostenloses Angebot zu Ihrem Beschaffungsbedarf.",
     "similarByTagsTitle": "Ähnliche Produkte",

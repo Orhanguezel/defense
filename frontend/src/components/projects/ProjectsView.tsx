@@ -286,10 +286,7 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="14" rx="1" fill="currentColor"/><rect x="9" y="1" width="6" height="6" rx="1" fill="currentColor"/><rect x="9" y="9" width="6" height="6" rx="1" fill="currentColor"/></svg>
             {labels.projects}
           </button>
-          <button className="pv-tab pv-tab-images" onClick={() => setTab('images')}>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="14" height="14" rx="1" stroke="currentColor" strokeWidth="1.5" fill="none"/><circle cx="5.5" cy="5.5" r="1.5" fill="currentColor"/><path d="M1 12l4-4 3 3 2.5-2.5L15 13" stroke="currentColor" strokeWidth="1.5" fill="none"/></svg>
-            {labels.images}
-          </button>
+          {/* Images tab kaldirildi — daha sade urun listesi */}
         </div>
       </div>
 

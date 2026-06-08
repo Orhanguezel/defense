@@ -36,9 +36,6 @@ export function BrandCarousel({ brands }: { brands: BrandItem[] }) {
           width: max-content;
           animation: brand-loop 40s linear infinite;
         }
-        .brand-loop-track:hover {
-          animation-play-state: paused;
-        }
         @media (max-width: 768px) {
           .brand-loop-track {
             animation-duration: 30s;
@@ -63,8 +60,7 @@ export function BrandCarousel({ brands }: { brands: BrandItem[] }) {
                 className={cn(
                   'group relative flex h-28 w-44 items-center justify-center overflow-hidden transition-all duration-500 md:h-32 md:w-52',
                   'rounded-lg border border-white/20 bg-white shadow-md',
-                  'hover:scale-[1.04] hover:border-(--color-brand) hover:shadow-xl',
-                  brand.website_url && 'cursor-pointer'
+                  'hover:scale-[1.04] hover:border-(--color-brand) hover:shadow-xl'
                 )}
               >
                 <div className="relative h-full w-full">
@@ -85,19 +81,8 @@ export function BrandCarousel({ brands }: { brands: BrandItem[] }) {
 
             return (
               <div key={key} className="flex shrink-0 items-center justify-center">
-                {brand.website_url ? (
-                  <a
-                    href={brand.website_url}
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
-                    aria-label={brand.title}
-                    className="block"
-                  >
-                    {TileContent}
-                  </a>
-                ) : (
-                  TileContent
-                )}
+                {/* sadece logo — website linki yok (tiklayinca site acilmaz) */}
+                {TileContent}
               </div>
             );
           })}

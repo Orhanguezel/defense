@@ -215,11 +215,11 @@
       }
     },
     "projects": {
-      "title": "Featured Products",
+      "title": "Products",
       "subtitle": "Featured solutions from our defense product range"
     },
     "latestProjects": {
-      "title": "Latest Products",
+      "title": "Stronger Products",
       "subtitle": "Latest defense products added to our catalog"
     },
     "services": {
@@ -305,7 +305,7 @@
     "requestOffer": "Get Information About This Product",
     "manufacturers": "Manufacturers",
     "saveProject": "Save Product",
-    "loveTitle": "Products You'll Love",
+    "loveTitle": "New Technology Products",
     "getQuoteTitle": "Get a Quote for Your Order",
     "getQuoteDesc": "Contact us for a free quote on your procurement needs.",
     "similarByTagsTitle": "Similar products",
