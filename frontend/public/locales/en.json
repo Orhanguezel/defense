@@ -107,25 +107,76 @@
   },
   "home": {
     "heroCards": [
-      { "title": "BALLISTIC PROTECTION", "desc": "Protective equipment for tactical and defense operations.", "cta": "Explore Products", "href": "/products", "image": "/hero/ballistic.jpg" },
-      { "title": "MILITARY COMMUNICATION", "desc": "Secure communication and command systems for field use.", "cta": "Explore Products", "href": "/products", "image": "/hero/communication.jpg" },
-      { "title": "MOBILE FIELD UNITS", "desc": "Container kitchens and modular support units for field operations.", "cta": "Explore Products", "href": "/products", "image": "/hero/field-units.jpg" },
-      { "title": "TACTICAL LOGISTICS", "desc": "Mission-ready field support and military logistics solutions.", "cta": "Explore Products", "href": "/products", "image": "/hero/logistics.jpg" }
+      {
+        "title": "BALLISTIC PROTECTION",
+        "desc": "Protective equipment for tactical and defense operations.",
+        "cta": "Explore Products",
+        "href": "/products",
+        "image": "/hero/ballistic.jpg"
+      },
+      {
+        "title": "MILITARY COMMUNICATION",
+        "desc": "Secure communication and command systems for field use.",
+        "cta": "Explore Products",
+        "href": "/products",
+        "image": "/hero/communication.jpg"
+      },
+      {
+        "title": "MOBILE FIELD UNITS",
+        "desc": "Container kitchens and modular support units for field operations.",
+        "cta": "Explore Products",
+        "href": "/products",
+        "image": "/hero/field-units.jpg"
+      },
+      {
+        "title": "TACTICAL LOGISTICS",
+        "desc": "Mission-ready field support and military logistics solutions.",
+        "cta": "Explore Products",
+        "href": "/products",
+        "image": "/hero/logistics.jpg"
+      }
     ],
     "b2bExport": {
       "title": "B2B EXPORT",
       "ticker": "Defense & Tactical Product Supply | Bulk Orders Available | Distributor & Dealer Partnerships | Export-Ready Product Groups | Fast Quotation for International Buyers",
       "stats": [
-        { "value": "20+", "label": "Countries Reached" },
-        { "value": "16+", "label": "Product Groups" },
-        { "value": "31+", "label": "Successful Export Projects" },
-        { "value": "376+", "label": "Products Supplied" }
+        {
+          "value": "20+",
+          "label": "Countries Reached"
+        },
+        {
+          "value": "16+",
+          "label": "Product Groups"
+        },
+        {
+          "value": "31+",
+          "label": "Successful Export Projects"
+        },
+        {
+          "value": "376+",
+          "label": "Products Supplied"
+        }
       ]
     },
     "promoCards": [
-      { "title": "B2B DEFENSE & TACTICAL SUPPLY", "desc": "International supply solutions for defense, tactical, outdoor and field equipment product groups.", "cta": "VIEW PRODUCTS", "href": "/products" },
-      { "title": "EXPORT-READY PRODUCT GROUPS", "desc": "A wide range of export-ready products for distributors, procurement companies and institutional buyers.", "cta": "EXPLORE CATEGORIES", "href": "/products" },
-      { "title": "GLOBAL PARTNERSHIP & QUOTATION", "desc": "We support international buyers with bulk orders, sourcing requests and fast quotation processes.", "cta": "GET A QUOTE", "href": "/request-quote" }
+      {
+        "title": "B2B DEFENSE & TACTICAL SUPPLY",
+        "desc": "International supply solutions for defense, tactical, outdoor and field equipment product groups.",
+        "cta": "VIEW PRODUCTS",
+        "href": "/products"
+      },
+      {
+        "title": "EXPORT-READY PRODUCT GROUPS",
+        "desc": "A wide range of export-ready products for distributors, procurement companies and institutional buyers.",
+        "cta": "EXPLORE CATEGORIES",
+        "href": "/products"
+      },
+      {
+        "title": "GLOBAL PARTNERSHIP & QUOTATION",
+        "desc": "We support international buyers with bulk orders, sourcing requests and fast quotation processes.",
+        "cta": "GET A QUOTE",
+        "href": "/request-quote"
+      }
     ],
     "hero": {
       "title": "Your Trusted Defense Supply Partner",
@@ -414,7 +465,25 @@
       "messagePlaceholder": "Write your message here...",
       "submit": "Send",
       "success": "Your message has been sent successfully. We will get back to you shortly.",
-      "error": "Failed to send message. Please try again."
+      "error": "Failed to send message. Please try again.",
+      "intro": "Please complete the form below with your procurement details. Sultan Defense will contact you regarding product availability, quotation options, export process and delivery possibilities.",
+      "fullName": "Full Name",
+      "company": "Company Name",
+      "country": "Country",
+      "email": "Email Address",
+      "phone": "Phone / WhatsApp",
+      "productCategory": "Product Category of Interest",
+      "quantity": "Estimated Quantity",
+      "destinationCountry": "Destination Country",
+      "deliveryOption": "Preferred Delivery Option",
+      "message": "Message / Requirements",
+      "selectPlaceholder": "Please select",
+      "other": "Other",
+      "opt": {
+        "delDDP": "DDP Delivery",
+        "delStandard": "Standard Export Delivery",
+        "delDiscuss": "To Be Discussed"
+      }
     },
     "info": {
       "title": "Contact Information",
@@ -445,14 +514,62 @@
     },
     "form": {
       "productInterest": "Product/Service of Interest",
-      "quantity": "Quantity/Area",
+      "quantity": "Estimated Quantity",
       "deadline": "Target Delivery Date",
       "details": "Talep Details",
       "detailsPlaceholder": "Tell us about your needs (variety, quantity, planting time, etc.)",
       "attachFile": "Attach File (technical specs, analysis report, etc.)",
       "submit": "Request Quote",
       "success": "Your quote request has been received. Our team will contact you shortly.",
-      "error": "Failed to submit request. Please try again."
+      "error": "Failed to submit request. Please try again.",
+      "intro": "Please complete the form below with your product requirements, estimated quantity, destination country and delivery expectations.",
+      "secBuyer": "Buyer Information",
+      "secProduct": "Product Requirements",
+      "secDelivery": "Delivery & Export Details",
+      "secAdditional": "Additional Information",
+      "fullName": "Full Name",
+      "company": "Company / Organization Name",
+      "jobTitle": "Job Title / Position",
+      "country": "Country",
+      "email": "Business Email Address",
+      "phone": "Phone / WhatsApp Number",
+      "website": "Company Website",
+      "productCategory": "Product Category",
+      "productName": "Product Name / Description",
+      "projectType": "Target Use / Project Type",
+      "techSpecs": "Technical Specifications / Standards Required",
+      "techSpecsHint": "e.g. NIJ level, material type, dimensions, power capacity, communication range, environmental conditions, software features.",
+      "destinationCountry": "Destination Country",
+      "deliveryCity": "Delivery City / Final Destination",
+      "deliveryTerm": "Preferred Delivery Term",
+      "ddpRequired": "Is DDP Delivery Required?",
+      "timeline": "Estimated Purchase Timeline",
+      "message": "Message / Additional Requirements",
+      "attachNote": "If you have a product list or technical file, you can email it to export@sultandefense.com after submitting this form.",
+      "consent": "I confirm that the information provided is accurate and I agree to be contacted by Sultan Defense regarding my quotation request.",
+      "selectPlaceholder": "Please select",
+      "multipleCategories": "Multiple Categories",
+      "other": "Other",
+      "opt": {
+        "useDistributor": "Distributor Purchase",
+        "useGovernment": "Government / Institutional Procurement",
+        "useSecurity": "Security Organization",
+        "useMilitary": "Military / Defense Project",
+        "useHumanitarian": "Humanitarian / Field Support Operation",
+        "useReseller": "Reseller / Trading Company",
+        "useOther": "Other",
+        "delDDP": "DDP Delivery",
+        "delStandard": "Standard Export Delivery",
+        "delDiscuss": "To Be Discussed",
+        "ddpYes": "Yes",
+        "ddpNo": "No",
+        "ddpEvaluate": "Please evaluate",
+        "tlImmediately": "Immediately",
+        "tl30": "Within 30 Days",
+        "tl60": "Within 60 Days",
+        "tl90": "Within 90 Days",
+        "tlProject": "Project-Based / To Be Discussed"
+      }
     }
   },
   "about": {

@@ -6,7 +6,7 @@ import { ContentPageHeader } from '@/components/patterns/ContentPageHeader';
 import { InfoListPanel } from '@/components/patterns/InfoListPanel';
 import { ContactFormClient } from '@/components/sections/ContactForm';
 import { GoogleMap } from '@/components/widgets/GoogleMap';
-import { fetchSetting } from '@/i18n/server';
+import { fetchSetting, fetchCategories } from '@/i18n/server';
 import { JsonLd, buildPageMetadata, jsonld, localizedPath, localizedUrl, organizationJsonLd, readSettingValue } from '@/seo';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
@@ -49,11 +49,16 @@ export default async function ContactPage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale });
-  const [contactSetting, companyProfileSetting, socialsSetting] = await Promise.all([
+  const [contactSetting, companyProfileSetting, socialsSetting, categoriesRaw] = await Promise.all([
      fetchContactInfo(locale),
      fetchSetting('company_profile', locale),
      fetchSetting('socials', locale),
+     fetchCategories(locale),
   ]);
+
+  const categoryNames = (Array.isArray(categoriesRaw) ? categoriesRaw : [])
+    .map((c: any) => String(c.name ?? c.title ?? '').trim())
+    .filter(Boolean);
 
   const info = readSettingValue(contactSetting) as Record<string, string>;
   const companyProfile = readSettingValue(companyProfileSetting) as Record<string, string>;
@@ -133,7 +138,7 @@ export default async function ContactPage({
         <div className="grid gap-10 lg:grid-cols-3">
           {/* Form Section */}
           <div className="lg:col-span-2">
-            <ContactFormClient locale={locale} />
+            <ContactFormClient locale={locale} categories={categoryNames} />
           </div>
 
           {/* Sidebar Section */}

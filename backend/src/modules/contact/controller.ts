@@ -78,6 +78,13 @@ export async function createContactPublic(req: CreateReq, reply: FastifyReply) {
   }
 
   // Telegram notification
+  let fdCompany = "";
+  try {
+    const fd = created.form_data ? JSON.parse(created.form_data) : null;
+    if (fd && typeof fd.company === "string") fdCompany = fd.company;
+  } catch {
+    /* ignore */
+  }
   try {
     await telegramNotify({
       event: "new_contact",
@@ -85,7 +92,7 @@ export async function createContactPublic(req: CreateReq, reply: FastifyReply) {
         customer_name: created.name,
         customer_email: created.email,
         customer_phone: created.phone ?? "",
-        company_name: "",
+        company_name: fdCompany,
         subject: created.subject ?? "",
         message: created.message,
         created_at:

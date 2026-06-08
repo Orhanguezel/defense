@@ -7,8 +7,13 @@ export const ContactCreateSchema = z.object({
   name: z.string().min(2).max(255),
   email: z.string().email().max(255),
   phone: z.string().min(5).max(64),
-  subject: z.string().min(2).max(255),
+  // subject artık opsiyonel — yeni iletişim formunda ayrı "konu" alanı yok;
+  // boşsa controller ürün grubu/varsayılandan türetir.
+  subject: z.string().max(255).optional().nullable(),
   message: z.string().min(10).max(5000),
+  // Genişletilmiş form ek alanları (şirket, ülke, ürün grubu, miktar,
+  // varış ülkesi, teslimat tercihi vb.)
+  form_data: z.record(z.any()).optional().nullable(),
   // Opsiyonel antispam alanları (honeypot)
   website: z.string().max(255).optional().nullable(),
 });

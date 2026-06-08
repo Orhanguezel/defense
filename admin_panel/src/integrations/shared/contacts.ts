@@ -14,6 +14,8 @@ export interface ContactDto {
   phone: string;
   subject: string;
   message: string;
+  /** Genişletilmiş form ek alanları — JSON string */
+  form_data?: string | null;
 
   status: ContactStatus;
   is_resolved: boolean;
@@ -38,6 +40,8 @@ export interface Contact {
   phone: string;
   subject: string;
   message: string;
+  /** Genişletilmiş form ek alanları — parse edilmiş */
+  form_data: Record<string, unknown> | null;
 
   status: ContactStatus;
   is_resolved: boolean;
@@ -52,6 +56,17 @@ export interface Contact {
   updated_at: string; // ISO
 }
 
+function parseFormData(v: string | null | undefined): Record<string, unknown> | null {
+  if (!v) return null;
+  if (typeof v === 'object') return v as Record<string, unknown>;
+  try {
+    const o = JSON.parse(v);
+    return o && typeof o === 'object' ? (o as Record<string, unknown>) : null;
+  } catch {
+    return null;
+  }
+}
+
 export const normalizeContact = (dto: ContactDto): Contact => ({
   id: dto.id,
   name: dto.name,
@@ -59,6 +74,7 @@ export const normalizeContact = (dto: ContactDto): Contact => ({
   phone: dto.phone,
   subject: dto.subject,
   message: dto.message,
+  form_data: parseFormData(dto.form_data),
 
   status: dto.status,
   is_resolved: !!dto.is_resolved,

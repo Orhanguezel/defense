@@ -21,6 +21,10 @@ export const contact_messages = mysqlTable(
     subject: varchar("subject", { length: 255 }).notNull(),
     message: text("message").notNull(),
 
+    // Genişletilmiş form ek alanları (şirket, ülke, ürün grubu, miktar,
+    // varış ülkesi, teslimat tercihi vb.) — esnek JSON string.
+    form_data: text("form_data"),
+
     status: varchar("status", { length: 32 }).notNull().default("new"), // 'new' | 'in_progress' | 'closed'
     is_resolved: boolean("is_resolved").notNull().default(false),
 

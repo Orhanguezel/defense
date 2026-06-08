@@ -415,6 +415,21 @@ export default function AdminContactsClient() {
                     <div className="whitespace-pre-wrap break-words rounded-md border bg-background p-2 text-sm">
                       {selected.message || '-'}
                     </div>
+                    {selected.form_data &&
+                    Object.entries(selected.form_data).filter(([, v]) => v != null && String(v).trim() !== '').length > 0 ? (
+                      <div className="rounded-md border bg-muted/40 p-2 text-sm">
+                        <dl className="grid grid-cols-[max-content_1fr] gap-x-3 gap-y-1">
+                          {Object.entries(selected.form_data)
+                            .filter(([, v]) => v != null && String(v).trim() !== '')
+                            .map(([k, v]) => (
+                              <React.Fragment key={k}>
+                                <dt className="text-muted-foreground capitalize">{k.replace(/_/g, ' ')}:</dt>
+                                <dd className="font-medium break-words">{String(v)}</dd>
+                              </React.Fragment>
+                            ))}
+                        </dl>
+                      </div>
+                    ) : null}
                     <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
                       <span>
                         {t('details.createdAt')}: <code>{formatYmd(selected.created_at)}</code>

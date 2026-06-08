@@ -7,6 +7,7 @@ import { InfoListPanel } from '@/components/patterns/InfoListPanel';
 import { OfferFormClient } from '@/components/sections/OfferForm';
 import { buildPageMetadata, localizedPath } from '@/seo';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { fetchCategories } from '@/i18n/server';
 
 import { fetchSeoPage } from '@/seo/server';
 
@@ -47,6 +48,10 @@ export default async function OfferPage({
   const product = sp.project || sp.product;
   const t = await getTranslations({ locale });
   const benefitItems = Object.values(t.raw('offer.benefits.items') as Record<string, string>);
+  const categoriesRaw = await fetchCategories(locale);
+  const categoryNames = (Array.isArray(categoriesRaw) ? categoriesRaw : [])
+    .map((c: any) => String(c.name ?? c.title ?? '').trim())
+    .filter(Boolean);
 
   return (
     <div style={{ maxWidth: 1280, margin: '0 auto', padding: '16px 16px 60px' }}>
@@ -61,7 +66,7 @@ export default async function OfferPage({
         />
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="surface-card rounded-xl p-6">
-            <OfferFormClient locale={locale} preselectedProduct={product} />
+            <OfferFormClient locale={locale} preselectedProduct={product} categories={categoryNames} />
           </div>
           <aside>
             <InfoListPanel

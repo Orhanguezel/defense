@@ -12,6 +12,10 @@ CREATE TABLE `contact_messages` (
   `subject`      VARCHAR(255)  NOT NULL,
   `message`      LONGTEXT      NOT NULL,
 
+  -- Genisletilmis iletisim formu ek alanlari (sirket, ulke, urun grubu, miktar,
+  -- varis ulkesi, teslimat tercihi vb.) — esnek JSON.
+  `form_data`    LONGTEXT      DEFAULT NULL,
+
   `status`       VARCHAR(32)   NOT NULL DEFAULT 'new', -- 'new' | 'in_progress' | 'closed'
   `is_resolved`  TINYINT(1)    NOT NULL DEFAULT 0,
 
@@ -39,16 +43,17 @@ CREATE TABLE `contact_messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `contact_messages`
-(`id`,`name`,`email`,`phone`,`subject`,`message`,`status`,`is_resolved`,
+(`id`,`name`,`email`,`phone`,`subject`,`message`,`form_data`,`status`,`is_resolved`,
  `admin_note`,`ip`,`user_agent`,`website`,`created_at`,`updated_at`)
 VALUES
 (
   '11111111-2222-3333-4444-555555555555',
-  'Elif Koç',
-  'elif@example.com',
-  '+90 530 333 33 44',
-  'Özel tasarım mezar',
-  'Modern tasarım granit mezar için görsel ve fiyat bilgisi rica ediyorum.',
+  'John Carter',
+  'john@example.com',
+  '+1 202 555 0143',
+  'Ballistic Protection — bulk inquiry',
+  'We are evaluating suppliers for NIJ III+ plates and tactical vests. Please share availability and an indicative quotation.',
+  JSON_OBJECT('company','Carter Procurement LLC','country','United States','product_category','Ballistic Protection','estimated_quantity','500 units','destination_country','United Arab Emirates','preferred_delivery_option','DDP Delivery'),
   'new',
   0,
   NULL,
@@ -64,6 +69,7 @@ ON DUPLICATE KEY UPDATE
   `phone`      = VALUES(`phone`),
   `subject`    = VALUES(`subject`),
   `message`    = VALUES(`message`),
+  `form_data`  = VALUES(`form_data`),
   `status`     = VALUES(`status`),
   `is_resolved`= VALUES(`is_resolved`),
   `admin_note` = VALUES(`admin_note`),

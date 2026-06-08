@@ -39,13 +39,25 @@ export async function repoCreateContact(
 ): Promise<ContactView> {
   const id = randomUUID();
 
+  const fd =
+    body.form_data && typeof body.form_data === "object" && Object.keys(body.form_data).length > 0
+      ? body.form_data
+      : null;
+
+  // subject opsiyonel: boşsa ürün grubundan veya varsayılandan türet
+  const subject =
+    (body.subject && body.subject.trim()) ||
+    (fd && typeof fd.product_category === "string" && fd.product_category.trim()) ||
+    "Contact request";
+
   const insert: ContactInsert = {
     id,
     name: body.name.trim(),
     email: body.email.trim(),
     phone: body.phone.trim(),
-    subject: body.subject.trim(),
+    subject: subject.slice(0, 255),
     message: body.message,
+    form_data: fd ? JSON.stringify(fd) : null,
     status: "new",
     is_resolved: false,
     admin_note: null,

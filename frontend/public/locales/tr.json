@@ -108,25 +108,76 @@
   },
   "home": {
     "heroCards": [
-      { "title": "BALİSTİK KORUMA", "desc": "Taktik ve savunma operasyonları için koruyucu ekipmanlar.", "cta": "Ürünleri İncele", "href": "/products", "image": "/hero/ballistic.jpg" },
-      { "title": "ASKERİ HABERLEŞME", "desc": "Saha kullanımı için güvenli haberleşme ve komuta sistemleri.", "cta": "Ürünleri İncele", "href": "/products", "image": "/hero/communication.jpg" },
-      { "title": "MOBİL SAHA ÜNİTELERİ", "desc": "Saha operasyonları için konteyner mutfaklar ve modüler destek üniteleri.", "cta": "Ürünleri İncele", "href": "/products", "image": "/hero/field-units.jpg" },
-      { "title": "TAKTİK LOJİSTİK", "desc": "Göreve hazır saha desteği ve askeri lojistik çözümleri.", "cta": "Ürünleri İncele", "href": "/products", "image": "/hero/logistics.jpg" }
+      {
+        "title": "BALİSTİK KORUMA",
+        "desc": "Taktik ve savunma operasyonları için koruyucu ekipmanlar.",
+        "cta": "Ürünleri İncele",
+        "href": "/products",
+        "image": "/hero/ballistic.jpg"
+      },
+      {
+        "title": "ASKERİ HABERLEŞME",
+        "desc": "Saha kullanımı için güvenli haberleşme ve komuta sistemleri.",
+        "cta": "Ürünleri İncele",
+        "href": "/products",
+        "image": "/hero/communication.jpg"
+      },
+      {
+        "title": "MOBİL SAHA ÜNİTELERİ",
+        "desc": "Saha operasyonları için konteyner mutfaklar ve modüler destek üniteleri.",
+        "cta": "Ürünleri İncele",
+        "href": "/products",
+        "image": "/hero/field-units.jpg"
+      },
+      {
+        "title": "TAKTİK LOJİSTİK",
+        "desc": "Göreve hazır saha desteği ve askeri lojistik çözümleri.",
+        "cta": "Ürünleri İncele",
+        "href": "/products",
+        "image": "/hero/logistics.jpg"
+      }
     ],
     "b2bExport": {
       "title": "B2B İHRACAT",
       "ticker": "Savunma & Taktik Ürün Tedariki | Toplu Sipariş İmkânı | Distribütör & Bayi İş Birlikleri | İhracata Hazır Ürün Grupları | Uluslararası Alıcılara Hızlı Teklif",
       "stats": [
-        { "value": "20+", "label": "Ulaşılan Ülke" },
-        { "value": "16+", "label": "Ürün Grubu" },
-        { "value": "31+", "label": "Başarılı İhracat Projesi" },
-        { "value": "376+", "label": "Tedarik Edilen Ürün" }
+        {
+          "value": "20+",
+          "label": "Ulaşılan Ülke"
+        },
+        {
+          "value": "16+",
+          "label": "Ürün Grubu"
+        },
+        {
+          "value": "31+",
+          "label": "Başarılı İhracat Projesi"
+        },
+        {
+          "value": "376+",
+          "label": "Tedarik Edilen Ürün"
+        }
       ]
     },
     "promoCards": [
-      { "title": "B2B SAVUNMA & TAKTİK TEDARİK", "desc": "Savunma, taktik, outdoor ve saha ekipmanı ürün grupları için uluslararası tedarik çözümleri.", "cta": "ÜRÜNLERİ GÖR", "href": "/products" },
-      { "title": "İHRACATA HAZIR ÜRÜN GRUPLARI", "desc": "Distribütörler, tedarik şirketleri ve kurumsal alıcılar için geniş bir ihracata hazır ürün yelpazesi.", "cta": "KATEGORİLERİ KEŞFET", "href": "/products" },
-      { "title": "KÜRESEL İŞ BİRLİĞİ & TEKLİF", "desc": "Uluslararası alıcıları toplu siparişler, tedarik talepleri ve hızlı teklif süreçleriyle destekliyoruz.", "cta": "TEKLİF AL", "href": "/request-quote" }
+      {
+        "title": "B2B SAVUNMA & TAKTİK TEDARİK",
+        "desc": "Savunma, taktik, outdoor ve saha ekipmanı ürün grupları için uluslararası tedarik çözümleri.",
+        "cta": "ÜRÜNLERİ GÖR",
+        "href": "/products"
+      },
+      {
+        "title": "İHRACATA HAZIR ÜRÜN GRUPLARI",
+        "desc": "Distribütörler, tedarik şirketleri ve kurumsal alıcılar için geniş bir ihracata hazır ürün yelpazesi.",
+        "cta": "KATEGORİLERİ KEŞFET",
+        "href": "/products"
+      },
+      {
+        "title": "KÜRESEL İŞ BİRLİĞİ & TEKLİF",
+        "desc": "Uluslararası alıcıları toplu siparişler, tedarik talepleri ve hızlı teklif süreçleriyle destekliyoruz.",
+        "cta": "TEKLİF AL",
+        "href": "/request-quote"
+      }
     ],
     "hero": {
       "title": "Güvenilir Savunma Tedarik Ortağınız",
@@ -429,7 +480,25 @@
       "messagePlaceholder": "Mesajınızı buraya yazın...",
       "submit": "Gönder",
       "success": "Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.",
-      "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin."
+      "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin.",
+      "intro": "Lütfen aşağıdaki formu tedarik detaylarınızla doldurun. Sultan Defense; ürün mevcudiyeti, teklif seçenekleri, ihracat süreci ve teslimat olanakları hakkında sizinle iletişime geçecektir.",
+      "fullName": "Ad Soyad",
+      "company": "Şirket Adı",
+      "country": "Ülke",
+      "email": "E-posta Adresi",
+      "phone": "Telefon / WhatsApp",
+      "productCategory": "İlgilenilen Ürün Kategorisi",
+      "quantity": "Tahmini Miktar",
+      "destinationCountry": "Varış Ülkesi",
+      "deliveryOption": "Tercih Edilen Teslimat Seçeneği",
+      "message": "Mesaj / Gereksinimler",
+      "selectPlaceholder": "Lütfen seçin",
+      "other": "Diğer",
+      "opt": {
+        "delDDP": "DDP Teslimat",
+        "delStandard": "Standart İhracat Teslimatı",
+        "delDiscuss": "Görüşülecek"
+      }
     },
     "info": {
       "title": "İletişim Bilgileri",
@@ -460,14 +529,62 @@
     },
     "form": {
       "productInterest": "İlgilenilen Ürün/Hizmet",
-      "quantity": "Miktar/Alan",
+      "quantity": "Tahmini Miktar",
       "deadline": "Hedef Teslimat",
       "details": "Talep Detayları",
       "detailsPlaceholder": "İhtiyacınız hakkında bize bilgi verin (ürün, miktar, hedef ülke, teslimat zamanı vb.)",
       "attachFile": "Dosya Ekle (teknik şartname, analiz raporu vb.)",
       "submit": "Teklif İste",
       "success": "Teklif talebiniz alındı. Ekibimiz en kısa sürede sizinle iletişime geçecek.",
-      "error": "Talep gönderilemedi. Lütfen tekrar deneyin."
+      "error": "Talep gönderilemedi. Lütfen tekrar deneyin.",
+      "intro": "Lütfen aşağıdaki formu ürün gereksinimleriniz, tahmini miktar, varış ülkesi ve teslimat beklentilerinizle doldurun.",
+      "secBuyer": "Alıcı Bilgileri",
+      "secProduct": "Ürün Gereksinimleri",
+      "secDelivery": "Teslimat & İhracat Detayları",
+      "secAdditional": "Ek Bilgiler",
+      "fullName": "Ad Soyad",
+      "company": "Şirket / Kuruluş Adı",
+      "jobTitle": "Unvan / Pozisyon",
+      "country": "Ülke",
+      "email": "Kurumsal E-posta Adresi",
+      "phone": "Telefon / WhatsApp Numarası",
+      "website": "Şirket Web Sitesi",
+      "productCategory": "Ürün Kategorisi",
+      "productName": "Ürün Adı / Açıklaması",
+      "projectType": "Kullanım Amacı / Proje Türü",
+      "techSpecs": "Gerekli Teknik Özellikler / Standartlar",
+      "techSpecsHint": "Örn. NIJ seviyesi, malzeme türü, boyutlar, güç kapasitesi, haberleşme menzili, çevre koşulları, yazılım özellikleri.",
+      "destinationCountry": "Varış Ülkesi",
+      "deliveryCity": "Teslimat Şehri / Nihai Varış Noktası",
+      "deliveryTerm": "Tercih Edilen Teslim Şekli",
+      "ddpRequired": "DDP Teslimat Gerekli mi?",
+      "timeline": "Tahmini Satın Alma Zaman Çizelgesi",
+      "message": "Mesaj / Ek Gereksinimler",
+      "attachNote": "Ürün listeniz veya teknik dosyanız varsa, formu gönderdikten sonra export@sultandefense.com adresine e-posta ile iletebilirsiniz.",
+      "consent": "Verdiğim bilgilerin doğru olduğunu onaylıyor ve teklif talebimle ilgili Sultan Defense tarafından iletişime geçilmesini kabul ediyorum.",
+      "selectPlaceholder": "Lütfen seçin",
+      "multipleCategories": "Birden Fazla Kategori",
+      "other": "Diğer",
+      "opt": {
+        "useDistributor": "Distribütör Alımı",
+        "useGovernment": "Devlet / Kurumsal Tedarik",
+        "useSecurity": "Güvenlik Kuruluşu",
+        "useMilitary": "Askeri / Savunma Projesi",
+        "useHumanitarian": "İnsani Yardım / Saha Destek Operasyonu",
+        "useReseller": "Bayi / Ticaret Şirketi",
+        "useOther": "Diğer",
+        "delDDP": "DDP Teslimat",
+        "delStandard": "Standart İhracat Teslimatı",
+        "delDiscuss": "Görüşülecek",
+        "ddpYes": "Evet",
+        "ddpNo": "Hayır",
+        "ddpEvaluate": "Değerlendirin",
+        "tlImmediately": "Hemen",
+        "tl30": "30 Gün İçinde",
+        "tl60": "60 Gün İçinde",
+        "tl90": "90 Gün İçinde",
+        "tlProject": "Projeye Bağlı / Görüşülecek"
+      }
     }
   },
   "about": {
