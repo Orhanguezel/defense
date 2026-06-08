@@ -10,6 +10,9 @@
     "knowledgeHub": "Kaynaklar",
     "catalogs": "Kataloglar",
     "news": "Haberler",
+    "solutions": "Çözümler",
+    "export": "İhracat",
+    "getQuote": "Teklif Al",
     "contact": "İletişim",
     "offer": "Teklif Al",
     "login": "Giriş Yap",
@@ -84,8 +87,8 @@
       "daysAgo": "{days} gün önce"
     },
     "requestOffer": "Teklif İste",
-    "offerCtaTitle": "Siparişiniz İçin Ücretsiz Fiyat Teklifi Hazırlayalım",
-    "offerCtaDescription": "İhtiyaç listenizi, adetleri ve teslimat ülkesini paylaşın; ihracat ekibimiz uygun tedarik kapsamı için size dönüş yapsın.",
+    "offerCtaTitle": "B2B İhracat Teklifinizi Hazırlayalım",
+    "offerCtaDescription": "İhtiyaç duyduğunuz ürün grubunu, miktarı ve teslimat ülkesini bize iletin. Ekibimiz uluslararası tedarik ihtiyaçlarınız için size özel bir teklif hazırlasın.",
     "freeOfObligation": "Ücretsiz ve bağlayıcı değildir",
     "send": "Gönder",
     "name": "Ad Soyad",
@@ -104,9 +107,30 @@
     "relatedKnowledgePosts": "Bilgi bankasından"
   },
   "home": {
+    "heroCards": [
+      { "title": "BALİSTİK KORUMA", "desc": "Taktik ve savunma operasyonları için koruyucu ekipmanlar.", "cta": "Ürünleri İncele", "href": "/products", "image": "/hero/ballistic.jpg" },
+      { "title": "ASKERİ HABERLEŞME", "desc": "Saha kullanımı için güvenli haberleşme ve komuta sistemleri.", "cta": "Ürünleri İncele", "href": "/products", "image": "/hero/communication.jpg" },
+      { "title": "MOBİL SAHA ÜNİTELERİ", "desc": "Saha operasyonları için konteyner mutfaklar ve modüler destek üniteleri.", "cta": "Ürünleri İncele", "href": "/products", "image": "/hero/field-units.jpg" },
+      { "title": "TAKTİK LOJİSTİK", "desc": "Göreve hazır saha desteği ve askeri lojistik çözümleri.", "cta": "Ürünleri İncele", "href": "/products", "image": "/hero/logistics.jpg" }
+    ],
+    "b2bExport": {
+      "title": "B2B İHRACAT",
+      "ticker": "Savunma & Taktik Ürün Tedariki | Toplu Sipariş İmkânı | Distribütör & Bayi İş Birlikleri | İhracata Hazır Ürün Grupları | Uluslararası Alıcılara Hızlı Teklif",
+      "stats": [
+        { "value": "20+", "label": "Ulaşılan Ülke" },
+        { "value": "16+", "label": "Ürün Grubu" },
+        { "value": "31+", "label": "Başarılı İhracat Projesi" },
+        { "value": "376+", "label": "Tedarik Edilen Ürün" }
+      ]
+    },
+    "promoCards": [
+      { "title": "B2B SAVUNMA & TAKTİK TEDARİK", "desc": "Savunma, taktik, outdoor ve saha ekipmanı ürün grupları için uluslararası tedarik çözümleri.", "cta": "ÜRÜNLERİ GÖR", "href": "/products" },
+      { "title": "İHRACATA HAZIR ÜRÜN GRUPLARI", "desc": "Distribütörler, tedarik şirketleri ve kurumsal alıcılar için geniş bir ihracata hazır ürün yelpazesi.", "cta": "KATEGORİLERİ KEŞFET", "href": "/products" },
+      { "title": "KÜRESEL İŞ BİRLİĞİ & TEKLİF", "desc": "Uluslararası alıcıları toplu siparişler, tedarik talepleri ve hızlı teklif süreçleriyle destekliyoruz.", "cta": "TEKLİF AL", "href": "/request-quote" }
+    ],
     "hero": {
       "title": "Güvenilir Savunma Tedarik Ortağınız",
-      "subtitle": "Sultan Defense, Orta Doğu, Afrika ve Türk Cumhuriyetleri için taktik ekipman ve savunma teknolojileri tedarik eden B2B ihracat partneridir.",
+      "subtitle": "Sultan Defense; uluslararası B2B alıcıları için savunma, taktik ekipman ve saha destek çözümleri tedarik eder.",
       "cta": "Ürünlerimizi İnceleyin",
       "ctaSecondary": "Teklif Alın",
       "badge": "Sultan Defense",
@@ -212,6 +236,16 @@
       "title": "Bizimle İletişime Geçin",
       "subtitle": "Tedarik talebinizi, teklif isteğinizi veya sorularınızı bize iletin"
     }
+  },
+  "solutions": {
+    "title": "Küresel Alıcılar İçin Entegre Savunma Tedarik Çözümleri",
+    "lead": "Sultan Defense; uluslararası B2B alıcıları, devlet tedarik birimleri, distribütörler ve kurumsal müşteriler için entegre savunma, taktik ekipman ve saha destek çözümleri sunar. Ürün tedarikinden teklif ve ihracat koordinasyonuna kadar, küresel alıcıların güvenilir ve ihracata hazır savunma ile destek sistemlerine erişmesine yardımcı oluyoruz.",
+    "metaDescription": "Uluslararası alıcılar, distribütörler ve kurumsal müşteriler için entegre B2B savunma, taktik ve saha destek tedarik çözümleri."
+  },
+  "export": {
+    "title": "DDP Teslimat İmkânıyla Küresel Savunma İhracatı",
+    "lead": "Sultan Defense; uluslararası B2B alıcıları, distribütörler ve tedarik şirketleri için ihracat odaklı savunma, taktik ekipman ve saha destek çözümleri sunar — yapılandırılmış ihracat süreci, profesyonel dokümantasyon ve uygun ürünler ile onaylı varış ülkeleri için DDP teslimat imkânıyla.",
+    "metaDescription": "Türkiye'den DDP teslimat imkânı, ihracat dokümantasyonu ve uluslararası lojistik koordinasyonuyla ihracat odaklı savunma ve taktik tedarik."
   },
   "projects": {
     "title": "Ürünlerimiz",

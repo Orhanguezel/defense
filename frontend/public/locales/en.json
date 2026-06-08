@@ -10,6 +10,9 @@
     "knowledgeHub": "Resources",
     "catalogs": "Catalogs",
     "news": "News",
+    "solutions": "Solutions",
+    "export": "Export",
+    "getQuote": "Get a Quote",
     "contact": "Contact",
     "offer": "Request Quote",
     "login": "Log in",
@@ -83,9 +86,9 @@
       "hoursAgo": "about {hours} hours ago",
       "daysAgo": "{days} days ago"
     },
-    "requestOffer": "Request Offer",
-    "offerCtaTitle": "Let Us Prepare a Free Quote for Your Order",
-    "offerCtaDescription": "Share your requirement list, quantities and destination country; our export team will respond with the right procurement scope.",
+    "requestOffer": "Request Quote",
+    "offerCtaTitle": "Let Us Prepare Your B2B Export Quote",
+    "offerCtaDescription": "Tell us your required product group, quantity and destination country. Our team will prepare a tailored quotation for your international procurement needs.",
     "freeOfObligation": "Free and non-binding",
     "send": "Send",
     "name": "Full Name",
@@ -103,9 +106,30 @@
     "relatedKnowledgePosts": "From the knowledge hub"
   },
   "home": {
+    "heroCards": [
+      { "title": "BALLISTIC PROTECTION", "desc": "Protective equipment for tactical and defense operations.", "cta": "Explore Products", "href": "/products", "image": "/hero/ballistic.jpg" },
+      { "title": "MILITARY COMMUNICATION", "desc": "Secure communication and command systems for field use.", "cta": "Explore Products", "href": "/products", "image": "/hero/communication.jpg" },
+      { "title": "MOBILE FIELD UNITS", "desc": "Container kitchens and modular support units for field operations.", "cta": "Explore Products", "href": "/products", "image": "/hero/field-units.jpg" },
+      { "title": "TACTICAL LOGISTICS", "desc": "Mission-ready field support and military logistics solutions.", "cta": "Explore Products", "href": "/products", "image": "/hero/logistics.jpg" }
+    ],
+    "b2bExport": {
+      "title": "B2B EXPORT",
+      "ticker": "Defense & Tactical Product Supply | Bulk Orders Available | Distributor & Dealer Partnerships | Export-Ready Product Groups | Fast Quotation for International Buyers",
+      "stats": [
+        { "value": "20+", "label": "Countries Reached" },
+        { "value": "16+", "label": "Product Groups" },
+        { "value": "31+", "label": "Successful Export Projects" },
+        { "value": "376+", "label": "Products Supplied" }
+      ]
+    },
+    "promoCards": [
+      { "title": "B2B DEFENSE & TACTICAL SUPPLY", "desc": "International supply solutions for defense, tactical, outdoor and field equipment product groups.", "cta": "VIEW PRODUCTS", "href": "/products" },
+      { "title": "EXPORT-READY PRODUCT GROUPS", "desc": "A wide range of export-ready products for distributors, procurement companies and institutional buyers.", "cta": "EXPLORE CATEGORIES", "href": "/products" },
+      { "title": "GLOBAL PARTNERSHIP & QUOTATION", "desc": "We support international buyers with bulk orders, sourcing requests and fast quotation processes.", "cta": "GET A QUOTE", "href": "/request-quote" }
+    ],
     "hero": {
-      "title": "Your Trusted Defense Procurement Partner",
-      "subtitle": "Sultan Defense is a B2B export partner supplying tactical equipment and defense technologies across the Middle East, Africa and Turkic Republics.",
+      "title": "Your Trusted Defense Supply Partner",
+      "subtitle": "Sultan Defense supplies defense, tactical equipment and field support solutions for international B2B buyers.",
       "cta": "Explore Our Products",
       "ctaSecondary": "Get a Quote",
       "badge": "Sultan Defense",
@@ -197,6 +221,16 @@
       "title": "Get in Touch",
       "subtitle": "Share your request, quote request or questions with us"
     }
+  },
+  "solutions": {
+    "title": "Integrated Defense Supply Solutions for Global Buyers",
+    "lead": "Sultan Defense provides integrated defense, tactical equipment and field support solutions for international B2B buyers, government procurement units, distributors and institutional clients. From product sourcing to quotation and export coordination, we help global buyers access reliable, export-ready defense and support systems.",
+    "metaDescription": "Integrated B2B defense, tactical and field support supply solutions for international buyers, distributors and institutional clients."
+  },
+  "export": {
+    "title": "Global Defense Export with DDP Delivery Capability",
+    "lead": "Sultan Defense provides export-focused defense, tactical equipment and field support solutions for international B2B buyers, distributors and procurement companies — with a structured export process, professional documentation and DDP delivery capability for eligible products and approved destination countries.",
+    "metaDescription": "Export-focused defense and tactical supply from Türkiye with DDP delivery capability, export documentation and international logistics coordination."
   },
   "projects": {
     "title": "Products",

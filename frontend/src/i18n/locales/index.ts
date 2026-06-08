@@ -3,11 +3,13 @@ import en from '../../../public/locales/en.json';
 import tr from '../../../public/locales/tr.json';
 import de from '../../../public/locales/de.json';
 
+// JSON mesajlar dizi (ör. home.heroCards / home.b2bExport.stats) içerdiğinden
+// AbstractIntlMessages ile birebir uyumlu degil; t.raw() ile okunur. Cast guvenli.
 export const LOCALE_MESSAGES: Record<string, AbstractIntlMessages> = {
   tr,
   en,
   de,
-};
+} as unknown as Record<string, AbstractIntlMessages>;
 
 export const AVAILABLE_LOCALES = Object.keys(LOCALE_MESSAGES);
 export const FALLBACK_LOCALE = 'tr';

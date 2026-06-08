@@ -97,15 +97,15 @@ function isLegacyNavPath(key: string): boolean {
  */
 export function buildDefaultMenu(locale: string, t: TranslateFn): MenuItemLike[] {
   const l = (path: string) => localizedPath(locale, path);
+  // Müşteri menüsü (7 başlık): HOME · PRODUCTS · SOLUTIONS · EXPORT · ABOUT · CONTACT · GET A QUOTE
   return [
     { title: safeNavLabel(t, 'home', 'Ana Sayfa'), url: l('/') },
     { title: safeNavLabel(t, 'products', 'Ürünler'), url: l('/products') },
+    { title: safeNavLabel(t, 'solutions', 'Çözümler'), url: l('/solutions') },
+    { title: safeNavLabel(t, 'export', 'İhracat'), url: l('/export') },
     { title: safeNavLabel(t, 'about', 'Hakkımızda'), url: l('/about') },
-    { title: safeNavLabel(t, 'services', 'Faaliyetler'), url: l('/capabilities') },
-    { title: safeNavLabel(t, 'gallery', 'Galeri'), url: l('/gallery') },
-    { title: safeNavLabel(t, 'news', 'Haberler'), url: l('/news') },
     { title: safeNavLabel(t, 'contact', 'İletişim'), url: l('/contact') },
-    { title: safeNavLabel(t, 'offer', 'Teklif Al'), url: l('/request-quote') },
+    { title: safeNavLabel(t, 'getQuote', 'Teklif Al'), url: l('/request-quote') },
   ];
 }
 

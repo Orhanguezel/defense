@@ -137,6 +137,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     { path: '', changeFrequency: 'weekly' as const, priority: 1.0 },
     { path: '/products', changeFrequency: 'weekly' as const, priority: 0.9 },
+    { path: '/solutions', changeFrequency: 'monthly' as const, priority: 0.8 },
+    { path: '/export', changeFrequency: 'monthly' as const, priority: 0.8 },
     { path: '/capabilities', changeFrequency: 'weekly' as const, priority: 0.9 },
     { path: '/gallery', changeFrequency: 'weekly' as const, priority: 0.8 },
     { path: '/news', changeFrequency: 'weekly' as const, priority: 0.7 },

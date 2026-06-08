@@ -207,6 +207,11 @@ export default async function HomePage({
   const siteUrl = siteUrlBase();
   const heroProducts = products.slice(0, 4);
   const highlightProducts = products.slice(4);
+
+  // Anasayfa sabit içerik (i18n) — müşteri metinleri
+  const heroCards = (t.raw('home.heroCards') as Array<{ title: string; desc: string; cta: string; href: string; image: string }>) || [];
+  const b2bExport = (t.raw('home.b2bExport') as { title: string; ticker: string; stats: Array<{ value: string; label: string }> }) || { title: '', ticker: '', stats: [] };
+  const promoCards = (t.raw('home.promoCards') as Array<{ title: string; desc: string; cta: string; href: string }>) || [];
   const visibleBlogPosts = blogPosts.slice(0, 3);
   const visibleNewsPosts = newsPosts.slice(0, 2);
 
@@ -293,20 +298,20 @@ export default async function HomePage({
           </Reveal>
         </div>
 
-        {/* Hero Category Navigation — Humintech-inspired cards */}
+        {/* Hero Category Navigation — sabit 4 kart (müşteri içeriği) */}
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 lg:px-6">
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4">
-            {heroProducts.map((p: any, idx: number) => (
-              <Reveal key={p.id} delay={idx * 0.1} className={idx === 2 ? 'hidden md:block' : idx === 3 ? 'hidden lg:block' : ''}>
+            {heroCards.map((card, idx) => (
+              <Reveal key={card.title} delay={idx * 0.1} className={idx === 2 ? 'hidden md:block' : idx === 3 ? 'hidden lg:block' : ''}>
                 <Link
-                  href={p.slug ? localizedPath(locale, `/products/${p.slug}`) : '#'}
-                  title={p.title}
+                  href={localizedPath(locale, card.href)}
+                  title={card.title}
                   className="group relative flex h-[220px] flex-col justify-end overflow-hidden border-l-4 border-(--color-brand) p-5 shadow-2xl transition-all duration-500 hover:scale-[1.02] sm:h-[240px] md:h-[220px] lg:h-[280px] lg:p-6"
                   style={{ background: 'var(--surface-dark-strong)' }}
                 >
                   <OptimizedImage
-                    src={resolveImageUrl(p.image_url)}
-                    alt={p.title}
+                    src={card.image}
+                    alt={card.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover opacity-60 transition-all duration-700 group-hover:opacity-100"
@@ -314,15 +319,13 @@ export default async function HomePage({
                   <div className="home-hero-product-card-overlay" aria-hidden="true" />
                   <div className="relative z-10 text-left w-full">
                     <h2 className="home-hero-product-title text-lg sm:text-xl">
-                      {p.title}
+                      {card.title}
                     </h2>
-                    {p.summary && (
-                      <p className="home-hero-product-summary mb-2 line-clamp-2 text-sm font-medium opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                        {p.summary}
-                      </p>
-                    )}
+                    <p className="home-hero-product-summary mb-2 line-clamp-2 text-sm font-medium opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                      {card.desc}
+                    </p>
                     <div className="mt-4 flex items-center text-[10px] font-black text-(--color-brand-light) uppercase tracking-[0.2em]">
-                       {t('common.readMore')} <ArrowRight className="ml-2 size-3" />
+                       {card.cta} <ArrowRight className="ml-2 size-3" />
                     </div>
                   </div>
                 </Link>
@@ -335,7 +338,45 @@ export default async function HomePage({
         <div className="absolute bottom-0 left-0 right-0 h-1.5 bg-(--color-brand)" />
       </section>
 
-      {homeStats.length > 0 ? <StatsHighlightSection items={homeStats} /> : null}
+      {/* B2B EXPORT istatistik bandı — sol dik başlık + kayan şerit + 4 sayı */}
+      {b2bExport.stats.length > 0 ? (
+        <StatsHighlightSection
+          title={b2bExport.title}
+          ticker={b2bExport.ticker}
+          items={b2bExport.stats}
+        />
+      ) : homeStats.length > 0 ? (
+        <StatsHighlightSection items={homeStats} />
+      ) : null}
+
+      {/* 3 promo kart — B2B tedarik / ihracata hazır / küresel iş birliği */}
+      {promoCards.length > 0 && (
+        <section className="relative z-10 mx-auto max-w-7xl px-4 py-16 lg:px-6 lg:py-20">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {promoCards.map((card, idx) => (
+              <Reveal key={card.title} delay={idx * 0.1}>
+                <div className="group flex h-full flex-col border-t-4 border-(--color-brand) bg-(--color-bg-dark) p-8 shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                  <h3
+                    className="text-lg font-black uppercase leading-tight tracking-[0.08em] text-(--section-bg-white) lg:text-xl"
+                    style={{ fontFamily: 'var(--font-heading)' }}
+                  >
+                    {card.title}
+                  </h3>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-(--section-bg-white)/75">
+                    {card.desc}
+                  </p>
+                  <Link
+                    href={localizedPath(locale, card.href)}
+                    className="mt-8 inline-flex items-center self-start border-b-2 border-(--color-brand) pb-1 text-[11px] font-black uppercase tracking-[0.2em] text-(--color-brand-light) transition-all duration-300 group-hover:gap-2"
+                  >
+                    {card.cta} <ArrowRight className="ml-2 size-3" />
+                  </Link>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Hero altı sabit-arka-plan reveal — defans görseli görünsün (yarım ekran) */}
       <div className="h-[40vh] lg:h-[50vh]" aria-hidden="true" />
