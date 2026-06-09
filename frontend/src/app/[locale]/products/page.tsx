@@ -176,9 +176,6 @@ export default async function ProjectsPage({
           >
             {t('projects.title')}
           </h1>
-          <span style={{ fontSize: 15, color: 'var(--color-text-muted)', fontWeight: 400 }}>
-            | {totalCount} {t('projects.results')}
-          </span>
         </div>
 
         {/* ── Description ── */}

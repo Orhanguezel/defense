@@ -84,25 +84,7 @@ export function Footer({
             <p className="surface-dark-text text-sm leading-relaxed">
               {companyProfile?.about || t('description')}
             </p>
-            {/* Social media icons */}
-            {socialLinks.length > 0 && (
-              <div className="flex items-center gap-3 pt-1">
-                {socialLinks.map(({ key, url, label, path }) => (
-                  <a
-                    key={key}
-                    href={url}
-                    target="_blank"
-                    rel="nofollow noopener noreferrer"
-                    aria-label={label}
-                    className="surface-dark-text transition-colors hover:text-(--color-brand-text)"
-                  >
-                    <svg className="size-5" viewBox="0 0 24 24" fill="currentColor">
-                      <path d={path} />
-                    </svg>
-                  </a>
-                ))}
-              </div>
-            )}
+            {/* Sosyal medya logolari kaldirildi (musteri istegi — B2B) */}
           </div>
 
           {/* Dynamic sections */}

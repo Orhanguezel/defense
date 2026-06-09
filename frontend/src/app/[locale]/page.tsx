@@ -267,7 +267,7 @@ export default async function HomePage({
       {/* ═══════════════════════════════════════════
           HERO — Dynamic industrial/premium redesign
       ═══════════════════════════════════════════ */}
-      <section className="home-hero relative flex min-h-[900px] w-full flex-col overflow-hidden px-0 pt-24 pb-12 sm:min-h-[980px] sm:pt-28 md:min-h-[860px] md:pt-32 lg:h-screen lg:min-h-[700px] lg:items-center lg:justify-center lg:pt-0 lg:pb-0">
+      <section className="home-hero relative flex min-h-[900px] w-full flex-col overflow-hidden px-0 pt-32 pb-12 sm:min-h-[980px] sm:pt-36 md:min-h-[860px] md:pt-40 lg:h-screen lg:min-h-[700px] lg:items-center lg:justify-center lg:pt-0 lg:pb-0">
         {/* Background Overlay / Video */}
         {heroVideoUrl ? (
           <HeroBackgroundVideo src={heroVideoUrl} poster={heroPoster || undefined} />
