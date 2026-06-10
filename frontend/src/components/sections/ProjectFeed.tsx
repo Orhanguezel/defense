@@ -32,6 +32,8 @@ interface ProjectFeedProps {
   sidebarTitle?: string;
   readMoreLabel?: string;
   extraParams?: string;
+  /** true: sonsuz kaydirma kapali, sadece initialProjects gosterilir */
+  noLoadMore?: boolean;
 }
 
 function localePath(locale: string, path: string): string {
@@ -57,13 +59,15 @@ export function ProjectFeed({
   sidebarTitle,
   readMoreLabel,
   extraParams,
+  noLoadMore,
 }: ProjectFeedProps) {
   const t = useTranslations();
   const finalReadMore = readMoreLabel || t('common.readMore');
   const finalSidebarTitle = sidebarTitle || t('projects.loveTitle');
   const [projects, setProjects] = useState<ProjectItem[]>(initialProjects);
   const [loading, setLoading] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
+  // noLoadMore: sabit liste (sonsuz kaydirma yok) — orn. anasayfa "Stronger Products" 6 urun
+  const [hasMore, setHasMore] = useState(!noLoadMore);
   const [page, setPage] = useState(1);
   const sentinelRef = useRef<HTMLDivElement>(null);
   const PAGE_SIZE = 10;
@@ -94,7 +98,7 @@ export function ProjectFeed({
 
   useEffect(() => {
     const el = sentinelRef.current;
-    if (!el) return;
+    if (!el || noLoadMore) return;
     const obs = new IntersectionObserver(
       (entries) => { if (entries[0]?.isIntersecting) loadMore(); },
       { rootMargin: '400px' }

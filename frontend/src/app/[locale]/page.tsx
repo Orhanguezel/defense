@@ -114,7 +114,7 @@ async function fetchFeaturedProducts(locale: string) {
 async function fetchLatestNonFeaturedProducts(locale: string) {
   try {
     const res = await fetch(
-      `${API_BASE_URL}/products?item_type=sultandefense&is_active=1&is_featured=0&locale=${locale}&limit=10`,
+      `${API_BASE_URL}/products?item_type=sultandefense&is_active=1&is_featured=0&locale=${locale}&limit=6`,
       { next: { revalidate: 300 } },
     );
     if (!res.ok) return [];
@@ -586,7 +586,7 @@ export default async function HomePage({
           <section className="border-t border-(--color-border) bg-white py-24">
             <div className="mx-auto max-w-7xl px-4 lg:px-6">
               <ProjectFeed
-                initialProjects={latestProducts}
+                initialProjects={latestProducts.slice(0, 6)}
                 locale={locale}
                 apiUrl={API_BASE_URL}
                 backendUrl={API_BASE_URL.replace(/\/api\/?$/, '')}
@@ -596,6 +596,7 @@ export default async function HomePage({
                 sidebarTitle={t('home.projects.title')}
                 readMoreLabel={t('projects.viewProducts')}
                 extraParams="&is_featured=0"
+                noLoadMore
               />
             </div>
           </section>
