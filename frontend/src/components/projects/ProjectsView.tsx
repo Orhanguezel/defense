@@ -79,7 +79,7 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
   });
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('list');
 
   // Sync with URL when it changes manually
   useEffect(() => {
@@ -186,7 +186,7 @@ export function ProjectsView({ projects, locale, labels, filterLabels, detailLab
   const gridProjects = rest.slice(2);
 
   return (
-    <div ref={rootRef} data-view="grid" data-tab="projects">
+    <div ref={rootRef} data-view="list" data-tab="projects">
       <style>{`
         /* ── Tabs ── */
         .pv-tabs{display:flex;gap:24px}
