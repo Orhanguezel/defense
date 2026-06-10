@@ -23,15 +23,13 @@ export function SplashScreen({
     const ssrOverlay = document.getElementById('sultandefense-splash-ssr');
     if (ssrOverlay) ssrOverlay.style.display = 'none';
 
-    // Phase 1: Loading (already active on mount)
-    const t1 = setTimeout(() => setPhase('reveal'), 600);
-    // Phase 2: Brand reveal
-    const t2 = setTimeout(() => setPhase('exit'), 3000);
-    // Phase 3: Exit
+    // Hizlandirildi (Speed Index/Performance icin) — kisa marka flash'i
+    const t1 = setTimeout(() => setPhase('reveal'), 250);
+    const t2 = setTimeout(() => setPhase('exit'), 900);
     const t3 = setTimeout(() => {
       setPhase('done');
       sessionStorage.setItem('sultandefense_splash_seen', '1');
-    }, 3800);
+    }, 1200);
     return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
   }, []);
 

@@ -110,7 +110,8 @@ html[data-theme-mode='light'],
 
   --text-strong: var(--anthracite-900);
   --text-body: var(--anthracite-600);
-  --text-muted: var(--anthracite-400);
+  /* a11y: beyaz zeminde 4.5:1 gecsin (eski anthracite-400 #8a857b ~3.67) */
+  --text-muted: var(--anthracite-500);
   --text-inverse: #e8e6dc;
   --text-soft-inverse: #d0cdc4;
 

@@ -81,7 +81,17 @@ export function StatsHighlightSection({ title, items }: StatsHighlightSectionPro
       ref={sectionRef}
       className="relative z-10 flex min-h-[85vh] flex-col items-center justify-center overflow-hidden py-16"
     >
-      <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-5 px-4 py-10 lg:flex-row lg:items-stretch lg:gap-6 lg:px-6 lg:py-14">
+      <div
+        className="relative mx-auto flex w-full max-w-7xl flex-col gap-5 rounded-3xl px-4 py-10 lg:flex-row lg:items-stretch lg:gap-6 lg:px-8 lg:py-14"
+        style={{
+          // Yazilarin arkasinda koyu cam kart — okunabilirlik + Lighthouse kontrast (resim uzeri yazi beyaz varsayiliyor)
+          background: 'color-mix(in srgb, var(--color-bg-dark) 90%, transparent)',
+          backdropFilter: 'blur(8px)',
+          WebkitBackdropFilter: 'blur(8px)',
+          border: '1px solid color-mix(in srgb, var(--color-brand) 22%, transparent)',
+          boxShadow: '0 20px 60px color-mix(in srgb, var(--color-bg-dark) 45%, transparent)',
+        }}
+      >
         {/* Sol dik başlık */}
         {title && (
           <div className="flex shrink-0 items-center lg:items-stretch">
