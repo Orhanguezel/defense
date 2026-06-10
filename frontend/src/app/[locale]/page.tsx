@@ -153,6 +153,10 @@ async function fetchFeaturedNewsPosts(locale: string) {
   }
 }
 
+// Anasayfa veri-yogun (urunler/feed'ler) — build'de prerender etme, on-demand SSR
+// (aksi halde /ru gibi locale'lerde prerender timeout -> build fail)
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({
   params,
 }: {
