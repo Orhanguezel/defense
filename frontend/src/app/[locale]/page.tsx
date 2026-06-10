@@ -267,7 +267,7 @@ export default async function HomePage({
       {/* ═══════════════════════════════════════════
           HERO — Dynamic industrial/premium redesign
       ═══════════════════════════════════════════ */}
-      <section className="home-hero relative flex min-h-[900px] w-full flex-col overflow-hidden px-0 pt-32 pb-12 sm:min-h-[980px] sm:pt-36 md:min-h-[860px] md:pt-40 lg:h-screen lg:min-h-[700px] lg:items-center lg:justify-center lg:pt-0 lg:pb-0">
+      <section className="home-hero relative flex min-h-[900px] w-full flex-col overflow-hidden px-0 pt-32 pb-12 sm:min-h-[980px] sm:pt-36 md:min-h-[860px] md:pt-40 lg:h-screen lg:min-h-[700px] lg:items-center lg:justify-center lg:pt-24 lg:pb-12">
         {/* Background Overlay / Video */}
         {heroVideoUrl ? (
           <HeroBackgroundVideo src={heroVideoUrl} poster={heroPoster || undefined} />
@@ -287,7 +287,7 @@ export default async function HomePage({
         {/* Hero Content — Centered Heading */}
         <div className="relative z-10 mb-10 w-full max-w-7xl px-6 text-center sm:mb-12 lg:mb-16">
           <Reveal>
-            <h1 className="home-hero-title text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl">
+            <h1 className="home-hero-title text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
               {heroTitle}
             </h1>
             {heroSubtitle && (
