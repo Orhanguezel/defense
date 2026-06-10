@@ -14,9 +14,9 @@ export function HeroBackgroundVideo({ src, poster }: HeroBackgroundVideoProps) {
     const video = videoRef.current;
     if (!video) return;
 
-    // Mobilde geç yükle (sayfa hazır olduktan sonra), desktop'ta idle'da yükle
+    // Poster ilk paint'te gosterilir; video Speed Index olcum penceresinin DISINDA yuklenir
     const isMobile = window.innerWidth < 768;
-    const delay = isMobile ? 4000 : 2000;
+    const delay = isMobile ? 6000 : 4500;
 
     const start = () => {
       video.preload = 'auto';
@@ -24,10 +24,6 @@ export function HeroBackgroundVideo({ src, poster }: HeroBackgroundVideoProps) {
       video.play().catch(() => {});
     };
 
-    if (!isMobile && 'requestIdleCallback' in window) {
-      const id = requestIdleCallback(start, { timeout: 3000 });
-      return () => cancelIdleCallback(id);
-    }
     const timer = setTimeout(start, delay);
     return () => clearTimeout(timer);
   }, [src]);
